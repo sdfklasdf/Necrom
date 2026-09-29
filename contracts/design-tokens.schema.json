@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://necrom.local/contracts/design-tokens.schema.json",
+  "title": "Necrom Design Token Contract",
+  "description": "Value-free adapter contract. This file does not assert or infer Figma values or codeSyntax.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "version", "tokens"],
+  "properties": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "fileKey", "verification"],
+      "properties": {
+        "kind": { "const": "figma" },
+        "fileKey": { "type": "string", "minLength": 1 },
+        "verification": { "enum": ["verified", "partial", "not_verified"] }
+      }
+    },
+    "version": { "type": "string", "minLength": 1 },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "type", "valueStatus"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "type": { "enum": ["color", "number", "string", "boolean", "dimension", "typography", "other"] },
+          "valueStatus": { "enum": ["verified", "unverified", "absent"] },
+          "value": {},
+          "sourceVariableId": { "type": "string" },
+          "codeSyntax": {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "valueStatus": { "const": "verified" } } },
+            "then": { "required": ["value"] }
+          }
+        ]
+      }
+    }
+  }
+}
