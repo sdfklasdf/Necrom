@@ -7,6 +7,14 @@ namespace Necrom.Core.Domain
         public BattlePhase Phase { get; private set; } = BattlePhase.Ready;
         public long Revision { get; private set; }
 
+        public static BattleStateMachine Restore(BattlePhase phase, long revision)
+        {
+            if (!Enum.IsDefined(typeof(BattlePhase), phase)) throw new ArgumentOutOfRangeException(nameof(phase));
+            if (revision < 0) throw new ArgumentOutOfRangeException(nameof(revision));
+
+            return new BattleStateMachine { Phase = phase, Revision = revision };
+        }
+
         public void Start(long expectedRevision)
         {
             RequireRevision(expectedRevision);
