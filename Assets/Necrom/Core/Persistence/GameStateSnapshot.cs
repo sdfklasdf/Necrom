@@ -48,7 +48,7 @@ namespace Necrom.Core.Persistence
             if (formation == null) throw new ArgumentNullException(nameof(formation));
 
             var slots = new List<FormationSlotSnapshot>();
-            for (var i = 0; i < Formation.Capacity; i++)
+            for (var i = 0; i < Necrom.Core.Domain.Formation.Capacity; i++)
             {
                 var unit = formation.GetSlot(i);
                 if (unit.HasValue) slots.Add(new FormationSlotSnapshot(i, unit.Value.Value));
