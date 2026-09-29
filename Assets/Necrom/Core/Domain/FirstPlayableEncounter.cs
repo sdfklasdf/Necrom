@@ -2,6 +2,9 @@ using System;
 
 namespace Necrom.Core.Domain
 {
+    // Local first-playable orchestration assumes serialized application commands.
+    // A future remote authoritative implementation must wrap raise-source consumption
+    // and formation mutation in one authoritative transaction as required by 06-11.
     public sealed class FirstPlayableEncounter
     {
         private readonly RaiseService _raiseService;
@@ -23,9 +26,11 @@ namespace Necrom.Core.Domain
             int slot,
             long expectedFormationRevision)
         {
-            if (Formation.GetSlot(slot).HasValue)
-                throw new InvalidOperationException("Target formation slot is occupied.");
+            if (source == null) throw new ArgumentNullException(nameof(source));
+            if (source.Revision != expectedSourceRevision) throw new InvalidOperationException("Raise source revision conflict.");
+            if (source.State != RaiseSourceState.Available) throw new InvalidOperationException("Raise source is unavailable.");
 
+            Formation.EnsureCanAssign(slot, undeadId, expectedFormationRevision);
             var result = _raiseService.Raise(source, expectedSourceRevision, undeadId, restoredHealth);
             Formation.Assign(slot, result.Undead.Id, expectedFormationRevision);
             return result;
