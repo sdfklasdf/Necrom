@@ -10,6 +10,26 @@ namespace Necrom.Core.Domain
 
         public long Revision { get; private set; }
 
+        public static Formation Restore(IReadOnlyList<KeyValuePair<int, EntityId>> occupiedSlots, long revision)
+        {
+            if (occupiedSlots == null) throw new ArgumentNullException(nameof(occupiedSlots));
+            if (revision < 0) throw new ArgumentOutOfRangeException(nameof(revision));
+            if (occupiedSlots.Count > Capacity) throw new InvalidOperationException("Formation exceeds capacity.");
+
+            var restored = new Formation();
+            var seenUnits = new HashSet<EntityId>();
+            foreach (var entry in occupiedSlots)
+            {
+                ValidateIndex(entry.Key);
+                if (restored._slots[entry.Key].HasValue) throw new InvalidOperationException("Duplicate formation slot.");
+                if (!seenUnits.Add(entry.Value)) throw new InvalidOperationException("Unit already occupies another slot.");
+                restored._slots[entry.Key] = entry.Value;
+            }
+
+            restored.Revision = revision;
+            return restored;
+        }
+
         public EntityId? GetSlot(int index)
         {
             ValidateIndex(index);
