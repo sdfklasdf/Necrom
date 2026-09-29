@@ -28,6 +28,11 @@ namespace Necrom.Core.Application
         {
             if (command == null) throw new ArgumentNullException(nameof(command));
 
+            // Validate all presentation-independent result metadata before mutating domain state.
+            // This prevents a malformed event id from turning a successful mutation into an apparent failed command.
+            if (string.IsNullOrWhiteSpace(raisedEventId)) throw new ArgumentException("Raised event id is required.", nameof(raisedEventId));
+            if (string.IsNullOrWhiteSpace(assignedEventId)) throw new ArgumentException("Assigned event id is required.", nameof(assignedEventId));
+
             var raised = _encounter.RaiseIntoFormation(
                 command.Source,
                 command.ExpectedSourceRevision,
