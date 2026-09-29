@@ -6,7 +6,7 @@ namespace Necrom.Core.Domain
     {
         public EntityId Id { get; }
         public string ArchetypeId { get; }
-        public Faction Faction { get; private set; }
+        public Faction Faction { get; }
         public CombatantLifeState LifeState { get; private set; }
         public int Health { get; private set; }
 
@@ -28,15 +28,6 @@ namespace Necrom.Core.Domain
             Health = Math.Max(0, Health - amount);
             if (Health == 0) LifeState = CombatantLifeState.Defeated;
             return true;
-        }
-
-        internal void ConvertToPlayerFaction(int restoredHealth)
-        {
-            if (LifeState != CombatantLifeState.Defeated) throw new InvalidOperationException("Only defeated combatants can be converted.");
-            if (restoredHealth <= 0) throw new ArgumentOutOfRangeException(nameof(restoredHealth));
-            Faction = Faction.Player;
-            Health = restoredHealth;
-            LifeState = CombatantLifeState.Active;
         }
     }
 }
