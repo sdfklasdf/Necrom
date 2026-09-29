@@ -30,11 +30,16 @@ namespace Necrom.Core.Persistence
             long formationRevision, IReadOnlyList<FormationSlotSnapshot> formation)
         {
             if (string.IsNullOrWhiteSpace(schemaVersion)) throw new ArgumentException("Schema version is required.", nameof(schemaVersion));
+            if (formation == null) throw new ArgumentNullException(nameof(formation));
+
             SchemaVersion = schemaVersion;
             BattlePhase = battlePhase;
             BattleRevision = battleRevision;
             FormationRevision = formationRevision;
-            Formation = formation ?? throw new ArgumentNullException(nameof(formation));
+
+            var copy = new FormationSlotSnapshot[formation.Count];
+            for (var i = 0; i < formation.Count; i++) copy[i] = formation[i];
+            Formation = Array.AsReadOnly(copy);
         }
 
         public static GameStateSnapshot Capture(string schemaVersion, BattleStateMachine battle, Formation formation)
