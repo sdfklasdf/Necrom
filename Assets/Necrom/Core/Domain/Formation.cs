@@ -16,17 +16,23 @@ namespace Necrom.Core.Domain
             return _slots[index];
         }
 
-        public void Assign(int index, EntityId unitId, long expectedRevision)
+        public void EnsureCanAssign(int index, EntityId unitId, long expectedRevision)
         {
             ValidateIndex(index);
             RequireRevision(expectedRevision);
+            if (_slots[index].HasValue && !_slots[index].Value.Equals(unitId))
+                throw new InvalidOperationException("Target formation slot is occupied.");
 
             for (var i = 0; i < _slots.Length; i++)
             {
                 if (_slots[i].HasValue && _slots[i].Value.Equals(unitId) && i != index)
                     throw new InvalidOperationException("Unit already occupies another slot.");
             }
+        }
 
+        public void Assign(int index, EntityId unitId, long expectedRevision)
+        {
+            EnsureCanAssign(index, unitId, expectedRevision);
             _slots[index] = unitId;
             Revision++;
         }
