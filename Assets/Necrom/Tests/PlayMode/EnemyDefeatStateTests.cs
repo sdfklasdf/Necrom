@@ -81,6 +81,135 @@ namespace Necrom.FirstPlayable.Tests
             yield return null;
         }
 
+        [UnityTest]
+        public IEnumerator EligibleDefeatedEnemyReturnsAvailableRaiseSource()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-eligible", 5, out var root);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-eligible"));
+
+            var eligible = InvokeTryGetAvailableRaiseSource(runtimeEntity, out var source);
+
+            Assert.That(eligible, Is.True);
+            Assert.That(source, Is.SameAs(GetRaiseSource(runtimeEntity)));
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ActiveEnemyWithoutRaiseSourceIsNotEligibleBeforeOrAfterNonLethalDamage()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-active", 5, out var root);
+
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var beforeDamage), Is.False);
+            Assert.That(beforeDamage, Is.Null);
+
+            InvokeDamage(runtimeEntity, 2, CreateEntityId("raise-source-active"));
+
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var afterDamage), Is.False);
+            Assert.That(afterDamage, Is.Null);
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ConsumedRaiseSourceIsNotEligible()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-consumed", 5, out var root);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-consumed"));
+            var source = GetRaiseSource(runtimeEntity);
+            ConsumeRaiseSource(source);
+
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var target), Is.False);
+            Assert.That(target, Is.Null);
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator RaiseSourceFromDifferentDefeatedEnemyIsNotEligibleAndIsNotRebound()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-mismatch-a", 5, out var rootA);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-mismatch-a"));
+
+            var otherRuntimeEntity = SpawnEnemy("enemy-instance-mismatch-b", 5, out var rootB);
+            InvokeDamage(otherRuntimeEntity, 5, CreateEntityId("raise-source-mismatch-b"));
+            var mismatchedSource = GetRaiseSource(otherRuntimeEntity);
+            ReplaceRaiseSource(runtimeEntity, mismatchedSource);
+
+            var defeatedEntityIdBefore = GetProperty(mismatchedSource, "DefeatedEntityId")?.ToString();
+
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var target), Is.False);
+            Assert.That(target, Is.Null);
+            Assert.That(GetRaiseSource(runtimeEntity), Is.SameAs(mismatchedSource));
+            Assert.That(GetProperty(mismatchedSource, "DefeatedEntityId")?.ToString(), Is.EqualTo(defeatedEntityIdBefore));
+
+            UnityEngine.Object.Destroy(rootA);
+            UnityEngine.Object.Destroy(rootB);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator EligibilityQueryIsSideEffectFree()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-side-effect", 5, out var root);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-side-effect"));
+            var source = GetRaiseSource(runtimeEntity);
+            var model = GetProperty(runtimeEntity, "Model");
+
+            var stateBefore = GetProperty(source, "State")?.ToString();
+            var revisionBefore = GetProperty(source, "Revision");
+            var healthBefore = GetProperty(model, "Health");
+            var lifeStateBefore = GetProperty(model, "LifeState")?.ToString();
+
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var first), Is.True);
+            Assert.That(InvokeTryGetAvailableRaiseSource(runtimeEntity, out var second), Is.True);
+
+            Assert.That(first, Is.SameAs(source));
+            Assert.That(second, Is.SameAs(source));
+            Assert.That(GetProperty(source, "State")?.ToString(), Is.EqualTo(stateBefore));
+            Assert.That(GetProperty(source, "Revision"), Is.EqualTo(revisionBefore));
+            Assert.That(GetProperty(model, "Health"), Is.EqualTo(healthBefore));
+            Assert.That(GetProperty(model, "LifeState")?.ToString(), Is.EqualTo(lifeStateBefore));
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        private static bool InvokeTryGetAvailableRaiseSource(object runtimeEntity, out object source)
+        {
+            var method = runtimeEntity.GetType().GetMethod(
+                "TryGetAvailableRaiseSource",
+                BindingFlags.Instance | BindingFlags.Public);
+            Assert.That(
+                method,
+                Is.Not.Null,
+                "EnemyRuntimeEntity must expose the approved side-effect-free raise-target eligibility query.");
+
+            var args = new object[] { null };
+            var result = method.Invoke(runtimeEntity, args);
+            source = args[0];
+            return (bool)result;
+        }
+
+        private static void ConsumeRaiseSource(object source)
+        {
+            var revision = GetProperty(source, "Revision");
+            var method = source.GetType().GetMethod("Consume", BindingFlags.Instance | BindingFlags.Public);
+            Assert.That(method, Is.Not.Null);
+            method.Invoke(source, new[] { revision });
+        }
+
+        private static void ReplaceRaiseSource(object runtimeEntity, object source)
+        {
+            var field = runtimeEntity.GetType().GetField(
+                "<RaiseSource>k__BackingField",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.That(field, Is.Not.Null);
+            field.SetValue(runtimeEntity, source);
+        }
         private static object SpawnEnemy(string instanceId, int maxHealth, out GameObject root)
         {
             var definitionType = FindType("Necrom.FirstPlayable.Runtime.EnemyArchetypeDefinition");

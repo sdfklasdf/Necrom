@@ -35,5 +35,23 @@ namespace Necrom.FirstPlayable.Runtime
 
             return true;
         }
+
+        public bool TryGetAvailableRaiseSource(out RaiseSource source)
+        {
+            source = null;
+
+            if (Model == null || Model.LifeState != CombatantLifeState.Defeated)
+                return false;
+
+            var candidate = RaiseSource;
+            if (candidate == null || candidate.State != RaiseSourceState.Available)
+                return false;
+
+            if (!candidate.DefeatedEntityId.Equals(Model.Id))
+                return false;
+
+            source = candidate;
+            return true;
+        }
     }
 }
