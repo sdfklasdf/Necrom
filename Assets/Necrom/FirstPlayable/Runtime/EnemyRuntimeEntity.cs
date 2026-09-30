@@ -8,6 +8,7 @@ namespace Necrom.FirstPlayable.Runtime
     {
         public Combatant Model { get; private set; }
         public string RoleId { get; private set; }
+        public RaiseSource RaiseSource { get; private set; }
 
         public void Initialize(Combatant model, string roleId)
         {
@@ -19,6 +20,20 @@ namespace Necrom.FirstPlayable.Runtime
 
             Model = model;
             RoleId = roleId;
+        }
+
+        public bool ApplyDamage(int amount, Necrom.Core.Domain.EntityId raiseSourceId)
+        {
+            if (Model == null)
+                throw new InvalidOperationException("Runtime enemy is not initialized.");
+
+            var changed = Model.ApplyDamage(amount);
+            if (!changed) return false;
+
+            if (Model.LifeState == CombatantLifeState.Defeated && RaiseSource == null)
+                RaiseSource = new RaiseSource(raiseSourceId, Model);
+
+            return true;
         }
     }
 }
