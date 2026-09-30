@@ -1,7 +1,7 @@
 {
   "name": "Necrom.FirstPlayable.Runtime",
   "rootNamespace": "Necrom.FirstPlayable.Runtime",
-  "references": [],
+  "references": ["Necrom.Core"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
