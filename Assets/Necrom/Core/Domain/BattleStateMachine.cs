@@ -40,6 +40,15 @@ namespace Necrom.Core.Domain
             Revision++;
         }
 
+        public void Restart(long expectedRevision)
+        {
+            RequireRevision(expectedRevision);
+            if (Phase != BattlePhase.Resolved)
+                throw new InvalidOperationException("Battle can restart only from Resolved.");
+            Phase = BattlePhase.Ready;
+            Revision++;
+        }
+
         private void RequireRevision(long expectedRevision)
         {
             if (expectedRevision != Revision) throw new InvalidOperationException("Revision conflict.");

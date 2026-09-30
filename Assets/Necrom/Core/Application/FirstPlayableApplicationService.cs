@@ -21,6 +21,9 @@ namespace Necrom.Core.Application
     {
         private readonly FirstPlayableEncounter _encounter;
 
+        public BattlePhase BattlePhase => _encounter.Battle.Phase;
+        public long BattleRevision => _encounter.Battle.Revision;
+
         public FirstPlayableApplicationService(FirstPlayableEncounter encounter)
             => _encounter = encounter ?? throw new ArgumentNullException(nameof(encounter));
 
@@ -60,6 +63,20 @@ namespace Necrom.Core.Application
         {
             if (command == null) throw new ArgumentNullException(nameof(command));
             _encounter.Battle.Resolve(command.PlayerWon, command.ExpectedBattleRevision);
+            return new CommandResult(command.CommandId, Array.AsReadOnly(new DomainEvent[0]));
+        }
+
+        public CommandResult Execute(FinalizeBattleCommand command)
+        {
+            if (command == null) throw new ArgumentNullException(nameof(command));
+            _encounter.Battle.FinalizeResult(command.ExpectedBattleRevision);
+            return new CommandResult(command.CommandId, Array.AsReadOnly(new DomainEvent[0]));
+        }
+
+        public CommandResult Execute(RestartBattleCommand command)
+        {
+            if (command == null) throw new ArgumentNullException(nameof(command));
+            _encounter.Battle.Restart(command.ExpectedBattleRevision);
             return new CommandResult(command.CommandId, Array.AsReadOnly(new DomainEvent[0]));
         }
     }

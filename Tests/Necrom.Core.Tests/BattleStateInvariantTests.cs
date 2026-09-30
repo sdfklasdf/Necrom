@@ -64,6 +64,40 @@ namespace Necrom.Core.Tests
             Assert.That(battle.Revision, Is.EqualTo(0));
         }
 
+        [Test]
+        public void ResolvedCanRestartToReadyAndAdvanceRevision()
+        {
+            var battle = BattleStateMachine.Restore(BattlePhase.Resolved, 3);
+
+            battle.Restart(3);
+
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Ready));
+            Assert.That(battle.Revision, Is.EqualTo(4));
+        }
+
+        [TestCase(BattlePhase.Ready)]
+        [TestCase(BattlePhase.Running)]
+        [TestCase(BattlePhase.Victory)]
+        [TestCase(BattlePhase.Defeat)]
+        public void RestartOutsideResolvedIsRejectedWithoutMutation(BattlePhase phase)
+        {
+            var battle = BattleStateMachine.Restore(phase, 7);
+
+            Assert.Throws<InvalidOperationException>(() => battle.Restart(7));
+            Assert.That(battle.Phase, Is.EqualTo(phase));
+            Assert.That(battle.Revision, Is.EqualTo(7));
+        }
+
+        [Test]
+        public void StaleRestartRevisionIsRejectedWithoutMutation()
+        {
+            var battle = BattleStateMachine.Restore(BattlePhase.Resolved, 7);
+
+            Assert.Throws<InvalidOperationException>(() => battle.Restart(6));
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Resolved));
+            Assert.That(battle.Revision, Is.EqualTo(7));
+        }
+
         [TestCase(BattlePhase.Ready)]
         [TestCase(BattlePhase.Running)]
         [TestCase(BattlePhase.Resolved)]
@@ -77,3 +111,5 @@ namespace Necrom.Core.Tests
         }
     }
 }
+
+[executed on device: DESKTOP-7174LTC (46b0e2c9-d71e-4a77-8023-4823da2159d2)]

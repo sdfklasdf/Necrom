@@ -33,6 +33,22 @@ namespace Necrom.Core.Application
         }
     }
 
+    public sealed class FinalizeBattleCommand : FirstPlayableCommand
+    {
+        public long ExpectedBattleRevision { get; }
+
+        public FinalizeBattleCommand(string commandId, long expectedBattleRevision) : base(commandId)
+            => ExpectedBattleRevision = expectedBattleRevision;
+    }
+
+    public sealed class RestartBattleCommand : FirstPlayableCommand
+    {
+        public long ExpectedBattleRevision { get; }
+
+        public RestartBattleCommand(string commandId, long expectedBattleRevision) : base(commandId)
+            => ExpectedBattleRevision = expectedBattleRevision;
+    }
+
     public sealed class RaiseIntoFormationCommand : FirstPlayableCommand
     {
         public RaiseSource Source { get; }
