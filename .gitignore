@@ -5,6 +5,7 @@
 [Ll]ogs/
 UserSettings/
 MemoryCaptures/
+.utmp/
 
 # Build outputs
 [Bb]uild/
