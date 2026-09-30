@@ -1,5 +1,3 @@
-[Reading 51 lines from start (total: 51 lines, 0 remaining)]
-
 using System;
 using System.Collections;
 using System.Linq;
@@ -51,5 +49,3 @@ namespace Necrom.FirstPlayable.Tests
         }
     }
 }
-
-[executed on device: DESKTOP-7174LTC (46b0e2c9-d71e-4a77-8023-4823da2159d2)]
