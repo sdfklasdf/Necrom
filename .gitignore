@@ -1,0 +1,26 @@
+# Unity generated state
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# Build outputs
+[Bb]uild/
+[Bb]uilds/
+Artifacts/
+
+# IDE-generated files
+.vs/
+.idea/
+*.sln
+*.csproj
+*.user
+*.pidb
+*.booproj
+*.svd
+
+# DEC-037: visual/presentation-sensitive ProjectSettings stay provisional.
+ProjectSettings/*
+!ProjectSettings/ProjectVersion.txt
