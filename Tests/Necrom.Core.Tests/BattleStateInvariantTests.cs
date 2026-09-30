@@ -1,0 +1,79 @@
+using System;
+using Necrom.Core.Domain;
+using NUnit.Framework;
+
+namespace Necrom.Core.Tests
+{
+    public sealed class BattleStateInvariantTests
+    {
+        [Test]
+        public void AllowedPathReadyRunningVictoryResolvedAdvancesRevision()
+        {
+            var battle = new BattleStateMachine();
+
+            battle.Start(0);
+            battle.Resolve(true, 1);
+            battle.FinalizeResult(2);
+
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Resolved));
+            Assert.That(battle.Revision, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void AllowedPathReadyRunningDefeatResolvedAdvancesRevision()
+        {
+            var battle = new BattleStateMachine();
+
+            battle.Start(0);
+            battle.Resolve(false, 1);
+            battle.FinalizeResult(2);
+
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Resolved));
+            Assert.That(battle.Revision, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void StaleExpectedRevisionIsRejectedWithoutMutation()
+        {
+            var battle = new BattleStateMachine();
+            battle.Start(0);
+
+            Assert.Throws<InvalidOperationException>(() => battle.Resolve(true, 0));
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Running));
+            Assert.That(battle.Revision, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void StartOutsideReadyIsRejectedWithoutMutation()
+        {
+            var battle = new BattleStateMachine();
+            battle.Start(0);
+
+            Assert.Throws<InvalidOperationException>(() => battle.Start(1));
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Running));
+            Assert.That(battle.Revision, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void ResolveOutsideRunningIsRejectedWithoutMutation()
+        {
+            var battle = new BattleStateMachine();
+
+            Assert.Throws<InvalidOperationException>(() => battle.Resolve(true, 0));
+            Assert.That(battle.Phase, Is.EqualTo(BattlePhase.Ready));
+            Assert.That(battle.Revision, Is.EqualTo(0));
+        }
+
+        [TestCase(BattlePhase.Ready)]
+        [TestCase(BattlePhase.Running)]
+        [TestCase(BattlePhase.Resolved)]
+        public void FinalizeOutsideTerminalResultIsRejectedWithoutMutation(BattlePhase phase)
+        {
+            var battle = BattleStateMachine.Restore(phase, 7);
+
+            Assert.Throws<InvalidOperationException>(() => battle.FinalizeResult(7));
+            Assert.That(battle.Phase, Is.EqualTo(phase));
+            Assert.That(battle.Revision, Is.EqualTo(7));
+        }
+    }
+}
