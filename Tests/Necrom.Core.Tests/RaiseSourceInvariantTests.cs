@@ -12,7 +12,7 @@ namespace Necrom.Core.Tests
             var active = new Combatant(new EntityId("enemy-1"), "skeleton", Faction.Enemy, 5);
 
             Assert.Throws<InvalidOperationException>(() =>
-                new RaiseSource(new EntityId("source-1"), active), "frontline.guard");
+                new RaiseSource(new EntityId("source-1"), active, "frontline.guard"));
         }
 
         [Test]
