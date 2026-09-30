@@ -1,0 +1,21 @@
+{
+  "name": "Necrom.Core.UnityTests",
+  "rootNamespace": "Necrom.Core.Tests",
+  "references": [
+    "Necrom.Core"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "noEngineReferences": true
+}
