@@ -1,0 +1,163 @@
+using System;
+using Necrom.Core.Application;
+using Necrom.Core.Domain;
+using DomainEntityId = Necrom.Core.Domain.EntityId;
+using UnityEngine;
+
+namespace Necrom.FirstPlayable.Runtime
+{
+    public sealed class FirstPlayableAutoCombatLoop : MonoBehaviour
+    {
+        private FirstPlayableBattleRuntimeController _battle;
+        private NecromancerRuntimeEntity _necromancer;
+        private EnemySpawnController _enemies;
+        private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
+        private Func<string> _resolveCommandIdProvider;
+        private double _elapsedMilliseconds;
+        private bool _hasCachedRaiseSourceId;
+        private DomainEntityId _cachedEnemyId;
+        private DomainEntityId _cachedRaiseSourceId;
+        private bool _initialized;
+        private const double TimingEpsilonMilliseconds = 0.001d;
+
+        public void Initialize(
+            FirstPlayableBattleRuntimeController battle,
+            NecromancerRuntimeEntity necromancer,
+            EnemySpawnController enemies,
+            Func<DomainEntityId, DomainEntityId> raiseSourceIdForEnemy,
+            Func<string> resolveCommandIdProvider)
+        {
+            _battle = battle ?? throw new ArgumentNullException(nameof(battle));
+            _necromancer = necromancer ?? throw new ArgumentNullException(nameof(necromancer));
+            _enemies = enemies ?? throw new ArgumentNullException(nameof(enemies));
+            _raiseSourceIdForEnemy = raiseSourceIdForEnemy
+                ?? throw new ArgumentNullException(nameof(raiseSourceIdForEnemy));
+            _resolveCommandIdProvider = resolveCommandIdProvider
+                ?? throw new ArgumentNullException(nameof(resolveCommandIdProvider));
+            _elapsedMilliseconds = 0d;
+            _hasCachedRaiseSourceId = false;
+            _initialized = true;
+        }
+
+        public void Advance(float deltaTimeSeconds)
+        {
+            EnsureInitialized();
+
+            if (float.IsNaN(deltaTimeSeconds) ||
+                float.IsInfinity(deltaTimeSeconds) ||
+                deltaTimeSeconds < 0f)
+            {
+                throw new ArgumentOutOfRangeException(nameof(deltaTimeSeconds));
+            }
+
+            if (_battle.Phase != BattlePhase.Running)
+            {
+                _elapsedMilliseconds = 0d;
+                return;
+            }
+            var behavior = _necromancer.AutoBehavior;
+            if (_necromancer.Model == null ||
+                behavior == null ||
+                !ReferenceEquals(_necromancer.Model, behavior.Actor))
+            {
+                throw new InvalidOperationException(
+                    "A matching attached necromancer auto behavior is required.");
+            }
+
+            var target = _enemies.CurrentTarget;
+            if (!IsActiveEnemy(target))
+            {
+                _elapsedMilliseconds = 0d;
+                return;
+            }
+
+            _elapsedMilliseconds += deltaTimeSeconds * 1000d;
+            var interval = behavior.Spec.AttackIntervalMilliseconds;
+
+            while (_elapsedMilliseconds + TimingEpsilonMilliseconds >= interval)
+            {
+                if (_battle.Phase != BattlePhase.Running)
+                {
+                    _elapsedMilliseconds = 0d;
+                    return;
+                }
+
+                target = _enemies.CurrentTarget;
+                if (!IsActiveEnemy(target))
+                {
+                    _elapsedMilliseconds = 0d;
+                    return;
+                }
+
+                if (!behavior.TryCreateBasicAttack(out var intent))
+                {
+                    _elapsedMilliseconds = 0d;
+                    return;
+                }
+
+                string resolveCommandId = null;
+                if (target.Model.Health <= intent.Damage)
+                {
+                    resolveCommandId = _resolveCommandIdProvider();
+                    if (string.IsNullOrWhiteSpace(resolveCommandId))
+                    {
+                        throw new InvalidOperationException(
+                            "Resolve command id provider returned an invalid id.");
+                    }
+                }
+
+                var raiseSourceId = GetStableRaiseSourceId(target.Model.Id);
+                _elapsedMilliseconds = Math.Max(0d, _elapsedMilliseconds - interval);
+                target.ApplyDamage(intent.Damage, raiseSourceId);
+
+                if (target.Model.LifeState != CombatantLifeState.Defeated)
+                    continue;
+
+                var command = new ResolveBattleCommand(
+                    resolveCommandId,
+                    true,
+                    _battle.Revision);
+                _battle.ResolveFromCombatResult(command);
+                _elapsedMilliseconds = 0d;
+                return;
+            }
+        }
+
+        private void Update()
+        {
+            if (!_initialized) return;
+            Advance(Time.deltaTime);
+        }
+
+        private DomainEntityId GetStableRaiseSourceId(DomainEntityId enemyId)
+        {
+            if (_hasCachedRaiseSourceId && _cachedEnemyId.Equals(enemyId))
+                return _cachedRaiseSourceId;
+
+            var value = _raiseSourceIdForEnemy(enemyId);
+            _cachedEnemyId = enemyId;
+            _cachedRaiseSourceId = value;
+            _hasCachedRaiseSourceId = true;
+            return value;
+        }
+
+        private static bool IsActiveEnemy(EnemyRuntimeEntity target)
+            => target != null &&
+               target.Model != null &&
+               target.Model.Faction == Faction.Enemy &&
+               target.Model.LifeState == CombatantLifeState.Active;
+        private void EnsureInitialized()
+        {
+            if (!_initialized ||
+                _battle == null ||
+                _necromancer == null ||
+                _enemies == null ||
+                _raiseSourceIdForEnemy == null ||
+                _resolveCommandIdProvider == null)
+            {
+                throw new InvalidOperationException(
+                    "Auto combat loop is not initialized.");
+            }
+        }
+    }
+}
