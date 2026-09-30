@@ -1,11 +1,24 @@
 # FIRST PLAYABLE Domain Invariant Test Specification
 
-Status: specification only. No test runner or Unity toolchain is established.
+Status: executable Unity-independent Core coverage established for the local FIRST PLAYABLE scope. Unity/editor/device and remote-authority behavior remain outside this evidence.
 
 ## Evidence boundary
-- This document is not a test execution result.
-- Compile, typecheck, unit test, Unity test and build remain NOT RUN until an executable toolchain exists.
-- The cases below become executable acceptance tests when a C# test harness is established.
+- The executable harness is `Tests/Necrom.Core.Tests/Necrom.Core.Tests.csproj` on .NET 8 + NUnit in GitHub Actions.
+- Latest pre-closeout execution baseline: run 36684460541, Failed 0 / Passed 46 / Skipped 0 / Total 46.
+- This Core harness is not Unity compile, Unity Test Framework, Unity build, device/runtime, server transaction, distributed concurrency, or remote idempotency evidence.
+- Exact Unity editor patch remains UNSET and runnable Unity build remains NOT ESTABLISHED.
+
+## Executable coverage map
+- Combatant invariants: `CombatantInvariantTests.cs`.
+- Battle transition/revision invariants: `BattleStateInvariantTests.cs`.
+- Raise-source lifecycle/revision invariants: `RaiseSourceInvariantTests.cs`.
+- Formation slot/duplicate/revision invariants: `FormationInvariantTests.cs`.
+- Raise + formation preflight/local atomic-boundary invariants: `RaiseFormationInvariantTests.cs`.
+- Local duplicate/retry and event-metadata-before-mutation invariants: `CommandReplayInvariantTests.cs`.
+- Snapshot/hydration/migration invariants: `SnapshotContractTests.cs`.
+- Persistence recovery invariants: `PersistenceRecoveryTests.cs`.
+- Bootstrap/checkpoint persistence edge invariants: `CheckpointBootstrapEdgeTests.cs`.
+- Existing bootstrap/checkpoint happy paths remain in `FirstPlayableBootstrapTests.cs` and `FirstPlayableCheckpointTests.cs`.
 
 ## Invariants
 
@@ -36,8 +49,16 @@ Status: specification only. No test runner or Unity toolchain is established.
 6. With serialized local commands, a successful raise produces a unit discoverable by IsReadyForNextCombat.
 7. A rejected preflight leaves the RaiseSource Available.
 
+### Persistence/bootstrap/checkpoint
+1. Invalid snapshots are rejected before codec/store mutation.
+2. Null codec serialization cannot reach the store.
+3. Save failures and cancellation propagate and are not reported as success.
+4. Corrupt/incompatible saves do not silently become a fresh game.
+5. Invalid target schema rejects before store load.
+6. A missing save may create a new state, but a null new-state factory result is rejected.
+
 ### Remote-authority boundary
-If remote authority is introduced, source consumption and formation mutation require one authoritative transaction. The local serialized-command proof is not server atomicity evidence.
+If remote authority is introduced, source consumption and formation mutation require one authoritative transaction. The local serialized-command proof is not server atomicity evidence. Local stale-revision/replay tests are not a remote idempotency store, TTL, lock, database transaction, or distributed concurrency proof.
 
 ## DEC-037
-All assertions target domain semantics only. No visual value, Figma variable, asset, layout, focus style or motion behavior is canonized here.
+All assertions target domain/application/persistence semantics only. No visual value, Figma variable, codeSyntax, asset, layout, focus style or motion behavior is canonized here. Canonical Figma can later represent semantic states without core domain/persistence rewrite.
