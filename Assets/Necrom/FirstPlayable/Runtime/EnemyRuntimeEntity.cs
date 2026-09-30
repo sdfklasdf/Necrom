@@ -31,7 +31,7 @@ namespace Necrom.FirstPlayable.Runtime
             if (!changed) return false;
 
             if (Model.LifeState == CombatantLifeState.Defeated && RaiseSource == null)
-                RaiseSource = new RaiseSource(raiseSourceId, Model);
+                RaiseSource = new RaiseSource(raiseSourceId, Model, RoleId);
 
             return true;
         }

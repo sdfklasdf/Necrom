@@ -17,7 +17,7 @@ namespace Necrom.Core.UnityTests
             enemy.ApplyDamage(5);
             Assert.That(enemy.LifeState, Is.EqualTo(CombatantLifeState.Defeated));
 
-            var source = new RaiseSource(new EntityId("source-1"), enemy);
+            var source = new RaiseSource(new EntityId("source-1"), enemy, "frontline.guard");
             var battle = new BattleStateMachine();
             var formation = new Formation();
             var encounter = new FirstPlayableEncounter(new RaiseService(), battle, formation);
@@ -55,7 +55,7 @@ namespace Necrom.Core.UnityTests
         {
             var enemy = new Combatant(new EntityId("enemy-2"), "skeleton", Faction.Enemy, 5);
             enemy.ApplyDamage(5);
-            var source = new RaiseSource(new EntityId("source-2"), enemy);
+            var source = new RaiseSource(new EntityId("source-2"), enemy, "frontline.guard");
             var formation = new Formation();
             formation.Assign(0, new EntityId("existing"), 0);
 

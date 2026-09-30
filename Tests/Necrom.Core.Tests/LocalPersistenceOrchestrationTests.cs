@@ -40,7 +40,7 @@ namespace Necrom.Core.Tests
 
             var enemy = new Combatant(new EntityId("enemy-1"), "skeleton", Faction.Enemy, 5);
             enemy.ApplyDamage(5);
-            var source = new RaiseSource(new EntityId("source-1"), enemy);
+            var source = new RaiseSource(new EntityId("source-1"), enemy, "frontline.guard");
             progression.RaiseForNextCombat(
                 new RaiseIntoFormationCommand(
                     "raise-1", source, 0, new EntityId("undead-1"), 7, 0, 0),

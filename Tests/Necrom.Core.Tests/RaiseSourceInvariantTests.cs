@@ -12,7 +12,7 @@ namespace Necrom.Core.Tests
             var active = new Combatant(new EntityId("enemy-1"), "skeleton", Faction.Enemy, 5);
 
             Assert.Throws<InvalidOperationException>(() =>
-                new RaiseSource(new EntityId("source-1"), active));
+                new RaiseSource(new EntityId("source-1"), active), "frontline.guard");
         }
 
         [Test]
@@ -20,7 +20,7 @@ namespace Necrom.Core.Tests
         {
             var defeated = DefeatedCombatant();
 
-            var source = new RaiseSource(new EntityId("source-1"), defeated);
+            var source = new RaiseSource(new EntityId("source-1"), defeated, "frontline.guard");
 
             Assert.That(source.State, Is.EqualTo(RaiseSourceState.Available));
             Assert.That(source.Revision, Is.EqualTo(0));
@@ -53,7 +53,7 @@ namespace Necrom.Core.Tests
         }
 
         private static RaiseSource NewSource()
-            => new RaiseSource(new EntityId("source-1"), DefeatedCombatant());
+            => new RaiseSource(new EntityId("source-1"), DefeatedCombatant(), "frontline.guard");
 
         private static Combatant DefeatedCombatant()
         {

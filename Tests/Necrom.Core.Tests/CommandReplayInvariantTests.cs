@@ -118,7 +118,7 @@ namespace Necrom.Core.Tests
         {
             var defeated = new Combatant(new EntityId("enemy-1"), "skeleton", Faction.Enemy, 5);
             defeated.ApplyDamage(5);
-            return new RaiseSource(new EntityId("source-1"), defeated);
+            return new RaiseSource(new EntityId("source-1"), defeated, "frontline.guard");
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(GetProperty(source, "State")?.ToString(), Is.EqualTo("Available"));
             Assert.That(GetProperty(source, "DefeatedEntityId")?.ToString(), Is.EqualTo("enemy-instance-lethal"));
             Assert.That(GetProperty(source, "ArchetypeId"), Is.EqualTo("enemy.skeleton.guard"));
+            Assert.That(GetProperty(source, "RoleId"), Is.EqualTo("frontline.guard"));
             Assert.That(GetProperty(source, "SourceId")?.ToString(), Is.EqualTo("raise-source-lethal"));
 
             UnityEngine.Object.Destroy(root);
@@ -178,6 +179,62 @@ namespace Necrom.FirstPlayable.Tests
             yield return null;
         }
 
+        [UnityTest]
+        public IEnumerator RaiseConversionPreservesRoleAndLineageAndRejectsSecondConversion()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-conversion", 5, out var root);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-conversion"));
+            var source = GetRaiseSource(runtimeEntity);
+            var result = InvokeRaise(source, "undead-instance-conversion", 7);
+
+            var undead = GetProperty(result, "Undead");
+            Assert.That(GetProperty(undead, "Id")?.ToString(), Is.EqualTo("undead-instance-conversion"));
+            Assert.That(GetProperty(undead, "ArchetypeId"), Is.EqualTo("enemy.skeleton.guard"));
+            Assert.That(GetProperty(undead, "Faction")?.ToString(), Is.EqualTo("Player"));
+            Assert.That(GetProperty(result, "SourceId")?.ToString(), Is.EqualTo("raise-source-conversion"));
+            Assert.That(GetProperty(result, "DefeatedEntityId")?.ToString(), Is.EqualTo("enemy-instance-conversion"));
+            Assert.That(GetProperty(result, "RoleId"), Is.EqualTo("frontline.guard"));
+
+            var secondError = Assert.Throws<TargetInvocationException>(
+                () => InvokeRaise(source, "undead-instance-second", 7));
+            Assert.That(secondError.InnerException, Is.TypeOf<InvalidOperationException>());
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator RaiseSourceRequiresNonBlankRoleId()
+        {
+            var runtimeEntity = SpawnEnemy("enemy-instance-role-guard", 5, out var root);
+            InvokeDamage(runtimeEntity, 5, CreateEntityId("raise-source-role-guard"));
+            var source = GetRaiseSource(runtimeEntity);
+            var sourceType = source.GetType();
+            var model = GetProperty(runtimeEntity, "Model");
+            var entityIdType = FindType("Necrom.Core.Domain.EntityId");
+            var combatantType = FindType("Necrom.Core.Domain.Combatant");
+
+            var constructor = sourceType.GetConstructor(new[] { entityIdType, combatantType, typeof(string) });
+            Assert.That(constructor, Is.Not.Null, "RaiseSource must require RoleId at construction.");
+
+            var error = Assert.Throws<TargetInvocationException>(
+                () => constructor.Invoke(new[] { CreateEntityId("raise-source-invalid-role"), model, " " }));
+            Assert.That(error.InnerException, Is.TypeOf<ArgumentException>());
+
+            UnityEngine.Object.Destroy(root);
+            yield return null;
+        }
+
+        private static object InvokeRaise(object source, string undeadId, int restoredHealth)
+        {
+            var serviceType = FindType("Necrom.Core.Domain.RaiseService");
+            Assert.That(serviceType, Is.Not.Null);
+            var service = Activator.CreateInstance(serviceType);
+            var method = serviceType.GetMethod("Raise", BindingFlags.Instance | BindingFlags.Public);
+            Assert.That(method, Is.Not.Null);
+            var revision = GetProperty(source, "Revision");
+            return method.Invoke(service, new[] { source, revision, CreateEntityId(undeadId), (object)restoredHealth });
+        }
         private static bool InvokeTryGetAvailableRaiseSource(object runtimeEntity, out object source)
         {
             var method = runtimeEntity.GetType().GetMethod(

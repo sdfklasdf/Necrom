@@ -6,11 +6,16 @@ namespace Necrom.Core.Domain
     {
         public Combatant Undead { get; }
         public EntityId SourceId { get; }
+        public EntityId DefeatedEntityId { get; }
+        public string RoleId { get; }
 
-        public RaiseResult(Combatant undead, EntityId sourceId)
+        public RaiseResult(Combatant undead, EntityId sourceId, EntityId defeatedEntityId, string roleId)
         {
             Undead = undead ?? throw new ArgumentNullException(nameof(undead));
+            if (string.IsNullOrWhiteSpace(roleId)) throw new ArgumentException("Role id is required.", nameof(roleId));
             SourceId = sourceId;
+            DefeatedEntityId = defeatedEntityId;
+            RoleId = roleId;
         }
     }
 
@@ -24,7 +29,7 @@ namespace Necrom.Core.Domain
 
             source.Consume(expectedRevision);
             var undead = new Combatant(newUndeadId, source.ArchetypeId, Faction.Player, restoredHealth);
-            return new RaiseResult(undead, source.SourceId);
+            return new RaiseResult(undead, source.SourceId, source.DefeatedEntityId, source.RoleId);
         }
     }
 }
