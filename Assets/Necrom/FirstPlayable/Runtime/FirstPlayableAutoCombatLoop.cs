@@ -10,7 +10,7 @@ namespace Necrom.FirstPlayable.Runtime
     {
         private FirstPlayableBattleRuntimeController _battle;
         private NecromancerRuntimeEntity _necromancer;
-        private EnemySpawnController _enemies;
+        private FirstPlayableTargetingController _targeting;
         private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
         private Func<string> _resolveCommandIdProvider;
         private double _elapsedMilliseconds;
@@ -23,13 +23,13 @@ namespace Necrom.FirstPlayable.Runtime
         public void Initialize(
             FirstPlayableBattleRuntimeController battle,
             NecromancerRuntimeEntity necromancer,
-            EnemySpawnController enemies,
+            FirstPlayableTargetingController targeting,
             Func<DomainEntityId, DomainEntityId> raiseSourceIdForEnemy,
             Func<string> resolveCommandIdProvider)
         {
             _battle = battle ?? throw new ArgumentNullException(nameof(battle));
             _necromancer = necromancer ?? throw new ArgumentNullException(nameof(necromancer));
-            _enemies = enemies ?? throw new ArgumentNullException(nameof(enemies));
+            _targeting = targeting ?? throw new ArgumentNullException(nameof(targeting));
             _raiseSourceIdForEnemy = raiseSourceIdForEnemy
                 ?? throw new ArgumentNullException(nameof(raiseSourceIdForEnemy));
             _resolveCommandIdProvider = resolveCommandIdProvider
@@ -64,8 +64,7 @@ namespace Necrom.FirstPlayable.Runtime
                     "A matching attached necromancer auto behavior is required.");
             }
 
-            var target = _enemies.CurrentTarget;
-            if (!IsActiveEnemy(target))
+            if (!_targeting.TryAcquireTarget(out var target))
             {
                 _elapsedMilliseconds = 0d;
                 return;
@@ -82,8 +81,7 @@ namespace Necrom.FirstPlayable.Runtime
                     return;
                 }
 
-                target = _enemies.CurrentTarget;
-                if (!IsActiveEnemy(target))
+                if (!_targeting.TryAcquireTarget(out target))
                 {
                     _elapsedMilliseconds = 0d;
                     return;
@@ -141,17 +139,12 @@ namespace Necrom.FirstPlayable.Runtime
             return value;
         }
 
-        private static bool IsActiveEnemy(EnemyRuntimeEntity target)
-            => target != null &&
-               target.Model != null &&
-               target.Model.Faction == Faction.Enemy &&
-               target.Model.LifeState == CombatantLifeState.Active;
         private void EnsureInitialized()
         {
             if (!_initialized ||
                 _battle == null ||
                 _necromancer == null ||
-                _enemies == null ||
+                _targeting == null ||
                 _raiseSourceIdForEnemy == null ||
                 _resolveCommandIdProvider == null)
             {

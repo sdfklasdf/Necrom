@@ -253,6 +253,15 @@ namespace Necrom.FirstPlayable.Tests
                 (object)enemyController
             });
 
+            var targetingType = FindType("Necrom.FirstPlayable.Runtime.FirstPlayableTargetingController");
+            Assert.That(targetingType, Is.Not.Null);
+            var targeting = combat.gameObject.AddComponent(targetingType);
+            targetingType.GetMethod("Initialize").Invoke(targeting, new[]
+            {
+                playerRuntime,
+                (object)enemyController
+            });
+
             var loop = root.AddComponent(loopType);
             var initialize = loopType.GetMethod("Initialize");
             Assert.That(initialize, Is.Not.Null);
@@ -268,7 +277,7 @@ namespace Necrom.FirstPlayable.Tests
             {
                 battleRuntime,
                 playerRuntime,
-                enemyController,
+                targeting,
                 raiseProvider,
                 commandProvider
             });
