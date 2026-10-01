@@ -12,6 +12,9 @@ namespace Necrom.FirstPlayable.Runtime
         private Func<RaiseSource, RaiseIntoFormationCommand> _commandFactory;
         private Func<string> _raisedEventIdProvider;
         private Func<string> _assignedEventIdProvider;
+        private FirstPlayableAlliedRosterController _alliedRoster;
+        private Func<RaiseIntoFormationCommand, BasicAutoBehaviorSpec>
+            _alliedBehaviorSpecProvider;
 
         public void Initialize(
             EnemySpawnController enemySpawn,
@@ -35,6 +38,24 @@ namespace Necrom.FirstPlayable.Runtime
             _assignedEventIdProvider = assignedEventIdProvider;
         }
 
+        public void ConfigureAlliedActivation(
+            FirstPlayableAlliedRosterController alliedRoster,
+            Func<RaiseIntoFormationCommand, BasicAutoBehaviorSpec>
+                alliedBehaviorSpecProvider)
+        {
+            EnsureInitialized();
+            if (alliedRoster == null)
+                throw new ArgumentNullException(nameof(alliedRoster));
+            if (alliedBehaviorSpecProvider == null)
+                throw new ArgumentNullException(nameof(alliedBehaviorSpecProvider));
+            if (_alliedRoster != null)
+                throw new InvalidOperationException(
+                    "Allied activation is already configured.");
+
+            _alliedRoster = alliedRoster;
+            _alliedBehaviorSpecProvider = alliedBehaviorSpecProvider;
+        }
+
         public bool CanExecute()
             => TryGetCurrentSource(out _);
 
@@ -43,40 +64,74 @@ namespace Necrom.FirstPlayable.Runtime
             EnsureInitialized();
 
             if (!TryGetCurrentSource(out var source))
-                throw new InvalidOperationException("Current target is not eligible for Raise.");
+                throw new InvalidOperationException(
+                    "Current target is not eligible for Raise.");
 
             var command = _commandFactory(source);
             if (command == null)
-                throw new InvalidOperationException("Raise command factory returned no command.");
+                throw new InvalidOperationException(
+                    "Raise command factory returned no command.");
             if (!ReferenceEquals(command.Source, source))
-                throw new InvalidOperationException("Raise command source does not match the current eligible target.");
+                throw new InvalidOperationException(
+                    "Raise command source does not match the current eligible target.");
+
+            BasicAutoBehaviorSpec alliedSpec = null;
+            if (_alliedRoster != null)
+            {
+                alliedSpec = _alliedBehaviorSpecProvider(command);
+                if (alliedSpec == null)
+                    throw new InvalidOperationException(
+                        "Allied behavior policy returned no spec.");
+                _alliedRoster.EnsureCanActivate(
+                    command,
+                    alliedSpec);
+            }
 
             var raisedEventId = _raisedEventIdProvider();
             var assignedEventId = _assignedEventIdProvider();
 
-            return _inputHook.Submit(
+            var result = _inputHook.Submit(
                 command,
                 raisedEventId,
                 assignedEventId);
+
+            if (_alliedRoster != null)
+            {
+                _alliedRoster.ActivateCommitted(
+                    command,
+                    alliedSpec);
+            }
+
+            return result;
         }
 
         private bool TryGetCurrentSource(out RaiseSource source)
         {
             source = null;
 
-            if (_enemySpawn == null || _inputHook == null || _commandFactory == null ||
-                _raisedEventIdProvider == null || _assignedEventIdProvider == null)
+            if (_enemySpawn == null ||
+                _inputHook == null ||
+                _commandFactory == null ||
+                _raisedEventIdProvider == null ||
+                _assignedEventIdProvider == null)
                 return false;
 
             var target = _enemySpawn.CurrentTarget;
-            return target != null && target.TryGetAvailableRaiseSource(out source);
+            return target != null &&
+                target.TryGetAvailableRaiseSource(out source);
         }
 
         private void EnsureInitialized()
         {
-            if (_enemySpawn == null || _inputHook == null || _commandFactory == null ||
-                _raisedEventIdProvider == null || _assignedEventIdProvider == null)
-                throw new InvalidOperationException("Raise action controller is not initialized.");
+            if (_enemySpawn == null ||
+                _inputHook == null ||
+                _commandFactory == null ||
+                _raisedEventIdProvider == null ||
+                _assignedEventIdProvider == null)
+            {
+                throw new InvalidOperationException(
+                    "Raise action controller is not initialized.");
+            }
         }
     }
 }
