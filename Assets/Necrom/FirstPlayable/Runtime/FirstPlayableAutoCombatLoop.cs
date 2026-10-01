@@ -11,6 +11,7 @@ namespace Necrom.FirstPlayable.Runtime
         private FirstPlayableBattleRuntimeController _battle;
         private NecromancerRuntimeEntity _necromancer;
         private FirstPlayableTargetingController _targeting;
+        private FirstPlayableDamageDeathPipeline _damageDeathPipeline;
         private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
         private Func<string> _resolveCommandIdProvider;
         private double _elapsedMilliseconds;
@@ -24,12 +25,15 @@ namespace Necrom.FirstPlayable.Runtime
             FirstPlayableBattleRuntimeController battle,
             NecromancerRuntimeEntity necromancer,
             FirstPlayableTargetingController targeting,
+            FirstPlayableDamageDeathPipeline damageDeathPipeline,
             Func<DomainEntityId, DomainEntityId> raiseSourceIdForEnemy,
             Func<string> resolveCommandIdProvider)
         {
             _battle = battle ?? throw new ArgumentNullException(nameof(battle));
             _necromancer = necromancer ?? throw new ArgumentNullException(nameof(necromancer));
             _targeting = targeting ?? throw new ArgumentNullException(nameof(targeting));
+            _damageDeathPipeline = damageDeathPipeline
+                ?? throw new ArgumentNullException(nameof(damageDeathPipeline));
             _raiseSourceIdForEnemy = raiseSourceIdForEnemy
                 ?? throw new ArgumentNullException(nameof(raiseSourceIdForEnemy));
             _resolveCommandIdProvider = resolveCommandIdProvider
@@ -106,9 +110,12 @@ namespace Necrom.FirstPlayable.Runtime
 
                 var raiseSourceId = GetStableRaiseSourceId(target.Model.Id);
                 _elapsedMilliseconds = Math.Max(0d, _elapsedMilliseconds - interval);
-                target.ApplyDamage(intent.Damage, raiseSourceId);
+                var damageResult = _damageDeathPipeline.Apply(
+                    target,
+                    intent.Damage,
+                    raiseSourceId);
 
-                if (target.Model.LifeState != CombatantLifeState.Defeated)
+                if (!damageResult.BecameDefeated)
                     continue;
 
                 var command = new ResolveBattleCommand(
@@ -145,6 +152,7 @@ namespace Necrom.FirstPlayable.Runtime
                 _battle == null ||
                 _necromancer == null ||
                 _targeting == null ||
+                _damageDeathPipeline == null ||
                 _raiseSourceIdForEnemy == null ||
                 _resolveCommandIdProvider == null)
             {

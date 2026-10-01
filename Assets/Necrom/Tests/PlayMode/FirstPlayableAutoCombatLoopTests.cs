@@ -12,6 +12,8 @@ namespace Necrom.FirstPlayable.Tests
     {
         private static int _raiseProviderCalls;
         private static int _commandProviderCalls;
+        private static int _damageEventProviderCalls;
+        private static int _defeatEventProviderCalls;
 
         [UnityTest]
         public IEnumerator MissingAttachedBehaviorRejectsBeforeMutation()
@@ -52,6 +54,8 @@ namespace Necrom.FirstPlayable.Tests
 
             Assert.That(ReadInt(f.EnemyModel, "Health"), Is.EqualTo(15));
             Assert.That(ReadString(f.BattleRuntime, "Phase"), Is.EqualTo("Running"));
+            Assert.That(_damageEventProviderCalls, Is.EqualTo(1));
+            Assert.That(_defeatEventProviderCalls, Is.EqualTo(0));
             DestroyFixture(f);
             yield return null;
         }
@@ -117,6 +121,8 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(ReadInt(f.EnemyModel, "Health"), Is.EqualTo(0));
             Assert.That(ReadProperty(f.EnemyRuntime, "RaiseSource"), Is.SameAs(raiseBefore));
             Assert.That(ReadString(f.BattleRuntime, "Phase"), Is.EqualTo("Running"));
+            Assert.That(_damageEventProviderCalls, Is.EqualTo(0));
+            Assert.That(_defeatEventProviderCalls, Is.EqualTo(0));
             DestroyFixture(f);
             yield return null;
         }
@@ -133,6 +139,8 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(ReadString(f.BattleRuntime, "Phase"), Is.EqualTo("Victory"));
             Assert.That(_raiseProviderCalls, Is.EqualTo(1));
             Assert.That(_commandProviderCalls, Is.EqualTo(1));
+            Assert.That(_damageEventProviderCalls, Is.EqualTo(1));
+            Assert.That(_defeatEventProviderCalls, Is.EqualTo(1));
             DestroyFixture(f);
             yield return null;
         }
@@ -150,6 +158,8 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(ReadProperty(f.EnemyRuntime, "RaiseSource"), Is.SameAs(raiseSource));
             Assert.That(_raiseProviderCalls, Is.EqualTo(1));
             Assert.That(_commandProviderCalls, Is.EqualTo(1));
+            Assert.That(_damageEventProviderCalls, Is.EqualTo(1));
+            Assert.That(_defeatEventProviderCalls, Is.EqualTo(1));
             Assert.That(ReadString(f.BattleRuntime, "Phase"), Is.EqualTo("Victory"));
             DestroyFixture(f);
             yield return null;
@@ -182,6 +192,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             _raiseProviderCalls = 0;
             _commandProviderCalls = 0;
+            _damageEventProviderCalls = 0;
+            _defeatEventProviderCalls = 0;
             var loopType = FindType("Necrom.FirstPlayable.Runtime.FirstPlayableAutoCombatLoop");
             Assert.That(loopType, Is.Not.Null, "FirstPlayableAutoCombatLoop must exist.");
             var root = new GameObject("AutoCombatRoot", typeof(RectTransform));
@@ -262,6 +274,13 @@ namespace Necrom.FirstPlayable.Tests
                 (object)enemyController
             });
 
+            var pipelineType = FindType("Necrom.FirstPlayable.Runtime.FirstPlayableDamageDeathPipeline");
+            Assert.That(pipelineType, Is.Not.Null);
+            var damageDeathPipeline = Activator.CreateInstance(
+                pipelineType,
+                (Func<string>)ProvideDamageEventId,
+                (Func<string>)ProvideDefeatEventId);
+
             var loop = root.AddComponent(loopType);
             var initialize = loopType.GetMethod("Initialize");
             Assert.That(initialize, Is.Not.Null);
@@ -278,6 +297,7 @@ namespace Necrom.FirstPlayable.Tests
                 battleRuntime,
                 playerRuntime,
                 targeting,
+                damageDeathPipeline,
                 raiseProvider,
                 commandProvider
             });
@@ -317,6 +337,18 @@ namespace Necrom.FirstPlayable.Tests
         {
             _commandProviderCalls++;
             return "resolve:auto:" + _commandProviderCalls;
+        }
+
+        private static string ProvideDamageEventId()
+        {
+            _damageEventProviderCalls++;
+            return "damage:auto:" + _damageEventProviderCalls;
+        }
+
+        private static string ProvideDefeatEventId()
+        {
+            _defeatEventProviderCalls++;
+            return "defeat:auto:" + _defeatEventProviderCalls;
         }
 
         private static object NewCombatant(string entityId, string archetype, string factionName, int health)
