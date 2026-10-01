@@ -103,6 +103,40 @@ namespace Necrom.FirstPlayable.Runtime
             return _slots[slot];
         }
 
+        public void EnsureRestartInvariant()
+        {
+            EnsureInitialized();
+
+            var seenRuntimeUnits = new System.Collections.Generic.HashSet<DomainEntityId>();
+            for (var slot = 0; slot < Formation.Capacity; slot++)
+            {
+                var formationUnit = _formation.GetSlot(slot);
+                var runtimeUnit = _slots[slot];
+
+                if (!formationUnit.HasValue)
+                {
+                    if (runtimeUnit != null)
+                        throw new InvalidOperationException(
+                            "Runtime ally exists without matching Formation ownership.");
+                    continue;
+                }
+
+                if (runtimeUnit == null ||
+                    runtimeUnit.Model == null ||
+                    runtimeUnit.Slot != slot ||
+                    runtimeUnit.Model.Faction != Faction.Player ||
+                    !runtimeUnit.Model.Id.Equals(formationUnit.Value))
+                {
+                    throw new InvalidOperationException(
+                        "Runtime allied roster does not match Formation ownership.");
+                }
+
+                if (!seenRuntimeUnits.Add(runtimeUnit.Model.Id))
+                    throw new InvalidOperationException(
+                        "Runtime allied roster contains a duplicate unit.");
+            }
+        }
+
         private void EnsureRuntimeSlotAvailable(
             int slot,
             DomainEntityId unitId)

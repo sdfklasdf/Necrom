@@ -12,6 +12,7 @@ namespace Necrom.FirstPlayable.Runtime
         private EncounterLayoutConfig _config;
         private NecromancerAnchorController _necromancer;
         private EnemySpawnController _enemies;
+        private FirstPlayableAlliedRosterController _alliedRoster;
 
         public BattlePhase Phase
         {
@@ -43,6 +44,19 @@ namespace Necrom.FirstPlayable.Runtime
             _config = config ?? throw new ArgumentNullException(nameof(config));
             _necromancer = necromancer ?? throw new ArgumentNullException(nameof(necromancer));
             _enemies = enemies ?? throw new ArgumentNullException(nameof(enemies));
+        }
+
+        public void ConfigureAlliedRestartInvariant(
+            FirstPlayableAlliedRosterController alliedRoster)
+        {
+            EnsureInitialized();
+            if (alliedRoster == null)
+                throw new ArgumentNullException(nameof(alliedRoster));
+            if (_alliedRoster != null)
+                throw new InvalidOperationException(
+                    "Allied restart invariant is already configured.");
+
+            _alliedRoster = alliedRoster;
         }
 
         public CommandResult StartBattle(StartBattleCommand command)
@@ -86,8 +100,11 @@ namespace Necrom.FirstPlayable.Runtime
             EnsureInitialized();
             if (command == null) throw new ArgumentNullException(nameof(command));
 
+            _alliedRoster?.EnsureRestartInvariant();
             _boundary.RestartBoundary(_config);
-            return _application.Execute(command);
+            var result = _application.Execute(command);
+            _alliedRoster?.EnsureRestartInvariant();
+            return result;
         }
 
         private void EnsureInitialized()
