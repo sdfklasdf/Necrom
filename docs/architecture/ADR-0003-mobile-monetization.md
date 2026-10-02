@@ -1,4 +1,4 @@
-# ADR-0002 — Mobile monetization and payment routing
+# ADR-0003 — Mobile monetization and payment routing
 
 Status: APPROVED_BY_FOUNDER
 Date: 2026-10-03

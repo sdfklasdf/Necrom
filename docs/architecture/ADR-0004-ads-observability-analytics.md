@@ -1,4 +1,4 @@
-# ADR-0003 — Ads, crash observability and product analytics
+# ADR-0004 — Ads, crash observability and product analytics
 
 Status: APPROVED_BY_FOUNDER
 Date: 2026-10-03

@@ -2,7 +2,7 @@
 
 Status: DESIGN_CONTRACT
 Lifecycle: 06-05
-Baseline: ADR-0001 / ADR-0002 / ADR-0003
+Baseline: ADR-0001 / ADR-0003 / ADR-0004
 
 ## Trust zones
 

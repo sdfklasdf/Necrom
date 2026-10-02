@@ -12,7 +12,7 @@ No secret/token/password material is stored here.
 | Design | Figma canonical file `eXqKU1qHXsn52SJfIGltZo` | Founder | separate project evidence governs current access state | SELECTED_CANON / ACCOUNT_STATE_SEPARATE |
 | Engine/editor | Unity 6.3 LTS family + C# approved architecture | Founder | separate project evidence governs installed editor/toolchain state | SELECTED |
 | Backend/auth/database | none selected for Necrom | Founder | no provider selected | UNSELECTED / NOT IMPLEMENTED |
-| Mobile IAP integration | RevenueCat | Founder | provider selected by ADR-0002; no account/project readback performed by this update | SELECTED / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Mobile IAP integration | RevenueCat | Founder | provider selected by ADR-0003; no account/project readback performed by this update | SELECTED / ACCOUNT_NOT_ESTABLISHED_HERE |
 | iOS billing/distribution | Apple IAP / StoreKit + App Store Connect | Founder | purchase rail selected; store account/products/signing not read back by this update | SELECTED_RAIL / ACCOUNT_NOT_ESTABLISHED_HERE |
 | Android billing/distribution | Google Play Billing + Google Play | Founder | purchase rail selected; store account/products/signing not read back by this update | SELECTED_RAIL / ACCOUNT_NOT_ESTABLISHED_HERE |
 | Web PG | Toss Payments | Founder | preferred web PG selected; no web checkout/account readback performed by this update | SELECTED_PREFERRED / INTEGRATION_DEFERRED |
