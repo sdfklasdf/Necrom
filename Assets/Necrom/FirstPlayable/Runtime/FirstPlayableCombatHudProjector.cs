@@ -5,6 +5,7 @@ using Necrom.Core.Domain;
 namespace Necrom.FirstPlayable.Runtime
 {
     public sealed class FirstPlayableCombatHudProjector
+        : IFirstPlayableCombatHudStateSource
     {
         private readonly FirstPlayableBattleRuntimeController _battle;
         private readonly EnemySpawnController _enemies;
