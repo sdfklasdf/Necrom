@@ -1,30 +1,41 @@
 # Technology Account Inventory — Lifecycle 00-10 Revalidation
 
-Checkpoint target: CP-NECRO-117
-Date: 2026-09-30
-Status: PARTIAL — verified services are separated from unverified/unselected services.
+Checkpoint target: next project checkpoint after CP-NECRO-164
+Date: 2026-10-03
+Status: PARTIAL — provider selection is separated from actual account/access evidence.
 No secret/token/password material is stored here.
 
 | Capability | Project identifier / scope | Owner | Actual access evidence | Status |
 |---|---|---|---|---|
-| Source control | GitHub `sdfklasdf/Necrom`, branch `main` | Founder | connector branch read succeeded at `6f00e7d6f1c0cfc3a45197427ab48789f46e8c77`; prior and current project writes evidenced | VERIFIED_READ_WRITE |
-| Canon / project board | Google Drive spreadsheet `1zLhQQ3pTgjLAkuNMSDNLQtFYu2hS3Nsz5O5O2kPGYnw` | Founder | metadata/cell reads and project-board writes/readbacks succeed | VERIFIED_READ_WRITE |
-| Design | Figma canonical file `eXqKU1qHXsn52SJfIGltZo` | Founder / Design | current MCP request returned Starter-plan MCP call-limit paywall; CP-109 remains prior evidence only | ACCESS_BLOCKED_RATE_LIMIT / NOT_FRESH_READ |
-| Engine/editor | Unity 6.3 LTS family + C# approved architecture | Founder / Engineering | no connected Unity account/editor/toolchain readback available in current environment | UNVERIFIED; exact patch UNSET |
-| Backend/auth/database | none selected for Necrom | Founder approval required | no provider selected; no project/account readback applicable | UNSELECTED |
-| Analytics/crash | none selected for Necrom | Founder approval required | no provider/project evidence | UNSELECTED / UNVERIFIED |
-| Android distribution | Google Play / signing | Founder | no project-specific account/console/signing evidence read | UNVERIFIED / NOT RUN |
-| iOS distribution | Apple Developer/App Store Connect/signing | Founder | no project-specific account/console/signing evidence read | UNVERIFIED / NOT RUN |
-| Search/push/CDN/media | not required for current first playable | Founder approval if introduced | no provider selected | NOT REQUIRED CURRENT FP / UNSELECTED |
+| Source control | GitHub `sdfklasdf/Necrom`, branch `main` | Founder | connected GitHub read/write evidenced in project history | VERIFIED_READ_WRITE |
+| Canon / project board | Google Drive spreadsheet `1zLhQQ3pTgjLAkuNMSDNLQtFYu2hS3Nsz5O5O2kPGYnw` | Founder | metadata/cell reads and project-board writes/readbacks evidenced | VERIFIED_READ_WRITE |
+| Design | Figma canonical file `eXqKU1qHXsn52SJfIGltZo` | Founder | separate project evidence governs current access state | SELECTED_CANON / ACCOUNT_STATE_SEPARATE |
+| Engine/editor | Unity 6.3 LTS family + C# approved architecture | Founder | separate project evidence governs installed editor/toolchain state | SELECTED |
+| Backend/auth/database | none selected for Necrom | Founder | no provider selected | UNSELECTED / NOT IMPLEMENTED |
+| Mobile IAP integration | RevenueCat | Founder | provider selected by ADR-0002; no account/project readback performed by this update | SELECTED / ACCOUNT_NOT_ESTABLISHED_HERE |
+| iOS billing/distribution | Apple IAP / StoreKit + App Store Connect | Founder | purchase rail selected; store account/products/signing not read back by this update | SELECTED_RAIL / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Android billing/distribution | Google Play Billing + Google Play | Founder | purchase rail selected; store account/products/signing not read back by this update | SELECTED_RAIL / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Web PG | Toss Payments | Founder | preferred web PG selected; no web checkout/account readback performed by this update | SELECTED_PREFERRED / INTEGRATION_DEFERRED |
+| Mobile advertising | Google AdMob | Founder | required provider selected; no account/app/ad-unit readback performed by this update | SELECTED_REQUIRED / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Technical error/crash | Sentry | Founder | required provider selected; no project/DSN/runtime-ingestion readback performed by this update | SELECTED_REQUIRED / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Product analytics | PostHog | Founder | required provider selected; no project/key/event-ingestion readback performed by this update | SELECTED_REQUIRED / ACCOUNT_NOT_ESTABLISHED_HERE |
+| Mixpanel | not selected | Founder | no project usage intended while PostHog is analytics source of truth | NOT_SELECTED |
+| Search/push/CDN/media | not required for current first playable / unselected | Founder | no provider selected | NOT_REQUIRED_CURRENT_FP / UNSELECTED |
+
+## Single-person operating context
+The Founder currently performs executive, development and operational responsibilities for this project. Lifecycle role labels remain responsibility categories; they are not instructions to hand work to a separate person.
 
 ## 00-10 decision
-Lifecycle 00-10 remains PARTIAL. Its completion condition requires owner and access level for the actually available technology accounts. GitHub and Drive satisfy that requirement for their scopes; Figma fresh access is blocked; Unity/editor and distribution accounts are not evidenced; backend and analytics are not selected.
+Lifecycle 00-10 remains PARTIAL. Provider selection does not prove account ownership, access, key storage, test/staging/production separation, store products or runtime integration.
 
 ## Downstream revalidation
-- 06-15 remains PARTIAL: logical environment contract exists, but actual dev/test/staging/production service-account separation is not established.
-- 06-16 remains PARTIAL: ownership rules exist, but actual key stores/rotation and unverified vendor accounts are absent.
-- 06-17 remains PARTIAL: design plan exists, but no real persistence/backend migration, backup, restore, or rollback rehearsal exists.
-- 06-18 is NOT READY: 06-15~17 are not fully evidenced and no backend/provider usage model is selected. Existing quoted prices elsewhere are not equivalent to a project-specific infrastructure cost ceiling.
+- 06-15 remains PARTIAL until actual environment separation for selected vendors is established and read back.
+- 06-16 remains PARTIAL until actual vendor accounts, privileged secret storage and rotation/revocation paths are evidenced.
+- 06-18 remains NOT READY for measured project cost ceilings until real pricing/usage assumptions are grounded.
+- 08 analytics design can now use PostHog as its selected implementation target but event transmission remains NOT RUN.
+- 10-23 third-party SDK transmission verification becomes APPLICABLE once the SDKs are actually in a build.
+- 11 payment/integration track becomes APPLICABLE for the approved monetization scope; account/sandbox evidence remains pending.
+- 13-09 technical crash/log collection has Sentry as the selected implementation target but ingestion remains NOT RUN.
 
 ## DEC-037 Figma quality impact
-PASS. This inventory fixes no visual value, asset, token, codeSyntax, component geometry, motion, focus behavior, or accessibility shortcut. Figma remains canonical for later visual implementation.
+PASS. Vendor choices do not fix visual values, assets, tokens, component geometry, motion, focus behavior or accessibility shortcuts.
