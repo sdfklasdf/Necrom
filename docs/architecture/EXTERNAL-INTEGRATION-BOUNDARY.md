@@ -1,35 +1,25 @@
-# External Integration Boundary — Lifecycle 06-13
+# External Integration Boundary
 
-Status: DESIGN CONTRACT / applicability review.
+Status: CURRENT APPLICABILITY SUMMARY
 
-Current approved first playable has no required search service, remote media service, or notification service. Backend/provider remains UNSELECTED.
+Current Q2 First Playable does not require external search, push notifications, remote media, payment, ads, crash telemetry or product analytics to complete its core gameplay loop.
 
-## Search
-External search: NOT APPLICABLE to current first playable.
-If future content search is approved: adapter boundary, bounded timeout, explicit unavailable state, no gameplay truth stored in search index.
+Q4:
+- Supabase is selected for backend/Auth/cloud-save/trusted integration foundation.
 
-## Media
-Remote media delivery: NOT REQUIRED for current first playable. Production assets are NOT CLEARED and no CDN/provider is selected.
-If introduced: media failure falls back to semantic placeholder/state; asset delivery cannot mutate gameplay truth.
+Q5:
+- RevenueCat + Apple/Google store billing.
+- AdMob.
+- Sentry.
+- PostHog.
 
-## Notifications
-Push notifications: NOT APPLICABLE to current first playable.
-If later approved: notification is advisory only; opening a notification re-reads authoritative state. Delivery retry cannot duplicate rewards or state transitions.
+Search, push, CDN/media and other providers remain unselected until a real product requirement appears.
 
-## Shared external-service rules
-- no secrets in client.
-- timeout/retry policy belongs to adapter/config, not presentation.
-- mutation retries follow 06-12 idempotency.
-- external outage degrades the integration, not canonical gameplay ownership.
-- provider SDK types cannot enter Domain.
+Shared rules:
+- no privileged secrets in client.
+- provider objects do not enter gameplay Domain.
+- outages degrade the integration rather than silently changing gameplay truth.
+- duplicate-value mutations use idempotent/trusted handling when implemented.
 
-## Failure counterexamples
-- search unavailable: core combat/raise continues; no fake empty canonical result.
-- media unavailable: gameplay state remains usable; presentation exposes missing-media semantics.
-- duplicate notification: opening twice cannot duplicate domain mutation.
-
-## Figma quality impact
-PASS: failure/loading/empty semantics are preserved for later high-fidelity Figma treatment; no provisional visual styling is canonized.
-
-## Evidence boundary
-No external search/media/push provider, endpoint, credential, timeout measurement, or runtime fallback has been implemented or tested.
+Evidence boundary:
+Provider selection is not runtime integration. Q4/Q5 integrations are NOT RUN.

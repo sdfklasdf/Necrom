@@ -1,62 +1,41 @@
-# ADR-0003 — Mobile monetization and payment routing
+# ADR-0003 — Mobile monetization
 
-Status: APPROVED_BY_FOUNDER
+Status: SELECTED_FOR_Q5 / NOT IMPLEMENTED
 Date: 2026-10-03
-Scope: Necromancer mobile game monetization architecture
+Mode: QUALITY_GAME
 
 ## Decision
-Keep global launch capability open.
+Global mobile launch remains the baseline.
 
-For mobile digital purchases:
-- Unity remains the game client.
-- RevenueCat is the selected purchase/entitlement integration layer.
-- iOS purchase rail is Apple In-App Purchase / StoreKit.
-- Android purchase rail is Google Play Billing.
-- Store-specific purchase/receipt objects stay behind a purchase adapter and MUST NOT become gameplay-domain truth.
+Mobile digital purchases:
+- RevenueCat is the selected purchase/entitlement integration layer for Q5 Monetization & Telemetry.
+- iOS uses Apple In-App Purchase / StoreKit.
+- Android uses Google Play Billing.
+- Unity consumes provider-neutral purchase/entitlement outcomes through an adapter.
 
-For web checkout:
-- Toss Payments is the selected preferred web PG.
-- Web checkout implementation remains DEFERRED until a web checkout surface is separately approved.
+Toss Payments and Korea-specific alternative billing are OUT OF CURRENT SCOPE.
+They are not part of the initial mobile launch architecture. A future web-commerce or regional-billing project may evaluate them through a separate decision.
 
-For Korea-specific mobile alternative billing:
-- Toss-based external/alternative mobile billing is DEFERRED_OPTIMIZATION.
-- It is not part of the baseline global mobile purchase path.
-- It requires a separate future decision gate before implementation.
+## Sequencing
+Do not integrate mobile payments during the current Q2 First Playable.
+Q4 Backend / Online Foundation comes first so trusted webhook, entitlement reconciliation, ledger/idempotency and cloud authority have an actual home.
+Q5 then installs and verifies RevenueCat/store integrations.
 
 ## Domain boundary
-Gameplay may consume provider-neutral outcomes only, such as:
-- purchase requested,
-- purchase succeeded,
-- purchase failed,
-- purchase restored,
-- entitlement active,
-- entitlement revoked.
-
-No Apple receipt type, Google billing object, RevenueCat SDK object, Toss SDK object, store transaction object, or vendor webhook payload may become Battle/Raise/Soul/Formation/domain truth.
-
-## Trusted-side boundary
-Privileged receipt validation, webhook verification, entitlement reconciliation, refund/revocation reconciliation, secret material and canonical remote grant/revoke decisions belong on trusted services when those services are implemented.
-
-The current project has not selected a backend provider. This ADR selects monetization vendors and boundaries only; it does not prove backend/account/webhook implementation.
-
-## Idempotency and money safety
-Purchase grant, purchase replay, restore, refund/revocation reconciliation and provider webhook effects require idempotent handling before production activation. Unknown transport outcome must never be converted into a second grant by issuing a fresh effect identity blindly.
+Apple receipts, Google billing objects, RevenueCat SDK objects and webhook payloads MUST NOT become Battle/Raise/Soul/Formation domain models.
 
 ## Evidence boundary
 SELECTED:
-- RevenueCat for mobile purchase/entitlement integration.
-- Apple IAP / StoreKit for iOS store billing.
-- Google Play Billing for Android store billing.
-- Toss Payments as preferred web PG.
+- RevenueCat for Q5.
+- Apple IAP / StoreKit as iOS purchase rail.
+- Google Play Billing as Android purchase rail.
 
 NOT IMPLEMENTED / NOT RUN:
-- RevenueCat project/account integration.
-- Apple/Google production store products.
-- Toss web checkout.
-- payment backend/webhook/ledger.
-- sandbox purchase/restore/refund tests.
-- Korea-specific Toss mobile alternative billing.
-- production monetary reconciliation.
+- RevenueCat account/project.
+- store products.
+- Unity RevenueCat SDK.
+- Q4 trusted payment webhook/ledger.
+- sandbox purchase/restore/refund/revocation.
+- production transactions.
 
-## Rollback / replacement
-Vendor adapters must remain replaceable. A future Founder-approved ADR may supersede RevenueCat or Toss without changing gameplay-domain contracts. Only direct vendor consumers become stale.
+Vendor selection is not release readiness.

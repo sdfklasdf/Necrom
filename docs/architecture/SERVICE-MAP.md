@@ -1,28 +1,29 @@
 # Service Responsibility Map
 
-Status: DESIGN_CONTRACT
-Lifecycle: 06-06
+Status: CURRENT DESIGN CONTRACT
 
 Dependency direction:
 Presentation/Input -> Application Use Cases -> Domain Services -> Ports -> Adapters.
-Domain code does not depend on Unity UI, Figma, backend vendors, analytics SDKs or persistence implementations.
 
-| Service | Single responsibility | Owns state changes | External dependency |
-|---|---|---|---|
-| Combat | Resolve combat session rules/results | Combat | none directly |
-| Raise | Validate and execute raise eligibility/result | RaiseSource, Undead acquisition | persistence/event ports only through application layer |
-| Army | Formation and owned-undead progression rules | Undead, Formation | persistence port |
-| Progression | Region/stage/boss progression | Region/Stage, Boss, Progression | persistence port |
-| Persistence application service | Coordinate save/load/version/recovery | Save snapshot lifecycle | IGameStateStore |
-| Identity application service | Resolve current player context | no gameplay state | IPlayerIdentity |
-| Event application service | Emit versioned domain/application events | no gameplay truth | IGameEventSink |
-| Operations recovery | Controlled recovery workflow only | only explicitly recoverable state | audit/ops adapter when implemented |
+Domain code does not depend on Unity UI, Figma, Supabase, RevenueCat, AdMob, Sentry, PostHog or persistence implementations.
 
-## No duplicate truth
-Presentation mirrors state but is not authoritative. Analytics mirrors events but is not authoritative. Persistence serializes authoritative domain state but does not invent gameplay transitions. Future server adapters enforce remote trust/authorization without duplicating gameplay rules unless an explicit server-authoritative migration is approved.
+Core responsibilities:
+- Combat: combat rules/results.
+- Raise: raise eligibility/result.
+- Army: owned-undead and formation rules.
+- Progression: region/stage/boss progression.
+- Persistence application service: save/load/recovery coordination.
+- Identity application service: player context through a port.
+- Event application service: versioned events through a port.
 
-## Figma isolation
-Visual components/tokens may change after Figma resumes without changing domain service contracts. UI view models may adapt, but design values never become domain/service constants.
+Q4 adapter target:
+Supabase may implement identity, remote persistence, trusted functions and reconciliation ports. It does not become the domain model.
 
-## Current non-claims
-No service above is proven implemented or runnable by this document. No live ops staff, backend provider or server runtime is established.
+Q5 adapter targets:
+RevenueCat, AdMob, Sentry and PostHog remain integration adapters.
+
+No duplicate truth:
+Presentation and analytics are mirrors, not authority. Remote persistence records canonical remote state only after Q4 authority rules are actually implemented.
+
+Evidence boundary:
+Core gameplay has separate runtime evidence. Supabase/Q5 provider services are selected but NOT IMPLEMENTED.

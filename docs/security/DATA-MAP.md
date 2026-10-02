@@ -1,30 +1,47 @@
-# Data Map — Lifecycle 07-01
+# Data Map — Current + Future Lanes
 
-Status: DESIGN_CONTRACT
-Baseline: CP-NECRO-117 / 03-08 / 03-15 / 06-05 / 06-07
+Status: CURRENT Q2 MAP / REFRESH_BEFORE_Q4-Q5
 
-## Current first-playable flow
+## Current Q2 First Playable
+Current gameplay data is local/runtime:
+- local player key / local ownership context,
+- progression and stage state,
+- combat and RaiseSource state,
+- owned undead / formation,
+- local save snapshot where implemented.
 
-| Data class | Collection / creation | Current processing | Current storage | Readers | Deletion / end-of-life | Evidence boundary |
-|---|---|---|---|---|---|---|
-| Local player identity key | created locally for first playable | ownership key for local state | local persistence adapter, implementation not yet established | gameplay application services | reset/delete semantics TBD | no account/session server exists |
-| Progression / region state | gameplay outcomes | Progression service | local persistence target | UI, combat setup, persistence/events | reset/recovery TBD | no cloud canonical store |
-| Enemy / combat state | runtime gameplay | Combat service | combat session; persistence only if explicitly snapshotted later | combat UI/events | encounter resolution | runtime implementation NOT ESTABLISHED |
-| RaiseSource | enemy defeat | Raise service | domain state / optional save snapshot | raise UI | consumed/expired; expiry TBD | design state only |
-| Owned undead / formation | raise + army commands | Army/Raise services | local persistence target | UI/combat/persistence | removal TBD | no remote ownership store |
-| Save snapshot | persistence request | persistence application service | provider-neutral local adapter target | recovery/load | reset/recovery TBD | actual serializer/store NOT IMPLEMENTED |
-| Analytics candidate events | domain emits through event seam | provider-neutral event sink | no analytics provider selected | none in production | retention TBD | UNSELECTED / NOT RUN |
-| Account/session | not collected now | future trusted identity service only | future trusted service | client identity adapter | policy TBD | NOT IMPLEMENTED |
-| Cloud save/profile | not collected now | future trusted persistence only | future provider | client sync adapter | policy TBD | NOT IMPLEMENTED |
-| Payment/entitlement | not in current free-validation MVP | future trusted service only | future provider | entitlement adapter | policy TBD | NOT IMPLEMENTED |
+No Supabase cloud authority, account/session server, payment, ads or production telemetry is active in Q2.
 
-## Collection-to-deletion continuity
-For current MVP scope, gameplay data begins at local gameplay creation, flows through explicit domain services, and terminates in session resolution or the provider-neutral persistence boundary. Destructive reset/delete/recovery is intentionally unresolved upstream and is therefore not invented here.
+## Selected future lanes
+Q4 Supabase:
+- account/session identity,
+- cloud save/profile/progression,
+- trusted mutation/reconciliation records.
+Exact fields, retention and deletion policy are defined when Q4 is implemented.
 
-Future account, cloud, analytics and payment data are conditional lanes, not current collection. They require a new provider decision, privacy/legal revalidation and explicit deletion/retention rules before activation.
+Q5 PostHog:
+- selected analytics provider.
+- exact event/property/PII schema is defined before SDK activation.
+- no production event transmission exists now.
 
-## Trust and ownership
-Presentation does not own or mutate canonical gameplay truth. Future remote authority follows SYSTEM-BOUNDARY and TRUST-MODEL. Provider SDK objects cannot become domain entities.
+Q5 Sentry:
+- selected crash/error provider.
+- exact breadcrumbs/tags/user identifiers are minimized and reviewed before activation.
 
-## DEC-037 Figma quality impact
-PASS. This map introduces no visual value, token, asset, component geometry, motion or accessibility shortcut. UI remains a replaceable reader of domain/application state.
+Q5 RevenueCat / Apple / Google:
+- selected mobile purchase/entitlement path.
+- exact transaction/entitlement data flow is mapped before sandbox integration.
+
+Q5 AdMob:
+- selected ads provider.
+- consent/advertising identifiers and rewarded-ad verification flow are mapped before public use.
+
+Toss Payments:
+- OUT OF CURRENT SCOPE.
+
+## Refresh rule
+This map is not STALE merely because providers were selected.
+Refresh it immediately before Q4/Q5 implementation when actual fields, endpoints, regions, retention and consent behavior can be grounded.
+
+## Evidence boundary
+No Q4/Q5 external data transmission is claimed. Actual privacy/legal review remains NOT RUN until the relevant implementation/release window.

@@ -1,62 +1,44 @@
 # ADR-0004 — Ads, crash observability and product analytics
 
-Status: APPROVED_BY_FOUNDER
+Status: SELECTED_FOR_Q5 / NOT IMPLEMENTED
 Date: 2026-10-03
-Scope: Necromancer mobile game vendor architecture
+Mode: QUALITY_GAME
 
 ## Decision
-The following providers are required for the commercial/public mobile product:
+The following providers are selected for Q5 Monetization & Telemetry:
+- Google AdMob — mobile ads.
+- Sentry — technical error/crash source of truth.
+- PostHog — product analytics source of truth.
 
-- Google AdMob = REQUIRED mobile advertising provider.
-- Sentry = REQUIRED technical error/crash observability provider.
-- PostHog = REQUIRED product analytics provider.
+Mixpanel is not selected.
 
-Mixpanel is not selected. PostHog is the single product-analytics source of truth unless a later ADR supersedes it.
+## Separation
+AdMob owns ad delivery only. Placement, frequency and reward value remain game-economy decisions.
+Sentry owns crash/exception/release-linked technical reliability evidence.
+PostHog owns gameplay/product events, funnels, retention, cohorts and experiments.
 
-## Separation of responsibilities
-### Google AdMob
-Owns advertising delivery/integration only.
-Ad placement, ad frequency, rewarded-ad economy value and final monetization balance remain separate product/economy decisions.
+Do not maintain two canonical crash systems. PostHog error features, if enabled later, are secondary to Sentry.
 
-### Sentry
-Is the source of truth for technical errors, crashes, stack traces, release/build-linked reliability evidence and diagnostic breadcrumbs.
+## Sequencing
+These SDKs are not Q2 First Playable blockers.
+Install them in Q5 after Q4 backend/online foundation is selected and minimally operational.
+Before public release, verify test/production separation and actual runtime ingestion/transmission.
 
-### PostHog
-Is the source of truth for product analytics such as gameplay events, funnels, retention, cohorts, feature flags and experiments when those capabilities are actually implemented.
-
-PostHog error-tracking capability, if available, MUST NOT become a second canonical error source while Sentry is the project error source of truth.
-
-## Gameplay/domain boundary
-AdMob, Sentry and PostHog SDK objects MUST NOT become gameplay-domain truth.
-
-Analytics failure, crash-reporting failure or ad-provider failure must not mutate Battle/Raise/Soul/Formation truth except through an explicitly designed provider-neutral gameplay rule.
-
-A rewarded-ad callback that grants an in-game reward is a money/economy-adjacent mutation and requires exactly-once/idempotent reward application.
-
-## Analytics boundary
-Existing event candidates remain design inputs, not proof of telemetry.
-
-Event names, properties, identity rules, funnels and retention metrics must be finalized through the Lifecycle analytics steps before production measurement claims.
-
-No synthetic event count, retention, eCPM, crash rate or monetization metric may be presented as measured production evidence.
-
-## Privacy and third-party SDK boundary
-Before production release, vendor data flows must be reconciled with the project data map, notice/consent/retention rules and actual build/network evidence where required by Lifecycle.
-
-Client-safe configuration may ship in the client where the provider model requires it. Privileged/admin secrets must not be stored in source, committed config or gameplay code.
+## Reward safety
+A rewarded-ad completion that changes gameplay value must pass through a provider-neutral exactly-once reward boundary. Q4 trusted backend may be used for server-side verification when the ad design requires it.
 
 ## Evidence boundary
-SELECTED / REQUIRED:
-- Google AdMob.
+SELECTED_FOR_Q5:
+- AdMob.
 - Sentry.
 - PostHog.
 
 NOT IMPLEMENTED / NOT RUN:
-- vendor accounts/projects readback.
-- Unity SDK/package installation.
-- production ad units.
-- production analytics event transmission.
+- vendor accounts/projects.
+- Unity packages.
+- ad units.
 - Sentry test exception/crash ingestion.
-- PostHog event ingestion/dashboard verification.
-- physical-device ad/crash/analytics validation.
-- measured eCPM, retention, conversion or crash-rate evidence.
+- PostHog event ingestion/dashboard.
+- rewarded-ad runtime/SSV.
+- physical-device validation.
+- measured eCPM, retention, conversion or crash rate.

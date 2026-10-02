@@ -1,70 +1,53 @@
-# System Boundary — Client / Server
+# System Boundary — Client / Trusted Backend
 
-Status: DESIGN_CONTRACT
-Lifecycle: 06-05
-Baseline: ADR-0001 / ADR-0003 / ADR-0004
+Status: CURRENT DESIGN CONTRACT
+Mode: QUALITY_GAME
+Baseline: ADR-0001 / ADR-0003 / ADR-0004 / ADR-0005
 
-## Trust zones
+## Unity client
+The Unity client may own:
+- presentation and input,
+- animation,
+- current local First Playable simulation,
+- local cache/offline data needed before Q4.
 
-### Unity client (untrusted for authority)
-May own presentation, input, animation, local first-playable simulation, cache and offline-first local persistence.
+The client is not trusted for:
+- privileged secrets,
+- canonical remote account authority,
+- payment/entitlement grants,
+- server-verified ad rewards,
+- privileged cloud progression writes,
+- webhook verification,
+- admin operations.
 
-The client MUST NOT be the production authority for:
-- secrets or privileged credentials,
-- authentication/session issuance,
-- authorization/RLS decisions,
-- cloud canonical progression writes,
-- payment/entitlement decisions,
-- privileged admin/ops mutation,
-- webhook signing/verification,
-- security-sensitive remote configuration.
+## Q4 trusted backend
+Supabase is SELECTED_FOR_Q4 but NOT IMPLEMENTED.
 
-Current first-playable local state is a development/product capability, not evidence that production online authority belongs on-device.
+Q4 is responsible for introducing the minimum trusted path needed for:
+- Auth/session,
+- cloud save and version/conflict metadata,
+- privileged progression/economy mutations when needed,
+- purchase webhook/entitlement reconciliation,
+- AdMob SSV when the selected reward design requires it,
+- audit/reconciliation records.
 
-### Server / trusted services (provider unselected)
-When online/account/cloud features are activated, the trusted side owns identity verification, authorization, canonical remote writes, conflict policy, privileged integrations, secret material, audit records and webhook verification.
+Exact schema, TTL and concurrency mechanisms are deferred until Q4 implementation.
 
-For monetization, the trusted side must ultimately own privileged receipt/webhook validation, entitlement reconciliation and authoritative remote grant/revoke decisions when those paths are implemented.
+## External providers
+Q5 selections:
+- RevenueCat + Apple IAP / Google Play Billing.
+- Google AdMob.
+- Sentry.
+- PostHog.
 
-No backend vendor is selected by this contract.
+Toss Payments is OUT OF CURRENT SCOPE.
 
-### External providers
-External providers remain behind adapters. Provider SDK objects MUST NOT become gameplay-domain truth.
+All provider SDKs remain behind adapters and cannot become gameplay-domain truth.
 
-Selected project roles:
-- RevenueCat: mobile purchase/entitlement integration layer over store billing.
-- Apple IAP / StoreKit: iOS store purchase rail.
-- Google Play Billing: Android store purchase rail.
-- Toss Payments: preferred web PG; web checkout is not yet implemented.
-- Google AdMob: required mobile advertising provider.
-- Sentry: required technical error/crash source of truth.
-- PostHog: required product-analytics source of truth.
+## Figma / presentation
+Final visual quality remains high, but Q2 playability is the current priority.
+Presentation must remain replaceable so Q3 Vertical Slice can perform final-quality Figma/runtime alignment without rewriting gameplay truth.
 
-Korea-specific Toss mobile alternative billing is deferred and is not part of the baseline global mobile purchase path.
-
-## Boundary crossings
-Every future remote mutation must carry an authenticated actor/session where applicable, authorization decision, version/schema identifier, validation result and observable error outcome. Retriable writes require an idempotency strategy before production activation.
-
-Purchase grant, restore, refund/revocation, webhook replay and rewarded-ad reward application are duplicate-effect-sensitive and must follow the idempotency contract.
-
-Analytics, crash and advertising telemetry are not domain authority. Their outage or retry behavior must not silently create gameplay effects.
-
-## Figma quality-preservation invariant
-Figma deferral changes sequencing only. It MUST NOT lower the final design-quality target.
-
-Until paid Figma work resumes:
-- temporary Unity UI values/assets MUST NOT become design canon,
-- no Figma variable value or codeSyntax may be inferred,
-- layout/presentation code should consume replaceable tokens/components rather than hard-coding a parallel design system,
-- gameplay/domain/server contracts must not encode visual dimensions, colors, typography, icon geometry, animation timing or component state styling as domain truth,
-- the canonical Figma file remains the future source for verified visual token/component mapping,
-- after Figma resumes, verified tokens/components/states must be mapped, diffed and revalidated before visual implementation is considered complete.
-
-Any pre-Figma engineering choice that would make later canonical Figma fidelity materially harder is a blocker, not an accepted shortcut.
-
-## Current evidence boundary
-Vendor architecture selection: APPROVED for RevenueCat, Apple/Google store billing, Toss web PG, AdMob, Sentry and PostHog.
-Vendor accounts/projects/SDK integrations: NOT ESTABLISHED / NOT IMPLEMENTED unless separately evidenced elsewhere.
-Backend/auth/RLS/API/cloud sync/webhook provider: UNSELECTED.
-Online production authority: NOT IMPLEMENTED.
-Physical device / AT / vendor runtime transmission evidence: NOT RUN.
+## Evidence boundary
+Current First Playable local/runtime evidence remains separate from future Q4/Q5 integrations.
+Supabase and all Q5 vendor integrations are selected only; actual accounts/runtime integration are NOT IMPLEMENTED.
