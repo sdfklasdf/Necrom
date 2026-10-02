@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Necrom.Core.Application;
 using Necrom.Core.Domain;
 using DomainEntityId = Necrom.Core.Domain.EntityId;
@@ -16,6 +17,7 @@ namespace Necrom.FirstPlayable.Runtime
         private FirstPlayableDamageDeathPipeline _damageDeathPipeline;
         private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
         private Func<string> _resolveCommandIdProvider;
+        private FirstPlayableCombatHudSession _hudSession;
         private bool _hasCachedRaiseSourceId;
         private DomainEntityId _cachedEnemyId;
         private DomainEntityId _cachedRaiseSourceId;
@@ -42,6 +44,19 @@ namespace Necrom.FirstPlayable.Runtime
             ClearElapsed();
             _hasCachedRaiseSourceId = false;
             _initialized = true;
+        }
+
+        public void ConfigureHudSession(
+            FirstPlayableCombatHudSession hudSession)
+        {
+            EnsureInitialized();
+            if (hudSession == null)
+                throw new ArgumentNullException(nameof(hudSession));
+            if (_hudSession != null)
+                throw new InvalidOperationException(
+                    "Combat HUD session is already configured.");
+
+            _hudSession = hudSession;
         }
 
         public void Advance(float deltaTimeSeconds)
@@ -123,6 +138,21 @@ namespace Necrom.FirstPlayable.Runtime
                         target,
                         intent.Damage,
                         raiseSourceId);
+
+                    if (damageResult.Changed &&
+                        _hudSession != null)
+                    {
+                        var damage = damageResult.Events
+                            .OfType<DamageApplied>()
+                            .SingleOrDefault();
+                        if (damage != null)
+                        {
+                            _hudSession.ObserveContribution(
+                                ally.Model.Id,
+                                damage.TargetId,
+                                damage.ActualDamage);
+                        }
+                    }
 
                     if (!damageResult.BecameDefeated)
                         continue;

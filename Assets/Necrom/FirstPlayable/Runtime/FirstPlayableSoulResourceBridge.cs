@@ -39,6 +39,24 @@ namespace Necrom.FirstPlayable.Runtime
                 ?? throw new ArgumentNullException(nameof(raiseTransactionIdProvider));
         }
 
+        public SoulResourceRaiseQuote QuoteRaise(
+            RaiseSource source)
+        {
+            if (source == null) throw new ArgumentNullException(nameof(source));
+            if (source.State != RaiseSourceState.Available)
+                throw new InvalidOperationException(
+                    "Raise quote requires an available Raise source.");
+
+            var cost = _raiseCostPolicy(source);
+            var revision = _account.Revision;
+
+            return new SoulResourceRaiseQuote(
+                _account.Balance,
+                revision,
+                cost,
+                _account.CanSpend(cost, revision));
+        }
+
         public SoulResourceTransactionResult ApplyDefeatGrant(
             DamageDeathResult damageResult,
             long expectedResourceRevision)

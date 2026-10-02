@@ -15,6 +15,7 @@ namespace Necrom.FirstPlayable.Runtime
         private FirstPlayableAlliedRosterController _alliedRoster;
         private Func<RaiseIntoFormationCommand, BasicAutoBehaviorSpec>
             _alliedBehaviorSpecProvider;
+        private FirstPlayableCombatHudSession _hudSession;
 
         public void Initialize(
             EnemySpawnController enemySpawn,
@@ -54,6 +55,19 @@ namespace Necrom.FirstPlayable.Runtime
 
             _alliedRoster = alliedRoster;
             _alliedBehaviorSpecProvider = alliedBehaviorSpecProvider;
+        }
+
+        public void ConfigureHudSession(
+            FirstPlayableCombatHudSession hudSession)
+        {
+            EnsureInitialized();
+            if (hudSession == null)
+                throw new ArgumentNullException(nameof(hudSession));
+            if (_hudSession != null)
+                throw new InvalidOperationException(
+                    "Combat HUD session is already configured.");
+
+            _hudSession = hudSession;
         }
 
         public bool CanExecute()
@@ -101,6 +115,10 @@ namespace Necrom.FirstPlayable.Runtime
                     command,
                     alliedSpec);
             }
+
+            _hudSession?.ObserveCommittedRaise(
+                command,
+                result);
 
             return result;
         }
