@@ -7,7 +7,7 @@ No secret/token/password material belongs in this file.
 | Capability | Selection | Actual state |
 |---|---|---|
 | Source control | GitHub sdfklasdf/Necrom | VERIFIED_READ_WRITE |
-| Project canon | Google Drive lightweight project board v2 | MIGRATION_IN_PROGRESS |
+| Project canon | Google Drive `네크로맨서 키우기 — 경량 관리판 v2` (`1UqHOZkLNfRT17ICW8jlypozq2-pLW1yw0z4cNMc2Gxg`) | VERIFIED_READ_WRITE |
 | Design | Figma canonical file eXqKU1qHXsn52SJfIGltZo | SELECTED_CANON |
 | Engine | Unity 6.3 LTS family + C# | CURRENT |
 | Backend/Auth/DB | Supabase | SELECTED_FOR_Q4 / ACCOUNT_NOT_ESTABLISHED |
