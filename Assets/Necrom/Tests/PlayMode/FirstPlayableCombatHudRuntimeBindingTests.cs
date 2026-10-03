@@ -252,6 +252,338 @@ namespace Necrom.FirstPlayable.Tests
             yield return null;
         }
 
+
+        [UnityTest]
+        public IEnumerator DisableDestroyAndRecreateCleansOverlayAndRestoresTruth()
+        {
+            var f = NewFixture("lifecycle-reentry");
+            var hud = NewHudDependencies();
+            var binding = CreateBinding(f, hud, f.Session);
+
+            AssertKeys(binding, "TargetActive", "RaiseTargetNotReady", "ArmyEmpty");
+            var firstOverlay = (GameObject)Read(binding, "OverlayHost");
+            Assert.That(firstOverlay, Is.Not.Null);
+
+            ((Behaviour)binding).enabled = false;
+            Assert.That(ReadBool(binding, "IsInitialized"), Is.False);
+            Assert.That(Read(binding, "OverlayHost"), Is.Null);
+            yield return null;
+            Assert.That(firstOverlay == null, Is.True);
+
+            ((Behaviour)binding).enabled = true;
+            InitializeBinding(binding, f, hud, f.Session);
+            var secondOverlay = (GameObject)Read(binding, "OverlayHost");
+            Assert.That(secondOverlay, Is.Not.Null);
+            AssertKeys(binding, "TargetActive", "RaiseTargetNotReady", "ArmyEmpty");
+
+            UnityEngine.Object.Destroy(binding);
+            yield return null;
+            Assert.That(secondOverlay == null, Is.True);
+
+            var recreated = CreateBinding(f, hud, f.Session);
+            var thirdOverlay = (GameObject)Read(recreated, "OverlayHost");
+            Assert.That(thirdOverlay, Is.Not.Null);
+            AssertKeys(recreated, "TargetActive", "RaiseTargetNotReady", "ArmyEmpty");
+
+            UnityEngine.Object.Destroy(f.Root);
+            yield return null;
+            Assert.That(thirdOverlay == null, Is.True);
+        }
+
+        [UnityTest]
+        public IEnumerator StaleAndIllegalRestartRepairLayoutWithoutChangingHudTruth()
+        {
+            var illegal = NewFixture("illegal-restart");
+            var hud = NewHudDependencies();
+            var illegalBinding = CreateBinding(illegal, hud, illegal.Session);
+            var illegalOverlay = Read(illegalBinding, "OverlayHost");
+
+            var illegalMin = new Vector2(0.123f, 0.234f);
+            var illegalMax = new Vector2(0.876f, 0.934f);
+            illegal.SafeArea.anchorMin = illegalMin;
+            illegal.SafeArea.anchorMax = illegalMax;
+
+            var illegalError = Assert.Throws<TargetInvocationException>(
+                () => Invoke(
+                    illegal.BattleRuntime,
+                    "RestartBattle",
+                    NewCommand(
+                        "Necrom.Core.Application.RestartBattleCommand",
+                        "restart:illegal:hud",
+                        ReadLong(illegal.Battle, "Revision"))));
+
+            Assert.That(
+                illegalError.InnerException,
+                Is.TypeOf<InvalidOperationException>());
+            Assert.That(Read(illegal.Battle, "Phase").ToString(), Is.EqualTo("Ready"));
+            Assert.That(ReadLong(illegal.Battle, "Revision"), Is.EqualTo(0L));
+            Assert.That(illegal.SafeArea.anchorMin.x, Is.EqualTo(0f).Within(0.0001f));
+            Assert.That(illegal.SafeArea.anchorMin.y, Is.EqualTo(34f / 844f).Within(0.0001f));
+            Assert.That(illegal.SafeArea.anchorMax.x, Is.EqualTo(1f).Within(0.0001f));
+            Assert.That(illegal.SafeArea.anchorMax.y, Is.EqualTo(810f / 844f).Within(0.0001f));
+            Invoke(illegalBinding, "RefreshNow");
+            Assert.That(Read(illegalBinding, "OverlayHost"), Is.SameAs(illegalOverlay));
+            AssertKeys(
+                illegalBinding,
+                "TargetActive",
+                "RaiseTargetNotReady",
+                "ArmyEmpty");
+
+            UnityEngine.Object.Destroy(illegal.Root);
+            yield return null;
+
+            var stale = NewFixture("stale-restart");
+            var staleBinding = CreateBinding(stale, hud, stale.Session);
+            MoveToResolvedWithDefeatedTarget(stale, "stale-restart");
+            Invoke(staleBinding, "RefreshNow");
+            AssertKeys(staleBinding, "TargetDefeated", "RaiseEligible", "ArmyEmpty");
+            var staleOverlay = Read(staleBinding, "OverlayHost");
+
+            var staleMin = new Vector2(0.141f, 0.241f);
+            var staleMax = new Vector2(0.841f, 0.941f);
+            stale.SafeArea.anchorMin = staleMin;
+            stale.SafeArea.anchorMax = staleMax;
+            var revisionBefore = ReadLong(stale.Battle, "Revision");
+
+            var staleError = Assert.Throws<TargetInvocationException>(
+                () => Invoke(
+                    stale.BattleRuntime,
+                    "RestartBattle",
+                    NewCommand(
+                        "Necrom.Core.Application.RestartBattleCommand",
+                        "restart:stale:hud",
+                        revisionBefore - 1L)));
+
+            Assert.That(
+                staleError.InnerException,
+                Is.TypeOf<InvalidOperationException>());
+            Assert.That(Read(stale.Battle, "Phase").ToString(), Is.EqualTo("Resolved"));
+            Assert.That(ReadLong(stale.Battle, "Revision"), Is.EqualTo(revisionBefore));
+            Assert.That(stale.SafeArea.anchorMin.x, Is.EqualTo(0f).Within(0.0001f));
+            Assert.That(stale.SafeArea.anchorMin.y, Is.EqualTo(34f / 844f).Within(0.0001f));
+            Assert.That(stale.SafeArea.anchorMax.x, Is.EqualTo(1f).Within(0.0001f));
+            Assert.That(stale.SafeArea.anchorMax.y, Is.EqualTo(810f / 844f).Within(0.0001f));
+            Invoke(staleBinding, "RefreshNow");
+            Assert.That(Read(staleBinding, "OverlayHost"), Is.SameAs(staleOverlay));
+            AssertKeys(staleBinding, "TargetDefeated", "RaiseEligible", "ArmyEmpty");
+
+            UnityEngine.Object.Destroy(stale.Root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator RosterMismatchRejectsRestartWithoutPromotingStaleProof()
+        {
+            var f = NewFixture("roster-mismatch");
+            var hud = NewHudDependencies();
+            var binding = CreateBinding(f, hud, f.Session);
+
+            MoveToResolvedWithDefeatedTarget(f, "roster-mismatch");
+            ExecuteResourceRaise(f);
+            Invoke(binding, "RefreshNow");
+            AssertKeys(
+                binding,
+                "TargetDefeated",
+                "RaiseCommittedAwaitingProof",
+                "ArmyProofPending");
+
+            var slotsField = f.Roster.GetType().GetField(
+                "_slots",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.That(slotsField, Is.Not.Null);
+            var slots = (Array)slotsField.GetValue(f.Roster);
+            var runtimeAlly = (Component)slots.GetValue(0);
+            Assert.That(runtimeAlly, Is.Not.Null);
+            slots.SetValue(null, 0);
+            UnityEngine.Object.Destroy(runtimeAlly.gameObject);
+            yield return null;
+
+            Invoke(binding, "RefreshNow");
+            AssertKeys(
+                binding,
+                "TargetDefeated",
+                "RaiseSourceUnavailableOrConsumed",
+                "ArmyOwned");
+            var overlay = Read(binding, "OverlayHost");
+
+            var markerMin = new Vector2(0.161f, 0.261f);
+            var markerMax = new Vector2(0.861f, 0.961f);
+            f.SafeArea.anchorMin = markerMin;
+            f.SafeArea.anchorMax = markerMax;
+            var revisionBefore = ReadLong(f.Battle, "Revision");
+
+            var restartError = Assert.Throws<TargetInvocationException>(
+                () => Invoke(
+                    f.BattleRuntime,
+                    "RestartBattle",
+                    NewCommand(
+                        "Necrom.Core.Application.RestartBattleCommand",
+                        "restart:roster-mismatch:hud",
+                        revisionBefore)));
+
+            Assert.That(
+                restartError.InnerException,
+                Is.TypeOf<InvalidOperationException>());
+            Assert.That(ReadLong(f.Battle, "Revision"), Is.EqualTo(revisionBefore));
+            Assert.That(Read(f.Battle, "Phase").ToString(), Is.EqualTo("Resolved"));
+            Assert.That(f.SafeArea.anchorMin, Is.EqualTo(markerMin));
+            Assert.That(f.SafeArea.anchorMax, Is.EqualTo(markerMax));
+
+            Invoke(binding, "RefreshNow");
+            Assert.That(Read(binding, "OverlayHost"), Is.SameAs(overlay));
+            AssertKeys(
+                binding,
+                "TargetDefeated",
+                "RaiseSourceUnavailableOrConsumed",
+                "ArmyOwned");
+
+            UnityEngine.Object.Destroy(f.Root);
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator SessionProofCarriesWithSameSessionAndResetsWithNewSession()
+        {
+            var f = NewFixture("session-boundary");
+            var hud = NewHudDependencies();
+            var binding = CreateBinding(f, hud, f.Session);
+
+            MoveToResolvedWithDefeatedTarget(f, "session-boundary");
+            ExecuteResourceRaise(f);
+            Invoke(
+                f.BattleRuntime,
+                "RestartBattle",
+                NewCommand(
+                    "Necrom.Core.Application.RestartBattleCommand",
+                    "restart:session-boundary:hud",
+                    ReadLong(f.Battle, "Revision")));
+
+            f.Enemy = Invoke(
+                f.Enemies,
+                "SpawnEnemy",
+                "enemy-next-session-boundary",
+                Activator.CreateInstance(
+                    RequireType(RuntimeNs + "EnemyArchetypeDefinition"),
+                    "enemy.next.guard",
+                    "frontline.guard",
+                    10),
+                f.EnemyZone);
+
+            Invoke(
+                f.BattleRuntime,
+                "StartBattle",
+                NewCommand(
+                    "Necrom.Core.Application.StartBattleCommand",
+                    "start-next:session-boundary:hud",
+                    ReadLong(f.Battle, "Revision")));
+
+            Assert.That(
+                (bool)Invoke(
+                    f.Session,
+                    "ObserveContribution",
+                    NewEntityId("undead-session-boundary"),
+                    NewEntityId("enemy-next-session-boundary"),
+                    4),
+                Is.True);
+
+            Invoke(binding, "RefreshNow");
+            AssertKeys(
+                binding,
+                "TargetActive",
+                "RaiseProofObserved",
+                "ArmyProofObserved");
+
+            Invoke(binding, "Shutdown");
+            yield return null;
+            InitializeBinding(binding, f, hud, f.Session);
+            AssertKeys(
+                binding,
+                "TargetActive",
+                "RaiseProofObserved",
+                "ArmyProofObserved");
+
+            Invoke(binding, "Shutdown");
+            yield return null;
+            var freshSession = Activator.CreateInstance(
+                RequireType(RuntimeNs + "FirstPlayableCombatHudSession"));
+            InitializeBinding(binding, f, hud, freshSession);
+            AssertKeys(
+                binding,
+                "TargetActive",
+                "RaiseTargetNotReady",
+                "ArmyOwned");
+
+            UnityEngine.Object.Destroy(f.Root);
+            yield return null;
+        }
+
+        private static Component CreateBinding(
+            Fixture f,
+            HudDependencies hud,
+            object session)
+        {
+            var binding = f.Root.AddComponent(
+                RequireType(RuntimeNs + "FirstPlayableCombatHudRuntimeBinding"));
+            InitializeBinding(binding, f, hud, session);
+            return binding;
+        }
+
+        private static void InitializeBinding(
+            Component binding,
+            Fixture f,
+            HudDependencies hud,
+            object session)
+        {
+            Invoke(
+                binding,
+                "Initialize",
+                f.BattleRuntime,
+                f.Enemies,
+                f.SoulBridge,
+                f.Formation,
+                f.Roster,
+                session,
+                f.SafeArea,
+                hud.DesignContract,
+                hud.CopyProvider,
+                hud.FontProvider);
+        }
+
+        private static void MoveToResolvedWithDefeatedTarget(
+            Fixture f,
+            string suffix)
+        {
+            Invoke(
+                f.BattleRuntime,
+                "StartBattle",
+                NewCommand(
+                    "Necrom.Core.Application.StartBattleCommand",
+                    "start:" + suffix + ":hud",
+                    ReadLong(f.Battle, "Revision")));
+
+            Invoke(
+                f.Enemy,
+                "ApplyDamage",
+                5,
+                NewEntityId("source:" + suffix + ":hud"));
+
+            Invoke(
+                f.BattleRuntime,
+                "ResolveFromCombatResult",
+                NewResolveCommand(
+                    "resolve:" + suffix + ":hud",
+                    true,
+                    ReadLong(f.Battle, "Revision")));
+
+            Invoke(
+                f.BattleRuntime,
+                "FinalizeBattle",
+                NewCommand(
+                    "Necrom.Core.Application.FinalizeBattleCommand",
+                    "finalize:" + suffix + ":hud",
+                    ReadLong(f.Battle, "Revision")));
+        }
+
         private static Fixture NewFixture(string suffix)
         {
             _suffix = suffix;
