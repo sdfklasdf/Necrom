@@ -334,7 +334,7 @@ namespace Necrom.FirstPlayable.Runtime
                 _contract.Theme.SecondaryLineHeight.Value);
 
             // StateKey remains a direct child for existing renderer consumers.
-            state.margin = new Vector4(16f, 0f, 0f, 0f);
+            state.margin = new Vector4(16f, state.margin.y, 0f, state.margin.w);
             var accent = CreateRect(rect, "StateAccent");
             accent.anchorMin = accent.anchorMax = new Vector2(0f, 1f);
             accent.pivot = new Vector2(0f, 1f);
@@ -367,6 +367,11 @@ namespace Necrom.FirstPlayable.Runtime
             text.color = _contract.Theme.TextOnDark.Value;
             text.raycastTarget = false;
             text.enableWordWrapping = true;
+            // Match CSS/Figma fixed line boxes even when a CJK face has wider vertical metrics.
+            // Negative leading preserves the verified row height; glyph ink fits and the 8px gap remains.
+            var naturalHeight=(font.faceInfo.ascentLine-font.faceInfo.descentLine)*fontSize/font.faceInfo.pointSize;
+            var leading=Mathf.Max(0f,naturalHeight-preferredHeight+.1f)/2f;
+            text.margin=new Vector4(0,-leading,0,-leading);
 
             var element = gameObject.GetComponent<LayoutElement>();
             element.preferredHeight = preferredHeight;
@@ -508,7 +513,7 @@ namespace Necrom.FirstPlayable.Runtime
             panel.Find("StateAccent").GetComponent<Image>().color = color;
         }
 
-        private static Sprite RoundedSprite(float radius)
+        internal static Sprite RoundedSprite(float radius)
         {
             const int size = 64;
             var texture = new Texture2D(size, size, TextureFormat.RGBA32, false);

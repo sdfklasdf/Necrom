@@ -1,0 +1,65 @@
+{
+  "stage": "Q3 review candidate",
+  "created": "2026-10-03",
+  "tool": "OpenAI imagegen",
+  "productionAssetStatus": "UNKNOWN: generated candidates; not a final rights clearance",
+  "scope": "Guard 1 archetype, raised variant, necromancer, cemetery background; five Formation slots are not five monster species",
+  "direction": "Gothic illustrated cemetery; purple necromancer; crimson hostile Guard; emerald raised Guard. Candidate assembled from existing dark HUD and Soul/Arcane tokens; not approved release direction.",
+  "font": {
+    "family": "Noto Sans CJK KR Regular (runtime) / Noto Sans KR Regular (Figma review)",
+    "source": "https://github.com/notofonts/noto-cjk/tree/main/Sans/OTF/Korean",
+    "licenseFile": "../../Fonts/OFL-CJK.txt",
+    "status": "Static Regular replaces variable Thin default. Bundled OFL source license; final family selection and complete release rights review UNKNOWN."
+  },
+  "files": [
+    {
+      "file": "guard.png",
+      "source": "exec-be4db5dd-7036-4316-a15b-57b7a55261d9.png",
+      "prompt": "Use case: stylized-concept. Asset type: a single game-ready 2D full-body character cutout for a portrait mobile necromancer game, Q3 art candidate. A sturdy haunted cemetery guard with a closed charcoal steel helmet, short red cloth tabard, chunky sword and round shield, weathered armor. Friendly-readable dark storybook fantasy, hand-painted cel shading, bold clear silhouette, three-quarter view facing left, feet clearly visible, no floor or scenery, no words, no UI, no watermark. Subject centered with 10 percent clear transparent padding; same soft cool top-left light, muted slate/ivory palette and restrained crimson. Short 3-head proportions, appealing premium indie-game illustration, readable at 100 pixels tall. No franchise references, no gore, no extra characters. Genuine transparent background.",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": true
+    },
+    {
+      "file": "raised.png",
+      "source": "exec-b8e3ff9c-225b-4f85-ac5a-020916de5fc4.png",
+      "prompt": "Derived from guard: emerald raised form, facing right; alpha cutout edit",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": true
+    },
+    {
+      "file": "player.png",
+      "source": "exec-b14af28c-e15a-4159-b5e9-b317eef8d1ea.png",
+      "prompt": "Use case: stylized-concept. Asset type: single 2D full-body game character cutout, same dark storybook fantasy visual set as a cemetery armored guard. A young hooded necromancer in layered plum-purple robe with pale face obscured partly by hood, wooden staff with small emerald soul lantern, belt with tiny bone charm. Strong readable silhouette, 3-head proportions, hand-painted cel shading and crisp edge, three-quarter view facing right. Full feet and entire staff visible, centered with10percent clear padding, soft cool top-left light, slate/ivory/purple and restrained emerald. No environment, floor, writing, UI, watermark, franchise reference or extra characters. Genuine transparent background. Premium indie portrait-mobile-game art candidate, readable at100pixels.",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha": true
+    },
+    {
+      "file": "background.png",
+      "source": "exec-0c8f01e2-9a8e-41aa-9f4c-bcc491c29fa5.png",
+      "prompt": "Use case: stylized-concept. Asset type: landscape battle background for portrait mobile game, no interface or characters. A quiet abandoned cemetery courtyard under a violet dusk sky, weathered stone arch and crypt near upper right, crooked bare tree framing upper left, mossy low gravestones and pale mist around borders. Large clear shallow-perspective flagstone arena occupies lower60percent, empty playable ground with no focal obstruction, for placing three game characters. Dark storybook fantasy, hand-painted cel-shaded premium indie-game illustration, muted blue charcoal stone, purple sky, subtle emerald lanterns, soft cool light, warm small candle accents. Wide4:3composition, edges complete, no text, no UI, no watermark, no characters, no franchise architecture. Ground low contrast so foreground units read clearly.",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "alpha": false
+    }
+  ],
+  "motion": "Procedural lunge, hit tint, defeated collapse and exact-unit contribution pulse driven by actual production combat results; not final rig or frame animation.",
+  "figma": {
+    "file": "eXqKU1qHXsn52SJfIGltZo",
+    "hud": "11:89",
+    "battle": "18:72",
+    "raised": "18:78",
+    "full": "18:84",
+    "capacity": "19:90"
+  }
+}

@@ -76,6 +76,10 @@ namespace Necrom.FirstPlayable.Runtime
             // Automatic Update stays enabled. The external driver supplies real OS clicks.
             game.ConfigureViewport(new Vector2(Screen.width,Screen.height),
                 new Rect(0,Screen.height*.04f,Screen.width,Screen.height*.92f));
+            yield return Capture(game,output,size,"native-active");
+            var visual=game.GetComponent<FirstPlayableVisualPresentation>();
+            yield return WaitFor(()=>visual.HitCueCount>0,3f);
+            yield return Capture(game,output,size,"native-attack-hit");
             for(int i=1;i<=5;i++)
             {
                 yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,8f);
@@ -91,6 +95,7 @@ namespace Necrom.FirstPlayable.Runtime
                 RequestClick(output,button);
                 yield return WaitFor(()=>game.Roster.ActiveCount==i,5f);
                 if(game.SoulBalance!=10+i)throw new InvalidOperationException("Raise did not spend exactly once.");
+                yield return Capture(game,output,size,"native-"+i+"-raise-motion");
                 yield return Capture(game,output,size,"native-"+i+"-raised");
                 RequestClick(output,game.transform.Find("SafeArea/CombatViewport/NextEncounter") as RectTransform);
                 yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Running,5f);
@@ -122,6 +127,8 @@ namespace Necrom.FirstPlayable.Runtime
         }
         IEnumerator Capture(FirstPlayableGameplayComposition game,string output,Vector2Int requested,string stage)
         {
+            if(stage!="active"&&stage!="native-active"&&stage!="native-attack-hit"&&!stage.EndsWith("raise-motion"))
+                yield return new WaitForSecondsRealtime(.5f); // settled fidelity sample, separate from real motion samples
             yield return null;
             yield return new WaitForEndOfFrame();
             if(Screen.width!=requested.x || Screen.height!=requested.y)
@@ -146,6 +153,31 @@ namespace Necrom.FirstPlayable.Runtime
                 var rect=safe.Find(name) as RectTransform;
                 var corners=new Vector3[4];rect.GetWorldCorners(corners);
                 lines.Add(name+"="+string.Join(";",corners.Select(x=>x.ToString("F2"))));
+            }
+            var visual=game.GetComponent<FirstPlayableVisualPresentation>();
+            if(visual!=null)
+            {
+                lines.Add("q3ArtLoaded="+visual.LoadedArtCount);
+                lines.Add("playerAttackCues="+visual.PlayerAttackCueCount);
+                lines.Add("hitCues="+visual.HitCueCount);
+                lines.Add("defeatCues="+visual.DefeatCueCount);
+                lines.Add("raiseCues="+visual.RaiseCueCount);
+                lines.Add("alliedContributionCues="+visual.AlliedContributionCueCount);
+                lines.Add("lastContributionUnitId="+visual.LastContributionUnitId);
+                lines.Add("visibleAllyArt="+visual.VisibleAllyCount);
+                var protectedRect=safe.Find("ProtectedCombatReadabilityZone") as RectTransform;
+                var limits=new Vector3[4];protectedRect.GetWorldCorners(limits);
+                foreach(var art in game.transform.Find("SafeArea/CombatViewport/Q3VisualPresentation")
+                    .GetComponentsInChildren<UnityEngine.UI.RawImage>())
+                {
+                    var corners=new Vector3[4];art.rectTransform.GetWorldCorners(corners);
+                    lines.Add("art."+art.name+"="+string.Join(";",corners.Select(x=>x.ToString("F2"))));
+                    if(art.name!="Background")
+                        foreach(var point in corners)
+                            if(point.x<limits[0].x-.1f||point.x>limits[2].x+.1f||point.y<limits[0].y-.1f||point.y>limits[2].y+.1f)
+                                throw new InvalidOperationException("Q3 unit art escaped protected combat zone: "+art.name);
+                }
+                lines.Add("q3ProtectedUnitArt=PASS");
             }
             foreach(var text in game.HudBinding.OverlayHost.GetComponentsInChildren<TMP_Text>())
             {

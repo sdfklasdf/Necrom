@@ -8,6 +8,7 @@ namespace Necrom.FirstPlayable.Runtime
 {
     public sealed class FirstPlayableAutoCombatLoop : MonoBehaviour
     {
+        public event Action<DomainEntityId, DamageDeathResult> AttackApplied;
         private FirstPlayableBattleRuntimeController _battle;
         private NecromancerRuntimeEntity _necromancer;
         private FirstPlayableTargetingController _targeting;
@@ -114,6 +115,8 @@ namespace Necrom.FirstPlayable.Runtime
                     target,
                     intent.Damage,
                     raiseSourceId);
+
+                if (damageResult.Changed) AttackApplied?.Invoke(_necromancer.Model.Id, damageResult);
 
                 if (!damageResult.BecameDefeated)
                     continue;

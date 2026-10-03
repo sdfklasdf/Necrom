@@ -9,6 +9,7 @@ namespace Necrom.FirstPlayable.Runtime
 {
     public sealed class FirstPlayableAlliedAutoCombatLoop : MonoBehaviour
     {
+        public event Action<DomainEntityId, DamageDeathResult> AttackApplied;
         private readonly double[] _elapsedMilliseconds =
             new double[Formation.Capacity];
         private FirstPlayableApplicationService _application;
@@ -153,6 +154,8 @@ namespace Necrom.FirstPlayable.Runtime
                                 damage.ActualDamage);
                         }
                     }
+
+                    if (damageResult.Changed) AttackApplied?.Invoke(ally.Model.Id, damageResult);
 
                     if (!damageResult.BecameDefeated)
                         continue;

@@ -33,6 +33,7 @@ namespace Necrom.FirstPlayable.Runtime
         EncounterLayoutConfig _layout;
         EncounterBoundaryController _boundary;
         Button _raiseButton, _nextButton;
+        Sprite _nextSprite;
         TextMeshProUGUI _enemyText, _armyText;
         Vector2 _observedSize;
         Rect _observedSafe;
@@ -156,7 +157,7 @@ namespace Necrom.FirstPlayable.Runtime
             HudBinding.Initialize(Battle,Enemies,_soul,_formation,Roster,Session,
                 transform.Find("SafeArea") as RectTransform,
                 FirstPlayableCombatHudVerifiedDesignContract.Create(),
-                new FirstPlayableCombatHudCopyProviderAdapter(ReviewCopy),
+                new FirstPlayableCombatHudCopyProviderAdapter(GetComponent<FirstPlayableVisualPresentation>()!=null?Q3Copy:ReviewCopy),
                 new FirstPlayableCombatHudFontProviderAdapter(()=>ReviewFont));
             // Normal input goes through the resource bridge and domain command, never a state adapter.
             var scaler=HudBinding.OverlayHost.GetComponent<CanvasScaler>();
@@ -193,6 +194,31 @@ namespace Necrom.FirstPlayable.Runtime
             var full=key==FirstPlayableCombatHudContentKey.RaiseEligible && Roster.ActiveCount>=Formation.Capacity;
             if(full) detail="Formation full / continue combat";
             return new FirstPlayableCombatHudCopy(key.ToString(),title,detail,full?"ARMY FULL":"RAISE");
+        }
+        FirstPlayableCombatHudCopy Q3Copy(FirstPlayableCombatHudContentKey key)
+        {
+            var family=key.ToString().StartsWith("Target")?"전투":key.ToString().StartsWith("Raise")?"소환":"군단";
+            var title=family;var detail="";
+            switch(key)
+            {
+                case FirstPlayableCombatHudContentKey.TargetNone: title="대상을 찾고 있습니다";detail="새 전투를 기다리고 있습니다";break;
+                case FirstPlayableCombatHudContentKey.TargetActive: title="수호병";detail="체력 "+Enemies.CurrentTarget.Model.Health+" / 10 · 자동 전투 중";break;
+                case FirstPlayableCombatHudContentKey.TargetDefeated: title="수호병 격파";detail="체력 0 / 10 · 영혼을 획득했습니다";break;
+                case FirstPlayableCombatHudContentKey.RaiseNoTarget: title="소환할 대상이 없습니다";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
+                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title="수호병을 격파하세요";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
+                case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed: title="이미 되살린 대상입니다";detail="다음 전투에서 새 영혼을 획득하세요";break;
+                case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul: title="영혼이 부족합니다";detail="영혼 "+SoulBalance+" · 되살리기 비용 3";break;
+                case FirstPlayableCombatHudContentKey.RaiseEligible: title="수호병을 되살리기";detail="영혼 "+SoulBalance+" · 되살리기 비용 3";break;
+                case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof: title="수호병이 군단에 합류했습니다";detail="다음 전투에서 아군의 공격을 확인하세요";break;
+                case FirstPlayableCombatHudContentKey.RaiseProofObserved: title="아군의 공격을 확인했습니다";detail="되살린 수호병이 실제 피해를 입혔습니다";break;
+                case FirstPlayableCombatHudContentKey.ArmyEmpty: title="군단 0 / 5";detail="격파한 적을 되살려 군단을 모으세요";break;
+                case FirstPlayableCombatHudContentKey.ArmyOwned: title="군단 "+Roster.ActiveCount+" / 5";detail="되살린 수호병이 함께 싸웁니다";break;
+                case FirstPlayableCombatHudContentKey.ArmyProofPending: title="군단 "+Roster.ActiveCount+" / 5";detail="새 아군의 첫 공격을 기다리고 있습니다";break;
+                case FirstPlayableCombatHudContentKey.ArmyProofObserved: title="군단 "+Roster.ActiveCount+" / 5";detail="되살린 아군의 실제 공격을 확인했습니다";break;
+            }
+            var full=key==FirstPlayableCombatHudContentKey.RaiseEligible&&Roster.ActiveCount>=Formation.Capacity;
+            if(full){title="군단이 가득 찼습니다";detail="5 / 5 · 다음 전투에서 군단의 힘을 확인하세요";}
+            return new FirstPlayableCombatHudCopy(family,title,detail,full?"군단 가득 참":"되살리기");
         }
         public void SetAutomaticCombat(bool enabled)
         {
@@ -240,7 +266,11 @@ namespace Necrom.FirstPlayable.Runtime
             }
             BindHudIfNeeded();
             FinalizeResultIfNeeded();
-            if(_nextButton!=null) _nextButton.interactable=Battle.Phase==BattlePhase.Resolved;
+            if(_nextButton!=null) { _nextButton.interactable=Battle.Phase==BattlePhase.Resolved;
+                var combat=_nextButton.transform.parent as RectTransform;
+                var rect=_nextButton.transform as RectTransform;rect.anchorMin=new Vector2(.47f,.97f-44f/Mathf.Max(44f,combat.rect.height));rect.anchorMax=new Vector2(.94f,.97f);
+                _nextButton.GetComponent<Image>().color=new Color(.0314f,.498f,.357f,_nextButton.interactable?1f:.55f);
+            }
             if(_enemyText!=null) _enemyText.text="GUARD\nHP "+Enemies.CurrentTarget.Model.Health;
             if(_armyText!=null) _armyText.text="RAISED ARMY\n"+Roster.ActiveCount+" / 5";
         }
@@ -254,21 +284,29 @@ namespace Necrom.FirstPlayable.Runtime
             if(_playerLoop!=null) _playerLoop.enabled=false;
             if(_alliedLoop!=null) _alliedLoop.enabled=false;
         }
+        void OnDestroy()
+        { if(_nextSprite!=null){Destroy(_nextSprite.texture);Destroy(_nextSprite);} }
         void AddReviewCombatPresentation(RectTransform combat)
         {
             var background=GetOrAdd<Image>(combat.gameObject);
             background.color=new Color(.08f,.10f,.14f); background.raycastTarget=false;
+            var visual=GetComponent<FirstPlayableVisualPresentation>();
+            if(visual!=null) visual.Initialize(this,combat,_playerLoop,_alliedLoop);
+            else {
             var playerZone=combat.Find("NecromancerSpawnZone") as RectTransform;
             Label(playerZone,"NECROMANCER",new Color(.0314f,.498f,.357f));
             _enemyText=Label(combat.Find("EnemySpawnZone") as RectTransform,"GUARD",new Color(.788f,.165f,.165f));
             _armyText=Label(combat.Find("AlliedSpawnZone") as RectTransform,"RAISED ARMY",new Color(.094f,.392f,.67f));
+            }
             var command=new GameObject("NextEncounter",typeof(RectTransform),typeof(Image),typeof(Button));
             command.transform.SetParent(combat,false);
-            var r=command.GetComponent<RectTransform>(); r.anchorMin=new Vector2(.45f,.91f);
-            r.anchorMax=new Vector2(.98f,.99f);r.offsetMin=r.offsetMax=Vector2.zero;
+            var r=command.GetComponent<RectTransform>(); r.anchorMin=new Vector2(.47f,.97f-44f/Mathf.Max(44f,combat.rect.height));
+            r.anchorMax=new Vector2(.94f,.97f);r.offsetMin=r.offsetMax=Vector2.zero;
             command.GetComponent<Image>().color=new Color(.0314f,.498f,.357f);
-            _nextButton=command.GetComponent<Button>();_nextButton.onClick.AddListener(StartNextEncounter);
-            Label(r,"NEXT ENCOUNTER",Color.clear);
+            _nextSprite=FirstPlayableCombatHudUnityView.RoundedSprite(12f);
+            command.GetComponent<Image>().sprite=_nextSprite;command.GetComponent<Image>().type=Image.Type.Sliced;
+            _nextButton=command.GetComponent<Button>();_nextButton.transition=Selectable.Transition.None;_nextButton.onClick.AddListener(StartNextEncounter);
+            Label(r,visual!=null?"다음 전투":"NEXT ENCOUNTER",Color.clear);
         }
         TextMeshProUGUI Label(RectTransform zone,string copy,Color surface)
         {

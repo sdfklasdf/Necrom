@@ -1,0 +1,36 @@
+requested=(360, 640)
+actual=360x640
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+soulBalance=11
+alliedCount=1
+overlayCount=1
+target=TargetActive
+raise=RaiseProofObserved
+army=ArmyProofObserved
+TargetStatusReadabilityZone=(22.15, 335.75, 0.00);(22.15, 439.14, 0.00);(337.85, 439.14, 0.00);(337.85, 335.75, 0.00)
+RaiseActionStatusReadabilityZone=(22.15, 158.52, 0.00);(22.15, 320.98, 0.00);(337.85, 320.98, 0.00);(337.85, 158.52, 0.00)
+ArmyStatusReadabilityZone=(22.15, 40.37, 0.00);(22.15, 143.75, 0.00);(337.85, 143.75, 0.00);(337.85, 40.37, 0.00)
+ProtectedCombatReadabilityZone=(7.20, 453.91, 0.00);(7.20, 555.52, 0.00);(352.80, 555.52, 0.00);(352.80, 453.91, 0.00)
+CombatViewport=(0.00, 453.91, 0.00);(0.00, 614.40, 0.00);(360.00, 614.40, 0.00);(360.00, 453.91, 0.00)
+q3ArtLoaded=4
+playerAttackCues=6
+hitCues=7
+defeatCues=1
+raiseCues=1
+alliedContributionCues=1
+lastContributionUnitId=ally:11
+visibleAllyArt=1
+art.Background=(0.00, 453.91, 0.00);(0.00, 614.40, 0.00);(360.00, 614.40, 0.00);(360.00, 453.91, 0.00)
+art.Necromancer=(38.77, 468.82, 0.00);(38.77, 533.15, 0.00);(81.65, 533.15, 0.00);(81.65, 468.82, 0.00)
+art.Guard=(227.08, 488.87, 0.00);(227.08, 551.79, 0.00);(269.03, 551.79, 0.00);(269.03, 488.87, 0.00)
+art.RaisedGuardSlot0=(131.08, 460.90, 0.00);(131.08, 490.26, 0.00);(150.65, 490.26, 0.00);(150.65, 460.90, 0.00)
+q3ProtectedUnitArt=PASS
+StateKey font=12 overflow=False content=전투
+PrimaryText font=20 overflow=False content=수호병
+SecondaryText font=14 overflow=False content=체력 4 / 10 · 자동 전투 중
+StateKey font=12 overflow=False content=소환
+PrimaryText font=20 overflow=False content=아군의 공격을 확인했습니다
+SecondaryText font=14 overflow=False content=되살린 수호병이 실제 피해를 입혔습니다
+StateKey font=12 overflow=False content=군단
+PrimaryText font=20 overflow=False content=군단 1 / 5
+SecondaryText font=14 overflow=False content=되살린 아군의 실제 공격을 확인했습니다

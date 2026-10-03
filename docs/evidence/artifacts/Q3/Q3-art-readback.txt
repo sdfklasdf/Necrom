@@ -1,0 +1,7 @@
+Q3_REOPEN_PASS
+Scene: Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+Prefab: Assets/Necrom/FirstPlayable/Prefabs/FirstPlayable.prefab
+Art references: 4 / 4
+Font: NotoSansCJKkr-Regular Review SDF
+Source font: NotoSansCJKkr-Regular
+Review candidate, rights NOT REVIEWED.

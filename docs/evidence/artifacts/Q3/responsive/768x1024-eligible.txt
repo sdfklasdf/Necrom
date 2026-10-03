@@ -1,0 +1,36 @@
+requested=(768, 1024)
+actual=768x1024
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+soulBalance=14
+alliedCount=0
+overlayCount=1
+target=TargetDefeated
+raise=RaiseEligible
+army=ArmyEmpty
+TargetStatusReadabilityZone=(176.40, 448.87, 0.00);(176.40, 584.84, 0.00);(591.60, 584.84, 0.00);(591.60, 448.87, 0.00)
+RaiseActionStatusReadabilityZone=(176.40, 215.78, 0.00);(176.40, 429.45, 0.00);(591.60, 429.45, 0.00);(591.60, 215.78, 0.00)
+ArmyStatusReadabilityZone=(176.40, 60.38, 0.00);(176.40, 196.35, 0.00);(591.60, 196.35, 0.00);(591.60, 60.38, 0.00)
+ProtectedCombatReadabilityZone=(15.36, 604.27, 0.00);(15.36, 888.83, 0.00);(752.64, 888.83, 0.00);(752.64, 604.27, 0.00)
+CombatViewport=(0.00, 604.27, 0.00);(0.00, 983.04, 0.00);(768.00, 983.04, 0.00);(768.00, 604.27, 0.00)
+q3ArtLoaded=4
+playerAttackCues=5
+hitCues=5
+defeatCues=1
+raiseCues=0
+alliedContributionCues=0
+lastContributionUnitId=
+visibleAllyArt=0
+art.Background=(0.00, 604.27, 0.00);(0.00, 983.04, 0.00);(768.00, 983.04, 0.00);(768.00, 604.27, 0.00)
+art.Necromancer=(82.71, 643.05, 0.00);(82.71, 810.33, 0.00);(194.23, 810.33, 0.00);(194.23, 643.05, 0.00)
+art.Guard=(484.43, 695.18, 0.00);(484.43, 752.45, 0.00);(593.52, 752.45, 0.00);(593.52, 695.18, 0.00)
+q3ProtectedUnitArt=PASS
+StateKey font=12 overflow=False content=전투
+PrimaryText font=20 overflow=False content=수호병 격파
+SecondaryText font=14 overflow=False content=체력 0 / 10 · 영혼을 획득했습니다
+StateKey font=12 overflow=False content=소환
+PrimaryText font=20 overflow=False content=수호병을 되살리기
+SecondaryText font=14 overflow=False content=영혼 14 · 되살리기 비용 3
+CtaText font=14 overflow=False content=되살리기
+StateKey font=12 overflow=False content=군단
+PrimaryText font=20 overflow=False content=군단 0 / 5
+SecondaryText font=14 overflow=False content=격파한 적을 되살려 군단을 모으세요

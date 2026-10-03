@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 925762127}
   - component: {fileID: 925762126}
   - component: {fileID: 925762125}
+  - component: {fileID: 925762136}
   m_Layer: 0
   m_Name: FirstPlayableCanonical
   m_TagString: Untagged
@@ -354,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f5bb35194cd1e42b84ed03173d8d9d, type: 3}
   m_Name:
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGameplayComposition
-  ReviewFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  ReviewFont: {fileID: 11400000, guid: 442ab2262bbba1d449bf9e4a09bace77, type: 2}
 --- !u!114 &925762128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +487,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &925762136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925762124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1584fa4d7e54b4991aa0c1b4d54012, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableVisualPresentation
+  NecromancerArt: {fileID: 2800000, guid: a657786eb20692c4f9bb5f00c6941c14, type: 3}
+  GuardArt: {fileID: 2800000, guid: f2a820c7820380c43baa2501b17428e6, type: 3}
+  RaisedGuardArt: {fileID: 2800000, guid: a2d3fcc35d73abf44b8d1eef01fcbbfe, type: 3}
+  BackgroundArt: {fileID: 2800000, guid: baa6b193ee8ad2c4089dbe213a011ad2, type: 3}
 --- !u!1 &930316310
 GameObject:
   m_ObjectHideFlags: 0
