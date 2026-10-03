@@ -214,7 +214,7 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(versionField, Is.Not.Null);
             versionField.SetValue(_fontAsset, "1.1.0");
 
-            var shader = Shader.Find("UI/Default");
+            var shader = Shader.Find("TextMeshPro/Distance Field");
             Assert.That(shader, Is.Not.Null, "Built-in UI/Default shader is required for the test-only font fixture.");
             _fixtureFontAtlas = new Texture2D(2, 2);
             _fixtureFontAtlas.name = "TEST-ONLY Font Atlas";

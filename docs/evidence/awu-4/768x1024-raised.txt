@@ -1,0 +1,21 @@
+requested=(768, 1024)
+actual=768x1024
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+overlayCount=1
+target=TargetDefeated
+raise=RaiseCommittedAwaitingProof
+army=ArmyProofPending
+TargetStatusReadabilityZone=(176.40, 448.87, 0.00);(176.40, 584.84, 0.00);(591.60, 584.84, 0.00);(591.60, 448.87, 0.00)
+RaiseActionStatusReadabilityZone=(176.40, 215.78, 0.00);(176.40, 429.45, 0.00);(591.60, 429.45, 0.00);(591.60, 215.78, 0.00)
+ArmyStatusReadabilityZone=(176.40, 60.38, 0.00);(176.40, 196.35, 0.00);(591.60, 196.35, 0.00);(591.60, 60.38, 0.00)
+ProtectedCombatReadabilityZone=(15.36, 604.27, 0.00);(15.36, 888.83, 0.00);(752.64, 888.83, 0.00);(752.64, 604.27, 0.00)
+CombatViewport=(0.00, 604.27, 0.00);(0.00, 983.04, 0.00);(768.00, 983.04, 0.00);(768.00, 604.27, 0.00)
+StateKey font=12 overflow=False content=TargetDefeated
+PrimaryText font=20 overflow=False content=TARGET STATUS
+SecondaryText font=14 overflow=False content=Guard / HP 0 / defeated
+StateKey font=12 overflow=False content=RaiseCommittedAwaitingProof
+PrimaryText font=20 overflow=False content=RAISE STATUS
+SecondaryText font=14 overflow=False content=Committed UnitId / awaiting proof
+StateKey font=12 overflow=False content=ArmyProofPending
+PrimaryText font=20 overflow=False content=ARMY STATUS
+SecondaryText font=14 overflow=False content=Formation / raised UnitId / proof pending

@@ -100,6 +100,7 @@ namespace Necrom.FirstPlayable.Runtime
         private Button _primaryCtaButton;
         private TextMeshProUGUI _primaryCtaText;
         private Image _raiseBackground;
+        private Sprite _panelSprite, _dotSprite, _ctaSprite;
 
         public GameObject OverlayHost => _overlayHost;
         public Button PrimaryCtaButton => _primaryCtaButton;
@@ -166,11 +167,10 @@ namespace Necrom.FirstPlayable.Runtime
                 _armySecondary,
                 armyCopy);
 
-            _raiseBackground.color =
-                presentation.Raise.ContentKey ==
-                FirstPlayableCombatHudContentKey.RaiseInsufficientSoul
-                    ? _contract.Theme.Danger.Value
-                    : _contract.Theme.PanelBackground.Value;
+            _raiseBackground.color = _contract.Theme.PanelBackground.Value;
+            ApplyAccent(_targetContainer, presentation.Target.ContentKey);
+            ApplyAccent(_raiseContainer, presentation.Raise.ContentKey);
+            ApplyAccent(_armyContainer, presentation.Army.ContentKey);
 
             ApplyRaiseCta(presentation.Raise.ContentKey, raiseCopy);
         }
@@ -184,6 +184,10 @@ namespace Necrom.FirstPlayable.Runtime
                 UnityEngine.Object.Destroy(_overlayHost);
             else
                 UnityEngine.Object.DestroyImmediate(_overlayHost);
+            ReleaseSprite(_panelSprite);
+            ReleaseSprite(_dotSprite);
+            ReleaseSprite(_ctaSprite);
+            _panelSprite = _dotSprite = _ctaSprite = null;
             _overlayHost = null;
             _safeAreaMirror = null;
             _targetContainer = null;
@@ -291,6 +295,8 @@ namespace Necrom.FirstPlayable.Runtime
         {
             var rect = CreateRect(parent, name);
             background = rect.gameObject.AddComponent<Image>();            background.color = _contract.Theme.PanelBackground.Value;
+            background.sprite = _panelSprite ?? (_panelSprite = RoundedSprite(18f));
+            background.type = Image.Type.Sliced;
             background.raycastTarget = false;
 
             var layout = rect.gameObject.AddComponent<VerticalLayoutGroup>();
@@ -325,6 +331,17 @@ namespace Necrom.FirstPlayable.Runtime
                 _contract.Theme.SecondaryFontSize.Value,
                 _contract.Theme.SecondaryLineHeight.Value);
 
+            // StateKey remains a direct child for existing renderer consumers.
+            state.margin = new Vector4(16f, 0f, 0f, 0f);
+            var accent = CreateRect(rect, "StateAccent");
+            accent.anchorMin = accent.anchorMax = new Vector2(0f, 1f);
+            accent.pivot = new Vector2(0f, 1f);
+            accent.anchoredPosition = new Vector2(padding, -padding-4f);
+            accent.sizeDelta = new Vector2(8f, 8f);
+            accent.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
+            var dot = accent.gameObject.AddComponent<Image>();
+            dot.sprite = _dotSprite ?? (_dotSprite = RoundedSprite(32f));
+            dot.raycastTarget = false;
             return rect;
         }
 
@@ -365,11 +382,14 @@ namespace Necrom.FirstPlayable.Runtime
                 typeof(RectTransform),
                 typeof(Image),
                 typeof(Button),
+                typeof(CanvasGroup),
                 typeof(LayoutElement));            var rect = gameObject.GetComponent<RectTransform>();
             rect.SetParent(parent, false);
 
             var image = gameObject.GetComponent<Image>();
             image.color = _contract.Theme.SoulAccent.Value;
+            image.sprite = _ctaSprite ?? (_ctaSprite = RoundedSprite(12f));
+            image.type = Image.Type.Sliced;
 
             _primaryCtaButton = gameObject.GetComponent<Button>();
             _primaryCtaButton.transition = Selectable.Transition.None;
@@ -440,7 +460,13 @@ namespace Necrom.FirstPlayable.Runtime
                 default:
                     throw new InvalidOperationException(
                         "Non-Raise key supplied to Raise CTA mapping: " + key);
-            }        }
+            }
+            var disabled = LastRaiseCtaState == FirstPlayableCombatHudRaiseCtaState.Disabled;
+            _primaryCtaButton.GetComponent<Image>().color = disabled
+                ? new Color(77f/255f,85f/255f,102f/255f)
+                : _contract.Theme.SoulAccent.Value;
+            _primaryCtaButton.GetComponent<CanvasGroup>().alpha = disabled ? .55f : 1f;
+        }
 
         private static void ApplyCopy(
             TextMeshProUGUI state,
@@ -451,6 +477,56 @@ namespace Necrom.FirstPlayable.Runtime
             state.text = copy.StateKey;
             primary.text = copy.Primary;
             secondary.text = copy.Secondary;
+        }
+
+        private void ApplyAccent(RectTransform panel, FirstPlayableCombatHudContentKey key)
+        {
+            // Fresh Figma 11:89: INFO #1864ab / TEXT-SECONDARY #4d5566.
+            Color color = new Color(77f/255f,85f/255f,102f/255f);
+            switch(key)
+            {
+                case FirstPlayableCombatHudContentKey.TargetActive:
+                case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof:
+                case FirstPlayableCombatHudContentKey.ArmyOwned:
+                case FirstPlayableCombatHudContentKey.ArmyProofPending:
+                    color = new Color(24f/255f,100f/255f,171f/255f); break;
+                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady:
+                case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed:
+                case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul:
+                    color = _contract.Theme.Danger.Value; break;
+                case FirstPlayableCombatHudContentKey.TargetDefeated:
+                case FirstPlayableCombatHudContentKey.RaiseEligible:
+                case FirstPlayableCombatHudContentKey.RaiseProofObserved:
+                case FirstPlayableCombatHudContentKey.ArmyProofObserved:
+                    color = _contract.Theme.SoulAccent.Value; break;
+            }
+            panel.Find("StateAccent").GetComponent<Image>().color = color;
+        }
+
+        private static Sprite RoundedSprite(float radius)
+        {
+            const int size = 64;
+            var texture = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            texture.name = "Runtime semantic rounded surface";
+            texture.wrapMode = TextureWrapMode.Clamp;
+            var colors = new Color[size*size];
+            for(int y=0;y<size;y++) for(int x=0;x<size;x++)
+            {
+                var point = new Vector2(x+.5f,y+.5f);
+                var center = new Vector2(Mathf.Clamp(point.x,radius,size-radius),
+                    Mathf.Clamp(point.y,radius,size-radius));
+                colors[y*size+x] = new Color(1,1,1,Mathf.Clamp01(radius-Vector2.Distance(point,center)+.5f));
+            }
+            texture.SetPixels(colors);texture.Apply();
+            return Sprite.Create(texture,new Rect(0,0,size,size),new Vector2(.5f,.5f),100f,0,
+                SpriteMeshType.FullRect,new Vector4(radius,radius,radius,radius));
+        }
+
+        private static void ReleaseSprite(Sprite sprite)
+        {
+            if(sprite==null) return;
+            if(Application.isPlaying) { UnityEngine.Object.Destroy(sprite.texture);UnityEngine.Object.Destroy(sprite); }
+            else { UnityEngine.Object.DestroyImmediate(sprite.texture);UnityEngine.Object.DestroyImmediate(sprite); }
         }
 
         private static RectTransform CreateRect(

@@ -266,7 +266,7 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(versionField, Is.Not.Null);
             versionField.SetValue(_fontAsset, "1.1.0");
 
-            var shader = Shader.Find("UI/Default");
+            var shader = Shader.Find("TextMeshPro/Distance Field");
             Assert.That(shader, Is.Not.Null);
             _fontAtlas = new Texture2D(2, 2);
             _fontMaterial = new Material(shader);
