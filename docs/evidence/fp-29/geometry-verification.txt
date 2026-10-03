@@ -1,0 +1,11 @@
+﻿390x844-native-1-eligible.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-1-raised.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-2-eligible.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-2-raised.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-3-eligible.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-3-raised.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-4-eligible.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-4-raised.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-5-eligible.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-5-raised.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS
+390x844-native-full-army.png actual390x844/overlay1/nooverflow/5zones/protected-separation PASS

@@ -1,0 +1,24 @@
+requested=(390, 844)
+actual=390x844
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+soulBalance=16
+alliedCount=2
+overlayCount=1
+target=TargetDefeated
+raise=RaiseEligible
+army=ArmyProofObserved
+TargetStatusReadabilityZone=(24.00, 369.76, 0.00);(24.00, 481.76, 0.00);(366.00, 481.76, 0.00);(366.00, 369.76, 0.00)
+RaiseActionStatusReadabilityZone=(24.00, 177.76, 0.00);(24.00, 353.76, 0.00);(366.00, 353.76, 0.00);(366.00, 177.76, 0.00)
+ArmyStatusReadabilityZone=(24.00, 49.76, 0.00);(24.00, 161.76, 0.00);(366.00, 161.76, 0.00);(366.00, 49.76, 0.00)
+ProtectedCombatReadabilityZone=(7.80, 497.76, 0.00);(7.80, 732.59, 0.00);(382.20, 732.59, 0.00);(382.20, 497.76, 0.00)
+CombatViewport=(0.00, 497.76, 0.00);(0.00, 810.24, 0.00);(390.00, 810.24, 0.00);(390.00, 497.76, 0.00)
+StateKey font=12 overflow=False content=TargetDefeated
+PrimaryText font=20 overflow=False content=TARGET STATUS
+SecondaryText font=14 overflow=False content=Guard / HP 0 / defeated
+StateKey font=12 overflow=False content=RaiseEligible
+PrimaryText font=20 overflow=False content=RAISE STATUS
+SecondaryText font=14 overflow=False content=Soul 16 / cost 3 / eligible
+CtaText font=14 overflow=False content=RAISE
+StateKey font=12 overflow=False content=ArmyProofObserved
+PrimaryText font=20 overflow=False content=ARMY STATUS
+SecondaryText font=14 overflow=False content=Formation / exact contribution / observed
