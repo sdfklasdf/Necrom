@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -172,7 +173,8 @@ namespace Necrom.FirstPlayable.Runtime
             ApplyAccent(_raiseContainer, presentation.Raise.ContentKey);
             ApplyAccent(_armyContainer, presentation.Army.ContentKey);
 
-            ApplyRaiseCta(presentation.Raise.ContentKey, raiseCopy);
+            ApplyRaiseCta(presentation.Raise.ContentKey, raiseCopy,
+                presentation.Army.FormationSlots.Any(slot => slot == null || !slot.OwnedUnitId.HasValue));
         }
 
         public void Dispose()
@@ -426,15 +428,18 @@ namespace Necrom.FirstPlayable.Runtime
 
         private void ApplyRaiseCta(
             FirstPlayableCombatHudContentKey key,
-            FirstPlayableCombatHudCopy copy)
+            FirstPlayableCombatHudCopy copy,
+            bool hasFormationSlot)
         {
             switch (key)
             {
                 case FirstPlayableCombatHudContentKey.RaiseEligible:
                     LastRaiseCtaState =
-                        FirstPlayableCombatHudRaiseCtaState.Default;
+                        hasFormationSlot ? FirstPlayableCombatHudRaiseCtaState.Default
+                        : FirstPlayableCombatHudRaiseCtaState.Disabled;
                     _primaryCtaButton.gameObject.SetActive(true);
-                    _primaryCtaButton.interactable = true;                    _primaryCtaText.text = copy.PrimaryCta;
+                    _primaryCtaButton.interactable = hasFormationSlot;
+                    _primaryCtaText.text = copy.PrimaryCta;
                     break;
 
                 case FirstPlayableCombatHudContentKey.RaiseTargetNotReady:

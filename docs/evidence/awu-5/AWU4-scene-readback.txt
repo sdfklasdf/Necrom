@@ -1,0 +1,14 @@
+Canonical scene reopened: Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+Prefab: Assets/Necrom/FirstPlayable/Prefabs/FirstPlayable.prefab
+Hierarchy:
+FirstPlayableCanonical
+SafeArea
+HudRegion
+CombatViewport
+NecromancerSpawnZone
+EnemySpawnZone
+AlliedSpawnZone
+TargetStatusReadabilityZone
+RaiseActionStatusReadabilityZone
+ArmyStatusReadabilityZone
+ProtectedCombatReadabilityZone

@@ -104,7 +104,18 @@ namespace Necrom.FirstPlayable.Tests
             var contract = RequireType(RuntimeNs + "FirstPlayableCombatHudVerifiedDesignContract")
                 .GetMethod("Create", BindingFlags.Public | BindingFlags.Static).Invoke(null, null);
             foreach (var key in keys)
+            {
                 Assert.That(GetState(contract, key), Is.Not.Null, key);
+                var target=key.StartsWith("Target")?key:"TargetActive";
+                var raise=key.StartsWith("Raise")?key:"RaiseEligible";
+                var army=key.StartsWith("Army")?key:"ArmyEmpty";
+                Invoke(renderer,"Render",NewPresentation(target,raise,army),fixture.Binding);
+                yield return null;
+                var family=key.StartsWith("Target")?"Target":key.StartsWith("Raise")?"Raise":"Army";
+                Assert.That(ReadTmpText(((GameObject)Read(renderer,"OverlayHost")).transform,
+                    family+"RenderContainer/StateKey"),Is.EqualTo("State:"+key),
+                    "Every semantic variant must actually render, not merely exist in the contract.");
+            }
 
             Invoke(renderer, "Render",
                 NewPresentation("TargetActive", "RaiseEligible", "ArmyEmpty"), fixture.Binding);

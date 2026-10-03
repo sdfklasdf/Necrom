@@ -80,6 +80,12 @@ namespace Necrom.FirstPlayable.Runtime
             FirstPlayableCombatHudState state,
             bool observed)
         {
+            // A new available source is actionable even while the army retains prior proof.
+            if (state.RaiseReason == FirstPlayableRaiseAvailabilityReason.Eligible)
+                return FirstPlayableCombatHudContentKey.RaiseEligible;
+            if (state.RaiseReason == FirstPlayableRaiseAvailabilityReason.InsufficientSoul)
+                return FirstPlayableCombatHudContentKey.RaiseInsufficientSoul;
+
             if (observed)
                 return FirstPlayableCombatHudContentKey.RaiseProofObserved;
 

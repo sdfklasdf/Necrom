@@ -1,0 +1,34 @@
+﻿native/390x844-native-1-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-1-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-2-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-2-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-3-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-3-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-4-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-4-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-5-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-5-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+native/390x844-native-full-army.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/360x640-active.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/360x640-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/360x640-proof.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/360x640-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/390x844-active.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/390x844-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/390x844-proof.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/390x844-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/768x1024-active.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/768x1024-eligible.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/768x1024-proof.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+responsive/768x1024-raised.png: dimensions/overlay/no-overflow/5-zones/protected-separation PASS
+closure-targeted 35/35 PASS; start=2026-10-03 17:22:50Z end=2026-10-03 17:22:55Z
+closure-regression 124/124 PASS; start=2026-10-03 17:24:07Z end=2026-10-03 17:24:12Z
+buildGUID=48db96ec38a94ca5b0ad55c08339b24b
+playerSHA256=B9FC30BB05CA93A042831974149A681D656963E3E612ECAFD9AE826759D739AD
+Assets\Necrom\FirstPlayable\Runtime\FirstPlayableCombatHudPresenter.cs SHA256=ED83CDEB9EB77E33DA82394001A4D4940DE5721099BE44540BAE89C3017FAABB main=recovery
+Assets\Necrom\FirstPlayable\Runtime\FirstPlayableCombatHudUnityView.cs SHA256=BB5CDD611F7EA55417A46F94E6163CBA1DBC92A733C3D78FEC39CF58493858A5 main=recovery
+Assets\Necrom\FirstPlayable\Runtime\FirstPlayableDamageDeathPipeline.cs SHA256=76788C9BC56CEB17A3B6EAAA5994139D3912E76F2FDB7A915498D889985C2610 main=recovery
+Assets\Necrom\FirstPlayable\Runtime\FirstPlayableGameplayComposition.cs SHA256=B2F5D911661F2C0CF8C52CA4BCE0D83265A57011583B0B52B23B52C120C6209A main=recovery
+Assets\Necrom\FirstPlayable\Runtime\FirstPlayableRuntimeVisualCapture.cs SHA256=955EF479E427FA09C7ADD3C4E65CE30C0F3CA09A86D5D877302B9AAF8D80C34A main=recovery
+Assets\Necrom\Tests\PlayMode\FirstPlayableIntegratedLoopTests.cs SHA256=C56676E27A4D93BE94D5126E448CE2497CE70F6B9C68BCE26DE4CB4F14915C6F main=recovery
+Assets\Necrom\Tests\PlayMode\FirstPlayableCombatHudRendererFoundationTests.cs SHA256=08DE34E16E0A54918FF6EEE698144B8B8BE718F524C9842521DE3E65C56323D7 main=recovery

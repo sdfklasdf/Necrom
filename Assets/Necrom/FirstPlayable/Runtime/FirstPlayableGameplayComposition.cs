@@ -15,6 +15,7 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class FirstPlayableGameplayComposition : MonoBehaviour
     {
         public TMP_FontAsset ReviewFont;
+        public int SoulBalance => _account?.Balance ?? 0;
         public bool IsInitialized { get; private set; }
         public FirstPlayableCombatHudRuntimeBinding HudBinding { get; private set; }
         public FirstPlayableAlliedRosterController Roster { get; private set; }
@@ -124,6 +125,7 @@ namespace Necrom.FirstPlayable.Runtime
             var targeting=GetOrAdd<FirstPlayableTargetingController>(combat.gameObject);
             targeting.Initialize(player,Enemies);
             var pipeline=new FirstPlayableDamageDeathPipeline(()=>Id("damage"),()=>Id("defeat"));
+            pipeline.Defeated += result => _soul.ApplyDefeatGrant(result,_account.Revision);
             _playerLoop=GetOrAdd<FirstPlayableAutoCombatLoop>(combat.gameObject);
             _playerLoop.Initialize(Battle,player,targeting,pipeline,id=>new EntityId("source:"+id.Value),()=>Id("resolve"));
             _alliedLoop=GetOrAdd<FirstPlayableAlliedAutoCombatLoop>(combat.gameObject);
@@ -180,7 +182,7 @@ namespace Necrom.FirstPlayable.Runtime
                 case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: detail="Reason / target not ready";break;
                 case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed: detail="Reason / source unavailable";break;
                 case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul: detail="Soul quote / insufficient Soul";break;
-                case FirstPlayableCombatHudContentKey.RaiseEligible: detail="Soul quote / eligible";break;
+                case FirstPlayableCombatHudContentKey.RaiseEligible: detail="Soul "+SoulBalance+" / cost 3 / eligible";break;
                 case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof: detail="Committed UnitId / awaiting proof";break;
                 case FirstPlayableCombatHudContentKey.RaiseProofObserved: detail="Exact raised UnitId contribution / observed";break;
                 case FirstPlayableCombatHudContentKey.ArmyEmpty: detail="Formation 5-slot ownership / empty";break;
@@ -188,7 +190,9 @@ namespace Necrom.FirstPlayable.Runtime
                 case FirstPlayableCombatHudContentKey.ArmyProofPending: detail="Formation / raised UnitId / proof pending";break;
                 default: detail="Formation / exact contribution / observed";break;
             }
-            return new FirstPlayableCombatHudCopy(key.ToString(),title,detail,"RAISE");
+            var full=key==FirstPlayableCombatHudContentKey.RaiseEligible && Roster.ActiveCount>=Formation.Capacity;
+            if(full) detail="Formation full / continue combat";
+            return new FirstPlayableCombatHudCopy(key.ToString(),title,detail,full?"ARMY FULL":"RAISE");
         }
         public void SetAutomaticCombat(bool enabled)
         {

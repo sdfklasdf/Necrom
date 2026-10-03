@@ -5,6 +5,7 @@ namespace Necrom.FirstPlayable.Runtime
 {
     public sealed class FirstPlayableDamageDeathPipeline
     {
+        public event Action<DamageDeathResult> Defeated;
         private readonly Func<string> _damageEventIdProvider;
         private readonly Func<string> _defeatEventIdProvider;
 
@@ -104,10 +105,13 @@ namespace Necrom.FirstPlayable.Runtime
                 model.Id,
                 source.SourceId);
 
-            return new DamageDeathResult(
+            var result = new DamageDeathResult(
                 true,
                 true,
                 new DomainEvent[] { damageEvent, defeatEvent });
+            // Publish the actual lethal result once, shared by player and allied loops.
+            Defeated?.Invoke(result);
+            return result;
         }
     }
 }
