@@ -53,13 +53,31 @@
       "alpha": false
     }
   ],
-  "motion": "Procedural lunge, hit tint, defeated collapse and exact-unit contribution pulse driven by actual production combat results; not final rig or frame animation.",
+  "motion": {
+    "sourceArtifact": "FirstPlayablePresentationProfile.asset",
+    "runtime": "Authored 5-curve timing profile drives attack lunge, hit flash, defeat scale, Raise scale and exact-unit contribution pulse from actual production combat results.",
+    "status": "AUTHORED REVIEW MOTION; not final rig/frame animation or commercial motion approval."
+  },
+  "audio": {
+    "generator": "scripts/generate-q3-review-sfx.ps1",
+    "method": "Deterministic additive tone/noise synthesis to PCM WAV; no third-party samples.",
+    "files": [
+      "attack-review.wav",
+      "hit-review.wav",
+      "defeat-review.wav",
+      "raise-review.wav",
+      "ally-contribution-review.wav"
+    ],
+    "status": "REVIEW CANDIDATE ONLY; production sound design, mix, loudness, physical-device playback and commercial approval NOT RUN."
+  },
   "figma": {
     "file": "eXqKU1qHXsn52SJfIGltZo",
     "hud": "11:89",
     "battle": "18:72",
     "raised": "18:78",
     "full": "18:84",
-    "capacity": "19:90"
+    "capacity": "19:90",
+    "shortFullReadability": "31:158",
+    "motionAudioReviewNote": "31:174"
   }
 }

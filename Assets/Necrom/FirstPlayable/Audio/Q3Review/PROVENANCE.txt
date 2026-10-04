@@ -1,0 +1,6 @@
+﻿Q3 review SFX provenance
+Generator: scripts/generate-q3-review-sfx.ps1
+Method: deterministic additive tone/noise synthesis written directly to PCM WAV
+Third-party samples: none
+License dependency: none for generated waveforms
+Status: REVIEW CANDIDATE ONLY; production sound design / loudness / device mix approval NOT RUN

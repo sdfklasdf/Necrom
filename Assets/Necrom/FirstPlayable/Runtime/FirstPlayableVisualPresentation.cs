@@ -6,123 +6,275 @@ using UnityEngine.UI;
 
 namespace Necrom.FirstPlayable.Runtime
 {
-    // Q3 review art + procedural motion. No gameplay state adapter or fabricated contribution.
+    // Q3 review art + authored presentation profile. No gameplay state adapter or fabricated contribution.
     [DisallowMultipleComponent]
     public sealed class FirstPlayableVisualPresentation : MonoBehaviour
     {
         public Texture2D NecromancerArt, GuardArt, RaisedGuardArt, BackgroundArt;
-        public int LoadedArtCount => (NecromancerArt?1:0)+(GuardArt?1:0)+(RaisedGuardArt?1:0)+(BackgroundArt?1:0);
+        public AnimationCurve AttackLunge, HitFlash, DefeatScaleY, RaiseScale, AlliedContributionScale;
+        public float AttackDuration = .18f, HitDuration = .12f, DefeatDuration = .34f, RaiseDuration = .42f, AlliedContributionDuration = .24f;
+        public float ReviewSfxVolume = .28f;
+        public AudioClip PlayerAttackSfx, HitSfx, DefeatSfx, RaiseSfx, AlliedContributionSfx;
+
+        public int LoadedArtCount => (NecromancerArt ? 1 : 0) + (GuardArt ? 1 : 0) +
+                                     (RaisedGuardArt ? 1 : 0) + (BackgroundArt ? 1 : 0);
+        public int LoadedAudioClipCount => (PlayerAttackSfx ? 1 : 0) + (HitSfx ? 1 : 0) + (DefeatSfx ? 1 : 0) +
+                                           (RaiseSfx ? 1 : 0) + (AlliedContributionSfx ? 1 : 0);
+        public bool HasAuthoredMotion => AttackLunge != null && AttackLunge.length >= 2 &&
+                                         HitFlash != null && HitFlash.length >= 2 &&
+                                         DefeatScaleY != null && DefeatScaleY.length >= 2 &&
+                                         RaiseScale != null && RaiseScale.length >= 2 &&
+                                         AlliedContributionScale != null && AlliedContributionScale.length >= 2;
+
         public int PlayerAttackCueCount { get; private set; }
         public int HitCueCount { get; private set; }
         public int DefeatCueCount { get; private set; }
         public int RaiseCueCount { get; private set; }
         public int AlliedContributionCueCount { get; private set; }
+        public int ReviewSfxPlaybackCount { get; private set; }
         public int VisibleAllyCount { get; private set; }
         public string LastContributionUnitId { get; private set; }
+        public string LastReviewSfxName { get; private set; }
+
         FirstPlayableGameplayComposition _game;
         FirstPlayableAutoCombatLoop _playerLoop;
         FirstPlayableAlliedAutoCombatLoop _alliedLoop;
         RawImage _player, _enemy, _background;
-        readonly RawImage[] _allies=new RawImage[Formation.Capacity];
-        readonly float[] _allyPulse=new float[Formation.Capacity];
+        AudioSource _audio;
+        readonly RawImage[] _allies = new RawImage[Formation.Capacity];
+        readonly float[] _allyRaiseRemaining = new float[Formation.Capacity];
+        readonly float[] _allyContributionRemaining = new float[Formation.Capacity];
         RectTransform _root;
         string _enemyId;
-        float _playerPulse,_hitPulse,_defeatPulse;
+        float _attackRemaining, _hitRemaining, _defeatRemaining;
         bool _defeated;
         bool _initialized;
-        public void Initialize(FirstPlayableGameplayComposition game,RectTransform combat,
-            FirstPlayableAutoCombatLoop playerLoop,FirstPlayableAlliedAutoCombatLoop alliedLoop)
+
+        public void Initialize(
+            FirstPlayableGameplayComposition game,
+            RectTransform combat,
+            FirstPlayableAutoCombatLoop playerLoop,
+            FirstPlayableAlliedAutoCombatLoop alliedLoop)
         {
-            if(_initialized)throw new InvalidOperationException("Visual presentation already initialized.");
-            if(LoadedArtCount!=4)throw new InvalidOperationException("Q3 art references unresolved.");
-            _game=game;_playerLoop=playerLoop;_alliedLoop=alliedLoop;
-            var host=new GameObject("Q3VisualPresentation",typeof(RectTransform));host.transform.SetParent(combat,false);
-            _root=(RectTransform)host.transform;_root.anchorMin=Vector2.zero;_root.anchorMax=Vector2.one;_root.offsetMin=_root.offsetMax=Vector2.zero;
-            _background=Art("Background",BackgroundArt);_background.rectTransform.anchorMin=Vector2.zero;
-            _background.rectTransform.anchorMax=Vector2.one;_background.rectTransform.offsetMin=_background.rectTransform.offsetMax=Vector2.zero;
-            _player=Art("Necromancer",NecromancerArt);_enemy=Art("Guard",GuardArt);
-            for(int i=0;i<Formation.Capacity;i++){_allies[i]=Art("RaisedGuardSlot"+i,RaisedGuardArt);_allies[i].gameObject.SetActive(false);}
-            _playerLoop.AttackApplied+=PlayerAttack;
-            _alliedLoop.AttackApplied+=AlliedAttack;
-            _initialized=true;
+            if (_initialized) throw new InvalidOperationException("Visual presentation already initialized.");
+            if (LoadedArtCount != 4) throw new InvalidOperationException("Q3 art references unresolved.");
+            if (!HasAuthoredMotion) throw new InvalidOperationException("Q3 authored motion profile unresolved.");
+            if (LoadedAudioClipCount != 5) throw new InvalidOperationException("Q3 review audio references unresolved.");
+
+            _game = game;
+            _playerLoop = playerLoop;
+            _alliedLoop = alliedLoop;
+
+            var host = new GameObject("Q3VisualPresentation", typeof(RectTransform));
+            host.transform.SetParent(combat, false);
+            _root = (RectTransform)host.transform;
+            _root.anchorMin = Vector2.zero;
+            _root.anchorMax = Vector2.one;
+            _root.offsetMin = _root.offsetMax = Vector2.zero;
+
+            _audio = host.AddComponent<AudioSource>();
+            _audio.playOnAwake = false;
+            _audio.loop = false;
+            _audio.spatialBlend = 0f;
+            _audio.volume = Mathf.Clamp01(ReviewSfxVolume);
+
+            _background = Art("Background", BackgroundArt);
+            _background.rectTransform.anchorMin = Vector2.zero;
+            _background.rectTransform.anchorMax = Vector2.one;
+            _background.rectTransform.offsetMin = _background.rectTransform.offsetMax = Vector2.zero;
+
+            _player = Art("Necromancer", NecromancerArt);
+            _enemy = Art("Guard", GuardArt);
+            for (var i = 0; i < Formation.Capacity; i++)
+            {
+                _allies[i] = Art("RaisedGuardSlot" + i, RaisedGuardArt);
+                _allies[i].gameObject.SetActive(false);
+            }
+
+            _playerLoop.AttackApplied += PlayerAttack;
+            _alliedLoop.AttackApplied += AlliedAttack;
+            _initialized = true;
             Refresh();
         }
-        RawImage Art(string name,Texture texture)
+
+        RawImage Art(string name, Texture texture)
         {
-            var o=new GameObject(name,typeof(RectTransform),typeof(RawImage));o.transform.SetParent(_root,false);
-            var image=o.GetComponent<RawImage>();image.texture=texture;image.raycastTarget=false;
-            image.rectTransform.anchorMin=image.rectTransform.anchorMax=Vector2.zero;
-            image.rectTransform.pivot=Vector2.zero;return image;
+            var o = new GameObject(name, typeof(RectTransform), typeof(RawImage));
+            o.transform.SetParent(_root, false);
+            var image = o.GetComponent<RawImage>();
+            image.texture = texture;
+            image.raycastTarget = false;
+            image.rectTransform.anchorMin = image.rectTransform.anchorMax = Vector2.zero;
+            image.rectTransform.pivot = Vector2.zero;
+            return image;
         }
-        void PlayerAttack(EntityId actor,DamageDeathResult result)
+
+        void PlayerAttack(EntityId actor, DamageDeathResult result)
         {
-            if(!result.Changed)return;
-            PlayerAttackCueCount++;_playerPulse=.20f;
+            if (!result.Changed) return;
+            PlayerAttackCueCount++;
+            _attackRemaining = AttackDuration;
+            PlayReviewSfx(PlayerAttackSfx);
             Hit(result);
         }
-        void AlliedAttack(EntityId actor,DamageDeathResult result)
+
+        void AlliedAttack(EntityId actor, DamageDeathResult result)
         {
-            if(!result.Changed)return;
-            AlliedContributionCueCount++;LastContributionUnitId=actor.Value;
-            for(int i=0;i<Formation.Capacity;i++)
+            if (!result.Changed) return;
+            AlliedContributionCueCount++;
+            LastContributionUnitId = actor.Value;
+            for (var i = 0; i < Formation.Capacity; i++)
             {
-                var ally=_game.Roster.GetSlot(i);
-                if(ally!=null&&ally.Model.Id.Equals(actor))_allyPulse[i]=.28f;
+                var ally = _game.Roster.GetSlot(i);
+                if (ally != null && ally.Model.Id.Equals(actor))
+                    _allyContributionRemaining[i] = AlliedContributionDuration;
             }
+            PlayReviewSfx(AlliedContributionSfx);
             Hit(result);
         }
+
         void Hit(DamageDeathResult result)
         {
-            HitCueCount++;_hitPulse=.14f;
-            if(result.BecameDefeated){DefeatCueCount++;_defeated=true;_defeatPulse=.32f;}
+            HitCueCount++;
+            _hitRemaining = HitDuration;
+            PlayReviewSfx(HitSfx);
+            if (!result.BecameDefeated) return;
+
+            DefeatCueCount++;
+            _defeated = true;
+            _defeatRemaining = DefeatDuration;
+            PlayReviewSfx(DefeatSfx);
         }
+
+        void PlayReviewSfx(AudioClip clip)
+        {
+            if (clip == null || _audio == null) return;
+            _audio.PlayOneShot(clip);
+            ReviewSfxPlaybackCount++;
+            LastReviewSfxName = clip.name;
+        }
+
         void Update()
         {
-            if(!_initialized)return;
-            _playerPulse=Mathf.Max(0,_playerPulse-Time.deltaTime);
-            _hitPulse=Mathf.Max(0,_hitPulse-Time.deltaTime);
-            _defeatPulse=Mathf.Max(0,_defeatPulse-Time.deltaTime);
-            for(int i=0;i<Formation.Capacity;i++)_allyPulse[i]=Mathf.Max(0,_allyPulse[i]-Time.deltaTime);
+            if (!_initialized) return;
+            var dt = Time.deltaTime;
+            _attackRemaining = Mathf.Max(0f, _attackRemaining - dt);
+            _hitRemaining = Mathf.Max(0f, _hitRemaining - dt);
+            _defeatRemaining = Mathf.Max(0f, _defeatRemaining - dt);
+            for (var i = 0; i < Formation.Capacity; i++)
+            {
+                _allyRaiseRemaining[i] = Mathf.Max(0f, _allyRaiseRemaining[i] - dt);
+                _allyContributionRemaining[i] = Mathf.Max(0f, _allyContributionRemaining[i] - dt);
+            }
             Refresh();
         }
-        void LateUpdate(){if(_initialized)Refresh();}
+
+        void LateUpdate()
+        {
+            if (_initialized) Refresh();
+        }
+
+        static float NormalizedProgress(float remaining, float duration)
+            => duration <= 0f ? 1f : 1f - Mathf.Clamp01(remaining / duration);
+
+        static float Curve(AnimationCurve curve, float remaining, float duration, float settled)
+            => remaining > 0f && curve != null
+                ? curve.Evaluate(NormalizedProgress(remaining, duration))
+                : settled;
+
         public void Refresh()
         {
-            if(!_initialized)return;
-            var target=_game.Enemies.CurrentTarget;
-            var id=target?.Model?.Id.Value;
-            if(id!=_enemyId){_enemyId=id;_defeated=false;_defeatPulse=0;_hitPulse=0;}
-            var h=_root.rect.height;var w=_root.rect.width;
-            var protectedHeight=((RectTransform)_game.transform.Find("SafeArea/ProtectedCombatReadabilityZone")).rect.height;
-            var scale=Mathf.Min(1f,h/312.48f,protectedHeight/218f);
-            Place(_player,42f/390f*w+(_playerPulse>0?6f*scale:0),32f*scale,92f*scale,138f*scale);
-            Place(_enemy,246f/390f*w,75f*scale,90f*scale,135f*scale);
-            _enemy.rectTransform.localScale=_defeated?new Vector3(1,Mathf.Lerp(.35f,1,_defeatPulse/.32f),1):Vector3.one;
-            _enemy.color=_hitPulse>0?new Color(1,.48f,.48f):_defeated?new Color(.65f,.75f,.8f,.65f):Color.white;
-            var before=VisibleAllyCount;VisibleAllyCount=0;
-            for(int i=0;i<Formation.Capacity;i++)
+            if (!_initialized) return;
+
+            var target = _game.Enemies.CurrentTarget;
+            var id = target?.Model?.Id.Value;
+            if (id != _enemyId)
             {
-                var exists=_game.Roster.GetSlot(i)!=null;
-                _allies[i].gameObject.SetActive(exists);
-                if(exists)VisibleAllyCount++;
-                Place(_allies[i],(142f+34f*i)/390f*w+(_allyPulse[i]>0?4f*scale:0),15f*scale,42f*scale,63f*scale);
-                _allies[i].color=_allyPulse[i]>0?new Color(.65f,1,.75f):Color.white;
-                _allies[i].rectTransform.localScale=_allyPulse[i]>0?Vector3.one*1.10f:Vector3.one;
+                _enemyId = id;
+                _defeated = false;
+                _defeatRemaining = 0f;
+                _hitRemaining = 0f;
             }
-            if(VisibleAllyCount>before){RaiseCueCount+=VisibleAllyCount-before;for(int i=before;i<VisibleAllyCount;i++)_allyPulse[i]=.45f;}
+
+            var h = _root.rect.height;
+            var w = _root.rect.width;
+            var protectedHeight = ((RectTransform)_game.transform.Find("SafeArea/ProtectedCombatReadabilityZone")).rect.height;
+            var scale = Mathf.Min(1f, h / 312.48f, protectedHeight / 218f);
+            // Small portrait screens previously shrank allies to ~20x29 physical px.
+            // Keep the same Formation truth but impose a readability floor without escaping the protected zone.
+            var allyScale = Mathf.Max(scale, Mathf.Min(1f, w / 500f));
+
+            var lunge = Curve(AttackLunge, _attackRemaining, AttackDuration, 0f);
+            Place(_player, 42f / 390f * w + lunge * 9f * scale, 32f * scale, 92f * scale, 138f * scale);
+            Place(_enemy, 246f / 390f * w, 75f * scale, 90f * scale, 135f * scale);
+
+            var defeatScaleY = _defeated
+                ? Curve(DefeatScaleY, _defeatRemaining, DefeatDuration, .35f)
+                : 1f;
+            _enemy.rectTransform.localScale = new Vector3(1f, defeatScaleY, 1f);
+
+            var hit = Curve(HitFlash, _hitRemaining, HitDuration, 0f);
+            _enemy.color = _defeated && _defeatRemaining <= 0f
+                ? new Color(.65f, .75f, .8f, .65f)
+                : Color.Lerp(Color.white, new Color(1f, .48f, .48f), Mathf.Clamp01(hit));
+
+            var before = VisibleAllyCount;
+            VisibleAllyCount = 0;
+            for (var i = 0; i < Formation.Capacity; i++)
+            {
+                var exists = _game.Roster.GetSlot(i) != null;
+                _allies[i].gameObject.SetActive(exists);
+                if (exists) VisibleAllyCount++;
+
+                Place(
+                    _allies[i],
+                    (142f + 34f * i) / 390f * w,
+                    15f * scale,
+                    42f * allyScale,
+                    63f * allyScale);
+
+                var contribution = Curve(
+                    AlliedContributionScale,
+                    _allyContributionRemaining[i],
+                    AlliedContributionDuration,
+                    1f);
+                var raise = Curve(
+                    RaiseScale,
+                    _allyRaiseRemaining[i],
+                    RaiseDuration,
+                    1f);
+
+                _allies[i].rectTransform.localScale = Vector3.one * Mathf.Max(raise, contribution);
+                var contributionActive = _allyContributionRemaining[i] > 0f;
+                _allies[i].color = contributionActive ? new Color(.65f, 1f, .75f) : Color.white;
+            }
+
+            if (VisibleAllyCount > before)
+            {
+                for (var i = before; i < VisibleAllyCount; i++)
+                    _allyRaiseRemaining[i] = RaiseDuration;
+                RaiseCueCount += VisibleAllyCount - before;
+                PlayReviewSfx(RaiseSfx);
+            }
+
             // Same FILL crop as Figma; preserve background aspect ratio.
-            var textureAspect=(float)BackgroundArt.width/BackgroundArt.height;
-            var viewportAspect=w/Mathf.Max(1,h);
-            _background.uvRect=textureAspect>viewportAspect
-                ?new Rect((1-viewportAspect/textureAspect)/2,0,viewportAspect/textureAspect,1)
-                :new Rect(0,(1-textureAspect/viewportAspect)/2,1,textureAspect/viewportAspect);
+            var textureAspect = (float)BackgroundArt.width / BackgroundArt.height;
+            var viewportAspect = w / Mathf.Max(1f, h);
+            _background.uvRect = textureAspect > viewportAspect
+                ? new Rect((1f - viewportAspect / textureAspect) / 2f, 0f, viewportAspect / textureAspect, 1f)
+                : new Rect(0f, (1f - textureAspect / viewportAspect) / 2f, 1f, textureAspect / viewportAspect);
         }
-        static void Place(RawImage image,float x,float y,float width,float height)
-        { image.rectTransform.anchoredPosition=new Vector2(x,y);image.rectTransform.sizeDelta=new Vector2(width,height); }
+
+        static void Place(RawImage image, float x, float y, float width, float height)
+        {
+            image.rectTransform.anchoredPosition = new Vector2(x, y);
+            image.rectTransform.sizeDelta = new Vector2(width, height);
+        }
+
         void OnDestroy()
         {
-            if(_playerLoop!=null)_playerLoop.AttackApplied-=PlayerAttack;
-            if(_alliedLoop!=null)_alliedLoop.AttackApplied-=AlliedAttack;
+            if (_playerLoop != null) _playerLoop.AttackApplied -= PlayerAttack;
+            if (_alliedLoop != null) _alliedLoop.AttackApplied -= AlliedAttack;
         }
     }
 }

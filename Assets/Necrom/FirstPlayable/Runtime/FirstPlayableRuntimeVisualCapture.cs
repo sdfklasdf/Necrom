@@ -158,6 +158,11 @@ namespace Necrom.FirstPlayable.Runtime
             if(visual!=null)
             {
                 lines.Add("q3ArtLoaded="+visual.LoadedArtCount);
+                lines.Add("authoredMotion="+visual.HasAuthoredMotion);
+                lines.Add("audioClips="+visual.LoadedAudioClipCount);
+                lines.Add("reviewSfxPlaybackCount="+visual.ReviewSfxPlaybackCount);
+                lines.Add("lastReviewSfx="+visual.LastReviewSfxName);
+                lines.Add("audioListenerCount="+UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length);
                 lines.Add("playerAttackCues="+visual.PlayerAttackCueCount);
                 lines.Add("hitCues="+visual.HitCueCount);
                 lines.Add("defeatCues="+visual.DefeatCueCount);
