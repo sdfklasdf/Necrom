@@ -1,0 +1,46 @@
+requested=(390, 844)
+actual=390x844
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+soulBalance=19
+alliedCount=5
+overlayCount=1
+target=TargetDefeated
+raise=RaiseEligible
+army=ArmyProofPending
+TargetStatusReadabilityZone=(24.00, 369.76, 0.00);(24.00, 481.76, 0.00);(366.00, 481.76, 0.00);(366.00, 369.76, 0.00)
+RaiseActionStatusReadabilityZone=(24.00, 177.76, 0.00);(24.00, 353.76, 0.00);(366.00, 353.76, 0.00);(366.00, 177.76, 0.00)
+ArmyStatusReadabilityZone=(24.00, 49.76, 0.00);(24.00, 161.76, 0.00);(366.00, 161.76, 0.00);(366.00, 49.76, 0.00)
+ProtectedCombatReadabilityZone=(7.80, 497.76, 0.00);(7.80, 732.59, 0.00);(382.20, 732.59, 0.00);(382.20, 497.76, 0.00)
+CombatViewport=(0.00, 497.76, 0.00);(0.00, 810.24, 0.00);(390.00, 810.24, 0.00);(390.00, 497.76, 0.00)
+q3ArtLoaded=4
+authoredMotion=True
+audioClips=5
+reviewSfxPlaybackCount=51
+lastReviewSfx=defeat-review
+audioListenerCount=1
+playerAttackCues=7
+hitCues=20
+defeatCues=6
+raiseCues=5
+alliedContributionCues=13
+lastContributionUnitId=ally:35
+visibleAllyArt=5
+art.Background=(0.00, 497.76, 0.00);(0.00, 810.24, 0.00);(390.00, 810.24, 0.00);(390.00, 497.76, 0.00)
+art.Necromancer=(42.00, 529.76, 0.00);(42.00, 667.76, 0.00);(134.00, 667.76, 0.00);(134.00, 529.76, 0.00)
+art.Guard=(246.00, 572.76, 0.00);(246.00, 620.01, 0.00);(336.00, 620.01, 0.00);(336.00, 572.76, 0.00)
+art.RaisedGuardSlot0=(142.00, 512.76, 0.00);(142.00, 575.76, 0.00);(184.00, 575.76, 0.00);(184.00, 512.76, 0.00)
+art.RaisedGuardSlot1=(176.00, 512.76, 0.00);(176.00, 575.76, 0.00);(218.00, 575.76, 0.00);(218.00, 512.76, 0.00)
+art.RaisedGuardSlot2=(210.00, 512.76, 0.00);(210.00, 575.76, 0.00);(252.00, 575.76, 0.00);(252.00, 512.76, 0.00)
+art.RaisedGuardSlot3=(244.00, 512.76, 0.00);(244.00, 575.76, 0.00);(286.00, 575.76, 0.00);(286.00, 512.76, 0.00)
+art.RaisedGuardSlot4=(278.00, 512.76, 0.00);(278.00, 575.76, 0.00);(320.00, 575.76, 0.00);(320.00, 512.76, 0.00)
+q3ProtectedUnitArt=PASS
+StateKey font=12 overflow=False content=전투
+PrimaryText font=20 overflow=False content=수호병 격파
+SecondaryText font=14 overflow=False content=체력 0 / 10 · 영혼을 획득했습니다
+StateKey font=12 overflow=False content=소환
+PrimaryText font=20 overflow=False content=군단이 가득 찼습니다
+SecondaryText font=14 overflow=False content=5 / 5 · 다음 전투에서 군단의 힘을 확인하세요
+CtaText font=14 overflow=False content=군단 가득 참
+StateKey font=12 overflow=False content=군단
+PrimaryText font=20 overflow=False content=군단 5 / 5
+SecondaryText font=14 overflow=False content=새 아군의 첫 공격을 기다리고 있습니다

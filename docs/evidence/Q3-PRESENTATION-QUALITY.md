@@ -1,124 +1,203 @@
-# Q3 presentation quality closure — partial evidence
+# Q3 presentation quality closure — EV-016
 
-Date: 2026-10-04 KST
-Baseline: origin/main 514f341f28115b776ddb42530e63659ae49a9446 (EV-014)
+Date: 2026-10-05 KST
+Baseline: origin/main 1415f195808e2ca5ea4bd065204730d5ddf44233 (EV-015 implementation checkpoint)
 Milestone: Q3 VERTICAL SLICE IN_PROGRESS
-Verdict: PARTIAL. Small-screen readability and authored review presentation are implemented, but the final fresh PlayMode/full regression/build/native-input pass is BLOCKED by the current Unity license state.
+Verdict: PASS for the bounded current-head desktop review validation. Q3 overall remains PARTIAL / IN_PROGRESS because final commercial direction, production typography/copy/rights, production sound, physical mobile device, accessibility and real-user fun/retention are still open.
 
 ## Routing
 
-Selected DEV: DEV-02-05/06/07/08/13, DEV-04-09/10 plus the Q3 final-quality exit.
-Existing AWU-1~5, FP-29 and EV-014 representative art wiring were consumed as input and were not reimplemented.
+Selected DEV: DEV-02-05/06/07/08/13, DEV-04-09/10 and Q3 final-quality exit.
+Existing AWU-1~5, FP-29, EV-014 representative-art wiring and EV-015 authored review presentation were inputs and were not reimplemented.
 Guard remains one archetype repeated in five Formation slots. Five slots are not five monster species. Three regular + one boss remains an unapproved proposal.
 
 ## Actual Work Units
 
-### Q3-P1 — short-portrait readability
+### EV016-A — current-head targeted + full regression
 
 Input:
-- EV-014 runtime composition and Figma frames 18:72 / 18:78 / 18:84.
-- Prior 360x640 evidence showed RaisedGuardSlot0 at about 19.57 x 29.36 physical px.
+- main/origin/local 1415f195808e2ca5ea4bd065204730d5ddf44233.
+- Unity 6000.3.25f1.
+- valid Unity Personal entitlement restored.
+- validation project C:\Dev\Necrom-playmode-recovery at the same Git HEAD, clean.
 
 Work:
-- Runtime ally presentation now applies a width-aware readability floor while retaining the protected-combat constraint.
-- At 360x640 the intended raised-ally box is about 30.24 x 45.36 px.
-- Figma canonical added frame 31:158: Q3 / 360x640 · full formation readability · review candidate.
-- Full-Formation capacity treatment remains the same RaiseEligible capacity guard, not a fifteenth semantic state.
-
-Output:
-- Assets/Necrom/FirstPlayable/Runtime/FirstPlayableVisualPresentation.cs
-- Figma 31:158 and review note 31:174.
-
-Verification:
-- Existing current-runtime targeted run AWU4-Q3-presentation-targeted.xml: 7/7 PASS, including ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected.
-- The runtime/profile files tested by that XML are byte-identical to the current main working tree.
-- Figma 31:158 screenshot was visually inspected: five allies are readable, do not overlap, stay inside the battle band, and the HUD/capacity CTA has no clipping.
-- Current final fresh re-run after the later AudioListener scene addition: BLOCKED by Unity licensing, see Q3-P3.
-
-Verdict: PASS for the bounded readability implementation; final current-head regression is not yet closed.
-
-### Q3-P2 — authored review motion and audio
-
-Input:
-- EV-014 procedural lunge/tint/collapse/pulse event hooks.
-- Actual production damage, defeat, Raise, roster and exact-contributor events.
-
-Work:
-- Added FirstPlayablePresentationProfile with five authored AnimationCurve timing contracts:
-  attack 180 ms, hit 120 ms, defeat 340 ms, Raise 420 ms, allied contribution 240 ms.
-- Generated five deterministic PCM review SFX with scripts/generate-q3-review-sfx.ps1.
-- No third-party samples are used.
-- Added AudioSource runtime playback and one canonical scene AudioListener.
-- Actual event hooks remain the trigger; no test-state adapter was introduced.
-
-Audio artifact readback:
-- 5/5 WAV files parse as RIFF/WAVE PCM mono 22050 Hz 16-bit.
-- Durations: attack 0.14 s, hit 0.10 s, defeat 0.30 s, Raise 0.36 s, ally contribution 0.12 s.
-- Production sound design / mix / loudness / physical-device playback remain NOT RUN.
-
-Unity readback:
-- Artifacts/AWU4-Q3-presentation-apply9.log exited 0 after the listener addition.
-- Canonical scene/prefab reopen passed with art 4/4, authored motion 5/5, audio clips 5/5.
-- No compiler-error signature exists in the apply log.
-
-Targeted evidence:
-- AWU4-Q3-presentation-targeted.xml: 7/7 PASS before the final AudioListener assertion was added.
-- It verifies actual damage attack/hit/defeat cue requests, Raise art/cue, exact allied contribution, authored profile/audio references, short portrait readability, copy fit and lifecycle re-entry.
-- The later listener addition compiled/imported/reopened successfully but has not received a new PlayMode execution because Unity licensing is currently unavailable.
-
-Verdict: IMPLEMENTED / PARTIAL VALIDATION. Audible normal-path playback on the current final scene still needs one fresh licensed run.
-
-### Q3-P3 — final regression/build/input/visual closure
-
-Attempt:
-- Fresh targeted command executed with process-local HOME=USERPROFILE, TMP=TEMP, PROGRAMDATA=C:\ProgramData.
+- fresh FirstPlayableQ3VisualTests targeted execution.
+- fresh entire relevant PlayMode execution.
+- process-local HOME=USERPROFILE, TMP=TEMP, PROGRAMDATA=C:\ProgramData.
 - -runTests was used without -quit.
 
 Result:
-- Unity terminated before test execution with exit code 198.
-- Log: C:\Dev\Necrom-playmode-recovery\Artifacts\AWU4-Q3-motion-audio-targeted-fresh.log
-- Cause: no current Unity entitlement/token/ULF was available to the Licensing Client.
-- No XML was produced. This is BLOCKED, not FAIL and not PASS.
+- targeted: 7/7 PASS, failed0, skipped0, duration 11.9268454 s.
+- full relevant PlayMode: 131/131 PASS, failed0, skipped0, duration 19.4142807 s.
+- Previous EV-014 129/129 was not reused as new evidence.
 
-Consequences:
-- Current-head full PlayMode is NOT RUN.
-- Current-head Windows rebuild/launch/native-input/audio playback is NOT RUN.
-- EV-014 129/129 and old build/input evidence are historical only and are not reused as new results.
+Artifacts:
+- docs/evidence/artifacts/Q3/EV015-current/targeted.xml
+- docs/evidence/artifacts/Q3/EV015-current/full.xml
+- docs/evidence/artifacts/Q3/EV015-current/raw-logs.zip (targeted/full raw logs preserved)
 
-## Figma readback
+Verdict: PASS.
+
+### EV016-B — fresh Windows development build + responsive playback
+
+Work:
+- Necrom.EditorTools.FirstPlayableCanonicalScene.BuildVisualPlayer executed from current validation project.
+- Canonical scene reopened before build.
+- Fresh development-player responsive run executed at 390x844, 768x1024 and 360x640.
+
+Build result:
+- CANONICAL_REOPEN_PASS components=19.
+- VISUAL_PLAYER_BUILD Succeeded errors=0.
+- fresh build GUID: 81e37441d4564baabe2f62bb167a86f4.
+
+Responsive run:
+- run id: 20261005T132118670-2d80deeef4ef4671a6baa62220640048.
+- 3 requested ratios executed at exact actual pixel sizes.
+- 4 captures per ratio: active / eligible / raised / proof.
+- q3ArtLoaded=4.
+- authoredMotion=True.
+- audioClips=5.
+- audioListenerCount=1.
+- overlayCount=1 on every capture.
+- q3ProtectedUnitArt=PASS on every capture.
+- text overflow True count=0 on every capture.
+- review SFX playback increases through actual combat/Raise progression.
+
+360x640 raised geometry:
+- RaisedGuardSlot0 = 30.24 x 45.36 px.
+- unit art remained inside ProtectedCombatReadabilityZone.
+- Figma 31:158 uses the same 30.24 x 45.36 px raised-unit review floor for its 360x640 full-Formation candidate.
+
+Artifacts:
+- docs/evidence/artifacts/Q3/EV015-current/raw-logs.zip (build/responsive-player raw logs preserved)
+- docs/evidence/artifacts/Q3/EV015-current/responsive/
+
+Verdict: PASS within desktop simulated-SafeArea review scope.
+
+### EV016-C — normal-path native OS input + authored motion/audio playback
+
+Initial attempt:
+- canonical scripts/verify-first-playable-native-input.ps1 launched the current player but Windows rejected SetForegroundWindow.
+- This was a desktop foreground-focus issue before the first requested gameplay click, not a gameplay failure.
+
+Recovery:
+- no production code, scene, prefab or Figma changes.
+- an evidence-only temporary driver copied the canonical native-input script and added robust AppActivate + ShowWindow + BringWindowToTop + SetForegroundWindow retry.
+- gameplay logic, input-request protocol, client-pixel checks, OS cursor positioning and mouse_event clicks were unchanged.
+- evidence driver is preserved at docs/evidence/artifacts/Q3/EV015-current/native-input-focusfix.ps1.
+
+Fresh native run:
+- run id: 20261005T132347996-8eeee4182cd444c197380a5dfae7ea66.
+- PLAYER_EXIT=0.
+- 10/10 actual OS mouse clicks completed.
+- 6 encounters resolved and five Raises executed through normal gameplay.
+- final soulBalance=19.
+- alliedCount=5.
+- Raise CTA was verified non-interactable at full army before final capture.
+- final visibleAllyArt=5.
+- overlayCount=1.
+- q3ProtectedUnitArt=PASS.
+- text overflow True count=0.
+- authoredMotion=True.
+- audioClips=5.
+- audioListenerCount=1.
+- final reviewSfxPlaybackCount=51.
+- playerAttackCues=7.
+- hitCues=20.
+- defeatCues=6.
+- raiseCues=5.
+- alliedContributionCues=13.
+- last actual contributor=ally:35.
+
+Actual event/audio evidence:
+- native-attack-hit: reviewSfxPlaybackCount=2 and lastReviewSfx=hit-review.
+- each successful Raise increments raiseCues and ends with lastReviewSfx=raise-review.
+- later encounters increment alliedContributionCues from actual allied attacks.
+- defeat captures end with lastReviewSfx=defeat-review.
+- test-only semantic adapters were not used for this native run.
+
+Artifacts:
+- docs/evidence/artifacts/Q3/EV015-current/native-input/
+- docs/evidence/artifacts/Q3/EV015-current/raw-logs.zip (native-player raw log preserved)
+- docs/evidence/artifacts/Q3/EV015-current/native-input-focusfix.ps1
+
+Verdict: PASS for current-head desktop normal-input review playback.
+
+## Figma/runtime comparison
 
 Canonical file: eXqKU1qHXsn52SJfIGltZo
-- HUD semantic board: 11:89 (Target3 / Raise7 / Army4 = 14 semantic states)
-- Q3 battle: 18:72
-- Q3 raised: 18:78
-- Q3 full Formation: 18:84
-- Capacity component: 19:90
-- 360x640 full-Formation readability: 31:158
-- Motion/audio review note: 31:174
+- HUD semantic board: 11:89.
+- Q3 battle: 18:72.
+- Q3 raised: 18:78.
+- Q3 full Formation: 18:84.
+- Capacity component: 19:90.
+- 360x640 full-Formation readability: 31:158.
+- Motion/audio review note: 31:174.
 
-State evidence boundary remains:
-- 9 canonical captures: TargetActive/Defeated; RaiseTargetNotReady/Eligible/CommittedAwaitingProof/ProofObserved; ArmyEmpty/ProofPending/ProofObserved.
-- 5 component-boundary states: TargetNone; RaiseNoTarget/SourceUnavailableOrConsumed/InsufficientSoul; ArmyOwned.
-- Full capacity is not a fifteenth semantic state.
+Fresh metadata readback of 31:158:
+- frame = 360x640.
+- CombatViewport = 360 x 160.49.
+- RaisedGuard and slots 1-4 = 30.24 x 45.36 each.
+- capacity CTA remains explicit.
+- Runtime 360x640 RaisedGuardSlot0 = 30.24 x 45.36, matching the candidate readability floor.
+- Runtime full army was additionally proven at 390x844 with five visible slots, 42 x 63 each and CTA disabled by capacity guard.
+- No claim of pixel-identical final fidelity; this is a bounded review-candidate comparison.
+
+## State evidence boundary
+
+14 renderer semantic states remain:
+- Target3.
+- Raise7.
+- Army4.
+
+9 canonical captures remain:
+- TargetActive / TargetDefeated.
+- RaiseTargetNotReady / RaiseEligible / RaiseCommittedAwaitingProof / RaiseProofObserved.
+- ArmyEmpty / ArmyProofPending / ArmyProofObserved.
+
+5 component-boundary states remain:
+- TargetNone.
+- RaiseNoTarget.
+- RaiseSourceUnavailableOrConsumed.
+- RaiseInsufficientSoul.
+- ArmyOwned.
+
+Full capacity is CTA treatment under existing semantics, not a fifteenth semantic state.
+
+## Current verdict
+
+PASS:
+- current-head targeted 7/7.
+- current-head full PlayMode 131/131.
+- Windows development build, errors0.
+- fresh responsive launch/capture at 390x844 / 768x1024 / 360x640.
+- protected unit geometry and overlay1.
+- no text overflow in fresh captures.
+- normal gameplay native OS input 10/10.
+- actual attack/hit/defeat/Raise/exact allied contribution event feedback.
+- authored review motion profile and 5 review SFX are actually present and played on the normal desktop path.
+- Figma 360x640 readability floor matches runtime raised-unit geometry.
+
+Q3 overall remains PARTIAL / IN_PROGRESS.
 
 ## Evidence boundaries still open
 
 UNKNOWN / NOT RUN:
-- final commercial visual direction
-- final product font/copy/icon and full asset-rights review
-- production sound design and mix
-- physical mobile device install / actual SafeArea
-- actual 1080x2400 pixel run
-- accessibility acceptance
-- real-user fun / retention
-- approved launch monster count
+- final commercial visual direction approval.
+- final product font/copy/icon approval.
+- complete asset-rights/legal review.
+- production sound design, mix, loudness and final commercial audio approval.
+- physical mobile device install.
+- actual mobile SafeArea.
+- actual 1080x2400 physical pixel run.
+- device accessibility acceptance.
+- real-user fun, retention and performance acceptance.
+- approved launch monster count.
 
-## Failure return
+Desktop SafeArea evidence remains simulated 4% vertical insets and must not be called physical-device validation.
 
-Re-activate/sign into Unity Hub so Unity 6000.3.25f1 has a valid editor entitlement.
-Then sync the current main working-tree source to C:\Dev\Necrom-playmode-recovery and run:
-1. FirstPlayableQ3VisualTests targeted suite.
-2. Entire relevant PlayMode suite.
-3. Windows development build.
-4. Normal native-input playback and responsive capture, including current audio/motion counters and 360x640 art geometry.
-Only after those pass may this presentation slice be promoted from PARTIAL to validated current-head evidence.
+## Next priority
+
+Move from review-candidate presentation into Q3 final-direction convergence.
+Before broad content expansion, resolve final commercial visual direction / production typography-copy / asset-rights and production motion-audio direction, then validate on a representative physical mobile device.

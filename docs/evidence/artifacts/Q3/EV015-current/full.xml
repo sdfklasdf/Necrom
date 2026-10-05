@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="131" result="Passed" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.4142807">
+  <test-suite type="TestSuite" id="1163" name="Necrom-playmode-recovery" fullname="Necrom-playmode-recovery" runstate="Runnable" testcasecount="131" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.414281" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1158" name="Necrom.FirstPlayable.PlayModeTests.dll" fullname="C:/Dev/Necrom-playmode-recovery/Library/ScriptAssemblies/Necrom.FirstPlayable.PlayModeTests.dll" runstate="Runnable" testcasecount="131" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.361482" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="6480" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1159" name="Necrom" fullname="Necrom" runstate="Runnable" testcasecount="131" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.353501" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1160" name="FirstPlayable" fullname="Necrom.FirstPlayable" runstate="Runnable" testcasecount="131" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.352820" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1161" name="Tests" fullname="Necrom.FirstPlayable.Tests" runstate="Runnable" testcasecount="131" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:45Z" duration="19.343558" total="131" passed="131" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="BattlefieldAnchorMapTests" fullname="Necrom.FirstPlayable.Tests.BattlefieldAnchorMapTests" classname="Necrom.FirstPlayable.Tests.BattlefieldAnchorMapTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:27Z" duration="0.400726" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="AnchorMapCreatesStableNormalizedSpawnZones" fullname="Necrom.FirstPlayable.Tests.BattlefieldAnchorMapTests.AnchorMapCreatesStableNormalizedSpawnZones" methodname="AnchorMapCreatesStableNormalizedSpawnZones" classname="Necrom.FirstPlayable.Tests.BattlefieldAnchorMapTests" runstate="Runnable" seed="701283110" result="Passed" start-time="2026-10-05 13:18:26Z" end-time="2026-10-05 13:18:26Z" duration="0.311816" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1003" name="EncounterBoundaryControllerTests" fullname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests" classname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.102737" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1006" name="EncounterLayoutDoesNotEnterGameStateSnapshotSchema" fullname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests.EncounterLayoutDoesNotEnterGameStateSnapshotSchema" methodname="EncounterLayoutDoesNotEnterGameStateSnapshotSchema" classname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests" runstate="Runnable" seed="453053153" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.011166" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="InvalidConfigIsRejectedBeforeBoundaryCanMutateScene" fullname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests.InvalidConfigIsRejectedBeforeBoundaryCanMutateScene" methodname="InvalidConfigIsRejectedBeforeBoundaryCanMutateScene" classname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests" runstate="Runnable" seed="1563493008" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.012889" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="StartAndRestartUseSameBoundaryWithoutDuplicationAndRepairDrift" fullname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests.StartAndRestartUseSameBoundaryWithoutDuplicationAndRepairDrift" methodname="StartAndRestartUseSameBoundaryWithoutDuplicationAndRepairDrift" classname="Necrom.FirstPlayable.Tests.EncounterBoundaryControllerTests" runstate="Runnable" seed="151885151" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.074107" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1007" name="EnemyArchetypeDefinitionTests" fullname="Necrom.FirstPlayable.Tests.EnemyArchetypeDefinitionTests" classname="Necrom.FirstPlayable.Tests.EnemyArchetypeDefinitionTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.043593" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1008" name="DefinitionCarriesIdentityRoleAndCombatHealth" fullname="Necrom.FirstPlayable.Tests.EnemyArchetypeDefinitionTests.DefinitionCarriesIdentityRoleAndCombatHealth" methodname="DefinitionCarriesIdentityRoleAndCombatHealth" classname="Necrom.FirstPlayable.Tests.EnemyArchetypeDefinitionTests" runstate="Runnable" seed="1745791807" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.030911" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1009" name="EnemyDefeatStateTests" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.174553" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1014" name="ActiveEnemyWithoutRaiseSourceIsNotEligibleBeforeOrAfterNonLethalDamage" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.ActiveEnemyWithoutRaiseSourceIsNotEligibleBeforeOrAfterNonLethalDamage" methodname="ActiveEnemyWithoutRaiseSourceIsNotEligibleBeforeOrAfterNonLethalDamage" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="1821865947" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.017155" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="ConsumedRaiseSourceIsNotEligible" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.ConsumedRaiseSourceIsNotEligible" methodname="ConsumedRaiseSourceIsNotEligible" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="1503279434" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.016439" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="DamageAfterDefeatDoesNotCreateSecondRaiseSourceOrMutateOriginal" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.DamageAfterDefeatDoesNotCreateSecondRaiseSourceOrMutateOriginal" methodname="DamageAfterDefeatDoesNotCreateSecondRaiseSourceOrMutateOriginal" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="544093395" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.060810" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="EligibilityQueryIsSideEffectFree" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.EligibilityQueryIsSideEffectFree" methodname="EligibilityQueryIsSideEffectFree" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="910305245" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.006603" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="EligibleDefeatedEnemyReturnsAvailableRaiseSource" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.EligibleDefeatedEnemyReturnsAvailableRaiseSource" methodname="EligibleDefeatedEnemyReturnsAvailableRaiseSource" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="113142384" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.004524" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="LethalDamageCreatesExactlyOneAvailableRaiseSourceFromSameEnemy" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.LethalDamageCreatesExactlyOneAvailableRaiseSourceFromSameEnemy" methodname="LethalDamageCreatesExactlyOneAvailableRaiseSourceFromSameEnemy" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="749872378" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.006172" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="NonLethalDamageKeepsEnemyActiveAndDoesNotCreateRaiseSource" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.NonLethalDamageKeepsEnemyActiveAndDoesNotCreateRaiseSource" methodname="NonLethalDamageKeepsEnemyActiveAndDoesNotCreateRaiseSource" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="106812563" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.004896" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="RaiseConversionPreservesRoleAndLineageAndRejectsSecondConversion" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.RaiseConversionPreservesRoleAndLineageAndRejectsSecondConversion" methodname="RaiseConversionPreservesRoleAndLineageAndRejectsSecondConversion" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="496298113" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.019138" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="RaiseSourceFromDifferentDefeatedEnemyIsNotEligibleAndIsNotRebound" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.RaiseSourceFromDifferentDefeatedEnemyIsNotEligibleAndIsNotRebound" methodname="RaiseSourceFromDifferentDefeatedEnemyIsNotEligibleAndIsNotRebound" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="234838625" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.014003" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="RaiseSourceRequiresNonBlankRoleId" fullname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests.RaiseSourceRequiresNonBlankRoleId" methodname="RaiseSourceRequiresNonBlankRoleId" classname="Necrom.FirstPlayable.Tests.EnemyDefeatStateTests" runstate="Runnable" seed="1696591331" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.011336" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1020" name="EnemySpawnControllerTests" fullname="Necrom.FirstPlayable.Tests.EnemySpawnControllerTests" classname="Necrom.FirstPlayable.Tests.EnemySpawnControllerTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.013224" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1021" name="SpawnCreatesActiveEnemyAndMakesItCurrentTarget" fullname="Necrom.FirstPlayable.Tests.EnemySpawnControllerTests.SpawnCreatesActiveEnemyAndMakesItCurrentTarget" methodname="SpawnCreatesActiveEnemyAndMakesItCurrentTarget" classname="Necrom.FirstPlayable.Tests.EnemySpawnControllerTests" runstate="Runnable" seed="920461032" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.011180" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1022" name="FirstPlayableAutoCombatLoopTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:29Z" duration="2.066369" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1024" name="BelowCadenceDoesNotAttack" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.BelowCadenceDoesNotAttack" methodname="BelowCadenceDoesNotAttack" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1998067887" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.109805" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1029" name="DefeatedCurrentTargetIsNotAttackedOrReacquired" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.DefeatedCurrentTargetIsNotAttackedOrReacquired" methodname="DefeatedCurrentTargetIsNotAttackedOrReacquired" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1262040118" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.021644" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1028" name="DefeatedPlayerCannotAttack" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.DefeatedPlayerCannotAttack" methodname="DefeatedPlayerCannotAttack" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1916942192" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.021045" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="FurtherAdvanceAfterVictoryHasNoAdditionalSideEffects" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.FurtherAdvanceAfterVictoryHasNoAdditionalSideEffects" methodname="FurtherAdvanceAfterVictoryHasNoAdditionalSideEffects" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1222755258" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:27Z" duration="0.093197" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="InvalidDeltaRejectsBeforeMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.InvalidDeltaRejectsBeforeMutation" methodname="InvalidDeltaRejectsBeforeMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1626204177" result="Passed" start-time="2026-10-05 13:18:27Z" end-time="2026-10-05 13:18:28Z" duration="0.721230" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="LethalAttackCreatesOneRaiseSourceAndResolvesVictory" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.LethalAttackCreatesOneRaiseSourceAndResolvesVictory" methodname="LethalAttackCreatesOneRaiseSourceAndResolvesVictory" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1533846620" result="Passed" start-time="2026-10-05 13:18:28Z" end-time="2026-10-05 13:18:28Z" duration="0.153483" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="MissingAttachedBehaviorRejectsBeforeMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.MissingAttachedBehaviorRejectsBeforeMutation" methodname="MissingAttachedBehaviorRejectsBeforeMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1220372146" result="Passed" start-time="2026-10-05 13:18:28Z" end-time="2026-10-05 13:18:28Z" duration="0.109781" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="MultipleIntervalsCatchUpAndRetainRemainder" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.MultipleIntervalsCatchUpAndRetainRemainder" methodname="MultipleIntervalsCatchUpAndRetainRemainder" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="262004522" result="Passed" start-time="2026-10-05 13:18:28Z" end-time="2026-10-05 13:18:28Z" duration="0.078119" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="NonRunningTimeDoesNotPreloadAttack" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.NonRunningTimeDoesNotPreloadAttack" methodname="NonRunningTimeDoesNotPreloadAttack" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1749699181" result="Passed" start-time="2026-10-05 13:18:28Z" end-time="2026-10-05 13:18:29Z" duration="0.722848" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="OneCadenceAttacksWithoutInput" fullname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests.OneCadenceAttacksWithoutInput" methodname="OneCadenceAttacksWithoutInput" classname="Necrom.FirstPlayable.Tests.FirstPlayableAutoCombatLoopTests" runstate="Runnable" seed="1942879812" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.022741" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1033" name="FirstPlayableBattleRuntimeControllerTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.262428" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1037" name="StaleRestartRepairsLayoutButKeepsResolvedDomainState" fullname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests.StaleRestartRepairsLayoutButKeepsResolvedDomainState" methodname="StaleRestartRepairsLayoutButKeepsResolvedDomainState" classname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" runstate="Runnable" seed="1975288998" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.106801" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="StartRejectsMissingActiveEnemyBeforeBattleMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests.StartRejectsMissingActiveEnemyBeforeBattleMutation" methodname="StartRejectsMissingActiveEnemyBeforeBattleMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" runstate="Runnable" seed="1819130194" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.036697" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="StartRejectsMissingNecromancerBeforeBattleMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests.StartRejectsMissingNecromancerBeforeBattleMutation" methodname="StartRejectsMissingNecromancerBeforeBattleMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" runstate="Runnable" seed="612562071" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.064143" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="ValidActorsDriveStartResolveFinalizeRestartWithoutEntityLifecycleSideEffects" fullname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests.ValidActorsDriveStartResolveFinalizeRestartWithoutEntityLifecycleSideEffects" methodname="ValidActorsDriveStartResolveFinalizeRestartWithoutEntityLifecycleSideEffects" classname="Necrom.FirstPlayable.Tests.FirstPlayableBattleRuntimeControllerTests" runstate="Runnable" seed="1493672396" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:29Z" duration="0.050845" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1038" name="FirstPlayableCanonicalCompositionTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:39Z" duration="9.344912" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1040" name="CanonicalDisableReentryAndDestroyLeaveOneOrZeroOverlay" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.CanonicalDisableReentryAndDestroyLeaveOneOrZeroOverlay" methodname="CanonicalDisableReentryAndDestroyLeaveOneOrZeroOverlay" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="886327476" result="Passed" start-time="2026-10-05 13:18:29Z" end-time="2026-10-05 13:18:38Z" duration="8.662841" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1041" name="CanonicalPanelsUseRoundedSurfaceAndSemanticStateAccent" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.CanonicalPanelsUseRoundedSurfaceAndSemanticStateAccent" methodname="CanonicalPanelsUseRoundedSurfaceAndSemanticStateAccent" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="823229407" result="Passed" start-time="2026-10-05 13:18:38Z" end-time="2026-10-05 13:18:38Z" duration="0.140496" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="ConfiguredSafeAreaSurvivesNextEncounterRestart" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.ConfiguredSafeAreaSurvivesNextEncounterRestart" methodname="ConfiguredSafeAreaSurvivesNextEncounterRestart" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="867114116" result="Passed" start-time="2026-10-05 13:18:38Z" end-time="2026-10-05 13:18:38Z" duration="0.160777" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="NormalSceneRunsCombatRaiseAndRealAllyContribution" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.NormalSceneRunsCombatRaiseAndRealAllyContribution" methodname="NormalSceneRunsCombatRaiseAndRealAllyContribution" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="1998105332" result="Passed" start-time="2026-10-05 13:18:38Z" end-time="2026-10-05 13:18:38Z" duration="0.146522" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1044" name="PortraitSafeAreaKeepsHudZonesOutsideProtectedCombat" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.PortraitSafeAreaKeepsHudZonesOutsideProtectedCombat" methodname="PortraitSafeAreaKeepsHudZonesOutsideProtectedCombat" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="1069732169" result="Passed" start-time="2026-10-05 13:18:38Z" end-time="2026-10-05 13:18:38Z" duration="0.089507" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="RaiseCtaDisabledAndEligibleHaveDistinctVerifiedVisuals" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests.RaiseCtaDisabledAndEligibleHaveDistinctVerifiedVisuals" methodname="RaiseCtaDisabledAndEligibleHaveDistinctVerifiedVisuals" classname="Necrom.FirstPlayable.Tests.FirstPlayableCanonicalCompositionTests" runstate="Runnable" seed="1324880151" result="Passed" start-time="2026-10-05 13:18:38Z" end-time="2026-10-05 13:18:39Z" duration="0.068395" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1045" name="FirstPlayableCombatHudLifecycleTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.224449" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1047" name="InvalidSceneBindingFailsBeforeOverlayOwnership" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests.InvalidSceneBindingFailsBeforeOverlayOwnership" methodname="InvalidSceneBindingFailsBeforeOverlayOwnership" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests" runstate="Runnable" seed="1357979293" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.118908" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="LifecycleOwnsOneOverlayAndCleansUpAcrossShutdownAndReentry" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests.LifecycleOwnsOneOverlayAndCleansUpAcrossShutdownAndReentry" methodname="LifecycleOwnsOneOverlayAndCleansUpAcrossShutdownAndReentry" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudLifecycleTests" runstate="Runnable" seed="988890615" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.102834" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1048" name="FirstPlayableCombatHudPresenterTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.120056" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1049" name="ApprovedA21ContractsExist" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.ApprovedA21ContractsExist" methodname="ApprovedA21ContractsExist" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="789373226" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.007187" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="ArmyProjectionPreservesFormationOwnershipWhenRuntimeDiffers" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.ArmyProjectionPreservesFormationOwnershipWhenRuntimeDiffers" methodname="ArmyProjectionPreservesFormationOwnershipWhenRuntimeDiffers" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="652946283" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.017830" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1052" name="CommittedAndObservedProofKeysRequireExactReceiptMatch" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.CommittedAndObservedProofKeysRequireExactReceiptMatch" methodname="CommittedAndObservedProofKeysRequireExactReceiptMatch" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="324583480" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.037435" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1051" name="RaiseMachineStatesUseSemanticKeysWithoutFakeProcessing" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.RaiseMachineStatesUseSemanticKeysWithoutFakeProcessing" methodname="RaiseMachineStatesUseSemanticKeysWithoutFakeProcessing" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="1091594954" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.033384" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1050" name="RefreshCapturesOnceAndRoutesBattleTargetRaiseAndArmy" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.RefreshCapturesOnceAndRoutesBattleTargetRaiseAndArmy" methodname="RefreshCapturesOnceAndRoutesBattleTargetRaiseAndArmy" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="45154257" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.014162" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="ZoneBindingRejectsMissingOrWrongZonesWithoutGeometryMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests.ZoneBindingRejectsMissingOrWrongZonesWithoutGeometryMutation" methodname="ZoneBindingRejectsMissingOrWrongZonesWithoutGeometryMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudPresenterTests" runstate="Runnable" seed="414980035" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.006273" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1055" name="FirstPlayableCombatHudRendererFoundationTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.372875" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1056" name="ConcreteRendererFoundationContractsExistAndMatchVerifiedArtifacts" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests.ConcreteRendererFoundationContractsExistAndMatchVerifiedArtifacts" methodname="ConcreteRendererFoundationContractsExistAndMatchVerifiedArtifacts" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" runstate="Runnable" seed="1125439595" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.084432" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1059" name="MissingCopyOrFontFailsBeforeAnyOverlayOrSourceMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests.MissingCopyOrFontFailsBeforeAnyOverlayOrSourceMutation" methodname="MissingCopyOrFontFailsBeforeAnyOverlayOrSourceMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" runstate="Runnable" seed="597293663" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.035985" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1057" name="RenderCreatesIsolatedOverlayMirrorsGeometryAndPreservesSourceZones" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests.RenderCreatesIsolatedOverlayMirrorsGeometryAndPreservesSourceZones" methodname="RenderCreatesIsolatedOverlayMirrorsGeometryAndPreservesSourceZones" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" runstate="Runnable" seed="1641203876" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.044848" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1058" name="RenderMapsFourteenSemanticStatesAndCtaTruthWithoutFakeLoading" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests.RenderMapsFourteenSemanticStatesAndCtaTruthWithoutFakeLoading" methodname="RenderMapsFourteenSemanticStatesAndCtaTruthWithoutFakeLoading" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRendererFoundationTests" runstate="Runnable" seed="2051878993" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.204123" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1060" name="FirstPlayableCombatHudRuntimeBindingTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:40Z" duration="0.463593" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1063" name="DisableDestroyAndRecreateCleansOverlayAndRestoresTruth" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.DisableDestroyAndRecreateCleansOverlayAndRestoresTruth" methodname="DisableDestroyAndRecreateCleansOverlayAndRestoresTruth" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="669417013" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.085809" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1062" name="DuplicateBindingInitializationRejectsBeforeReplacingLivePresentation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.DuplicateBindingInitializationRejectsBeforeReplacingLivePresentation" methodname="DuplicateBindingInitializationRejectsBeforeReplacingLivePresentation" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="167668600" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.033980" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1061" name="NormalGameplayAutomaticallyProjectsTargetRaiseAndArmyOnOneOverlay" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.NormalGameplayAutomaticallyProjectsTargetRaiseAndArmyOnOneOverlay" methodname="NormalGameplayAutomaticallyProjectsTargetRaiseAndArmyOnOneOverlay" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="1880491287" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:39Z" duration="0.108991" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1065" name="RosterMismatchRejectsRestartWithoutPromotingStaleProof" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.RosterMismatchRejectsRestartWithoutPromotingStaleProof" methodname="RosterMismatchRejectsRestartWithoutPromotingStaleProof" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="1352009331" result="Passed" start-time="2026-10-05 13:18:39Z" end-time="2026-10-05 13:18:40Z" duration="0.063400" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1066" name="SessionProofCarriesWithSameSessionAndResetsWithNewSession" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.SessionProofCarriesWithSameSessionAndResetsWithNewSession" methodname="SessionProofCarriesWithSameSessionAndResetsWithNewSession" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="694557806" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.077036" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="StaleAndIllegalRestartRepairLayoutWithoutChangingHudTruth" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests.StaleAndIllegalRestartRepairLayoutWithoutChangingHudTruth" methodname="StaleAndIllegalRestartRepairLayoutWithoutChangingHudTruth" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudRuntimeBindingTests" runstate="Runnable" seed="475341746" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.091014" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1067" name="FirstPlayableCombatHudStateProjectionTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.190625" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1068" name="ApprovedA1ContractsExist" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.ApprovedA1ContractsExist" methodname="ApprovedA1ContractsExist" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="1942239803" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.007493" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1071" name="FormationOwnershipIsTruthAndSuccessfulRaiseCreatesPendingReceipt" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.FormationOwnershipIsTruthAndSuccessfulRaiseCreatesPendingReceipt" methodname="FormationOwnershipIsTruthAndSuccessfulRaiseCreatesPendingReceipt" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="859512289" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.042052" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1072" name="OnlyExactCommittedRaisedUnitActualContributionMarksProofObserved" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.OnlyExactCommittedRaisedUnitActualContributionMarksProofObserved" methodname="OnlyExactCommittedRaisedUnitActualContributionMarksProofObserved" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="25858926" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.026900" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="ProjectionReflectsBattleTargetAndTruthfulRaiseReasons" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.ProjectionReflectsBattleTargetAndTruthfulRaiseReasons" methodname="ProjectionReflectsBattleTargetAndTruthfulRaiseReasons" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="1925312992" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.062912" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1070" name="SoulQuoteUsesExistingPolicyWithoutMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.SoulQuoteUsesExistingPolicyWithoutMutation" methodname="SoulQuoteUsesExistingPolicyWithoutMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="1139201379" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.016674" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1073" name="StaleReceiptAndDefeatedAllyCannotCreateFalseProof" fullname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests.StaleReceiptAndDefeatedAllyCannotCreateFalseProof" methodname="StaleReceiptAndDefeatedAllyCannotCreateFalseProof" classname="Necrom.FirstPlayable.Tests.FirstPlayableCombatHudStateProjectionTests" runstate="Runnable" seed="2012272359" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.030365" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1074" name="FirstPlayableDamageDeathPipelineTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.056987" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1081" name="AlreadyDefeatedProducesNoDuplicateEventsOrSource" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.AlreadyDefeatedProducesNoDuplicateEventsOrSource" methodname="AlreadyDefeatedProducesNoDuplicateEventsOrSource" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="39179366" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.012564" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1075" name="ApprovedTypesExist" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.ApprovedTypesExist" methodname="ApprovedTypesExist" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="1580148755" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.005297" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1079" name="InvalidDamageEventIdRejectsBeforeMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.InvalidDamageEventIdRejectsBeforeMutation" methodname="InvalidDamageEventIdRejectsBeforeMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="1575949591" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.006600" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1080" name="InvalidDefeatEventIdRejectsBeforeLethalMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.InvalidDefeatEventIdRejectsBeforeLethalMutation" methodname="InvalidDefeatEventIdRejectsBeforeLethalMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="2020354338" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.006453" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1077" name="LethalDamageEmitsOrderedDamageThenDefeatWithRaiseSourceIdentity" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.LethalDamageEmitsOrderedDamageThenDefeatWithRaiseSourceIdentity" methodname="LethalDamageEmitsOrderedDamageThenDefeatWithRaiseSourceIdentity" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="649703447" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.010675" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1076" name="NonLethalDamageEmitsOneDamageEventWithExactDeltaAndIdentity" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.NonLethalDamageEmitsOneDamageEventWithExactDeltaAndIdentity" methodname="NonLethalDamageEmitsOneDamageEventWithExactDeltaAndIdentity" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="2027952447" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.005553" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1078" name="OverkillActualDamageUsesHealthDeltaNotRequestedAmount" fullname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests.OverkillActualDamageUsesHealthDeltaNotRequestedAmount" methodname="OverkillActualDamageUsesHealthDeltaNotRequestedAmount" classname="Necrom.FirstPlayable.Tests.FirstPlayableDamageDeathPipelineTests" runstate="Runnable" seed="1737085904" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:40Z" duration="0.005746" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1082" name="FirstPlayableIntegratedLoopTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:44Z" duration="3.901556" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1085" name="AutomaticUpdateCombatAndRaycastInputSurviveLifecycleReentry" fullname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests.AutomaticUpdateCombatAndRaycastInputSurviveLifecycleReentry" methodname="AutomaticUpdateCombatAndRaycastInputSurviveLifecycleReentry" classname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" runstate="Runnable" seed="1621879682" result="Passed" start-time="2026-10-05 13:18:40Z" end-time="2026-10-05 13:18:44Z" duration="3.628665" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1086" name="DisabledRaiseAndNextClicksCannotMutateRunningBattle" fullname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests.DisabledRaiseAndNextClicksCannotMutateRunningBattle" methodname="DisabledRaiseAndNextClicksCannotMutateRunningBattle" classname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" runstate="Runnable" seed="765562497" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.068472" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1084" name="NormalPointerClicksRaiseFiveAlliesWithoutOldProofHidingNextRaise" fullname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests.NormalPointerClicksRaiseFiveAlliesWithoutOldProofHidingNextRaise" methodname="NormalPointerClicksRaiseFiveAlliesWithoutOldProofHidingNextRaise" classname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" runstate="Runnable" seed="1823431506" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.125110" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1083" name="PlayerAndAllyDefeatsGrantOnceAcrossRepeatedAdvance" fullname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests.PlayerAndAllyDefeatsGrantOnceAcrossRepeatedAdvance" methodname="PlayerAndAllyDefeatsGrantOnceAcrossRepeatedAdvance" classname="Necrom.FirstPlayable.Tests.FirstPlayableIntegratedLoopTests" runstate="Runnable" seed="847904977" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.076524" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1087" name="FirstPlayableQ3VisualTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:45Z" duration="1.002533" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1089" name="ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" methodname="ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="310025651" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.071408" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1088" name="AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" methodname="AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="224225982" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.061292" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1093" name="CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" methodname="CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1430170615" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.059870" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1090" name="NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" methodname="NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1829515854" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.077291" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1094" name="ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" methodname="ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1572333616" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.096531" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1091" name="ShortPortraitKeepsUnitArtInsideProtectedCombat" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ShortPortraitKeepsUnitArtInsideProtectedCombat" methodname="ShortPortraitKeepsUnitArtInsideProtectedCombat" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="428869971" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:44Z" duration="0.066892" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1092" name="ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" methodname="ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1665400503" result="Passed" start-time="2026-10-05 13:18:44Z" end-time="2026-10-05 13:18:45Z" duration="0.565376" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1095" name="FirstPlayableRaiseActionControllerTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.060553" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1098" name="ActiveCurrentTargetRejectsBeforeFactoryOrSubmit" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.ActiveCurrentTargetRejectsBeforeFactoryOrSubmit" methodname="ActiveCurrentTargetRejectsBeforeFactoryOrSubmit" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="440141128" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.012831" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1096" name="ApprovedActionControllerTypeExists" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.ApprovedActionControllerTypeExists" methodname="ApprovedActionControllerTypeExists" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="1302169475" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.003115" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1097" name="EligibleCurrentTargetExecutesExactlyOnceAndReturnsResult" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.EligibleCurrentTargetExecutesExactlyOnceAndReturnsResult" methodname="EligibleCurrentTargetExecutesExactlyOnceAndReturnsResult" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="2045723027" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.010621" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1100" name="FactoryUsingDifferentRaiseSourceIsRejectedBeforeSubmit" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.FactoryUsingDifferentRaiseSourceIsRejectedBeforeSubmit" methodname="FactoryUsingDifferentRaiseSourceIsRejectedBeforeSubmit" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="1932449730" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013758" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1099" name="MissingCurrentTargetRejectsBeforeFactoryOrSubmit" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.MissingCurrentTargetRejectsBeforeFactoryOrSubmit" methodname="MissingCurrentTargetRejectsBeforeFactoryOrSubmit" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="1712532585" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.007158" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1101" name="SecondActionAfterSuccessCannotCreateSecondEffect" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests.SecondActionAfterSuccessCannotCreateSecondEffect" methodname="SecondActionAfterSuccessCannotCreateSecondEffect" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseActionControllerTests" runstate="Runnable" seed="844186020" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.010256" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1102" name="FirstPlayableRaiseCommandInputHookTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.054459" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1103" name="ApprovedInputHookTypeExists" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests.ApprovedInputHookTypeExists" methodname="ApprovedInputHookTypeExists" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" seed="1562729686" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.004052" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1107" name="DuplicateInitializationIsRejectedWithoutReplacingProgression" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests.DuplicateInitializationIsRejectedWithoutReplacingProgression" methodname="DuplicateInitializationIsRejectedWithoutReplacingProgression" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" seed="1150195776" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013590" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1106" name="DuplicateSubmitCannotCreateSecondLocalEffect" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests.DuplicateSubmitCannotCreateSecondLocalEffect" methodname="DuplicateSubmitCannotCreateSecondLocalEffect" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" seed="1388761399" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013470" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1104" name="SubmitBeforeInitializationIsRejectedWithoutMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests.SubmitBeforeInitializationIsRejectedWithoutMutation" methodname="SubmitBeforeInitializationIsRejectedWithoutMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" seed="915852515" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.007977" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1105" name="ValidSubmitForwardsExactlyOnceAndReturnsExistingResult" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests.ValidSubmitForwardsExactlyOnceAndReturnsExistingResult" methodname="ValidSubmitForwardsExactlyOnceAndReturnsExistingResult" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaiseCommandInputHookTests" runstate="Runnable" seed="1284097903" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009099" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1108" name="FirstPlayableRaisedAllyRestartInvariantTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.095442" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1109" name="ApprovedRestartInvariantSeamExists" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.ApprovedRestartInvariantSeamExists" methodname="ApprovedRestartInvariantSeamExists" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="972126687" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.005493" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1111" name="DefeatedAllyOwnershipSurvivesRestartWithoutHealthReset" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.DefeatedAllyOwnershipSurvivesRestartWithoutHealthReset" methodname="DefeatedAllyOwnershipSurvivesRestartWithoutHealthReset" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="537671536" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.022718" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1114" name="MismatchedExistingRosterEntryRejectsBeforeRestartMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.MismatchedExistingRosterEntryRejectsBeforeRestartMutation" methodname="MismatchedExistingRosterEntryRejectsBeforeRestartMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="836516043" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.017017" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1113" name="MissingRuntimeEntryRejectsBeforeRestartMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.MissingRuntimeEntryRejectsBeforeRestartMutation" methodname="MissingRuntimeEntryRejectsBeforeRestartMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="574946116" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013479" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1110" name="ResolvedRestartPreservesExactFormationOwnershipAndSingleRuntimeAlly" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.ResolvedRestartPreservesExactFormationOwnershipAndSingleRuntimeAlly" methodname="ResolvedRestartPreservesExactFormationOwnershipAndSingleRuntimeAlly" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="214088166" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.015793" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1112" name="StaleRestartDoesNotMutateOwnershipOrDuplicateRuntimeAlly" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests.StaleRestartDoesNotMutateOwnershipOrDuplicateRuntimeAlly" methodname="StaleRestartDoesNotMutateOwnershipOrDuplicateRuntimeAlly" classname="Necrom.FirstPlayable.Tests.FirstPlayableRaisedAllyRestartInvariantTests" runstate="Runnable" seed="1319690017" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.017991" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1115" name="FirstPlayableReadabilityZoneTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.037169" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1116" name="ApprovedReadabilityZoneContractExists" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.ApprovedReadabilityZoneContractExists" methodname="ApprovedReadabilityZoneContractExists" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="852384864" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.006739" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1119" name="HudZoneOverProtectedCombatRejectsBeforeSceneMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.HudZoneOverProtectedCombatRejectsBeforeSceneMutation" methodname="HudZoneOverProtectedCombatRejectsBeforeSceneMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="1105500204" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.004583" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1122" name="OutOfBoundsReadabilityRectIsRejected" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.OutOfBoundsReadabilityRectIsRejected" methodname="OutOfBoundsReadabilityRectIsRejected" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="1355988162" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.001642" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1118" name="OverlappingSemanticHudZonesRejectBeforeSceneMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.OverlappingSemanticHudZonesRejectBeforeSceneMutation" methodname="OverlappingSemanticHudZonesRejectBeforeSceneMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="396476768" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.002291" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1121" name="ProtectedCombatZoneOutsideCombatViewportRejectsBeforeSceneMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.ProtectedCombatZoneOutsideCombatViewportRejectsBeforeSceneMutation" methodname="ProtectedCombatZoneOutsideCombatViewportRejectsBeforeSceneMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="2068968969" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.002188" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1120" name="SemanticHudZoneOutsideHudRegionRejectsBeforeSceneMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.SemanticHudZoneOutsideHudRegionRejectsBeforeSceneMutation" methodname="SemanticHudZoneOutsideHudRegionRejectsBeforeSceneMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="751922389" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.001971" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1117" name="ValidInjectedZonesAreDeterministicAndPreserveSpawnZones" fullname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests.ValidInjectedZonesAreDeterministicAndPreserveSpawnZones" methodname="ValidInjectedZonesAreDeterministicAndPreserveSpawnZones" classname="Necrom.FirstPlayable.Tests.FirstPlayableReadabilityZoneTests" runstate="Runnable" seed="272645393" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013893" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1123" name="FirstPlayableRevivedAllyCombatActivationTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.089175" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1128" name="ActiveRaisedAllyDamagesNextEnemyUsingInjectedSpec" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.ActiveRaisedAllyDamagesNextEnemyUsingInjectedSpec" methodname="ActiveRaisedAllyDamagesNextEnemyUsingInjectedSpec" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="29430749" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.025540" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1124" name="ApprovedActivationTypesExist" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.ApprovedActivationTypesExist" methodname="ApprovedActivationTypesExist" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="316389832" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.004897" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1129" name="DefeatedRaisedAllyCannotContribute" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.DefeatedRaisedAllyCannotContribute" methodname="DefeatedRaisedAllyCannotContribute" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="56781347" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.015327" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1126" name="MismatchedOccupiedFormationRejectsBeforeRuntimeMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.MismatchedOccupiedFormationRejectsBeforeRuntimeMutation" methodname="MismatchedOccupiedFormationRejectsBeforeRuntimeMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="2014684307" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009650" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1127" name="ProjectionRequiresCommittedFormationState" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.ProjectionRequiresCommittedFormationState" methodname="ProjectionRequiresCommittedFormationState" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="475557729" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009282" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1125" name="SuccessfulRaiseActivatesExactFormationUnitOnce" fullname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests.SuccessfulRaiseActivatesExactFormationUnitOnce" methodname="SuccessfulRaiseActivatesExactFormationUnitOnce" classname="Necrom.FirstPlayable.Tests.FirstPlayableRevivedAllyCombatActivationTests" runstate="Runnable" seed="1925195111" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.020989" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1130" name="FirstPlayableSceneShellTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSceneShellTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableSceneShellTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.011270" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1131" name="SceneShellBuildsNonOverlappingRegionsInsideSafeArea" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSceneShellTests.SceneShellBuildsNonOverlappingRegionsInsideSafeArea" methodname="SceneShellBuildsNonOverlappingRegionsInsideSafeArea" classname="Necrom.FirstPlayable.Tests.FirstPlayableSceneShellTests" runstate="Runnable" seed="2064727466" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009194" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1132" name="FirstPlayableSoulResourceSeamTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.097866" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1133" name="ApprovedResourceSeamTypesExist" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.ApprovedResourceSeamTypesExist" methodname="ApprovedResourceSeamTypesExist" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1483151082" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.005784" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1135" name="DefeatGrantUsesInjectedFixtureAmountAndAdvancesRevisionOnce" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.DefeatGrantUsesInjectedFixtureAmountAndAdvancesRevisionOnce" methodname="DefeatGrantUsesInjectedFixtureAmountAndAdvancesRevisionOnce" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1595557387" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.011074" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1141" name="DuplicateRaiseCannotSpendTwice" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.DuplicateRaiseCannotSpendTwice" methodname="DuplicateRaiseCannotSpendTwice" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="866479360" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.015242" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1140" name="FailedRaiseDoesNotSpendResource" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.FailedRaiseDoesNotSpendResource" methodname="FailedRaiseDoesNotSpendResource" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1459393415" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.013843" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1138" name="InsufficientResourceRejectsBeforeRaiseMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.InsufficientResourceRejectsBeforeRaiseMutation" methodname="InsufficientResourceRejectsBeforeRaiseMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1098231021" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.011204" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1134" name="NonLethalDamageDoesNotGrantOrCallPolicy" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.NonLethalDamageDoesNotGrantOrCallPolicy" methodname="NonLethalDamageDoesNotGrantOrCallPolicy" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1529637266" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009628" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1136" name="ReplayedDefeatEventCannotDoubleGrant" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.ReplayedDefeatEventCannotDoubleGrant" methodname="ReplayedDefeatEventCannotDoubleGrant" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1743797345" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.008523" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1137" name="StaleResourceRevisionRejectsGrantWithoutMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.StaleResourceRevisionRejectsGrantWithoutMutation" methodname="StaleResourceRevisionRejectsGrantWithoutMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="1292177861" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.005285" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1139" name="SuccessfulRaiseSpendsConfiguredFixtureCostExactlyOnce" fullname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests.SuccessfulRaiseSpendsConfiguredFixtureCostExactlyOnce" methodname="SuccessfulRaiseSpendsConfiguredFixtureCostExactlyOnce" classname="Necrom.FirstPlayable.Tests.FirstPlayableSoulResourceSeamTests" runstate="Runnable" seed="636548799" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.012207" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1142" name="FirstPlayableTargetingControllerTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.057240" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1144" name="ActiveCurrentTargetIsAcquiredWithExactIdentity" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.ActiveCurrentTargetIsAcquiredWithExactIdentity" methodname="ActiveCurrentTargetIsAcquiredWithExactIdentity" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="1054381365" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.012017" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1143" name="ControllerTypeExists" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.ControllerTypeExists" methodname="ControllerTypeExists" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="722143682" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.003726" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1147" name="DefeatedCurrentTargetIsRejected" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.DefeatedCurrentTargetIsRejected" methodname="DefeatedCurrentTargetIsRejected" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="1373242877" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009963" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1145" name="MissingCurrentTargetReturnsFalseAndNull" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.MissingCurrentTargetReturnsFalseAndNull" methodname="MissingCurrentTargetReturnsFalseAndNull" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="167419204" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.008430" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1148" name="RepeatedAcquisitionHoldsSpawnAnchorsAndActorTransforms" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.RepeatedAcquisitionHoldsSpawnAnchorsAndActorTransforms" methodname="RepeatedAcquisitionHoldsSpawnAnchorsAndActorTransforms" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="18897177" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.010939" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1146" name="UninitializedCurrentTargetIsRejectedWithoutSourceMutation" fullname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests.UninitializedCurrentTargetIsRejectedWithoutSourceMutation" methodname="UninitializedCurrentTargetIsRejectedWithoutSourceMutation" classname="Necrom.FirstPlayable.Tests.FirstPlayableTargetingControllerTests" runstate="Runnable" seed="1332574384" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.008837" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1149" name="NecromancerAnchorTests" fullname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests" classname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.028864" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1152" name="DuplicateBindIsRejectedWithoutCreatingSecondAnchor" fullname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests.DuplicateBindIsRejectedWithoutCreatingSecondAnchor" methodname="DuplicateBindIsRejectedWithoutCreatingSecondAnchor" classname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests" runstate="Runnable" seed="347966449" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009160" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1151" name="EnemyFactionIsRejectedBeforeSceneMutation" fullname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests.EnemyFactionIsRejectedBeforeSceneMutation" methodname="EnemyFactionIsRejectedBeforeSceneMutation" classname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests" runstate="Runnable" seed="1986336064" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.008254" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1150" name="PlayerCombatantBindsUnderNecromancerZoneWithStableIdentityAndPosition" fullname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests.PlayerCombatantBindsUnderNecromancerZoneWithStableIdentityAndPosition" methodname="PlayerCombatantBindsUnderNecromancerZoneWithStableIdentityAndPosition" classname="Necrom.FirstPlayable.Tests.NecromancerAnchorTests" runstate="Runnable" seed="1516033102" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.009120" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1153" name="NecromancerAutoBehaviorHookTests" fullname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" classname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.031839" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1155" name="AttachBeforeModelInitializationIsRejected" fullname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests.AttachBeforeModelInitializationIsRejected" methodname="AttachBeforeModelInitializationIsRejected" classname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" runstate="Runnable" seed="1921884271" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.008967" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1157" name="DuplicateAttachIsRejectedWithoutReplacement" fullname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests.DuplicateAttachIsRejectedWithoutReplacement" methodname="DuplicateAttachIsRejectedWithoutReplacement" classname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" runstate="Runnable" seed="1610627621" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.005986" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1154" name="ExactModelBehaviorAttachesAndIsReadable" fullname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests.ExactModelBehaviorAttachesAndIsReadable" methodname="ExactModelBehaviorAttachesAndIsReadable" classname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" runstate="Runnable" seed="1855594250" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.006432" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1156" name="MismatchedActorIsRejectedWithoutMutation" fullname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests.MismatchedActorIsRejectedWithoutMutation" methodname="MismatchedActorIsRejectedWithoutMutation" classname="Necrom.FirstPlayable.Tests.NecromancerAutoBehaviorHookTests" runstate="Runnable" seed="757737951" result="Passed" start-time="2026-10-05 13:18:45Z" end-time="2026-10-05 13:18:45Z" duration="0.007976" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:\Dev\Necrom-playmode-recovery\Artifacts\AWU4-EV015-current-full.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
