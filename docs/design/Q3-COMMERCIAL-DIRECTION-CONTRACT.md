@@ -2,14 +2,15 @@
 
 Date: 2026-10-05 KST
 Project: Necromancer / QUALITY_GAME
-Baseline runtime evidence: EV-016 / main 50a3d2851b365ff76d6c5d1c87bc70f44caee2f3
+Original design baseline: EV-016 / main 50a3d2851b365ff76d6c5d1c87bc70f44caee2f3
+Implementation follow-up: EV-018 integrates the approved Obsidian Soul production-candidate pack and revalidates runtime.
 Milestone: Q3 VERTICAL SLICE IN_PROGRESS
-Verdict: PROPOSED_FOUNDER_APPROVAL. Commercial direction has been narrowed to one recommended option, but no final Founder approval is claimed.
+Verdict: FOUNDER_APPROVED. Direction A — OBSIDIAN SOUL, Noto functional UI baseline, and imagegen refinement production-art path were explicitly approved by the Founder on 2026-10-05.
 
 ## Scope
 
-This work does not change runtime code, scene, prefab, gameplay state, balance or asset count.
-EV-016 targeted7/7, full131/131, Windows build, responsive and native-input evidence therefore remains the current runtime baseline and was intentionally not rerun.
+EV-017 itself was a design-only narrowing step. After Founder approval, EV-018 changes art bindings, scene/prefab serialized texture references, the Q3 art-applier path, and one PlayMode assertion that verifies the approved ProductionCandidate path. Gameplay state, balance, semantic-state count and content count are unchanged.
+EV-018 therefore runs fresh targeted/full PlayMode, Windows build, responsive captures and normal-path native input instead of reusing EV-016 as current-head evidence.
 
 Guard remains one archetype repeated across five Formation slots.
 Five Formation slots are not five monster species.
@@ -81,14 +82,14 @@ Violet overuse can collide with Soul emerald and make UI/gameplay semantics less
 
 ## Recommendation
 
-Recommend Direction A — OBSIDIAN SOUL for Founder approval.
+Direction A — OBSIDIAN SOUL is Founder-approved.
 
 Reason:
 It preserves the most already-validated work while giving the project a clearer product identity around collecting Souls and growing an undead Formation. It also minimizes semantic conflict between Soul, hostile and Arcane feedback.
 
-This is an AI design recommendation, not user research and not Founder approval.
+The original narrowing was an AI design recommendation, not user research. The Founder subsequently approved Direction A explicitly; this still does not constitute real-user preference evidence.
 
-## Production typography contract — proposed
+## Production typography contract — functional baseline approved
 
 Functional UI baseline:
 - Noto Sans KR / Noto Sans CJK KR family.
@@ -97,9 +98,10 @@ Functional UI baseline:
 - No custom display face should be introduced until rights, Korean legibility and small-screen performance are verified.
 
 Current status:
+- Noto functional family/3-weight strategy: FOUNDER_APPROVED
 - license source text exists: VERIFIED_ARTIFACT
+- current runtime still uses the existing Regular review SDF; Medium/Bold runtime packaging: NOT IMPLEMENTED
 - final packaging / attribution review: NOT RUN
-- Founder final font approval: NOT RUN
 
 ## Production copy contract — proposed
 
@@ -188,20 +190,19 @@ Not yet cleared:
 
 No legal-clearance PASS is claimed.
 
-## Founder decision gate
+## Founder decision gate — resolved 2026-10-05
 
-Founder must decide:
-1. approve Direction A — OBSIDIAN SOUL, request modifications, or choose another direction;
-2. approve Noto family as functional production baseline or request another font strategy;
-3. choose production art path:
-   - image-generation refinement with per-file provenance and review,
-   - external artist / commissioned asset path,
-   - licensed asset path,
-   - or a hybrid.
+Founder explicitly approved:
+1. Direction A — OBSIDIAN SOUL.
+2. Noto Sans KR / Noto Sans CJK KR as the functional UI baseline.
+3. Image-generation refinement with per-file provenance as the production-art path.
 
-Until this decision:
-- COMMERCIAL DIRECTION = PROPOSED
-- FINAL FONT/COPY/ICON = PROPOSED / UNKNOWN where applicable
+Current status:
+- COMMERCIAL DIRECTION = FOUNDER_APPROVED
+- FUNCTIONAL FONT BASELINE = FOUNDER_APPROVED
+- PRODUCTION ART PATH = FOUNDER_APPROVED
+- production-candidate asset integration = IMPLEMENTED / VALIDATED in EV-018
+- final copy/icon/rights/production audio/physical-device/user evidence remain open
 - Q3 overall = PARTIAL / IN_PROGRESS
 
 ## Q3 exit boundary unchanged

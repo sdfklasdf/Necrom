@@ -1,0 +1,93 @@
+{
+  "stage": "Q3 production candidate refinement",
+  "created": "2026-10-05",
+  "direction": "OBSIDIAN SOUL",
+  "founderApproval": {
+    "commercialDirection": "APPROVED",
+    "functionalFontBaseline": "Noto Sans KR/CJK KR APPROVED",
+    "productionArtPath": "IMAGEGEN_REFINEMENT_APPROVED"
+  },
+  "scope": "Necromancer + Guard 1 archetype + Raised form of same Guard + cemetery background. Formation five slots remain repetitions of one raised archetype, not five monster species.",
+  "status": "PRODUCTION CANDIDATE; not final release-rights/legal/device/user-fun acceptance",
+  "tool": "OpenAI image generation",
+  "styleContract": {
+    "base": "Obsidian/slate low-saturation dark fantasy",
+    "soulRaised": "emerald",
+    "hostile": "crimson",
+    "necromancerArcane": "violet secondary accent",
+    "readability": "foreground silhouettes prioritized over environment saturation"
+  },
+  "files": [
+    {
+      "file": "player.png",
+      "role": "Necromancer",
+      "generationId": "1ba5c77e-a381-4e8e-90c9-b81134bd766c",
+      "conversationFileId": "file_0000000045508206b940dd31e7f00039",
+      "sha256": "a7f6fe76ceb0021858f596c230c02b24274d303110cf03a79f27b6faa6df7fbc",
+      "dimensions": [1024, 1536],
+      "alpha": true,
+      "rightsStatus": "Generated provenance recorded; final release-rights clearance UNKNOWN"
+    },
+    {
+      "file": "guard.png",
+      "role": "Hostile Guard",
+      "generationId": "288c50c0-c8e2-4cd8-9a6c-c902ebbe1ca2",
+      "conversationFileId": "file_00000000c76c8211a6fb876de7f49be4",
+      "sha256": "387d3070f00abb0db2350ae6acac57b4f8a7fb24828e61e609b0893cf4eed591",
+      "dimensions": [1024, 1536],
+      "alpha": true,
+      "rightsStatus": "Generated provenance recorded; final release-rights clearance UNKNOWN"
+    },
+    {
+      "file": "raised.png",
+      "role": "Raised version of the same Guard archetype",
+      "generationId": "a4f6f1ec-088f-44b5-a75d-e09f8015b2d9",
+      "conversationFileId": "file_00000000a1948206b5be9bfe0d9bcb9d",
+      "sha256": "afca05119e17010e62663379ab1c686e9a2d9faec0e84598aff5f5155a2d23ee",
+      "dimensions": [1024, 1536],
+      "alpha": true,
+      "rightsStatus": "Generated provenance recorded; final release-rights clearance UNKNOWN"
+    },
+    {
+      "file": "background.png",
+      "role": "Cemetery battle background",
+      "generationId": "0c926b76-c108-4d6b-930b-3043ea3d070f",
+      "conversationFileId": "file_0000000043b48207a06f21c9b5d6aa3f",
+      "sha256": "4447edd20acdd581eaa519a24d3b41fb83d513ca30ae071fa54d1d1f6817c101",
+      "dimensions": [1448, 1086],
+      "alpha": false,
+      "rightsStatus": "Generated provenance recorded; final release-rights clearance UNKNOWN"
+    }
+  ],
+  "font": {
+    "baseline": "Noto Sans KR / Noto Sans CJK KR",
+    "weightsContract": ["Regular", "Medium", "Bold"],
+    "licenseFile": "../../../Fonts/OFL-CJK.txt",
+    "approval": "FUNCTIONAL_BASELINE_APPROVED",
+    "implementationStatus": "Current runtime still uses existing Regular review SDF; Medium/Bold runtime packaging not implemented in this art AWU"
+  },
+  "styleAnchor": {
+    "generationId": "b5ee44af-b7c9-4f21-8430-1cbf0ed9daac",
+    "role": "Obsidian Soul visual consistency anchor; not a runtime asset"
+  },
+  "figma": {
+    "commercialDirectionBoard": "33:177",
+    "productionPresentationContract": "33:274",
+    "productionBattle": "35:234",
+    "productionRaised": "35:245",
+    "productionFullFormation": "35:256",
+    "productionShortFullFormation": "36:290",
+    "provenanceNote": "36:305"
+  },
+  "audio": {
+    "status": "EV-016 review audio evidence remains valid but is not production-final audio"
+  },
+  "evidenceBoundary": {
+    "finalRightsLegal": "UNKNOWN/NOT RUN",
+    "physicalMobile": "NOT RUN",
+    "actualSafeArea": "NOT RUN",
+    "accessibilityAcceptance": "NOT RUN",
+    "realUserFunRetention": "NOT RUN",
+    "launchMonsterCount": "UNDECIDED"
+  }
+}

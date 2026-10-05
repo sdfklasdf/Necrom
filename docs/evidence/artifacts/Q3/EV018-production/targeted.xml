@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.3842251">
+  <test-suite type="TestSuite" id="1164" name="Necrom-playmode-recovery" fullname="Necrom-playmode-recovery" runstate="Runnable" testcasecount="132" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.384225" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1159" name="Necrom.FirstPlayable.PlayModeTests.dll" fullname="C:/Dev/Necrom-playmode-recovery/Library/ScriptAssemblies/Necrom.FirstPlayable.PlayModeTests.dll" runstate="Runnable" testcasecount="132" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.373072" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="17640" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1160" name="Necrom" fullname="Necrom" runstate="Runnable" testcasecount="132" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.371537" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1161" name="FirstPlayable" fullname="Necrom.FirstPlayable" runstate="Runnable" testcasecount="132" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.370319" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1162" name="Tests" fullname="Necrom.FirstPlayable.Tests" runstate="Runnable" testcasecount="132" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.369032" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1087" name="FirstPlayableQ3VisualTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:51Z" duration="1.358226" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1090" name="ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" methodname="ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="2135118498" result="Passed" start-time="2026-10-05 14:16:49Z" end-time="2026-10-05 14:16:50Z" duration="0.526706" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1088" name="AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" methodname="AuthoredPresentationProfileAndFiveReviewSfxAreLoadedAfterSceneReopen" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="258199093" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.034066" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1094" name="CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" methodname="CanonicalPlayerFacingCopyFitsAllVerifiedTypographyRows" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1895967144" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.029947" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1091" name="NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" methodname="NormalRaiseInputCreatesAlliedArtAndExactContributionFeedback" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1981883257" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.087334" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1089" name="ProductionCandidateTexturesAreBoundToApprovedPath" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ProductionCandidateTexturesAreBoundToApprovedPath" methodname="ProductionCandidateTexturesAreBoundToApprovedPath" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="914196884" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.032357" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1095" name="ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" methodname="ReentryPreservesOnePresentationAndNonBlockingProtectedCombatArt" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1829697744" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.050157" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1092" name="ShortPortraitKeepsUnitArtInsideProtectedCombat" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ShortPortraitKeepsUnitArtInsideProtectedCombat" methodname="ShortPortraitKeepsUnitArtInsideProtectedCombat" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="151497967" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:50Z" duration="0.039716" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1093" name="ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" methodname="ShortPortraitRaisedAllyHasReadableFloorAndRemainsProtected" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="1189968851" result="Passed" start-time="2026-10-05 14:16:50Z" end-time="2026-10-05 14:16:51Z" duration="0.538391" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:\Dev\Necrom-playmode-recovery\Artifacts\AWU4-EV018-production-targeted.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

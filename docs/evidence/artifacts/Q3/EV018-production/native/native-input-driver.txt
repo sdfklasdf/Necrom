@@ -1,0 +1,20 @@
+﻿DPI=120 virtual=312x675 physical=390x844
+2026-10-05T14:24:03.3316377Z request=1 client=195,226 screen=960,750 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:04.2826697Z request=2 client=275,779 screen=1040,197 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:06.2083952Z request=3 client=195,226 screen=960,750 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:07.1872403Z request=4 client=275,779 screen=1040,197 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:08.6109921Z request=5 client=195,226 screen=960,750 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:09.5398630Z request=6 client=275,779 screen=1040,197 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:10.9512176Z request=7 client=195,226 screen=960,750 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:11.8598241Z request=8 client=275,779 screen=1040,197 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:13.2684386Z request=9 client=195,226 screen=960,750 pixels=390x844
+DPI=120 virtual=390x844 physical=390x844
+2026-10-05T14:24:14.2959440Z request=10 client=275,779 screen=1040,197 pixels=390x844

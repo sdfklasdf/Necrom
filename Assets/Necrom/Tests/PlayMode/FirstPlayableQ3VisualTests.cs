@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 #if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
 
@@ -95,6 +96,25 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
                 "Canonical review scene must have one active listener so runtime SFX are actually audible.");
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ProductionCandidateTexturesAreBoundToApprovedPath()
+        {
+            var v = Visual();
+#if UNITY_EDITOR
+            const string expectedPrefix = "Assets/Necrom/FirstPlayable/Art/Q3/ProductionCandidate/";
+            foreach (var fieldName in new[] { "NecromancerArt", "GuardArt", "RaisedGuardArt", "BackgroundArt" })
+            {
+                var field = v.GetType().GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                Assert.That(field, Is.Not.Null, fieldName + " field must exist.");
+                var texture = (Texture2D)field.GetValue(v);
+                Assert.That(texture, Is.Not.Null, fieldName + " texture must resolve.");
+                Assert.That(AssetDatabase.GetAssetPath(texture), Does.StartWith(expectedPrefix),
+                    fieldName + " must bind the approved Obsidian Soul ProductionCandidate asset.");
+            }
+#endif
             yield return null;
         }
 

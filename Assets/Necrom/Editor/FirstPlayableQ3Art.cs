@@ -12,12 +12,13 @@ namespace Necrom.EditorTools
 {
     public static class FirstPlayableQ3Art
     {
-        const string ArtPath = "Assets/Necrom/FirstPlayable/Art/Q3/";
+        const string ArtRootPath = "Assets/Necrom/FirstPlayable/Art/Q3/";
+        const string ArtPath = ArtRootPath + "ProductionCandidate/";
         const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3Review/";
-        const string ProfilePath = ArtPath + "FirstPlayablePresentationProfile.asset";
+        const string ProfilePath = ArtRootPath + "FirstPlayablePresentationProfile.asset";
         const string FontPath = "Assets/Necrom/FirstPlayable/Fonts/NotoSansCJKkr-Regular Review SDF.asset";
 
-        [MenuItem("Necrom/Q3/Apply representative review art")]
+        [MenuItem("Necrom/Q3/Apply approved Obsidian Soul production-candidate art")]
         public static void Apply()
         {
             AssetDatabase.Refresh();
@@ -216,6 +217,17 @@ namespace Necrom.EditorTools
             if (visual == null || visual.LoadedArtCount != 4 ||
                 prefabVisual == null || prefabVisual.LoadedArtCount != 4)
                 throw new Exception("Q3 scene/prefab lost art references.");
+
+            foreach (var texture in new[]
+                     {
+                         visual.NecromancerArt, visual.GuardArt,
+                         visual.RaisedGuardArt, visual.BackgroundArt
+                     })
+            {
+                var path = AssetDatabase.GetAssetPath(texture);
+                if (string.IsNullOrEmpty(path) || !path.StartsWith(ArtPath, StringComparison.Ordinal))
+                    throw new Exception("Q3 canonical art is not bound to the approved ProductionCandidate path: " + path);
+            }
             if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null)
                 throw new Exception("Q3 font source unresolved.");
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5 ||
@@ -232,7 +244,8 @@ namespace Necrom.EditorTools
                 "\nAudio clips: 5 / 5" +
                 "\nFont: " + root.ReviewFont.name +
                 "\nSource font: " + root.ReviewFont.sourceFontFile.name +
-                "\nReview candidate. Production sound/art/font approval NOT RUN.");
+                "\nOBSIDIAN_SOUL production-candidate art bound." +
+                "\nFinal release-rights / production sound / physical-device acceptance NOT RUN.");
 
             Debug.Log("Q3_PRESENTATION_REOPEN_PASS art=4 motion=5 audio=5");
         }
