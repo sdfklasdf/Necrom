@@ -53,21 +53,43 @@ namespace Necrom.FirstPlayable.Runtime
 
     public interface IFirstPlayableCombatHudFontProvider
     {
-        TMP_FontAsset ResolveFontAsset();
+        TMP_FontAsset ResolveRegularFontAsset();
+        TMP_FontAsset ResolveMediumFontAsset();
+        TMP_FontAsset ResolveBoldFontAsset();
     }
+
     public sealed class FirstPlayableCombatHudFontProviderAdapter
         : IFirstPlayableCombatHudFontProvider
     {
-        private readonly Func<TMP_FontAsset> _resolve;
+        private readonly Func<TMP_FontAsset> _regular;
+        private readonly Func<TMP_FontAsset> _medium;
+        private readonly Func<TMP_FontAsset> _bold;
 
         public FirstPlayableCombatHudFontProviderAdapter(
             Func<TMP_FontAsset> resolve)
+            : this(resolve, resolve, resolve)
         {
-            _resolve = resolve ?? throw new ArgumentNullException(nameof(resolve));
         }
 
-        public TMP_FontAsset ResolveFontAsset()
-            => _resolve();
+        private FirstPlayableCombatHudFontProviderAdapter(
+            Func<TMP_FontAsset> regular,
+            Func<TMP_FontAsset> medium,
+            Func<TMP_FontAsset> bold)
+        {
+            _regular = regular ?? throw new ArgumentNullException(nameof(regular));
+            _medium = medium ?? throw new ArgumentNullException(nameof(medium));
+            _bold = bold ?? throw new ArgumentNullException(nameof(bold));
+        }
+
+        public static FirstPlayableCombatHudFontProviderAdapter WithWeights(
+            Func<TMP_FontAsset> regular,
+            Func<TMP_FontAsset> medium,
+            Func<TMP_FontAsset> bold)
+            => new FirstPlayableCombatHudFontProviderAdapter(regular, medium, bold);
+
+        public TMP_FontAsset ResolveRegularFontAsset() => _regular();
+        public TMP_FontAsset ResolveMediumFontAsset() => _medium();
+        public TMP_FontAsset ResolveBoldFontAsset() => _bold();
     }
 
     public enum FirstPlayableCombatHudRaiseCtaState
@@ -101,7 +123,8 @@ namespace Necrom.FirstPlayable.Runtime
         private Button _primaryCtaButton;
         private TextMeshProUGUI _primaryCtaText;
         private Image _raiseBackground;
-        private Sprite _panelSprite, _dotSprite, _ctaSprite;
+        private Sprite _panelSprite, _ctaSprite;
+        private Sprite _combatIconSprite, _soulIconSprite, _armyIconSprite;
 
         public GameObject OverlayHost => _overlayHost;
         public Button PrimaryCtaButton => _primaryCtaButton;
@@ -131,10 +154,13 @@ namespace Necrom.FirstPlayable.Runtime
                     "Current synchronous Raise runtime must not render a fake loading state.");
             }
 
-            var font = _fontProvider.ResolveFontAsset();
-            if (font == null)            {
+            var regularFont = _fontProvider.ResolveRegularFontAsset();
+            var mediumFont = _fontProvider.ResolveMediumFontAsset();
+            var boldFont = _fontProvider.ResolveBoldFontAsset();
+            if (regularFont == null || mediumFont == null || boldFont == null)
+            {
                 throw new InvalidOperationException(
-                    "Combat HUD font asset is unresolved. A provider must supply it before rendering.");
+                    "Combat HUD production font set is unresolved. Regular / Medium / Bold are required.");
             }
 
             var targetCopy = RequireCopy(presentation.Target.ContentKey);
@@ -146,7 +172,7 @@ namespace Necrom.FirstPlayable.Runtime
             _contract.GetState(presentation.Army.ContentKey);
 
             var safeArea = ValidateSourceGeometry(zones);
-            EnsureOverlay(font);
+            EnsureOverlay(regularFont, mediumFont, boldFont);
             MirrorLayout(safeArea, _safeAreaMirror);
             MirrorLayout(zones.TargetStatusZone, _targetContainer);
             MirrorLayout(zones.RaiseActionStatusZone, _raiseContainer);
@@ -187,9 +213,12 @@ namespace Necrom.FirstPlayable.Runtime
             else
                 UnityEngine.Object.DestroyImmediate(_overlayHost);
             ReleaseSprite(_panelSprite);
-            ReleaseSprite(_dotSprite);
             ReleaseSprite(_ctaSprite);
-            _panelSprite = _dotSprite = _ctaSprite = null;
+            ReleaseSprite(_combatIconSprite);
+            ReleaseSprite(_soulIconSprite);
+            ReleaseSprite(_armyIconSprite);
+            _panelSprite = _ctaSprite = null;
+            _combatIconSprite = _soulIconSprite = _armyIconSprite = null;
             _overlayHost = null;
             _safeAreaMirror = null;
             _targetContainer = null;
@@ -231,11 +260,14 @@ namespace Necrom.FirstPlayable.Runtime
             return safeArea;
         }
 
-        private void EnsureOverlay(TMP_FontAsset font)
+        private void EnsureOverlay(
+            TMP_FontAsset regularFont,
+            TMP_FontAsset mediumFont,
+            TMP_FontAsset boldFont)
         {
             if (_overlayHost != null)
             {
-                ApplyFont(font);
+                ApplyFont(regularFont, mediumFont, boldFont);
                 return;
             }
 
@@ -258,7 +290,9 @@ namespace Necrom.FirstPlayable.Runtime
             _targetContainer = CreateSection(
                 _safeAreaMirror,
                 "TargetRenderContainer",
-                font,
+                regularFont,
+                mediumFont,
+                boldFont,
                 out _targetState,
                 out _targetPrimary,
                 out _targetSecondary,
@@ -266,14 +300,19 @@ namespace Necrom.FirstPlayable.Runtime
             _raiseContainer = CreateSection(
                 _safeAreaMirror,
                 "RaiseRenderContainer",
-                font,
+                regularFont,
+                mediumFont,
+                boldFont,
                 out _raiseState,
                 out _raisePrimary,
                 out _raiseSecondary,
-                out _raiseBackground);            _armyContainer = CreateSection(
+                out _raiseBackground);
+            _armyContainer = CreateSection(
                 _safeAreaMirror,
                 "ArmyRenderContainer",
-                font,
+                regularFont,
+                mediumFont,
+                boldFont,
                 out _armyState,
                 out _armyPrimary,
                 out _armySecondary,
@@ -283,13 +322,15 @@ namespace Necrom.FirstPlayable.Runtime
                 _safeAreaMirror,
                 "ProtectedCombatReadabilityZoneMirror");
 
-            CreatePrimaryCta(_raiseContainer, font);
+            CreatePrimaryCta(_raiseContainer, mediumFont);
         }
 
         private RectTransform CreateSection(
             RectTransform parent,
             string name,
-            TMP_FontAsset font,
+            TMP_FontAsset regularFont,
+            TMP_FontAsset mediumFont,
+            TMP_FontAsset boldFont,
             out TextMeshProUGUI state,
             out TextMeshProUGUI primary,
             out TextMeshProUGUI secondary,
@@ -318,32 +359,34 @@ namespace Necrom.FirstPlayable.Runtime
             state = CreateText(
                 rect,
                 "StateKey",
-                font,
+                mediumFont,
                 _contract.Theme.StateFontSize.Value,
                 _contract.Theme.StateLineHeight.Value);
             primary = CreateText(
-                rect,                "PrimaryText",
-                font,
+                rect,
+                "PrimaryText",
+                boldFont,
                 _contract.Theme.PrimaryFontSize.Value,
                 _contract.Theme.PrimaryLineHeight.Value);
             secondary = CreateText(
                 rect,
                 "SecondaryText",
-                font,
+                regularFont,
                 _contract.Theme.SecondaryFontSize.Value,
                 _contract.Theme.SecondaryLineHeight.Value);
 
             // StateKey remains a direct child for existing renderer consumers.
-            state.margin = new Vector4(16f, state.margin.y, 0f, state.margin.w);
+            // The semantic icon supplies shape redundancy in addition to label + color.
+            state.margin = new Vector4(22f, state.margin.y, 0f, state.margin.w);
             var accent = CreateRect(rect, "StateAccent");
             accent.anchorMin = accent.anchorMax = new Vector2(0f, 1f);
             accent.pivot = new Vector2(0f, 1f);
-            accent.anchoredPosition = new Vector2(padding, -padding-4f);
-            accent.sizeDelta = new Vector2(8f, 8f);
+            accent.anchoredPosition = new Vector2(padding, -padding-1f);
+            accent.sizeDelta = new Vector2(14f, 14f);
             accent.gameObject.AddComponent<LayoutElement>().ignoreLayout = true;
-            var dot = accent.gameObject.AddComponent<Image>();
-            dot.sprite = _dotSprite ?? (_dotSprite = RoundedSprite(32f));
-            dot.raycastTarget = false;
+            var icon = accent.gameObject.AddComponent<Image>();
+            icon.preserveAspect = true;
+            icon.raycastTarget = false;
             return rect;
         }
 
@@ -417,18 +460,21 @@ namespace Necrom.FirstPlayable.Runtime
 
             _primaryCtaButton.gameObject.SetActive(false);
         }
-        private void ApplyFont(TMP_FontAsset font)
+        private void ApplyFont(
+            TMP_FontAsset regularFont,
+            TMP_FontAsset mediumFont,
+            TMP_FontAsset boldFont)
         {
-            _targetState.font = font;
-            _targetPrimary.font = font;
-            _targetSecondary.font = font;
-            _raiseState.font = font;
-            _raisePrimary.font = font;
-            _raiseSecondary.font = font;
-            _armyState.font = font;
-            _armyPrimary.font = font;
-            _armySecondary.font = font;
-            _primaryCtaText.font = font;
+            _targetState.font = mediumFont;
+            _targetPrimary.font = boldFont;
+            _targetSecondary.font = regularFont;
+            _raiseState.font = mediumFont;
+            _raisePrimary.font = boldFont;
+            _raiseSecondary.font = regularFont;
+            _armyState.font = mediumFont;
+            _armyPrimary.font = boldFont;
+            _armySecondary.font = regularFont;
+            _primaryCtaText.font = mediumFont;
         }
 
         private void ApplyRaiseCta(
@@ -510,7 +556,33 @@ namespace Necrom.FirstPlayable.Runtime
                 case FirstPlayableCombatHudContentKey.ArmyProofObserved:
                     color = _contract.Theme.SoulAccent.Value; break;
             }
-            panel.Find("StateAccent").GetComponent<Image>().color = color;
+            var icon = panel.Find("StateAccent").GetComponent<Image>();
+            icon.color = color;
+            icon.sprite = ResolveSemanticIcon(key);
+        }
+
+        private Sprite ResolveSemanticIcon(FirstPlayableCombatHudContentKey key)
+        {
+            if (key.ToString().StartsWith("Target", StringComparison.Ordinal))
+            {
+                if (_combatIconSprite == null)
+                    _combatIconSprite = FirstPlayableCombatHudSemanticIcons.Create(
+                        FirstPlayableCombatHudSemanticIconKind.Combat);
+                return _combatIconSprite;
+            }
+
+            if (key.ToString().StartsWith("Raise", StringComparison.Ordinal))
+            {
+                if (_soulIconSprite == null)
+                    _soulIconSprite = FirstPlayableCombatHudSemanticIcons.Create(
+                        FirstPlayableCombatHudSemanticIconKind.Soul);
+                return _soulIconSprite;
+            }
+
+            if (_armyIconSprite == null)
+                _armyIconSprite = FirstPlayableCombatHudSemanticIcons.Create(
+                    FirstPlayableCombatHudSemanticIconKind.Army);
+            return _armyIconSprite;
         }
 
         internal static Sprite RoundedSprite(float radius)

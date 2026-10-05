@@ -64,7 +64,7 @@
     "weightsContract": ["Regular", "Medium", "Bold"],
     "licenseFile": "../../../Fonts/OFL-CJK.txt",
     "approval": "FUNCTIONAL_BASELINE_APPROVED",
-    "implementationStatus": "Current runtime still uses existing Regular review SDF; Medium/Bold runtime packaging not implemented in this art AWU"
+    "implementationStatus": "EV-019 runtime packaging IMPLEMENTED for Regular/Medium/Bold TMP SDF assets; final release packaging/attribution audit NOT RUN"
   },
   "styleAnchor": {
     "generationId": "b5ee44af-b7c9-4f21-8430-1cbf0ed9daac",

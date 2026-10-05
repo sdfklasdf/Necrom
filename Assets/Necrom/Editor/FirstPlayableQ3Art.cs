@@ -16,7 +16,10 @@ namespace Necrom.EditorTools
         const string ArtPath = ArtRootPath + "ProductionCandidate/";
         const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3Review/";
         const string ProfilePath = ArtRootPath + "FirstPlayablePresentationProfile.asset";
-        const string FontPath = "Assets/Necrom/FirstPlayable/Fonts/NotoSansCJKkr-Regular Review SDF.asset";
+        const string ProductionFontRoot = "Assets/Necrom/FirstPlayable/Fonts/Production/";
+        const string FontPath = ProductionFontRoot + "NotoSansKR-Regular SDF.asset";
+        const string FontMediumPath = ProductionFontRoot + "NotoSansKR-Medium SDF.asset";
+        const string FontBoldPath = ProductionFontRoot + "NotoSansKR-Bold SDF.asset";
 
         [MenuItem("Necrom/Q3/Apply approved Obsidian Soul production-candidate art")]
         public static void Apply()
@@ -36,29 +39,12 @@ namespace Necrom.EditorTools
                 importer.SaveAndReimport();
             }
 
-            var font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FontPath);
-            if (font == null)
-            {
-                var source = AssetDatabase.LoadAssetAtPath<Font>("Assets/Necrom/FirstPlayable/Fonts/NotoSansCJKkr-Regular.otf");
-                if (source == null) throw new Exception("Noto review font source not imported.");
-
-                font = TMP_FontAsset.CreateFontAsset(
-                    source, 90, 9, GlyphRenderMode.SDFAA, 1024, 1024,
-                    AtlasPopulationMode.Dynamic, true);
-                if (font == null) throw new Exception("Noto review SDF creation failed.");
-
-                AssetDatabase.CreateAsset(font, FontPath);
-                foreach (var texture in font.atlasTextures) AssetDatabase.AddObjectToAsset(texture, font);
-                AssetDatabase.AddObjectToAsset(font.material, font);
-
-                var copy = File.ReadAllText("Assets/Necrom/FirstPlayable/Runtime/FirstPlayableGameplayComposition.cs");
-                var chars = new string(copy.Where(c => c >= ' ' && c != '\r' && c != '\n').Distinct().ToArray());
-                if (!font.TryAddCharacters(chars, out var missing))
-                    Debug.LogWarning("Q3_FONT_MISSING " + missing);
-
-                EditorUtility.SetDirty(font);
-                AssetDatabase.SaveAssets();
-            }
+            var font = EnsureFontAsset(
+                ProductionFontRoot + "NotoSansKR-Regular.otf", FontPath, "Regular");
+            var mediumFont = EnsureFontAsset(
+                ProductionFontRoot + "NotoSansKR-Medium.otf", FontMediumPath, "Medium");
+            var boldFont = EnsureFontAsset(
+                ProductionFontRoot + "NotoSansKR-Bold.otf", FontBoldPath, "Bold");
 
             var profile = EnsurePresentationProfile();
 
@@ -71,6 +57,8 @@ namespace Necrom.EditorTools
                 throw new Exception("Q3 review scene must contain exactly one AudioListener for actual SFX playback.");
             var composition = root.GetComponent<FirstPlayableGameplayComposition>();
             composition.ReviewFont = font;
+            composition.ReviewFontMedium = mediumFont;
+            composition.ReviewFontBold = boldFont;
 
             var visual = root.GetComponent<FirstPlayableVisualPresentation>() ??
                          root.AddComponent<FirstPlayableVisualPresentation>();
@@ -142,6 +130,39 @@ namespace Necrom.EditorTools
                     File.Copy(sceneBackup, FirstPlayableCanonicalScene.ScenePath, true);
                 throw;
             }
+        }
+
+        static TMP_FontAsset EnsureFontAsset(string sourcePath, string assetPath, string weightLabel)
+        {
+            var existing = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(assetPath);
+            if (existing != null) return existing;
+
+            var source = AssetDatabase.LoadAssetAtPath<Font>(sourcePath);
+            if (source == null)
+                throw new Exception("Noto production font source not imported: " + sourcePath);
+
+            var font = TMP_FontAsset.CreateFontAsset(
+                source, 90, 9, GlyphRenderMode.SDFAA, 1024, 1024,
+                AtlasPopulationMode.Dynamic, true);
+            if (font == null)
+                throw new Exception("Noto production SDF creation failed: " + weightLabel);
+
+            AssetDatabase.CreateAsset(font, assetPath);
+            foreach (var texture in font.atlasTextures) AssetDatabase.AddObjectToAsset(texture, font);
+            AssetDatabase.AddObjectToAsset(font.material, font);
+
+            var copy = File.ReadAllText("Assets/Necrom/FirstPlayable/Runtime/FirstPlayableGameplayComposition.cs");
+            var chars = new string(copy.Where(c => c >= ' ' && c != '\r' && c != '\n').Distinct().ToArray());
+            if (!font.TryAddCharacters(chars, out var missing))
+                Debug.LogWarning("Q3_PRODUCTION_FONT_MISSING " + weightLabel + " " + missing);
+
+            EditorUtility.SetDirty(font);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            var reloaded = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(assetPath);
+            if (reloaded == null || reloaded.sourceFontFile == null)
+                throw new Exception("Noto production font failed persisted readback: " + weightLabel);
+            return reloaded;
         }
 
         static FirstPlayablePresentationProfile EnsurePresentationProfile()
@@ -228,8 +249,18 @@ namespace Necrom.EditorTools
                 if (string.IsNullOrEmpty(path) || !path.StartsWith(ArtPath, StringComparison.Ordinal))
                     throw new Exception("Q3 canonical art is not bound to the approved ProductionCandidate path: " + path);
             }
-            if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null)
-                throw new Exception("Q3 font source unresolved.");
+            if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null ||
+                root.ReviewFontMedium == null || root.ReviewFontMedium.sourceFontFile == null ||
+                root.ReviewFontBold == null || root.ReviewFontBold.sourceFontFile == null)
+                throw new Exception("Q3 production Regular/Medium/Bold font set unresolved.");
+
+            foreach (var font in new[] { root.ReviewFont, root.ReviewFontMedium, root.ReviewFontBold })
+            {
+                var sourcePath = AssetDatabase.GetAssetPath(font.sourceFontFile);
+                if (string.IsNullOrEmpty(sourcePath) ||
+                    !sourcePath.StartsWith(ProductionFontRoot, StringComparison.Ordinal))
+                    throw new Exception("Q3 production font source escaped approved Production path: " + sourcePath);
+            }
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5 ||
                 !prefabVisual.HasAuthoredMotion || prefabVisual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 scene/prefab lost motion/audio profile.");
@@ -242,8 +273,10 @@ namespace Necrom.EditorTools
                 "\nArt references: 4 / 4" +
                 "\nMotion profile: AUTHORED_CURVES_5" +
                 "\nAudio clips: 5 / 5" +
-                "\nFont: " + root.ReviewFont.name +
-                "\nSource font: " + root.ReviewFont.sourceFontFile.name +
+                "\nFonts: " + root.ReviewFont.name + " / " +
+                    root.ReviewFontMedium.name + " / " + root.ReviewFontBold.name +
+                "\nSource fonts: " + root.ReviewFont.sourceFontFile.name + " / " +
+                    root.ReviewFontMedium.sourceFontFile.name + " / " + root.ReviewFontBold.sourceFontFile.name +
                 "\nOBSIDIAN_SOUL production-candidate art bound." +
                 "\nFinal release-rights / production sound / physical-device acceptance NOT RUN.");
 

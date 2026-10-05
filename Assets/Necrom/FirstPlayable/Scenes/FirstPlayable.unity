@@ -355,7 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f5bb35194cd1e42b84ed03173d8d9d, type: 3}
   m_Name:
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGameplayComposition
-  ReviewFont: {fileID: 11400000, guid: 442ab2262bbba1d449bf9e4a09bace77, type: 2}
+  ReviewFont: {fileID: 11400000, guid: 063bc22cfb2e8aa4986d3caef16e4caf, type: 2}
+  ReviewFontMedium: {fileID: 11400000, guid: 4923542123424b1469b185e1a29a5941, type: 2}
+  ReviewFontBold: {fileID: 11400000, guid: 08e305d74b7e7ea43afd03222b4348f8, type: 2}
 --- !u!114 &925762128
 MonoBehaviour:
   m_ObjectHideFlags: 0

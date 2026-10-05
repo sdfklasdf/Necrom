@@ -119,6 +119,58 @@ namespace Necrom.FirstPlayable.Tests
         }
 
         [UnityTest]
+        public IEnumerator ProductionFontWeightsAndSemanticIconsAreBound()
+        {
+            var v = Visual();
+            Assert.That(v, Is.Not.Null);
+
+            var regular = _game.GetType().GetField("ReviewFont").GetValue(_game);
+            var medium = _game.GetType().GetField("ReviewFontMedium").GetValue(_game);
+            var bold = _game.GetType().GetField("ReviewFontBold").GetValue(_game);
+            Assert.That(regular, Is.Not.Null);
+            Assert.That(medium, Is.Not.Null);
+            Assert.That(bold, Is.Not.Null);
+#if UNITY_EDITOR
+            foreach (var font in new[] { regular, medium, bold })
+            {
+                var source = Prop(font, "sourceFontFile") as UnityEngine.Object;
+                Assert.That(source, Is.Not.Null);
+                Assert.That(AssetDatabase.GetAssetPath(source),
+                    Does.StartWith("Assets/Necrom/FirstPlayable/Fonts/Production/"));
+            }
+#endif
+
+            var overlay = (GameObject)Prop(Get("HudBinding"), "OverlayHost");
+            var target = overlay.transform.Find("SafeAreaMirror/TargetRenderContainer");
+            var raise = overlay.transform.Find("SafeAreaMirror/RaiseRenderContainer");
+            var army = overlay.transform.Find("SafeAreaMirror/ArmyRenderContainer");
+            Assert.That(target, Is.Not.Null);
+            Assert.That(raise, Is.Not.Null);
+            Assert.That(army, Is.Not.Null);
+
+            foreach (var section in new[] { target, raise, army })
+            {
+                var state = section.Find("StateKey").GetComponent("TextMeshProUGUI");
+                var primary = section.Find("PrimaryText").GetComponent("TextMeshProUGUI");
+                var secondary = section.Find("SecondaryText").GetComponent("TextMeshProUGUI");
+                Assert.That(Prop(state, "font"), Is.SameAs(medium));
+                Assert.That(Prop(primary, "font"), Is.SameAs(bold));
+                Assert.That(Prop(secondary, "font"), Is.SameAs(regular));
+                var icon = section.Find("StateAccent").GetComponent<UnityEngine.UI.Image>();
+                Assert.That(icon.sprite, Is.Not.Null);
+                Assert.That(icon.sprite.name, Does.StartWith("HUD Icon "));
+            }
+
+            var targetIcon = target.Find("StateAccent").GetComponent<UnityEngine.UI.Image>().sprite.name;
+            var raiseIcon = raise.Find("StateAccent").GetComponent<UnityEngine.UI.Image>().sprite.name;
+            var armyIcon = army.Find("StateAccent").GetComponent<UnityEngine.UI.Image>().sprite.name;
+            Assert.That(targetIcon, Is.EqualTo("HUD Icon Combat"));
+            Assert.That(raiseIcon, Is.EqualTo("HUD Icon Soul"));
+            Assert.That(armyIcon, Is.EqualTo("HUD Icon Army"));
+            yield return null;
+        }
+
+        [UnityTest]
         public IEnumerator ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay()
         {
             var v = Visual();

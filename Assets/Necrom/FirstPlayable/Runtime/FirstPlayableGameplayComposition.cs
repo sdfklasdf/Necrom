@@ -8,13 +8,15 @@ using UnityEngine.UI;
 
 namespace Necrom.FirstPlayable.Runtime
 {
-    // Canonical Q2 composition. Serialized font and simple combat markers are review assets,
-    // not final typography/art or economy balancing.
+    // Canonical Q3 composition. Production-candidate art and functional UI typography are serialized;
+    // economy values remain review policy and are not final balance decisions.
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Canvas), typeof(CanvasScaler), typeof(EncounterBoundaryController))]
     public sealed class FirstPlayableGameplayComposition : MonoBehaviour
     {
         public TMP_FontAsset ReviewFont;
+        public TMP_FontAsset ReviewFontMedium;
+        public TMP_FontAsset ReviewFontBold;
         public int SoulBalance => _account?.Balance ?? 0;
         public bool IsInitialized { get; private set; }
         public FirstPlayableCombatHudRuntimeBinding HudBinding { get; private set; }
@@ -154,11 +156,18 @@ namespace Necrom.FirstPlayable.Runtime
         void BindHudIfNeeded()
         {
             if(!IsInitialized || !HudBinding.enabled || HudBinding.IsInitialized) return;
+            var productionPresentation = GetComponent<FirstPlayableVisualPresentation>() != null;
+            if (productionPresentation && (ReviewFontMedium == null || ReviewFontBold == null))
+                throw new InvalidOperationException("Q3 production font set requires Regular / Medium / Bold.");
+
             HudBinding.Initialize(Battle,Enemies,_soul,_formation,Roster,Session,
                 transform.Find("SafeArea") as RectTransform,
                 FirstPlayableCombatHudVerifiedDesignContract.Create(),
-                new FirstPlayableCombatHudCopyProviderAdapter(GetComponent<FirstPlayableVisualPresentation>()!=null?Q3Copy:ReviewCopy),
-                new FirstPlayableCombatHudFontProviderAdapter(()=>ReviewFont));
+                new FirstPlayableCombatHudCopyProviderAdapter(productionPresentation?ProductionCopy:ReviewCopy),
+                FirstPlayableCombatHudFontProviderAdapter.WithWeights(
+                    ()=>ReviewFont,
+                    ()=>productionPresentation?ReviewFontMedium:ReviewFont,
+                    ()=>productionPresentation?ReviewFontBold:ReviewFont));
             // Normal input goes through the resource bridge and domain command, never a state adapter.
             var scaler=HudBinding.OverlayHost.GetComponent<CanvasScaler>();
             scaler.uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;
@@ -195,7 +204,7 @@ namespace Necrom.FirstPlayable.Runtime
             if(full) detail="Formation full / continue combat";
             return new FirstPlayableCombatHudCopy(key.ToString(),title,detail,full?"ARMY FULL":"RAISE");
         }
-        FirstPlayableCombatHudCopy Q3Copy(FirstPlayableCombatHudContentKey key)
+        FirstPlayableCombatHudCopy ProductionCopy(FirstPlayableCombatHudContentKey key)
         {
             var family=key.ToString().StartsWith("Target")?"전투":key.ToString().StartsWith("Raise")?"소환":"군단";
             var title=family;var detail="";
@@ -218,7 +227,7 @@ namespace Necrom.FirstPlayable.Runtime
             }
             var full=key==FirstPlayableCombatHudContentKey.RaiseEligible&&Roster.ActiveCount>=Formation.Capacity;
             if(full){title="군단이 가득 찼습니다";detail="5 / 5 · 다음 전투에서 군단의 힘을 확인하세요";}
-            return new FirstPlayableCombatHudCopy(family,title,detail,full?"군단 가득 참":"되살리기");
+            return new FirstPlayableCombatHudCopy(family,title,detail,full?"군단 최대":"되살리기");
         }
         public void SetAutomaticCombat(bool enabled)
         {
@@ -306,7 +315,8 @@ namespace Necrom.FirstPlayable.Runtime
             _nextSprite=FirstPlayableCombatHudUnityView.RoundedSprite(12f);
             command.GetComponent<Image>().sprite=_nextSprite;command.GetComponent<Image>().type=Image.Type.Sliced;
             _nextButton=command.GetComponent<Button>();_nextButton.transition=Selectable.Transition.None;_nextButton.onClick.AddListener(StartNextEncounter);
-            Label(r,visual!=null?"다음 전투":"NEXT ENCOUNTER",Color.clear);
+            var nextLabel=Label(r,visual!=null?"다음 전투":"NEXT ENCOUNTER",Color.clear);
+            if(visual!=null && ReviewFontMedium!=null) nextLabel.font=ReviewFontMedium;
         }
         TextMeshProUGUI Label(RectTransform zone,string copy,Color surface)
         {
