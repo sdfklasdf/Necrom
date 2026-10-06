@@ -171,6 +171,67 @@ namespace Necrom.FirstPlayable.Tests
         }
 
         [UnityTest]
+        public IEnumerator ProductionMotionAndAudioCandidatesAreBoundWithDistinctSignatures()
+        {
+            var v = Visual();
+#if UNITY_EDITOR
+            const string audioPrefix = "Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/";
+            foreach (var fieldName in new[]
+                     {
+                         "PlayerAttackSfx", "HitSfx", "DefeatSfx",
+                         "RaiseSfx", "AlliedContributionSfx"
+                     })
+            {
+                var field = v.GetType().GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                Assert.That(field, Is.Not.Null, fieldName + " field must exist.");
+                var clip = field.GetValue(v) as AudioClip;
+                Assert.That(clip, Is.Not.Null, fieldName + " must resolve.");
+                Assert.That(AssetDatabase.GetAssetPath(clip), Does.StartWith(audioPrefix),
+                    fieldName + " must bind the production-candidate SFX path.");
+            }
+#endif
+            var attack = (AnimationCurve)v.GetType().GetField("AttackLunge").GetValue(v);
+            var hit = (AnimationCurve)v.GetType().GetField("HitFlash").GetValue(v);
+            var defeat = (AnimationCurve)v.GetType().GetField("DefeatScaleY").GetValue(v);
+            var raise = (AnimationCurve)v.GetType().GetField("RaiseScale").GetValue(v);
+            var ally = (AnimationCurve)v.GetType().GetField("AlliedContributionScale").GetValue(v);
+
+            Assert.That(attack.length, Is.GreaterThanOrEqualTo(5));
+            Assert.That(hit.length, Is.GreaterThanOrEqualTo(4));
+            Assert.That(defeat.length, Is.GreaterThanOrEqualTo(5));
+            Assert.That(raise.length, Is.GreaterThanOrEqualTo(5));
+            Assert.That(ally.length, Is.GreaterThanOrEqualTo(4));
+
+            Assert.That(attack.Evaluate(.12f), Is.LessThan(0f),
+                "Attack must show readable anticipation before the forward snap.");
+            Assert.That(attack.Evaluate(.42f), Is.GreaterThan(1f),
+                "Attack must peak as a decisive forward snap.");
+            Assert.That(raise.Evaluate(.48f), Is.GreaterThan(1.15f),
+                "Raise must visibly overshoot during emerald reform.");
+            Assert.That(ally.Evaluate(.18f), Is.GreaterThan(1.08f),
+                "Exact ally contribution needs a concise local pulse.");
+
+            Assert.That(Convert.ToSingle(v.GetType().GetField("AttackDuration").GetValue(v)), Is.InRange(.20f, .28f));
+            Assert.That(Convert.ToSingle(v.GetType().GetField("HitDuration").GetValue(v)), Is.InRange(.13f, .20f));
+            Assert.That(Convert.ToSingle(v.GetType().GetField("DefeatDuration").GetValue(v)), Is.InRange(.42f, .60f));
+            Assert.That(Convert.ToSingle(v.GetType().GetField("RaiseDuration").GetValue(v)), Is.InRange(.55f, .75f));
+            Assert.That(Convert.ToSingle(v.GetType().GetField("AlliedContributionDuration").GetValue(v)), Is.InRange(.16f, .28f));
+
+            var master = Convert.ToSingle(v.GetType().GetField("SfxMasterVolume").GetValue(v));
+            var attackGain = Convert.ToSingle(v.GetType().GetField("PlayerAttackSfxGain").GetValue(v));
+            var hitGain = Convert.ToSingle(v.GetType().GetField("HitSfxGain").GetValue(v));
+            var defeatGain = Convert.ToSingle(v.GetType().GetField("DefeatSfxGain").GetValue(v));
+            var raiseGain = Convert.ToSingle(v.GetType().GetField("RaiseSfxGain").GetValue(v));
+            var allyGain = Convert.ToSingle(v.GetType().GetField("AlliedContributionSfxGain").GetValue(v));
+            Assert.That(master, Is.InRange(.20f, .50f));
+            Assert.That(raiseGain, Is.GreaterThan(attackGain));
+            Assert.That(defeatGain, Is.GreaterThan(hitGain));
+            Assert.That(allyGain, Is.LessThanOrEqualTo(.50f),
+                "Repeated allied contribution must stay fatigue-safe under polyphony.");
+            yield return null;
+        }
+
+        [UnityTest]
         public IEnumerator ActualDamageCreatesAttackHitDefeatFeedbackWithoutDuplicateReplay()
         {
             var v = Visual();

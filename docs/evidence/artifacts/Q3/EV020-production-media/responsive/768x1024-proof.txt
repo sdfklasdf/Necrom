@@ -1,0 +1,48 @@
+requested=(768, 1024)
+actual=768x1024
+safeAreaEvidence=SIMULATED_4_PERCENT_VERTICAL_INSETS
+soulBalance=11
+alliedCount=1
+overlayCount=1
+target=TargetActive
+raise=RaiseProofObserved
+army=ArmyProofObserved
+TargetStatusReadabilityZone=(176.40, 448.87, 0.00);(176.40, 584.84, 0.00);(591.60, 584.84, 0.00);(591.60, 448.87, 0.00)
+RaiseActionStatusReadabilityZone=(176.40, 215.78, 0.00);(176.40, 429.45, 0.00);(591.60, 429.45, 0.00);(591.60, 215.78, 0.00)
+ArmyStatusReadabilityZone=(176.40, 60.38, 0.00);(176.40, 196.35, 0.00);(591.60, 196.35, 0.00);(591.60, 60.38, 0.00)
+ProtectedCombatReadabilityZone=(15.36, 604.27, 0.00);(15.36, 888.83, 0.00);(752.64, 888.83, 0.00);(752.64, 604.27, 0.00)
+CombatViewport=(0.00, 604.27, 0.00);(0.00, 983.04, 0.00);(768.00, 983.04, 0.00);(768.00, 604.27, 0.00)
+q3ArtLoaded=4
+authoredMotion=True
+motionDurations=attack:0.24,hit:0.16,defeat:0.50,raise:0.66,ally:0.20
+audioClips=5
+productionSfx=attack:attack-production,hit:hit-production,defeat:defeat-production,raise:raise-production,ally:ally-contribution-production
+sfxMix=master:0.34,attack:0.72,hit:0.48,defeat:0.82,raise:1.00,ally:0.38
+reviewSfxPlaybackCount=16
+lastReviewSfx=hit-production
+audioListenerCount=1
+playerAttackCues=6
+hitCues=7
+defeatCues=1
+raiseCues=1
+alliedContributionCues=1
+lastContributionUnitId=ally:11
+visibleAllyArt=1
+art.Background=(0.00, 604.27, 0.00);(0.00, 983.04, 0.00);(768.00, 983.04, 0.00);(768.00, 604.27, 0.00)
+artMotion.Background scale=(1.000, 1.000, 1.000) color=RGBA(1.000, 1.000, 1.000, 1.000)
+art.Necromancer=(82.71, 643.05, 0.00);(82.71, 810.33, 0.00);(194.23, 810.33, 0.00);(194.23, 643.05, 0.00)
+artMotion.Necromancer scale=(1.000, 1.000, 1.000) color=RGBA(1.000, 1.000, 1.000, 1.000)
+art.Guard=(484.43, 695.18, 0.00);(484.43, 858.82, 0.00);(593.52, 858.82, 0.00);(593.52, 695.18, 0.00)
+artMotion.Guard scale=(1.000, 1.000, 1.000) color=RGBA(1.000, 1.000, 1.000, 1.000)
+art.RaisedGuardSlot0=(279.63, 622.45, 0.00);(279.63, 698.93, 0.00);(330.62, 698.93, 0.00);(330.62, 622.45, 0.00)
+artMotion.RaisedGuardSlot0 scale=(1.000, 1.000, 1.000) color=RGBA(1.000, 1.000, 1.000, 1.000)
+q3ProtectedUnitArt=PASS
+StateKey font=12 overflow=False content=전투
+PrimaryText font=20 overflow=False content=수호병
+SecondaryText font=14 overflow=False content=체력 4 / 10 · 자동 전투 중
+StateKey font=12 overflow=False content=소환
+PrimaryText font=20 overflow=False content=아군의 공격을 확인했습니다
+SecondaryText font=14 overflow=False content=되살린 수호병이 실제 피해를 입혔습니다
+StateKey font=12 overflow=False content=군단
+PrimaryText font=20 overflow=False content=군단 1 / 5
+SecondaryText font=14 overflow=False content=되살린 아군의 실제 공격을 확인했습니다

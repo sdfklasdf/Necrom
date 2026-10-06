@@ -1,0 +1,71 @@
+{
+  "stage": "Q3 production-candidate motion/audio convergence",
+  "date": "2026-10-06",
+  "generator": "Connected Runway sound-effect generation",
+  "status": "PRODUCTION_CANDIDATE",
+  "finalReleaseRightsLegal": "UNKNOWN_NOT_RUN",
+  "physicalDeviceMix": "NOT_RUN",
+  "notes": [
+    "No third-party sample files were manually imported by this workflow.",
+    "These generated SFX are production candidates, not final legal/device/user acceptance.",
+    "Runtime mix uses per-event gains to reduce hit/allied polyphony fatigue while keeping Raise as the signature cue."
+  ],
+  "assets": [
+    {
+      "file": "attack-production.mp3",
+      "taskId": "e4c6e981-b3ec-429c-b4c7-3de2a7bb3c9d",
+      "requestedDurationSeconds": 0.8,
+      "sha256": "9438FF79E2F749EA422A1199974ADB71DB5605B027863E216B30A3E4FAB260C0",
+      "prompt": "Dry bone-and-stone weapon snap for a necromancer combat strike. Very short anticipation whoosh, sharp skeletal impact, restrained low spectral soul tail. Dark fantasy, close and dry, no music, no voice, no huge cinematic boom."
+    },
+    {
+      "file": "hit-production.mp3",
+      "taskId": "c5c96fbd-98f6-406e-92be-c7477c042a3b",
+      "requestedDurationSeconds": 0.6,
+      "sha256": "B3D3A86D82E118149C756B5569999F02A9E7A2B613464B49B138A080C377D694",
+      "prompt": "Tight dry bone impact against armor and stone, crisp transient with a tiny gritty crack and almost no reverb. Dark fantasy combat hit, readable and compact, no music, no voice, no explosion."
+    },
+    {
+      "file": "defeat-production.mp3",
+      "taskId": "b9bdc8dc-394b-4041-9fc1-c9597a41581f",
+      "requestedDurationSeconds": 1.2,
+      "sha256": "1F261212A342AFB1504E33BE05CE79C3DB16FDA451FD541E3C915C93CDA4294B",
+      "prompt": "Weighted skeletal guard collapse: bone and metal clatter into stone, descending body weight, short dusty tail. Dark fantasy, grounded and heavy but not explosive, no music, no voice."
+    },
+    {
+      "file": "raise-production.mp3",
+      "taskId": "e6b77144-c231-4877-8d6b-158b3e113bba",
+      "requestedDurationSeconds": 2.0,
+      "sha256": "D517EF7A2399BF1FA7F3B40E1537F515443D5FC2859092F18CF54315D626B3A7",
+      "prompt": "Signature undead Raise: faint soul inhale pulls inward, low spectral resonance swells, crystalline emerald energy reforms into a restrained bone reassembly snap, then a short eerie decay. Dark fantasy, premium, no music, no voice."
+    },
+    {
+      "file": "ally-contribution-production.mp3",
+      "taskId": "a96f5e05-b7bf-4409-b682-4ab4b44833fa",
+      "requestedDurationSeconds": 0.7,
+      "reportedDurationSeconds": 0.680249,
+      "sha256": "1B86FE91A132B5058C18E1DA6D53D47069D956D115BAEAD5587C72F806CAFAB9",
+      "prompt": "Concise raised-ally contribution cue: small bone weapon strike with a soft emerald soul tick, distinct from the necromancer attack, low fatigue, short and local, no music, no voice, no large boom."
+    }
+  ],
+  "runtimeMix": {
+    "master": 0.34,
+    "attack": 0.72,
+    "hit": 0.48,
+    "defeat": 0.82,
+    "raise": 1.0,
+    "allyContribution": 0.38
+  },
+  "motionCandidate": {
+    "attackDuration": 0.24,
+    "hitDuration": 0.16,
+    "defeatDuration": 0.50,
+    "raiseDuration": 0.66,
+    "alliedContributionDuration": 0.20,
+    "attack": "anticipation -> forward snap -> settle",
+    "hit": "tight local kick + flash, no whole-screen shake",
+    "defeat": "weighted vertical collapse with small final settle",
+    "raise": "spectral emergence -> overshoot reform -> settle",
+    "alliedContribution": "exact ally local lift + short green pulse"
+  }
+}

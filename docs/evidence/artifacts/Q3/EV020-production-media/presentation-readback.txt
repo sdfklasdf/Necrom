@@ -1,0 +1,18 @@
+Q3_PRESENTATION_REOPEN_PASS
+Scene: Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+Prefab: Assets/Necrom/FirstPlayable/Prefabs/FirstPlayable.prefab
+Art references: 4 / 4
+Motion profile: PRODUCTION_CANDIDATE_CURVES_5
+Motion durations: attack=0.24 hit=0.16 defeat=0.50 raise=0.66 ally=0.20
+Audio clips: 5 / 5 from Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/
+SFX mix: master=0.34 attack=0.72 hit=0.48 defeat=0.82 raise=1.00 ally=0.38
+Audio PCM readback:
+attack-production length=0.862s channels=1 hz=44100 peak=1.0000 rms=0.1212
+hit-production length=0.653s channels=1 hz=44100 peak=1.0000 rms=0.0787
+defeat-production length=1.254s channels=1 hz=44100 peak=0.9999 rms=0.0545
+raise-production length=2.064s channels=1 hz=44100 peak=1.0000 rms=0.1895
+ally-contribution-production length=0.758s channels=1 hz=44100 peak=1.0000 rms=0.1640
+Fonts: NotoSansKR-Regular SDF / NotoSansKR-Medium SDF / NotoSansKR-Bold SDF
+Source fonts: NotoSansKR-Regular / NotoSansKR-Medium / NotoSansKR-Bold
+OBSIDIAN_SOUL production-candidate art bound.
+Final release-rights / physical-device mix / accessibility / user acceptance NOT RUN.

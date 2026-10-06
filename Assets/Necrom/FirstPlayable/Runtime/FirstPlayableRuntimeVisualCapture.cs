@@ -80,6 +80,9 @@ namespace Necrom.FirstPlayable.Runtime
             var visual=game.GetComponent<FirstPlayableVisualPresentation>();
             yield return WaitFor(()=>visual.HitCueCount>0,3f);
             yield return Capture(game,output,size,"native-attack-hit");
+            yield return WaitFor(()=>visual.DefeatCueCount>0,8f);
+            yield return new WaitForSecondsRealtime(.12f);
+            yield return Capture(game,output,size,"native-defeat-motion");
             for(int i=1;i<=5;i++)
             {
                 yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,8f);
@@ -97,8 +100,14 @@ namespace Necrom.FirstPlayable.Runtime
                 if(game.SoulBalance!=10+i)throw new InvalidOperationException("Raise did not spend exactly once.");
                 yield return Capture(game,output,size,"native-"+i+"-raise-motion");
                 yield return Capture(game,output,size,"native-"+i+"-raised");
+                var contributionBefore = visual.AlliedContributionCueCount;
                 RequestClick(output,game.transform.Find("SafeArea/CombatViewport/NextEncounter") as RectTransform);
                 yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Running,5f);
+                if(i==1)
+                {
+                    yield return WaitFor(()=>visual.AlliedContributionCueCount>contributionBefore,5f);
+                    yield return Capture(game,output,size,"native-ally-contribution-motion");
+                }
             }
             yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,8f);
             game.HudBinding.RefreshNow();
@@ -127,7 +136,7 @@ namespace Necrom.FirstPlayable.Runtime
         }
         IEnumerator Capture(FirstPlayableGameplayComposition game,string output,Vector2Int requested,string stage)
         {
-            if(stage!="active"&&stage!="native-active"&&stage!="native-attack-hit"&&!stage.EndsWith("raise-motion"))
+            if(stage!="active"&&stage!="native-active"&&stage!="native-attack-hit"&&!stage.EndsWith("-motion"))
                 yield return new WaitForSecondsRealtime(.5f); // settled fidelity sample, separate from real motion samples
             yield return null;
             yield return new WaitForEndOfFrame();
@@ -159,7 +168,23 @@ namespace Necrom.FirstPlayable.Runtime
             {
                 lines.Add("q3ArtLoaded="+visual.LoadedArtCount);
                 lines.Add("authoredMotion="+visual.HasAuthoredMotion);
+                lines.Add("motionDurations=attack:"+visual.AttackDuration.ToString("F2")+
+                    ",hit:"+visual.HitDuration.ToString("F2")+
+                    ",defeat:"+visual.DefeatDuration.ToString("F2")+
+                    ",raise:"+visual.RaiseDuration.ToString("F2")+
+                    ",ally:"+visual.AlliedContributionDuration.ToString("F2"));
                 lines.Add("audioClips="+visual.LoadedAudioClipCount);
+                lines.Add("productionSfx=attack:"+visual.PlayerAttackSfx.name+
+                    ",hit:"+visual.HitSfx.name+
+                    ",defeat:"+visual.DefeatSfx.name+
+                    ",raise:"+visual.RaiseSfx.name+
+                    ",ally:"+visual.AlliedContributionSfx.name);
+                lines.Add("sfxMix=master:"+visual.SfxMasterVolume.ToString("F2")+
+                    ",attack:"+visual.PlayerAttackSfxGain.ToString("F2")+
+                    ",hit:"+visual.HitSfxGain.ToString("F2")+
+                    ",defeat:"+visual.DefeatSfxGain.ToString("F2")+
+                    ",raise:"+visual.RaiseSfxGain.ToString("F2")+
+                    ",ally:"+visual.AlliedContributionSfxGain.ToString("F2"));
                 lines.Add("reviewSfxPlaybackCount="+visual.ReviewSfxPlaybackCount);
                 lines.Add("lastReviewSfx="+visual.LastReviewSfxName);
                 lines.Add("audioListenerCount="+UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length);
@@ -177,6 +202,9 @@ namespace Necrom.FirstPlayable.Runtime
                 {
                     var corners=new Vector3[4];art.rectTransform.GetWorldCorners(corners);
                     lines.Add("art."+art.name+"="+string.Join(";",corners.Select(x=>x.ToString("F2"))));
+                    lines.Add("artMotion."+art.name+
+                        " scale="+art.rectTransform.localScale.ToString("F3")+
+                        " color="+art.color.ToString("F3"));
                     if(art.name!="Background")
                         foreach(var point in corners)
                             if(point.x<limits[0].x-.1f||point.x>limits[2].x+.1f||point.y<limits[0].y-.1f||point.y>limits[2].y+.1f)

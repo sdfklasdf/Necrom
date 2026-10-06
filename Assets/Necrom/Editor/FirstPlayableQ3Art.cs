@@ -14,7 +14,7 @@ namespace Necrom.EditorTools
     {
         const string ArtRootPath = "Assets/Necrom/FirstPlayable/Art/Q3/";
         const string ArtPath = ArtRootPath + "ProductionCandidate/";
-        const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3Review/";
+        const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/";
         const string ProfilePath = ArtRootPath + "FirstPlayablePresentationProfile.asset";
         const string ProductionFontRoot = "Assets/Necrom/FirstPlayable/Fonts/Production/";
         const string FontPath = ProductionFontRoot + "NotoSansKR-Regular SDF.asset";
@@ -46,6 +46,7 @@ namespace Necrom.EditorTools
             var boldFont = EnsureFontAsset(
                 ProductionFontRoot + "NotoSansKR-Bold.otf", FontBoldPath, "Bold");
 
+            ConfigureProductionAudioImport();
             var profile = EnsurePresentationProfile();
 
             var scene = EditorSceneManager.OpenScene(FirstPlayableCanonicalScene.ScenePath, OpenSceneMode.Single);
@@ -76,7 +77,12 @@ namespace Necrom.EditorTools
             visual.DefeatDuration = profile.DefeatDuration;
             visual.RaiseDuration = profile.RaiseDuration;
             visual.AlliedContributionDuration = profile.AlliedContributionDuration;
-            visual.ReviewSfxVolume = profile.ReviewSfxVolume;
+            visual.SfxMasterVolume = profile.SfxMasterVolume;
+            visual.PlayerAttackSfxGain = profile.PlayerAttackSfxGain;
+            visual.HitSfxGain = profile.HitSfxGain;
+            visual.DefeatSfxGain = profile.DefeatSfxGain;
+            visual.RaiseSfxGain = profile.RaiseSfxGain;
+            visual.AlliedContributionSfxGain = profile.AlliedContributionSfxGain;
             visual.PlayerAttackSfx = profile.PlayerAttackSfx;
             visual.HitSfx = profile.HitSfx;
             visual.DefeatSfx = profile.DefeatSfx;
@@ -165,6 +171,35 @@ namespace Necrom.EditorTools
             return reloaded;
         }
 
+        static void ConfigureProductionAudioImport()
+        {
+            foreach (var name in new[]
+                     {
+                         "attack-production.mp3",
+                         "hit-production.mp3",
+                         "defeat-production.mp3",
+                         "raise-production.mp3",
+                         "ally-contribution-production.mp3"
+                     })
+            {
+                var path = AudioPath + name;
+                var importer = AssetImporter.GetAtPath(path) as AudioImporter;
+                if (importer == null)
+                    throw new Exception("Q3 production SFX source not imported: " + path);
+
+                importer.forceToMono = true;
+                importer.loadInBackground = false;
+                var settings = importer.defaultSampleSettings;
+                settings.preloadAudioData = true;
+                settings.loadType = AudioClipLoadType.DecompressOnLoad;
+                settings.compressionFormat = AudioCompressionFormat.PCM;
+                settings.sampleRateSetting = AudioSampleRateSetting.PreserveSampleRate;
+                settings.quality = 1f;
+                importer.defaultSampleSettings = settings;
+                importer.SaveAndReimport();
+            }
+        }
+
         static FirstPlayablePresentationProfile EnsurePresentationProfile()
         {
             var profile = AssetDatabase.LoadAssetAtPath<FirstPlayablePresentationProfile>(ProfilePath);
@@ -174,39 +209,54 @@ namespace Necrom.EditorTools
                 AssetDatabase.CreateAsset(profile, ProfilePath);
             }
 
-            profile.AttackDuration = .18f;
-            profile.HitDuration = .12f;
-            profile.DefeatDuration = .34f;
-            profile.RaiseDuration = .42f;
-            profile.AlliedContributionDuration = .24f;
-            profile.ReviewSfxVolume = .28f;
+            profile.AttackDuration = .24f;
+            profile.HitDuration = .16f;
+            profile.DefeatDuration = .50f;
+            profile.RaiseDuration = .66f;
+            profile.AlliedContributionDuration = .20f;
+            profile.SfxMasterVolume = .34f;
+            profile.PlayerAttackSfxGain = .72f;
+            profile.HitSfxGain = .48f;
+            profile.DefeatSfxGain = .82f;
+            profile.RaiseSfxGain = 1.00f;
+            profile.AlliedContributionSfxGain = .38f;
 
+            // Production-candidate timing: readable anticipation, decisive snap, weighted collapse,
+            // signature Raise reform and a short fatigue-safe local ally pulse.
             profile.AttackLunge = new AnimationCurve(
                 new Keyframe(0f, 0f),
-                new Keyframe(.30f, 1f),
+                new Keyframe(.12f, -.18f),
+                new Keyframe(.42f, 1.12f),
+                new Keyframe(.68f, .30f),
                 new Keyframe(1f, 0f));
             profile.HitFlash = new AnimationCurve(
-                new Keyframe(0f, 1f),
-                new Keyframe(.35f, .72f),
+                new Keyframe(0f, .20f),
+                new Keyframe(.08f, 1f),
+                new Keyframe(.35f, .55f),
                 new Keyframe(1f, 0f));
             profile.DefeatScaleY = new AnimationCurve(
                 new Keyframe(0f, 1f),
-                new Keyframe(.55f, .52f),
+                new Keyframe(.18f, .96f),
+                new Keyframe(.55f, .46f),
+                new Keyframe(.82f, .28f),
                 new Keyframe(1f, .35f));
             profile.RaiseScale = new AnimationCurve(
-                new Keyframe(0f, .78f),
-                new Keyframe(.34f, 1.18f),
+                new Keyframe(0f, .62f),
+                new Keyframe(.18f, .72f),
+                new Keyframe(.48f, 1.24f),
+                new Keyframe(.72f, .96f),
                 new Keyframe(1f, 1f));
             profile.AlliedContributionScale = new AnimationCurve(
                 new Keyframe(0f, 1f),
-                new Keyframe(.30f, 1.16f),
+                new Keyframe(.18f, 1.12f),
+                new Keyframe(.48f, .97f),
                 new Keyframe(1f, 1f));
 
-            profile.PlayerAttackSfx = LoadClip("attack-review.wav");
-            profile.HitSfx = LoadClip("hit-review.wav");
-            profile.DefeatSfx = LoadClip("defeat-review.wav");
-            profile.RaiseSfx = LoadClip("raise-review.wav");
-            profile.AlliedContributionSfx = LoadClip("ally-contribution-review.wav");
+            profile.PlayerAttackSfx = LoadClip("attack-production.mp3");
+            profile.HitSfx = LoadClip("hit-production.mp3");
+            profile.DefeatSfx = LoadClip("defeat-production.mp3");
+            profile.RaiseSfx = LoadClip("raise-production.mp3");
+            profile.AlliedContributionSfx = LoadClip("ally-contribution-production.mp3");
 
             if (!profile.HasAuthoredMotion || profile.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 presentation profile incomplete after authoring.");
@@ -223,8 +273,39 @@ namespace Necrom.EditorTools
         static AudioClip LoadClip(string name)
         {
             var clip = AssetDatabase.LoadAssetAtPath<AudioClip>(AudioPath + name);
-            if (clip == null) throw new Exception("Q3 review SFX not imported: " + name);
+            if (clip == null) throw new Exception("Q3 production-candidate SFX not imported: " + name);
             return clip;
+        }
+
+        static string AudioStats(AudioClip clip)
+        {
+            if (clip == null) throw new Exception("Q3 production audio clip is null.");
+            if (!clip.LoadAudioData())
+                throw new Exception("Q3 production audio failed to load: " + clip.name);
+
+            var samples = new float[Math.Max(1, clip.samples * clip.channels)];
+            if (!clip.GetData(samples, 0))
+                throw new Exception("Q3 production audio PCM readback failed: " + clip.name);
+
+            double sumSquares = 0d;
+            var peak = 0f;
+            foreach (var sample in samples)
+            {
+                var absolute = Mathf.Abs(sample);
+                if (absolute > peak) peak = absolute;
+                sumSquares += sample * sample;
+            }
+
+            var rms = Mathf.Sqrt((float)(sumSquares / samples.Length));
+            if (peak < .01f || rms < .001f)
+                throw new Exception("Q3 production audio is effectively silent: " + clip.name);
+
+            return clip.name +
+                   " length=" + clip.length.ToString("F3") +
+                   "s channels=" + clip.channels +
+                   " hz=" + clip.frequency +
+                   " peak=" + peak.ToString("F4") +
+                   " rms=" + rms.ToString("F4");
         }
 
         public static void Readback()
@@ -265,22 +346,57 @@ namespace Necrom.EditorTools
                 !prefabVisual.HasAuthoredMotion || prefabVisual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 scene/prefab lost motion/audio profile.");
 
+            var audioClips = new[]
+            {
+                visual.PlayerAttackSfx,
+                visual.HitSfx,
+                visual.DefeatSfx,
+                visual.RaiseSfx,
+                visual.AlliedContributionSfx
+            };
+            var audioStats = audioClips.Select(clip =>
+            {
+                var path = AssetDatabase.GetAssetPath(clip);
+                if (string.IsNullOrEmpty(path) || !path.StartsWith(AudioPath, StringComparison.Ordinal))
+                    throw new Exception("Q3 production audio escaped approved path: " + path);
+                var importer = AssetImporter.GetAtPath(path) as AudioImporter;
+                if (importer == null)
+                    throw new Exception("Q3 production audio importer missing: " + path);
+                var settings = importer.defaultSampleSettings;
+                if (settings.loadType != AudioClipLoadType.DecompressOnLoad ||
+                    settings.compressionFormat != AudioCompressionFormat.PCM)
+                    throw new Exception("Q3 production audio import contract drifted: " + path);
+                return AudioStats(clip);
+            }).ToArray();
+
             File.WriteAllText(
                 "Artifacts/Q3-presentation-readback.txt",
                 "Q3_PRESENTATION_REOPEN_PASS\n" +
                 "Scene: " + FirstPlayableCanonicalScene.ScenePath +
                 "\nPrefab: " + FirstPlayableCanonicalScene.PrefabPath +
                 "\nArt references: 4 / 4" +
-                "\nMotion profile: AUTHORED_CURVES_5" +
-                "\nAudio clips: 5 / 5" +
+                "\nMotion profile: PRODUCTION_CANDIDATE_CURVES_5" +
+                "\nMotion durations: attack=" + visual.AttackDuration.ToString("F2") +
+                    " hit=" + visual.HitDuration.ToString("F2") +
+                    " defeat=" + visual.DefeatDuration.ToString("F2") +
+                    " raise=" + visual.RaiseDuration.ToString("F2") +
+                    " ally=" + visual.AlliedContributionDuration.ToString("F2") +
+                "\nAudio clips: 5 / 5 from " + AudioPath +
+                "\nSFX mix: master=" + visual.SfxMasterVolume.ToString("F2") +
+                    " attack=" + visual.PlayerAttackSfxGain.ToString("F2") +
+                    " hit=" + visual.HitSfxGain.ToString("F2") +
+                    " defeat=" + visual.DefeatSfxGain.ToString("F2") +
+                    " raise=" + visual.RaiseSfxGain.ToString("F2") +
+                    " ally=" + visual.AlliedContributionSfxGain.ToString("F2") +
+                "\nAudio PCM readback:\n" + string.Join("\n", audioStats) +
                 "\nFonts: " + root.ReviewFont.name + " / " +
                     root.ReviewFontMedium.name + " / " + root.ReviewFontBold.name +
                 "\nSource fonts: " + root.ReviewFont.sourceFontFile.name + " / " +
                     root.ReviewFontMedium.sourceFontFile.name + " / " + root.ReviewFontBold.sourceFontFile.name +
                 "\nOBSIDIAN_SOUL production-candidate art bound." +
-                "\nFinal release-rights / production sound / physical-device acceptance NOT RUN.");
+                "\nFinal release-rights / physical-device mix / accessibility / user acceptance NOT RUN.");
 
-            Debug.Log("Q3_PRESENTATION_REOPEN_PASS art=4 motion=5 audio=5");
+            Debug.Log("Q3_PRESENTATION_REOPEN_PASS art=4 motion=5 productionAudio=5");
         }
     }
 }

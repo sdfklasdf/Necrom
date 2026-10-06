@@ -80,7 +80,17 @@
     "provenanceNote": "36:305"
   },
   "audio": {
-    "status": "EV-016 review audio evidence remains valid but is not production-final audio"
+    "status": "EV-020 production-candidate SFX 5/5 generated, provenance-recorded, imported PCM and runtime-integrated",
+    "path": "../../Audio/Q3ProductionCandidate/",
+    "runtimeMix": "master .34 / attack .72 / hit .48 / defeat .82 / Raise 1.00 / ally .38",
+    "finalCreativeAcceptance": "NOT RUN",
+    "physicalDeviceMixAcceptance": "NOT RUN",
+    "finalRightsLegal": "UNKNOWN/NOT RUN"
+  },
+  "motion": {
+    "status": "EV-020 production-candidate motion timing integrated and native runtime evidenced",
+    "durationsSeconds": "attack .24 / hit .16 / defeat .50 / Raise .66 / ally .20",
+    "finalCreativeAcceptance": "NOT RUN"
   },
   "evidenceBoundary": {
     "finalRightsLegal": "UNKNOWN/NOT RUN",

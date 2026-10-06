@@ -25,8 +25,26 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.3
-      value: 1
+      time: 0.12
+      value: -0.18
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42
+      value: 1.12
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.68
+      value: 0.3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50,6 +68,15 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.08
       value: 1
       inSlope: 0
       outSlope: 0
@@ -59,7 +86,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 0.35
-      value: 0.72
+      value: 0.55
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -91,8 +118,26 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.18
+      value: 0.96
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 0.55
-      value: 0.52
+      value: 0.46
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.82
+      value: 0.28
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -116,7 +161,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.78
+      value: 0.62
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -124,8 +169,26 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.34
-      value: 1.18
+      time: 0.18
+      value: 0.72
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.48
+      value: 1.24
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.72
+      value: 0.96
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -157,8 +220,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.3
-      value: 1.16
+      time: 0.18
+      value: 1.12
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.48
+      value: 0.97
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -177,14 +249,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AttackDuration: 0.18
-  HitDuration: 0.12
-  DefeatDuration: 0.34
-  RaiseDuration: 0.42
-  AlliedContributionDuration: 0.24
-  ReviewSfxVolume: 0.28
-  PlayerAttackSfx: {fileID: 8300000, guid: 98a9f3bea53a9084eb950376d12fb4b2, type: 3}
-  HitSfx: {fileID: 8300000, guid: 4c8cadec36b29a542bdb5410252f4e51, type: 3}
-  DefeatSfx: {fileID: 8300000, guid: 665c14dccac50a74d8675ac36eb7ed2d, type: 3}
-  RaiseSfx: {fileID: 8300000, guid: 0ce3fd23e3b18564e9142c5aac54a465, type: 3}
-  AlliedContributionSfx: {fileID: 8300000, guid: 7f21758ee17fca74fa0bdae0eaa92e3f, type: 3}
+  AttackDuration: 0.24
+  HitDuration: 0.16
+  DefeatDuration: 0.5
+  RaiseDuration: 0.66
+  AlliedContributionDuration: 0.2
+  SfxMasterVolume: 0.34
+  PlayerAttackSfxGain: 0.72
+  HitSfxGain: 0.48
+  DefeatSfxGain: 0.82
+  RaiseSfxGain: 1
+  AlliedContributionSfxGain: 0.38
+  PlayerAttackSfx: {fileID: 8300000, guid: 96e4bbc9496642647bb4fa4e1a9e4bc7, type: 3}
+  HitSfx: {fileID: 8300000, guid: 99f76b010883dd1488c85eef04ca9041, type: 3}
+  DefeatSfx: {fileID: 8300000, guid: 137867a31c6eb5c4898066f218f1338c, type: 3}
+  RaiseSfx: {fileID: 8300000, guid: 0f61802fffb96a941aae7ec6eb584e06, type: 3}
+  AlliedContributionSfx: {fileID: 8300000, guid: df02735e956274c40a0cd04a4fd21dbc, type: 3}

@@ -2,18 +2,22 @@ using System;
 using Necrom.Core.Domain;
 using EntityId = Necrom.Core.Domain.EntityId;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Necrom.FirstPlayable.Runtime
 {
-    // Q3 review art + authored presentation profile. No gameplay state adapter or fabricated contribution.
+    // Q3 production-candidate art + authored presentation profile. No gameplay state adapter or fabricated contribution.
     [DisallowMultipleComponent]
     public sealed class FirstPlayableVisualPresentation : MonoBehaviour
     {
         public Texture2D NecromancerArt, GuardArt, RaisedGuardArt, BackgroundArt;
         public AnimationCurve AttackLunge, HitFlash, DefeatScaleY, RaiseScale, AlliedContributionScale;
-        public float AttackDuration = .18f, HitDuration = .12f, DefeatDuration = .34f, RaiseDuration = .42f, AlliedContributionDuration = .24f;
-        public float ReviewSfxVolume = .28f;
+        public float AttackDuration = .24f, HitDuration = .16f, DefeatDuration = .50f, RaiseDuration = .66f, AlliedContributionDuration = .20f;
+
+        [FormerlySerializedAs("ReviewSfxVolume")]
+        public float SfxMasterVolume = .34f;
+        public float PlayerAttackSfxGain = .72f, HitSfxGain = .48f, DefeatSfxGain = .82f, RaiseSfxGain = 1f, AlliedContributionSfxGain = .38f;
         public AudioClip PlayerAttackSfx, HitSfx, DefeatSfx, RaiseSfx, AlliedContributionSfx;
 
         public int LoadedArtCount => (NecromancerArt ? 1 : 0) + (GuardArt ? 1 : 0) +
@@ -59,7 +63,7 @@ namespace Necrom.FirstPlayable.Runtime
             if (_initialized) throw new InvalidOperationException("Visual presentation already initialized.");
             if (LoadedArtCount != 4) throw new InvalidOperationException("Q3 art references unresolved.");
             if (!HasAuthoredMotion) throw new InvalidOperationException("Q3 authored motion profile unresolved.");
-            if (LoadedAudioClipCount != 5) throw new InvalidOperationException("Q3 review audio references unresolved.");
+            if (LoadedAudioClipCount != 5) throw new InvalidOperationException("Q3 production-candidate audio references unresolved.");
 
             _game = game;
             _playerLoop = playerLoop;
@@ -76,7 +80,7 @@ namespace Necrom.FirstPlayable.Runtime
             _audio.playOnAwake = false;
             _audio.loop = false;
             _audio.spatialBlend = 0f;
-            _audio.volume = Mathf.Clamp01(ReviewSfxVolume);
+            _audio.volume = Mathf.Clamp01(SfxMasterVolume);
 
             _background = Art("Background", BackgroundArt);
             _background.rectTransform.anchorMin = Vector2.zero;
@@ -114,7 +118,7 @@ namespace Necrom.FirstPlayable.Runtime
             if (!result.Changed) return;
             PlayerAttackCueCount++;
             _attackRemaining = AttackDuration;
-            PlayReviewSfx(PlayerAttackSfx);
+            PlaySfx(PlayerAttackSfx, PlayerAttackSfxGain);
             Hit(result);
         }
 
@@ -129,7 +133,7 @@ namespace Necrom.FirstPlayable.Runtime
                 if (ally != null && ally.Model.Id.Equals(actor))
                     _allyContributionRemaining[i] = AlliedContributionDuration;
             }
-            PlayReviewSfx(AlliedContributionSfx);
+            PlaySfx(AlliedContributionSfx, AlliedContributionSfxGain);
             Hit(result);
         }
 
@@ -137,19 +141,20 @@ namespace Necrom.FirstPlayable.Runtime
         {
             HitCueCount++;
             _hitRemaining = HitDuration;
-            PlayReviewSfx(HitSfx);
+            PlaySfx(HitSfx, HitSfxGain);
             if (!result.BecameDefeated) return;
 
             DefeatCueCount++;
             _defeated = true;
             _defeatRemaining = DefeatDuration;
-            PlayReviewSfx(DefeatSfx);
+            PlaySfx(DefeatSfx, DefeatSfxGain);
         }
 
-        void PlayReviewSfx(AudioClip clip)
+        void PlaySfx(AudioClip clip, float gain)
         {
             if (clip == null || _audio == null) return;
-            _audio.PlayOneShot(clip);
+            _audio.PlayOneShot(clip, Mathf.Clamp01(gain));
+            // Compatibility counters retain their historical names so older evidence tooling stays valid.
             ReviewSfxPlaybackCount++;
             LastReviewSfxName = clip.name;
         }
@@ -205,18 +210,18 @@ namespace Necrom.FirstPlayable.Runtime
             var allyScale = Mathf.Max(scale, Mathf.Min(1f, w / 500f));
 
             var lunge = Curve(AttackLunge, _attackRemaining, AttackDuration, 0f);
-            Place(_player, 42f / 390f * w + lunge * 9f * scale, 32f * scale, 92f * scale, 138f * scale);
-            Place(_enemy, 246f / 390f * w, 75f * scale, 90f * scale, 135f * scale);
+            var hit = Curve(HitFlash, _hitRemaining, HitDuration, 0f);
+            Place(_player, 42f / 390f * w + lunge * 11f * scale, 32f * scale, 92f * scale, 138f * scale);
+            Place(_enemy, 246f / 390f * w + hit * 2.5f * scale, 75f * scale, 90f * scale, 135f * scale);
 
             var defeatScaleY = _defeated
                 ? Curve(DefeatScaleY, _defeatRemaining, DefeatDuration, .35f)
                 : 1f;
             _enemy.rectTransform.localScale = new Vector3(1f, defeatScaleY, 1f);
 
-            var hit = Curve(HitFlash, _hitRemaining, HitDuration, 0f);
             _enemy.color = _defeated && _defeatRemaining <= 0f
                 ? new Color(.65f, .75f, .8f, .65f)
-                : Color.Lerp(Color.white, new Color(1f, .48f, .48f), Mathf.Clamp01(hit));
+                : Color.Lerp(Color.white, new Color(1f, .44f, .44f), Mathf.Clamp01(hit));
 
             var before = VisibleAllyCount;
             VisibleAllyCount = 0;
@@ -225,13 +230,6 @@ namespace Necrom.FirstPlayable.Runtime
                 var exists = _game.Roster.GetSlot(i) != null;
                 _allies[i].gameObject.SetActive(exists);
                 if (exists) VisibleAllyCount++;
-
-                Place(
-                    _allies[i],
-                    (142f + 34f * i) / 390f * w,
-                    15f * scale,
-                    42f * allyScale,
-                    63f * allyScale);
 
                 var contribution = Curve(
                     AlliedContributionScale,
@@ -243,10 +241,34 @@ namespace Necrom.FirstPlayable.Runtime
                     _allyRaiseRemaining[i],
                     RaiseDuration,
                     1f);
+                var contributionActive = _allyContributionRemaining[i] > 0f;
+                var raiseActive = _allyRaiseRemaining[i] > 0f;
+                var localLift =
+                    (raise - 1f) * 18f * scale +
+                    (contribution - 1f) * 14f * scale;
+
+                Place(
+                    _allies[i],
+                    (142f + 34f * i) / 390f * w,
+                    15f * scale + localLift,
+                    42f * allyScale,
+                    63f * allyScale);
 
                 _allies[i].rectTransform.localScale = Vector3.one * Mathf.Max(raise, contribution);
-                var contributionActive = _allyContributionRemaining[i] > 0f;
-                _allies[i].color = contributionActive ? new Color(.65f, 1f, .75f) : Color.white;
+                if (raiseActive)
+                {
+                    var progress = NormalizedProgress(_allyRaiseRemaining[i], RaiseDuration);
+                    _allies[i].color = Color.Lerp(
+                        new Color(.34f, 1f, .66f, .55f),
+                        Color.white,
+                        Mathf.SmoothStep(0f, 1f, progress));
+                }
+                else
+                {
+                    _allies[i].color = contributionActive
+                        ? new Color(.58f, 1f, .72f)
+                        : Color.white;
+                }
             }
 
             if (VisibleAllyCount > before)
@@ -254,7 +276,7 @@ namespace Necrom.FirstPlayable.Runtime
                 for (var i = before; i < VisibleAllyCount; i++)
                     _allyRaiseRemaining[i] = RaiseDuration;
                 RaiseCueCount += VisibleAllyCount - before;
-                PlayReviewSfx(RaiseSfx);
+                PlaySfx(RaiseSfx, RaiseSfxGain);
             }
 
             // Same FILL crop as Figma; preserve background aspect ratio.

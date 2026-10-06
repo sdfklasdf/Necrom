@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="4.0521768">
+  <test-suite type="TestSuite" id="1166" name="Necrom" fullname="Necrom" runstate="Runnable" testcasecount="134" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="4.052177" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1161" name="Necrom.FirstPlayable.PlayModeTests.dll" fullname="C:/Dev/Necrom/Library/ScriptAssemblies/Necrom.FirstPlayable.PlayModeTests.dll" runstate="Runnable" testcasecount="134" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="4.010577" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="14712" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1162" name="Necrom" fullname="Necrom" runstate="Runnable" testcasecount="134" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="4.003050" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1163" name="FirstPlayable" fullname="Necrom.FirstPlayable" runstate="Runnable" testcasecount="134" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="3.993477" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1164" name="Tests" fullname="Necrom.FirstPlayable.Tests" runstate="Runnable" testcasecount="134" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="3.976676" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1087" name="FirstPlayableQ3VisualTests" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" testcasecount="10" result="Failed" site="Child" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="3.959073" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1091" name="ProductionMotionAndAudioCandidatesAreBoundWithDistinctSignatures" fullname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests.ProductionMotionAndAudioCandidatesAreBoundWithDistinctSignatures" methodname="ProductionMotionAndAudioCandidatesAreBoundWithDistinctSignatures" classname="Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests" runstate="Runnable" seed="51487052" result="Failed" start-time="2026-10-06 01:53:32Z" end-time="2026-10-06 01:53:36Z" duration="3.893967" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  PlayerAttackSfx must bind the production-candidate SFX path.
+  Expected: String starting with "Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/"
+  But was:  "Assets/Necrom/FirstPlayable/Audio/Q3Review/attack-review.wav"
+]]></message>
+                  <stack-trace><![CDATA[at Necrom.FirstPlayable.Tests.FirstPlayableQ3VisualTests+<ProductionMotionAndAudioCandidatesAreBoundWithDistinctSignatures>d__24.MoveNext () [0x000c3] in C:\Dev\Necrom\Assets\Necrom\Tests\PlayMode\FirstPlayableQ3VisualTests.cs:189
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: C:\Dev\Necrom\Artifacts\EV020-red.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

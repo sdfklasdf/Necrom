@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Necrom.FirstPlayable.Runtime
 {
-    // Authored Q3 presentation timing + review SFX references.
-    // The asset is a review-quality playback contract, not approved production sound design.
+    // Authored Q3 production-candidate motion + SFX playback contract.
+    // Final release-rights, device mix and user acceptance remain separate evidence gates.
     [CreateAssetMenu(menuName = "Necrom/First Playable Presentation Profile", fileName = "FirstPlayablePresentationProfile")]
     public sealed class FirstPlayablePresentationProfile : ScriptableObject
     {
@@ -13,12 +14,19 @@ namespace Necrom.FirstPlayable.Runtime
         public AnimationCurve RaiseScale;
         public AnimationCurve AlliedContributionScale;
 
-        public float AttackDuration = .18f;
-        public float HitDuration = .12f;
-        public float DefeatDuration = .34f;
-        public float RaiseDuration = .42f;
-        public float AlliedContributionDuration = .24f;
-        public float ReviewSfxVolume = .28f;
+        public float AttackDuration = .24f;
+        public float HitDuration = .16f;
+        public float DefeatDuration = .50f;
+        public float RaiseDuration = .66f;
+        public float AlliedContributionDuration = .20f;
+
+        [FormerlySerializedAs("ReviewSfxVolume")]
+        public float SfxMasterVolume = .34f;
+        public float PlayerAttackSfxGain = .72f;
+        public float HitSfxGain = .48f;
+        public float DefeatSfxGain = .82f;
+        public float RaiseSfxGain = 1.00f;
+        public float AlliedContributionSfxGain = .38f;
 
         public AudioClip PlayerAttackSfx;
         public AudioClip HitSfx;
