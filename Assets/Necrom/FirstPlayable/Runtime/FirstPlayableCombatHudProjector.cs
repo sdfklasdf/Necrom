@@ -32,7 +32,11 @@ namespace Necrom.FirstPlayable.Runtime
 
         public FirstPlayableCombatHudState Capture()
         {
-            var target = BuildTargetState(_enemies.CurrentTarget);
+            var combatTarget = _enemies.TryGetFirstActiveTarget(
+                out var activeTarget)
+                ? activeTarget
+                : _enemies.CurrentTarget;
+            var target = BuildTargetState(combatTarget);
             var raiseReason = ResolveRaiseReason(
                 _enemies.CurrentTarget,
                 out var quote);

@@ -18,6 +18,7 @@ namespace Necrom.FirstPlayable.Runtime
         private FirstPlayableDamageDeathPipeline _damageDeathPipeline;
         private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
         private Func<string> _resolveCommandIdProvider;
+        private FirstPlayableDefenseWaveRuntimeController _defenseWave;
         private FirstPlayableCombatHudSession _hudSession;
         private bool _hasCachedRaiseSourceId;
         private DomainEntityId _cachedEnemyId;
@@ -45,6 +46,19 @@ namespace Necrom.FirstPlayable.Runtime
             ClearElapsed();
             _hasCachedRaiseSourceId = false;
             _initialized = true;
+        }
+
+        public void ConfigureDefenseWave(
+            FirstPlayableDefenseWaveRuntimeController defenseWave)
+        {
+            EnsureInitialized();
+            if (defenseWave == null)
+                throw new ArgumentNullException(nameof(defenseWave));
+            if (_defenseWave != null)
+                throw new InvalidOperationException(
+                    "Defense wave runtime is already configured.");
+
+            _defenseWave = defenseWave;
         }
 
         public void ConfigureHudSession(
@@ -121,7 +135,8 @@ namespace Necrom.FirstPlayable.Runtime
                     }
 
                     string resolveCommandId = null;
-                    if (target.Model.Health <= intent.Damage)
+                    if (target.Model.Health <= intent.Damage &&
+                        _defenseWave == null)
                     {
                         resolveCommandId = _resolveCommandIdProvider();
                         if (string.IsNullOrWhiteSpace(resolveCommandId))
@@ -159,6 +174,13 @@ namespace Necrom.FirstPlayable.Runtime
 
                     if (!damageResult.BecameDefeated)
                         continue;
+
+                    if (_defenseWave != null)
+                    {
+                        _defenseWave.RecordDefeatedThreat(target);
+                        ClearElapsed();
+                        return;
+                    }
 
                     _application.Execute(
                         new ResolveBattleCommand(

@@ -15,6 +15,7 @@ namespace Necrom.FirstPlayable.Runtime
         private FirstPlayableDamageDeathPipeline _damageDeathPipeline;
         private Func<DomainEntityId, DomainEntityId> _raiseSourceIdForEnemy;
         private Func<string> _resolveCommandIdProvider;
+        private FirstPlayableDefenseWaveRuntimeController _defenseWave;
         private double _elapsedMilliseconds;
         private bool _hasCachedRaiseSourceId;
         private DomainEntityId _cachedEnemyId;
@@ -42,6 +43,19 @@ namespace Necrom.FirstPlayable.Runtime
             _elapsedMilliseconds = 0d;
             _hasCachedRaiseSourceId = false;
             _initialized = true;
+        }
+
+        public void ConfigureDefenseWave(
+            FirstPlayableDefenseWaveRuntimeController defenseWave)
+        {
+            EnsureInitialized();
+            if (defenseWave == null)
+                throw new ArgumentNullException(nameof(defenseWave));
+            if (_defenseWave != null)
+                throw new InvalidOperationException(
+                    "Defense wave runtime is already configured.");
+
+            _defenseWave = defenseWave;
         }
 
         public void Advance(float deltaTimeSeconds)
@@ -99,7 +113,8 @@ namespace Necrom.FirstPlayable.Runtime
                 }
 
                 string resolveCommandId = null;
-                if (target.Model.Health <= intent.Damage)
+                if (target.Model.Health <= intent.Damage &&
+                    _defenseWave == null)
                 {
                     resolveCommandId = _resolveCommandIdProvider();
                     if (string.IsNullOrWhiteSpace(resolveCommandId))
@@ -120,6 +135,13 @@ namespace Necrom.FirstPlayable.Runtime
 
                 if (!damageResult.BecameDefeated)
                     continue;
+
+                if (_defenseWave != null)
+                {
+                    _defenseWave.RecordDefeatedThreat(target);
+                    _elapsedMilliseconds = 0d;
+                    return;
+                }
 
                 var command = new ResolveBattleCommand(
                     resolveCommandId,

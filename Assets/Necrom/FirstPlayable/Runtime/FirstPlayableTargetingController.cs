@@ -38,18 +38,7 @@ namespace Necrom.FirstPlayable.Runtime
         public bool TryAcquireTarget(out EnemyRuntimeEntity target)
         {
             EnsureInitialized();
-            var current = _enemies.CurrentTarget;
-            if (current != null &&
-                current.Model != null &&
-                current.Model.Faction == Faction.Enemy &&
-                current.Model.LifeState == CombatantLifeState.Active)
-            {
-                target = current;
-                return true;
-            }
-
-            target = null;
-            return false;
+            return _enemies.TryGetFirstActiveTarget(out target);
         }
 
         private void EnsureInitialized()

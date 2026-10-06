@@ -169,3 +169,60 @@ Done condition:
 - wave clear/fail truth comes from IdleDefenseEncounter;
 - existing Raise and Raised ally contribution still work;
 - fresh valid Unity tests are required before PASS.
+
+
+## EV-022 runtime-seam update — supersedes the EV-021 pending-runtime notes above
+
+The bounded hybrid runtime seam is now implemented and validly executed in Unity.
+
+Completed:
+- Unity UPM/Test Runner path recovered with process-local HOME/TMP/PROGRAMDATA values and the repository's no-`-quit` Test Runner contract;
+- IdleDefenseEncounter EditMode tests 4/4 PASS;
+- EnemySpawnController supports multiple active threats while preserving CurrentTarget compatibility for Raise/legacy encounter behavior;
+- FirstPlayableTargetingController selects an actual active tracked threat;
+- FirstPlayableDefenseWaveRuntimeController bridges wave/gate domain truth to Unity threat objects;
+- player and Raised-ally auto-combat optionally route lethal outcomes through defense-wave truth instead of resolving Battle on the first kill;
+- first enemy defeat can coexist with a second active combat target while the defeated first enemy remains the Raise candidate;
+- existing Raise -> Formation -> actual Raised ally contribution is executed inside one defense wave;
+- gate breach Running/Failed truth is executed;
+- final hybrid targeted PlayMode 2/2 PASS;
+- final full PlayMode 136/136 PASS;
+- Windows canonical build compiles/reopens with errors=0;
+- Figma hybrid HUD semantic contract exists at node 46:309 with RUNNING / CLEARED / FAILED and wave/gate/threat information.
+
+Still not complete:
+- FirstPlayableGameplayComposition and saved canonical scene/prefab do not yet use the defense-wave bridge as their default gameplay loop;
+- the new wave/gate HUD state projection is not yet a visible runtime overlay;
+- the Windows player build is therefore compile-compatibility evidence, not representative hybrid-play evidence;
+- GameStateSnapshot still does not persist wave/gate state;
+- physical-device and real-user evidence remain NOT RUN.
+
+### Updated direct DEV routing
+
+Completed for the bounded seam:
+- DEV-04-01 core domain/function
+- DEV-04-02 hybrid workflow foundation
+- DEV-04-04 hybrid state transition foundation
+- DEV-06-03 Unity E2E/PlayMode seam regression
+
+Next direct consumer:
+- DEV-02-13 Figma -> runtime mapping for node 46:309
+- DEV-04-03 visible runtime HUD integration
+- DEV-04-12 canonical milestone integration regression
+- DEV-04-09/10 Figma/runtime + responsive comparison
+- then DEV-06-08/09/10 representative device/fidelity/accessibility.
+
+### Updated next implementation boundary
+
+CANONICAL HYBRID COMPOSITION + VISIBLE WAVE/GATE HUD.
+
+Done condition:
+- the saved canonical composition actually starts/owns a defense wave;
+- the default playable scene demonstrates more than one threat within a wave;
+- the first defeat does not end the wave;
+- Raise and Raised-ally contribution remain normal gameplay paths;
+- gate integrity and wave state are visibly rendered from FirstPlayableDefenseWaveHudState;
+- runtime mapping is directly compared with Figma node 46:309;
+- fresh targeted/full regressions pass;
+- a fresh Windows player executes and captures the hybrid loop through normal input;
+- no claim of physical-mobile or real-user acceptance is made before those tests actually occur.
