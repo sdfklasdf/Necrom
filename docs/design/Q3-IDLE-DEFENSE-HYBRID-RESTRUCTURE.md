@@ -1,0 +1,171 @@
+# Q3 Idle RPG + Light Defense Hybrid Restructure
+
+Date: 2026-10-06 KST
+Founder decision: RESTRUCTURE the game as an idle RPG + simple defense hybrid.
+Status: APPROVED DIRECTION / IMPLEMENTATION PARTIAL.
+
+## Product contract
+
+The player is still a Necromancer building a raised army, but the playable pressure changes from a sequence of isolated duels to continuous defensive waves.
+
+Minimum representative loop:
+1. enemies enter a defense wave;
+2. Necromancer and the current Raised formation auto-attack;
+3. enemies threaten a cemetery/gate integrity objective;
+4. defeated enemies can produce the existing Raise opportunity;
+5. the player chooses Raise when eligible and fills the existing five-slot Formation;
+6. Raised allies contribute automatically;
+7. the wave clears only after all queued/active threats are resolved;
+8. surviving the wave leads to the next defense wave.
+
+This keeps idle-RPG readability and automation while adding a simple active pressure system.
+
+## Scope limits for the first hybrid slice
+
+Included:
+- on-screen automatic combat;
+- multiple enemies per wave as domain truth;
+- one defended gate/integrity objective;
+- wave clear/fail state;
+- existing Raise + five-slot Formation;
+- existing exact allied contribution feedback;
+- one simple target-priority path in later runtime integration.
+
+Not yet approved/implemented:
+- tower placement;
+- multi-lane pathfinding;
+- complex maze building;
+- offline earnings/progression numbers;
+- final economy/balance values;
+- launch monster/species count;
+- boss systems;
+- final wave/content quantity.
+
+No balance constants are fixed by the new domain seam. Gate integrity, wave number, enemy count and damage are supplied by callers/tests.
+
+## Existing work that remains reusable
+
+Keep without re-implementing:
+- Obsidian Soul art candidate set;
+- Noto Regular/Medium/Bold runtime package;
+- Combat/Soul/Army semantic icon language;
+- "援곕떒 理쒕?" full-formation copy;
+- Attack / Hit / Defeat / Raise / exact allied-contribution motion candidates;
+- five production SFX and their provenance;
+- Formation capacity and Raised ally ownership;
+- Raise source/consumption logic;
+- Necromancer and Raised ally automatic behavior concepts;
+- damage/death pipeline;
+- HUD lifecycle/presentation infrastructure;
+- responsive and protected-art rules.
+
+Guard remains one archetype. The five Formation slots still represent five instances of the same Raised Guard in the current evidence. This does not decide launch species count.
+
+## Current architecture impact
+
+Reusable:
+- Formation
+- RaiseService / RaiseSource
+- RaisedAllyRuntimeEntity / roster
+- basic auto-behavior specs
+- damage/death events
+- production presentation assets
+
+Must change in later runtime work:
+- EnemySpawnController currently owns only CurrentTarget and rejects a second active enemy;
+- Targeting currently assumes a single current target;
+- FirstPlayableAutoCombatLoop resolves the whole Battle on the first enemy defeat;
+- FirstPlayableAlliedAutoCombatLoop also resolves the whole Battle on the first enemy defeat;
+- BattleStateMachine models one duel lifecycle rather than a wave;
+- GameStateSnapshot currently has no gate/wave state;
+- HUD has no wave/gate integrity presentation.
+
+Therefore the hybrid must be integrated as a new encounter/wave orchestration layer rather than by pretending the old single-target battle is already a defense game.
+
+## EV-021 domain foundation implemented
+
+New:
+Assets/Necrom/Core/Domain/IdleDefenseEncounter.cs
+
+It owns:
+- DefenseWavePhase: Ready / Running / Cleared / Failed;
+- GateMaxIntegrity / GateIntegrity;
+- sequential WaveNumber;
+- RemainingEnemiesToSpawn;
+- ActiveEnemyCount;
+- revision-checked mutations;
+- EnemySpawned;
+- EnemyDefeated;
+- EnemyReachedGate;
+- PrepareNextWave.
+
+Properties:
+- wave does not clear while queued or active enemies remain;
+- a gate breach consumes integrity;
+- zero integrity fails the wave;
+- clearing preserves remaining gate integrity for the next wave;
+- stale revisions and invalid transitions reject without mutation.
+
+Tests authored:
+Assets/Necrom/Tests/EditMode/IdleDefenseEncounterTests.cs
+
+Unity package-backed test execution is currently blocked by a local UPM IPC startup failure, so those NUnit tests are NOT RUN in Unity yet.
+
+Independent package-free execution:
+Artifacts/EV021-domain-harness.txt
+- EV021_DOMAIN_HARNESS_PASS
+- verifies wave clear, gate damage/failure, sequential next wave and revision behavior.
+
+## Q3 impact
+
+EV-018, EV-019 and EV-020 remain PASS for their bounded production art/UI/motion/audio scopes.
+
+However, the product direction changed materially. The historical EV-020 desktop build represents the old single-duel flow, so it must not be used as final evidence that the new Q3 gameplay slice is representative.
+
+Q3 overall remains PARTIAL.
+
+Before Q3 can close, the next runtime integration should minimally demonstrate:
+- wave controller connected to the new domain;
+- multiple active/queued enemy runtime representation;
+- target selection among active threats;
+- first enemy defeat does not end the wave;
+- Raise remains correct inside the wave;
+- Raised allies keep contributing;
+- gate damage/failure is visible;
+- wave clear transition is visible;
+- existing Obsidian Soul production presentation remains readable;
+- targeted + full regressions are fresh;
+- representative physical-device acceptance is then performed against the hybrid slice.
+
+## Direct DEV routing
+
+Primary:
+- DEV-04-01 core domain/function ??EV-021 foundation started
+- DEV-04-02 core playable/workflow ??NEXT
+- DEV-04-04 state transition ??NEXT
+- DEV-04-12 milestone integration regression ??after runtime wiring
+- DEV-06-03 E2E/PlayMode core flow ??after runtime wiring
+
+UI/fidelity consumers:
+- DEV-02-02 information/screen/HUD scope ??wave/gate additions
+- DEV-02-03 state matrix ??Ready/Running/Cleared/Failed + wave/gate states
+- DEV-02-08 component v0 ??wave/gate HUD component
+- DEV-02-13 Figma?뭝mplementation mapping
+- DEV-04-03 runtime HUD
+- DEV-04-09/10 Figma/runtime + responsive
+- DEV-06-08/09/10 physical device/fidelity/accessibility later
+
+## Next implementation boundary
+
+Do not jump directly to full content production.
+
+The next independently reviewable work should be:
+HYBRID RUNTIME VERTICAL SEAM ??wire IdleDefenseEncounter into a minimal wave runtime while preserving existing Formation/Raise/auto-combat ownership.
+
+Done condition:
+- at least two threats can belong to one wave;
+- defeating the first threat does not resolve the wave;
+- remaining threat can pressure the gate;
+- wave clear/fail truth comes from IdleDefenseEncounter;
+- existing Raise and Raised ally contribution still work;
+- fresh valid Unity tests are required before PASS.
