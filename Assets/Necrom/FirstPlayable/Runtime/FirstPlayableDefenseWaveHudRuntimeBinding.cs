@@ -10,7 +10,7 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class FirstPlayableDefenseWaveHudRuntimeBinding : MonoBehaviour
     {
         public const string FigmaFileKey = "eXqKU1qHXsn52SJfIGltZo";
-        public const string FigmaNodeId = "46:309";
+        public const string FigmaNodeId = "56:330";
 
         private FirstPlayableDefenseWaveRuntimeController _defense;
         private FirstPlayableCombatHudRuntimeBinding _combatHud;
@@ -109,7 +109,7 @@ namespace Necrom.FirstPlayable.Runtime
             _panelSprite ??= FirstPlayableCombatHudUnityView.RoundedSprite(16f);
             _background.sprite = _panelSprite;
             _background.type = Image.Type.Sliced;
-            _background.color = new Color(32f/255f, 37f/255f, 50f/255f, .94f);
+            _background.color = new Color(1f,1f,1f,.985f);
             _background.raycastTarget = false;
 
             _outline = _container.gameObject.AddComponent<Outline>();
@@ -137,9 +137,9 @@ namespace Necrom.FirstPlayable.Runtime
                 _container, "DefenseWaveDetail", _regular, 10f,
                 new Vector2(210f, -8f), new Vector2(118f, 18f));
             _detailText.alignment = TextAlignmentOptions.TopRight;
-            _stateText.color = new Color(8f/255f, 127f/255f, 91f/255f);
-            _titleText.color = Color.white;
-            _detailText.color = new Color(230f/255f, 233f/255f, 239f/255f);
+            _stateText.color = new Color(82f/255f,171f/255f,1f);
+            _titleText.color = new Color(56f/255f,51f/255f,79f/255f);
+            _detailText.color = new Color(160f/255f,158f/255f,184f/255f);
 
             var bar = NewRect(_container, "GateIntegrityBar");
             bar.anchorMin = bar.anchorMax = new Vector2(0f, 1f);
@@ -150,7 +150,7 @@ namespace Necrom.FirstPlayable.Runtime
             _barSprite ??= FirstPlayableCombatHudUnityView.RoundedSprite(3f);
             barImage.sprite = _barSprite;
             barImage.type = Image.Type.Sliced;
-            barImage.color = new Color(52f/255f, 59f/255f, 75f/255f);
+            barImage.color = new Color(237f/255f,239f/255f,249f/255f);
             barImage.raycastTarget = false;
 
             _gateFillRect = NewRect(bar, "GateIntegrityFill");
@@ -187,36 +187,36 @@ namespace Necrom.FirstPlayable.Runtime
             switch (state.Phase)
             {
                 case DefenseWavePhase.Running:
-                    accent = new Color(8f/255f, 127f/255f, 91f/255f);
+                    accent = new Color(82f/255f,171f/255f,1f);
                     _stateText.text = "RUNNING";
                     _titleText.text = "웨이브 " + state.WaveNumber;
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity +
+                        "정원 " + state.GateIntegrity + " / " + state.GateMaxIntegrity +
                         " · 위협 " + state.ActiveEnemyCount;
                     break;
 
                 case DefenseWavePhase.Cleared:
-                    accent = new Color(49f/255f, 212f/255f, 155f/255f);
+                    accent = new Color(79f/255f,212f/255f,174f/255f);
                     _stateText.text = "CLEARED";
                     _titleText.text = "웨이브 클리어";
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
+                        "정원 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
                     break;
 
                 case DefenseWavePhase.Failed:
-                    accent = new Color(201f/255f, 42f/255f, 42f/255f);
+                    accent = new Color(1f,122f/255f,120f/255f);
                     _stateText.text = "FAILED";
-                    _titleText.text = "묘지 붕괴";
+                    _titleText.text = "정원 방어 실패";
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
+                        "정원 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
                     break;
 
                 default:
-                    accent = new Color(127f/255f, 137f/255f, 156f/255f);
+                    accent = new Color(140f/255f,120f/255f,1f);
                     _stateText.text = "READY";
                     _titleText.text = "웨이브 준비";
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
+                        "정원 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
                     break;
             }
 

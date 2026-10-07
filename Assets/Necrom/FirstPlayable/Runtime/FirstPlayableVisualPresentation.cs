@@ -44,6 +44,7 @@ namespace Necrom.FirstPlayable.Runtime
         FirstPlayableAutoCombatLoop _playerLoop;
         FirstPlayableAlliedAutoCombatLoop _alliedLoop;
         RawImage _player, _enemy, _background;
+        Image _screenBackdrop;
         RectTransform _gateObjective;
         readonly Image[] _gateAccentParts = new Image[7];
         Sprite _gateStoneSprite, _gateHaloSprite;
@@ -72,6 +73,22 @@ namespace Necrom.FirstPlayable.Runtime
             _playerLoop = playerLoop;
             _alliedLoop = alliedLoop;
 
+            var backdropObject = new GameObject(
+                "CuteScreenBackdrop",
+                typeof(RectTransform),
+                typeof(Image));
+            backdropObject.transform.SetParent(_game.transform, false);
+            var backdropRect = (RectTransform)backdropObject.transform;
+            backdropRect.anchorMin = Vector2.zero;
+            backdropRect.anchorMax = Vector2.one;
+            backdropRect.offsetMin = backdropRect.offsetMax = Vector2.zero;
+            backdropRect.SetSiblingIndex(0);
+            _screenBackdrop = backdropObject.GetComponent<Image>();
+            _screenBackdrop.color = new Color(1f, .975f, .91f, 1f);
+            _screenBackdrop.raycastTarget = false;
+            if (Camera.main != null)
+                Camera.main.backgroundColor = new Color(1f, .975f, .91f, 1f);
+
             var host = new GameObject("Q3VisualPresentation", typeof(RectTransform));
             host.transform.SetParent(combat, false);
             _root = (RectTransform)host.transform;
@@ -97,8 +114,8 @@ namespace Necrom.FirstPlayable.Runtime
             _gateObjective.pivot = Vector2.zero;
             _gateObjective.sizeDelta = new Vector2(46f, 138f);
 
-            // Obsidian Soul cemetery ward: architectural pylons + barred opening + soul seal.
-            // This replaces the proof-only green strip without changing the defended-objective position.
+            // Cute Spirit Garden objective: rounded cream pillars + mint/coral spirit bars.
+            // Defended-objective geometry and gate-pressure endpoint stay unchanged.
             _gateStoneSprite = FirstPlayableCombatHudUnityView.RoundedSprite(4f);
             _gateHaloSprite = FirstPlayableCombatHudUnityView.RoundedSprite(10f);
             GateStone("LeftPylon", 1f, 13f, 10f, 91f);
@@ -145,7 +162,7 @@ namespace Necrom.FirstPlayable.Runtime
         Image GateStone(string name, float x, float y, float width, float height)
         {
             var image = GatePart(name, x, y, width, height, _gateStoneSprite);
-            image.color = new Color(.055f, .07f, .09f, .96f);
+            image.color = new Color(1f, .975f, .91f, .98f);
             return image;
         }
 
@@ -154,7 +171,7 @@ namespace Necrom.FirstPlayable.Runtime
             float alpha, Sprite sprite = null)
         {
             var image = GatePart(name, x, y, width, height, sprite ?? _gateStoneSprite);
-            image.color = new Color(8f/255f, 127f/255f, 91f/255f, alpha);
+            image.color = new Color(79f/255f, 212f/255f, 174f/255f, alpha);
             return image;
         }
 
@@ -167,6 +184,10 @@ namespace Necrom.FirstPlayable.Runtime
             image.sprite = sprite;
             image.type = Image.Type.Sliced;
             image.raycastTarget = false;
+            var outline = o.AddComponent<Outline>();
+            outline.effectColor = new Color(56f/255f,51f/255f,79f/255f,.86f);
+            outline.effectDistance = new Vector2(1.1f,-1.1f);
+            outline.useGraphicAlpha = true;
             var rect = image.rectTransform;
             rect.anchorMin = rect.anchorMax = Vector2.zero;
             rect.pivot = Vector2.zero;
@@ -180,8 +201,8 @@ namespace Necrom.FirstPlayable.Runtime
             var failed = _game.DefenseWave != null &&
                          _game.DefenseWave.Phase == DefenseWavePhase.Failed;
             var baseColor = failed
-                ? new Color(201f/255f, 42f/255f, 42f/255f)
-                : new Color(8f/255f, 127f/255f, 91f/255f);
+                ? new Color(1f, 122f/255f, 120f/255f)
+                : new Color(79f/255f, 212f/255f, 174f/255f);
             var alpha = new[] { .58f, .34f, .34f, .96f, .20f, .72f, .72f };
             for (var i = 0; i < _gateAccentParts.Length; i++)
             {

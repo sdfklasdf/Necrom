@@ -13,14 +13,19 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class FirstPlayableCommercialHudRuntimePolish : MonoBehaviour
     {
         public const string FigmaFileKey = "eXqKU1qHXsn52SJfIGltZo";
-        public const string FigmaRunningNodeId = "52:309";
-        public const string FigmaClearedNodeId = "52:378";
-        public const string FigmaFailedNodeId = "52:447";
+        public const string FigmaRunningNodeId = "56:330";
+        public const string FigmaClearedNodeId = "56:442";
+        public const string FigmaFailedNodeId = "56:569";
 
-        static readonly Color Soul = new Color(8f/255f,127f/255f,91f/255f);
-        static readonly Color Danger = new Color(201f/255f,42f/255f,42f/255f);
-        static readonly Color Panel = new Color(32f/255f,37f/255f,50f/255f,.96f);
-        static readonly Color SlotEmpty = new Color(77f/255f,85f/255f,102f/255f,.75f);
+        static readonly Color Mint = new Color(79f/255f,212f/255f,174f/255f);
+        static readonly Color Purple = new Color(140f/255f,120f/255f,1f);
+        static readonly Color Blue = new Color(82f/255f,171f/255f,1f);
+        static readonly Color Coral = new Color(1f,122f/255f,120f/255f);
+        static readonly Color Ink = new Color(56f/255f,51f/255f,79f/255f);
+        static readonly Color Muted = new Color(160f/255f,158f/255f,184f/255f);
+        static readonly Color Soft = new Color(237f/255f,239f/255f,249f/255f);
+        static readonly Color Panel = new Color(1f,1f,1f,.985f);
+        static readonly Color SlotEmpty = new Color(237f/255f,239f/255f,249f/255f);
 
         FirstPlayableCombatHudRuntimeBinding _hud;
         FirstPlayableDefenseWaveRuntimeController _defense;
@@ -89,7 +94,7 @@ namespace Necrom.FirstPlayable.Runtime
 
             _divider = NewRect(_safe, "CommercialCommandDockDivider");
             var dividerImage = _divider.gameObject.AddComponent<Image>();
-            dividerImage.color = new Color(70f/255f,78f/255f,97f/255f,.82f);
+            dividerImage.color = Soft;
             dividerImage.raycastTarget = false;
 
             PrepareSection(_target);
@@ -165,6 +170,11 @@ namespace Necrom.FirstPlayable.Runtime
             primary.margin = Vector4.zero;
             secondary.margin = Vector4.zero;
             state.fontSize = 11f;
+            primary.color = Ink;
+            secondary.color = Muted;
+            state.color = section.name.StartsWith("Target")
+                ? Blue
+                : section.name.StartsWith("Raise") ? Mint : Purple;
             primary.fontSize = rightAligned ? 18f : section.name.StartsWith("Raise") ? 14f : 18f;
             secondary.fontSize = section.name.StartsWith("Raise") ? 11f : 12f;
             state.alignment = rightAligned ? TextAlignmentOptions.TopRight : TextAlignmentOptions.TopLeft;
@@ -191,17 +201,43 @@ namespace Necrom.FirstPlayable.Runtime
             if (presentation == null)
                 return;
 
+            // The base semantic renderer refreshes its legacy Raise surface every frame.
+            // Cute commercial composition owns the unified dock, so keep all section surfaces transparent.
+            foreach (var section in new[] { _target, _raise, _army })
+            {
+                var sectionImage = section == null ? null : section.GetComponent<Image>();
+                if (sectionImage != null) sectionImage.color = Color.clear;
+            }
+
             for (var i = 0; i < _formationPips.Length; i++)
             {
                 var slot = presentation.Army.FormationSlots[i];
                 var owned = slot != null && slot.OwnedUnitId.HasValue;
-                _formationPips[i].color = owned ? Soul : SlotEmpty;
+                _formationPips[i].color = owned ? Mint : SlotEmpty;
+                var pipOutline = _formationPips[i].GetComponent<Outline>();
+                if (pipOutline == null)
+                {
+                    pipOutline = _formationPips[i].gameObject.AddComponent<Outline>();
+                    pipOutline.effectDistance = new Vector2(.75f,-.75f);
+                }
+                pipOutline.effectColor = new Color(Muted.r,Muted.g,Muted.b,.7f);
+            }
+
+            var cta = _raise.Find("PrimaryCta");
+            if (cta != null)
+            {
+                var button = cta.GetComponent<Button>();
+                var image = cta.GetComponent<Image>();
+                var label = cta.Find("CtaText")?.GetComponent<TextMeshProUGUI>();
+                var active = button != null && button.interactable;
+                if (image != null) image.color = active ? Mint : Soft;
+                if (label != null) label.color = active ? Ink : Muted;
             }
 
             var failed = _defense.Phase == DefenseWavePhase.Failed;
             _dockOutline.effectColor = failed
-                ? new Color(Danger.r,Danger.g,Danger.b,.92f)
-                : new Color(Soul.r,Soul.g,Soul.b,.72f);
+                ? new Color(Coral.r,Coral.g,Coral.b,.92f)
+                : new Color(Purple.r,Purple.g,Purple.b,.36f);
         }
 
         static TextMeshProUGUI RequireText(Transform root, string name)

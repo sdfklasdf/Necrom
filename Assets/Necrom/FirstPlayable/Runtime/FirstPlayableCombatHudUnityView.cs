@@ -537,24 +537,27 @@ namespace Necrom.FirstPlayable.Runtime
 
         private void ApplyAccent(RectTransform panel, FirstPlayableCombatHudContentKey key)
         {
-            // Fresh Figma 11:89: INFO #1864ab / TEXT-SECONDARY #4d5566.
-            Color color = new Color(77f/255f,85f/255f,102f/255f);
+            // Q3 cute-reboot semantic palette: blue combat, mint soul-friend, purple team, coral warning.
+            Color color = new Color(160f/255f,158f/255f,184f/255f);
             switch(key)
             {
                 case FirstPlayableCombatHudContentKey.TargetActive:
+                    color = new Color(82f/255f,171f/255f,1f); break;
+                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady:
                 case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof:
+                    color = new Color(79f/255f,212f/255f,174f/255f); break;
                 case FirstPlayableCombatHudContentKey.ArmyOwned:
                 case FirstPlayableCombatHudContentKey.ArmyProofPending:
-                    color = new Color(24f/255f,100f/255f,171f/255f); break;
-                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady:
+                    color = new Color(140f/255f,120f/255f,1f); break;
                 case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed:
+                    color = new Color(160f/255f,158f/255f,184f/255f); break;
                 case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul:
-                    color = _contract.Theme.Danger.Value; break;
+                    color = new Color(1f,122f/255f,120f/255f); break;
                 case FirstPlayableCombatHudContentKey.TargetDefeated:
                 case FirstPlayableCombatHudContentKey.RaiseEligible:
                 case FirstPlayableCombatHudContentKey.RaiseProofObserved:
                 case FirstPlayableCombatHudContentKey.ArmyProofObserved:
-                    color = _contract.Theme.SoulAccent.Value; break;
+                    color = new Color(79f/255f,212f/255f,174f/255f); break;
             }
             var icon = panel.Find("StateAccent").GetComponent<Image>();
             icon.color = color;

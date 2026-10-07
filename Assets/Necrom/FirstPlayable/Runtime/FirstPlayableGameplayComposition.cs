@@ -248,33 +248,33 @@ namespace Necrom.FirstPlayable.Runtime
         }
         FirstPlayableCombatHudCopy ProductionCopy(FirstPlayableCombatHudContentKey key)
         {
-            var family=key.ToString().StartsWith("Target")?"전투":key.ToString().StartsWith("Raise")?"소환":"군단";
+            var family=key.ToString().StartsWith("Target")?"전투":key.ToString().StartsWith("Raise")?"영혼 친구":"친구";
             var failed=DefenseWave!=null&&DefenseWave.Phase==DefenseWavePhase.Failed;
             if(failed&&key==FirstPlayableCombatHudContentKey.TargetNone)
-                return new FirstPlayableCombatHudCopy(family,"방어 실패","묘지가 무너졌습니다 · 다음 전투를 준비하세요","");
+                return new FirstPlayableCombatHudCopy(family,"방어 실패","정원이 무너졌어요 · 다시 준비해요","");
             if(failed&&key==FirstPlayableCombatHudContentKey.RaiseNoTarget)
-                return new FirstPlayableCombatHudCopy(family,"소환 불가","방어 실패 상태에서는 행동할 수 없습니다","");
+                return new FirstPlayableCombatHudCopy(family,"지금은 쉬어가기","다음 전투를 준비해요","");
             var title=family;var detail="";
             switch(key)
             {
-                case FirstPlayableCombatHudContentKey.TargetNone: title="대상을 찾고 있습니다";detail="새 전투를 기다리고 있습니다";break;
-                case FirstPlayableCombatHudContentKey.TargetActive: title="수호병";detail="체력 "+ActiveTargetHealth()+" / 10 · 자동 전투 중";break;
-                case FirstPlayableCombatHudContentKey.TargetDefeated: title="수호병 격파";detail="체력 0 / 10 · 영혼을 획득했습니다";break;
-                case FirstPlayableCombatHudContentKey.RaiseNoTarget: title="소환할 대상이 없습니다";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
-                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title="수호병을 격파하세요";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
-                case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed: title="이미 되살린 대상입니다";detail="다음 전투에서 새 영혼을 획득하세요";break;
-                case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul: title="영혼이 부족합니다";detail="영혼 "+SoulBalance+" · 되살리기 비용 3";break;
-                case FirstPlayableCombatHudContentKey.RaiseEligible: title="수호병을 되살리기";detail="영혼 "+SoulBalance+" · 되살리기 비용 3";break;
-                case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof: title="수호병이 군단에 합류했습니다";detail="다음 전투에서 아군의 공격을 확인하세요";break;
-                case FirstPlayableCombatHudContentKey.RaiseProofObserved: title="아군의 공격을 확인했습니다";detail="되살린 수호병이 실제 피해를 입혔습니다";break;
-                case FirstPlayableCombatHudContentKey.ArmyEmpty: title="군단 0 / 5";detail="격파한 적을 되살려 군단을 모으세요";break;
-                case FirstPlayableCombatHudContentKey.ArmyOwned: title="군단 "+Roster.ActiveCount+" / 5";detail="되살린 수호병이 함께 싸웁니다";break;
-                case FirstPlayableCombatHudContentKey.ArmyProofPending: title="군단 "+Roster.ActiveCount+" / 5";detail="새 아군의 첫 공격을 기다리고 있습니다";break;
-                case FirstPlayableCombatHudContentKey.ArmyProofObserved: title="군단 "+Roster.ActiveCount+" / 5";detail="되살린 아군의 실제 공격을 확인했습니다";break;
+                case FirstPlayableCombatHudContentKey.TargetNone: title="새 친구를 기다려요";detail="다음 전투가 곧 시작돼요";break;
+                case FirstPlayableCombatHudContentKey.TargetActive: title="이끼 기사";detail="체력 "+ActiveTargetHealth()+" / 10 · 자동 전투 중";break;
+                case FirstPlayableCombatHudContentKey.TargetDefeated: title="이끼 기사 격파";detail="영혼 친구로 만들 준비 완료";break;
+                case FirstPlayableCombatHudContentKey.RaiseNoTarget: title="친구로 만들 대상이 없어요";detail="격파한 적은 영혼 친구가 될 수 있어요";break;
+                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title="격파하면 친구가 돼요";detail="영혼을 모아 동료를 늘려요";break;
+                case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed: title="이미 친구가 된 대상이에요";detail="다음 전투에서 새 친구를 만나보세요";break;
+                case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul: title="영혼이 조금 부족해요";detail="영혼 "+SoulBalance+" · 친구 만들기 3";break;
+                case FirstPlayableCombatHudContentKey.RaiseEligible: title="이끼 기사를 친구로!";detail="영혼 "+SoulBalance+" · 친구 만들기 3";break;
+                case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof: title="새 친구가 합류했어요";detail="친구의 첫 공격을 기다려요";break;
+                case FirstPlayableCombatHudContentKey.RaiseProofObserved: title="친구의 첫 공격 성공!";detail="영혼 친구가 실제 피해를 입혔어요";break;
+                case FirstPlayableCombatHudContentKey.ArmyEmpty: title="친구 0 / 5";detail="격파한 적과 친구가 되어 팀을 채워요";break;
+                case FirstPlayableCombatHudContentKey.ArmyOwned: title="친구 "+Roster.ActiveCount+" / 5";detail="영혼 친구가 함께 싸워요";break;
+                case FirstPlayableCombatHudContentKey.ArmyProofPending: title="친구 "+Roster.ActiveCount+" / 5";detail="새 친구의 첫 공격을 기다려요";break;
+                case FirstPlayableCombatHudContentKey.ArmyProofObserved: title="친구 "+Roster.ActiveCount+" / 5";detail="영혼 친구의 공격을 확인했어요";break;
             }
             var full=key==FirstPlayableCombatHudContentKey.RaiseEligible&&Roster.ActiveCount>=Formation.Capacity;
-            if(full){title="군단이 가득 찼습니다";detail="5 / 5 · 다음 전투에서 군단의 힘을 확인하세요";}
-            return new FirstPlayableCombatHudCopy(family,title,detail,full?"군단 최대":"되살리기");
+            if(full){title="친구 자리가 가득 찼어요";detail="5 / 5 · 다음 전투에서 함께 싸워요";}
+            return new FirstPlayableCombatHudCopy(family,title,detail,full?"친구 가득":"친구 만들기");
         }
         int ActiveTargetHealth()
         {
@@ -345,10 +345,22 @@ namespace Necrom.FirstPlayable.Runtime
             }
             BindHudIfNeeded();
             FinalizeResultIfNeeded();
-            if(_nextButton!=null) { _nextButton.interactable=Battle.Phase==BattlePhase.Resolved && DefenseWave.Phase==DefenseWavePhase.Cleared;
+            if(_nextButton!=null) {
+                _nextButton.interactable=Battle.Phase==BattlePhase.Resolved && DefenseWave.Phase==DefenseWavePhase.Cleared;
                 var combat=_nextButton.transform.parent as RectTransform;
-                var rect=_nextButton.transform as RectTransform;rect.anchorMin=new Vector2(.47f,.97f-44f/Mathf.Max(44f,combat.rect.height));rect.anchorMax=new Vector2(.94f,.97f);
-                _nextButton.GetComponent<Image>().color=new Color(.0314f,.498f,.357f,_nextButton.interactable?1f:.55f);
+                var rect=_nextButton.transform as RectTransform;
+                rect.anchorMin=new Vector2(.68f,.02f);
+                rect.anchorMax=new Vector2(.94f,.16f);
+                rect.offsetMin=rect.offsetMax=Vector2.zero;
+                var nextImage=_nextButton.GetComponent<Image>();
+                nextImage.raycastTarget=true;
+                nextImage.color=_nextButton.interactable
+                    ? new Color(79f/255f,212f/255f,174f/255f,1f)
+                    : new Color(1f,1f,1f,0f);
+                var label=_nextButton.GetComponentInChildren<TextMeshProUGUI>();
+                if(label!=null) label.color=_nextButton.interactable
+                    ? new Color(56f/255f,51f/255f,79f/255f,1f)
+                    : new Color(56f/255f,51f/255f,79f/255f,0f);
             }
             if(_enemyText!=null) _enemyText.text="GUARD\nHP "+ActiveTargetHealth();
             if(_armyText!=null) _armyText.text="RAISED ARMY\n"+Roster.ActiveCount+" / 5";
@@ -388,6 +400,14 @@ namespace Necrom.FirstPlayable.Runtime
             _nextButton=command.GetComponent<Button>();_nextButton.transition=Selectable.Transition.None;_nextButton.onClick.AddListener(StartNextEncounter);
             var nextLabel=Label(r,visual!=null?"다음 전투":"NEXT ENCOUNTER",Color.clear);
             if(visual!=null && ReviewFontMedium!=null) nextLabel.font=ReviewFontMedium;
+            if(visual!=null)
+            {
+                nextLabel.fontSize=12f;
+                nextLabel.alignment=TextAlignmentOptions.Center;
+                nextLabel.color=new Color(56f/255f,51f/255f,79f/255f,0f);
+                command.GetComponent<Image>().color=new Color(1f,1f,1f,0f);
+                command.GetComponent<Image>().raycastTarget=true;
+            }
         }
         TextMeshProUGUI Label(RectTransform zone,string copy,Color surface)
         {

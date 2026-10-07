@@ -94,8 +94,8 @@ namespace Necrom.FirstPlayable.Tests
             var accent=panel.Find("StateAccent");
             Assert.That(accent,Is.Not.Null,"Figma semantic dot must be visible.");
             var color=(Color)Prop(accent.GetComponent("Image"),"color");
-            Assert.That(color.r,Is.EqualTo(24f/255f).Within(.001f));
-            Assert.That(color.g,Is.EqualTo(100f/255f).Within(.001f));
+            Assert.That(color.r,Is.EqualTo(82f/255f).Within(.001f));
+            Assert.That(color.g,Is.EqualTo(171f/255f).Within(.001f));
             yield return null;
         }
         [UnityTest] public IEnumerator RaiseCtaDisabledAndEligibleHaveDistinctVerifiedVisuals()
@@ -104,12 +104,14 @@ namespace Necrom.FirstPlayable.Tests
             var overlay=(GameObject)Prop(Get("HudBinding"),"OverlayHost");
             var cta=overlay.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta");
             var color=(Color)Prop(cta.GetComponent("Image"),"color");
-            Assert.That(color.r,Is.EqualTo(77f/255f).Within(.001f));
+            Assert.That(color.r,Is.EqualTo(237f/255f).Within(.001f),
+                "Cute reboot disabled CTA must use the light soft-surface contract.");
             Assert.That(Prop(cta.GetComponent("CanvasGroup"),"alpha"),Is.EqualTo(.55f));
             Assert.That(Prop(cta.GetComponent("Button"),"interactable"),Is.EqualTo(false));
             Call("AdvanceCombat",3f);yield return null;
             color=(Color)Prop(cta.GetComponent("Image"),"color");
-            Assert.That(color.g,Is.EqualTo(127f/255f).Within(.001f));
+            Assert.That(color.g,Is.EqualTo(212f/255f).Within(.001f),
+                "Cute reboot eligible CTA must use the mint action contract.");
             Assert.That(Prop(cta.GetComponent("CanvasGroup"),"alpha"),Is.EqualTo(1f));
             Assert.That(Prop(cta.GetComponent("Button"),"interactable"),Is.EqualTo(true));
         }
