@@ -83,11 +83,32 @@ namespace Necrom.EditorTools
             visual.GuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "guard.png");
             visual.RaisedGuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "raised.png");
             visual.BackgroundArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "background.png");
-            visual.ForestFriendEnemyArts = new[]
+            visual.ForestFriendVisuals = new[]
             {
-                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_001.png"),
-                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_003.png"),
-                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_006.png")
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "forest.chr001",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        ForestFriendPath + "forest_chr_001.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.LeafBarrier,
+                    Accent = new Color(.49f, .78f, .36f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "forest.chr003",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        ForestFriendPath + "forest_chr_003.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.StarArrow,
+                    Accent = new Color(.32f, .67f, 1f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "forest.chr006",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        ForestFriendPath + "forest_chr_006.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.DewHeal,
+                    Accent = new Color(.32f, .67f, 1f)
+                }
             };
             visual.AttackLunge = new AnimationCurve(profile.AttackLunge.keys);
             visual.HitFlash = new AnimationCurve(profile.HitFlash.keys);
@@ -354,11 +375,22 @@ namespace Necrom.EditorTools
                 if (string.IsNullOrEmpty(path) || !path.StartsWith(ArtPath, StringComparison.Ordinal))
                     throw new Exception("Q3 canonical art is not bound to the approved ProductionCandidate path: " + path);
             }
-            foreach (var texture in visual.ForestFriendEnemyArts)
+            foreach (var binding in visual.ForestFriendVisuals)
             {
-                var path = AssetDatabase.GetAssetPath(texture);
-                if (string.IsNullOrEmpty(path) || !path.StartsWith(ForestFriendPath, StringComparison.Ordinal))
-                    throw new Exception("Forest Friend art escaped approved family path: " + path);
+                if (binding == null ||
+                    string.IsNullOrWhiteSpace(binding.ArchetypeId) ||
+                    binding.Art == null ||
+                    binding.VfxIdentity == FirstPlayableCharacterVfxIdentity.None)
+                    throw new Exception(
+                        "Forest Friend visual binding is incomplete.");
+                var path = AssetDatabase.GetAssetPath(binding.Art);
+                if (string.IsNullOrEmpty(path) ||
+                    !path.StartsWith(
+                        ForestFriendPath,
+                        StringComparison.Ordinal))
+                    throw new Exception(
+                        "Forest Friend art escaped approved family path: " +
+                        path);
             }
             if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null ||
                 root.ReviewFontMedium == null || root.ReviewFontMedium.sourceFontFile == null ||

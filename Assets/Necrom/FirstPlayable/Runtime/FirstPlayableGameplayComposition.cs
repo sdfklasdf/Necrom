@@ -170,8 +170,15 @@ namespace Necrom.FirstPlayable.Runtime
         EnemyRuntimeEntity SpawnTarget()
         {
             var combat=transform.Find("SafeArea/CombatViewport");
-            return Enemies.SpawnEnemy("enemy:canonical:"+ ++_encounter,
-                new EnemyArchetypeDefinition("enemy.guard","frontline.guard",10),
+            var ordinal=++_encounter;
+            var archetype=(ordinal%3) switch
+            {
+                1 => "forest.chr001",
+                2 => "forest.chr003",
+                _ => "forest.chr006"
+            };
+            return Enemies.SpawnEnemy("enemy:canonical:"+ordinal,
+                new EnemyArchetypeDefinition(archetype,"frontline.guard",10),
                 combat.Find("EnemySpawnZone") as RectTransform);
         }
         void StartCanonicalWave(int waveNumber)
@@ -254,17 +261,19 @@ namespace Necrom.FirstPlayable.Runtime
                 return new FirstPlayableCombatHudCopy(family,"방어 실패","정원이 무너졌어요 · 다시 준비해요","");
             if(failed&&key==FirstPlayableCombatHudContentKey.RaiseNoTarget)
                 return new FirstPlayableCombatHudCopy(family,"지금은 쉬어가기","다음 전투를 준비해요","");
+            var activeCharacter=ActiveTargetDisplayName();
+            var raiseCharacter=RaiseCandidateDisplayName();
             var title=family;var detail="";
             switch(key)
             {
                 case FirstPlayableCombatHudContentKey.TargetNone: title="새 친구를 기다려요";detail="다음 전투가 곧 시작돼요";break;
-                case FirstPlayableCombatHudContentKey.TargetActive: title="이끼 기사";detail="체력 "+ActiveTargetHealth()+" / 10 · 자동 전투 중";break;
-                case FirstPlayableCombatHudContentKey.TargetDefeated: title="이끼 기사 격파";detail="영혼 친구로 만들 준비 완료";break;
+                case FirstPlayableCombatHudContentKey.TargetActive: title=activeCharacter;detail="체력 "+ActiveTargetHealth()+" / 10 · 자동 전투 중";break;
+                case FirstPlayableCombatHudContentKey.TargetDefeated: title=raiseCharacter+" 격파";detail="영혼 친구로 만들 준비 완료";break;
                 case FirstPlayableCombatHudContentKey.RaiseNoTarget: title="친구로 만들 대상이 없어요";detail="격파한 적은 영혼 친구가 될 수 있어요";break;
-                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title="격파하면 친구가 돼요";detail="영혼을 모아 동료를 늘려요";break;
+                case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title=activeCharacter+"를 격파하면 친구가 돼요";detail="영혼을 모아 동료를 늘려요";break;
                 case FirstPlayableCombatHudContentKey.RaiseSourceUnavailableOrConsumed: title="이미 친구가 된 대상이에요";detail="다음 전투에서 새 친구를 만나보세요";break;
                 case FirstPlayableCombatHudContentKey.RaiseInsufficientSoul: title="영혼이 조금 부족해요";detail="영혼 "+SoulBalance+" · 친구 만들기 3";break;
-                case FirstPlayableCombatHudContentKey.RaiseEligible: title="이끼 기사를 친구로!";detail="영혼 "+SoulBalance+" · 친구 만들기 3";break;
+                case FirstPlayableCombatHudContentKey.RaiseEligible: title=raiseCharacter+"를 친구로!";detail="영혼 "+SoulBalance+" · 친구 만들기 3";break;
                 case FirstPlayableCombatHudContentKey.RaiseCommittedAwaitingProof: title="새 친구가 합류했어요";detail="친구의 첫 공격을 기다려요";break;
                 case FirstPlayableCombatHudContentKey.RaiseProofObserved: title="친구의 첫 공격 성공!";detail="영혼 친구가 실제 피해를 입혔어요";break;
                 case FirstPlayableCombatHudContentKey.ArmyEmpty: title="친구 0 / 5";detail="격파한 적과 친구가 되어 팀을 채워요";break;
@@ -281,6 +290,24 @@ namespace Necrom.FirstPlayable.Runtime
             return Enemies.TryGetFirstActiveTarget(out var target) && target.Model!=null
                 ? target.Model.Health
                 : Enemies.CurrentTarget?.Model?.Health ?? 0;
+        }
+        string ActiveTargetDisplayName()
+        {
+            if(Enemies.TryGetFirstActiveTarget(out var target) && target?.Model!=null)
+                return CharacterDisplayName(target.Model.ArchetypeId);
+            return CharacterDisplayName(Enemies.CurrentTarget?.Model?.ArchetypeId);
+        }
+        string RaiseCandidateDisplayName()
+            => CharacterDisplayName(Enemies.CurrentTarget?.Model?.ArchetypeId);
+        static string CharacterDisplayName(string archetypeId)
+        {
+            return archetypeId switch
+            {
+                "forest.chr001" => "도토리 방패병",
+                "forest.chr003" => "민들레 궁수",
+                "forest.chr006" => "이슬 치료사",
+                _ => "숲 친구"
+            };
         }
         public void SetAutomaticCombat(bool enabled)
         {

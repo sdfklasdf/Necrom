@@ -8,14 +8,37 @@ using UnityEngine.UI;
 
 namespace Necrom.FirstPlayable.Runtime
 {
+    public enum FirstPlayableCharacterVfxIdentity
+    {
+        None = 0,
+        LeafBarrier = 1,
+        StarArrow = 2,
+        DewHeal = 3
+    }
+
+    [Serializable]
+    public sealed class FirstPlayableCharacterVisualBinding
+    {
+        public string ArchetypeId;
+        public Texture2D Art;
+        public FirstPlayableCharacterVfxIdentity VfxIdentity;
+        public Color Accent = Color.white;
+    }
+
     // Q3 production-candidate art + authored presentation profile. No gameplay state adapter or fabricated contribution.
     [DisallowMultipleComponent]
     public sealed class FirstPlayableVisualPresentation : MonoBehaviour
     {
         public Texture2D NecromancerArt, GuardArt, RaisedGuardArt, BackgroundArt;
-        public Texture2D[] ForestFriendEnemyArts = Array.Empty<Texture2D>();
+        public FirstPlayableCharacterVisualBinding[] ForestFriendVisuals =
+            Array.Empty<FirstPlayableCharacterVisualBinding>();
         public int LoadedForestFriendArtCount =>
-            ForestFriendEnemyArts == null ? 0 : ForestFriendEnemyArts.Count(x => x != null);
+            ForestFriendVisuals == null
+                ? 0
+                : ForestFriendVisuals.Count(x =>
+                    x != null &&
+                    !string.IsNullOrWhiteSpace(x.ArchetypeId) &&
+                    x.Art != null);
         public AnimationCurve AttackLunge, HitFlash, DefeatScaleY, RaiseScale, AlliedContributionScale;
         public float AttackDuration = .24f, HitDuration = .16f, DefeatDuration = .50f, RaiseDuration = .66f, AlliedContributionDuration = .20f;
 
@@ -38,6 +61,7 @@ namespace Necrom.FirstPlayable.Runtime
         public string CurrentEnemyArtName => _enemy != null && _enemy.texture != null
             ? _enemy.texture.name
             : null;
+        public string CurrentEnemyArchetypeId { get; private set; }
         public int HitCueCount { get; private set; }
         public int DefeatCueCount { get; private set; }
         public int RaiseCueCount { get; private set; }
@@ -57,6 +81,8 @@ namespace Necrom.FirstPlayable.Runtime
         Sprite _gateStoneSprite, _gateHaloSprite;
         AudioSource _audio;
         readonly RawImage[] _allies = new RawImage[Formation.Capacity];
+        readonly RectTransform[] _allyVfxRoots = new RectTransform[Formation.Capacity];
+        readonly Image[,] _allyVfxParts = new Image[Formation.Capacity, 4];
         readonly float[] _allyRaiseRemaining = new float[Formation.Capacity];
         readonly float[] _allyContributionRemaining = new float[Formation.Capacity];
         RectTransform _root;
@@ -146,6 +172,29 @@ namespace Necrom.FirstPlayable.Runtime
             {
                 _allies[i] = Art("RaisedGuardSlot" + i, RaisedGuardArt);
                 _allies[i].gameObject.SetActive(false);
+
+                var vfx = new GameObject(
+                    "CharacterVfxSlot" + i,
+                    typeof(RectTransform));
+                vfx.transform.SetParent(_root, false);
+                _allyVfxRoots[i] = (RectTransform)vfx.transform;
+                _allyVfxRoots[i].anchorMin = _allyVfxRoots[i].anchorMax = Vector2.zero;
+                _allyVfxRoots[i].pivot = Vector2.zero;
+                vfx.SetActive(false);
+
+                for (var part = 0; part < 4; part++)
+                {
+                    var dot = new GameObject(
+                        "VfxPart" + part,
+                        typeof(RectTransform),
+                        typeof(Image));
+                    dot.transform.SetParent(_allyVfxRoots[i], false);
+                    var image = dot.GetComponent<Image>();
+                    image.sprite = _gateHaloSprite;
+                    image.type = Image.Type.Sliced;
+                    image.raycastTarget = false;
+                    _allyVfxParts[i, part] = image;
+                }
             }
 
             _playerLoop.AttackApplied += PlayerAttack;
@@ -219,22 +268,66 @@ namespace Necrom.FirstPlayable.Runtime
             }
         }
 
-        Texture2D EnemyArtFor(string id)
+        FirstPlayableCharacterVisualBinding BindingFor(string archetypeId)
         {
-            if (ForestFriendEnemyArts == null || ForestFriendEnemyArts.Length == 0 || string.IsNullOrEmpty(id))
-                return GuardArt;
+            if (ForestFriendVisuals == null || string.IsNullOrWhiteSpace(archetypeId))
+                return null;
 
-            var separator = id.LastIndexOf(':');
-            if (separator >= 0 &&
-                int.TryParse(id.Substring(separator + 1), out var ordinal) &&
-                ordinal > 0)
+            for (var i = 0; i < ForestFriendVisuals.Length; i++)
             {
-                var index = (ordinal - 1) % ForestFriendEnemyArts.Length;
-                return ForestFriendEnemyArts[index] != null ? ForestFriendEnemyArts[index] : GuardArt;
+                var binding = ForestFriendVisuals[i];
+                if (binding != null &&
+                    string.Equals(
+                        binding.ArchetypeId,
+                        archetypeId,
+                        StringComparison.Ordinal))
+                    return binding;
             }
 
-            return ForestFriendEnemyArts[0] != null ? ForestFriendEnemyArts[0] : GuardArt;
+            return null;
         }
+
+        Texture2D CharacterArtFor(string archetypeId, bool raised)
+        {
+            var binding = BindingFor(archetypeId);
+            if (binding != null && binding.Art != null)
+                return binding.Art;
+            return raised ? RaisedGuardArt : GuardArt;
+        }
+
+        Color CharacterAccentFor(string archetypeId)
+        {
+            var binding = BindingFor(archetypeId);
+            return binding != null ? binding.Accent : new Color(.31f, .83f, .68f);
+        }
+
+        FirstPlayableCharacterVfxIdentity CharacterVfxFor(string archetypeId)
+        {
+            var binding = BindingFor(archetypeId);
+            return binding != null
+                ? binding.VfxIdentity
+                : FirstPlayableCharacterVfxIdentity.None;
+        }
+
+        public string GetAllyArtName(int slot)
+        {
+            if (slot < 0 || slot >= Formation.Capacity)
+                throw new ArgumentOutOfRangeException(nameof(slot));
+            var ally = _allies[slot];
+            return ally != null && ally.texture != null
+                ? ally.texture.name
+                : null;
+        }
+
+        public string GetAllyArchetypeId(int slot)
+        {
+            if (slot < 0 || slot >= Formation.Capacity)
+                throw new ArgumentOutOfRangeException(nameof(slot));
+            return _game?.Roster?.GetSlot(slot)?.Model?.ArchetypeId;
+        }
+
+        public FirstPlayableCharacterVfxIdentity GetAllyVfxIdentity(int slot)
+            => CharacterVfxFor(GetAllyArchetypeId(slot));
 
         void PlayerAttack(EntityId actor, DamageDeathResult result)
         {
@@ -331,10 +424,13 @@ namespace Necrom.FirstPlayable.Runtime
             if (id != _enemyId)
             {
                 _enemyId = id;
+                CurrentEnemyArchetypeId = target?.Model?.ArchetypeId;
                 _defeated = false;
                 _defeatRemaining = 0f;
                 _hitRemaining = 0f;
-                _enemy.texture = EnemyArtFor(id);
+                _enemy.texture = CharacterArtFor(
+                    CurrentEnemyArchetypeId,
+                    false);
             }
             _enemy.gameObject.SetActive(target != null);
 
@@ -372,17 +468,28 @@ namespace Necrom.FirstPlayable.Runtime
                 : 1f;
             _enemy.rectTransform.localScale = new Vector3(1f, defeatScaleY, 1f);
 
+            var enemyAccent = CharacterAccentFor(CurrentEnemyArchetypeId);
             _enemy.color = _defeated && _defeatRemaining <= 0f
-                ? new Color(.65f, .75f, .8f, .65f)
-                : Color.Lerp(Color.white, new Color(1f, .44f, .44f), Mathf.Clamp01(hit));
+                ? new Color(.72f, .74f, .82f, .58f)
+                : Color.Lerp(
+                    Color.white,
+                    new Color(enemyAccent.r, enemyAccent.g, enemyAccent.b, 1f),
+                    Mathf.Clamp01(hit));
 
             var before = VisibleAllyCount;
             VisibleAllyCount = 0;
             for (var i = 0; i < Formation.Capacity; i++)
             {
-                var exists = _game.Roster.GetSlot(i) != null;
+                var ally = _game.Roster.GetSlot(i);
+                var exists = ally != null && ally.Model != null;
+                var archetypeId = exists ? ally.Model.ArchetypeId : null;
                 _allies[i].gameObject.SetActive(exists);
-                if (exists) VisibleAllyCount++;
+                if (exists)
+                {
+                    VisibleAllyCount++;
+                    _allies[i].texture =
+                        CharacterArtFor(archetypeId, true);
+                }
 
                 var contribution = Curve(
                     AlliedContributionScale,
@@ -399,29 +506,60 @@ namespace Necrom.FirstPlayable.Runtime
                 var localLift =
                     (raise - 1f) * 18f * scale +
                     (contribution - 1f) * 14f * scale;
+                var allyX = (142f + 34f * i) / 390f * w;
+                var allyY = 15f * scale + localLift;
 
                 Place(
                     _allies[i],
-                    (142f + 34f * i) / 390f * w,
-                    15f * scale + localLift,
+                    allyX,
+                    allyY,
                     42f * allyScale,
                     63f * allyScale);
+                Place(
+                    _allyVfxRoots[i],
+                    allyX - 7f * allyScale,
+                    allyY - 5f * allyScale,
+                    58f * allyScale,
+                    74f * allyScale);
 
-                _allies[i].rectTransform.localScale = Vector3.one * Mathf.Max(raise, contribution);
+                _allies[i].rectTransform.localScale =
+                    Vector3.one * Mathf.Max(raise, contribution);
                 if (raiseActive)
                 {
-                    var progress = NormalizedProgress(_allyRaiseRemaining[i], RaiseDuration);
+                    var progress =
+                        NormalizedProgress(
+                            _allyRaiseRemaining[i],
+                            RaiseDuration);
+                    var accent = CharacterAccentFor(archetypeId);
                     _allies[i].color = Color.Lerp(
-                        new Color(.34f, 1f, .66f, .55f),
+                        new Color(
+                            accent.r,
+                            accent.g,
+                            accent.b,
+                            .50f),
                         Color.white,
                         Mathf.SmoothStep(0f, 1f, progress));
                 }
                 else
                 {
+                    var accent = CharacterAccentFor(archetypeId);
                     _allies[i].color = contributionActive
-                        ? new Color(.58f, 1f, .72f)
+                        ? Color.Lerp(
+                            Color.white,
+                            new Color(
+                                accent.r,
+                                accent.g,
+                                accent.b,
+                                1f),
+                            .42f)
                         : Color.white;
                 }
+
+                ConfigureAllyVfx(
+                    i,
+                    archetypeId,
+                    contributionActive,
+                    raiseActive);
             }
 
             if (VisibleAllyCount > before)
@@ -438,6 +576,81 @@ namespace Necrom.FirstPlayable.Runtime
             _background.uvRect = textureAspect > viewportAspect
                 ? new Rect((1f - viewportAspect / textureAspect) / 2f, 0f, viewportAspect / textureAspect, 1f)
                 : new Rect(0f, (1f - textureAspect / viewportAspect) / 2f, 1f, textureAspect / viewportAspect);
+        }
+
+        void ConfigureAllyVfx(
+            int slot,
+            string archetypeId,
+            bool attackActive,
+            bool raiseActive)
+        {
+            var root = _allyVfxRoots[slot];
+            if (root == null)
+                return;
+
+            var active = attackActive || raiseActive;
+            root.gameObject.SetActive(active);
+            if (!active)
+                return;
+
+            var accent = CharacterAccentFor(archetypeId);
+            if (raiseActive)
+            {
+                SetVfxPart(slot, 0, new Vector2(8f, 12f), new Vector2(8f, 8f), accent, 45f, .50f);
+                SetVfxPart(slot, 1, new Vector2(42f, 14f), new Vector2(8f, 8f), accent, 45f, .42f);
+                SetVfxPart(slot, 2, new Vector2(10f, 52f), new Vector2(7f, 7f), accent, 45f, .34f);
+                SetVfxPart(slot, 3, new Vector2(40f, 55f), new Vector2(9f, 9f), accent, 45f, .56f);
+                return;
+            }
+
+            switch (CharacterVfxFor(archetypeId))
+            {
+                case FirstPlayableCharacterVfxIdentity.LeafBarrier:
+                    SetVfxPart(slot, 0, new Vector2(3f, 22f), new Vector2(10f, 18f), accent, -35f, .74f);
+                    SetVfxPart(slot, 1, new Vector2(45f, 20f), new Vector2(10f, 18f), accent, 35f, .74f);
+                    SetVfxPart(slot, 2, new Vector2(18f, 55f), new Vector2(9f, 16f), accent, -55f, .58f);
+                    SetVfxPart(slot, 3, new Vector2(33f, 57f), new Vector2(9f, 16f), accent, 55f, .58f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.StarArrow:
+                    SetVfxPart(slot, 0, new Vector2(7f, 34f), new Vector2(34f, 4f), accent, 0f, .76f);
+                    SetVfxPart(slot, 1, new Vector2(42f, 29f), new Vector2(12f, 12f), accent, 45f, .94f);
+                    SetVfxPart(slot, 2, new Vector2(23f, 15f), new Vector2(7f, 7f), new Color(1f,.79f,.33f), 45f, .90f);
+                    SetVfxPart(slot, 3, new Vector2(30f, 52f), new Vector2(6f, 6f), new Color(1f,.79f,.33f), 45f, .72f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.DewHeal:
+                    SetVfxPart(slot, 0, new Vector2(10f, 44f), new Vector2(8f, 13f), accent, 0f, .76f);
+                    SetVfxPart(slot, 1, new Vector2(24f, 55f), new Vector2(9f, 14f), accent, 0f, .88f);
+                    SetVfxPart(slot, 2, new Vector2(39f, 40f), new Vector2(8f, 13f), accent, 0f, .72f);
+                    SetVfxPart(slot, 3, new Vector2(27f, 19f), new Vector2(6f, 10f), accent, 0f, .54f);
+                    break;
+
+                default:
+                    for (var part = 0; part < 4; part++)
+                        _allyVfxParts[slot, part].gameObject.SetActive(false);
+                    break;
+            }
+        }
+
+        void SetVfxPart(
+            int slot,
+            int part,
+            Vector2 position,
+            Vector2 size,
+            Color color,
+            float rotation,
+            float alpha)
+        {
+            var image = _allyVfxParts[slot, part];
+            image.gameObject.SetActive(true);
+            image.color = new Color(color.r, color.g, color.b, alpha);
+            var rect = image.rectTransform;
+            rect.anchorMin = rect.anchorMax = Vector2.zero;
+            rect.pivot = new Vector2(.5f, .5f);
+            rect.anchoredPosition = position;
+            rect.sizeDelta = size;
+            rect.localRotation = Quaternion.Euler(0f, 0f, rotation);
         }
 
         static void Place(RawImage image, float x, float y, float width, float height)

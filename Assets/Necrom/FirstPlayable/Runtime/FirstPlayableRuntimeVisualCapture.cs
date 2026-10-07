@@ -283,6 +283,16 @@ namespace Necrom.FirstPlayable.Runtime
                 lines.Add("alliedContributionCues="+visual.AlliedContributionCueCount);
                 lines.Add("lastContributionUnitId="+visual.LastContributionUnitId);
                 lines.Add("visibleAllyArt="+visual.VisibleAllyCount);
+                lines.Add("currentEnemyArchetype="+visual.CurrentEnemyArchetypeId);
+                lines.Add("currentEnemyArt="+visual.CurrentEnemyArtName);
+                for(var slot=0;slot<Necrom.Core.Domain.Formation.Capacity;slot++)
+                {
+                    var archetype=visual.GetAllyArchetypeId(slot);
+                    if(string.IsNullOrEmpty(archetype)) continue;
+                    lines.Add("ally"+slot+"Archetype="+archetype);
+                    lines.Add("ally"+slot+"Art="+visual.GetAllyArtName(slot));
+                    lines.Add("ally"+slot+"Vfx="+visual.GetAllyVfxIdentity(slot));
+                }
                 var protectedRect=safe.Find("ProtectedCombatReadabilityZone") as RectTransform;
                 var limits=new Vector3[4];protectedRect.GetWorldCorners(limits);
                 foreach(var art in game.transform.Find("SafeArea/CombatViewport/Q3VisualPresentation")

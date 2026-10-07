@@ -117,15 +117,35 @@ namespace Necrom.FirstPlayable.Tests
                     fieldName + " must bind the active Cute Necro base ProductionCandidate asset.");
             }
 
-            var familyField = v.GetType().GetField("ForestFriendEnemyArts", BindingFlags.Public | BindingFlags.Instance);
+            var familyField = v.GetType().GetField(
+                "ForestFriendVisuals",
+                BindingFlags.Public | BindingFlags.Instance);
             Assert.That(familyField, Is.Not.Null);
-            var familyTextures = (Texture2D[])familyField.GetValue(v);
-            Assert.That(familyTextures, Has.Length.EqualTo(3));
-            foreach (var texture in familyTextures)
+            var bindings = (Array)familyField.GetValue(v);
+            Assert.That(bindings.Length, Is.EqualTo(3));
+            var archetypes = new System.Collections.Generic.HashSet<string>();
+            foreach (var binding in bindings)
             {
+                Assert.That(binding, Is.Not.Null);
+                var bindingType = binding.GetType();
+                var archetype = (string)bindingType
+                    .GetField("ArchetypeId")
+                    .GetValue(binding);
+                var texture = (Texture2D)bindingType
+                    .GetField("Art")
+                    .GetValue(binding);
+                var vfx = bindingType
+                    .GetField("VfxIdentity")
+                    .GetValue(binding);
+
+                Assert.That(archetypes.Add(archetype), Is.True,
+                    "Representative character archetypes must be unique.");
                 Assert.That(texture, Is.Not.Null);
-                Assert.That(AssetDatabase.GetAssetPath(texture),
-                    Does.StartWith("Assets/Necrom/FirstPlayable/Art/Q3/ForestFriends/"));
+                Assert.That(vfx.ToString(), Is.Not.EqualTo("None"));
+                Assert.That(
+                    AssetDatabase.GetAssetPath(texture),
+                    Does.StartWith(
+                        "Assets/Necrom/FirstPlayable/Art/Q3/ForestFriends/"));
             }
 #endif
             yield return null;
@@ -135,14 +155,59 @@ namespace Necrom.FirstPlayable.Tests
         public IEnumerator CanonicalThreatsUseDistinctForestFriendRepresentativeArt()
         {
             var v = Visual();
+            Assert.That(
+                (string)Prop(v, "CurrentEnemyArchetypeId"),
+                Is.EqualTo("forest.chr001"));
             Assert.That((string)Prop(v, "CurrentEnemyArtName"), Is.EqualTo("forest_chr_001"),
                 "Canonical threat 1 should enter through Forest Friend representative slot 1.");
 
             Call("AdvanceCombat", 3f);
             yield return new WaitForSeconds(.7f);
 
+            Assert.That(
+                (string)Prop(v, "CurrentEnemyArchetypeId"),
+                Is.EqualTo("forest.chr003"));
             Assert.That((string)Prop(v, "CurrentEnemyArtName"), Is.EqualTo("forest_chr_003"),
                 "Canonical threat 2 should visibly advance to the next Forest Friend representative art.");
+        }
+
+        [UnityTest]
+        public IEnumerator RaisePreservesForestFriendIdentityIntoFormationVisual()
+        {
+            var v = Visual();
+
+            Call("AdvanceCombat", 3f);
+            yield return null;
+            Call("RaiseCurrentTarget");
+            yield return null;
+
+            var roster = Get("Roster");
+            var ally = roster.GetType()
+                .GetMethod("GetSlot")
+                .Invoke(roster, new object[] { 0 });
+            Assert.That(ally, Is.Not.Null);
+
+            var model = Prop(ally, "Model");
+            Assert.That(
+                Prop(model, "ArchetypeId").ToString(),
+                Is.EqualTo("forest.chr001"),
+                "Raise must preserve the defeated character archetype.");
+
+            var visualType = v.GetType();
+            Assert.That(
+                visualType.GetMethod("GetAllyArchetypeId")
+                    .Invoke(v, new object[] { 0 }),
+                Is.EqualTo("forest.chr001"));
+            Assert.That(
+                visualType.GetMethod("GetAllyArtName")
+                    .Invoke(v, new object[] { 0 }),
+                Is.EqualTo("forest_chr_001"),
+                "Formation visual must use the same character art identity.");
+            Assert.That(
+                visualType.GetMethod("GetAllyVfxIdentity")
+                    .Invoke(v, new object[] { 0 })
+                    .ToString(),
+                Is.EqualTo("LeafBarrier"));
         }
 
         [UnityTest]

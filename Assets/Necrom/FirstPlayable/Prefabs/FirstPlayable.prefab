@@ -375,10 +375,19 @@ MonoBehaviour:
   GuardArt: {fileID: 2800000, guid: 3f69a45c30300bc498606dce82f6fa5e, type: 3}
   RaisedGuardArt: {fileID: 2800000, guid: afcfaded075d45c4ba6ab565e9db24e0, type: 3}
   BackgroundArt: {fileID: 2800000, guid: c8c7d96042c48df46a7d6fcc085b0d18, type: 3}
-  ForestFriendEnemyArts:
-  - {fileID: 2800000, guid: f82f072494ba62a4083ce76a3b2b4533, type: 3}
-  - {fileID: 2800000, guid: dd75d139e0201b94296641f442f87322, type: 3}
-  - {fileID: 2800000, guid: ce26975ab7d07f84ebfbdfa0d57bb6eb, type: 3}
+  ForestFriendVisuals:
+  - ArchetypeId: forest.chr001
+    Art: {fileID: 2800000, guid: f82f072494ba62a4083ce76a3b2b4533, type: 3}
+    VfxIdentity: 1
+    Accent: {r: 0.49, g: 0.78, b: 0.36, a: 1}
+  - ArchetypeId: forest.chr003
+    Art: {fileID: 2800000, guid: dd75d139e0201b94296641f442f87322, type: 3}
+    VfxIdentity: 2
+    Accent: {r: 0.32, g: 0.67, b: 1, a: 1}
+  - ArchetypeId: forest.chr006
+    Art: {fileID: 2800000, guid: ce26975ab7d07f84ebfbdfa0d57bb6eb, type: 3}
+    VfxIdentity: 3
+    Accent: {r: 0.32, g: 0.67, b: 1, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:
