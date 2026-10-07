@@ -92,8 +92,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             var v = Visual();
             Assert.That(Count(v, "LoadedArtCount"), Is.EqualTo(4));
-            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(8),
-                "First production family must bind eight implemented Forest Friend textures.");
+            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(10),
+                "First production family must bind ten implemented Forest Friend textures.");
             Assert.That(Convert.ToBoolean(Prop(v, "HasAuthoredMotion")), Is.True);
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
@@ -122,7 +122,7 @@ namespace Necrom.FirstPlayable.Tests
                 BindingFlags.Public | BindingFlags.Instance);
             Assert.That(familyField, Is.Not.Null);
             var bindings = (Array)familyField.GetValue(v);
-            Assert.That(bindings.Length, Is.EqualTo(8));
+            Assert.That(bindings.Length, Is.EqualTo(10));
             var archetypes = new System.Collections.Generic.HashSet<string>();
             foreach (var binding in bindings)
             {
@@ -151,8 +151,9 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(archetypes, Is.EquivalentTo(new[]
             {
                 "forest.chr001", "forest.chr002", "forest.chr003", "forest.chr004",
-                "forest.chr005", "forest.chr006", "forest.chr007", "forest.chr008"
-            }), "Implemented Forest Friend bindings must match the canonical eight-character set.");
+                "forest.chr005", "forest.chr006", "forest.chr007", "forest.chr008", "forest.chr009",
+                "forest.chr010"
+            }), "Implemented Forest Friend bindings must match the canonical ten-character set.");
 #endif
             yield return null;
         }

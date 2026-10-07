@@ -311,6 +311,8 @@ namespace Necrom.FirstPlayable.Runtime
                 "forest.chr006" => "이슬 치료사",
                 "forest.chr007" => "딸기 폭탄꾼",
                 "forest.chr008" => "나무껍질 수호자",
+                "forest.chr009" => "씨앗 소환사",
+                "forest.chr010" => "반딧불 길잡이",
                 _ => "숲 친구"
             };
         }

@@ -18,7 +18,9 @@ namespace Necrom.FirstPlayable.Runtime
         CloverWind = 5,
         ChestnutStar = 6,
         BerryBurst = 7,
-        GrowthRingBarrier = 8
+        GrowthRingBarrier = 8,
+        SeedlingCall = 9,
+        FireflyTrail = 10
     }
 
     [Serializable]
@@ -664,6 +666,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(27f, 36f), new Vector2(30f, 30f), new Color(.94f,.66f,.28f), 45f, .42f);
                     SetVfxPart(slot, 2, new Vector2(27f, 36f), new Vector2(18f, 18f), new Color(1f,.82f,.38f), 45f, .58f);
                     SetVfxPart(slot, 3, new Vector2(47f, 54f), new Vector2(10f, 6f), new Color(.46f,.28f,.14f), -18f, .70f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.SeedlingCall:
+                    SetVfxPart(slot, 0, new Vector2(20f, 34f), new Vector2(12f, 16f), new Color(1f,.82f,.38f), 0f, .90f);
+                    SetVfxPart(slot, 1, new Vector2(42f, 28f), new Vector2(10f, 14f), new Color(1f,.82f,.38f), 0f, .76f);
+                    SetVfxPart(slot, 2, new Vector2(22f, 54f), new Vector2(7f, 22f), accent, -18f, .84f);
+                    SetVfxPart(slot, 3, new Vector2(45f, 52f), new Vector2(7f, 20f), accent, 18f, .72f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.FireflyTrail:
+                    SetVfxPart(slot, 0, new Vector2(17f, 30f), new Vector2(9f, 9f), new Color(1f,.82f,.38f), 45f, .92f);
+                    SetVfxPart(slot, 1, new Vector2(41f, 24f), new Vector2(8f, 8f), new Color(1f,.82f,.38f), 45f, .84f);
+                    SetVfxPart(slot, 2, new Vector2(49f, 47f), new Vector2(9f, 9f), new Color(1f,.82f,.38f), 45f, .74f);
+                    SetVfxPart(slot, 3, new Vector2(28f, 55f), new Vector2(32f, 5f), accent, -18f, .54f);
                     break;
 
                 default:
