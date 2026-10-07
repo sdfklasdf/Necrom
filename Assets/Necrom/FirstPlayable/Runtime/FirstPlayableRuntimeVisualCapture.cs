@@ -31,6 +31,14 @@ namespace Necrom.FirstPlayable.Runtime
             Directory.CreateDirectory(output);
             File.WriteAllText(Path.Combine(root,"latest-run.txt"),run);
             File.WriteAllText(Path.Combine(output,"run.txt"),"run="+run+"\n"+"buildGUID="+Application.buildGUID+"\n"+"physicalDevice=NOT RUN\n");
+            if(Environment.GetCommandLineArgs().Contains("--necro-gate-failure"))
+            {
+                yield return CaptureGateFailure(output);
+                File.WriteAllText(Path.Combine(output,"complete.txt"),
+                    "NORMAL AUTOMATIC GATE-PRESSURE FAILURE CAPTURE COMPLETE. Physical device NOT RUN.");
+                Application.Quit(0);
+                yield break;
+            }
             if(Environment.GetCommandLineArgs().Contains("--necro-native-input"))
             {
                 yield return CaptureNativeInput(output);
@@ -75,6 +83,44 @@ namespace Necrom.FirstPlayable.Runtime
             Application.Quit(0);
         }
         int _requestSequence;
+        IEnumerator CaptureGateFailure(string output)
+        {
+            var size=new Vector2Int(390,844);
+            Screen.SetResolution(size.x,size.y,FullScreenMode.Windowed);
+            yield return new WaitForSecondsRealtime(.3f);
+            yield return SceneManager.LoadSceneAsync("FirstPlayable");
+            var game=UnityEngine.Object.FindFirstObjectByType<FirstPlayableGameplayComposition>();
+            // No injected combat state and no input: normal automatic Update owns this failure path.
+            game.ConfigureViewport(new Vector2(Screen.width,Screen.height),
+                new Rect(0,Screen.height*.04f,Screen.width,Screen.height*.92f));
+            yield return Capture(game,output,size,"gate-pressure-start");
+
+            yield return WaitFor(
+                ()=>game.DefenseWave.Phase==Necrom.Core.Domain.DefenseWavePhase.Running &&
+                   game.DefenseWave.ActiveEnemyCount==1,
+                8f);
+
+            yield return WaitFor(
+                ()=>{
+                    EnemyRuntimeEntity target;
+                    float progress;
+                    return game.GatePressure.TryGetFirstActiveProgress(out target,out progress) &&
+                           progress>=.74f;
+                },
+                4f);
+            game.HudBinding.RefreshNow();
+            game.DefenseHudBinding.RefreshNow();
+            yield return Capture(game,output,size,"gate-pressure-advanced-motion");
+
+            yield return WaitFor(
+                ()=>game.DefenseWave.Phase==Necrom.Core.Domain.DefenseWavePhase.Failed &&
+                   game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,
+                4f);
+            game.HudBinding.RefreshNow();
+            game.DefenseHudBinding.RefreshNow();
+            yield return Capture(game,output,size,"gate-pressure-failed");
+        }
+
         IEnumerator CaptureNativeInput(string output)
         {
             var size=new Vector2Int(390,844);
@@ -173,7 +219,14 @@ namespace Necrom.FirstPlayable.Runtime
                 "defenseWave="+game.DefenseWave.WaveNumber,
                 "gateIntegrity="+game.DefenseWave.GateIntegrity+"/"+game.DefenseWave.GateMaxIntegrity,
                 "defenseActive="+game.DefenseWave.ActiveEnemyCount,
-                "defenseRemaining="+game.DefenseWave.RemainingEnemiesToSpawn};
+                "defenseRemaining="+game.DefenseWave.RemainingEnemiesToSpawn,
+                "gatePressureTravelSeconds="+game.GatePressure.TravelDurationSeconds.ToString("F2"),
+                "gatePressureDamage="+game.GatePressure.IntegrityDamage};
+            EnemyRuntimeEntity pressureTarget;
+            float gatePressureProgress;
+            lines.Add(game.GatePressure.TryGetFirstActiveProgress(out pressureTarget,out gatePressureProgress)
+                ? "gatePressureProgress="+gatePressureProgress.ToString("F3")+" target="+pressureTarget.Model.Id.Value
+                : "gatePressureProgress=NONE");
             foreach(var name in new[]{"TargetStatusReadabilityZone","RaiseActionStatusReadabilityZone","ArmyStatusReadabilityZone","ProtectedCombatReadabilityZone","CombatViewport"})
             {
                 var rect=safe.Find(name) as RectTransform;

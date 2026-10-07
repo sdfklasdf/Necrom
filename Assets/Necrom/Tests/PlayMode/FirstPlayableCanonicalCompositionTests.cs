@@ -120,7 +120,9 @@ namespace Necrom.FirstPlayable.Tests
             var safe = _game.transform.Find("SafeArea") as RectTransform;
             var beforeMin=safe.anchorMin;var beforeMax=safe.anchorMax;
             Call("AdvanceCombat",3f);yield return null;
-            Call("AdvanceCombat",3f);yield return null;
+            Call("RaiseCurrentTarget");yield return null;
+            Call("AdvanceCombat",.6f);yield return null;
+            Call("AdvanceCombat",.6f);yield return null;
             Call("StartNextEncounter");yield return null;
             Assert.That(safe.anchorMin,Is.EqualTo(beforeMin));
             Assert.That(safe.anchorMax,Is.EqualTo(beforeMax));
@@ -141,6 +143,42 @@ namespace Necrom.FirstPlayable.Tests
             Call("ResolveFirstThreatAtGate",6);yield return null;
             Assert.That(Convert.ToInt32(Prop(defense,"GateIntegrity")),Is.Zero);
             Assert.That(Prop(defense,"Phase").ToString(),Is.EqualTo("Failed"));
+            Assert.That(Prop(Prop(defenseHud,"LastState"),"Phase").ToString(),Is.EqualTo("Failed"));
+            var root=(GameObject)Prop(defenseHud,"OverlayRoot");
+            Assert.That(Prop(root.transform.Find("DefenseState").GetComponent("TextMeshProUGUI"),"text"),Is.EqualTo("FAILED"));
+            Assert.That(Prop(root.transform.Find("DefenseWaveDetail").GetComponent("TextMeshProUGUI"),"text").ToString(),Does.Contain("0 / 10"));
+        }
+
+        [UnityTest] public IEnumerator NormalGatePressureFailsWithoutRaiseAndUsesVisibleHud()
+        {
+            Call("SetAutomaticCombat",false);
+            var defense=Get("DefenseWave");
+            var pressure=Get("GatePressure");
+            var maxObservedProgress=0f;
+
+            for(var i=0;i<70 && Prop(defense,"Phase").ToString()=="Running";i++)
+            {
+                Call("AdvanceCombat",.1f);
+                yield return null;
+
+                if(Convert.ToInt32(Prop(defense,"ActiveEnemyCount"))==1)
+                {
+                    var args=new object[]{null,0f};
+                    var ok=(bool)pressure.GetType()
+                        .GetMethod("TryGetFirstActiveProgress")
+                        .Invoke(pressure,args);
+                    if(ok) maxObservedProgress=Mathf.Max(maxObservedProgress,(float)args[1]);
+                }
+            }
+
+            Assert.That(maxObservedProgress,Is.GreaterThan(.70f),
+                "The remaining normal-play threat must visibly advance toward the defended objective.");
+            Assert.That(Prop(defense,"Phase").ToString(),Is.EqualTo("Failed"));
+            Assert.That(Convert.ToInt32(Prop(defense,"GateIntegrity")),Is.Zero);
+            Assert.That(Prop(Get("Battle"),"Phase").ToString(),Is.EqualTo("Resolved"));
+            Keys("TargetNone","RaiseNoTarget","ArmyEmpty");
+
+            var defenseHud=Get("DefenseHudBinding");
             Assert.That(Prop(Prop(defenseHud,"LastState"),"Phase").ToString(),Is.EqualTo("Failed"));
             var root=(GameObject)Prop(defenseHud,"OverlayRoot");
             Assert.That(Prop(root.transform.Find("DefenseState").GetComponent("TextMeshProUGUI"),"text"),Is.EqualTo("FAILED"));

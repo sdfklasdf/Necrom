@@ -44,6 +44,7 @@ namespace Necrom.FirstPlayable.Runtime
         FirstPlayableAutoCombatLoop _playerLoop;
         FirstPlayableAlliedAutoCombatLoop _alliedLoop;
         RawImage _player, _enemy, _background;
+        Image _gateObjective;
         AudioSource _audio;
         readonly RawImage[] _allies = new RawImage[Formation.Capacity];
         readonly float[] _allyRaiseRemaining = new float[Formation.Capacity];
@@ -86,6 +87,22 @@ namespace Necrom.FirstPlayable.Runtime
             _background.rectTransform.anchorMin = Vector2.zero;
             _background.rectTransform.anchorMax = Vector2.one;
             _background.rectTransform.offsetMin = _background.rectTransform.offsetMax = Vector2.zero;
+
+            var gateObject = new GameObject(
+                "GateObjective",
+                typeof(RectTransform),
+                typeof(Image),
+                typeof(Outline));
+            gateObject.transform.SetParent(_root, false);
+            _gateObjective = gateObject.GetComponent<Image>();
+            _gateObjective.color = new Color(.04f, .16f, .13f, .72f);
+            _gateObjective.raycastTarget = false;
+            var gateOutline = gateObject.GetComponent<Outline>();
+            gateOutline.effectColor = new Color(.19f, .83f, .61f, .82f);
+            gateOutline.effectDistance = new Vector2(2f, -2f);
+            _gateObjective.rectTransform.anchorMin =
+                _gateObjective.rectTransform.anchorMax = Vector2.zero;
+            _gateObjective.rectTransform.pivot = Vector2.zero;
 
             _player = Art("Necromancer", NecromancerArt);
             _enemy = Art("Guard", GuardArt);
@@ -191,7 +208,19 @@ namespace Necrom.FirstPlayable.Runtime
         {
             if (!_initialized) return;
 
-            var target = _game.Enemies.CurrentTarget;
+            _game.Enemies.TryGetFirstActiveTarget(out var activeTarget);
+            var interactionTarget = _game.Enemies.CurrentTarget;
+            var preserveDefeat =
+                _defeated &&
+                _defeatRemaining > 0f &&
+                interactionTarget?.Model?.LifeState ==
+                    CombatantLifeState.Defeated;
+            var target = preserveDefeat
+                ? interactionTarget
+                : activeTarget ?? interactionTarget;
+            if (_game.DefenseWave != null &&
+                _game.DefenseWave.Phase == DefenseWavePhase.Failed)
+                target = null;
             var id = target?.Model?.Id.Value;
             if (id != _enemyId)
             {
@@ -200,6 +229,7 @@ namespace Necrom.FirstPlayable.Runtime
                 _defeatRemaining = 0f;
                 _hitRemaining = 0f;
             }
+            _enemy.gameObject.SetActive(target != null);
 
             var h = _root.rect.height;
             var w = _root.rect.width;
@@ -211,8 +241,24 @@ namespace Necrom.FirstPlayable.Runtime
 
             var lunge = Curve(AttackLunge, _attackRemaining, AttackDuration, 0f);
             var hit = Curve(HitFlash, _hitRemaining, HitDuration, 0f);
+            var pressure = 0f;
+            if (activeTarget != null &&
+                ReferenceEquals(target, activeTarget) &&
+                _game.GatePressure != null)
+            {
+                _game.GatePressure.TryGetProgress(activeTarget, out pressure);
+            }
+
+            var enemyStartX = 246f / 390f * w;
+            var enemyGateX = 164f / 390f * w;
+            var enemyX = Mathf.Lerp(enemyStartX, enemyGateX, pressure);
+            Place(_gateObjective.rectTransform,
+                146f / 390f * w,
+                75f * scale,
+                10f * scale,
+                135f * scale);
             Place(_player, 42f / 390f * w + lunge * 11f * scale, 32f * scale, 92f * scale, 138f * scale);
-            Place(_enemy, 246f / 390f * w + hit * 2.5f * scale, 75f * scale, 90f * scale, 135f * scale);
+            Place(_enemy, enemyX + hit * 2.5f * scale, 75f * scale, 90f * scale, 135f * scale);
 
             var defeatScaleY = _defeated
                 ? Curve(DefeatScaleY, _defeatRemaining, DefeatDuration, .35f)
@@ -289,8 +335,13 @@ namespace Necrom.FirstPlayable.Runtime
 
         static void Place(RawImage image, float x, float y, float width, float height)
         {
-            image.rectTransform.anchoredPosition = new Vector2(x, y);
-            image.rectTransform.sizeDelta = new Vector2(width, height);
+            Place(image.rectTransform, x, y, width, height);
+        }
+
+        static void Place(RectTransform rect, float x, float y, float width, float height)
+        {
+            rect.anchoredPosition = new Vector2(x, y);
+            rect.sizeDelta = new Vector2(width, height);
         }
 
         void OnDestroy()

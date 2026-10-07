@@ -98,6 +98,14 @@ namespace Necrom.FirstPlayable.Runtime
             }
         }
 
+        public void ConfigureDefenseWave(
+            FirstPlayableDefenseWaveRuntimeController defenseWave)
+        {
+            EnsureInitialized();
+            _projector.ConfigureDefenseWave(defenseWave);
+            RefreshNow();
+        }
+
         public FirstPlayableCombatHudPresentation RefreshNow()
         {
             EnsureInitialized();

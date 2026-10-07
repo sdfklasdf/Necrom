@@ -267,3 +267,21 @@ Next implementation boundary:
 VISIBLE GATE PRESSURE + NORMAL-PLAY FAILURE PATH.
 
 Do not add tower placement, multi-lane, final economy or launch content expansion in that work.
+
+
+## EV-024 superseding runtime update — normal gate pressure
+
+Canonical normal gameplay now contains visible time-to-objective pressure:
+- two representative Guard threats are pressure-registered;
+- active Guard art advances toward a single defended-objective marker;
+- no-input normal Update can reach gate breach and Failed truth without a test-only hook;
+- timely Raise preserves the success path and exact Raised ally contribution;
+- final current-head canonical targeted 8/8 and full PlayMode 138/138 PASS;
+- Windows failure capture and native OS-click success capture both exist.
+
+Evidence: docs/evidence/Q3-GATE-PRESSURE-NORMAL-FAILURE.md
+
+Important visual boundary:
+- the lower Target / Raise / Army HUD is still a functional production candidate, not final commercial polish;
+- the defended-objective marker is also a functional pressure proof, not final gate/environment art;
+- next visual work should refine those surfaces without reopening validated hybrid mechanics.

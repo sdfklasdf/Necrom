@@ -24,6 +24,7 @@ namespace Necrom.FirstPlayable.Runtime
         public FirstPlayableBattleRuntimeController Battle { get; private set; }
         public EnemySpawnController Enemies { get; private set; }
         public FirstPlayableDefenseWaveRuntimeController DefenseWave { get; private set; }
+        public FirstPlayableGatePressureController GatePressure { get; private set; }
         public FirstPlayableDefenseWaveHudRuntimeBinding DefenseHudBinding { get; private set; }
         public FirstPlayableCombatHudSession Session { get; private set; }
         Formation _formation;
@@ -47,6 +48,9 @@ namespace Necrom.FirstPlayable.Runtime
         int _sequence, _encounter;
         const int CanonicalThreatsPerWave = 2;
         const int CanonicalGateIntegrity = 10;
+        // Representative vertical-slice pressure inputs, not final balance.
+        const float CanonicalGateTravelSeconds = 4.8f;
+        const int CanonicalGateBreachDamage = 10;
         string Id(string prefix) => prefix + ":" + (++_sequence);
         static T GetOrAdd<T>(GameObject host) where T:Component
             => host.GetComponent<T>() ?? host.AddComponent<T>();
@@ -141,6 +145,12 @@ namespace Necrom.FirstPlayable.Runtime
             _alliedLoop.ConfigureHudSession(Session);
             DefenseWave=GetOrAdd<FirstPlayableDefenseWaveRuntimeController>(gameObject);
             DefenseWave.Initialize(application,Enemies,CanonicalGateIntegrity,()=>Id("resolve:wave"));
+            GatePressure=GetOrAdd<FirstPlayableGatePressureController>(gameObject);
+            GatePressure.Initialize(
+                DefenseWave,
+                Enemies,
+                CanonicalGateTravelSeconds,
+                CanonicalGateBreachDamage);
             _playerLoop.ConfigureDefenseWave(DefenseWave);
             _alliedLoop.ConfigureDefenseWave(DefenseWave);
             HudBinding=GetOrAdd<FirstPlayableCombatHudRuntimeBinding>(gameObject);
@@ -165,9 +175,14 @@ namespace Necrom.FirstPlayable.Runtime
         }
         void StartCanonicalWave(int waveNumber)
         {
+            GatePressure.ResetForWave();
             DefenseWave.StartWave(waveNumber,CanonicalThreatsPerWave);
             for(var i=0;i<CanonicalThreatsPerWave;i++)
-                DefenseWave.RegisterSpawnedThreat(SpawnTarget());
+            {
+                var threat=SpawnTarget();
+                DefenseWave.RegisterSpawnedThreat(threat);
+                GatePressure.RegisterThreat(threat);
+            }
         }
         void BindHudIfNeeded()
         {
@@ -184,6 +199,7 @@ namespace Necrom.FirstPlayable.Runtime
                     ()=>ReviewFont,
                     ()=>productionPresentation?ReviewFontMedium:ReviewFont,
                     ()=>productionPresentation?ReviewFontBold:ReviewFont));
+            HudBinding.ConfigureDefenseWave(DefenseWave);
             // Normal input goes through the resource bridge and domain command, never a state adapter.
             var scaler=HudBinding.OverlayHost.GetComponent<CanvasScaler>();
             scaler.uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;
@@ -261,12 +277,14 @@ namespace Necrom.FirstPlayable.Runtime
             _automatic=enabled;
             if(_playerLoop!=null) _playerLoop.enabled=enabled&&isActiveAndEnabled;
             if(_alliedLoop!=null) _alliedLoop.enabled=enabled&&isActiveAndEnabled;
+            if(GatePressure!=null) GatePressure.enabled=enabled&&isActiveAndEnabled;
         }
         public void AdvanceCombat(float seconds)
         {
-            // Same production loops as Update. Public manual advance supports replay/debugging.
+            // Same production systems as Update. Public manual advance supports replay/debugging.
             _alliedLoop.Advance(seconds);
             _playerLoop.Advance(seconds);
+            GatePressure.Advance(seconds);
             FinalizeResultIfNeeded();
             HudBinding.RefreshNow();
             DefenseHudBinding.RefreshNow();
@@ -334,6 +352,7 @@ namespace Necrom.FirstPlayable.Runtime
             HudBinding?.Shutdown();
             if(_playerLoop!=null) _playerLoop.enabled=false;
             if(_alliedLoop!=null) _alliedLoop.enabled=false;
+            if(GatePressure!=null) GatePressure.enabled=false;
         }
         void OnDestroy()
         { if(_nextSprite!=null){Destroy(_nextSprite.texture);Destroy(_nextSprite);} }

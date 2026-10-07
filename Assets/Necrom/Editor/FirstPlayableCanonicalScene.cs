@@ -31,7 +31,8 @@ namespace Necrom.EditorTools
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             var root=new GameObject("FirstPlayableCanonical",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster),
                 typeof(EncounterBoundaryController),typeof(FirstPlayableCombatHudRuntimeBinding),
-                typeof(FirstPlayableDefenseWaveRuntimeController),typeof(FirstPlayableDefenseWaveHudRuntimeBinding));
+                typeof(FirstPlayableDefenseWaveRuntimeController),typeof(FirstPlayableGatePressureController),
+                typeof(FirstPlayableDefenseWaveHudRuntimeBinding));
             var composition=root.AddComponent<FirstPlayableGameplayComposition>();
             composition.ReviewFont=font;
             composition.ConfigureViewport(new Vector2(390,844),new Rect(0,34,390,776));
@@ -61,6 +62,8 @@ namespace Necrom.EditorTools
             var root=scene.GetRootGameObjects().Single(x=>x.name=="FirstPlayableCanonical");
             if(root.GetComponent<FirstPlayableDefenseWaveRuntimeController>()==null)
                 root.AddComponent<FirstPlayableDefenseWaveRuntimeController>();
+            if(root.GetComponent<FirstPlayableGatePressureController>()==null)
+                root.AddComponent<FirstPlayableGatePressureController>();
             if(root.GetComponent<FirstPlayableDefenseWaveHudRuntimeBinding>()==null)
                 root.AddComponent<FirstPlayableDefenseWaveHudRuntimeBinding>();
             if(!EditorSceneManager.SaveScene(scene))
@@ -71,6 +74,8 @@ namespace Necrom.EditorTools
             {
                 if(prefabRoot.GetComponent<FirstPlayableDefenseWaveRuntimeController>()==null)
                     prefabRoot.AddComponent<FirstPlayableDefenseWaveRuntimeController>();
+                if(prefabRoot.GetComponent<FirstPlayableGatePressureController>()==null)
+                    prefabRoot.AddComponent<FirstPlayableGatePressureController>();
                 if(prefabRoot.GetComponent<FirstPlayableDefenseWaveHudRuntimeBinding>()==null)
                     prefabRoot.AddComponent<FirstPlayableDefenseWaveHudRuntimeBinding>();
                 PrefabUtility.SaveAsPrefabAsset(prefabRoot,PrefabPath);
@@ -102,6 +107,7 @@ namespace Necrom.EditorTools
             var root=scene.GetRootGameObjects().Single(x=>x.name=="FirstPlayableCanonical");
             if(root.GetComponent<FirstPlayableGameplayComposition>().ReviewFont==null) throw new Exception("Serialized font lost.");
             if(root.GetComponent<FirstPlayableDefenseWaveRuntimeController>()==null) throw new Exception("Hybrid defense runtime component missing.");
+            if(root.GetComponent<FirstPlayableGatePressureController>()==null) throw new Exception("Hybrid gate pressure component missing.");
             if(root.GetComponent<FirstPlayableDefenseWaveHudRuntimeBinding>()==null) throw new Exception("Hybrid defense HUD component missing.");
             foreach(var name in new[]{"TargetStatusReadabilityZone","RaiseActionStatusReadabilityZone","ArmyStatusReadabilityZone","ProtectedCombatReadabilityZone","CombatViewport"})
                 if(root.transform.Find("SafeArea/"+name)==null) throw new Exception("Missing "+name);

@@ -145,12 +145,21 @@ namespace Necrom.FirstPlayable.Tests
         {
             Call("SetAutomaticCombat",true);
             float deadline=Time.realtimeSinceStartup+8f;
-            while(Prop(Get("Battle"),"Phase").ToString()!="Resolved" && Time.realtimeSinceStartup<deadline)
+            while(!Interactable(RaiseButton) && Time.realtimeSinceStartup<deadline)
                 yield return null;
-            Assert.That(Prop(Get("Battle"),"Phase").ToString(),Is.EqualTo("Resolved"),"Actual Update combat must resolve without manual advancement.");
-            Assert.That(Balance,Is.EqualTo(18));
+            Assert.That(Interactable(RaiseButton),Is.True,
+                "Actual Update combat must expose the first defeated threat before gate pressure expires.");
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Running"));
             Click(RaiseButton);yield return null;
             Assert.That(Allies,Is.EqualTo(1));
+            Assert.That(Balance,Is.EqualTo(11));
+
+            deadline=Time.realtimeSinceStartup+8f;
+            while(Prop(Get("Battle"),"Phase").ToString()!="Resolved" && Time.realtimeSinceStartup<deadline)
+                yield return null;
+            Assert.That(Prop(Get("Battle"),"Phase").ToString(),Is.EqualTo("Resolved"),
+                "Timely normal-input Raise must let automatic Update combat beat gate pressure.");
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Cleared"));
             Assert.That(Balance,Is.EqualTo(15));
             Click(NextButton);
             deadline=Time.realtimeSinceStartup+8f;

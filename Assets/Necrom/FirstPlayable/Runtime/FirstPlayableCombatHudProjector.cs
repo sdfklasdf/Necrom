@@ -13,6 +13,7 @@ namespace Necrom.FirstPlayable.Runtime
         private readonly Formation _formation;
         private readonly FirstPlayableAlliedRosterController _roster;
         private readonly FirstPlayableCombatHudSession _session;
+        private FirstPlayableDefenseWaveRuntimeController _defenseWave;
 
         public FirstPlayableCombatHudProjector(
             FirstPlayableBattleRuntimeController battle,
@@ -30,15 +31,33 @@ namespace Necrom.FirstPlayable.Runtime
             _session = session ?? throw new ArgumentNullException(nameof(session));
         }
 
+        public void ConfigureDefenseWave(
+            FirstPlayableDefenseWaveRuntimeController defenseWave)
+        {
+            if (defenseWave == null)
+                throw new ArgumentNullException(nameof(defenseWave));
+            if (_defenseWave != null)
+                throw new InvalidOperationException(
+                    "Combat HUD defense wave is already configured.");
+            _defenseWave = defenseWave;
+        }
+
         public FirstPlayableCombatHudState Capture()
         {
-            var combatTarget = _enemies.TryGetFirstActiveTarget(
-                out var activeTarget)
-                ? activeTarget
+            var defenseFailed =
+                _defenseWave != null &&
+                _defenseWave.Phase == DefenseWavePhase.Failed;
+            var combatTarget = defenseFailed
+                ? null
+                : _enemies.TryGetFirstActiveTarget(out var activeTarget)
+                    ? activeTarget
+                    : _enemies.CurrentTarget;
+            var raiseTarget = defenseFailed
+                ? null
                 : _enemies.CurrentTarget;
             var target = BuildTargetState(combatTarget);
             var raiseReason = ResolveRaiseReason(
-                _enemies.CurrentTarget,
+                raiseTarget,
                 out var quote);
             var slots = BuildFormationSlots();
             var committed = ValidateCommittedRaise();
