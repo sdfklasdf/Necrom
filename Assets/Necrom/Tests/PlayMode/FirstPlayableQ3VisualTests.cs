@@ -252,11 +252,24 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(Count(v, "DefeatCueCount"), Is.EqualTo(1));
             var sfxAfterResolve = Count(v, "ReviewSfxPlaybackCount");
 
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Running"));
+            Assert.That(Convert.ToInt32(Prop(Get("DefenseWave"),"ActiveEnemyCount")),Is.EqualTo(1));
+
             Call("AdvanceCombat", 3f);
             yield return null;
-            Assert.That(Count(v, "HitCueCount"), Is.EqualTo(5), "Resolved battle cannot replay damage visuals.");
-            Assert.That(Count(v, "ReviewSfxPlaybackCount"), Is.EqualTo(sfxAfterResolve),
-                "Resolved battle cannot replay review SFX.");
+            Assert.That(Count(v, "HitCueCount"), Is.EqualTo(10),
+                "Second canonical threat must receive its own actual damage feedback.");
+            Assert.That(Count(v, "DefeatCueCount"), Is.EqualTo(2));
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Cleared"));
+            var sfxAfterWaveClear = Count(v, "ReviewSfxPlaybackCount");
+            Assert.That(sfxAfterWaveClear,Is.GreaterThan(sfxAfterResolve));
+
+            Call("AdvanceCombat", 3f);
+            yield return null;
+            Assert.That(Count(v, "HitCueCount"), Is.EqualTo(10),
+                "Cleared wave cannot replay damage visuals.");
+            Assert.That(Count(v, "ReviewSfxPlaybackCount"), Is.EqualTo(sfxAfterWaveClear),
+                "Cleared wave cannot replay review SFX.");
         }
 
         [UnityTest]
@@ -276,12 +289,12 @@ namespace Necrom.FirstPlayable.Tests
             yield return null;
             Assert.That(Count(v, "RaiseCueCount"), Is.EqualTo(1), "Consumed source cannot replay Raise visuals.");
 
-            Click(NextButton);
-            yield return null;
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Running"),
+                "Raise must occur while the second canonical threat remains active.");
             Call("AdvanceCombat", .5f);
             yield return null;
             Assert.That(Count(v, "AlliedContributionCueCount"), Is.GreaterThan(0),
-                "Cue must be driven by actual allied damage.");
+                "Cue must be driven by actual allied damage inside the same hybrid wave.");
             Assert.That(Count(v, "VisibleAllyCount"), Is.EqualTo(1));
             Assert.That(Count(v, "DefeatCueCount"), Is.EqualTo(1),
                 "Nonlethal contribution cannot masquerade as defeat.");

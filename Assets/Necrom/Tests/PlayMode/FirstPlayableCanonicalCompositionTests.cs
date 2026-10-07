@@ -49,14 +49,20 @@ namespace Necrom.FirstPlayable.Tests
             Call("SetAutomaticCombat",false);
             Keys("TargetActive","RaiseTargetNotReady","ArmyEmpty");
             Call("AdvanceCombat",3f); yield return null;
-            Keys("TargetDefeated","RaiseEligible","ArmyEmpty");
+            Keys("TargetActive","RaiseEligible","ArmyEmpty");
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Running"));
+            Assert.That(Convert.ToInt32(Prop(Get("DefenseWave"),"ActiveEnemyCount")),Is.EqualTo(1));
             var overlay = Prop(Get("HudBinding"),"OverlayHost");
             Call("RaiseCurrentTarget"); yield return null;
-            Keys("TargetDefeated","RaiseCommittedAwaitingProof","ArmyProofPending");
+            Keys("TargetActive","RaiseCommittedAwaitingProof","ArmyProofPending");
             Assert.That(Convert.ToInt32(Prop(Get("Roster"),"ActiveCount")),Is.EqualTo(1));
-            Call("StartNextEncounter"); Call("AdvanceCombat",0.6f); yield return null;
+            Call("AdvanceCombat",0.6f); yield return null;
+            Call("AdvanceCombat",0.6f); yield return null;
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Cleared"));
             Assert.That(Prop(Prop(Prop(Get("HudBinding"),"LastPresentation"),"Army"),"ContentKey").ToString(),
                 Is.EqualTo("ArmyProofObserved"),"Proof must come from the real ally combat loop.");
+            Call("StartNextEncounter"); yield return null;
+            Assert.That(Convert.ToInt32(Prop(Get("DefenseWave"),"WaveNumber")),Is.EqualTo(2));
             Assert.That(Prop(Get("HudBinding"),"OverlayHost"),Is.SameAs(overlay));
         }
         [UnityTest] public IEnumerator CanonicalDisableReentryAndDestroyLeaveOneOrZeroOverlay()
@@ -114,10 +120,33 @@ namespace Necrom.FirstPlayable.Tests
             var safe = _game.transform.Find("SafeArea") as RectTransform;
             var beforeMin=safe.anchorMin;var beforeMax=safe.anchorMax;
             Call("AdvanceCombat",3f);yield return null;
+            Call("AdvanceCombat",3f);yield return null;
             Call("StartNextEncounter");yield return null;
             Assert.That(safe.anchorMin,Is.EqualTo(beforeMin));
             Assert.That(safe.anchorMax,Is.EqualTo(beforeMax));
         }
+        [UnityTest] public IEnumerator CanonicalGateBreachDrivesVisibleFailedTruth()
+        {
+            Call("SetAutomaticCombat",false);
+            var defense=Get("DefenseWave");
+            var defenseHud=Get("DefenseHudBinding");
+            Assert.That(Prop(defense,"Phase").ToString(),Is.EqualTo("Running"));
+            Assert.That(Convert.ToInt32(Prop(defense,"ActiveEnemyCount")),Is.EqualTo(2));
+
+            Call("ResolveFirstThreatAtGate",4);yield return null;
+            Assert.That(Convert.ToInt32(Prop(defense,"GateIntegrity")),Is.EqualTo(6));
+            Assert.That(Convert.ToInt32(Prop(defense,"ActiveEnemyCount")),Is.EqualTo(1));
+            Assert.That(Prop(defense,"Phase").ToString(),Is.EqualTo("Running"));
+
+            Call("ResolveFirstThreatAtGate",6);yield return null;
+            Assert.That(Convert.ToInt32(Prop(defense,"GateIntegrity")),Is.Zero);
+            Assert.That(Prop(defense,"Phase").ToString(),Is.EqualTo("Failed"));
+            Assert.That(Prop(Prop(defenseHud,"LastState"),"Phase").ToString(),Is.EqualTo("Failed"));
+            var root=(GameObject)Prop(defenseHud,"OverlayRoot");
+            Assert.That(Prop(root.transform.Find("DefenseState").GetComponent("TextMeshProUGUI"),"text"),Is.EqualTo("FAILED"));
+            Assert.That(Prop(root.transform.Find("DefenseWaveDetail").GetComponent("TextMeshProUGUI"),"text").ToString(),Does.Contain("0 / 10"));
+        }
+
         [UnityTest] public IEnumerator PortraitSafeAreaKeepsHudZonesOutsideProtectedCombat()
         {
             Call("SetAutomaticCombat",false);
@@ -134,6 +163,12 @@ namespace Necrom.FirstPlayable.Tests
                 Assert.That(safe.anchorMin.y,Is.EqualTo(0.04f).Within(0.0001f));
                 Assert.That(safe.anchorMax.y,Is.EqualTo(0.96f).Within(0.0001f));
                 var combat = safe.Find("ProtectedCombatReadabilityZone") as RectTransform;
+                var defense = overlay.transform.Find("SafeAreaMirror/DefenseWaveRenderContainer") as RectTransform;
+                Assert.That(defense,Is.Not.Null,"Hybrid defense HUD must be visible in the canonical overlay.");
+                var defenseCorners=new Vector3[4];defense.GetWorldCorners(defenseCorners);
+                var combatCorners=new Vector3[4];combat.GetWorldCorners(combatCorners);
+                Assert.That(defenseCorners[0].y,Is.GreaterThanOrEqualTo(combatCorners[2].y-.1f),
+                    "Wave/gate HUD must stay above protected combat art at every verified portrait size.");
                 foreach(var name in new[]{"TargetStatusReadabilityZone","RaiseActionStatusReadabilityZone","ArmyStatusReadabilityZone"})
                 {
                     var zone = safe.Find(name) as RectTransform;

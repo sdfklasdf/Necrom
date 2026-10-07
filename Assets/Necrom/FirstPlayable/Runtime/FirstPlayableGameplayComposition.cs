@@ -23,6 +23,8 @@ namespace Necrom.FirstPlayable.Runtime
         public FirstPlayableAlliedRosterController Roster { get; private set; }
         public FirstPlayableBattleRuntimeController Battle { get; private set; }
         public EnemySpawnController Enemies { get; private set; }
+        public FirstPlayableDefenseWaveRuntimeController DefenseWave { get; private set; }
+        public FirstPlayableDefenseWaveHudRuntimeBinding DefenseHudBinding { get; private set; }
         public FirstPlayableCombatHudSession Session { get; private set; }
         Formation _formation;
         FirstPlayableApplicationService _application;
@@ -43,6 +45,8 @@ namespace Necrom.FirstPlayable.Runtime
         Rect _configuredSafe;
         bool _automatic=true;
         int _sequence, _encounter;
+        const int CanonicalThreatsPerWave = 2;
+        const int CanonicalGateIntegrity = 10;
         string Id(string prefix) => prefix + ":" + (++_sequence);
         static T GetOrAdd<T>(GameObject host) where T:Component
             => host.GetComponent<T>() ?? host.AddComponent<T>();
@@ -84,6 +88,7 @@ namespace Necrom.FirstPlayable.Runtime
                 {
                     HudBinding.OverlayHost.GetComponent<CanvasScaler>().scaleFactor=scale;
                     HudBinding.RefreshNow();
+                    DefenseHudBinding?.RefreshNow();
                 }
             }
         }
@@ -134,8 +139,13 @@ namespace Necrom.FirstPlayable.Runtime
             _alliedLoop=GetOrAdd<FirstPlayableAlliedAutoCombatLoop>(combat.gameObject);
             _alliedLoop.Initialize(application,Roster,targeting,pipeline,id=>new EntityId("source:"+id.Value),()=>Id("resolve:ally"));
             _alliedLoop.ConfigureHudSession(Session);
+            DefenseWave=GetOrAdd<FirstPlayableDefenseWaveRuntimeController>(gameObject);
+            DefenseWave.Initialize(application,Enemies,CanonicalGateIntegrity,()=>Id("resolve:wave"));
+            _playerLoop.ConfigureDefenseWave(DefenseWave);
+            _alliedLoop.ConfigureDefenseWave(DefenseWave);
             HudBinding=GetOrAdd<FirstPlayableCombatHudRuntimeBinding>(gameObject);
-            SpawnTarget();
+            DefenseHudBinding=GetOrAdd<FirstPlayableDefenseWaveHudRuntimeBinding>(gameObject);
+            StartCanonicalWave(1);
             IsInitialized=true;
             BindHudIfNeeded();
             AddReviewCombatPresentation(combat);
@@ -146,12 +156,18 @@ namespace Necrom.FirstPlayable.Runtime
             for(int i=0;i<Formation.Capacity;i++) if(!_formation.GetSlot(i).HasValue) return i;
             throw new InvalidOperationException("Formation is full.");
         }
-        void SpawnTarget()
+        EnemyRuntimeEntity SpawnTarget()
         {
             var combat=transform.Find("SafeArea/CombatViewport");
-            Enemies.SpawnEnemy("enemy:canonical:"+ ++_encounter,
+            return Enemies.SpawnEnemy("enemy:canonical:"+ ++_encounter,
                 new EnemyArchetypeDefinition("enemy.guard","frontline.guard",10),
                 combat.Find("EnemySpawnZone") as RectTransform);
+        }
+        void StartCanonicalWave(int waveNumber)
+        {
+            DefenseWave.StartWave(waveNumber,CanonicalThreatsPerWave);
+            for(var i=0;i<CanonicalThreatsPerWave;i++)
+                DefenseWave.RegisterSpawnedThreat(SpawnTarget());
         }
         void BindHudIfNeeded()
         {
@@ -177,6 +193,11 @@ namespace Necrom.FirstPlayable.Runtime
             HudBinding.OverlayHost.GetComponent<Canvas>().sortingOrder=10;
             _raiseButton=HudBinding.OverlayHost.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta").GetComponent<Button>();
             _raiseButton.onClick.AddListener(RaiseCurrentTarget);
+            if(!DefenseHudBinding.IsInitialized)
+                DefenseHudBinding.Initialize(DefenseWave,HudBinding,
+                    ReviewFont,productionPresentation?ReviewFontMedium:ReviewFont,
+                    productionPresentation?ReviewFontBold:ReviewFont);
+            DefenseHudBinding.RefreshNow();
         }
         FirstPlayableCombatHudCopy ReviewCopy(FirstPlayableCombatHudContentKey key)
         {
@@ -186,7 +207,7 @@ namespace Necrom.FirstPlayable.Runtime
             switch(key)
             {
                 case FirstPlayableCombatHudContentKey.TargetNone: detail="Identity / no target";break;
-                case FirstPlayableCombatHudContentKey.TargetActive: detail="Guard / HP "+Enemies.CurrentTarget.Model.Health+" / active";break;
+                case FirstPlayableCombatHudContentKey.TargetActive: detail="Guard / HP "+ActiveTargetHealth()+" / active";break;
                 case FirstPlayableCombatHudContentKey.TargetDefeated: detail="Guard / HP 0 / defeated";break;
                 case FirstPlayableCombatHudContentKey.RaiseNoTarget: detail="Reason / no target";break;
                 case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: detail="Reason / target not ready";break;
@@ -211,7 +232,7 @@ namespace Necrom.FirstPlayable.Runtime
             switch(key)
             {
                 case FirstPlayableCombatHudContentKey.TargetNone: title="대상을 찾고 있습니다";detail="새 전투를 기다리고 있습니다";break;
-                case FirstPlayableCombatHudContentKey.TargetActive: title="수호병";detail="체력 "+Enemies.CurrentTarget.Model.Health+" / 10 · 자동 전투 중";break;
+                case FirstPlayableCombatHudContentKey.TargetActive: title="수호병";detail="체력 "+ActiveTargetHealth()+" / 10 · 자동 전투 중";break;
                 case FirstPlayableCombatHudContentKey.TargetDefeated: title="수호병 격파";detail="체력 0 / 10 · 영혼을 획득했습니다";break;
                 case FirstPlayableCombatHudContentKey.RaiseNoTarget: title="소환할 대상이 없습니다";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
                 case FirstPlayableCombatHudContentKey.RaiseTargetNotReady: title="수호병을 격파하세요";detail="격파한 적을 아군으로 되살릴 수 있습니다";break;
@@ -229,6 +250,12 @@ namespace Necrom.FirstPlayable.Runtime
             if(full){title="군단이 가득 찼습니다";detail="5 / 5 · 다음 전투에서 군단의 힘을 확인하세요";}
             return new FirstPlayableCombatHudCopy(family,title,detail,full?"군단 최대":"되살리기");
         }
+        int ActiveTargetHealth()
+        {
+            return Enemies.TryGetFirstActiveTarget(out var target) && target.Model!=null
+                ? target.Model.Health
+                : Enemies.CurrentTarget?.Model?.Health ?? 0;
+        }
         public void SetAutomaticCombat(bool enabled)
         {
             _automatic=enabled;
@@ -242,6 +269,7 @@ namespace Necrom.FirstPlayable.Runtime
             _playerLoop.Advance(seconds);
             FinalizeResultIfNeeded();
             HudBinding.RefreshNow();
+            DefenseHudBinding.RefreshNow();
         }
         void FinalizeResultIfNeeded()
         {
@@ -252,17 +280,31 @@ namespace Necrom.FirstPlayable.Runtime
         {
             _soul.ExecuteRaise(Enemies,_raise,_account.Revision);
             HudBinding.RefreshNow();
+            DefenseHudBinding.RefreshNow();
         }
         public void StartNextEncounter()
         {
-            var old=Enemies.CurrentTarget;
+            if(DefenseWave.Phase!=DefenseWavePhase.Cleared)
+                throw new InvalidOperationException("A canonical next wave requires a cleared defense wave.");
+            var nextWave=DefenseWave.WaveNumber+1;
             Battle.RestartBattle(new RestartBattleCommand(Id("restart"),Battle.Revision));
-            if(old!=null) Destroy(old.gameObject);
-            SpawnTarget();
+            Enemies.ClearEncounterTargets();
+            DefenseWave.PrepareNextWave();
+            StartCanonicalWave(nextWave);
             Battle.StartBattle(new StartBattleCommand(Id("start"),Battle.Revision));
             // Start/RestartBoundary preserves ownership; restore current responsive readability layout.
             ConfigureViewport(_configuredSize,_configuredSafe);
             HudBinding.RefreshNow();
+            DefenseHudBinding.RefreshNow();
+        }
+        public void ResolveFirstThreatAtGate(int integrityDamage)
+        {
+            if(!Enemies.TryGetFirstActiveTarget(out var target))
+                throw new InvalidOperationException("No active canonical threat can reach the gate.");
+            DefenseWave.RecordGateBreach(target,integrityDamage);
+            FinalizeResultIfNeeded();
+            HudBinding.RefreshNow();
+            DefenseHudBinding.RefreshNow();
         }
         void Update()
         {
@@ -275,12 +317,12 @@ namespace Necrom.FirstPlayable.Runtime
             }
             BindHudIfNeeded();
             FinalizeResultIfNeeded();
-            if(_nextButton!=null) { _nextButton.interactable=Battle.Phase==BattlePhase.Resolved;
+            if(_nextButton!=null) { _nextButton.interactable=Battle.Phase==BattlePhase.Resolved && DefenseWave.Phase==DefenseWavePhase.Cleared;
                 var combat=_nextButton.transform.parent as RectTransform;
                 var rect=_nextButton.transform as RectTransform;rect.anchorMin=new Vector2(.47f,.97f-44f/Mathf.Max(44f,combat.rect.height));rect.anchorMax=new Vector2(.94f,.97f);
                 _nextButton.GetComponent<Image>().color=new Color(.0314f,.498f,.357f,_nextButton.interactable?1f:.55f);
             }
-            if(_enemyText!=null) _enemyText.text="GUARD\nHP "+Enemies.CurrentTarget.Model.Health;
+            if(_enemyText!=null) _enemyText.text="GUARD\nHP "+ActiveTargetHealth();
             if(_armyText!=null) _armyText.text="RAISED ARMY\n"+Roster.ActiveCount+" / 5";
         }
         void OnEnable()

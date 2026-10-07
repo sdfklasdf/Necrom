@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 925762126}
   - component: {fileID: 925762125}
   - component: {fileID: 925762136}
+  - component: {fileID: 925762138}
+  - component: {fileID: 925762137}
   m_Layer: 0
   m_Name: FirstPlayableCanonical
   m_TagString: Untagged
@@ -758,6 +760,30 @@ MonoBehaviour:
   DefeatSfx: {fileID: 8300000, guid: 137867a31c6eb5c4898066f218f1338c, type: 3}
   RaiseSfx: {fileID: 8300000, guid: 0f61802fffb96a941aae7ec6eb584e06, type: 3}
   AlliedContributionSfx: {fileID: 8300000, guid: df02735e956274c40a0cd04a4fd21dbc, type: 3}
+--- !u!114 &925762137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925762124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1109659b002e0e145a92a57ab167f871, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveHudRuntimeBinding
+--- !u!114 &925762138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925762124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac81e329b2600b143bc696355774a4d5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveRuntimeController
 --- !u!1 &930316310
 GameObject:
   m_ObjectHideFlags: 0

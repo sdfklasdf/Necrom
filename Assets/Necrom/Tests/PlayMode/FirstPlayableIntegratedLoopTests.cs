@@ -66,43 +66,80 @@ namespace Necrom.FirstPlayable.Tests
             Assert.That(Balance,Is.EqualTo(10));
             Call("AdvanceCombat",.5f);yield return null;
             Assert.That(Balance,Is.EqualTo(10),"Nonlethal hits cannot grant Soul.");
+
             Call("AdvanceCombat",3f);yield return null;
-            Assert.That(Balance,Is.EqualTo(14),"Player lethal result must reach the Soul bridge.");
+            Assert.That(Balance,Is.EqualTo(14),"First canonical threat defeat must reach the Soul bridge.");
             Assert.That(ResourceRevision,Is.EqualTo(1));
-            Call("AdvanceCombat",3f);yield return null;
-            Assert.That(Balance,Is.EqualTo(14));
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Running"));
+
             Click(RaiseButton);yield return null;
             Assert.That(Balance,Is.EqualTo(11));
-            Click(NextButton);yield return null;
+            Assert.That(Allies,Is.EqualTo(1));
+
+            Call("AdvanceCombat",.5f);yield return null;
+            Assert.That(Balance,Is.EqualTo(11),"Nonlethal allied contribution cannot grant Soul.");
+            Call("AdvanceCombat",.5f);yield return null;
+            Assert.That(Balance,Is.EqualTo(15),"Second threat defeat must grant exactly once.");
+            Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Cleared"));
+
             Call("AdvanceCombat",3f);yield return null;
-            Assert.That(Balance,Is.EqualTo(15),"Shared ally lethal pipeline must grant exactly once.");
-            Call("AdvanceCombat",3f);yield return null;
-            Assert.That(Balance,Is.EqualTo(15));
+            Assert.That(Balance,Is.EqualTo(15),"Resolved wave cannot replay a defeat grant.");
             Assert.That(ResourceRevision,Is.EqualTo(3));
         }
         [UnityTest] public IEnumerator NormalPointerClicksRaiseFiveAlliesWithoutOldProofHidingNextRaise()
         {
             for(int i=1;i<=5;i++)
             {
-                Call("AdvanceCombat",3f);yield return null;
-                Assert.That(Interactable(RaiseButton),Is.True,"New eligible source must remain actionable after prior proof.");
+                var beforeWaveRevision=ResourceRevision;
+                var guard=0;
+                while(!Interactable(RaiseButton) && guard++<20)
+                {
+                    Call("AdvanceCombat",.5f);yield return null;
+                }
+                Assert.That(Interactable(RaiseButton),Is.True,
+                    "Each wave must expose one eligible defeated Raise candidate.");
+
                 Click(RaiseButton);yield return null;
                 Assert.That(Allies,Is.EqualTo(i));
-                Assert.That(Balance,Is.EqualTo(10+i));
-                var revision=ResourceRevision;
+                var afterRaiseRevision=ResourceRevision;
                 Click(RaiseButton);yield return null;
                 Assert.That(Allies,Is.EqualTo(i),"Duplicate click must not create a second unit.");
-                Assert.That(ResourceRevision,Is.EqualTo(revision));
+                Assert.That(ResourceRevision,Is.EqualTo(afterRaiseRevision));
+
+                guard=0;
+                while(Prop(Get("DefenseWave"),"Phase").ToString()!="Cleared" && guard++<20)
+                {
+                    Call("AdvanceCombat",.5f);yield return null;
+                }
+                Assert.That(Prop(Get("DefenseWave"),"Phase").ToString(),Is.EqualTo("Cleared"));
+                Assert.That(Balance,Is.EqualTo(10+5*i),
+                    "Two defeat grants minus one Raise spend must net +5 per canonical wave.");
+                Assert.That(ResourceRevision,Is.EqualTo(beforeWaveRevision+3),
+                    "Each canonical wave owns exactly two grants and one Raise spend.");
+                Assert.That(Interactable(NextButton),Is.True);
                 Click(NextButton);yield return null;
             }
-            Call("AdvanceCombat",3f);yield return null;
+
             Assert.That(Allies,Is.EqualTo(5));
-            Assert.That(Interactable(RaiseButton),Is.False,"Full Formation must block Raise before throwing/mutating.");
+            var guardFull=0;
+            while(Convert.ToInt32(Prop(Get("DefenseWave"),"ActiveEnemyCount"))==2 && guardFull++<20)
+            {
+                Call("AdvanceCombat",.5f);yield return null;
+            }
+            Assert.That(Interactable(RaiseButton),Is.False,
+                "Full Formation must block Raise before throwing/mutating.");
             var before=ResourceRevision;
             Click(RaiseButton);yield return null;
             Assert.That(Allies,Is.EqualTo(5));
             Assert.That(ResourceRevision,Is.EqualTo(before));
-            Assert.That(Interactable(NextButton),Is.True,"Combat can continue with a full army.");
+
+            guardFull=0;
+            while(Prop(Get("DefenseWave"),"Phase").ToString()!="Cleared" && guardFull++<20)
+            {
+                Call("AdvanceCombat",.5f);yield return null;
+            }
+            Assert.That(Interactable(NextButton),Is.True,
+                "Combat can continue and clear a wave with a full army.");
         }
         [UnityTest] public IEnumerator AutomaticUpdateCombatAndRaycastInputSurviveLifecycleReentry()
         {
@@ -111,10 +148,10 @@ namespace Necrom.FirstPlayable.Tests
             while(Prop(Get("Battle"),"Phase").ToString()!="Resolved" && Time.realtimeSinceStartup<deadline)
                 yield return null;
             Assert.That(Prop(Get("Battle"),"Phase").ToString(),Is.EqualTo("Resolved"),"Actual Update combat must resolve without manual advancement.");
-            Assert.That(Balance,Is.EqualTo(14));
+            Assert.That(Balance,Is.EqualTo(18));
             Click(RaiseButton);yield return null;
             Assert.That(Allies,Is.EqualTo(1));
-            Assert.That(Balance,Is.EqualTo(11));
+            Assert.That(Balance,Is.EqualTo(15));
             Click(NextButton);
             deadline=Time.realtimeSinceStartup+8f;
             while(Prop(Get("Battle"),"Phase").ToString()!="Resolved" && Time.realtimeSinceStartup<deadline)
@@ -123,7 +160,7 @@ namespace Necrom.FirstPlayable.Tests
             var presentation=Prop(Get("HudBinding"),"LastPresentation");
             Assert.That(Prop(Prop(presentation,"Army"),"ContentKey").ToString(),Is.EqualTo("ArmyProofObserved"));
             Assert.That(Prop(Prop(presentation,"Raise"),"ContentKey").ToString(),Is.EqualTo("RaiseEligible"));
-            Assert.That(Balance,Is.EqualTo(15));
+            Assert.That(Balance,Is.EqualTo(23));
             var revision=ResourceRevision;
             _game.gameObject.SetActive(false);yield return null;
             _game.gameObject.SetActive(true);yield return null;yield return null;
@@ -132,7 +169,7 @@ namespace Necrom.FirstPlayable.Tests
                 .Count(x=>x.name=="FirstPlayableCombatHudOverlayCanvas"),Is.EqualTo(1));
             Click(RaiseButton);yield return null;
             Assert.That(Allies,Is.EqualTo(2));
-            Assert.That(Balance,Is.EqualTo(12));
+            Assert.That(Balance,Is.EqualTo(20));
         }
         [UnityTest] public IEnumerator DisabledRaiseAndNextClicksCannotMutateRunningBattle()
         {

@@ -49,18 +49,27 @@ namespace Necrom.FirstPlayable.Runtime
                 var actual=new Vector2(Screen.width,Screen.height);
                 // Explicit simulated notch insets are QA inputs, separate from physical-device SafeArea.
                 game.ConfigureViewport(actual,new Rect(0,actual.y*.04f,actual.x,actual.y*.92f));
-                yield return Capture(game,output,size,"active");
+                yield return Capture(game,output,size,"hybrid-active");
                 game.AdvanceCombat(3f);
-                yield return Capture(game,output,size,"eligible");
+                if(game.DefenseWave.Phase!=Necrom.Core.Domain.DefenseWavePhase.Running ||
+                    game.DefenseWave.ActiveEnemyCount!=1 ||
+                    game.Battle.Phase!=Necrom.Core.Domain.BattlePhase.Running)
+                    throw new InvalidOperationException(
+                        "Canonical first defeat did not preserve a running hybrid wave.");
+                yield return Capture(game,output,size,"hybrid-first-defeat");
                 game.RaiseCurrentTarget();
-                yield return Capture(game,output,size,"raised");
-                var safeRect=game.transform.Find("SafeArea") as RectTransform;
-                var min=safeRect.anchorMin; var max=safeRect.anchorMax;
-                game.StartNextEncounter();
-                if(safeRect.anchorMin!=min || safeRect.anchorMax!=max)
-                    throw new InvalidOperationException("Restart changed configured SafeArea.");
-                game.AdvanceCombat(.6f);
-                yield return Capture(game,output,size,"proof");
+                if(game.Roster.ActiveCount!=1)
+                    throw new InvalidOperationException("Canonical hybrid Raise did not activate the first ally.");
+                yield return Capture(game,output,size,"hybrid-raised");
+                game.AdvanceCombat(.5f);
+                if(game.Session.ObservedContribution==null)
+                    throw new InvalidOperationException(
+                        "Raised ally did not contribute inside the same hybrid wave.");
+                yield return Capture(game,output,size,"hybrid-ally-contribution");
+                game.AdvanceCombat(.5f);
+                if(game.DefenseWave.Phase!=Necrom.Core.Domain.DefenseWavePhase.Cleared)
+                    throw new InvalidOperationException("Canonical hybrid wave did not clear.");
+                yield return Capture(game,output,size,"hybrid-cleared");
             }
             File.WriteAllText(Path.Combine(output,"complete.txt"),"DEVELOPMENT PLAYER CAPTURE COMPLETE. Physical device NOT RUN.");
             Application.Quit(0);
@@ -76,46 +85,47 @@ namespace Necrom.FirstPlayable.Runtime
             // Automatic Update stays enabled. The external driver supplies real OS clicks.
             game.ConfigureViewport(new Vector2(Screen.width,Screen.height),
                 new Rect(0,Screen.height*.04f,Screen.width,Screen.height*.92f));
-            yield return Capture(game,output,size,"native-active");
+            yield return Capture(game,output,size,"native-hybrid-active");
             var visual=game.GetComponent<FirstPlayableVisualPresentation>();
-            yield return WaitFor(()=>visual.HitCueCount>0,3f);
-            yield return Capture(game,output,size,"native-attack-hit");
-            yield return WaitFor(()=>visual.DefeatCueCount>0,8f);
-            yield return new WaitForSecondsRealtime(.12f);
-            yield return Capture(game,output,size,"native-defeat-motion");
-            for(int i=1;i<=5;i++)
-            {
-                yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,8f);
-                game.HudBinding.RefreshNow();
-                if(game.SoulBalance!=13+i)throw new InvalidOperationException("Defeat grant/previous spend mismatch.");
-                if(!game.HudBinding.OverlayHost.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta")
-                    .GetComponent<UnityEngine.UI.Button>().interactable)
-                    throw new InvalidOperationException("Eligible Raise is not actionable.");
-                if(i==2 && game.HudBinding.LastPresentation.Army.ContentKey!=FirstPlayableCombatHudContentKey.ArmyProofObserved)
-                    throw new InvalidOperationException("First raised ally did not produce actual contribution.");
-                yield return Capture(game,output,size,"native-"+i+"-eligible");
-                var button=game.HudBinding.OverlayHost.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta") as RectTransform;
-                RequestClick(output,button);
-                yield return WaitFor(()=>game.Roster.ActiveCount==i,5f);
-                if(game.SoulBalance!=10+i)throw new InvalidOperationException("Raise did not spend exactly once.");
-                yield return Capture(game,output,size,"native-"+i+"-raise-motion");
-                yield return Capture(game,output,size,"native-"+i+"-raised");
-                var contributionBefore = visual.AlliedContributionCueCount;
-                RequestClick(output,game.transform.Find("SafeArea/CombatViewport/NextEncounter") as RectTransform);
-                yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Running,5f);
-                if(i==1)
-                {
-                    yield return WaitFor(()=>visual.AlliedContributionCueCount>contributionBefore,5f);
-                    yield return Capture(game,output,size,"native-ally-contribution-motion");
-                }
-            }
-            yield return WaitFor(()=>game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,8f);
+            yield return WaitFor(
+                ()=>game.DefenseWave.Phase==Necrom.Core.Domain.DefenseWavePhase.Running &&
+                   game.DefenseWave.ActiveEnemyCount==1,
+                8f);
             game.HudBinding.RefreshNow();
-            if(game.SoulBalance!=19 || game.Roster.ActiveCount!=5 ||
-                game.HudBinding.OverlayHost.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta")
-                    .GetComponent<UnityEngine.UI.Button>().interactable)
-                throw new InvalidOperationException("Full army input boundary mismatch.");
-            yield return Capture(game,output,size,"native-full-army");
+            game.DefenseHudBinding.RefreshNow();
+            if(game.Battle.Phase!=Necrom.Core.Domain.BattlePhase.Running)
+                throw new InvalidOperationException(
+                    "First native hybrid defeat resolved the whole battle.");
+            if(!game.HudBinding.OverlayHost.transform.Find("SafeAreaMirror/RaiseRenderContainer/PrimaryCta")
+                .GetComponent<UnityEngine.UI.Button>().interactable)
+                throw new InvalidOperationException(
+                    "First defeated native hybrid threat is not Raise-actionable.");
+            yield return Capture(game,output,size,"native-hybrid-first-defeat-motion");
+
+            var contributionBefore=visual.AlliedContributionCueCount;
+            var button=game.HudBinding.OverlayHost.transform.Find(
+                "SafeAreaMirror/RaiseRenderContainer/PrimaryCta") as RectTransform;
+            RequestClick(output,button);
+            yield return WaitFor(()=>game.Roster.ActiveCount==1,3f);
+            if(game.SoulBalance<11)
+                throw new InvalidOperationException("Native hybrid Raise resource boundary mismatch.");
+            yield return Capture(game,output,size,"native-hybrid-raised-motion");
+
+            yield return WaitFor(
+                ()=>visual.AlliedContributionCueCount>contributionBefore,
+                3f);
+            yield return Capture(game,output,size,"native-hybrid-ally-contribution-motion");
+
+            yield return WaitFor(
+                ()=>game.DefenseWave.Phase==Necrom.Core.Domain.DefenseWavePhase.Cleared &&
+                   game.Battle.Phase==Necrom.Core.Domain.BattlePhase.Resolved,
+                8f);
+            game.HudBinding.RefreshNow();
+            game.DefenseHudBinding.RefreshNow();
+            if(game.Session.ObservedContribution==null)
+                throw new InvalidOperationException(
+                    "Native hybrid run did not preserve exact Raised ally contribution proof.");
+            yield return Capture(game,output,size,"native-hybrid-cleared");
         }
         IEnumerator WaitFor(Func<bool> condition,float seconds)
         {
@@ -156,13 +166,38 @@ namespace Necrom.FirstPlayable.Runtime
                     .Count(x=>x.name=="FirstPlayableCombatHudOverlayCanvas"),
                 "target="+game.HudBinding.LastPresentation.Target.ContentKey,
                 "raise="+game.HudBinding.LastPresentation.Raise.ContentKey,
-                "army="+game.HudBinding.LastPresentation.Army.ContentKey};
+                "army="+game.HudBinding.LastPresentation.Army.ContentKey,
+                "defenseFigma="+FirstPlayableDefenseWaveHudRuntimeBinding.FigmaFileKey+
+                    ":"+FirstPlayableDefenseWaveHudRuntimeBinding.FigmaNodeId,
+                "defensePhase="+game.DefenseWave.Phase,
+                "defenseWave="+game.DefenseWave.WaveNumber,
+                "gateIntegrity="+game.DefenseWave.GateIntegrity+"/"+game.DefenseWave.GateMaxIntegrity,
+                "defenseActive="+game.DefenseWave.ActiveEnemyCount,
+                "defenseRemaining="+game.DefenseWave.RemainingEnemiesToSpawn};
             foreach(var name in new[]{"TargetStatusReadabilityZone","RaiseActionStatusReadabilityZone","ArmyStatusReadabilityZone","ProtectedCombatReadabilityZone","CombatViewport"})
             {
                 var rect=safe.Find(name) as RectTransform;
                 var corners=new Vector3[4];rect.GetWorldCorners(corners);
                 lines.Add(name+"="+string.Join(";",corners.Select(x=>x.ToString("F2"))));
             }
+            var defenseRoot=game.DefenseHudBinding.OverlayRoot.transform as RectTransform;
+            var protectedRectForHud=safe.Find("ProtectedCombatReadabilityZone") as RectTransform;
+            var defenseCorners=new Vector3[4];defenseRoot.GetWorldCorners(defenseCorners);
+            var protectedCorners=new Vector3[4];protectedRectForHud.GetWorldCorners(protectedCorners);
+            if(defenseCorners[0].y<protectedCorners[2].y-.1f)
+                throw new InvalidOperationException(
+                    "Runtime defense HUD overlaps protected combat art.");
+            lines.Add("defenseHudAboveProtectedCombat=PASS");
+            foreach(var name in new[]{"DefenseState","DefenseWaveTitle","DefenseWaveDetail"})
+            {
+                var text=defenseRoot.Find(name).GetComponent<TMP_Text>();
+                text.ForceMeshUpdate();
+                if(text.isTextOverflowing)
+                    throw new InvalidOperationException(
+                        "Runtime defense HUD text overflow: "+name);
+                lines.Add(name+"="+text.text);
+            }
+
             var visual=game.GetComponent<FirstPlayableVisualPresentation>();
             if(visual!=null)
             {

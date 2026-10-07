@@ -226,3 +226,44 @@ Done condition:
 - fresh targeted/full regressions pass;
 - a fresh Windows player executes and captures the hybrid loop through normal input;
 - no claim of physical-mobile or real-user acceptance is made before those tests actually occur.
+
+
+## EV-023 canonical hybrid composition update
+
+EV-023 converts the tested EV-022 seam into the saved canonical/default player path.
+
+Completed:
+- FirstPlayableGameplayComposition now owns FirstPlayableDefenseWaveRuntimeController;
+- saved FirstPlayable scene/prefab contain the defense runtime and defense HUD components;
+- the representative wave starts with two Guard threats without deciding launch content quantity;
+- first defeat keeps Battle/Defense Running and preserves the defeated Raise candidate while targeting the remaining active Guard;
+- Raise -> Formation -> actual Raised ally contribution now occurs inside the same canonical wave;
+- final threat defeat clears the wave;
+- sequential StartNextEncounter starts the next wave;
+- canonical gate orchestration verifies 10 -> 6 Running -> 0 Failed/Defeat;
+- visible FirstPlayableDefenseWaveHudRuntimeBinding maps Figma 46:309 semantics into the existing runtime overlay;
+- RUNNING / CLEARED / FAILED, wave, gate integrity/max, active/remaining threat and gate bar are runtime-visible;
+- final canonical targeted 7/7, integrated 4/4, production visual 10/10, full PlayMode 137/137 PASS;
+- fresh Windows build PASS / errors0;
+- representative Windows captures at 390x844 / 768x1024 / 360x640 keep the new HUD above protected combat art and preserve production readability;
+- normal Windows OS-input evidence executes automatic first defeat -> real Raise click -> actual Raised ally contribution -> Cleared.
+
+Evidence boundary:
+- responsive SafeArea is simulated, not physical-device evidence;
+- gate failure is currently canonical orchestration/test evidence, not an autonomous ordinary-player gate-pressure loop;
+- GameStateSnapshot wave/gate persistence is still absent;
+- Founder creative, legal/font release, physical mobile, accessibility and real-user evidence remain NOT RUN;
+- two threats and gate integrity 10 are representative slice inputs only, not launch/final balance decisions.
+
+Updated direct DEV:
+- DEV-02-13 bounded Figma -> runtime mapping: PASS for node 46:309 semantic contract
+- DEV-04-03 visible runtime defense HUD: PASS bounded
+- DEV-04-12 canonical integration regression: PASS bounded
+- DEV-04-09/10 responsive Windows runtime mapping: PASS bounded
+- DEV-06-03 canonical hybrid PlayMode regression: PASS bounded
+- next: normal-play gate pressure/failure path, then human/device gates.
+
+Next implementation boundary:
+VISIBLE GATE PRESSURE + NORMAL-PLAY FAILURE PATH.
+
+Do not add tower placement, multi-lane, final economy or launch content expansion in that work.

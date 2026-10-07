@@ -1,4 +1,7 @@
-param([string]$Player='C:\Dev\Necrom-playmode-recovery\Artifacts\VisualPlayer\NecromVisual.exe')
+param(
+ [string]$Player='C:\Dev\Necrom\Artifacts\VisualPlayer\NecromVisual.exe',
+ [int]$ExpectedClicks=1
+)
 $ErrorActionPreference='Stop'
 Add-Type @'
 using System;
@@ -9,6 +12,8 @@ public static class NecromInput {
  [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr context);
  [DllImport("user32.dll")] public static extern uint GetDpiForWindow(IntPtr h);
  [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+ [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr h,int n);
+ [DllImport("user32.dll")] public static extern bool BringWindowToTop(IntPtr h);
  [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr h,out RECT r);
  [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr h,ref POINT p);
  [DllImport("user32.dll")] public static extern bool SetCursorPos(int x,int y);
@@ -45,7 +50,16 @@ try {
      if(-not [NecromInput]::GetClientRect($handle,[ref]$rect)){throw 'Cannot read DPI-aware client rectangle'}
      $records.Add("DPI="+[NecromInput]::GetDpiForWindow($handle)+" virtual="+$virtualPixels+" physical=$($rect.Right-$rect.Left)x$($rect.Bottom-$rect.Top)")
      if(($rect.Right-$rect.Left) -ne [int]$v[3] -or ($rect.Bottom-$rect.Top) -ne [int]$v[4]){throw "Actual client pixels mismatch: actual=$($rect.Right-$rect.Left)x$($rect.Bottom-$rect.Top), requested=$($v[3])x$($v[4])"}
-     if(-not [NecromInput]::SetForegroundWindow($handle)){throw 'Could not focus own player'}
+     $ws=New-Object -ComObject WScript.Shell
+     $focused=$false
+     for($attempt=0;$attempt -lt 10 -and -not $focused;$attempt++){
+      [void][NecromInput]::ShowWindow($handle,9)
+      [void][NecromInput]::BringWindowToTop($handle)
+      [void]$ws.AppActivate($proc.Id)
+      Start-Sleep -Milliseconds 150
+      $focused=[NecromInput]::SetForegroundWindow($handle)
+     }
+     if(-not $focused){throw 'Could not focus own player after robust activation retry'}
      $point=New-Object NecromInput+POINT
      $point.X=[int]$v[1]
      $point.Y=[int]$v[4]-[int]$v[2]
@@ -64,10 +78,10 @@ try {
  }
  if(-not $proc.HasExited){throw 'Native player evidence timed out'}
  $proc.WaitForExit()
- if($proc.ExitCode -ne 0 -or -not $runDir -or -not(Test-Path (Join-Path $runDir 'complete.txt')) -or $last -ne 10){
-  throw "Incomplete native input evidence: exit=$($proc.ExitCode), clicks=$last"
+ if($proc.ExitCode -ne 0 -or -not $runDir -or -not(Test-Path (Join-Path $runDir 'complete.txt')) -or $last -ne $ExpectedClicks){
+  throw "Incomplete native input evidence: exit=$($proc.ExitCode), clicks=$last expected=$ExpectedClicks"
  }
- Write-Output "NATIVE_INPUT_PASS=10 real OS clicks; PLAYER_EXIT=$($proc.ExitCode); run=$runDir"
+ Write-Output "NATIVE_INPUT_PASS=$ExpectedClicks real OS clicks; PLAYER_EXIT=$($proc.ExitCode); run=$runDir"
 } finally {
  if(-not $proc.HasExited){Stop-Process -Id $proc.Id}
 }

@@ -151,6 +151,27 @@ namespace Necrom.FirstPlayable.Runtime
             }
         }
 
+        public void ClearEncounterTargets()
+        {
+            var targets = new HashSet<EnemyRuntimeEntity>(_activeThreats);
+            if (CurrentTarget != null)
+                targets.Add(CurrentTarget);
+
+            _activeThreats.Clear();
+            CurrentTarget = null;
+
+            foreach (var target in targets)
+            {
+                if (target == null)
+                    continue;
+
+                if (Application.isPlaying)
+                    Destroy(target.gameObject);
+                else
+                    DestroyImmediate(target.gameObject);
+            }
+        }
+
         private void PruneDestroyedThreats()
         {
             for (var i = _activeThreats.Count - 1; i >= 0; i--)
