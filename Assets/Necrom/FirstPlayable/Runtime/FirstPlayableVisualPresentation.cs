@@ -17,7 +17,8 @@ namespace Necrom.FirstPlayable.Runtime
         PineSlash = 4,
         CloverWind = 5,
         ChestnutStar = 6,
-        BerryBurst = 7
+        BerryBurst = 7,
+        GrowthRingBarrier = 8
     }
 
     [Serializable]
@@ -656,6 +657,13 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(9f, 22f), new Vector2(32f, 5f), new Color(1f,.72f,.50f), -36f, .82f);
                     SetVfxPart(slot, 2, new Vector2(46f, 20f), new Vector2(32f, 5f), new Color(1f,.72f,.50f), 34f, .82f);
                     SetVfxPart(slot, 3, new Vector2(35f, 55f), new Vector2(16f, 8f), new Color(.31f,.83f,.47f), -20f, .86f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.GrowthRingBarrier:
+                    SetVfxPart(slot, 0, new Vector2(27f, 36f), new Vector2(42f, 42f), accent, 45f, .28f);
+                    SetVfxPart(slot, 1, new Vector2(27f, 36f), new Vector2(30f, 30f), new Color(.94f,.66f,.28f), 45f, .42f);
+                    SetVfxPart(slot, 2, new Vector2(27f, 36f), new Vector2(18f, 18f), new Color(1f,.82f,.38f), 45f, .58f);
+                    SetVfxPart(slot, 3, new Vector2(47f, 54f), new Vector2(10f, 6f), new Color(.46f,.28f,.14f), -18f, .70f);
                     break;
 
                 default:

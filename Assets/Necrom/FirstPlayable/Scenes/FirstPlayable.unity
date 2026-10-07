@@ -537,6 +537,10 @@ MonoBehaviour:
     Art: {fileID: 2800000, guid: 2e7928ec60ff51046bc0b01b5f46e45d, type: 3}
     VfxIdentity: 7
     Accent: {r: 1, g: 0.35, b: 0.42, a: 1}
+  - ArchetypeId: forest.chr008
+    Art: {fileID: 2800000, guid: d771f9cbda3598f46af4d929f28bdaf6, type: 3}
+    VfxIdentity: 8
+    Accent: {r: 0.78, g: 0.48, b: 0.2, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:

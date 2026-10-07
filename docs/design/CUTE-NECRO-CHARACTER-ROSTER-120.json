@@ -136,7 +136,7 @@
         "family":  "숲 친구",
         "index":  8,
         "role":  "방어",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -145,7 +145,12 @@
         "rarity":  "LEGEND",
         "prop":  "나무껍질 방패",
         "vfxIdentity":  "나이테 장벽",
-        "familyFigmaNode":  "61:309"
+        "familyFigmaNode":  "61:309",
+        "runtimeArchetypeId":  "forest.chr008",
+        "runtimeArtFile":  "forest_chr_008.png",
+        "runtimeVfxIdentity":  "GrowthRingBarrier",
+        "productionStateBoard":  "69:309",
+        "familyArtNode":  "61:496"
     },
     {
         "id":  "CHR-009",
