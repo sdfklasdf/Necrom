@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Necrom.Core.Domain;
 using EntityId = Necrom.Core.Domain.EntityId;
 using UnityEngine;
@@ -12,6 +13,9 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class FirstPlayableVisualPresentation : MonoBehaviour
     {
         public Texture2D NecromancerArt, GuardArt, RaisedGuardArt, BackgroundArt;
+        public Texture2D[] ForestFriendEnemyArts = Array.Empty<Texture2D>();
+        public int LoadedForestFriendArtCount =>
+            ForestFriendEnemyArts == null ? 0 : ForestFriendEnemyArts.Count(x => x != null);
         public AnimationCurve AttackLunge, HitFlash, DefeatScaleY, RaiseScale, AlliedContributionScale;
         public float AttackDuration = .24f, HitDuration = .16f, DefeatDuration = .50f, RaiseDuration = .66f, AlliedContributionDuration = .20f;
 
@@ -31,6 +35,9 @@ namespace Necrom.FirstPlayable.Runtime
                                          AlliedContributionScale != null && AlliedContributionScale.length >= 2;
 
         public int PlayerAttackCueCount { get; private set; }
+        public string CurrentEnemyArtName => _enemy != null && _enemy.texture != null
+            ? _enemy.texture.name
+            : null;
         public int HitCueCount { get; private set; }
         public int DefeatCueCount { get; private set; }
         public int RaiseCueCount { get; private set; }
@@ -212,6 +219,23 @@ namespace Necrom.FirstPlayable.Runtime
             }
         }
 
+        Texture2D EnemyArtFor(string id)
+        {
+            if (ForestFriendEnemyArts == null || ForestFriendEnemyArts.Length == 0 || string.IsNullOrEmpty(id))
+                return GuardArt;
+
+            var separator = id.LastIndexOf(':');
+            if (separator >= 0 &&
+                int.TryParse(id.Substring(separator + 1), out var ordinal) &&
+                ordinal > 0)
+            {
+                var index = (ordinal - 1) % ForestFriendEnemyArts.Length;
+                return ForestFriendEnemyArts[index] != null ? ForestFriendEnemyArts[index] : GuardArt;
+            }
+
+            return ForestFriendEnemyArts[0] != null ? ForestFriendEnemyArts[0] : GuardArt;
+        }
+
         void PlayerAttack(EntityId actor, DamageDeathResult result)
         {
             if (!result.Changed) return;
@@ -310,6 +334,7 @@ namespace Necrom.FirstPlayable.Runtime
                 _defeated = false;
                 _defeatRemaining = 0f;
                 _hitRemaining = 0f;
+                _enemy.texture = EnemyArtFor(id);
             }
             _enemy.gameObject.SetActive(target != null);
 

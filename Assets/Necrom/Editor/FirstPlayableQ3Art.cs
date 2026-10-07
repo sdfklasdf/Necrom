@@ -14,6 +14,7 @@ namespace Necrom.EditorTools
     {
         const string ArtRootPath = "Assets/Necrom/FirstPlayable/Art/Q3/";
         const string ArtPath = ArtRootPath + "ProductionCandidate/";
+        const string ForestFriendPath = ArtRootPath + "ForestFriends/";
         const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/";
         const string ProfilePath = ArtRootPath + "FirstPlayablePresentationProfile.asset";
         const string ProductionFontRoot = "Assets/Necrom/FirstPlayable/Fonts/Production/";
@@ -21,7 +22,7 @@ namespace Necrom.EditorTools
         const string FontMediumPath = ProductionFontRoot + "NotoSansKR-Medium SDF.asset";
         const string FontBoldPath = ProductionFontRoot + "NotoSansKR-Bold SDF.asset";
 
-        [MenuItem("Necrom/Q3/Apply approved Obsidian Soul production-candidate art")]
+        [MenuItem("Necrom/Q3/Apply active Cute Necro production-candidate art")]
         public static void Apply()
         {
             AssetDatabase.Refresh();
@@ -35,6 +36,21 @@ namespace Necrom.EditorTools
                 importer.alphaIsTransparency = name != "background";
                 importer.textureCompression = TextureImporterCompression.Uncompressed;
                 importer.maxTextureSize = 2048;
+                importer.mipmapEnabled = false;
+                importer.SaveAndReimport();
+            }
+
+            foreach (var name in new[] { "forest_chr_001", "forest_chr_003", "forest_chr_006" })
+            {
+                var path = ForestFriendPath + name + ".png";
+                var importer = (TextureImporter)AssetImporter.GetAtPath(path);
+                if (importer == null)
+                    throw new Exception("Forest Friend representative art missing: " + path);
+                importer.textureType = TextureImporterType.Sprite;
+                importer.spriteImportMode = SpriteImportMode.Single;
+                importer.alphaIsTransparency = true;
+                importer.textureCompression = TextureImporterCompression.Uncompressed;
+                importer.maxTextureSize = 512;
                 importer.mipmapEnabled = false;
                 importer.SaveAndReimport();
             }
@@ -67,6 +83,12 @@ namespace Necrom.EditorTools
             visual.GuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "guard.png");
             visual.RaisedGuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "raised.png");
             visual.BackgroundArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "background.png");
+            visual.ForestFriendEnemyArts = new[]
+            {
+                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_001.png"),
+                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_003.png"),
+                AssetDatabase.LoadAssetAtPath<Texture2D>(ForestFriendPath + "forest_chr_006.png")
+            };
             visual.AttackLunge = new AnimationCurve(profile.AttackLunge.keys);
             visual.HitFlash = new AnimationCurve(profile.HitFlash.keys);
             visual.DefeatScaleY = new AnimationCurve(profile.DefeatScaleY.keys);
@@ -91,7 +113,9 @@ namespace Necrom.EditorTools
             EditorUtility.SetDirty(visual);
 
             if (visual.LoadedArtCount != 4)
-                throw new Exception("Four Q3 art references must resolve.");
+                throw new Exception("Four Q3 base art references must resolve.");
+            if (visual.LoadedForestFriendArtCount != 3)
+                throw new Exception("Three representative Forest Friend art references must resolve.");
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 authored motion/audio values failed scene serialization input.");
 
@@ -316,9 +340,9 @@ namespace Necrom.EditorTools
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(FirstPlayableCanonicalScene.PrefabPath);
             var prefabVisual = prefab.GetComponent<FirstPlayableVisualPresentation>();
 
-            if (visual == null || visual.LoadedArtCount != 4 ||
-                prefabVisual == null || prefabVisual.LoadedArtCount != 4)
-                throw new Exception("Q3 scene/prefab lost art references.");
+            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedForestFriendArtCount != 3 ||
+                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedForestFriendArtCount != 3)
+                throw new Exception("Q3 scene/prefab lost base or Forest Friend art references.");
 
             foreach (var texture in new[]
                      {
@@ -329,6 +353,12 @@ namespace Necrom.EditorTools
                 var path = AssetDatabase.GetAssetPath(texture);
                 if (string.IsNullOrEmpty(path) || !path.StartsWith(ArtPath, StringComparison.Ordinal))
                     throw new Exception("Q3 canonical art is not bound to the approved ProductionCandidate path: " + path);
+            }
+            foreach (var texture in visual.ForestFriendEnemyArts)
+            {
+                var path = AssetDatabase.GetAssetPath(texture);
+                if (string.IsNullOrEmpty(path) || !path.StartsWith(ForestFriendPath, StringComparison.Ordinal))
+                    throw new Exception("Forest Friend art escaped approved family path: " + path);
             }
             if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null ||
                 root.ReviewFontMedium == null || root.ReviewFontMedium.sourceFontFile == null ||

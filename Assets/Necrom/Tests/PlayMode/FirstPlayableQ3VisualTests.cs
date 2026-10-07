@@ -92,6 +92,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             var v = Visual();
             Assert.That(Count(v, "LoadedArtCount"), Is.EqualTo(4));
+            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(3),
+                "First production family must bind three representative Forest Friend textures.");
             Assert.That(Convert.ToBoolean(Prop(v, "HasAuthoredMotion")), Is.True);
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
@@ -112,10 +114,35 @@ namespace Necrom.FirstPlayable.Tests
                 var texture = (Texture2D)field.GetValue(v);
                 Assert.That(texture, Is.Not.Null, fieldName + " texture must resolve.");
                 Assert.That(AssetDatabase.GetAssetPath(texture), Does.StartWith(expectedPrefix),
-                    fieldName + " must bind the approved Obsidian Soul ProductionCandidate asset.");
+                    fieldName + " must bind the active Cute Necro base ProductionCandidate asset.");
+            }
+
+            var familyField = v.GetType().GetField("ForestFriendEnemyArts", BindingFlags.Public | BindingFlags.Instance);
+            Assert.That(familyField, Is.Not.Null);
+            var familyTextures = (Texture2D[])familyField.GetValue(v);
+            Assert.That(familyTextures, Has.Length.EqualTo(3));
+            foreach (var texture in familyTextures)
+            {
+                Assert.That(texture, Is.Not.Null);
+                Assert.That(AssetDatabase.GetAssetPath(texture),
+                    Does.StartWith("Assets/Necrom/FirstPlayable/Art/Q3/ForestFriends/"));
             }
 #endif
             yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator CanonicalThreatsUseDistinctForestFriendRepresentativeArt()
+        {
+            var v = Visual();
+            Assert.That((string)Prop(v, "CurrentEnemyArtName"), Is.EqualTo("forest_chr_001"),
+                "Canonical threat 1 should enter through Forest Friend representative slot 1.");
+
+            Call("AdvanceCombat", 3f);
+            yield return new WaitForSeconds(.7f);
+
+            Assert.That((string)Prop(v, "CurrentEnemyArtName"), Is.EqualTo("forest_chr_003"),
+                "Canonical threat 2 should visibly advance to the next Forest Friend representative art.");
         }
 
         [UnityTest]
