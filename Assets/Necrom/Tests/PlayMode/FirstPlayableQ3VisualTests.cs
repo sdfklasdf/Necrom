@@ -92,8 +92,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             var v = Visual();
             Assert.That(Count(v, "LoadedArtCount"), Is.EqualTo(4));
-            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(3),
-                "First production family must bind three representative Forest Friend textures.");
+            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(5),
+                "First production family must bind five representative Forest Friend textures.");
             Assert.That(Convert.ToBoolean(Prop(v, "HasAuthoredMotion")), Is.True);
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
@@ -122,7 +122,7 @@ namespace Necrom.FirstPlayable.Tests
                 BindingFlags.Public | BindingFlags.Instance);
             Assert.That(familyField, Is.Not.Null);
             var bindings = (Array)familyField.GetValue(v);
-            Assert.That(bindings.Length, Is.EqualTo(3));
+            Assert.That(bindings.Length, Is.EqualTo(5));
             var archetypes = new System.Collections.Generic.HashSet<string>();
             foreach (var binding in bindings)
             {

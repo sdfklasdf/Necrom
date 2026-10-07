@@ -40,7 +40,7 @@ namespace Necrom.EditorTools
                 importer.SaveAndReimport();
             }
 
-            foreach (var name in new[] { "forest_chr_001", "forest_chr_003", "forest_chr_006" })
+            foreach (var name in new[] { "forest_chr_001", "forest_chr_002", "forest_chr_003", "forest_chr_004", "forest_chr_006" })
             {
                 var path = ForestFriendPath + name + ".png";
                 var importer = (TextureImporter)AssetImporter.GetAtPath(path);
@@ -95,11 +95,27 @@ namespace Necrom.EditorTools
                 },
                 new FirstPlayableCharacterVisualBinding
                 {
+                    ArchetypeId = "forest.chr002",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        ForestFriendPath + "forest_chr_002.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.PineSlash,
+                    Accent = new Color(1f, .48f, .47f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
                     ArchetypeId = "forest.chr003",
                     Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
                         ForestFriendPath + "forest_chr_003.png"),
                     VfxIdentity = FirstPlayableCharacterVfxIdentity.StarArrow,
                     Accent = new Color(.32f, .67f, 1f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "forest.chr004",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        ForestFriendPath + "forest_chr_004.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.CloverWind,
+                    Accent = new Color(.31f, .83f, .68f)
                 },
                 new FirstPlayableCharacterVisualBinding
                 {
@@ -135,8 +151,8 @@ namespace Necrom.EditorTools
 
             if (visual.LoadedArtCount != 4)
                 throw new Exception("Four Q3 base art references must resolve.");
-            if (visual.LoadedForestFriendArtCount != 3)
-                throw new Exception("Three representative Forest Friend art references must resolve.");
+            if (visual.LoadedForestFriendArtCount != 5)
+                throw new Exception("Five representative Forest Friend art references must resolve.");
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 authored motion/audio values failed scene serialization input.");
 
@@ -361,8 +377,8 @@ namespace Necrom.EditorTools
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(FirstPlayableCanonicalScene.PrefabPath);
             var prefabVisual = prefab.GetComponent<FirstPlayableVisualPresentation>();
 
-            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedForestFriendArtCount != 3 ||
-                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedForestFriendArtCount != 3)
+            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedForestFriendArtCount != 5 ||
+                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedForestFriendArtCount != 5)
                 throw new Exception("Q3 scene/prefab lost base or Forest Friend art references.");
 
             foreach (var texture in new[]

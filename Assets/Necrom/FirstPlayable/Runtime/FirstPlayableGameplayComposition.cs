@@ -304,7 +304,9 @@ namespace Necrom.FirstPlayable.Runtime
             return archetypeId switch
             {
                 "forest.chr001" => "도토리 방패병",
+                "forest.chr002" => "솔방울 검객",
                 "forest.chr003" => "민들레 궁수",
+                "forest.chr004" => "클로버 우편부",
                 "forest.chr006" => "이슬 치료사",
                 _ => "숲 친구"
             };

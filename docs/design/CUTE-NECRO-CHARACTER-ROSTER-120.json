@@ -20,7 +20,7 @@
         "family":  "숲 친구",
         "index":  2,
         "role":  "근접",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_IMPLEMENTED_VERIFICATION_PENDING",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -29,7 +29,12 @@
         "rarity":  "RARE",
         "prop":  "나뭇가지 검",
         "vfxIdentity":  "별 베기",
-        "familyFigmaNode":  "61:309"
+        "familyFigmaNode":  "61:309",
+        "runtimeArchetypeId":  "forest.chr002",
+        "runtimeArtFile":  "forest_chr_002.png",
+        "runtimeVfxIdentity":  "PineSlash",
+        "productionStateBoard":  "66:309",
+        "familyArtNode":  "61:337"
     },
     {
         "id":  "CHR-003",
@@ -52,7 +57,7 @@
         "family":  "숲 친구",
         "index":  4,
         "role":  "지원",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_IMPLEMENTED_VERIFICATION_PENDING",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -61,7 +66,12 @@
         "rarity":  "EPIC",
         "prop":  "클로버 우편가방",
         "vfxIdentity":  "클로버 바람",
-        "familyFigmaNode":  "61:309"
+        "familyFigmaNode":  "61:309",
+        "runtimeArchetypeId":  "forest.chr004",
+        "runtimeArtFile":  "forest_chr_004.png",
+        "runtimeVfxIdentity":  "CloverWind",
+        "productionStateBoard":  "66:309",
+        "familyArtNode":  "61:394"
     },
     {
         "id":  "CHR-005",

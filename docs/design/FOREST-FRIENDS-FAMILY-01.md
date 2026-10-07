@@ -16,6 +16,6 @@ Figma board: 61:309
 
 Shared rig is a production accelerator only. It does not collapse these into palette swaps: silhouette/head accessory, face treatment, prop, color identity and VFX identity are distinct.
 
-Runtime representative exports currently exist for CHR-001 / CHR-003 / CHR-006. The remaining seven are Figma kit-complete, not Unity production-complete.
+Runtime representative exports now exist for CHR-001 / CHR-002 / CHR-003 / CHR-004 / CHR-006. CHR-002 and CHR-004 were added in fast-mode production wave B with Figma state board 66:309 and remain VERIFICATION_PENDING until the scheduled 10-AWU batch gate. The remaining five are Figma kit-complete, not Unity production-complete.
 
 Important scale boundary: one family kit is not “the character work done.” Each character still requires production states/animation/VFX/balance/data/device readability passes later. The 120-character target therefore remains a large multi-thousand-detail visual/content workload, not a ~20-unit whole-game task.
