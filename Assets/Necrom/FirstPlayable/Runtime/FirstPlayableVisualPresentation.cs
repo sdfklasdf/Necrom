@@ -44,7 +44,9 @@ namespace Necrom.FirstPlayable.Runtime
         FirstPlayableAutoCombatLoop _playerLoop;
         FirstPlayableAlliedAutoCombatLoop _alliedLoop;
         RawImage _player, _enemy, _background;
-        Image _gateObjective;
+        RectTransform _gateObjective;
+        readonly Image[] _gateAccentParts = new Image[7];
+        Sprite _gateStoneSprite, _gateHaloSprite;
         AudioSource _audio;
         readonly RawImage[] _allies = new RawImage[Formation.Capacity];
         readonly float[] _allyRaiseRemaining = new float[Formation.Capacity];
@@ -88,21 +90,31 @@ namespace Necrom.FirstPlayable.Runtime
             _background.rectTransform.anchorMax = Vector2.one;
             _background.rectTransform.offsetMin = _background.rectTransform.offsetMax = Vector2.zero;
 
-            var gateObject = new GameObject(
-                "GateObjective",
-                typeof(RectTransform),
-                typeof(Image),
-                typeof(Outline));
+            var gateObject = new GameObject("GateObjective", typeof(RectTransform));
             gateObject.transform.SetParent(_root, false);
-            _gateObjective = gateObject.GetComponent<Image>();
-            _gateObjective.color = new Color(.04f, .16f, .13f, .72f);
-            _gateObjective.raycastTarget = false;
-            var gateOutline = gateObject.GetComponent<Outline>();
-            gateOutline.effectColor = new Color(.19f, .83f, .61f, .82f);
-            gateOutline.effectDistance = new Vector2(2f, -2f);
-            _gateObjective.rectTransform.anchorMin =
-                _gateObjective.rectTransform.anchorMax = Vector2.zero;
-            _gateObjective.rectTransform.pivot = Vector2.zero;
+            _gateObjective = (RectTransform)gateObject.transform;
+            _gateObjective.anchorMin = _gateObjective.anchorMax = Vector2.zero;
+            _gateObjective.pivot = Vector2.zero;
+            _gateObjective.sizeDelta = new Vector2(46f, 138f);
+
+            // Obsidian Soul cemetery ward: architectural pylons + barred opening + soul seal.
+            // This replaces the proof-only green strip without changing the defended-objective position.
+            _gateStoneSprite = FirstPlayableCombatHudUnityView.RoundedSprite(4f);
+            _gateHaloSprite = FirstPlayableCombatHudUnityView.RoundedSprite(10f);
+            GateStone("LeftPylon", 1f, 13f, 10f, 91f);
+            GateStone("RightPylon", 35f, 13f, 10f, 91f);
+            GateStone("Lintel", 4f, 100f, 38f, 10f);
+            GateStone("LeftCap", 0f, 107f, 12f, 9f);
+            GateStone("RightCap", 34f, 107f, 12f, 9f);
+            GateStone("GateBase", 2f, 5f, 42f, 11f);
+            _gateAccentParts[0] = GateAccent("CenterBar", 21f, 23f, 4f, 72f, .58f);
+            _gateAccentParts[1] = GateAccent("BarLeft", 14f, 23f, 3f, 68f, .34f);
+            _gateAccentParts[2] = GateAccent("BarRight", 29f, 23f, 3f, 68f, .34f);
+            _gateAccentParts[3] = GateAccent("SoulSeal", 18f, 120f, 10f, 10f, .96f);
+            _gateAccentParts[3].rectTransform.localRotation = Quaternion.Euler(0f, 0f, 45f);
+            _gateAccentParts[4] = GateAccent("SoulHalo", 13f, 115f, 20f, 20f, .20f, _gateHaloSprite);
+            _gateAccentParts[5] = GateAccent("ThresholdLeft", 5f, 16f, 14f, 2f, .72f);
+            _gateAccentParts[6] = GateAccent("ThresholdRight", 27f, 16f, 14f, 2f, .72f);
 
             _player = Art("Necromancer", NecromancerArt);
             _enemy = Art("Guard", GuardArt);
@@ -128,6 +140,55 @@ namespace Necrom.FirstPlayable.Runtime
             image.rectTransform.anchorMin = image.rectTransform.anchorMax = Vector2.zero;
             image.rectTransform.pivot = Vector2.zero;
             return image;
+        }
+
+        Image GateStone(string name, float x, float y, float width, float height)
+        {
+            var image = GatePart(name, x, y, width, height, _gateStoneSprite);
+            image.color = new Color(.055f, .07f, .09f, .96f);
+            return image;
+        }
+
+        Image GateAccent(
+            string name, float x, float y, float width, float height,
+            float alpha, Sprite sprite = null)
+        {
+            var image = GatePart(name, x, y, width, height, sprite ?? _gateStoneSprite);
+            image.color = new Color(8f/255f, 127f/255f, 91f/255f, alpha);
+            return image;
+        }
+
+        Image GatePart(
+            string name, float x, float y, float width, float height, Sprite sprite)
+        {
+            var o = new GameObject(name, typeof(RectTransform), typeof(Image));
+            o.transform.SetParent(_gateObjective, false);
+            var image = o.GetComponent<Image>();
+            image.sprite = sprite;
+            image.type = Image.Type.Sliced;
+            image.raycastTarget = false;
+            var rect = image.rectTransform;
+            rect.anchorMin = rect.anchorMax = Vector2.zero;
+            rect.pivot = Vector2.zero;
+            rect.anchoredPosition = new Vector2(x, y);
+            rect.sizeDelta = new Vector2(width, height);
+            return image;
+        }
+
+        void ApplyGateObjectiveState()
+        {
+            var failed = _game.DefenseWave != null &&
+                         _game.DefenseWave.Phase == DefenseWavePhase.Failed;
+            var baseColor = failed
+                ? new Color(201f/255f, 42f/255f, 42f/255f)
+                : new Color(8f/255f, 127f/255f, 91f/255f);
+            var alpha = new[] { .58f, .34f, .34f, .96f, .20f, .72f, .72f };
+            for (var i = 0; i < _gateAccentParts.Length; i++)
+            {
+                if (_gateAccentParts[i] != null)
+                    _gateAccentParts[i].color =
+                        new Color(baseColor.r, baseColor.g, baseColor.b, alpha[i]);
+            }
         }
 
         void PlayerAttack(EntityId actor, DamageDeathResult result)
@@ -252,11 +313,11 @@ namespace Necrom.FirstPlayable.Runtime
             var enemyStartX = 246f / 390f * w;
             var enemyGateX = 164f / 390f * w;
             var enemyX = Mathf.Lerp(enemyStartX, enemyGateX, pressure);
-            Place(_gateObjective.rectTransform,
-                146f / 390f * w,
-                75f * scale,
-                10f * scale,
-                135f * scale);
+            // Preserve the prior objective center/pressure endpoint while replacing only its art.
+            _gateObjective.anchoredPosition = new Vector2(128f / 390f * w, 75f * scale);
+            _gateObjective.sizeDelta = new Vector2(46f, 138f);
+            _gateObjective.localScale = Vector3.one * scale;
+            ApplyGateObjectiveState();
             Place(_player, 42f / 390f * w + lunge * 11f * scale, 32f * scale, 92f * scale, 138f * scale);
             Place(_enemy, enemyX + hit * 2.5f * scale, 75f * scale, 90f * scale, 135f * scale);
 
@@ -348,6 +409,23 @@ namespace Necrom.FirstPlayable.Runtime
         {
             if (_playerLoop != null) _playerLoop.AttackApplied -= PlayerAttack;
             if (_alliedLoop != null) _alliedLoop.AttackApplied -= AlliedAttack;
+            ReleaseSprite(_gateStoneSprite);
+            ReleaseSprite(_gateHaloSprite);
+        }
+
+        static void ReleaseSprite(Sprite sprite)
+        {
+            if (sprite == null) return;
+            if (Application.isPlaying)
+            {
+                Destroy(sprite.texture);
+                Destroy(sprite);
+            }
+            else
+            {
+                DestroyImmediate(sprite.texture);
+                DestroyImmediate(sprite);
+            }
         }
     }
 }

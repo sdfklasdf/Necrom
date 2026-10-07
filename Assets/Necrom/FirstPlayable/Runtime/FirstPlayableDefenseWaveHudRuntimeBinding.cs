@@ -24,10 +24,12 @@ namespace Necrom.FirstPlayable.Runtime
         private TextMeshProUGUI _detailText;
         private Image _background;
         private Outline _outline;
+        private Image _stateDot;
         private RectTransform _gateFillRect;
         private Image _gateFill;
         private Sprite _panelSprite;
         private Sprite _barSprite;
+        private Sprite _dotSprite;
 
         public bool IsInitialized =>
             _defense != null &&
@@ -101,37 +103,49 @@ namespace Necrom.FirstPlayable.Runtime
 
             _boundOverlay = overlay;
             _container = NewRect(safe, "DefenseWaveRenderContainer");
-            _container.sizeDelta = new Vector2(342f, 58f);
+            _container.sizeDelta = new Vector2(342f, 52f);
 
             _background = _container.gameObject.AddComponent<Image>();
             _panelSprite ??= FirstPlayableCombatHudUnityView.RoundedSprite(16f);
             _background.sprite = _panelSprite;
             _background.type = Image.Type.Sliced;
-            _background.color = new Color(32f/255f, 37f/255f, 50f/255f, .97f);
+            _background.color = new Color(32f/255f, 37f/255f, 50f/255f, .94f);
             _background.raycastTarget = false;
 
             _outline = _container.gameObject.AddComponent<Outline>();
             _outline.effectDistance = new Vector2(1f, -1f);
             _outline.useGraphicAlpha = true;
 
+            var dot = NewRect(_container, "DefenseStateDot");
+            dot.anchorMin = dot.anchorMax = new Vector2(0f, 1f);
+            dot.pivot = new Vector2(0f, 1f);
+            dot.anchoredPosition = new Vector2(14f, -14f);
+            dot.sizeDelta = new Vector2(8f, 8f);
+            _stateDot = dot.gameObject.AddComponent<Image>();
+            _dotSprite ??= FirstPlayableCombatHudUnityView.RoundedSprite(4f);
+            _stateDot.sprite = _dotSprite;
+            _stateDot.type = Image.Type.Sliced;
+            _stateDot.raycastTarget = false;
+
             _stateText = NewText(
                 _container, "DefenseState", _medium, 11f,
-                new Vector2(16f, -7f), new Vector2(76f, 16f));
+                new Vector2(30f, -8f), new Vector2(68f, 18f));
             _titleText = NewText(
-                _container, "DefenseWaveTitle", _bold, 16f,
-                new Vector2(96f, -5f), new Vector2(230f, 20f));
+                _container, "DefenseWaveTitle", _bold, 13f,
+                new Vector2(104f, -6f), new Vector2(102f, 20f));
             _detailText = NewText(
-                _container, "DefenseWaveDetail", _regular, 12f,
-                new Vector2(16f, -27f), new Vector2(310f, 16f));
+                _container, "DefenseWaveDetail", _regular, 10f,
+                new Vector2(210f, -8f), new Vector2(118f, 18f));
+            _detailText.alignment = TextAlignmentOptions.TopRight;
             _stateText.color = new Color(8f/255f, 127f/255f, 91f/255f);
             _titleText.color = Color.white;
-            _detailText.color = new Color(193f/255f, 199f/255f, 208f/255f);
+            _detailText.color = new Color(230f/255f, 233f/255f, 239f/255f);
 
             var bar = NewRect(_container, "GateIntegrityBar");
             bar.anchorMin = bar.anchorMax = new Vector2(0f, 1f);
             bar.pivot = new Vector2(0f, 1f);
-            bar.anchoredPosition = new Vector2(16f, -48f);
-            bar.sizeDelta = new Vector2(310f, 5f);
+            bar.anchoredPosition = new Vector2(14f, -40f);
+            bar.sizeDelta = new Vector2(314f, 4f);
             var barImage = bar.gameObject.AddComponent<Image>();
             _barSprite ??= FirstPlayableCombatHudUnityView.RoundedSprite(3f);
             barImage.sprite = _barSprite;
@@ -143,7 +157,7 @@ namespace Necrom.FirstPlayable.Runtime
             _gateFillRect.anchorMin = _gateFillRect.anchorMax = new Vector2(0f, .5f);
             _gateFillRect.pivot = new Vector2(0f, .5f);
             _gateFillRect.anchoredPosition = Vector2.zero;
-            _gateFillRect.sizeDelta = new Vector2(310f, 5f);
+            _gateFillRect.sizeDelta = new Vector2(314f, 4f);
             _gateFill = _gateFillRect.gameObject.AddComponent<Image>();
             _gateFill.sprite = _barSprite;
             _gateFill.type = Image.Type.Sliced;
@@ -164,7 +178,7 @@ namespace Necrom.FirstPlayable.Runtime
                 new Vector2(.5f, protectedMirror.anchorMax.y);
             _container.pivot = new Vector2(.5f, 0f);
             _container.anchoredPosition = new Vector2(0f, 4f);
-            _container.sizeDelta = new Vector2(342f, 58f);
+            _container.sizeDelta = new Vector2(342f, 52f);
         }
 
         private void Apply(FirstPlayableDefenseWaveHudState state)
@@ -178,8 +192,7 @@ namespace Necrom.FirstPlayable.Runtime
                     _titleText.text = "웨이브 " + state.WaveNumber;
                     _detailText.text =
                         "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity +
-                        " · 위협 " + state.ActiveEnemyCount +
-                        " · 대기 " + state.RemainingEnemiesToSpawn;
+                        " · 위협 " + state.ActiveEnemyCount;
                     break;
 
                 case DefenseWavePhase.Cleared:
@@ -187,17 +200,15 @@ namespace Necrom.FirstPlayable.Runtime
                     _stateText.text = "CLEARED";
                     _titleText.text = "웨이브 클리어";
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity +
-                        " · 다음 웨이브 준비";
+                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
                     break;
 
                 case DefenseWavePhase.Failed:
                     accent = new Color(201f/255f, 42f/255f, 42f/255f);
                     _stateText.text = "FAILED";
-                    _titleText.text = "묘지가 무너졌습니다";
+                    _titleText.text = "묘지 붕괴";
                     _detailText.text =
-                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity +
-                        " · 방어 실패";
+                        "묘지 " + state.GateIntegrity + " / " + state.GateMaxIntegrity;
                     break;
 
                 default:
@@ -210,13 +221,14 @@ namespace Necrom.FirstPlayable.Runtime
             }
 
             _stateText.color = accent;
+            _stateDot.color = accent;
             _outline.effectColor = new Color(accent.r, accent.g, accent.b, .9f);
             _gateFill.color = accent;
 
             var ratio = state.GateMaxIntegrity <= 0
                 ? 0f
                 : Mathf.Clamp01((float)state.GateIntegrity / state.GateMaxIntegrity);
-            _gateFillRect.sizeDelta = new Vector2(310f * ratio, 5f);
+            _gateFillRect.sizeDelta = new Vector2(314f * ratio, 4f);
         }
 
         private static TextMeshProUGUI NewText(
@@ -261,6 +273,7 @@ namespace Necrom.FirstPlayable.Runtime
         {
             Release(_panelSprite);
             Release(_barSprite);
+            Release(_dotSprite);
         }
 
         private static void Release(Sprite sprite)

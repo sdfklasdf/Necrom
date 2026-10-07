@@ -26,6 +26,7 @@ namespace Necrom.FirstPlayable.Runtime
         public FirstPlayableDefenseWaveRuntimeController DefenseWave { get; private set; }
         public FirstPlayableGatePressureController GatePressure { get; private set; }
         public FirstPlayableDefenseWaveHudRuntimeBinding DefenseHudBinding { get; private set; }
+        public FirstPlayableCommercialHudRuntimePolish CommercialHudPolish { get; private set; }
         public FirstPlayableCombatHudSession Session { get; private set; }
         Formation _formation;
         FirstPlayableApplicationService _application;
@@ -214,6 +215,10 @@ namespace Necrom.FirstPlayable.Runtime
                     ReviewFont,productionPresentation?ReviewFontMedium:ReviewFont,
                     productionPresentation?ReviewFontBold:ReviewFont);
             DefenseHudBinding.RefreshNow();
+            CommercialHudPolish=GetOrAdd<FirstPlayableCommercialHudRuntimePolish>(gameObject);
+            if(!CommercialHudPolish.IsInitialized)
+                CommercialHudPolish.Initialize(HudBinding,DefenseWave);
+            CommercialHudPolish.RefreshNow();
         }
         FirstPlayableCombatHudCopy ReviewCopy(FirstPlayableCombatHudContentKey key)
         {
@@ -244,6 +249,11 @@ namespace Necrom.FirstPlayable.Runtime
         FirstPlayableCombatHudCopy ProductionCopy(FirstPlayableCombatHudContentKey key)
         {
             var family=key.ToString().StartsWith("Target")?"전투":key.ToString().StartsWith("Raise")?"소환":"군단";
+            var failed=DefenseWave!=null&&DefenseWave.Phase==DefenseWavePhase.Failed;
+            if(failed&&key==FirstPlayableCombatHudContentKey.TargetNone)
+                return new FirstPlayableCombatHudCopy(family,"방어 실패","묘지가 무너졌습니다 · 다음 전투를 준비하세요","");
+            if(failed&&key==FirstPlayableCombatHudContentKey.RaiseNoTarget)
+                return new FirstPlayableCombatHudCopy(family,"소환 불가","방어 실패 상태에서는 행동할 수 없습니다","");
             var title=family;var detail="";
             switch(key)
             {
