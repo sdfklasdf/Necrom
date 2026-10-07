@@ -78,7 +78,7 @@
         "family":  "숲 친구",
         "index":  5,
         "role":  "마법",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_IMPLEMENTED_VERIFICATION_PENDING",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -87,7 +87,12 @@
         "rarity":  "EPIC",
         "prop":  "밤톨 지팡이",
         "vfxIdentity":  "보라 별마법",
-        "familyFigmaNode":  "61:309"
+        "familyFigmaNode":  "61:309",
+        "runtimeArchetypeId":  "forest.chr005",
+        "runtimeArtFile":  "forest_chr_005.png",
+        "runtimeVfxIdentity":  "ChestnutStar",
+        "productionStateBoard":  "67:309",
+        "familyArtNode":  "61:414"
     },
     {
         "id":  "CHR-006",
@@ -110,7 +115,7 @@
         "family":  "숲 친구",
         "index":  7,
         "role":  "폭발",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_IMPLEMENTED_VERIFICATION_PENDING",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -119,7 +124,12 @@
         "rarity":  "EPIC",
         "prop":  "딸기 폭탄",
         "vfxIdentity":  "딸기 폭발",
-        "familyFigmaNode":  "61:309"
+        "familyFigmaNode":  "61:309",
+        "runtimeArchetypeId":  "forest.chr007",
+        "runtimeArtFile":  "forest_chr_007.png",
+        "runtimeVfxIdentity":  "BerryBurst",
+        "productionStateBoard":  "67:309",
+        "familyArtNode":  "61:467"
     },
     {
         "id":  "CHR-008",

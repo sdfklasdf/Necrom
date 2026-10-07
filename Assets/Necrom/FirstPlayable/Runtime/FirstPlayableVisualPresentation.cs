@@ -15,7 +15,9 @@ namespace Necrom.FirstPlayable.Runtime
         StarArrow = 2,
         DewHeal = 3,
         PineSlash = 4,
-        CloverWind = 5
+        CloverWind = 5,
+        ChestnutStar = 6,
+        BerryBurst = 7
     }
 
     [Serializable]
@@ -640,6 +642,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(40f, 17f), new Vector2(15f, 10f), accent, 28f, .72f);
                     SetVfxPart(slot, 2, new Vector2(12f, 52f), new Vector2(15f, 10f), accent, 28f, .58f);
                     SetVfxPart(slot, 3, new Vector2(38f, 50f), new Vector2(15f, 10f), accent, -28f, .58f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.ChestnutStar:
+                    SetVfxPart(slot, 0, new Vector2(8f, 39f), new Vector2(42f, 5f), accent, -18f, .84f);
+                    SetVfxPart(slot, 1, new Vector2(39f, 18f), new Vector2(12f, 12f), new Color(1f,.79f,.33f), 45f, .96f);
+                    SetVfxPart(slot, 2, new Vector2(18f, 17f), new Vector2(8f, 8f), accent, 45f, .78f);
+                    SetVfxPart(slot, 3, new Vector2(46f, 51f), new Vector2(7f, 7f), new Color(1f,.79f,.33f), 45f, .68f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.BerryBurst:
+                    SetVfxPart(slot, 0, new Vector2(28f, 37f), new Vector2(22f, 22f), accent, 45f, .92f);
+                    SetVfxPart(slot, 1, new Vector2(9f, 22f), new Vector2(32f, 5f), new Color(1f,.72f,.50f), -36f, .82f);
+                    SetVfxPart(slot, 2, new Vector2(46f, 20f), new Vector2(32f, 5f), new Color(1f,.72f,.50f), 34f, .82f);
+                    SetVfxPart(slot, 3, new Vector2(35f, 55f), new Vector2(16f, 8f), new Color(.31f,.83f,.47f), -20f, .86f);
                     break;
 
                 default:

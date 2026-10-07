@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1491122757118408992
+--- !u!1 &568184085658060143
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,180 +8,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 533918365962300397}
-  m_Layer: 0
-  m_Name: AlliedSpawnZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &533918365962300397
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491122757118408992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6465720761495394646}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12, y: 0.37}
-  m_AnchorMax: {x: 0.56, y: 0.55}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &3194219009766851657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8853244747536188733}
-  m_Layer: 0
-  m_Name: ArmyStatusReadabilityZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8853244747536188733
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3194219009766851657}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8955399030361771744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06153846, y: 0.020618556}
-  m_AnchorMax: {x: 0.93846154, y: 0.16494845}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &3695168312208655194
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5521590560084339904}
-  m_Layer: 0
-  m_Name: EnemySpawnZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5521590560084339904
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3695168312208655194}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6465720761495394646}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.58, y: 0.5}
-  m_AnchorMax: {x: 0.88, y: 0.78}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &4980646158887142101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8955399030361771744}
-  - component: {fileID: 6467371820298645216}
-  m_Layer: 0
-  m_Name: SafeArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8955399030361771744
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4980646158887142101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7246646980848767956}
-  - {fileID: 6465720761495394646}
-  - {fileID: 69392107901675057}
-  - {fileID: 3290617680326849714}
-  - {fileID: 8853244747536188733}
-  - {fileID: 4822264912101330990}
-  m_Father: {fileID: 3909328326176513944}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.04028436}
-  m_AnchorMax: {x: 1, y: 0.95971566}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6467371820298645216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4980646158887142101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81c3e97f932f9b4ab28e422b1eff797, type: 3}
-  m_Name:
-  m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableReadabilityZoneMap
---- !u!1 &5328977656265823396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3909328326176513944}
-  - component: {fileID: 1992595129796586386}
-  - component: {fileID: 3389797557367821261}
-  - component: {fileID: 41847109949926978}
-  - component: {fileID: 8310338016999018233}
-  - component: {fileID: 6866348373546048994}
-  - component: {fileID: 922438882565468000}
-  - component: {fileID: 5498109882356499880}
-  - component: {fileID: 3210506653047751060}
-  - component: {fileID: 6824686684347185114}
-  - component: {fileID: 3395418598714190703}
-  - component: {fileID: 4577878428660887776}
-  - component: {fileID: 7023539030471470251}
-  - component: {fileID: 1687577145620508564}
-  - component: {fileID: 8366888278076295296}
+  - component: {fileID: 3385111266552859335}
+  - component: {fileID: 1962622088371280593}
+  - component: {fileID: 7571827406000275327}
+  - component: {fileID: 7919299568665394560}
+  - component: {fileID: 1237079390400111931}
+  - component: {fileID: 7094413805221040759}
+  - component: {fileID: 6617704468467323354}
+  - component: {fileID: 2804032439208039013}
+  - component: {fileID: 5253613933865456271}
+  - component: {fileID: 5940966493603251293}
+  - component: {fileID: 3309255936273213989}
+  - component: {fileID: 7976451397921748846}
+  - component: {fileID: 5105201006059040888}
+  - component: {fileID: 5130483255255469209}
+  - component: {fileID: 2290288073453486383}
   m_Layer: 0
   m_Name: FirstPlayable
   m_TagString: Untagged
@@ -189,19 +30,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3909328326176513944
+--- !u!224 &3385111266552859335
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8955399030361771744}
+  - {fileID: 6979772581562780707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -209,13 +50,13 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!223 &1992595129796586386
+--- !u!223 &1962622088371280593
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
@@ -232,17 +73,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &3389797557367821261
+--- !u!114 &7571827406000275327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -255,121 +96,121 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &41847109949926978
+--- !u!114 &7919299568665394560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8310338016999018233
+--- !u!114 &1237079390400111931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8af81b8cdd9722641a16ebe8e9319888, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableSceneShell
---- !u!114 &6866348373546048994
+--- !u!114 &7094413805221040759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feb0755a69944c64a97bbc58fd692dcd, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.EncounterBoundaryController
---- !u!114 &922438882565468000
+--- !u!114 &6617704468467323354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15fd6de4b3ea54041b2ca74f73aa9fd4, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableCombatHudLifecycle
---- !u!114 &5498109882356499880
+--- !u!114 &2804032439208039013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7855a59776c62ec42a4f83cc6f4a2567, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableCombatHudRuntimeBinding
---- !u!114 &3210506653047751060
+--- !u!114 &5253613933865456271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5f5bb35194cd1e42b84ed03173d8d9d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGameplayComposition
   ReviewFont: {fileID: 11400000, guid: 063bc22cfb2e8aa4986d3caef16e4caf, type: 2}
   ReviewFontMedium: {fileID: 11400000, guid: 4923542123424b1469b185e1a29a5941, type: 2}
   ReviewFontBold: {fileID: 11400000, guid: 08e305d74b7e7ea43afd03222b4348f8, type: 2}
---- !u!114 &6824686684347185114
+--- !u!114 &5940966493603251293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09896101d73d200478016436b75fdceb, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableRaiseCommandInputHook
---- !u!114 &3395418598714190703
+--- !u!114 &3309255936273213989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47f26f65b0f9ad147b3b20b365ec205d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableRaiseActionController
---- !u!114 &4577878428660887776
+--- !u!114 &7976451397921748846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d1584fa4d7e54b4991aa0c1b4d54012, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableVisualPresentation
   NecromancerArt: {fileID: 2800000, guid: 37e1f40270f4ea147a2e876086d33051, type: 3}
   GuardArt: {fileID: 2800000, guid: 3f69a45c30300bc498606dce82f6fa5e, type: 3}
@@ -392,10 +233,18 @@ MonoBehaviour:
     Art: {fileID: 2800000, guid: d677fd963ca67b943b8de4562d657f5c, type: 3}
     VfxIdentity: 5
     Accent: {r: 0.31, g: 0.83, b: 0.68, a: 1}
+  - ArchetypeId: forest.chr005
+    Art: {fileID: 2800000, guid: c06ebe1e83568344baa9343291b2f130, type: 3}
+    VfxIdentity: 6
+    Accent: {r: 0.62, g: 0.42, b: 0.95, a: 1}
   - ArchetypeId: forest.chr006
     Art: {fileID: 2800000, guid: ce26975ab7d07f84ebfbdfa0d57bb6eb, type: 3}
     VfxIdentity: 3
     Accent: {r: 0.32, g: 0.67, b: 1, a: 1}
+  - ArchetypeId: forest.chr007
+    Art: {fileID: 2800000, guid: 2e7928ec60ff51046bc0b01b5f46e45d, type: 3}
+    VfxIdentity: 7
+    Accent: {r: 1, g: 0.35, b: 0.42, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:
@@ -649,43 +498,43 @@ MonoBehaviour:
   DefeatSfx: {fileID: 8300000, guid: 137867a31c6eb5c4898066f218f1338c, type: 3}
   RaiseSfx: {fileID: 8300000, guid: 0f61802fffb96a941aae7ec6eb584e06, type: 3}
   AlliedContributionSfx: {fileID: 8300000, guid: df02735e956274c40a0cd04a4fd21dbc, type: 3}
---- !u!114 &7023539030471470251
+--- !u!114 &5105201006059040888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac81e329b2600b143bc696355774a4d5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveRuntimeController
---- !u!114 &1687577145620508564
+--- !u!114 &5130483255255469209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1109659b002e0e145a92a57ab167f871, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveHudRuntimeBinding
---- !u!114 &8366888278076295296
+--- !u!114 &2290288073453486383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328977656265823396}
+  m_GameObject: {fileID: 568184085658060143}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db48e1b6919b25045ae018812c1f3372, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGatePressureController
---- !u!1 &6221144976978379702
+--- !u!1 &1582437588305266681
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -693,7 +542,96 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 69392107901675057}
+  - component: {fileID: 6979772581562780707}
+  - component: {fileID: 276083772493021622}
+  m_Layer: 0
+  m_Name: SafeArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6979772581562780707
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582437588305266681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1902817077806655238}
+  - {fileID: 4236541680973342270}
+  - {fileID: 7186600060404027532}
+  - {fileID: 3170125711555793866}
+  - {fileID: 3695016331348444071}
+  - {fileID: 4499807151246310673}
+  m_Father: {fileID: 3385111266552859335}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.04028436}
+  m_AnchorMax: {x: 1, y: 0.95971566}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &276083772493021622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582437588305266681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81c3e97f932f9b4ab28e422b1eff797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableReadabilityZoneMap
+--- !u!1 &2147484401431348747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3695016331348444071}
+  m_Layer: 0
+  m_Name: ArmyStatusReadabilityZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3695016331348444071
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147484401431348747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6979772581562780707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.06153846, y: 0.020618556}
+  m_AnchorMax: {x: 0.93846154, y: 0.16494845}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3214961194909037114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7186600060404027532}
   m_Layer: 0
   m_Name: TargetStatusReadabilityZone
   m_TagString: Untagged
@@ -701,26 +639,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &69392107901675057
+--- !u!224 &7186600060404027532
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6221144976978379702}
+  m_GameObject: {fileID: 3214961194909037114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8955399030361771744}
+  m_Father: {fileID: 6979772581562780707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06153846, y: 0.4329897}
   m_AnchorMax: {x: 0.93846154, y: 0.57731956}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &6669547617234897708
+--- !u!1 &4542078056330184261
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -728,155 +666,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3290617680326849714}
-  m_Layer: 0
-  m_Name: RaiseActionStatusReadabilityZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3290617680326849714
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6669547617234897708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8955399030361771744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.06153846, y: 0.185567}
-  m_AnchorMax: {x: 0.93846154, y: 0.41237113}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &7565612273273587702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7246646980848767956}
-  m_Layer: 0
-  m_Name: HudRegion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7246646980848767956
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565612273273587702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8955399030361771744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.5979381}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &8327052029708613063
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4822264912101330990}
-  m_Layer: 0
-  m_Name: ProtectedCombatReadabilityZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4822264912101330990
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8327052029708613063}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8955399030361771744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.02, y: 0.5979381}
-  m_AnchorMax: {x: 0.97999996, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &8523252363447695699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6549254095479937666}
-  m_Layer: 0
-  m_Name: NecromancerSpawnZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6549254095479937666
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8523252363447695699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6465720761495394646}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12, y: 0.1}
-  m_AnchorMax: {x: 0.42000002, y: 0.35}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &8746799286204581430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6465720761495394646}
-  - component: {fileID: 8844104791522904036}
-  - component: {fileID: 2949300481053474507}
-  - component: {fileID: 5450922424069266727}
-  - component: {fileID: 6396104710655412333}
-  - component: {fileID: 5700327282339395735}
-  - component: {fileID: 7778564697875643538}
-  - component: {fileID: 6757497436062082354}
-  - component: {fileID: 8362083596521526597}
+  - component: {fileID: 4236541680973342270}
+  - component: {fileID: 603522315474030974}
+  - component: {fileID: 5237781729151120645}
+  - component: {fileID: 6367757351330097606}
+  - component: {fileID: 8585608351124151282}
+  - component: {fileID: 2530277031322215345}
+  - component: {fileID: 1549432692481546202}
+  - component: {fileID: 6892114578175562271}
+  - component: {fileID: 5756786740632988331}
   m_Layer: 0
   m_Name: CombatViewport
   m_TagString: Untagged
@@ -884,121 +682,331 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6465720761495394646
+--- !u!224 &4236541680973342270
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6549254095479937666}
-  - {fileID: 5521590560084339904}
-  - {fileID: 533918365962300397}
-  m_Father: {fileID: 8955399030361771744}
+  - {fileID: 6953191932350567279}
+  - {fileID: 4332586237058304442}
+  - {fileID: 4944464883557077805}
+  m_Father: {fileID: 6979772581562780707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5979381}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8844104791522904036
+--- !u!114 &603522315474030974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee7fdd0e9bf8f44f91b3ebc1ab06754, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.BattlefieldAnchorMap
---- !u!114 &2949300481053474507
+--- !u!114 &5237781729151120645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd5525093d4b6141abcc5ffa5825ffb, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.NecromancerAnchorController
---- !u!114 &5450922424069266727
+--- !u!114 &6367757351330097606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 470bff75813f6e14caf3968962935b22, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.EnemySpawnController
---- !u!114 &6396104710655412333
+--- !u!114 &8585608351124151282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a96f151893e5b3e41bb804d9f69cbd39, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAlliedRosterController
---- !u!114 &5700327282339395735
+--- !u!114 &2530277031322215345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72550f5f725ab9247b1a694a8541b025, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableBattleRuntimeController
---- !u!114 &7778564697875643538
+--- !u!114 &1549432692481546202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfcd510b6dd04a64fa819f001165c5fe, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableTargetingController
---- !u!114 &6757497436062082354
+--- !u!114 &6892114578175562271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe961d6d46649047a7f0f94fd63d232, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAutoCombatLoop
---- !u!114 &8362083596521526597
+--- !u!114 &5756786740632988331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746799286204581430}
+  m_GameObject: {fileID: 4542078056330184261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d04b77061f8cf74996262ed003ccc0e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAlliedAutoCombatLoop
+--- !u!1 &4747243999810324877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6953191932350567279}
+  m_Layer: 0
+  m_Name: NecromancerSpawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6953191932350567279
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4747243999810324877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4236541680973342270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.12, y: 0.1}
+  m_AnchorMax: {x: 0.42000002, y: 0.35}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &4843762453107112258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4332586237058304442}
+  m_Layer: 0
+  m_Name: EnemySpawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4332586237058304442
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843762453107112258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4236541680973342270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.58, y: 0.5}
+  m_AnchorMax: {x: 0.88, y: 0.78}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5018896096080972407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4944464883557077805}
+  m_Layer: 0
+  m_Name: AlliedSpawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4944464883557077805
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018896096080972407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4236541680973342270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.12, y: 0.37}
+  m_AnchorMax: {x: 0.56, y: 0.55}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5430331507800673410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4499807151246310673}
+  m_Layer: 0
+  m_Name: ProtectedCombatReadabilityZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4499807151246310673
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430331507800673410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6979772581562780707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.02, y: 0.5979381}
+  m_AnchorMax: {x: 0.97999996, y: 0.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8824752603458708549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902817077806655238}
+  m_Layer: 0
+  m_Name: HudRegion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1902817077806655238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824752603458708549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6979772581562780707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.5979381}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &9061345751070463571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3170125711555793866}
+  m_Layer: 0
+  m_Name: RaiseActionStatusReadabilityZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3170125711555793866
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061345751070463571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6979772581562780707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.06153846, y: 0.185567}
+  m_AnchorMax: {x: 0.93846154, y: 0.41237113}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}

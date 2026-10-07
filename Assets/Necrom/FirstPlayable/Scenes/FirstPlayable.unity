@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.StandaloneInputModule
   m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47f26f65b0f9ad147b3b20b365ec205d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableRaiseActionController
 --- !u!114 &925762126
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09896101d73d200478016436b75fdceb, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableRaiseCommandInputHook
 --- !u!114 &925762127
 MonoBehaviour:
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5f5bb35194cd1e42b84ed03173d8d9d, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGameplayComposition
   ReviewFont: {fileID: 11400000, guid: 063bc22cfb2e8aa4986d3caef16e4caf, type: 2}
   ReviewFontMedium: {fileID: 11400000, guid: 4923542123424b1469b185e1a29a5941, type: 2}
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7855a59776c62ec42a4f83cc6f4a2567, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableCombatHudRuntimeBinding
 --- !u!114 &925762129
 MonoBehaviour:
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15fd6de4b3ea54041b2ca74f73aa9fd4, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableCombatHudLifecycle
 --- !u!114 &925762130
 MonoBehaviour:
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feb0755a69944c64a97bbc58fd692dcd, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.EncounterBoundaryController
 --- !u!114 &925762131
 MonoBehaviour:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8af81b8cdd9722641a16ebe8e9319888, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableSceneShell
 --- !u!114 &925762132
 MonoBehaviour:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d1584fa4d7e54b4991aa0c1b4d54012, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableVisualPresentation
   NecromancerArt: {fileID: 2800000, guid: 37e1f40270f4ea147a2e876086d33051, type: 3}
   GuardArt: {fileID: 2800000, guid: 3f69a45c30300bc498606dce82f6fa5e, type: 3}
@@ -525,10 +525,18 @@ MonoBehaviour:
     Art: {fileID: 2800000, guid: d677fd963ca67b943b8de4562d657f5c, type: 3}
     VfxIdentity: 5
     Accent: {r: 0.31, g: 0.83, b: 0.68, a: 1}
+  - ArchetypeId: forest.chr005
+    Art: {fileID: 2800000, guid: c06ebe1e83568344baa9343291b2f130, type: 3}
+    VfxIdentity: 6
+    Accent: {r: 0.62, g: 0.42, b: 0.95, a: 1}
   - ArchetypeId: forest.chr006
     Art: {fileID: 2800000, guid: ce26975ab7d07f84ebfbdfa0d57bb6eb, type: 3}
     VfxIdentity: 3
     Accent: {r: 0.32, g: 0.67, b: 1, a: 1}
+  - ArchetypeId: forest.chr007
+    Art: {fileID: 2800000, guid: 2e7928ec60ff51046bc0b01b5f46e45d, type: 3}
+    VfxIdentity: 7
+    Accent: {r: 1, g: 0.35, b: 0.42, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:
@@ -792,7 +800,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1109659b002e0e145a92a57ab167f871, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveHudRuntimeBinding
 --- !u!114 &925762138
 MonoBehaviour:
@@ -804,7 +812,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac81e329b2600b143bc696355774a4d5, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableDefenseWaveRuntimeController
 --- !u!114 &925762139
 MonoBehaviour:
@@ -816,7 +824,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db48e1b6919b25045ae018812c1f3372, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableGatePressureController
 --- !u!1 &930316310
 GameObject:
@@ -979,7 +987,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d04b77061f8cf74996262ed003ccc0e, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAlliedAutoCombatLoop
 --- !u!114 &1862572386
 MonoBehaviour:
@@ -991,7 +999,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe961d6d46649047a7f0f94fd63d232, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAutoCombatLoop
 --- !u!114 &1862572387
 MonoBehaviour:
@@ -1003,7 +1011,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfcd510b6dd04a64fa819f001165c5fe, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableTargetingController
 --- !u!114 &1862572388
 MonoBehaviour:
@@ -1015,7 +1023,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72550f5f725ab9247b1a694a8541b025, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableBattleRuntimeController
 --- !u!114 &1862572389
 MonoBehaviour:
@@ -1027,7 +1035,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a96f151893e5b3e41bb804d9f69cbd39, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableAlliedRosterController
 --- !u!114 &1862572390
 MonoBehaviour:
@@ -1039,7 +1047,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 470bff75813f6e14caf3968962935b22, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.EnemySpawnController
 --- !u!114 &1862572391
 MonoBehaviour:
@@ -1051,7 +1059,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd5525093d4b6141abcc5ffa5825ffb, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.NecromancerAnchorController
 --- !u!114 &1862572392
 MonoBehaviour:
@@ -1063,7 +1071,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ee7fdd0e9bf8f44f91b3ebc1ab06754, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.BattlefieldAnchorMap
 --- !u!1 &1913242608
 GameObject:
@@ -1279,7 +1287,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b81c3e97f932f9b4ab28e422b1eff797, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Necrom.FirstPlayable.Runtime::Necrom.FirstPlayable.Runtime.FirstPlayableReadabilityZoneMap
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
