@@ -25,7 +25,9 @@ namespace Necrom.FirstPlayable.Runtime
         BoltLance = 12,
         Rainbolt = 13,
         BellGust = 14,
-        SunsetSigil = 15
+        SunsetSigil = 15,
+        MistMend = 16,
+        HailPop = 17
     }
 
     [Serializable]
@@ -721,6 +723,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(26f, 25f), new Vector2(40f, 40f), new Color(.92f,.45f,.66f), 45f, .28f);
                     SetVfxPart(slot, 2, new Vector2(26f, 25f), new Vector2(22f, 22f), new Color(1f,.82f,.38f), 45f, .72f);
                     SetVfxPart(slot, 3, new Vector2(46f, 48f), new Vector2(10f, 10f), new Color(1f,.65f,.48f), 45f, .62f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.MistMend:
+                    SetVfxPart(slot, 0, new Vector2(29f, 35f), new Vector2(40f, 40f), accent, 45f, .26f);
+                    SetVfxPart(slot, 1, new Vector2(18f, 28f), new Vector2(30f, 16f), new Color(.96f,.99f,1f), 0f, .54f);
+                    SetVfxPart(slot, 2, new Vector2(42f, 45f), new Vector2(34f, 15f), new Color(.58f,.84f,.98f), 0f, .48f);
+                    SetVfxPart(slot, 3, new Vector2(31f, 31f), new Vector2(6f, 38f), new Color(.52f,.91f,.82f), 0f, .54f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.HailPop:
+                    SetVfxPart(slot, 0, new Vector2(21f, 24f), new Vector2(12f, 12f), new Color(.77f,.91f,1f), 0f, .86f);
+                    SetVfxPart(slot, 1, new Vector2(42f, 29f), new Vector2(10f, 10f), new Color(.96f,.99f,1f), 0f, .82f);
+                    SetVfxPart(slot, 2, new Vector2(32f, 44f), new Vector2(9f, 9f), new Color(.45f,.78f,1f), 0f, .74f);
+                    SetVfxPart(slot, 3, new Vector2(29f, 34f), new Vector2(40f, 40f), accent, 45f, .24f);
                     break;
 
                 default:

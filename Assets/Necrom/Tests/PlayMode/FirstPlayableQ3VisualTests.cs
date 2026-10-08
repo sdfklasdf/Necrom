@@ -92,8 +92,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             var v = Visual();
             Assert.That(Count(v, "LoadedArtCount"), Is.EqualTo(4));
-            Assert.That(Count(v, "LoadedCharacterArtCount"), Is.EqualTo(15),
-                "Canonical presentation must bind fifteen implemented character textures across active families.");
+            Assert.That(Count(v, "LoadedCharacterArtCount"), Is.EqualTo(17),
+                "Canonical presentation must bind seventeen implemented character textures across active families.");
             Assert.That(Convert.ToBoolean(Prop(v, "HasAuthoredMotion")), Is.True);
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
@@ -127,7 +127,7 @@ namespace Necrom.FirstPlayable.Tests
                 BindingFlags.Public | BindingFlags.Instance), Is.Null,
                 "The obsolete Family01-specific serialized field must not remain as a live field.");
             var bindings = (Array)familyField.GetValue(v);
-            Assert.That(bindings.Length, Is.EqualTo(15));
+            Assert.That(bindings.Length, Is.EqualTo(17));
             var archetypes = new System.Collections.Generic.HashSet<string>();
             foreach (var binding in bindings)
             {
@@ -163,8 +163,8 @@ namespace Necrom.FirstPlayable.Tests
             {
                 "forest.chr001", "forest.chr002", "forest.chr003", "forest.chr004",
                 "forest.chr005", "forest.chr006", "forest.chr007", "forest.chr008", "forest.chr009",
-                "forest.chr010", "cloud.chr011", "cloud.chr012", "cloud.chr013", "cloud.chr014", "cloud.chr015"
-            }), "Implemented character bindings must match the canonical fifteen-character cross-family set.");
+                "forest.chr010", "cloud.chr011", "cloud.chr012", "cloud.chr013", "cloud.chr014", "cloud.chr015", "cloud.chr016", "cloud.chr017"
+            }), "Implemented character bindings must match the canonical seventeen-character cross-family set.");
 #endif
             yield return null;
         }

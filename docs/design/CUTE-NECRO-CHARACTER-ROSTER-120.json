@@ -304,7 +304,7 @@
         "family":  "구름 기사",
         "index":  6,
         "role":  "회복",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -314,14 +314,18 @@
         "prop":  "안개 성배",
         "vfxIdentity":  "안개 치유",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:445"
+        "familyArtNode":  "72:445",
+        "runtimeArchetypeId":  "cloud.chr016",
+        "runtimeArtFile":  "cloud_chr_016.png",
+        "runtimeVfxIdentity":  "MistMend",
+        "productionStateBoard":  "76:309"
     },
     {
         "id":  "CHR-017",
         "family":  "구름 기사",
         "index":  7,
         "role":  "폭발",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -331,7 +335,11 @@
         "prop":  "우박 구슬통",
         "vfxIdentity":  "우박 폭발",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:467"
+        "familyArtNode":  "72:467",
+        "runtimeArchetypeId":  "cloud.chr017",
+        "runtimeArtFile":  "cloud_chr_017.png",
+        "runtimeVfxIdentity":  "HailPop",
+        "productionStateBoard":  "76:309"
     },
     {
         "id":  "CHR-018",

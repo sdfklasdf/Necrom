@@ -57,7 +57,9 @@ namespace Necrom.EditorTools
                          CloudKnightPath + "cloud_chr_012.png",
                          CloudKnightPath + "cloud_chr_013.png",
                          CloudKnightPath + "cloud_chr_014.png",
-                         CloudKnightPath + "cloud_chr_015.png"
+                         CloudKnightPath + "cloud_chr_015.png",
+                         CloudKnightPath + "cloud_chr_016.png",
+                         CloudKnightPath + "cloud_chr_017.png"
                      })
             {
                 var importer = (TextureImporter)AssetImporter.GetAtPath(path);
@@ -221,6 +223,22 @@ namespace Necrom.EditorTools
                         CloudKnightPath + "cloud_chr_015.png"),
                     VfxIdentity = FirstPlayableCharacterVfxIdentity.SunsetSigil,
                     Accent = new Color(.92f, .45f, .66f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "cloud.chr016",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        CloudKnightPath + "cloud_chr_016.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.MistMend,
+                    Accent = new Color(.47f, .72f, .92f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "cloud.chr017",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        CloudKnightPath + "cloud_chr_017.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.HailPop,
+                    Accent = new Color(.43f, .55f, .93f)
                 }
             };
             visual.AttackLunge = new AnimationCurve(profile.AttackLunge.keys);
@@ -248,8 +266,8 @@ namespace Necrom.EditorTools
 
             if (visual.LoadedArtCount != 4)
                 throw new Exception("Four Q3 base art references must resolve.");
-            if (visual.LoadedCharacterArtCount != 15)
-                throw new Exception("Fifteen implemented character art references must resolve.");
+            if (visual.LoadedCharacterArtCount != 17)
+                throw new Exception("Seventeen implemented character art references must resolve.");
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 authored motion/audio values failed scene serialization input.");
 
@@ -474,8 +492,8 @@ namespace Necrom.EditorTools
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(FirstPlayableCanonicalScene.PrefabPath);
             var prefabVisual = prefab.GetComponent<FirstPlayableVisualPresentation>();
 
-            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedCharacterArtCount != 15 ||
-                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedCharacterArtCount != 15)
+            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedCharacterArtCount != 17 ||
+                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedCharacterArtCount != 17)
                 throw new Exception("Q3 scene/prefab lost base or character art references.");
 
             foreach (var texture in new[]
