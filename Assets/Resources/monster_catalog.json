@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 1,
+  "balanceStatus": "DRAFT_NOT_LIVE",
+  "monsters": [
+    {
+      "id": "MON_001",
+      "name": "몽실 슬라임",
+      "element": "빛",
+      "hp": 80,
+      "attack": 12,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_002",
+      "name": "몽실 토끼",
+      "element": "불",
+      "hp": 92,
+      "attack": 15,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_003",
+      "name": "몽실 여우",
+      "element": "번개",
+      "hp": 104,
+      "attack": 18,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_004",
+      "name": "몽실 드래곤",
+      "element": "그림자",
+      "hp": 116,
+      "attack": 21,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_005",
+      "name": "몽실 버섯",
+      "element": "물",
+      "hp": 128,
+      "attack": 24,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_006",
+      "name": "몽실 골렘",
+      "element": "땅",
+      "hp": 140,
+      "attack": 27,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_007",
+      "name": "몽실 고양이",
+      "element": "별",
+      "hp": 152,
+      "attack": 30,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_008",
+      "name": "몽실 펭귄",
+      "element": "숲",
+      "hp": 164,
+      "attack": 33,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_009",
+      "name": "몽실 유니콘",
+      "element": "바람",
+      "hp": 176,
+      "attack": 36,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_010",
+      "name": "몽실 도깨비",
+      "element": "얼음",
+      "hp": 188,
+      "attack": 39,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_011",
+      "name": "반짝 슬라임",
+      "element": "숲",
+      "hp": 80,
+      "attack": 12,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_012",
+      "name": "반짝 토끼",
+      "element": "바람",
+      "hp": 92,
+      "attack": 15,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_013",
+      "name": "반짝 여우",
+      "element": "얼음",
+      "hp": 104,
+      "attack": 18,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_014",
+      "name": "반짝 드래곤",
+      "element": "빛",
+      "hp": 116,
+      "attack": 21,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_015",
+      "name": "반짝 버섯",
+      "element": "불",
+      "hp": 128,
+      "attack": 24,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_016",
+      "name": "반짝 골렘",
+      "element": "번개",
+      "hp": 140,
+      "attack": 27,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_017",
+      "name": "반짝 고양이",
+      "element": "그림자",
+      "hp": 152,
+      "attack": 30,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_018",
+      "name": "반짝 펭귄",
+      "element": "물",
+      "hp": 164,
+      "attack": 33,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_019",
+      "name": "반짝 유니콘",
+      "element": "땅",
+      "hp": 176,
+      "attack": 36,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_020",
+      "name": "반짝 도깨비",
+      "element": "별",
+      "hp": 188,
+      "attack": 39,
+      "gachaWeight": 80
+    },
+    {
+      "id": "MON_021",
+      "name": "꼬마 슬라임",
+      "element": "물",
+      "hp": 155,
+      "attack": 23,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_022",
+      "name": "꼬마 토끼",
+      "element": "땅",
+      "hp": 167,
+      "attack": 26,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_023",
+      "name": "꼬마 여우",
+      "element": "별",
+      "hp": 179,
+      "attack": 29,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_024",
+      "name": "꼬마 드래곤",
+      "element": "숲",
+      "hp": 191,
+      "attack": 32,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_025",
+      "name": "꼬마 버섯",
+      "element": "바람",
+      "hp": 203,
+      "attack": 35,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_026",
+      "name": "꼬마 골렘",
+      "element": "얼음",
+      "hp": 215,
+      "attack": 38,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_027",
+      "name": "꼬마 고양이",
+      "element": "빛",
+      "hp": 227,
+      "attack": 41,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_028",
+      "name": "꼬마 펭귄",
+      "element": "불",
+      "hp": 239,
+      "attack": 44,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_029",
+      "name": "꼬마 유니콘",
+      "element": "번개",
+      "hp": 251,
+      "attack": 47,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_030",
+      "name": "꼬마 도깨비",
+      "element": "그림자",
+      "hp": 263,
+      "attack": 50,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_031",
+      "name": "솜사탕 슬라임",
+      "element": "불",
+      "hp": 155,
+      "attack": 23,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_032",
+      "name": "솜사탕 토끼",
+      "element": "번개",
+      "hp": 167,
+      "attack": 26,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_033",
+      "name": "솜사탕 여우",
+      "element": "그림자",
+      "hp": 179,
+      "attack": 29,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_034",
+      "name": "솜사탕 드래곤",
+      "element": "물",
+      "hp": 191,
+      "attack": 32,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_035",
+      "name": "솜사탕 버섯",
+      "element": "땅",
+      "hp": 203,
+      "attack": 35,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_036",
+      "name": "솜사탕 골렘",
+      "element": "별",
+      "hp": 215,
+      "attack": 38,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_037",
+      "name": "솜사탕 고양이",
+      "element": "숲",
+      "hp": 227,
+      "attack": 41,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_038",
+      "name": "솜사탕 펭귄",
+      "element": "바람",
+      "hp": 239,
+      "attack": 44,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_039",
+      "name": "솜사탕 유니콘",
+      "element": "얼음",
+      "hp": 251,
+      "attack": 47,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_040",
+      "name": "솜사탕 도깨비",
+      "element": "빛",
+      "hp": 263,
+      "attack": 50,
+      "gachaWeight": 45
+    },
+    {
+      "id": "MON_041",
+      "name": "별빛 슬라임",
+      "element": "바람",
+      "hp": 230,
+      "attack": 34,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_042",
+      "name": "별빛 토끼",
+      "element": "얼음",
+      "hp": 242,
+      "attack": 37,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_043",
+      "name": "별빛 여우",
+      "element": "빛",
+      "hp": 254,
+      "attack": 40,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_044",
+      "name": "별빛 드래곤",
+      "element": "불",
+      "hp": 266,
+      "attack": 43,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_045",
+      "name": "별빛 버섯",
+      "element": "번개",
+      "hp": 278,
+      "attack": 46,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_046",
+      "name": "별빛 골렘",
+      "element": "그림자",
+      "hp": 290,
+      "attack": 49,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_047",
+      "name": "별빛 고양이",
+      "element": "물",
+      "hp": 302,
+      "attack": 52,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_048",
+      "name": "별빛 펭귄",
+      "element": "땅",
+      "hp": 314,
+      "attack": 55,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_049",
+      "name": "별빛 유니콘",
+      "element": "별",
+      "hp": 326,
+      "attack": 58,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_050",
+      "name": "별빛 도깨비",
+      "element": "숲",
+      "hp": 338,
+      "attack": 61,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_051",
+      "name": "도토리 슬라임",
+      "element": "땅",
+      "hp": 230,
+      "attack": 34,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_052",
+      "name": "도토리 토끼",
+      "element": "별",
+      "hp": 242,
+      "attack": 37,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_053",
+      "name": "도토리 여우",
+      "element": "숲",
+      "hp": 254,
+      "attack": 40,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_054",
+      "name": "도토리 드래곤",
+      "element": "바람",
+      "hp": 266,
+      "attack": 43,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_055",
+      "name": "도토리 버섯",
+      "element": "얼음",
+      "hp": 278,
+      "attack": 46,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_056",
+      "name": "도토리 골렘",
+      "element": "빛",
+      "hp": 290,
+      "attack": 49,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_057",
+      "name": "도토리 고양이",
+      "element": "불",
+      "hp": 302,
+      "attack": 52,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_058",
+      "name": "도토리 펭귄",
+      "element": "번개",
+      "hp": 314,
+      "attack": 55,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_059",
+      "name": "도토리 유니콘",
+      "element": "그림자",
+      "hp": 326,
+      "attack": 58,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_060",
+      "name": "도토리 도깨비",
+      "element": "물",
+      "hp": 338,
+      "attack": 61,
+      "gachaWeight": 22
+    },
+    {
+      "id": "MON_061",
+      "name": "말랑 슬라임",
+      "element": "번개",
+      "hp": 305,
+      "attack": 45,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_062",
+      "name": "말랑 토끼",
+      "element": "그림자",
+      "hp": 317,
+      "attack": 48,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_063",
+      "name": "말랑 여우",
+      "element": "물",
+      "hp": 329,
+      "attack": 51,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_064",
+      "name": "말랑 드래곤",
+      "element": "땅",
+      "hp": 341,
+      "attack": 54,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_065",
+      "name": "말랑 버섯",
+      "element": "별",
+      "hp": 353,
+      "attack": 57,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_066",
+      "name": "말랑 골렘",
+      "element": "숲",
+      "hp": 365,
+      "attack": 60,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_067",
+      "name": "말랑 고양이",
+      "element": "바람",
+      "hp": 377,
+      "attack": 63,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_068",
+      "name": "말랑 펭귄",
+      "element": "얼음",
+      "hp": 389,
+      "attack": 66,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_069",
+      "name": "말랑 유니콘",
+      "element": "빛",
+      "hp": 401,
+      "attack": 69,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_070",
+      "name": "말랑 도깨비",
+      "element": "불",
+      "hp": 413,
+      "attack": 72,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_071",
+      "name": "초롱 슬라임",
+      "element": "얼음",
+      "hp": 305,
+      "attack": 45,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_072",
+      "name": "초롱 토끼",
+      "element": "빛",
+      "hp": 317,
+      "attack": 48,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_073",
+      "name": "초롱 여우",
+      "element": "불",
+      "hp": 329,
+      "attack": 51,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_074",
+      "name": "초롱 드래곤",
+      "element": "번개",
+      "hp": 341,
+      "attack": 54,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_075",
+      "name": "초롱 버섯",
+      "element": "그림자",
+      "hp": 353,
+      "attack": 57,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_076",
+      "name": "초롱 골렘",
+      "element": "물",
+      "hp": 365,
+      "attack": 60,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_077",
+      "name": "초롱 고양이",
+      "element": "땅",
+      "hp": 377,
+      "attack": 63,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_078",
+      "name": "초롱 펭귄",
+      "element": "별",
+      "hp": 389,
+      "attack": 66,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_079",
+      "name": "초롱 유니콘",
+      "element": "숲",
+      "hp": 401,
+      "attack": 69,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_080",
+      "name": "초롱 도깨비",
+      "element": "바람",
+      "hp": 413,
+      "attack": 72,
+      "gachaWeight": 9
+    },
+    {
+      "id": "MON_081",
+      "name": "방울 슬라임",
+      "element": "별",
+      "hp": 380,
+      "attack": 56,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_082",
+      "name": "방울 토끼",
+      "element": "숲",
+      "hp": 392,
+      "attack": 59,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_083",
+      "name": "방울 여우",
+      "element": "바람",
+      "hp": 404,
+      "attack": 62,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_084",
+      "name": "방울 드래곤",
+      "element": "얼음",
+      "hp": 416,
+      "attack": 65,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_085",
+      "name": "방울 버섯",
+      "element": "빛",
+      "hp": 428,
+      "attack": 68,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_086",
+      "name": "방울 골렘",
+      "element": "불",
+      "hp": 440,
+      "attack": 71,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_087",
+      "name": "방울 고양이",
+      "element": "번개",
+      "hp": 452,
+      "attack": 74,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_088",
+      "name": "방울 펭귄",
+      "element": "그림자",
+      "hp": 464,
+      "attack": 77,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_089",
+      "name": "방울 유니콘",
+      "element": "물",
+      "hp": 476,
+      "attack": 80,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_090",
+      "name": "방울 도깨비",
+      "element": "땅",
+      "hp": 488,
+      "attack": 83,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_091",
+      "name": "구름 슬라임",
+      "element": "그림자",
+      "hp": 380,
+      "attack": 56,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_092",
+      "name": "구름 토끼",
+      "element": "물",
+      "hp": 392,
+      "attack": 59,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_093",
+      "name": "구름 여우",
+      "element": "땅",
+      "hp": 404,
+      "attack": 62,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_094",
+      "name": "구름 드래곤",
+      "element": "별",
+      "hp": 416,
+      "attack": 65,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_095",
+      "name": "구름 버섯",
+      "element": "숲",
+      "hp": 428,
+      "attack": 68,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_096",
+      "name": "구름 골렘",
+      "element": "바람",
+      "hp": 440,
+      "attack": 71,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_097",
+      "name": "구름 고양이",
+      "element": "얼음",
+      "hp": 452,
+      "attack": 74,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_098",
+      "name": "구름 펭귄",
+      "element": "빛",
+      "hp": 464,
+      "attack": 77,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_099",
+      "name": "구름 유니콘",
+      "element": "불",
+      "hp": 476,
+      "attack": 80,
+      "gachaWeight": 3
+    },
+    {
+      "id": "MON_100",
+      "name": "구름 도깨비",
+      "element": "번개",
+      "hp": 488,
+      "attack": 83,
+      "gachaWeight": 3
+    }
+  ]
+}
