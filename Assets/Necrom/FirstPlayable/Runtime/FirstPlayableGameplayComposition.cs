@@ -313,7 +313,8 @@ namespace Necrom.FirstPlayable.Runtime
                 "forest.chr008" => "나무껍질 수호자",
                 "forest.chr009" => "씨앗 소환사",
                 "forest.chr010" => "반딧불 길잡이",
-                _ => "숲 친구"
+                "cloud.chr011" => "솜구름 방패대장",
+                _ => "영혼 친구"
             };
         }
         public void SetAutomaticCombat(bool enabled)

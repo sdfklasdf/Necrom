@@ -34,4 +34,4 @@ Figma board: 72:309
 - CHR-020 72:543
 
 ## Status boundary
-Family02 canonical identity/Figma kit is complete. This does not imply any CHR-011~020 Unity production package. Runtime implementation, state boards, animation/VFX validation, balance, device readability and final creative/legal acceptance remain separate work. The 120-character target and multi-thousand-detail production scale remain active.
+Family02 canonical identity/Figma kit is complete. CHR-011 솜구름 방패대장은 now the first bounded Unity production package for this family: Figma state board 73:309 / section 73:312, cloud_chr_011.png, archetype cloud.chr011 and SkyBulwark. The runtime visual seam was generalized from the Family01-only serialized field `ForestFriendVisuals` to `CharacterVisuals` with `FormerlySerializedAs` migration; canonical scene/prefab now serialize 11 cross-family bindings. Targeted Q3 visual 12/12 and full PlayMode 140/140 passed. CHR-012~020 Unity production packages, later animation/balance/device/A11Y/final creative/legal work and the 120-character project target remain NOT DONE.

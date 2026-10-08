@@ -199,7 +199,7 @@
         "family":  "구름 기사",
         "index":  1,
         "role":  "탱커",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -209,7 +209,11 @@
         "prop":  "둥근 구름방패",
         "vfxIdentity":  "하늘 성벽",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:313"
+        "familyArtNode":  "72:313",
+        "runtimeArchetypeId":  "cloud.chr011",
+        "runtimeArtFile":  "cloud_chr_011.png",
+        "runtimeVfxIdentity":  "SkyBulwark",
+        "productionStateBoard":  "73:309"
     },
     {
         "id":  "CHR-012",

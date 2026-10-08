@@ -92,8 +92,8 @@ namespace Necrom.FirstPlayable.Tests
         {
             var v = Visual();
             Assert.That(Count(v, "LoadedArtCount"), Is.EqualTo(4));
-            Assert.That(Count(v, "LoadedForestFriendArtCount"), Is.EqualTo(10),
-                "First production family must bind ten implemented Forest Friend textures.");
+            Assert.That(Count(v, "LoadedCharacterArtCount"), Is.EqualTo(11),
+                "Canonical presentation must bind eleven implemented character textures across active families.");
             Assert.That(Convert.ToBoolean(Prop(v, "HasAuthoredMotion")), Is.True);
             Assert.That(Count(v, "LoadedAudioClipCount"), Is.EqualTo(5));
             Assert.That(UnityEngine.Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None).Length, Is.EqualTo(1),
@@ -118,11 +118,16 @@ namespace Necrom.FirstPlayable.Tests
             }
 
             var familyField = v.GetType().GetField(
-                "ForestFriendVisuals",
+                "CharacterVisuals",
                 BindingFlags.Public | BindingFlags.Instance);
-            Assert.That(familyField, Is.Not.Null);
+            Assert.That(familyField, Is.Not.Null,
+                "Serialized presentation seam must be family-agnostic before Family02 runtime expansion.");
+            Assert.That(v.GetType().GetField(
+                "ForestFriendVisuals",
+                BindingFlags.Public | BindingFlags.Instance), Is.Null,
+                "The obsolete Family01-specific serialized field must not remain as a live field.");
             var bindings = (Array)familyField.GetValue(v);
-            Assert.That(bindings.Length, Is.EqualTo(10));
+            Assert.That(bindings.Length, Is.EqualTo(11));
             var archetypes = new System.Collections.Generic.HashSet<string>();
             foreach (var binding in bindings)
             {
@@ -142,18 +147,24 @@ namespace Necrom.FirstPlayable.Tests
                     "Representative character archetypes must be unique.");
                 Assert.That(texture, Is.Not.Null);
                 Assert.That(vfx.ToString(), Is.Not.EqualTo("None"));
+                var assetPath = AssetDatabase.GetAssetPath(texture);
                 Assert.That(
-                    AssetDatabase.GetAssetPath(texture),
-                    Does.StartWith(
-                        "Assets/Necrom/FirstPlayable/Art/Q3/ForestFriends/"));
+                    assetPath.StartsWith(
+                        "Assets/Necrom/FirstPlayable/Art/Q3/ForestFriends/",
+                        StringComparison.Ordinal) ||
+                    assetPath.StartsWith(
+                        "Assets/Necrom/FirstPlayable/Art/Q3/CloudKnights/",
+                        StringComparison.Ordinal),
+                    Is.True,
+                    "Character art must stay inside an approved canonical family path.");
             }
 
             Assert.That(archetypes, Is.EquivalentTo(new[]
             {
                 "forest.chr001", "forest.chr002", "forest.chr003", "forest.chr004",
                 "forest.chr005", "forest.chr006", "forest.chr007", "forest.chr008", "forest.chr009",
-                "forest.chr010"
-            }), "Implemented Forest Friend bindings must match the canonical ten-character set.");
+                "forest.chr010", "cloud.chr011"
+            }), "Implemented character bindings must match the canonical eleven-character cross-family set.");
 #endif
             yield return null;
         }

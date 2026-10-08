@@ -20,7 +20,8 @@ namespace Necrom.FirstPlayable.Runtime
         BerryBurst = 7,
         GrowthRingBarrier = 8,
         SeedlingCall = 9,
-        FireflyTrail = 10
+        FireflyTrail = 10,
+        SkyBulwark = 11
     }
 
     [Serializable]
@@ -37,12 +38,13 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class FirstPlayableVisualPresentation : MonoBehaviour
     {
         public Texture2D NecromancerArt, GuardArt, RaisedGuardArt, BackgroundArt;
-        public FirstPlayableCharacterVisualBinding[] ForestFriendVisuals =
+        [FormerlySerializedAs("ForestFriendVisuals")]
+        public FirstPlayableCharacterVisualBinding[] CharacterVisuals =
             Array.Empty<FirstPlayableCharacterVisualBinding>();
-        public int LoadedForestFriendArtCount =>
-            ForestFriendVisuals == null
+        public int LoadedCharacterArtCount =>
+            CharacterVisuals == null
                 ? 0
-                : ForestFriendVisuals.Count(x =>
+                : CharacterVisuals.Count(x =>
                     x != null &&
                     !string.IsNullOrWhiteSpace(x.ArchetypeId) &&
                     x.Art != null);
@@ -277,12 +279,12 @@ namespace Necrom.FirstPlayable.Runtime
 
         FirstPlayableCharacterVisualBinding BindingFor(string archetypeId)
         {
-            if (ForestFriendVisuals == null || string.IsNullOrWhiteSpace(archetypeId))
+            if (CharacterVisuals == null || string.IsNullOrWhiteSpace(archetypeId))
                 return null;
 
-            for (var i = 0; i < ForestFriendVisuals.Length; i++)
+            for (var i = 0; i < CharacterVisuals.Length; i++)
             {
-                var binding = ForestFriendVisuals[i];
+                var binding = CharacterVisuals[i];
                 if (binding != null &&
                     string.Equals(
                         binding.ArchetypeId,
@@ -680,6 +682,13 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(41f, 24f), new Vector2(8f, 8f), new Color(1f,.82f,.38f), 45f, .84f);
                     SetVfxPart(slot, 2, new Vector2(49f, 47f), new Vector2(9f, 9f), new Color(1f,.82f,.38f), 45f, .74f);
                     SetVfxPart(slot, 3, new Vector2(28f, 55f), new Vector2(32f, 5f), accent, -18f, .54f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.SkyBulwark:
+                    SetVfxPart(slot, 0, new Vector2(27f, 36f), new Vector2(44f, 44f), accent, 45f, .30f);
+                    SetVfxPart(slot, 1, new Vector2(27f, 36f), new Vector2(30f, 30f), new Color(.86f,.94f,1f), 45f, .44f);
+                    SetVfxPart(slot, 2, new Vector2(27f, 36f), new Vector2(16f, 16f), new Color(1f,.79f,.32f), 45f, .78f);
+                    SetVfxPart(slot, 3, new Vector2(30f, 57f), new Vector2(34f, 8f), new Color(.96f,.99f,1f), 0f, .76f);
                     break;
 
                 default:

@@ -15,6 +15,7 @@ namespace Necrom.EditorTools
         const string ArtRootPath = "Assets/Necrom/FirstPlayable/Art/Q3/";
         const string ArtPath = ArtRootPath + "ProductionCandidate/";
         const string ForestFriendPath = ArtRootPath + "ForestFriends/";
+        const string CloudKnightPath = ArtRootPath + "CloudKnights/";
         const string AudioPath = "Assets/Necrom/FirstPlayable/Audio/Q3ProductionCandidate/";
         const string ProfilePath = ArtRootPath + "FirstPlayablePresentationProfile.asset";
         const string ProductionFontRoot = "Assets/Necrom/FirstPlayable/Fonts/Production/";
@@ -40,12 +41,24 @@ namespace Necrom.EditorTools
                 importer.SaveAndReimport();
             }
 
-            foreach (var name in new[] { "forest_chr_001", "forest_chr_002", "forest_chr_003", "forest_chr_004", "forest_chr_005", "forest_chr_006", "forest_chr_007", "forest_chr_008", "forest_chr_009", "forest_chr_010" })
+            foreach (var path in new[]
+                     {
+                         ForestFriendPath + "forest_chr_001.png",
+                         ForestFriendPath + "forest_chr_002.png",
+                         ForestFriendPath + "forest_chr_003.png",
+                         ForestFriendPath + "forest_chr_004.png",
+                         ForestFriendPath + "forest_chr_005.png",
+                         ForestFriendPath + "forest_chr_006.png",
+                         ForestFriendPath + "forest_chr_007.png",
+                         ForestFriendPath + "forest_chr_008.png",
+                         ForestFriendPath + "forest_chr_009.png",
+                         ForestFriendPath + "forest_chr_010.png",
+                         CloudKnightPath + "cloud_chr_011.png"
+                     })
             {
-                var path = ForestFriendPath + name + ".png";
                 var importer = (TextureImporter)AssetImporter.GetAtPath(path);
                 if (importer == null)
-                    throw new Exception("Forest Friend representative art missing: " + path);
+                    throw new Exception("Character production art missing: " + path);
                 importer.textureType = TextureImporterType.Sprite;
                 importer.spriteImportMode = SpriteImportMode.Single;
                 importer.alphaIsTransparency = true;
@@ -83,7 +96,7 @@ namespace Necrom.EditorTools
             visual.GuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "guard.png");
             visual.RaisedGuardArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "raised.png");
             visual.BackgroundArt = AssetDatabase.LoadAssetAtPath<Texture2D>(ArtPath + "background.png");
-            visual.ForestFriendVisuals = new[]
+            visual.CharacterVisuals = new[]
             {
                 new FirstPlayableCharacterVisualBinding
                 {
@@ -164,6 +177,14 @@ namespace Necrom.EditorTools
                         ForestFriendPath + "forest_chr_010.png"),
                     VfxIdentity = FirstPlayableCharacterVfxIdentity.FireflyTrail,
                     Accent = new Color(.62f, .42f, .95f)
+                },
+                new FirstPlayableCharacterVisualBinding
+                {
+                    ArchetypeId = "cloud.chr011",
+                    Art = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        CloudKnightPath + "cloud_chr_011.png"),
+                    VfxIdentity = FirstPlayableCharacterVfxIdentity.SkyBulwark,
+                    Accent = new Color(.36f, .68f, 1f)
                 }
             };
             visual.AttackLunge = new AnimationCurve(profile.AttackLunge.keys);
@@ -191,8 +212,8 @@ namespace Necrom.EditorTools
 
             if (visual.LoadedArtCount != 4)
                 throw new Exception("Four Q3 base art references must resolve.");
-            if (visual.LoadedForestFriendArtCount != 10)
-                throw new Exception("Ten implemented Forest Friend art references must resolve.");
+            if (visual.LoadedCharacterArtCount != 11)
+                throw new Exception("Eleven implemented character art references must resolve.");
             if (!visual.HasAuthoredMotion || visual.LoadedAudioClipCount != 5)
                 throw new Exception("Q3 authored motion/audio values failed scene serialization input.");
 
@@ -417,9 +438,9 @@ namespace Necrom.EditorTools
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(FirstPlayableCanonicalScene.PrefabPath);
             var prefabVisual = prefab.GetComponent<FirstPlayableVisualPresentation>();
 
-            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedForestFriendArtCount != 10 ||
-                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedForestFriendArtCount != 10)
-                throw new Exception("Q3 scene/prefab lost base or Forest Friend art references.");
+            if (visual == null || visual.LoadedArtCount != 4 || visual.LoadedCharacterArtCount != 11 ||
+                prefabVisual == null || prefabVisual.LoadedArtCount != 4 || prefabVisual.LoadedCharacterArtCount != 11)
+                throw new Exception("Q3 scene/prefab lost base or character art references.");
 
             foreach (var texture in new[]
                      {
@@ -431,21 +452,20 @@ namespace Necrom.EditorTools
                 if (string.IsNullOrEmpty(path) || !path.StartsWith(ArtPath, StringComparison.Ordinal))
                     throw new Exception("Q3 canonical art is not bound to the approved ProductionCandidate path: " + path);
             }
-            foreach (var binding in visual.ForestFriendVisuals)
+            foreach (var binding in visual.CharacterVisuals)
             {
                 if (binding == null ||
                     string.IsNullOrWhiteSpace(binding.ArchetypeId) ||
                     binding.Art == null ||
                     binding.VfxIdentity == FirstPlayableCharacterVfxIdentity.None)
                     throw new Exception(
-                        "Forest Friend visual binding is incomplete.");
+                        "Character visual binding is incomplete.");
                 var path = AssetDatabase.GetAssetPath(binding.Art);
                 if (string.IsNullOrEmpty(path) ||
-                    !path.StartsWith(
-                        ForestFriendPath,
-                        StringComparison.Ordinal))
+                    (!path.StartsWith(ForestFriendPath, StringComparison.Ordinal) &&
+                     !path.StartsWith(CloudKnightPath, StringComparison.Ordinal)))
                     throw new Exception(
-                        "Forest Friend art escaped approved family path: " +
+                        "Character art escaped approved family paths: " +
                         path);
             }
             if (root.ReviewFont == null || root.ReviewFont.sourceFontFile == null ||

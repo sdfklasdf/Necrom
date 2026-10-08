@@ -216,7 +216,7 @@ MonoBehaviour:
   GuardArt: {fileID: 2800000, guid: 3f69a45c30300bc498606dce82f6fa5e, type: 3}
   RaisedGuardArt: {fileID: 2800000, guid: afcfaded075d45c4ba6ab565e9db24e0, type: 3}
   BackgroundArt: {fileID: 2800000, guid: c8c7d96042c48df46a7d6fcc085b0d18, type: 3}
-  ForestFriendVisuals:
+  CharacterVisuals:
   - ArchetypeId: forest.chr001
     Art: {fileID: 2800000, guid: f82f072494ba62a4083ce76a3b2b4533, type: 3}
     VfxIdentity: 1
@@ -257,6 +257,10 @@ MonoBehaviour:
     Art: {fileID: 2800000, guid: 4e531c9d9c05ef048a5717be8a0d02c3, type: 3}
     VfxIdentity: 10
     Accent: {r: 0.62, g: 0.42, b: 0.95, a: 1}
+  - ArchetypeId: cloud.chr011
+    Art: {fileID: 2800000, guid: 20a602c2dd06b3f43a19c987557b7c9c, type: 3}
+    VfxIdentity: 11
+    Accent: {r: 0.36, g: 0.68, b: 1, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:
