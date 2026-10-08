@@ -11,7 +11,7 @@ namespace Necrom.EditorTools
 {
     public static class NecromOneClickSetup
     {
-        [MenuItem("네크로맨서 게임 세팅")]
+        [MenuItem("Necrom/네크로맨서 게임 세팅")]
         public static void Build()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
@@ -26,19 +26,33 @@ namespace Necrom.EditorTools
                 return;
             }
             var root = GameObject.Find("NecromDemoUI");
-            if (root == null) root = new GameObject("NecromDemoUI");
-            var canvas = root.GetComponent<Canvas>() ?? root.AddComponent<Canvas>();
+            // A Canvas needs a RectTransform. Older partially-created roots may
+            // have a plain Transform, so preserve those objects as a backup.
+            if (root != null && !(root.transform is RectTransform))
+            {
+                root.name = "NecromDemoUI_Legacy_Backup";
+                Debug.LogWarning("Old NecromDemoUI has no RectTransform. Preserved as NecromDemoUI_Legacy_Backup.");
+                root = null;
+            }
+            if (root == null)
+                root = new GameObject("NecromDemoUI", typeof(RectTransform),
+                    typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+
+            var canvas = root.GetComponent<Canvas>();
+            if (canvas == null) canvas = root.AddComponent<Canvas>();
+            var scaler = root.GetComponent<CanvasScaler>();
+            if (scaler == null) scaler = root.AddComponent<CanvasScaler>();
+            if (root.GetComponent<GraphicRaycaster>() == null)
+                root.AddComponent<GraphicRaycaster>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 200;
-            if (root.GetComponent<CanvasScaler>() == null) root.AddComponent<CanvasScaler>();
-            var scaler = root.GetComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(390, 844);
             scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
             scaler.matchWidthOrHeight = .5f;
             if (root.GetComponent<GraphicRaycaster>() == null) root.AddComponent<GraphicRaycaster>();
 
-            if (UnityEngine.Object.FindObjectOfType<EventSystem>() == null)
+            if (UnityEngine.Object.FindFirstObjectByType<EventSystem>() == null)
                 new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
 
             var popup = Panel(root.transform, "OfflinePopup", new Vector2(0, 40), new Vector2(350, 220),
