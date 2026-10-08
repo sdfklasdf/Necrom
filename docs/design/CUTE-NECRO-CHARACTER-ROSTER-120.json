@@ -346,7 +346,7 @@
         "family":  "구름 기사",
         "index":  8,
         "role":  "방어",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -356,14 +356,18 @@
         "prop":  "프리즘 탑방패",
         "vfxIdentity":  "프리즘 성벽",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:496"
+        "familyArtNode":  "72:496",
+        "runtimeArchetypeId":  "cloud.chr018",
+        "runtimeArtFile":  "cloud_chr_018.png",
+        "runtimeVfxIdentity":  "PrismRampart",
+        "productionStateBoard":  "77:309"
     },
     {
         "id":  "CHR-019",
         "family":  "구름 기사",
         "index":  9,
         "role":  "소환",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -373,7 +377,11 @@
         "prop":  "구름 나팔",
         "vfxIdentity":  "구름 소환",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:520"
+        "familyArtNode":  "72:520",
+        "runtimeArchetypeId":  "cloud.chr019",
+        "runtimeArtFile":  "cloud_chr_019.png",
+        "runtimeVfxIdentity":  "NimbusCall",
+        "productionStateBoard":  "77:309"
     },
     {
         "id":  "CHR-020",

@@ -27,7 +27,9 @@ namespace Necrom.FirstPlayable.Runtime
         BellGust = 14,
         SunsetSigil = 15,
         MistMend = 16,
-        HailPop = 17
+        HailPop = 17,
+        PrismRampart = 18,
+        NimbusCall = 19
     }
 
     [Serializable]
@@ -737,6 +739,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(42f, 29f), new Vector2(10f, 10f), new Color(.96f,.99f,1f), 0f, .82f);
                     SetVfxPart(slot, 2, new Vector2(32f, 44f), new Vector2(9f, 9f), new Color(.45f,.78f,1f), 0f, .74f);
                     SetVfxPart(slot, 3, new Vector2(29f, 34f), new Vector2(40f, 40f), accent, 45f, .24f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.PrismRampart:
+                    SetVfxPart(slot, 0, new Vector2(29f, 35f), new Vector2(42f, 50f), new Color(.96f,.99f,1f), 0f, .72f);
+                    SetVfxPart(slot, 1, new Vector2(20f, 34f), new Vector2(7f, 38f), new Color(1f,.45f,.55f), 0f, .70f);
+                    SetVfxPart(slot, 2, new Vector2(30f, 34f), new Vector2(7f, 38f), new Color(1f,.82f,.35f), 0f, .70f);
+                    SetVfxPart(slot, 3, new Vector2(40f, 34f), new Vector2(7f, 38f), new Color(.38f,.72f,1f), 0f, .70f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.NimbusCall:
+                    SetVfxPart(slot, 0, new Vector2(31f, 42f), new Vector2(44f, 18f), new Color(.76f,.91f,1f), 0f, .72f);
+                    SetVfxPart(slot, 1, new Vector2(40f, 31f), new Vector2(24f, 16f), new Color(.96f,.99f,1f), 0f, .78f);
+                    SetVfxPart(slot, 2, new Vector2(26f, 27f), new Vector2(7f, 34f), new Color(1f,.79f,.32f), -18f, .78f);
+                    SetVfxPart(slot, 3, new Vector2(31f, 31f), new Vector2(42f, 42f), accent, 45f, .22f);
                     break;
 
                 default:
