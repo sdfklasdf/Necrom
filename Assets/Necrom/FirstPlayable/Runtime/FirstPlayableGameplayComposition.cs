@@ -316,6 +316,8 @@ namespace Necrom.FirstPlayable.Runtime
                 "cloud.chr011" => "솜구름 방패대장",
                 "cloud.chr012" => "번개깃 창병",
                 "cloud.chr013" => "빗방울 석궁수",
+                "cloud.chr014" => "바람종 전령",
+                "cloud.chr015" => "노을 마도기사",
                 _ => "영혼 친구"
             };
         }

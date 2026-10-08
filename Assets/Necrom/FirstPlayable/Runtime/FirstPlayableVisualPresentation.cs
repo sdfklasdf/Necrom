@@ -23,7 +23,9 @@ namespace Necrom.FirstPlayable.Runtime
         FireflyTrail = 10,
         SkyBulwark = 11,
         BoltLance = 12,
-        Rainbolt = 13
+        Rainbolt = 13,
+        BellGust = 14,
+        SunsetSigil = 15
     }
 
     [Serializable]
@@ -705,6 +707,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(22f, 22f), new Vector2(10f, 18f), new Color(.35f,.78f,1f), 0f, .84f);
                     SetVfxPart(slot, 2, new Vector2(46f, 30f), new Vector2(9f, 16f), new Color(.35f,.78f,1f), 0f, .74f);
                     SetVfxPart(slot, 3, new Vector2(50f, 51f), new Vector2(8f, 14f), new Color(.39f,.86f,.78f), 0f, .64f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.BellGust:
+                    SetVfxPart(slot, 0, new Vector2(34f, 35f), new Vector2(5f, 44f), accent, 0f, .82f);
+                    SetVfxPart(slot, 1, new Vector2(30f, 45f), new Vector2(20f, 17f), new Color(1f,.82f,.38f), 0f, .82f);
+                    SetVfxPart(slot, 2, new Vector2(20f, 27f), new Vector2(38f, 5f), new Color(.47f,.82f,1f), -18f, .58f);
+                    SetVfxPart(slot, 3, new Vector2(43f, 50f), new Vector2(32f, 4f), new Color(.96f,.99f,1f), 10f, .46f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.SunsetSigil:
+                    SetVfxPart(slot, 0, new Vector2(37f, 34f), new Vector2(7f, 46f), accent, -6f, .86f);
+                    SetVfxPart(slot, 1, new Vector2(26f, 25f), new Vector2(40f, 40f), new Color(.92f,.45f,.66f), 45f, .28f);
+                    SetVfxPart(slot, 2, new Vector2(26f, 25f), new Vector2(22f, 22f), new Color(1f,.82f,.38f), 45f, .72f);
+                    SetVfxPart(slot, 3, new Vector2(46f, 48f), new Vector2(10f, 10f), new Color(1f,.65f,.48f), 45f, .62f);
                     break;
 
                 default:

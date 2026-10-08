@@ -262,7 +262,7 @@
         "family":  "구름 기사",
         "index":  4,
         "role":  "지원",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -272,14 +272,18 @@
         "prop":  "바람종 깃발",
         "vfxIdentity":  "바람종 돌풍",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:394"
+        "familyArtNode":  "72:394",
+        "runtimeArchetypeId":  "cloud.chr014",
+        "runtimeArtFile":  "cloud_chr_014.png",
+        "runtimeVfxIdentity":  "BellGust",
+        "productionStateBoard":  "75:309"
     },
     {
         "id":  "CHR-015",
         "family":  "구름 기사",
         "index":  5,
         "role":  "마법",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -289,7 +293,11 @@
         "prop":  "노을 룬검",
         "vfxIdentity":  "노을 문양",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:414"
+        "familyArtNode":  "72:414",
+        "runtimeArchetypeId":  "cloud.chr015",
+        "runtimeArtFile":  "cloud_chr_015.png",
+        "runtimeVfxIdentity":  "SunsetSigil",
+        "productionStateBoard":  "75:309"
     },
     {
         "id":  "CHR-016",
