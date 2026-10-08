@@ -16,6 +16,7 @@ namespace Necrom.FirstPlayable.Runtime
         [Serializable] private sealed class SkillSave { public int version = 1; public int availableSp; public SkillLevel[] levels; }
         [Serializable] private sealed class SkillLevel { public string id; public int level; }
         private SkillTreeManager manager;
+        private PermanentDeckCombatSpawner deckSpawner;
         private SkillTreeCatalog catalog;
         private Canvas canvas;
         private GameObject popup;
@@ -40,6 +41,10 @@ namespace Necrom.FirstPlayable.Runtime
                 catalog = JsonUtility.FromJson<SkillTreeCatalog>(asset.text);
                 manager = new SkillTreeManager(catalog);
                 LoadState();
+                if (!enabled) return;
+                deckSpawner = GetComponent<PermanentDeckCombatSpawner>();
+                if(deckSpawner==null)throw new InvalidOperationException("Permanent deck spawner missing");
+                deckSpawner.BindSkillManager(manager);
                 Build();
             }
             catch (Exception ex)
@@ -177,6 +182,7 @@ namespace Necrom.FirstPlayable.Runtime
         {
             if (manager == null || !manager.TryLevelUp(id)) return;
             SaveState();
+            if(deckSpawner!=null)deckSpawner.RefreshSkillBonuses();
             Refresh();
         }
 

@@ -26,6 +26,30 @@ namespace Necrom.FirstPlayable.Runtime
         private readonly Dictionary<string,double> attackTimers=new Dictionary<string,double>(StringComparer.Ordinal);
         private int sequence;
         public int SpawnedCount => units.Count;
+        public int GetActiveAttack(string id) => id != null && statBridgeStats.TryGetValue(id,out var value) ? value.Attack : -1;
+        public void BindSkillManager(SkillTreeManager shared)
+        {
+            skills=shared??throw new ArgumentNullException(nameof(shared));
+            if(boundRoster!=null)
+            {
+                statBridge.ReplaceCalculator(new StatCalculator(new SynergyManager(synergyCatalog),skills,skillCatalog,catalog.monsters));
+                RefreshSkillBonuses();
+            }
+        }
+        // Stat-only update: keep combatant instances, current HP, visual objects and attack clocks intact.
+        public void RefreshSkillBonuses()
+        {
+            if(boundRoster==null || !enabled || statBridge==null)return;
+            foreach(var id in new List<string>(units.Keys))
+            {
+                var updated=statBridge.RecalculatePermanentEntity(id);
+                // Do not replace the combatant: preserve identity and attack clock.
+                if(units.TryGetValue(id,out var combatant) && combatant!=null)
+                    combatant.RescaleMaxHealth(updated.MaxHealth);
+                statBridgeStats[id]=updated;
+                Debug.Log("[NECRO AWU-15] Skill stats updated in place: "+id+" ATK="+updated.Attack);
+            }
+        }
         public int LivingCount { get { int n=0; foreach(var u in units.Values) if(u!=null && u.LifeState==CombatantLifeState.Active)n++; return n; } }
         public int ConfirmedPermanentHits { get; private set; }
         public int ConfirmedEnemyHits { get; private set; }

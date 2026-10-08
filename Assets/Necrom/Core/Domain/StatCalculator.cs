@@ -47,11 +47,19 @@ namespace Necrom.Core.Domain
                 else if(key=="party.attack_speed.percent")speed+=s.Value;
                 // SPEC_ONLY tiers remain explicitly not implemented; no simulated resurrection or AoE.
             }
+            // AWU-15: read the shared persisted skill manager for every deployed unit.
+            // Temporary coefficient: +1% per invested level ONLY for explicit numeric effect IDs.
+            // DRAFT_* and ultimate.* remain SPEC_ONLY until the Founder approves their behavior.
             foreach(var n in nodes.Values) {
-                if(n.branch!="Summoning" || skills.LevelOf(n.id)<=0)continue;
-                // Explicit numeric effect mapping only; DRAFT_* effect IDs do not silently grant a buff.
-                if(n.effectKey=="summon.hp.percent")hp+=0.01*skills.LevelOf(n.id);
-                if(n.effectKey=="summon.attack.percent")atk+=0.01*skills.LevelOf(n.id);
+                int level=skills.LevelOf(n.id);
+                if(level<=0)continue;
+                double bonus=0.01*level;
+                switch(n.effectKey) {
+                    case "summon.hp.percent": hp+=bonus;break;
+                    case "summon.attack.percent": atk+=bonus;break;
+                    case "summon.attack_speed.percent": speed+=bonus;break;
+                    case "summon.defense.percent": def+=bonus;break;
+                }
             }
             if(hp< -0.99 || atk< -0.99 || def< -0.99 || speed< -0.99)throw new InvalidOperationException("Invalid negative multiplier");
             return new EffectiveCombatStats(checked((int)Math.Max(1,Math.Round(unit.hp*(1+hp)))),
