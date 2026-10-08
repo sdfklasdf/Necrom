@@ -220,7 +220,7 @@
         "family":  "구름 기사",
         "index":  2,
         "role":  "근접",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -230,14 +230,18 @@
         "prop":  "번개깃 창",
         "vfxIdentity":  "번개 창격",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:337"
+        "familyArtNode":  "72:337",
+        "runtimeArchetypeId":  "cloud.chr012",
+        "runtimeArtFile":  "cloud_chr_012.png",
+        "runtimeVfxIdentity":  "BoltLance",
+        "productionStateBoard":  "74:309"
     },
     {
         "id":  "CHR-013",
         "family":  "구름 기사",
         "index":  3,
         "role":  "원거리",
-        "productionStatus":  "FIGMA_KIT_COMPLETE",
+        "productionStatus":  "UNITY_PACKAGE_TARGETED_VERIFIED",
         "uniqueSilhouette":  true,
         "uniqueProp":  true,
         "uniqueFace":  true,
@@ -247,7 +251,11 @@
         "prop":  "빗방울 석궁",
         "vfxIdentity":  "빗방울 화살",
         "familyFigmaNode":  "72:309",
-        "familyArtNode":  "72:366"
+        "familyArtNode":  "72:366",
+        "runtimeArchetypeId":  "cloud.chr013",
+        "runtimeArtFile":  "cloud_chr_013.png",
+        "runtimeVfxIdentity":  "Rainbolt",
+        "productionStateBoard":  "74:309"
     },
     {
         "id":  "CHR-014",

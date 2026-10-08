@@ -314,6 +314,8 @@ namespace Necrom.FirstPlayable.Runtime
                 "forest.chr009" => "씨앗 소환사",
                 "forest.chr010" => "반딧불 길잡이",
                 "cloud.chr011" => "솜구름 방패대장",
+                "cloud.chr012" => "번개깃 창병",
+                "cloud.chr013" => "빗방울 석궁수",
                 _ => "영혼 친구"
             };
         }

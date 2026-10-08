@@ -261,6 +261,14 @@ MonoBehaviour:
     Art: {fileID: 2800000, guid: 20a602c2dd06b3f43a19c987557b7c9c, type: 3}
     VfxIdentity: 11
     Accent: {r: 0.36, g: 0.68, b: 1, a: 1}
+  - ArchetypeId: cloud.chr012
+    Art: {fileID: 2800000, guid: 3a43ef17ef3d4cb499ae39578e4fac1e, type: 3}
+    VfxIdentity: 12
+    Accent: {r: 0.54, g: 0.47, b: 0.96, a: 1}
+  - ArchetypeId: cloud.chr013
+    Art: {fileID: 2800000, guid: 38d0f1e6c89593c4a99025fd2af3fd1d, type: 3}
+    VfxIdentity: 13
+    Accent: {r: 0.31, g: 0.65, b: 0.92, a: 1}
   AttackLunge:
     serializedVersion: 2
     m_Curve:

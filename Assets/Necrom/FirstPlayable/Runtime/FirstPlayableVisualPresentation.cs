@@ -21,7 +21,9 @@ namespace Necrom.FirstPlayable.Runtime
         GrowthRingBarrier = 8,
         SeedlingCall = 9,
         FireflyTrail = 10,
-        SkyBulwark = 11
+        SkyBulwark = 11,
+        BoltLance = 12,
+        Rainbolt = 13
     }
 
     [Serializable]
@@ -689,6 +691,20 @@ namespace Necrom.FirstPlayable.Runtime
                     SetVfxPart(slot, 1, new Vector2(27f, 36f), new Vector2(30f, 30f), new Color(.86f,.94f,1f), 45f, .44f);
                     SetVfxPart(slot, 2, new Vector2(27f, 36f), new Vector2(16f, 16f), new Color(1f,.79f,.32f), 45f, .78f);
                     SetVfxPart(slot, 3, new Vector2(30f, 57f), new Vector2(34f, 8f), new Color(.96f,.99f,1f), 0f, .76f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.BoltLance:
+                    SetVfxPart(slot, 0, new Vector2(29f, 34f), new Vector2(7f, 46f), accent, -8f, .88f);
+                    SetVfxPart(slot, 1, new Vector2(41f, 31f), new Vector2(6f, 36f), new Color(1f,.78f,.28f), -28f, .90f);
+                    SetVfxPart(slot, 2, new Vector2(20f, 20f), new Vector2(10f, 10f), new Color(1f,.78f,.28f), 45f, .74f);
+                    SetVfxPart(slot, 3, new Vector2(49f, 50f), new Vector2(9f, 9f), new Color(1f,.78f,.28f), 45f, .62f);
+                    break;
+
+                case FirstPlayableCharacterVfxIdentity.Rainbolt:
+                    SetVfxPart(slot, 0, new Vector2(31f, 35f), new Vector2(36f, 6f), accent, -8f, .82f);
+                    SetVfxPart(slot, 1, new Vector2(22f, 22f), new Vector2(10f, 18f), new Color(.35f,.78f,1f), 0f, .84f);
+                    SetVfxPart(slot, 2, new Vector2(46f, 30f), new Vector2(9f, 16f), new Color(.35f,.78f,1f), 0f, .74f);
+                    SetVfxPart(slot, 3, new Vector2(50f, 51f), new Vector2(8f, 14f), new Color(.39f,.86f,.78f), 0f, .64f);
                     break;
 
                 default:
