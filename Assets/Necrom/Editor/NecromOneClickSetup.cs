@@ -16,10 +16,12 @@ namespace Necrom.EditorTools
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
             {
-                Debug.LogWarning("Stop Play mode before setting up UI.");
+                EditorApplication.isPlaying = false;
+                EditorApplication.delayCall += () => { if (!EditorApplication.isPlayingOrWillChangePlaymode) Build(); };
                 return;
             }
-            var font = TMP_Settings.defaultFontAsset;
+            var font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Necrom/FirstPlayable/Fonts/Production/NotoSansKR-Regular SDF.asset");
+            if (font == null) font = TMP_Settings.defaultFontAsset;
             if (font == null)
             {
                 EditorUtility.DisplayDialog("TMP 폰트 필요", "TextMesh Pro Essential Resources를 먼저 설치하세요.", "확인");
