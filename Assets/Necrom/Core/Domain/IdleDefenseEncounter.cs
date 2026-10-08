@@ -95,6 +95,19 @@ namespace Necrom.Core.Domain
             EvaluateWaveCompletion();
         }
 
+        // Endless-mode retry: explicitly reset a failed wave without changing Raise/Formation ownership.
+        public void PrepareFailedWaveRetry(long expectedRevision)
+        {
+            RequireRevision(expectedRevision);
+            if(Phase!=DefenseWavePhase.Failed)throw new InvalidOperationException("Only a failed wave can retry.");
+            GateIntegrity=GateMaxIntegrity;
+            RemainingEnemiesToSpawn=0;
+            ActiveEnemyCount=0;
+            WaveNumber=Math.Max(0,WaveNumber-1);
+            Phase=DefenseWavePhase.Ready;
+            Revision++;
+        }
+
         public void PrepareNextWave(long expectedRevision)
         {
             RequireRevision(expectedRevision);

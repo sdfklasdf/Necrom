@@ -46,6 +46,10 @@ namespace Necrom.FirstPlayable.Runtime
         Vector2 _configuredSize;
         Rect _configuredSafe;
         bool _automatic=true;
+        [SerializeField] bool endlessWaveMode=true;
+        [SerializeField] float interWaveSeconds=1.5f;
+        float _terminalElapsed;
+        int _lastTerminalWave=-1;
         int _sequence, _encounter;
         const int CanonicalThreatsPerWave = 2;
         const int CanonicalGateIntegrity = 10;
@@ -144,14 +148,28 @@ namespace Necrom.FirstPlayable.Runtime
             _alliedLoop=GetOrAdd<FirstPlayableAlliedAutoCombatLoop>(combat.gameObject);
             _alliedLoop.Initialize(application,Roster,targeting,pipeline,id=>new EntityId("source:"+id.Value),()=>Id("resolve:ally"));
             _alliedLoop.ConfigureHudSession(Session);
+            // Permanent deck units use their own host and ownership; Raise Formation remains untouched.
+            var permanentHost=new GameObject("PermanentDeckRuntimeHost",typeof(RectTransform));
+            permanentHost.transform.SetParent(combat,false);
+            var permanentRect=permanentHost.GetComponent<RectTransform>();
+            permanentRect.anchorMin=Vector2.zero; permanentRect.anchorMax=Vector2.one;
+            permanentRect.offsetMin=Vector2.zero; permanentRect.offsetMax=Vector2.zero;
+            var permanentSpawner=GetOrAdd<PermanentDeckCombatSpawner>(gameObject);
+            permanentSpawner.Initialize(permanentRect,targeting,pipeline,Battle);
             DefenseWave=GetOrAdd<FirstPlayableDefenseWaveRuntimeController>(gameObject);
             DefenseWave.Initialize(application,Enemies,CanonicalGateIntegrity,()=>Id("resolve:wave"));
+            permanentSpawner.ConfigureDefenseWave(DefenseWave);
+            // Gacha presenter is independent of the disabled legacy demo UI.
+            GetOrAdd<GachaUIController>(gameObject);
+            GetOrAdd<DeckFormationUIController>(gameObject);
+            GetOrAdd<SkillTreeUIController>(gameObject);
             GatePressure=GetOrAdd<FirstPlayableGatePressureController>(gameObject);
             GatePressure.Initialize(
                 DefenseWave,
                 Enemies,
                 CanonicalGateTravelSeconds,
                 CanonicalGateBreachDamage);
+            GatePressure.ConfigurePermanentDefender(permanentSpawner.TryTakeEnemyHit);
             _playerLoop.ConfigureDefenseWave(DefenseWave);
             _alliedLoop.ConfigureDefenseWave(DefenseWave);
             HudBinding=GetOrAdd<FirstPlayableCombatHudRuntimeBinding>(gameObject);
@@ -355,13 +373,17 @@ namespace Necrom.FirstPlayable.Runtime
         }
         public void StartNextEncounter()
         {
-            if(DefenseWave.Phase!=DefenseWavePhase.Cleared)
-                throw new InvalidOperationException("A canonical next wave requires a cleared defense wave.");
-            var nextWave=DefenseWave.WaveNumber+1;
+            var phase=DefenseWave.Phase;
+            if(phase!=DefenseWavePhase.Cleared && phase!=DefenseWavePhase.Failed)
+                throw new InvalidOperationException("A canonical next wave requires a cleared or failed defense wave.");
+            var nextWave=phase==DefenseWavePhase.Cleared ? DefenseWave.WaveNumber+1 : DefenseWave.WaveNumber;
             Battle.RestartBattle(new RestartBattleCommand(Id("restart"),Battle.Revision));
             Enemies.ClearEncounterTargets();
-            DefenseWave.PrepareNextWave();
+            if(phase==DefenseWavePhase.Cleared)DefenseWave.PrepareNextWave();
+            else DefenseWave.PrepareFailedWaveRetry();
             StartCanonicalWave(nextWave);
+            _terminalElapsed=0f;
+            _lastTerminalWave=-1;
             Battle.StartBattle(new StartBattleCommand(Id("start"),Battle.Revision));
             // Start/RestartBoundary preserves ownership; restore current responsive readability layout.
             ConfigureViewport(_configuredSize,_configuredSafe);
@@ -388,6 +410,16 @@ namespace Necrom.FirstPlayable.Runtime
             }
             BindHudIfNeeded();
             FinalizeResultIfNeeded();
+            if(endlessWaveMode && _automatic && (DefenseWave.Phase==DefenseWavePhase.Cleared || DefenseWave.Phase==DefenseWavePhase.Failed))
+            {
+                if(_lastTerminalWave!=DefenseWave.WaveNumber) { _lastTerminalWave=DefenseWave.WaveNumber; _terminalElapsed=0f; }
+                _terminalElapsed+=Time.deltaTime;
+                if(_terminalElapsed>=Mathf.Max(0.25f,interWaveSeconds) && Battle.Phase==BattlePhase.Resolved)
+                {
+                    try { StartNextEncounter(); }
+                    catch(Exception ex) { Debug.LogError("Endless wave transition blocked: "+ex); endlessWaveMode=false; }
+                }
+            }
             if(_nextButton!=null) {
                 _nextButton.interactable=Battle.Phase==BattlePhase.Resolved && DefenseWave.Phase==DefenseWavePhase.Cleared;
                 var combat=_nextButton.transform.parent as RectTransform;

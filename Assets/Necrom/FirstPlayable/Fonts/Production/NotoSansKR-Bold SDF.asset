@@ -19,7 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties:
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Material: {fileID: -6543908564384458710}
   m_SourceFontFileGUID: a8f40284a2ad8794d9f99751a120de22
   m_CreationSettings:
-    sourceFontFileName:
-    sourceFontFileGUID:
+    sourceFontFileName: 
+    sourceFontFileGUID: 
     faceIndex: 0
     pointSizeSamplingMode: 0
     pointSize: 0
@@ -116,15 +116,15 @@ MonoBehaviour:
     atlasWidth: 0
     atlasHeight: 0
     characterSetSelectionMode: 0
-    characterSequence:
-    referencedFontAssetGUID:
-    referencedTextAssetGUID:
+    characterSequence: 
+    referencedFontAssetGUID: 
+    referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
     renderMode: 0
     includeFontFeatures: 0
   m_SourceFontFile: {fileID: 12800000, guid: a8f40284a2ad8794d9f99751a120de22, type: 3}
-  m_SourceFontFilePath:
+  m_SourceFontFilePath: 
   m_AtlasPopulationMode: 1
   InternalDynamicOS: 0
   m_GlyphTable: []
@@ -260,6 +260,34 @@ MonoBehaviour:
       m_LigatureGlyphID: 2124
     - m_ComponentGlyphIDs: 1500000077180000
       m_LigatureGlyphID: 2276
+    - m_ComponentGlyphIDs: 0200000002000000
+      m_LigatureGlyphID: 742
+    - m_ComponentGlyphIDs: 0200000020000000
+      m_LigatureGlyphID: 746
+    - m_ComponentGlyphIDs: 17000000ec130000
+      m_LigatureGlyphID: 2414
+    - m_ComponentGlyphIDs: 170000008d140000
+      m_LigatureGlyphID: 2126
+    - m_ComponentGlyphIDs: 1700000077180000
+      m_LigatureGlyphID: 2278
+    - m_ComponentGlyphIDs: 18000000ec130000
+      m_LigatureGlyphID: 2415
+    - m_ComponentGlyphIDs: 180000008d140000
+      m_LigatureGlyphID: 2127
+    - m_ComponentGlyphIDs: 1800000077180000
+      m_LigatureGlyphID: 2279
+    - m_ComponentGlyphIDs: 19000000ec130000
+      m_LigatureGlyphID: 2416
+    - m_ComponentGlyphIDs: 190000008d140000
+      m_LigatureGlyphID: 2128
+    - m_ComponentGlyphIDs: 1900000077180000
+      m_LigatureGlyphID: 2280
+    - m_ComponentGlyphIDs: 1a000000ec130000
+      m_LigatureGlyphID: 2417
+    - m_ComponentGlyphIDs: 1a0000008d140000
+      m_LigatureGlyphID: 2129
+    - m_ComponentGlyphIDs: 1a00000077180000
+      m_LigatureGlyphID: 2281
     m_GlyphPairAdjustmentRecords:
     - m_FirstAdjustmentRecord:
         m_GlyphIndex: 16
@@ -2826,6 +2854,36 @@ MonoBehaviour:
           m_XAdvance: 0
           m_YAdvance: 0
       m_FeatureLookupFlags: 749565487
+    - m_FirstAdjustmentRecord:
+        m_GlyphIndex: 2
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: -4.77
+          m_YAdvance: 0
+      m_SecondAdjustmentRecord:
+        m_GlyphIndex: 726
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: 0
+          m_YAdvance: 0
+      m_FeatureLookupFlags: -602704337
+    - m_FirstAdjustmentRecord:
+        m_GlyphIndex: 2
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: -4.77
+          m_YAdvance: 0
+      m_SecondAdjustmentRecord:
+        m_GlyphIndex: 729
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: 0
+          m_YAdvance: 0
+      m_FeatureLookupFlags: -602704337
     m_MarkToBaseAdjustmentRecords: []
     m_MarkToMarkAdjustmentRecords: []
   m_ShouldReimportFontFeatures: 0
@@ -2859,7 +2917,7 @@ MonoBehaviour:
   italicStyle: 35
   tabSize: 10
   m_fontInfo:
-    Name:
+    Name: 
     PointSize: 0
     Scale: 0
     CharacterCount: 0
@@ -2906,7 +2964,7 @@ Texture2D:
   m_IsReadable: 1
   m_IsPreProcessed: 0
   m_IgnoreMipmapLimit: 1
-  m_MipmapLimitGroupName:
+  m_MipmapLimitGroupName: 
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_VTOnly: 0
@@ -2923,11 +2981,11 @@ Texture2D:
     m_WrapW: 0
   m_LightmapFormat: 0
   m_ColorSpace: 0
-  m_PlatformBlob:
+  m_PlatformBlob: 
   image data: 1
   _typelessdata: 00
   m_StreamData:
     serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 

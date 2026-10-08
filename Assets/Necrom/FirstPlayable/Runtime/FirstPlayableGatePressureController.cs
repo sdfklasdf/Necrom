@@ -21,6 +21,12 @@ namespace Necrom.FirstPlayable.Runtime
         float _travelDurationSeconds;
         int _integrityDamage;
         bool _initialized;
+        Func<int,bool> _permanentDefenderHit;
+        public void ConfigurePermanentDefender(Func<int,bool> defenderHit)
+        {
+            if(_permanentDefenderHit!=null)throw new InvalidOperationException("Permanent defender already bound");
+            _permanentDefenderHit=defenderHit??throw new ArgumentNullException(nameof(defenderHit));
+        }
 
         public bool IsInitialized => _initialized;
         public float TravelDurationSeconds => _travelDurationSeconds;
@@ -160,6 +166,12 @@ namespace Necrom.FirstPlayable.Runtime
                 if (entry.ElapsedSeconds + 0.0001f < _travelDurationSeconds)
                     continue;
 
+                // A living permanent defender intercepts the breach without consuming the enemy threat.
+                if(_permanentDefenderHit != null && _permanentDefenderHit(_integrityDamage))
+                {
+                    entry.ElapsedSeconds=0f;
+                    continue;
+                }
                 _defense.RecordGateBreach(target, _integrityDamage);
                 _threats.RemoveAt(i);
                 i--;

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "balanceStatus": "DRAFT_VALUES_NOT_APPROVED",
+  "rules": [
+    {
+      "trait": "Spirit",
+      "effectKey": "party.attack.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Beast",
+      "effectKey": "party.hp.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Undead",
+      "effectKey": "party.attack.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Construct",
+      "effectKey": "party.hp.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Arcane",
+      "effectKey": "party.attack.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Guardian",
+      "effectKey": "party.hp.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Frost",
+      "effectKey": "party.attack.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    {
+      "trait": "Flame",
+      "effectKey": "party.hp.percent",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "values": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    }
+  ]
+}

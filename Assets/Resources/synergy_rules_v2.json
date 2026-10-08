@@ -1,0 +1,907 @@
+{
+  "schemaVersion": 2,
+  "balanceStatus": "DRAFT_STAT_COEFFICIENTS_NOT_APPROVED_SPECIAL_EFFECTS_UNIMPLEMENTED",
+  "ruleCount": 20,
+  "rules": [
+    {
+      "trait": "Undead",
+      "category": "Origin",
+      "label": "언데드",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.undead",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "처치 시 회복",
+          "effectKey": "origin.undead.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "처치 시 보호막",
+          "effectKey": "origin.undead.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "첫 사망 1회 부활",
+          "effectKey": "origin.undead.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.hp.percent",
+        "party.hp.percent",
+        "party.hp.percent"
+      ]
+    },
+    {
+      "trait": "Spirit",
+      "category": "Origin",
+      "label": "정령",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.spirit",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "마법 공격력 증가",
+          "effectKey": "origin.spirit.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "스킬 쿨다운 감소",
+          "effectKey": "origin.spirit.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "속성 추가타 발동",
+          "effectKey": "origin.spirit.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Machine",
+      "category": "Origin",
+      "label": "기계",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.machine",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "방어력 증가",
+          "effectKey": "origin.machine.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "받는 피해 감소",
+          "effectKey": "origin.machine.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주기적 파티 보호막",
+          "effectKey": "origin.machine.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.defense.percent",
+        "party.defense.percent",
+        "party.defense.percent"
+      ]
+    },
+    {
+      "trait": "Beast",
+      "category": "Origin",
+      "label": "야수",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.beast",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "공격속도 증가",
+          "effectKey": "origin.beast.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "치명타 확률 증가",
+          "effectKey": "origin.beast.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "연속 공격 추가타",
+          "effectKey": "origin.beast.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack_speed.percent",
+        "party.attack_speed.percent",
+        "party.attack_speed.percent"
+      ]
+    },
+    {
+      "trait": "Dragon",
+      "category": "Origin",
+      "label": "용족",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.dragon",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "치명타 피해 증가",
+          "effectKey": "origin.dragon.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "공격 시 화상",
+          "effectKey": "origin.dragon.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주기적 광역 브레스",
+          "effectKey": "origin.dragon.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Demon",
+      "category": "Origin",
+      "label": "악마",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.demon",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "공격력 증가",
+          "effectKey": "origin.demon.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "흡혈 효과",
+          "effectKey": "origin.demon.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "처치 시 공격력 중첩",
+          "effectKey": "origin.demon.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Celestial",
+      "category": "Origin",
+      "label": "천상",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.celestial",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "회복량 증가",
+          "effectKey": "origin.celestial.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "상태이상 저항 증가",
+          "effectKey": "origin.celestial.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "치명적 피해 방지 보호",
+          "effectKey": "origin.celestial.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.hp.percent",
+        "party.hp.percent",
+        "party.hp.percent"
+      ]
+    },
+    {
+      "trait": "Shadow",
+      "category": "Origin",
+      "label": "그림자",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.shadow",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "회피율 증가",
+          "effectKey": "origin.shadow.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "후방 공격 피해 증가",
+          "effectKey": "origin.shadow.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "회피 후 강화 공격",
+          "effectKey": "origin.shadow.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack_speed.percent",
+        "party.attack_speed.percent",
+        "party.attack_speed.percent"
+      ]
+    },
+    {
+      "trait": "Nature",
+      "category": "Origin",
+      "label": "자연",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.nature",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "최대 체력 증가",
+          "effectKey": "origin.nature.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "지속 체력 재생",
+          "effectKey": "origin.nature.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주변 아군 피해 경감",
+          "effectKey": "origin.nature.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.hp.percent",
+        "party.hp.percent",
+        "party.hp.percent"
+      ]
+    },
+    {
+      "trait": "Abyss",
+      "category": "Origin",
+      "label": "심연",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "origin.abyss",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "적 방어력 감소",
+          "effectKey": "origin.abyss.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "적 받는 피해 증가",
+          "effectKey": "origin.abyss.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주기적 광역 약화",
+          "effectKey": "origin.abyss.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Guardian",
+      "category": "Class",
+      "label": "수호자",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.guardian",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "방어력 증가",
+          "effectKey": "class.guardian.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "도발 시 피해 감소",
+          "effectKey": "class.guardian.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "파티 피해 일부 대신 받기",
+          "effectKey": "class.guardian.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.defense.percent",
+        "party.defense.percent",
+        "party.defense.percent"
+      ]
+    },
+    {
+      "trait": "Warrior",
+      "category": "Class",
+      "label": "전사",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.warrior",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "기본 공격력 증가",
+          "effectKey": "class.warrior.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "연속 공격 강화",
+          "effectKey": "class.warrior.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주기적 범위 타격",
+          "effectKey": "class.warrior.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Assassin",
+      "category": "Class",
+      "label": "암살자",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.assassin",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "치명타 확률 증가",
+          "effectKey": "class.assassin.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "치명타 피해 증가",
+          "effectKey": "class.assassin.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "낮은 체력 적 마무리 공격",
+          "effectKey": "class.assassin.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Archer",
+      "category": "Class",
+      "label": "궁수",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.archer",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "공격속도 증가",
+          "effectKey": "class.archer.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "추가 화살 발사",
+          "effectKey": "class.archer.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "관통 화살 발사",
+          "effectKey": "class.archer.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack_speed.percent",
+        "party.attack_speed.percent",
+        "party.attack_speed.percent"
+      ]
+    },
+    {
+      "trait": "Mage",
+      "category": "Class",
+      "label": "마법사",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.mage",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "스킬 피해 증가",
+          "effectKey": "class.mage.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "쿨다운 감소",
+          "effectKey": "class.mage.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "스킬 재시전 확률",
+          "effectKey": "class.mage.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Priest",
+      "category": "Class",
+      "label": "사제",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.priest",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "체력 재생 증가",
+          "effectKey": "class.priest.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "주기적 회복",
+          "effectKey": "class.priest.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "사망 방지 축복",
+          "effectKey": "class.priest.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.hp.percent",
+        "party.hp.percent",
+        "party.hp.percent"
+      ]
+    },
+    {
+      "trait": "Hexer",
+      "category": "Class",
+      "label": "저주술사",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.hexer",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "디버프 지속시간 증가",
+          "effectKey": "class.hexer.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "적 공격력 감소",
+          "effectKey": "class.hexer.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주변 적 저주 전파",
+          "effectKey": "class.hexer.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Summoner",
+      "category": "Class",
+      "label": "소환술사",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.summoner",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "소환 피해 증가",
+          "effectKey": "class.summoner.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "소환 지속시간 증가",
+          "effectKey": "class.summoner.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "소환수 추가 공격",
+          "effectKey": "class.summoner.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    },
+    {
+      "trait": "Berserker",
+      "category": "Class",
+      "label": "광전사",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.berserker",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "체력 감소 시 공격력 증가",
+          "effectKey": "class.berserker.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "체력 감소 시 공격속도 증가",
+          "effectKey": "class.berserker.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "위기 상태 폭주",
+          "effectKey": "class.berserker.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack_speed.percent",
+        "party.attack_speed.percent",
+        "party.attack_speed.percent"
+      ]
+    },
+    {
+      "trait": "Artillerist",
+      "category": "Class",
+      "label": "포격수",
+      "thresholds": [
+        2,
+        4,
+        6
+      ],
+      "effectKey": "class.artillerist",
+      "values": [
+        0.05,
+        0.1,
+        0.18
+      ],
+      "tiers": [
+        {
+          "threshold": 2,
+          "description": "범위 공격 피해 증가",
+          "effectKey": "class.artillerist.tier2",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 4,
+          "description": "폭발 범위 증가",
+          "effectKey": "class.artillerist.tier4",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        },
+        {
+          "threshold": 6,
+          "description": "주기적 광역 폭격",
+          "effectKey": "class.artillerist.tier6",
+          "magnitude": null,
+          "implementationStatus": "SPEC_ONLY"
+        }
+      ],
+      "balanceStatus": "DRAFT_STAT_PROXY_SPECIAL_MECHANICS_SPEC_ONLY",
+      "statKeys": [
+        "party.attack.percent",
+        "party.attack.percent",
+        "party.attack.percent"
+      ]
+    }
+  ]
+}

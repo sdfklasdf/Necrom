@@ -1,806 +1,1579 @@
 {
-  "schemaVersion": 1,
-  "balanceStatus": "DRAFT_NOT_LIVE",
+  "schemaVersion": 3,
+  "balanceStatus": "DRAFT_RARITY_BASE_STATS_PROVISIONAL",
+  "rosterCapacity": 120,
   "monsters": [
     {
       "id": "MON_001",
       "name": "몽실 슬라임",
       "element": "빛",
-      "hp": 80,
-      "attack": 12,
-      "gachaWeight": 80
+      "hp": 85,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Undead",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_002",
       "name": "몽실 토끼",
       "element": "불",
-      "hp": 92,
-      "attack": 15,
-      "gachaWeight": 80
+      "hp": 89,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Spirit",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_003",
       "name": "몽실 여우",
       "element": "번개",
-      "hp": 104,
+      "hp": 93,
       "attack": 18,
-      "gachaWeight": 80
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Machine",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_004",
       "name": "몽실 드래곤",
       "element": "그림자",
-      "hp": 116,
-      "attack": 21,
-      "gachaWeight": 80
+      "hp": 97,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Beast",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_005",
       "name": "몽실 버섯",
       "element": "물",
-      "hp": 128,
-      "attack": 24,
-      "gachaWeight": 80
+      "hp": 101,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Dragon",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_006",
       "name": "몽실 골렘",
       "element": "땅",
-      "hp": 140,
-      "attack": 27,
-      "gachaWeight": 80
+      "hp": 105,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Demon",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_007",
       "name": "몽실 고양이",
       "element": "별",
-      "hp": 152,
-      "attack": 30,
-      "gachaWeight": 80
+      "hp": 109,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Celestial",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_008",
       "name": "몽실 펭귄",
       "element": "숲",
-      "hp": 164,
-      "attack": 33,
-      "gachaWeight": 80
+      "hp": 113,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Shadow",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_009",
       "name": "몽실 유니콘",
       "element": "바람",
-      "hp": 176,
-      "attack": 36,
-      "gachaWeight": 80
+      "hp": 117,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Nature",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_010",
       "name": "몽실 도깨비",
       "element": "얼음",
-      "hp": 188,
-      "attack": 39,
-      "gachaWeight": 80
+      "hp": 121,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Abyss",
+        "Guardian"
+      ]
     },
     {
       "id": "MON_011",
       "name": "반짝 슬라임",
       "element": "숲",
-      "hp": 80,
-      "attack": 12,
-      "gachaWeight": 80
+      "hp": 87,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Undead",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_012",
       "name": "반짝 토끼",
       "element": "바람",
-      "hp": 92,
-      "attack": 15,
-      "gachaWeight": 80
+      "hp": 91,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Spirit",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_013",
       "name": "반짝 여우",
       "element": "얼음",
-      "hp": 104,
-      "attack": 18,
-      "gachaWeight": 80
+      "hp": 95,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Machine",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_014",
       "name": "반짝 드래곤",
       "element": "빛",
-      "hp": 116,
-      "attack": 21,
-      "gachaWeight": 80
+      "hp": 99,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Beast",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_015",
       "name": "반짝 버섯",
       "element": "불",
-      "hp": 128,
-      "attack": 24,
-      "gachaWeight": 80
+      "hp": 103,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Dragon",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_016",
       "name": "반짝 골렘",
       "element": "번개",
-      "hp": 140,
-      "attack": 27,
-      "gachaWeight": 80
+      "hp": 107,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Demon",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_017",
       "name": "반짝 고양이",
       "element": "그림자",
-      "hp": 152,
-      "attack": 30,
-      "gachaWeight": 80
+      "hp": 111,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Celestial",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_018",
       "name": "반짝 펭귄",
       "element": "물",
-      "hp": 164,
-      "attack": 33,
-      "gachaWeight": 80
+      "hp": 115,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Shadow",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_019",
       "name": "반짝 유니콘",
       "element": "땅",
-      "hp": 176,
-      "attack": 36,
-      "gachaWeight": 80
+      "hp": 119,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Nature",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_020",
       "name": "반짝 도깨비",
       "element": "별",
-      "hp": 188,
-      "attack": 39,
-      "gachaWeight": 80
+      "hp": 123,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Abyss",
+        "Warrior"
+      ]
     },
     {
       "id": "MON_021",
       "name": "꼬마 슬라임",
       "element": "물",
-      "hp": 155,
-      "attack": 23,
-      "gachaWeight": 45
+      "hp": 89,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Undead",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_022",
       "name": "꼬마 토끼",
       "element": "땅",
-      "hp": 167,
-      "attack": 26,
-      "gachaWeight": 45
+      "hp": 93,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Spirit",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_023",
       "name": "꼬마 여우",
       "element": "별",
-      "hp": 179,
-      "attack": 29,
-      "gachaWeight": 45
+      "hp": 97,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Machine",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_024",
       "name": "꼬마 드래곤",
       "element": "숲",
-      "hp": 191,
-      "attack": 32,
-      "gachaWeight": 45
+      "hp": 101,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Beast",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_025",
       "name": "꼬마 버섯",
       "element": "바람",
-      "hp": 203,
-      "attack": 35,
-      "gachaWeight": 45
+      "hp": 105,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Dragon",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_026",
       "name": "꼬마 골렘",
       "element": "얼음",
-      "hp": 215,
-      "attack": 38,
-      "gachaWeight": 45
+      "hp": 109,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Demon",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_027",
       "name": "꼬마 고양이",
       "element": "빛",
-      "hp": 227,
-      "attack": 41,
-      "gachaWeight": 45
+      "hp": 113,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Celestial",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_028",
       "name": "꼬마 펭귄",
       "element": "불",
-      "hp": 239,
-      "attack": 44,
-      "gachaWeight": 45
+      "hp": 117,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Shadow",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_029",
       "name": "꼬마 유니콘",
       "element": "번개",
-      "hp": 251,
-      "attack": 47,
-      "gachaWeight": 45
+      "hp": 121,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Nature",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_030",
       "name": "꼬마 도깨비",
       "element": "그림자",
-      "hp": 263,
-      "attack": 50,
-      "gachaWeight": 45
+      "hp": 125,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Abyss",
+        "Assassin"
+      ]
     },
     {
       "id": "MON_031",
       "name": "솜사탕 슬라임",
       "element": "불",
-      "hp": 155,
-      "attack": 23,
-      "gachaWeight": 45
+      "hp": 91,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Undead",
+        "Archer"
+      ]
     },
     {
       "id": "MON_032",
       "name": "솜사탕 토끼",
       "element": "번개",
-      "hp": 167,
-      "attack": 26,
-      "gachaWeight": 45
+      "hp": 95,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Spirit",
+        "Archer"
+      ]
     },
     {
       "id": "MON_033",
       "name": "솜사탕 여우",
       "element": "그림자",
-      "hp": 179,
-      "attack": 29,
-      "gachaWeight": 45
+      "hp": 99,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Machine",
+        "Archer"
+      ]
     },
     {
       "id": "MON_034",
       "name": "솜사탕 드래곤",
       "element": "물",
-      "hp": 191,
-      "attack": 32,
-      "gachaWeight": 45
+      "hp": 103,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Beast",
+        "Archer"
+      ]
     },
     {
       "id": "MON_035",
       "name": "솜사탕 버섯",
       "element": "땅",
-      "hp": 203,
-      "attack": 35,
-      "gachaWeight": 45
+      "hp": 107,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Dragon",
+        "Archer"
+      ]
     },
     {
       "id": "MON_036",
       "name": "솜사탕 골렘",
       "element": "별",
-      "hp": 215,
-      "attack": 38,
-      "gachaWeight": 45
+      "hp": 111,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Demon",
+        "Archer"
+      ]
     },
     {
       "id": "MON_037",
       "name": "솜사탕 고양이",
       "element": "숲",
-      "hp": 227,
-      "attack": 41,
-      "gachaWeight": 45
+      "hp": 115,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Celestial",
+        "Archer"
+      ]
     },
     {
       "id": "MON_038",
       "name": "솜사탕 펭귄",
       "element": "바람",
-      "hp": 239,
-      "attack": 44,
-      "gachaWeight": 45
+      "hp": 119,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Shadow",
+        "Archer"
+      ]
     },
     {
       "id": "MON_039",
       "name": "솜사탕 유니콘",
       "element": "얼음",
-      "hp": 251,
-      "attack": 47,
-      "gachaWeight": 45
+      "hp": 123,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Nature",
+        "Archer"
+      ]
     },
     {
       "id": "MON_040",
       "name": "솜사탕 도깨비",
       "element": "빛",
-      "hp": 263,
-      "attack": 50,
-      "gachaWeight": 45
+      "hp": 127,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Abyss",
+        "Archer"
+      ]
     },
     {
       "id": "MON_041",
       "name": "별빛 슬라임",
       "element": "바람",
-      "hp": 230,
-      "attack": 34,
-      "gachaWeight": 22
+      "hp": 93,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Undead",
+        "Mage"
+      ]
     },
     {
       "id": "MON_042",
       "name": "별빛 토끼",
       "element": "얼음",
-      "hp": 242,
-      "attack": 37,
-      "gachaWeight": 22
+      "hp": 97,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Spirit",
+        "Mage"
+      ]
     },
     {
       "id": "MON_043",
       "name": "별빛 여우",
       "element": "빛",
-      "hp": 254,
-      "attack": 40,
-      "gachaWeight": 22
+      "hp": 101,
+      "attack": 14,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Machine",
+        "Mage"
+      ]
     },
     {
       "id": "MON_044",
       "name": "별빛 드래곤",
       "element": "불",
-      "hp": 266,
-      "attack": 43,
-      "gachaWeight": 22
+      "hp": 105,
+      "attack": 16,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Beast",
+        "Mage"
+      ]
     },
     {
       "id": "MON_045",
       "name": "별빛 버섯",
       "element": "번개",
-      "hp": 278,
-      "attack": 46,
-      "gachaWeight": 22
+      "hp": 109,
+      "attack": 18,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Dragon",
+        "Mage"
+      ]
     },
     {
       "id": "MON_046",
       "name": "별빛 골렘",
       "element": "그림자",
-      "hp": 290,
-      "attack": 49,
-      "gachaWeight": 22
+      "hp": 113,
+      "attack": 20,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Demon",
+        "Mage"
+      ]
     },
     {
       "id": "MON_047",
       "name": "별빛 고양이",
       "element": "물",
-      "hp": 302,
-      "attack": 52,
-      "gachaWeight": 22
+      "hp": 117,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Celestial",
+        "Mage"
+      ]
     },
     {
       "id": "MON_048",
       "name": "별빛 펭귄",
       "element": "땅",
-      "hp": 314,
-      "attack": 55,
-      "gachaWeight": 22
+      "hp": 121,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Common",
+      "traits": [
+        "Shadow",
+        "Mage"
+      ]
     },
     {
       "id": "MON_049",
       "name": "별빛 유니콘",
       "element": "별",
-      "hp": 326,
-      "attack": 58,
-      "gachaWeight": 22
+      "hp": 175,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Nature",
+        "Mage"
+      ]
     },
     {
       "id": "MON_050",
       "name": "별빛 도깨비",
       "element": "숲",
-      "hp": 338,
-      "attack": 61,
-      "gachaWeight": 22
+      "hp": 179,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Abyss",
+        "Mage"
+      ]
     },
     {
       "id": "MON_051",
       "name": "도토리 슬라임",
       "element": "땅",
-      "hp": 230,
-      "attack": 34,
-      "gachaWeight": 22
+      "hp": 145,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Undead",
+        "Priest"
+      ]
     },
     {
       "id": "MON_052",
       "name": "도토리 토끼",
       "element": "별",
-      "hp": 242,
-      "attack": 37,
-      "gachaWeight": 22
+      "hp": 149,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Spirit",
+        "Priest"
+      ]
     },
     {
       "id": "MON_053",
       "name": "도토리 여우",
       "element": "숲",
-      "hp": 254,
-      "attack": 40,
-      "gachaWeight": 22
+      "hp": 153,
+      "attack": 28,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Machine",
+        "Priest"
+      ]
     },
     {
       "id": "MON_054",
       "name": "도토리 드래곤",
       "element": "바람",
-      "hp": 266,
-      "attack": 43,
-      "gachaWeight": 22
+      "hp": 157,
+      "attack": 30,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Beast",
+        "Priest"
+      ]
     },
     {
       "id": "MON_055",
       "name": "도토리 버섯",
       "element": "얼음",
-      "hp": 278,
-      "attack": 46,
-      "gachaWeight": 22
+      "hp": 161,
+      "attack": 32,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Dragon",
+        "Priest"
+      ]
     },
     {
       "id": "MON_056",
       "name": "도토리 골렘",
       "element": "빛",
-      "hp": 290,
-      "attack": 49,
-      "gachaWeight": 22
+      "hp": 165,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Demon",
+        "Priest"
+      ]
     },
     {
       "id": "MON_057",
       "name": "도토리 고양이",
       "element": "불",
-      "hp": 302,
-      "attack": 52,
-      "gachaWeight": 22
+      "hp": 169,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Celestial",
+        "Priest"
+      ]
     },
     {
       "id": "MON_058",
       "name": "도토리 펭귄",
       "element": "번개",
-      "hp": 314,
-      "attack": 55,
-      "gachaWeight": 22
+      "hp": 173,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Shadow",
+        "Priest"
+      ]
     },
     {
       "id": "MON_059",
       "name": "도토리 유니콘",
       "element": "그림자",
-      "hp": 326,
-      "attack": 58,
-      "gachaWeight": 22
+      "hp": 177,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Nature",
+        "Priest"
+      ]
     },
     {
       "id": "MON_060",
       "name": "도토리 도깨비",
       "element": "물",
-      "hp": 338,
-      "attack": 61,
-      "gachaWeight": 22
+      "hp": 181,
+      "attack": 28,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Abyss",
+        "Priest"
+      ]
     },
     {
       "id": "MON_061",
       "name": "말랑 슬라임",
       "element": "번개",
-      "hp": 305,
-      "attack": 45,
-      "gachaWeight": 9
+      "hp": 147,
+      "attack": 30,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Undead",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_062",
       "name": "말랑 토끼",
       "element": "그림자",
-      "hp": 317,
-      "attack": 48,
-      "gachaWeight": 9
+      "hp": 151,
+      "attack": 32,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Spirit",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_063",
       "name": "말랑 여우",
       "element": "물",
-      "hp": 329,
-      "attack": 51,
-      "gachaWeight": 9
+      "hp": 155,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Machine",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_064",
       "name": "말랑 드래곤",
       "element": "땅",
-      "hp": 341,
-      "attack": 54,
-      "gachaWeight": 9
+      "hp": 159,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Beast",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_065",
       "name": "말랑 버섯",
       "element": "별",
-      "hp": 353,
-      "attack": 57,
-      "gachaWeight": 9
+      "hp": 163,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Dragon",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_066",
       "name": "말랑 골렘",
       "element": "숲",
-      "hp": 365,
-      "attack": 60,
-      "gachaWeight": 9
+      "hp": 167,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Demon",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_067",
       "name": "말랑 고양이",
       "element": "바람",
-      "hp": 377,
-      "attack": 63,
-      "gachaWeight": 9
+      "hp": 171,
+      "attack": 28,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Celestial",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_068",
       "name": "말랑 펭귄",
       "element": "얼음",
-      "hp": 389,
-      "attack": 66,
-      "gachaWeight": 9
+      "hp": 175,
+      "attack": 30,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Shadow",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_069",
       "name": "말랑 유니콘",
       "element": "빛",
-      "hp": 401,
-      "attack": 69,
-      "gachaWeight": 9
+      "hp": 179,
+      "attack": 32,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Nature",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_070",
       "name": "말랑 도깨비",
       "element": "불",
-      "hp": 413,
-      "attack": 72,
-      "gachaWeight": 9
+      "hp": 183,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Abyss",
+        "Hexer"
+      ]
     },
     {
       "id": "MON_071",
       "name": "초롱 슬라임",
       "element": "얼음",
-      "hp": 305,
-      "attack": 45,
-      "gachaWeight": 9
+      "hp": 149,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Undead",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_072",
       "name": "초롱 토끼",
       "element": "빛",
-      "hp": 317,
-      "attack": 48,
-      "gachaWeight": 9
+      "hp": 153,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Spirit",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_073",
       "name": "초롱 여우",
       "element": "불",
-      "hp": 329,
-      "attack": 51,
-      "gachaWeight": 9
+      "hp": 157,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Machine",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_074",
       "name": "초롱 드래곤",
       "element": "번개",
-      "hp": 341,
-      "attack": 54,
-      "gachaWeight": 9
+      "hp": 161,
+      "attack": 28,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Beast",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_075",
       "name": "초롱 버섯",
       "element": "그림자",
-      "hp": 353,
-      "attack": 57,
-      "gachaWeight": 9
+      "hp": 165,
+      "attack": 30,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Dragon",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_076",
       "name": "초롱 골렘",
       "element": "물",
-      "hp": 365,
-      "attack": 60,
-      "gachaWeight": 9
+      "hp": 169,
+      "attack": 32,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Demon",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_077",
       "name": "초롱 고양이",
       "element": "땅",
-      "hp": 377,
-      "attack": 63,
-      "gachaWeight": 9
+      "hp": 173,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Celestial",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_078",
       "name": "초롱 펭귄",
       "element": "별",
-      "hp": 389,
-      "attack": 66,
-      "gachaWeight": 9
+      "hp": 177,
+      "attack": 22,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Shadow",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_079",
       "name": "초롱 유니콘",
       "element": "숲",
-      "hp": 401,
-      "attack": 69,
-      "gachaWeight": 9
+      "hp": 181,
+      "attack": 24,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Nature",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_080",
       "name": "초롱 도깨비",
       "element": "바람",
-      "hp": 413,
-      "attack": 72,
-      "gachaWeight": 9
+      "hp": 185,
+      "attack": 26,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Abyss",
+        "Summoner"
+      ]
     },
     {
       "id": "MON_081",
       "name": "방울 슬라임",
       "element": "별",
-      "hp": 380,
-      "attack": 56,
-      "gachaWeight": 3
+      "hp": 151,
+      "attack": 28,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Undead",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_082",
       "name": "방울 토끼",
       "element": "숲",
-      "hp": 392,
-      "attack": 59,
-      "gachaWeight": 3
+      "hp": 155,
+      "attack": 30,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Spirit",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_083",
       "name": "방울 여우",
       "element": "바람",
-      "hp": 404,
-      "attack": 62,
-      "gachaWeight": 3
+      "hp": 159,
+      "attack": 32,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Machine",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_084",
       "name": "방울 드래곤",
       "element": "얼음",
-      "hp": 416,
-      "attack": 65,
-      "gachaWeight": 3
+      "hp": 163,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Advanced",
+      "traits": [
+        "Beast",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_085",
       "name": "방울 버섯",
       "element": "빛",
-      "hp": 428,
-      "attack": 68,
-      "gachaWeight": 3
+      "hp": 237,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Dragon",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_086",
       "name": "방울 골렘",
       "element": "불",
-      "hp": 440,
-      "attack": 71,
-      "gachaWeight": 3
+      "hp": 241,
+      "attack": 36,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Demon",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_087",
       "name": "방울 고양이",
       "element": "번개",
-      "hp": 452,
-      "attack": 74,
-      "gachaWeight": 3
+      "hp": 245,
+      "attack": 38,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Celestial",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_088",
       "name": "방울 펭귄",
       "element": "그림자",
-      "hp": 464,
-      "attack": 77,
-      "gachaWeight": 3
+      "hp": 249,
+      "attack": 40,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Shadow",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_089",
       "name": "방울 유니콘",
       "element": "물",
-      "hp": 476,
-      "attack": 80,
-      "gachaWeight": 3
+      "hp": 253,
+      "attack": 42,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Nature",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_090",
       "name": "방울 도깨비",
       "element": "땅",
-      "hp": 488,
-      "attack": 83,
-      "gachaWeight": 3
+      "hp": 257,
+      "attack": 44,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Abyss",
+        "Berserker"
+      ]
     },
     {
       "id": "MON_091",
       "name": "구름 슬라임",
       "element": "그림자",
-      "hp": 380,
-      "attack": 56,
-      "gachaWeight": 3
+      "hp": 223,
+      "attack": 46,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Undead",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_092",
       "name": "구름 토끼",
       "element": "물",
-      "hp": 392,
-      "attack": 59,
-      "gachaWeight": 3
+      "hp": 227,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Spirit",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_093",
       "name": "구름 여우",
       "element": "땅",
-      "hp": 404,
-      "attack": 62,
-      "gachaWeight": 3
+      "hp": 231,
+      "attack": 36,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Machine",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_094",
       "name": "구름 드래곤",
       "element": "별",
-      "hp": 416,
-      "attack": 65,
-      "gachaWeight": 3
+      "hp": 235,
+      "attack": 38,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Beast",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_095",
       "name": "구름 버섯",
       "element": "숲",
-      "hp": 428,
-      "attack": 68,
-      "gachaWeight": 3
+      "hp": 239,
+      "attack": 40,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Dragon",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_096",
       "name": "구름 골렘",
       "element": "바람",
-      "hp": 440,
-      "attack": 71,
-      "gachaWeight": 3
+      "hp": 243,
+      "attack": 42,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Demon",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_097",
       "name": "구름 고양이",
       "element": "얼음",
-      "hp": 452,
-      "attack": 74,
-      "gachaWeight": 3
+      "hp": 247,
+      "attack": 44,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Celestial",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_098",
       "name": "구름 펭귄",
       "element": "빛",
-      "hp": 464,
-      "attack": 77,
-      "gachaWeight": 3
+      "hp": 251,
+      "attack": 46,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Shadow",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_099",
       "name": "구름 유니콘",
       "element": "불",
-      "hp": 476,
-      "attack": 80,
-      "gachaWeight": 3
+      "hp": 255,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Nature",
+        "Artillerist"
+      ]
     },
     {
       "id": "MON_100",
       "name": "구름 도깨비",
       "element": "번개",
-      "hp": 488,
-      "attack": 83,
-      "gachaWeight": 3
+      "hp": 259,
+      "attack": 36,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Abyss",
+        "Artillerist"
+      ]
+    },
+    {
+      "id": "MON_101",
+      "name": "새벽 도토리",
+      "element": "Neutral",
+      "hp": 225,
+      "attack": 38,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Beast",
+        "Summoner"
+      ]
+    },
+    {
+      "id": "MON_102",
+      "name": "새벽 구름",
+      "element": "Neutral",
+      "hp": 229,
+      "attack": 40,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Dragon",
+        "Berserker"
+      ]
+    },
+    {
+      "id": "MON_103",
+      "name": "새벽 여우",
+      "element": "Neutral",
+      "hp": 233,
+      "attack": 42,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Demon",
+        "Artillerist"
+      ]
+    },
+    {
+      "id": "MON_104",
+      "name": "새벽 나비",
+      "element": "Neutral",
+      "hp": 237,
+      "attack": 44,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Celestial",
+        "Guardian"
+      ]
+    },
+    {
+      "id": "MON_105",
+      "name": "새벽 수호병",
+      "element": "Neutral",
+      "hp": 241,
+      "attack": 46,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Shadow",
+        "Warrior"
+      ]
+    },
+    {
+      "id": "MON_106",
+      "name": "새벽 마법사",
+      "element": "Neutral",
+      "hp": 245,
+      "attack": 34,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Nature",
+        "Assassin"
+      ]
+    },
+    {
+      "id": "MON_107",
+      "name": "새벽 검객",
+      "element": "Neutral",
+      "hp": 249,
+      "attack": 36,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Abyss",
+        "Archer"
+      ]
+    },
+    {
+      "id": "MON_108",
+      "name": "새벽 사냥꾼",
+      "element": "Neutral",
+      "hp": 253,
+      "attack": 38,
+      "gachaWeight": 80,
+      "rarity": "Rare",
+      "traits": [
+        "Undead",
+        "Mage"
+      ]
+    },
+    {
+      "id": "MON_109",
+      "name": "새벽 새싹",
+      "element": "Neutral",
+      "hp": 372,
+      "attack": 59,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Spirit",
+        "Priest",
+        "Celestial"
+      ]
+    },
+    {
+      "id": "MON_110",
+      "name": "새벽 용사",
+      "element": "Neutral",
+      "hp": 376,
+      "attack": 61,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Machine",
+        "Hexer",
+        "Shadow"
+      ]
+    },
+    {
+      "id": "MON_111",
+      "name": "밤톨 도토리",
+      "element": "Neutral",
+      "hp": 342,
+      "attack": 63,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Beast",
+        "Summoner",
+        "Nature"
+      ]
+    },
+    {
+      "id": "MON_112",
+      "name": "밤톨 구름",
+      "element": "Neutral",
+      "hp": 346,
+      "attack": 65,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Dragon",
+        "Berserker",
+        "Abyss"
+      ]
+    },
+    {
+      "id": "MON_113",
+      "name": "밤톨 여우",
+      "element": "Neutral",
+      "hp": 350,
+      "attack": 53,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Demon",
+        "Artillerist",
+        "Undead"
+      ]
+    },
+    {
+      "id": "MON_114",
+      "name": "밤톨 나비",
+      "element": "Neutral",
+      "hp": 354,
+      "attack": 55,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Celestial",
+        "Guardian",
+        "Spirit"
+      ]
+    },
+    {
+      "id": "MON_115",
+      "name": "밤톨 수호병",
+      "element": "Neutral",
+      "hp": 358,
+      "attack": 57,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Shadow",
+        "Warrior",
+        "Machine"
+      ]
+    },
+    {
+      "id": "MON_116",
+      "name": "밤톨 마법사",
+      "element": "Neutral",
+      "hp": 362,
+      "attack": 59,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Nature",
+        "Assassin",
+        "Beast"
+      ]
+    },
+    {
+      "id": "MON_117",
+      "name": "밤톨 검객",
+      "element": "Neutral",
+      "hp": 366,
+      "attack": 61,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Abyss",
+        "Archer",
+        "Dragon"
+      ]
+    },
+    {
+      "id": "MON_118",
+      "name": "밤톨 사냥꾼",
+      "element": "Neutral",
+      "hp": 370,
+      "attack": 63,
+      "gachaWeight": 80,
+      "rarity": "Hero",
+      "traits": [
+        "Undead",
+        "Mage",
+        "Demon"
+      ]
+    },
+    {
+      "id": "MON_119",
+      "name": "밤톨 새싹",
+      "element": "Neutral",
+      "hp": 539,
+      "attack": 90,
+      "gachaWeight": 80,
+      "rarity": "Legendary",
+      "traits": [
+        "Spirit",
+        "Priest",
+        "Celestial"
+      ]
+    },
+    {
+      "id": "MON_120",
+      "name": "밤톨 용사",
+      "element": "Neutral",
+      "hp": 543,
+      "attack": 78,
+      "gachaWeight": 80,
+      "rarity": "Legendary",
+      "traits": [
+        "Machine",
+        "Hexer",
+        "Shadow"
+      ]
     }
   ]
 }

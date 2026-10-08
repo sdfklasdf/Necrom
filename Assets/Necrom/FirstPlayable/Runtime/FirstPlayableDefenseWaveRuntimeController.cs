@@ -206,6 +206,12 @@ namespace Necrom.FirstPlayable.Runtime
             ResolveBattleIfTerminal();
         }
 
+        public void PrepareFailedWaveRetry()
+        {
+            EnsureInitialized();
+            _defense.PrepareFailedWaveRetry(_defense.Revision);
+        }
+
         public void PrepareNextWave()
         {
             EnsureInitialized();

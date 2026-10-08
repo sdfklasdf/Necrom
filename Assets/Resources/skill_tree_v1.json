@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 2,
+  "balanceStatus": "DRAFT_ULTIMATE_COEFFICIENTS_NOT_APPROVED",
+  "skills": [
+    {
+      "id": "DESTRUCTION_01",
+      "branch": "Destruction",
+      "tier": 1,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_1",
+      "prerequisiteId": ""
+    },
+    {
+      "id": "DESTRUCTION_02",
+      "branch": "Destruction",
+      "tier": 2,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_2",
+      "prerequisiteId": "DESTRUCTION_01"
+    },
+    {
+      "id": "DESTRUCTION_03",
+      "branch": "Destruction",
+      "tier": 3,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_3",
+      "prerequisiteId": "DESTRUCTION_02"
+    },
+    {
+      "id": "DESTRUCTION_04",
+      "branch": "Destruction",
+      "tier": 4,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_4",
+      "prerequisiteId": "DESTRUCTION_03"
+    },
+    {
+      "id": "DESTRUCTION_05",
+      "branch": "Destruction",
+      "tier": 5,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_5",
+      "prerequisiteId": "DESTRUCTION_04"
+    },
+    {
+      "id": "DESTRUCTION_06",
+      "branch": "Destruction",
+      "tier": 6,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_DESTRUCTION_6",
+      "prerequisiteId": "DESTRUCTION_05"
+    },
+    {
+      "id": "DESTRUCTION_07",
+      "branch": "Destruction",
+      "tier": 7,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "ultimate.ShadowLegion",
+      "prerequisiteId": "DESTRUCTION_06",
+      "displayName": "그림자 군단",
+      "ultimateKind": "ShadowLegion",
+      "durationSeconds": 10,
+      "effects": [
+        "untargetable",
+        "flight",
+        "piercing_damage"
+      ],
+      "target": "permanent_deck"
+    },
+    {
+      "id": "SUMMONING_01",
+      "branch": "Summoning",
+      "tier": 1,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "summon.attack.percent",
+      "prerequisiteId": ""
+    },
+    {
+      "id": "SUMMONING_02",
+      "branch": "Summoning",
+      "tier": 2,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_SUMMONING_2",
+      "prerequisiteId": "SUMMONING_01"
+    },
+    {
+      "id": "SUMMONING_03",
+      "branch": "Summoning",
+      "tier": 3,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_SUMMONING_3",
+      "prerequisiteId": "SUMMONING_02"
+    },
+    {
+      "id": "SUMMONING_04",
+      "branch": "Summoning",
+      "tier": 4,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_SUMMONING_4",
+      "prerequisiteId": "SUMMONING_03"
+    },
+    {
+      "id": "SUMMONING_05",
+      "branch": "Summoning",
+      "tier": 5,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_SUMMONING_5",
+      "prerequisiteId": "SUMMONING_04"
+    },
+    {
+      "id": "SUMMONING_06",
+      "branch": "Summoning",
+      "tier": 6,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_SUMMONING_6",
+      "prerequisiteId": "SUMMONING_05"
+    },
+    {
+      "id": "SUMMONING_07",
+      "branch": "Summoning",
+      "tier": 7,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "ultimate.FusionOfDead",
+      "prerequisiteId": "SUMMONING_06",
+      "displayName": "망자의 융합",
+      "ultimateKind": "FusionOfDead",
+      "effects": [
+        "consume_all_temporary_raise",
+        "multishot_per_consumed",
+        "execute_chance_per_consumed"
+      ],
+      "target": "permanent_deck"
+    },
+    {
+      "id": "CURSECC_01",
+      "branch": "CurseCC",
+      "tier": 1,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_1",
+      "prerequisiteId": ""
+    },
+    {
+      "id": "CURSECC_02",
+      "branch": "CurseCC",
+      "tier": 2,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_2",
+      "prerequisiteId": "CURSECC_01"
+    },
+    {
+      "id": "CURSECC_03",
+      "branch": "CurseCC",
+      "tier": 3,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_3",
+      "prerequisiteId": "CURSECC_02"
+    },
+    {
+      "id": "CURSECC_04",
+      "branch": "CurseCC",
+      "tier": 4,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_4",
+      "prerequisiteId": "CURSECC_03"
+    },
+    {
+      "id": "CURSECC_05",
+      "branch": "CurseCC",
+      "tier": 5,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_5",
+      "prerequisiteId": "CURSECC_04"
+    },
+    {
+      "id": "CURSECC_06",
+      "branch": "CurseCC",
+      "tier": 6,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "DRAFT_CURSECC_6",
+      "prerequisiteId": "CURSECC_05"
+    },
+    {
+      "id": "CURSECC_07",
+      "branch": "CurseCC",
+      "tier": 7,
+      "maxLevel": 5,
+      "spPerLevel": 1,
+      "effectKey": "ultimate.SoulRampage",
+      "prerequisiteId": "CURSECC_06",
+      "displayName": "영혼 폭주",
+      "ultimateKind": "SoulRampage",
+      "effects": [
+        "shared_remaining_health_pool",
+        "attack_speed_per_missing_health",
+        "cooldown_reduction_per_missing_health"
+      ],
+      "target": "permanent_deck"
+    }
+  ]
+}
