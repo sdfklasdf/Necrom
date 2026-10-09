@@ -1,0 +1,11 @@
+2026-10-10T01:06:32.7670479+09:00
+AWU-PLAN-IMPORT-WAIT-01: FOLDER_PREPARATION PASS
+Root: C:\Dev\Necrom\Assets\Necrom\Characters
+Subfolders: Sprites, Animations, Materials, Prefabs, Data
+5 subfolders + 5 .gitkeep + 6 folder metadata + README metadata present
+7 valid unique new Unity meta GUIDs PASS
+DECISIONS QDEC-028..031: equipment 5 slots / summon 5 grades legendary 2% / offline max 8h / active skills 3-4
+CODE READ ONLY: equipment currently 7 slots; gacha base 2% plus existing 200-draw pity; offline max28800 seconds
+Planning values NOT newly implemented. No runtime code edits; PlayMode/build NOT RUN this AWU
+Actual 120 purchased assets absent; PURCHASE NOT RUN; IMPORT NOT RUN; WAITING FOR PAYMENT AND IMPORT
+Existing font3 dirty and untracked test bin preserved/excluded
