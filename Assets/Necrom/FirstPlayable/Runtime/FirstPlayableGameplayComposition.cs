@@ -186,7 +186,7 @@ namespace Necrom.FirstPlayable.Runtime
             for(int i=0;i<Formation.Capacity;i++) if(!_formation.GetSlot(i).HasValue) return i;
             throw new InvalidOperationException("Formation is full.");
         }
-        EnemyRuntimeEntity SpawnTarget()
+        EnemyRuntimeEntity SpawnTarget(int waveNumber)
         {
             var combat=transform.Find("SafeArea/CombatViewport");
             var ordinal=++_encounter;
@@ -196,17 +196,25 @@ namespace Necrom.FirstPlayable.Runtime
                 2 => "forest.chr003",
                 _ => "forest.chr006"
             };
-            return Enemies.SpawnEnemy("enemy:canonical:"+ordinal,
-                new EnemyArchetypeDefinition(archetype,"frontline.guard",10),
+            var enemy=Enemies.SpawnEnemy("enemy:canonical:"+ordinal,
+                new EnemyArchetypeDefinition(archetype,"frontline.guard",WaveDifficulty.Scale(10,waveNumber,true)),
                 combat.Find("EnemySpawnZone") as RectTransform);
+            if(WaveDifficulty.IsBoss(waveNumber))
+            {
+                enemy.transform.localScale=Vector3.one*1.5f;
+                enemy.gameObject.name="BossWave"+waveNumber+":Enemy:"+ordinal;
+            }
+            return enemy;
         }
         void StartCanonicalWave(int waveNumber)
         {
             GatePressure.ResetForWave();
-            DefenseWave.StartWave(waveNumber,CanonicalThreatsPerWave);
-            for(var i=0;i<CanonicalThreatsPerWave;i++)
+            var threatCount=WaveDifficulty.EnemyCount(waveNumber,CanonicalThreatsPerWave);
+            GatePressure.ConfigureWaveDamage(WaveDifficulty.Scale(CanonicalGateBreachDamage,waveNumber));
+            DefenseWave.StartWave(waveNumber,threatCount);
+            for(var i=0;i<threatCount;i++)
             {
-                var threat=SpawnTarget();
+                var threat=SpawnTarget(waveNumber);
                 DefenseWave.RegisterSpawnedThreat(threat);
                 GatePressure.RegisterThreat(threat);
             }

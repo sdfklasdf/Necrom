@@ -483,7 +483,11 @@ namespace Necrom.FirstPlayable.Runtime
             var defeatScaleY = _defeated
                 ? Curve(DefeatScaleY, _defeatRemaining, DefeatDuration, .35f)
                 : 1f;
-            _enemy.rectTransform.localScale = new Vector3(1f, defeatScaleY, 1f);
+            // AWU-19: the visible enemy is a separate UI portrait, not the spawned model's transform.
+            // Mirror the boss scale here so every tenth wave is recognizable in actual gameplay.
+            var bossScale = _game.DefenseWave != null &&
+                WaveDifficulty.IsBoss(_game.DefenseWave.WaveNumber) ? 1.5f : 1f;
+            _enemy.rectTransform.localScale = new Vector3(bossScale, defeatScaleY * bossScale, 1f);
 
             var enemyAccent = CharacterAccentFor(CurrentEnemyArchetypeId);
             _enemy.color = _defeated && _defeatRemaining <= 0f

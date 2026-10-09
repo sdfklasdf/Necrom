@@ -31,6 +31,12 @@ namespace Necrom.FirstPlayable.Runtime
         public bool IsInitialized => _initialized;
         public float TravelDurationSeconds => _travelDurationSeconds;
         public int IntegrityDamage => _integrityDamage;
+        public void ConfigureWaveDamage(int scaledDamage)
+        {
+            EnsureInitialized();
+            if(scaledDamage<=0)throw new ArgumentOutOfRangeException(nameof(scaledDamage));
+            _integrityDamage=scaledDamage;
+        }
 
         public void Initialize(
             FirstPlayableDefenseWaveRuntimeController defense,
