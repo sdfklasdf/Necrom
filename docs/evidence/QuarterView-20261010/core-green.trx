@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="60f20877-9154-4fdb-a796-f5c8721e6430" name="user@DESKTOP-7174LTC 2026-10-10 01:39:12" runUser="DESKTOP-7174LTC\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-10T01:39:12.7842354+09:00" queuing="2026-10-10T01:39:12.7842360+09:00" start="2026-10-10T01:39:11.8185880+09:00" finish="2026-10-10T01:39:13.0328286+09:00" />
+  <TestSettings name="default" id="6ba6bffa-fbaa-483d-8809-688340674d71">
+    <Deployment runDeploymentRoot="user_DESKTOP-7174LTC_2026-10-10_01_39_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f348af16-faeb-4d20-9f79-b2e48968570b" testId="94e497d0-6c08-7d36-911a-9404530b54d9" testName="PermanentCollectionIsIndependentOfRaiseAndPreventsDuplicateDeckEntries" computerName="DESKTOP-7174LTC" duration="00:00:00.0013760" startTime="2026-10-10T01:39:12.9248667+09:00" endTime="2026-10-10T01:39:12.9262424+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f348af16-faeb-4d20-9f79-b2e48968570b" />
+    <UnitTestResult executionId="ea698601-ebcc-4acf-98c2-68da447df568" testId="6f65cd3e-d784-1339-ca99-65c60a3afb06" testName="SuccessfulRaisePreservesArchetypeCreatesPlayerUnitAndAssignsFormation" computerName="DESKTOP-7174LTC" duration="00:00:00.0006990" startTime="2026-10-10T01:39:12.9350462+09:00" endTime="2026-10-10T01:39:12.9357453+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea698601-ebcc-4acf-98c2-68da447df568" />
+    <UnitTestResult executionId="6ee1c20e-a762-48d1-a46c-69f4bffdddcb" testId="9eb55fdd-b7d0-b2ff-4168-291b44ecd402" testName="InvalidSnapshotIsRejectedBeforeCodecOrStore" computerName="DESKTOP-7174LTC" duration="00:00:00.0006650" startTime="2026-10-10T01:39:12.8662046+09:00" endTime="2026-10-10T01:39:12.8668693+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ee1c20e-a762-48d1-a46c-69f4bffdddcb" />
+    <UnitTestResult executionId="6bd6f5a1-36c5-4202-aacf-54bfdb19440c" testId="4c5a7a19-2550-52ef-4b2b-13caff66ca33" testName="AllowedPathReadyRunningDefeatResolvedAdvancesRevision" computerName="DESKTOP-7174LTC" duration="00:00:00.0012150" startTime="2026-10-10T01:39:12.7030214+09:00" endTime="2026-10-10T01:39:12.7042360+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6bd6f5a1-36c5-4202-aacf-54bfdb19440c" />
+    <UnitTestResult executionId="c9f5522c-c034-4167-b1f2-8e799d1a3eee" testId="3df4a1bf-2c43-2bfe-c379-2c3982afe249" testName="RejectsAliasInsteadOfCanonicalId" computerName="DESKTOP-7174LTC" duration="00:00:00.0009390" startTime="2026-10-10T01:39:12.9565417+09:00" endTime="2026-10-10T01:39:12.9574806+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c9f5522c-c034-4167-b1f2-8e799d1a3eee" />
+    <UnitTestResult executionId="4daabeb2-d70d-4751-bded-5afd23ddc8fc" testId="0f0a7899-35a6-95b7-d484-a5065a6c5637" testName="AcquiredMonsterGainsDamageAfterSavedSkillRestoration" computerName="DESKTOP-7174LTC" duration="00:00:00.0094720" startTime="2026-10-10T01:39:12.8886994+09:00" endTime="2026-10-10T01:39:12.8981706+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4daabeb2-d70d-4751-bded-5afd23ddc8fc" />
+    <UnitTestResult executionId="82874ca2-44bd-4c1a-a5f4-4215ec720c12" testId="ffdcd681-82e1-0d17-00e7-c9a98fe7fe4d" testName="GhoulIsAliasOfPlagueAndEffectPlansArePreserved" computerName="DESKTOP-7174LTC" duration="00:00:00.0054400" startTime="2026-10-10T01:39:12.9602756+09:00" endTime="2026-10-10T01:39:12.9657151+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82874ca2-44bd-4c1a-a5f4-4215ec720c12" />
+    <UnitTestResult executionId="3ef86ea7-1d03-4b72-ae10-716a62bf8d82" testId="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1" testName="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" computerName="DESKTOP-7174LTC" duration="00:00:00.0868280" startTime="2026-10-10T01:39:12.7101164+09:00" endTime="2026-10-10T01:39:12.7969443+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ef86ea7-1d03-4b72-ae10-716a62bf8d82" />
+    <UnitTestResult executionId="30371bde-39d1-42b0-a34c-b204e0bbd2c0" testId="df2f2fe2-70dd-94f5-c8ed-2a8723f29064" testName="RejectsUnknownProfileCharacter" computerName="DESKTOP-7174LTC" duration="00:00:00.0032820" startTime="2026-10-10T01:39:12.8417304+09:00" endTime="2026-10-10T01:39:12.8450126+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30371bde-39d1-42b0-a34c-b204e0bbd2c0" />
+    <UnitTestResult executionId="4dcb5a20-d06c-4587-9a63-b60881ae6770" testId="c739a7c5-dcc4-ef03-6bdf-afbd4d1c3eb4" testName="TenDrawChargesOnceAndTracksDuplicates" computerName="DESKTOP-7174LTC" duration="00:00:00.0004230" startTime="2026-10-10T01:39:12.9112365+09:00" endTime="2026-10-10T01:39:12.9116590+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4dcb5a20-d06c-4587-9a63-b60881ae6770" />
+    <UnitTestResult executionId="fa6707b2-d4ea-45de-94d9-0fdc4f007322" testId="c27c5f5d-2c33-28f3-b2f8-019934811a79" testName="RejectsUnknownTraitReference" computerName="DESKTOP-7174LTC" duration="00:00:00.0046720" startTime="2026-10-10T01:39:12.8488731+09:00" endTime="2026-10-10T01:39:12.8535447+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa6707b2-d4ea-45de-94d9-0fdc4f007322" />
+    <UnitTestResult executionId="34be0fc0-943e-4b07-8632-4dcf0374b3bf" testId="194ff49c-2f8d-80d2-ea42-2a367d1abfe7" testName="MissingSaveCreatesOnceThenCheckpointPersistsAndNextBootstrapRestores" computerName="DESKTOP-7174LTC" duration="00:00:00.0015280" startTime="2026-10-10T01:39:12.9138953+09:00" endTime="2026-10-10T01:39:12.9154232+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34be0fc0-943e-4b07-8632-4dcf0374b3bf" />
+    <UnitTestResult executionId="b79abbfa-36b2-44c2-8b99-6906b5b9a03c" testId="edcca059-35ed-d2c9-483b-76bdb8508027" testName="RejectsMissingClass" computerName="DESKTOP-7174LTC" duration="00:00:00.0007390" startTime="2026-10-10T01:39:12.9574986+09:00" endTime="2026-10-10T01:39:12.9582377+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b79abbfa-36b2-44c2-8b99-6906b5b9a03c" />
+    <UnitTestResult executionId="a3de64ab-9124-42f5-9373-dbb7f97b10f2" testId="c7ef803a-ae52-94c8-8fb6-8ac34ba22845" testName="OccupiedTargetSlotRejectsDifferentUnitWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0003020" startTime="2026-10-10T01:39:12.9074294+09:00" endTime="2026-10-10T01:39:12.9077309+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3de64ab-9124-42f5-9373-dbb7f97b10f2" />
+    <UnitTestResult executionId="1963947d-4eeb-4ca1-9ee9-dd104058f0e4" testId="a94db2ab-155c-87d5-3147-86f13f1b7fa5" testName="RewardsForElapsedSeconds(0,0,0)" computerName="DESKTOP-7174LTC" duration="00:00:00.0002660" startTime="2026-10-10T01:39:12.9241454+09:00" endTime="2026-10-10T01:39:12.9244110+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1963947d-4eeb-4ca1-9ee9-dd104058f0e4" />
+    <UnitTestResult executionId="d4b08703-04fe-4dca-b192-93660b347f04" testId="a564a82a-0f6e-eac2-b1d9-be672f3b1f2c" testName="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Resolved)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000560" startTime="2026-10-10T01:39:12.7058434+09:00" endTime="2026-10-10T01:39:12.7058997+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d4b08703-04fe-4dca-b192-93660b347f04" />
+    <UnitTestResult executionId="afffdae2-fbb6-45c6-a002-72f7b8e827d9" testId="9d805d36-c3d5-3919-f687-f30f03a78b43" testName="SynergyCountsDistinctMonstersAndTiers" computerName="DESKTOP-7174LTC" duration="00:00:00.0006770" startTime="2026-10-10T01:39:12.9433296+09:00" endTime="2026-10-10T01:39:12.9440062+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="afffdae2-fbb6-45c6-a002-72f7b8e827d9" />
+    <UnitTestResult executionId="70544e0a-3513-4fcc-8593-f17cdb6359fa" testId="e91d211c-a4e0-f28d-f87c-23d931e511d8" testName="EnemyFactionIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0013220" startTime="2026-10-10T01:39:12.9211117+09:00" endTime="2026-10-10T01:39:12.9224339+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70544e0a-3513-4fcc-8593-f17cdb6359fa" />
+    <UnitTestResult executionId="05894d35-0a43-4647-b178-d2255e894c47" testId="39e63202-198d-9978-3ba2-cabe8a34d259" testName="PositiveDamageReducesHealth" computerName="DESKTOP-7174LTC" duration="00:00:00.0003959" startTime="2026-10-10T01:39:12.8837677+09:00" endTime="2026-10-10T01:39:12.8841638+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="05894d35-0a43-4647-b178-d2255e894c47" />
+    <UnitTestResult executionId="055f83b0-e1c0-4b29-a39f-151f5dcab1fa" testId="c533f52f-d390-e228-d014-d3c52475e684" testName="DraftEffectsDoNotInventGameplayBalance" computerName="DESKTOP-7174LTC" duration="00:00:00.0002930" startTime="2026-10-10T01:39:12.8982021+09:00" endTime="2026-10-10T01:39:12.8984946+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="055f83b0-e1c0-4b29-a39f-151f5dcab1fa" />
+    <UnitTestResult executionId="d73f67d0-383d-40d8-83b9-ff39b29dce84" testId="11e49d4d-53d2-48a2-62dd-261515e66ca9" testName="InvalidSpecIsRejected(0,300)" computerName="DESKTOP-7174LTC" duration="00:00:00.0004020" startTime="2026-10-10T01:39:12.9225041+09:00" endTime="2026-10-10T01:39:12.9229054+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d73f67d0-383d-40d8-83b9-ff39b29dce84" />
+    <UnitTestResult executionId="90e3f575-049c-4e1b-99ba-d1f44101dc87" testId="4722548b-aa40-a491-2be8-d77c1f0d02bf" testName="CheckpointCancellationPropagates" computerName="DESKTOP-7174LTC" duration="00:00:00.0065600" startTime="2026-10-10T01:39:12.8583765+09:00" endTime="2026-10-10T01:39:12.8649365+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90e3f575-049c-4e1b-99ba-d1f44101dc87" />
+    <UnitTestResult executionId="52236426-4de1-4585-a4d7-54d6efda48b4" testId="d168f1ea-c192-ed2f-7627-6d60d7b568a4" testName="RejectsDuplicateDirectedMatchup" computerName="DESKTOP-7174LTC" duration="00:00:00.0032590" startTime="2026-10-10T01:39:12.8022136+09:00" endTime="2026-10-10T01:39:12.8054720+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52236426-4de1-4585-a4d7-54d6efda48b4" />
+    <UnitTestResult executionId="c59f5dae-b3d3-452f-a776-9e92a8d9e8f6" testId="26837399-afe7-a2d9-5d34-0e1fd73b7305" testName="CapsAtEightHoursAndRejectsClockRollback" computerName="DESKTOP-7174LTC" duration="00:00:00.0002370" startTime="2026-10-10T01:39:12.9238779+09:00" endTime="2026-10-10T01:39:12.9241150+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c59f5dae-b3d3-452f-a776-9e92a8d9e8f6" />
+    <UnitTestResult executionId="10c9bf15-99a6-4c58-bb34-a02d66636be1" testId="0922bd95-d89d-8d70-d51f-90a104f5eb7b" testName="InvalidSpecIsRejected(-1,300)" computerName="DESKTOP-7174LTC" duration="00:00:00.0002870" startTime="2026-10-10T01:39:12.9229196+09:00" endTime="2026-10-10T01:39:12.9232066+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10c9bf15-99a6-4c58-bb34-a02d66636be1" />
+    <UnitTestResult executionId="d78585c0-cec2-4986-b3a4-871d3f6e74de" testId="0b5e3fea-703f-3547-924a-9b1de6b68c5a" testName="PityCanTriggerMidTenDraw" computerName="DESKTOP-7174LTC" duration="00:00:00.0009010" startTime="2026-10-10T01:39:12.9103172+09:00" endTime="2026-10-10T01:39:12.9112180+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d78585c0-cec2-4986-b3a4-871d3f6e74de" />
+    <UnitTestResult executionId="3f2f85d1-9650-4e9a-b189-99b1fcace6b6" testId="1fea7cbd-4b49-7d1a-72f1-c2fd70dd802f" testName="ReplayingStartBattleWithOriginalRevisionCannotStartTwice" computerName="DESKTOP-7174LTC" duration="00:00:00.0004220" startTime="2026-10-10T01:39:12.8873593+09:00" endTime="2026-10-10T01:39:12.8877809+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f2f85d1-9650-4e9a-b189-99b1fcace6b6" />
+    <UnitTestResult executionId="9e5787c7-4816-4796-9f66-e8027bcdd8fd" testId="016b67e0-80d8-e480-28f7-c6c62f8a2245" testName="JokersUseUniqueActivationWithoutInventedTierNumbers" computerName="DESKTOP-7174LTC" duration="00:00:00.0009020" startTime="2026-10-10T01:39:12.9657436+09:00" endTime="2026-10-10T01:39:12.9666456+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e5787c7-4816-4796-9f66-e8027bcdd8fd" />
+    <UnitTestResult executionId="aa765954-87b9-45a0-8598-06fdaa53a53c" testId="f103a9f8-d26f-3a97-47b0-5a2c6ce9d6f0" testName="InvalidSnapshotCannotBeRestored" computerName="DESKTOP-7174LTC" duration="00:00:00.0071410" startTime="2026-10-10T01:39:12.6905531+09:00" endTime="2026-10-10T01:39:12.6976945+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa765954-87b9-45a0-8598-06fdaa53a53c" />
+    <UnitTestResult executionId="52b6905b-2b98-4658-998a-80fbbe12d93e" testId="9699aa0f-da86-7150-be0b-e7953b819534" testName="PermanentBuffAppliesWithoutChangingRaise" computerName="DESKTOP-7174LTC" duration="00:00:00.0005419" startTime="2026-10-10T01:39:12.9453802+09:00" endTime="2026-10-10T01:39:12.9459215+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52b6905b-2b98-4658-998a-80fbbe12d93e" />
+    <UnitTestResult executionId="62505c3e-d134-4098-85e3-b4cb66b216a8" testId="6e89cfcc-609c-ef11-0c68-963a2afe4c2d" testName="ProvidesExactlyFiveOriginsFourClassesFourJokers" computerName="DESKTOP-7174LTC" duration="00:00:00.0006970" startTime="2026-10-10T01:39:12.9666632+09:00" endTime="2026-10-10T01:39:12.9673602+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62505c3e-d134-4098-85e3-b4cb66b216a8" />
+    <UnitTestResult executionId="9c22ff68-1686-4e31-ab83-801da9c9c979" testId="8c1682ac-bf7c-4fc0-9c62-300a53d17c97" testName="FailedSavePropagatesAndCannotBeReportedAsSuccess" computerName="DESKTOP-7174LTC" duration="00:00:00.0013200" startTime="2026-10-10T01:39:12.9296800+09:00" endTime="2026-10-10T01:39:12.9309995+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9c22ff68-1686-4e31-ab83-801da9c9c979" />
+    <UnitTestResult executionId="88a83d43-df6e-4fac-90e1-4a4520a2e32a" testId="a833a38e-4dca-0a79-3184-5511ce29029b" testName="MissingMigrationPathIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0002430" startTime="2026-10-10T01:39:12.9179564+09:00" endTime="2026-10-10T01:39:12.9181995+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88a83d43-df6e-4fac-90e1-4a4520a2e32a" />
+    <UnitTestResult executionId="90ac6372-1c35-413d-9a79-67ca6a7e9a20" testId="180e75f5-4516-7c80-591b-b4046fa6d944" testName="ExperienceCarriesAndGrantsOnePointPerLevel" computerName="DESKTOP-7174LTC" duration="00:00:00.0128500" startTime="2026-10-10T01:39:12.6754670+09:00" endTime="2026-10-10T01:39:12.6882136+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90ac6372-1c35-413d-9a79-67ca6a7e9a20" />
+    <UnitTestResult executionId="178c1ca8-1d23-4958-bce3-6282f3adf080" testId="7006b3e6-5c31-90dd-b2cc-7acc4069a232" testName="DefeatedCombatantCreatesAvailableRaiseSource" computerName="DESKTOP-7174LTC" duration="00:00:00.0001789" startTime="2026-10-10T01:39:12.9362859+09:00" endTime="2026-10-10T01:39:12.9364643+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="178c1ca8-1d23-4958-bce3-6282f3adf080" />
+    <UnitTestResult executionId="4a137331-31d1-4f51-8853-7d5e00af9950" testId="4e1e0781-aec0-2e4b-eb83-faa52ad422e8" testName="RejectsNonPositiveAttackSpeed" computerName="DESKTOP-7174LTC" duration="00:00:00.0034680" startTime="2026-10-10T01:39:12.8313763+09:00" endTime="2026-10-10T01:39:12.8348443+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a137331-31d1-4f51-8853-7d5e00af9950" />
+    <UnitTestResult executionId="2beb1265-9fc2-408a-b385-d7a95f4a7c3f" testId="56ab4dd0-3383-6a3a-61a1-314ee2cdee4c" testName="HydratedFormationCanContinueIntoNextCombatWithoutLosingRaisedUnit" computerName="DESKTOP-7174LTC" duration="00:00:00.0004300" startTime="2026-10-10T01:39:12.9121695+09:00" endTime="2026-10-10T01:39:12.9125992+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2beb1265-9fc2-408a-b385-d7a95f4a7c3f" />
+    <UnitTestResult executionId="934fb8c6-af4a-481c-b2eb-4c31308fba17" testId="2d4ff72d-1d5b-f4ef-0302-65412e831d95" testName="InvalidTargetSchemaRejectsBeforeStoreLoad" computerName="DESKTOP-7174LTC" duration="00:00:00.0024990" startTime="2026-10-10T01:39:12.8668849+09:00" endTime="2026-10-10T01:39:12.8693837+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="934fb8c6-af4a-481c-b2eb-4c31308fba17" />
+    <UnitTestResult executionId="08aaf251-c06f-499d-98f3-b7aa9f12411f" testId="2be3e968-b10b-eda8-d6fb-765795b8190f" testName="TwoHundredthDrawMustBeLegendary" computerName="DESKTOP-7174LTC" duration="00:00:00.0003740" startTime="2026-10-10T01:39:12.9116740+09:00" endTime="2026-10-10T01:39:12.9120474+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08aaf251-c06f-499d-98f3-b7aa9f12411f" />
+    <UnitTestResult executionId="d0b85e31-0e5b-4c8d-8924-eeaaa063f3fd" testId="3dc62bc3-ca61-3eec-0ae2-87b683d439e7" testName="SkillTreeRequiresMasteredPrerequisiteAndSp" computerName="DESKTOP-7174LTC" duration="00:00:00.0003470" startTime="2026-10-10T01:39:12.9429669+09:00" endTime="2026-10-10T01:39:12.9433142+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0b85e31-0e5b-4c8d-8924-eeaaa063f3fd" />
+    <UnitTestResult executionId="a1df1db9-c580-4b39-8fd3-6c497af965d2" testId="461cd2b0-140d-b14b-380d-8983c3b7972f" testName="StaleRestartRevisionIsRejectedWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0005450" startTime="2026-10-10T01:39:12.7084616+09:00" endTime="2026-10-10T01:39:12.7090063+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1df1db9-c580-4b39-8fd3-6c497af965d2" />
+    <UnitTestResult executionId="5771e0b2-0250-442c-8867-de9f43e76f35" testId="044de3dd-5206-d510-5e4e-6b818e1372b9" testName="RejectsTwoOrigins" computerName="DESKTOP-7174LTC" duration="00:00:00.0018330" startTime="2026-10-10T01:39:12.9582533+09:00" endTime="2026-10-10T01:39:12.9600857+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5771e0b2-0250-442c-8867-de9f43e76f35" />
+    <UnitTestResult executionId="00d099cf-f630-4271-a41b-f5eacf1a2d6b" testId="9c2c1e5d-cc30-fbfc-a836-d3603e85482e" testName="InvalidSpecIsRejected(5,0)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000420" startTime="2026-10-10T01:39:12.9232196+09:00" endTime="2026-10-10T01:39:12.9232617+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="00d099cf-f630-4271-a41b-f5eacf1a2d6b" />
+    <UnitTestResult executionId="dfeebe60-9e2f-4a08-bd49-0f0813f9382d" testId="c10eb267-c0b1-b732-5992-495d2e1df19e" testName="InvalidSpecIsRejected(5,-1)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000280" startTime="2026-10-10T01:39:12.9232661+09:00" endTime="2026-10-10T01:39:12.9232940+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfeebe60-9e2f-4a08-bd49-0f0813f9382d" />
+    <UnitTestResult executionId="a58c051e-f105-4448-9605-78c2f4902435" testId="c3c93587-1f41-b9c4-3c58-3e04a874fe17" testName="RestartOutsideResolvedIsRejectedWithoutMutation(Defeat)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000180" startTime="2026-10-10T01:39:12.7080080+09:00" endTime="2026-10-10T01:39:12.7080256+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a58c051e-f105-4448-9605-78c2f4902435" />
+    <UnitTestResult executionId="6df7a08f-b25d-4847-9fc3-098fb05c1784" testId="a01be816-287a-7bdc-444b-8d050a5a0f79" testName="StaleRevisionRejectsWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0004420" startTime="2026-10-10T01:39:12.9084015+09:00" endTime="2026-10-10T01:39:12.9088437+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6df7a08f-b25d-4847-9fc3-098fb05c1784" />
+    <UnitTestResult executionId="28420c4a-d210-4b1c-abfe-12464d3bd7b7" testId="5bf86f37-8196-04c3-2863-6d8ef2dbd286" testName="UnknownSchemaDoesNotSilentlyCreateNewState" computerName="DESKTOP-7174LTC" duration="00:00:00.0008930" startTime="2026-10-10T01:39:12.9322796+09:00" endTime="2026-10-10T01:39:12.9331725+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="28420c4a-d210-4b1c-abfe-12464d3bd7b7" />
+    <UnitTestResult executionId="c1466a15-a3c0-4b7c-a122-1f711657a0b8" testId="9efd48e8-578e-011a-9faf-caa5e7fcb609" testName="OccupiedFormationSlotRejectsFullRaisePathWithoutConsumingSource" computerName="DESKTOP-7174LTC" duration="00:00:00.0005180" startTime="2026-10-10T01:39:12.9017217+09:00" endTime="2026-10-10T01:39:12.9022397+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1466a15-a3c0-4b7c-a122-1f711657a0b8" />
+    <UnitTestResult executionId="5e6c2f30-ad2e-454d-b26f-bd5eae263e49" testId="dc66ecf0-2a81-b19a-7d59-7b3675ae9809" testName="MissingSaveCreatesNewState" computerName="DESKTOP-7174LTC" duration="00:00:00.0009730" startTime="2026-10-10T01:39:12.8994641+09:00" endTime="2026-10-10T01:39:12.9004368+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e6c2f30-ad2e-454d-b26f-bd5eae263e49" />
+    <UnitTestResult executionId="ba35189f-64b2-4cc7-8898-42e3809981e7" testId="a2cbe4d9-e422-1f63-126e-424e92b9912e" testName="UltimateIsContractOnly" computerName="DESKTOP-7174LTC" duration="00:00:00.0008960" startTime="2026-10-10T01:39:12.9459361+09:00" endTime="2026-10-10T01:39:12.9468320+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba35189f-64b2-4cc7-8898-42e3809981e7" />
+    <UnitTestResult executionId="46048b57-6c7f-4a87-9cdd-0c887d33c355" testId="1d054e1b-c41d-c826-5464-d577bce681e9" testName="SevenSlotsAndRecipeConsumeFive" computerName="DESKTOP-7174LTC" duration="00:00:00.0022920" startTime="2026-10-10T01:39:12.9272184+09:00" endTime="2026-10-10T01:39:12.9295106+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46048b57-6c7f-4a87-9cdd-0c887d33c355" />
+    <UnitTestResult executionId="01771bf7-ff2e-40a4-9a50-63c44afc9db4" testId="df56f98f-20a2-c0a4-ddcc-db468162724e" testName="BossAtMultiplesOfTenIsSingleAndFiveTimesHp" computerName="DESKTOP-7174LTC" duration="00:00:00.0004910" startTime="2026-10-10T01:39:12.9681431+09:00" endTime="2026-10-10T01:39:12.9686344+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01771bf7-ff2e-40a4-9a50-63c44afc9db4" />
+    <UnitTestResult executionId="e0c9cfbc-6ada-4f2d-9f19-7c073a2e1f27" testId="2ed43d61-0d54-a62f-da3c-ac3986b67e9c" testName="DefeatedUnitIsNotRevivedBySkillUpgrade" computerName="DESKTOP-7174LTC" duration="00:00:00.0024300" startTime="2026-10-10T01:39:12.8757965+09:00" endTime="2026-10-10T01:39:12.8782257+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0c9cfbc-6ada-4f2d-9f19-7c073a2e1f27" />
+    <UnitTestResult executionId="b761ce47-9ce9-437f-94f7-b37641537100" testId="f8652db7-0f96-99ee-f743-77da0ff5b314" testName="LinearWaveIndexCompoundsByTenPercent" computerName="DESKTOP-7174LTC" duration="00:00:00.0001990" startTime="2026-10-10T01:39:12.9691091+09:00" endTime="2026-10-10T01:39:12.9693084+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b761ce47-9ce9-437f-94f7-b37641537100" />
+    <UnitTestResult executionId="0761aa41-50d4-4f85-975d-b5143180f4bf" testId="c41c02e8-f7ab-c1f8-58ca-605931c9e1e6" testName="NonPositiveDamageIsRejected(-1)" computerName="DESKTOP-7174LTC" duration="00:00:00.0003600" startTime="2026-10-10T01:39:12.8833814+09:00" endTime="2026-10-10T01:39:12.8837414+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0761aa41-50d4-4f85-975d-b5143180f4bf" />
+    <UnitTestResult executionId="f6c09fc4-5fe1-42c8-9c6a-f4823d8ed1a4" testId="3b72fea7-d2ee-9a80-3b31-89d827ee1a4d" testName="RewardsForElapsedSeconds(3600,6000,600)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000060" startTime="2026-10-10T01:39:12.9247205+09:00" endTime="2026-10-10T01:39:12.9247265+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6c09fc4-5fe1-42c8-9c6a-f4823d8ed1a4" />
+    <UnitTestResult executionId="6caeb3f5-5a49-4ec3-9c3e-2fef875c61a9" testId="4dde6ccf-a9c5-feed-c4a6-6aac81e78ee9" testName="FailedCommandStopsCurrentDrainButLeavesLaterCommandPendingForExplicitRetry" computerName="DESKTOP-7174LTC" duration="00:00:00.0006510" startTime="2026-10-10T01:39:12.9127297+09:00" endTime="2026-10-10T01:39:12.9133806+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6caeb3f5-5a49-4ec3-9c3e-2fef875c61a9" />
+    <UnitTestResult executionId="7e856118-4068-44e3-9168-9285c6d2d1c9" testId="d6a8b3a3-057d-306c-bf68-382fead5863f" testName="ExtremeWavesClampWithoutOverflow" computerName="DESKTOP-7174LTC" duration="00:00:00.0004490" startTime="2026-10-10T01:39:12.9686495+09:00" endTime="2026-10-10T01:39:12.9690982+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e856118-4068-44e3-9168-9285c6d2d1c9" />
+    <UnitTestResult executionId="4b6cabb7-e41c-44eb-9f1d-296c311949ed" testId="b8d4b223-63a1-43b4-1a1a-5634c2a56077" testName="RejectsReadyAssetWithoutKey" computerName="DESKTOP-7174LTC" duration="00:00:00.0035540" startTime="2026-10-10T01:39:12.8348599+09:00" endTime="2026-10-10T01:39:12.8384139+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b6cabb7-e41c-44eb-9f1d-296c311949ed" />
+    <UnitTestResult executionId="70c275a2-de99-45bb-aa28-2b174c9c4c87" testId="7fc75601-d073-83c9-3ae5-4f5ef7f75465" testName="StaleExpectedRevisionIsRejectedWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0003920" startTime="2026-10-10T01:39:12.7080410+09:00" endTime="2026-10-10T01:39:12.7084331+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70c275a2-de99-45bb-aa28-2b174c9c4c87" />
+    <UnitTestResult executionId="af51f97f-9701-4b75-8058-0111c512b175" testId="7e55b8f1-98c5-cfae-076e-058632f6913f" testName="KillExperienceScalesWithWave" computerName="DESKTOP-7174LTC" duration="00:00:00.0008090" startTime="2026-10-10T01:39:12.6977373+09:00" endTime="2026-10-10T01:39:12.6985465+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af51f97f-9701-4b75-8058-0111c512b175" />
+    <UnitTestResult executionId="b432be32-9ac5-4ebf-a61a-c42b63950c94" testId="50d56e90-d175-24ee-0008-ce68cb72e39c" testName="SaveCheckpointCapturesAndPersistsCurrentState" computerName="DESKTOP-7174LTC" duration="00:00:00.0010900" startTime="2026-10-10T01:39:12.9005423+09:00" endTime="2026-10-10T01:39:12.9016317+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b432be32-9ac5-4ebf-a61a-c42b63950c94" />
+    <UnitTestResult executionId="29da4638-e71e-4828-a12d-9f81fc23e6a6" testId="aeb9a352-f1fe-f68a-ddd0-bdbadcf3b530" testName="MissingSaveWithNullFactoryResultIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0011920" startTime="2026-10-10T01:39:12.8694070+09:00" endTime="2026-10-10T01:39:12.8705989+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29da4638-e71e-4828-a12d-9f81fc23e6a6" />
+    <UnitTestResult executionId="eb13da89-0257-4f7c-b401-22c8c89dd88a" testId="a5eb5070-7000-c758-8a04-20c265a869b4" testName="InvalidMaximumDoesNotChangeHp" computerName="DESKTOP-7174LTC" duration="00:00:00.0004470" startTime="2026-10-10T01:39:12.8782481+09:00" endTime="2026-10-10T01:39:12.8786952+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb13da89-0257-4f7c-b401-22c8c89dd88a" />
+    <UnitTestResult executionId="1021ece6-31d9-43d8-aebe-112852d412e9" testId="fe043c46-cba5-5675-932e-d6833693481d" testName="ReassigningSameUnitToSameSlotIsIdempotentInStateButAdvancesRevision" computerName="DESKTOP-7174LTC" duration="00:00:00.0002190" startTime="2026-10-10T01:39:12.9077443+09:00" endTime="2026-10-10T01:39:12.9079633+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1021ece6-31d9-43d8-aebe-112852d412e9" />
+    <UnitTestResult executionId="7477fcae-c988-456f-9dc8-a8afebac6146" testId="bb43d025-fb1f-591a-e18c-6d3bc69d915b" testName="RejectsDuplicateCharacterIds" computerName="DESKTOP-7174LTC" duration="00:00:00.0052010" startTime="2026-10-10T01:39:12.7969845+09:00" endTime="2026-10-10T01:39:12.8021853+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7477fcae-c988-456f-9dc8-a8afebac6146" />
+    <UnitTestResult executionId="2dc04169-f964-4ac9-b849-0f82b8a92ae9" testId="fc2ecea7-3820-e1c5-3024-940b49aeadc4" testName="RewardsForElapsedSeconds(60,100,10)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000100" startTime="2026-10-10T01:39:12.9247034+09:00" endTime="2026-10-10T01:39:12.9247134+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2dc04169-f964-4ac9-b849-0f82b8a92ae9" />
+    <UnitTestResult executionId="5e79abcc-28b1-4613-a457-469e1696d408" testId="81cae97e-d96b-71d6-eb62-10e8f64d3bb3" testName="RejectsDuplicateProfile" computerName="DESKTOP-7174LTC" duration="00:00:00.0079520" startTime="2026-10-10T01:39:12.8054955+09:00" endTime="2026-10-10T01:39:12.8134473+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e79abcc-28b1-4613-a457-469e1696d408" />
+    <UnitTestResult executionId="5befde07-632c-4cf0-b4e0-a898f905b93c" testId="85c94eba-4aa1-5380-be1b-606d81211a5f" testName="CheckpointStoreFailurePropagates" computerName="DESKTOP-7174LTC" duration="00:00:00.0012179" startTime="2026-10-10T01:39:12.8649678+09:00" endTime="2026-10-10T01:39:12.8661859+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5befde07-632c-4cf0-b4e0-a898f905b93c" />
+    <UnitTestResult executionId="30237fa7-48de-4cca-b750-b017b2534343" testId="2600741c-ba01-6ef1-e878-0e6486654fde" testName="RewardsForElapsedSeconds(59,0,0)" computerName="DESKTOP-7174LTC" duration="00:00:00.0002640" startTime="2026-10-10T01:39:12.9244241+09:00" endTime="2026-10-10T01:39:12.9246878+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30237fa7-48de-4cca-b750-b017b2534343" />
+    <UnitTestResult executionId="210929c7-7a4f-423e-a3be-e08411532191" testId="b91ea3e2-a019-d418-db53-3fa32de1d909" testName="ResolvedCanRestartToReadyAndAdvanceRevision" computerName="DESKTOP-7174LTC" duration="00:00:00.0004370" startTime="2026-10-10T01:39:12.7059874+09:00" endTime="2026-10-10T01:39:12.7064238+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="210929c7-7a4f-423e-a3be-e08411532191" />
+    <UnitTestResult executionId="e974c8bb-efe1-4da4-b7ee-62057b7f6129" testId="23b88f4d-3acb-40fd-66ae-19028821cbbe" testName="RejectsMoreThanThreeTraits" computerName="DESKTOP-7174LTC" duration="00:00:00.0047280" startTime="2026-10-10T01:39:12.8134742+09:00" endTime="2026-10-10T01:39:12.8182016+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e974c8bb-efe1-4da4-b7ee-62057b7f6129" />
+    <UnitTestResult executionId="92b320ae-1d9a-4d9f-888b-87557d328345" testId="c1f7e536-fbd1-7fc1-7e76-b2688cd7bb09" testName="ResolveOutsideRunningIsRejectedWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0004730" startTime="2026-10-10T01:39:12.7064352+09:00" endTime="2026-10-10T01:39:12.7069082+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92b320ae-1d9a-4d9f-888b-87557d328345" />
+    <UnitTestResult executionId="1c5bdf98-bc1e-466d-9d05-541d737f4415" testId="cce3c56f-e12c-d804-8231-f37db6cbd448" testName="InvalidRaisedEventIdRejectsBeforeRaiseMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0004760" startTime="2026-10-10T01:39:12.8856369+09:00" endTime="2026-10-10T01:39:12.8861132+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c5bdf98-bc1e-466d-9d05-541d737f4415" />
+    <UnitTestResult executionId="d3fbcabe-deaa-4ada-847e-31e395179703" testId="9ba6f429-be13-5c68-5eb8-62bd2ccb38d0" testName="RestartOutsideResolvedIsRejectedWithoutMutation(Running)" computerName="DESKTOP-7174LTC" duration="00:00:00.0003050" startTime="2026-10-10T01:39:12.7075965+09:00" endTime="2026-10-10T01:39:12.7079012+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3fbcabe-deaa-4ada-847e-31e395179703" />
+    <UnitTestResult executionId="58421a3d-e304-40b1-850e-39bc3b97b7bc" testId="17a73cf1-b53f-997b-d71a-ac4cd8731f33" testName="MaxHpDecreasePreservesRatioAndClampsLowLivingHp" computerName="DESKTOP-7174LTC" duration="00:00:00.0001860" startTime="2026-10-10T01:39:12.8787110+09:00" endTime="2026-10-10T01:39:12.8788964+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="58421a3d-e304-40b1-850e-39bc3b97b7bc" />
+    <UnitTestResult executionId="709b472d-91eb-442a-a51d-fc086ed37773" testId="5cc80579-b621-5113-68ad-6bd79e3ca06e" testName="RewardsForElapsedSeconds(61,100,10)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000030" startTime="2026-10-10T01:39:12.9247158+09:00" endTime="2026-10-10T01:39:12.9247187+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="709b472d-91eb-442a-a51d-fc086ed37773" />
+    <UnitTestResult executionId="a369e936-ec4d-4c6f-8923-5df3a6c3e887" testId="6e012975-b53a-bb3e-27b4-f2ab8e4c7f50" testName="ValidationRejectsDuplicateUnitAcrossSlots" computerName="DESKTOP-7174LTC" duration="00:00:00.0002390" startTime="2026-10-10T01:39:12.9450414+09:00" endTime="2026-10-10T01:39:12.9452799+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a369e936-ec4d-4c6f-8923-5df3a6c3e887" />
+    <UnitTestResult executionId="71419fe3-a6be-4e9d-a974-d53cc0c6a476" testId="14eb6c24-427f-2d21-0481-d76ed1239e76" testName="RejectsUnknownAffinityReference" computerName="DESKTOP-7174LTC" duration="00:00:00.0032850" startTime="2026-10-10T01:39:12.8384301+09:00" endTime="2026-10-10T01:39:12.8417151+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71419fe3-a6be-4e9d-a974-d53cc0c6a476" />
+    <UnitTestResult executionId="4455a3f2-6016-4e88-9249-b79b8f83262d" testId="ca068bdf-2bbc-7544-1fc5-c82b74daa101" testName="MigrationCycleIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0006890" startTime="2026-10-10T01:39:12.9166007+09:00" endTime="2026-10-10T01:39:12.9172893+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4455a3f2-6016-4e88-9249-b79b8f83262d" />
+    <UnitTestResult executionId="8494723a-648a-4730-a436-37020c27ceb8" testId="4a81dfd0-b2dd-e641-d33a-f802ba647789" testName="RejectsUnknownCategoryAndDuplicateCanonicalIds" computerName="DESKTOP-7174LTC" duration="00:00:00.0006020" startTime="2026-10-10T01:39:12.9673757+09:00" endTime="2026-10-10T01:39:12.9679778+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8494723a-648a-4730-a436-37020c27ceb8" />
+    <UnitTestResult executionId="7d549c50-a549-4fd5-a996-d56f763a6d6b" testId="71a6ee83-b0eb-3abc-8bf1-7cbbf08779e1" testName="MaxHpIncreasePreservesCurrentPercentageAndIdentity" computerName="DESKTOP-7174LTC" duration="00:00:00.0030080" startTime="2026-10-10T01:39:12.8789112+09:00" endTime="2026-10-10T01:39:12.8819192+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d549c50-a549-4fd5-a996-d56f763a6d6b" />
+    <UnitTestResult executionId="d3854480-bb01-459a-a455-c457be08c93c" testId="6a56dd70-4c85-99dc-985b-6370eb6e5de2" testName="StaleSourceRevisionRejectsWithoutFormationMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0004110" startTime="2026-10-10T01:39:12.9346206+09:00" endTime="2026-10-10T01:39:12.9350320+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3854480-bb01-459a-a455-c457be08c93c" />
+    <UnitTestResult executionId="a262927b-07e9-42bb-aeb3-5213b28f32df" testId="a1176e79-face-0e24-d62b-f711471a404e" testName="ActivePlayerCreatesDeterministicIntentWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0016560" startTime="2026-10-10T01:39:12.9183187+09:00" endTime="2026-10-10T01:39:12.9199743+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a262927b-07e9-42bb-aeb3-5213b28f32df" />
+    <UnitTestResult executionId="29617be6-fa3d-4e2b-9a11-3fa2c915b35a" testId="b11e8037-1ecc-c574-4c44-66ed285b487a" testName="DuplicateMigrationSourceRegistrationIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0010130" startTime="2026-10-10T01:39:12.9155705+09:00" endTime="2026-10-10T01:39:12.9165829+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29617be6-fa3d-4e2b-9a11-3fa2c915b35a" />
+    <UnitTestResult executionId="91380c8c-aa90-4bdf-a154-090f9d3d0379" testId="eab9ec97-95b1-f6b6-2af5-1e924350a4e2" testName="KillRaiseFormationCheckpointHydrateRoundTripPreservesNextCombatReadiness" computerName="DESKTOP-7174LTC" duration="00:00:00.0047910" startTime="2026-10-10T01:39:12.9023499+09:00" endTime="2026-10-10T01:39:12.9071407+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91380c8c-aa90-4bdf-a154-090f9d3d0379" />
+    <UnitTestResult executionId="f4af8bf0-4ecc-4f7e-aa19-3349c84a957e" testId="981a2209-5364-3a2e-5107-bd8481902215" testName="RejectsNegativeMatchupMultiplier" computerName="DESKTOP-7174LTC" duration="00:00:00.0043740" startTime="2026-10-10T01:39:12.8228007+09:00" endTime="2026-10-10T01:39:12.8271748+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f4af8bf0-4ecc-4f7e-aa19-3349c84a957e" />
+    <UnitTestResult executionId="fae3f046-314f-4570-b8a4-13f7b4eac0e6" testId="164efc05-62fa-fca2-b0a5-d0cfb79a68e5" testName="MigrationRegistryAppliesExplicitPathAndPreservesState" computerName="DESKTOP-7174LTC" duration="00:00:00.0005440" startTime="2026-10-10T01:39:12.9444817+09:00" endTime="2026-10-10T01:39:12.9450260+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fae3f046-314f-4570-b8a4-13f7b4eac0e6" />
+    <UnitTestResult executionId="9fc65eb2-7da4-49f6-8571-78422c60f834" testId="4ae30e09-e3fb-9e8d-3ab2-0bf47f034e06" testName="InsufficientBalanceIsAtomic" computerName="DESKTOP-7174LTC" duration="00:00:00.0012750" startTime="2026-10-10T01:39:12.9090208+09:00" endTime="2026-10-10T01:39:12.9102957+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fc65eb2-7da4-49f6-8571-78422c60f834" />
+    <UnitTestResult executionId="6c69679a-5dd8-45c0-ab21-d3e206bb6764" testId="04955cf9-cd61-7048-9505-36d4e5dafe66" testName="CaptureThenHydratePreservesBattleAndFormationRevisions" computerName="DESKTOP-7174LTC" duration="00:00:00.0003130" startTime="2026-10-10T01:39:12.9441530+09:00" endTime="2026-10-10T01:39:12.9444660+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c69679a-5dd8-45c0-ab21-d3e206bb6764" />
+    <UnitTestResult executionId="97c21639-9891-4cbd-b57e-77be76db4cf4" testId="ec12db26-cf89-9212-81b2-4023c35464e6" testName="RejectsNonIncreasingSynergyThresholds" computerName="DESKTOP-7174LTC" duration="00:00:00.0041670" startTime="2026-10-10T01:39:12.8271933+09:00" endTime="2026-10-10T01:39:12.8313601+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97c21639-9891-4cbd-b57e-77be76db4cf4" />
+    <UnitTestResult executionId="e7e90493-5bd5-4cc9-9989-f37e538e956e" testId="c74dd06d-4980-2949-9aba-ba5f116ba2d2" testName="RejectsUnknownSchemaVersion" computerName="DESKTOP-7174LTC" duration="00:00:00.0038310" startTime="2026-10-10T01:39:12.8450275+09:00" endTime="2026-10-10T01:39:12.8488580+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7e90493-5bd5-4cc9-9989-f37e538e956e" />
+    <UnitTestResult executionId="98ae2cc6-c10d-410f-8805-bb25f6ecf3fa" testId="4b7ca54d-94b3-1293-430f-fe68431dd562" testName="CorruptSaveDoesNotSilentlyCreateNewState" computerName="DESKTOP-7174LTC" duration="00:00:00.0008200" startTime="2026-10-10T01:39:12.8986287+09:00" endTime="2026-10-10T01:39:12.8994485+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98ae2cc6-c10d-410f-8805-bb25f6ecf3fa" />
+    <UnitTestResult executionId="6141fc62-078f-4224-9870-60a66637d494" testId="f1add916-f916-7cde-9f0e-d62f1284ae7c" testName="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Running)" computerName="DESKTOP-7174LTC" duration="00:00:00.0003480" startTime="2026-10-10T01:39:12.7054407+09:00" endTime="2026-10-10T01:39:12.7057891+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6141fc62-078f-4224-9870-60a66637d494" />
+    <UnitTestResult executionId="78560e67-3cc4-4bfc-b149-bb648ef65df6" testId="bc146db1-bafe-6667-451b-5e7692506652" testName="AllowedPathReadyRunningVictoryResolvedAdvancesRevision" computerName="DESKTOP-7174LTC" duration="00:00:00.0001860" startTime="2026-10-10T01:39:12.7043638+09:00" endTime="2026-10-10T01:39:12.7045495+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78560e67-3cc4-4bfc-b149-bb648ef65df6" />
+    <UnitTestResult executionId="f90be8d4-118c-4d24-848a-018d89709e5b" testId="0ef610ce-42dc-fe90-5796-377e804daea5" testName="AssignAdvancesRevisionAndStoresUnit" computerName="DESKTOP-7174LTC" duration="00:00:00.0001700" startTime="2026-10-10T01:39:12.9072523+09:00" endTime="2026-10-10T01:39:12.9074217+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f90be8d4-118c-4d24-848a-018d89709e5b" />
+    <UnitTestResult executionId="089b96dd-4e5e-4641-bc7d-277867f1b119" testId="070e035d-8172-a9a5-01d7-e9a68c7549fd" testName="NonPositiveDamageIsRejected(0)" computerName="DESKTOP-7174LTC" duration="00:00:00.0004240" startTime="2026-10-10T01:39:12.8829465+09:00" endTime="2026-10-10T01:39:12.8833704+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="089b96dd-4e5e-4641-bc7d-277867f1b119" />
+    <UnitTestResult executionId="c2351d5f-c2f2-4d73-bfe5-f20f561b81a7" testId="439fedb0-af3c-0fbc-1f47-bf58afe8da90" testName="MigrationReturningUnexpectedVersionIsRejected" computerName="DESKTOP-7174LTC" duration="00:00:00.0002940" startTime="2026-10-10T01:39:12.9176497+09:00" endTime="2026-10-10T01:39:12.9179441+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c2351d5f-c2f2-4d73-bfe5-f20f561b81a7" />
+    <UnitTestResult executionId="97fb10b3-67af-4030-9ebc-e8ddbdc053e6" testId="7c638273-8017-12c4-58b2-5923c50148d8" testName="LethalDamageDefeatsAtZeroHealth" computerName="DESKTOP-7174LTC" duration="00:00:00.0001670" startTime="2026-10-10T01:39:12.8827447+09:00" endTime="2026-10-10T01:39:12.8829117+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97fb10b3-67af-4030-9ebc-e8ddbdc053e6" />
+    <UnitTestResult executionId="093074b9-cb61-4277-98ae-fe73f7bcc6b3" testId="1618221e-1fa6-c07b-2825-01352719c8f2" testName="InvalidDecodedSnapshotDoesNotSilentlyCreateNewState" computerName="DESKTOP-7174LTC" duration="00:00:00.0012440" startTime="2026-10-10T01:39:12.9310181+09:00" endTime="2026-10-10T01:39:12.9322620+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="093074b9-cb61-4277-98ae-fe73f7bcc6b3" />
+    <UnitTestResult executionId="5e316359-4601-4ec3-b5c5-b1f6d6b848e2" testId="dd968161-b18b-55cb-9691-841b8de82ca7" testName="PityGuaranteesLegendaryAt200AndDiamondOnly" computerName="DESKTOP-7174LTC" duration="00:00:00.0009200" startTime="2026-10-10T01:39:12.9262616+09:00" endTime="2026-10-10T01:39:12.9271809+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e316359-4601-4ec3-b5c5-b1f6d6b848e2" />
+    <UnitTestResult executionId="012acc65-f15d-4f3b-a41b-5350ed9f52e8" testId="6c241849-c719-b10f-ab49-247bceb496f7" testName="DamageAfterDefeatHasNoSecondEffect" computerName="DESKTOP-7174LTC" duration="00:00:00.0006350" startTime="2026-10-10T01:39:12.8820933+09:00" endTime="2026-10-10T01:39:12.8827278+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="012acc65-f15d-4f3b-a41b-5350ed9f52e8" />
+    <UnitTestResult executionId="b30d8016-5937-486c-aae6-af442eb9d9e2" testId="b735f29c-6052-7188-ed8d-cbb871e33f83" testName="FourStatBuffsApplyToPermanentStats" computerName="DESKTOP-7174LTC" duration="00:00:00.0008630" startTime="2026-10-10T01:39:12.9469518+09:00" endTime="2026-10-10T01:39:12.9478146+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b30d8016-5937-486c-aae6-af442eb9d9e2" />
+    <UnitTestResult executionId="01e8b22d-5cc8-41f0-a6b7-dea0707d55f6" testId="42679e34-dc1f-a01d-ffcf-b0531637b429" testName="SpecExposesInjectedCadenceAndDamageWithoutUnityOrTargetSemantics" computerName="DESKTOP-7174LTC" duration="00:00:00.0004290" startTime="2026-10-10T01:39:12.9233071+09:00" endTime="2026-10-10T01:39:12.9237355+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01e8b22d-5cc8-41f0-a6b7-dea0707d55f6" />
+    <UnitTestResult executionId="c34d74d9-fa55-47a7-a49b-9a7fd3bc5bde" testId="f81c8cd1-27c0-cb9a-9d4e-0393339c7d4f" testName="StaleRevisionIsRejectedWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0002780" startTime="2026-10-10T01:39:12.9367354+09:00" endTime="2026-10-10T01:39:12.9370137+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c34d74d9-fa55-47a7-a49b-9a7fd3bc5bde" />
+    <UnitTestResult executionId="cf7a71b9-e375-4594-ab38-46d8ebcd42b5" testId="e5a5460f-c99e-b37c-1eda-66689b1a98c2" testName="RestartOutsideResolvedIsRejectedWithoutMutation(Ready)" computerName="DESKTOP-7174LTC" duration="00:00:00.0006120" startTime="2026-10-10T01:39:12.7069720+09:00" endTime="2026-10-10T01:39:12.7075845+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf7a71b9-e375-4594-ab38-46d8ebcd42b5" />
+    <UnitTestResult executionId="3ad7f114-9b9e-448d-88ef-8dfd66da12f4" testId="52af2ba7-f014-f94e-fa47-55a50451436f" testName="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Ready)" computerName="DESKTOP-7174LTC" duration="00:00:00.0008150" startTime="2026-10-10T01:39:12.7046091+09:00" endTime="2026-10-10T01:39:12.7054235+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ad7f114-9b9e-448d-88ef-8dfd66da12f4" />
+    <UnitTestResult executionId="fd879aa9-c21b-43f5-9fe2-5f34253c1873" testId="976cff38-76bc-194e-5664-4f6fe2265c46" testName="MigrationProducingInvalidSnapshotIsRejectedBeforeExposure" computerName="DESKTOP-7174LTC" duration="00:00:00.0003310" startTime="2026-10-10T01:39:12.9173057+09:00" endTime="2026-10-10T01:39:12.9176371+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd879aa9-c21b-43f5-9fe2-5f34253c1873" />
+    <UnitTestResult executionId="c526a298-2e77-4a33-a96d-0a3a72af3c96" testId="00d39702-c61c-cc3b-f3fa-9d50dd8cc7cb" testName="RewardsForElapsedSeconds(28800,48000,4800)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000030" startTime="2026-10-10T01:39:12.9247285+09:00" endTime="2026-10-10T01:39:12.9247319+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c526a298-2e77-4a33-a96d-0a3a72af3c96" />
+    <UnitTestResult executionId="72e1df40-ff81-401e-8aa2-440a17425cae" testId="8b159ac1-3029-eaff-9761-0c7d73489252" testName="StartOutsideReadyIsRejectedWithoutMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0008470" startTime="2026-10-10T01:39:12.7090678+09:00" endTime="2026-10-10T01:39:12.7099145+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="72e1df40-ff81-401e-8aa2-440a17425cae" />
+    <UnitTestResult executionId="04cf858e-8268-4387-9959-69a9785deb43" testId="9763351f-4f1f-5f7b-09b5-9edce2520d73" testName="RejectsNegativeBaseStats" computerName="DESKTOP-7174LTC" duration="00:00:00.0045500" startTime="2026-10-10T01:39:12.8182284+09:00" endTime="2026-10-10T01:39:12.8227782+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04cf858e-8268-4387-9959-69a9785deb43" />
+    <UnitTestResult executionId="0a4591d1-06d4-4576-a96f-b8d6a9c107de" testId="657a92db-5fc3-0753-d820-3fd7964a7868" testName="OnlyDefeatedCombatantCanBecomeRaiseSource" computerName="DESKTOP-7174LTC" duration="00:00:00.0002480" startTime="2026-10-10T01:39:12.9364753+09:00" endTime="2026-10-10T01:39:12.9367235+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a4591d1-06d4-4576-a96f-b8d6a9c107de" />
+    <UnitTestResult executionId="1c792788-01e3-443a-9546-1ceed01d0799" testId="42c2d481-5e48-d32a-0a48-d0202e67d52e" testName="NullSerializedStateIsRejectedBeforeStoreMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0008350" startTime="2026-10-10T01:39:12.8706162+09:00" endTime="2026-10-10T01:39:12.8714508+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c792788-01e3-443a-9546-1ceed01d0799" />
+    <UnitTestResult executionId="f10f1cf2-161f-43db-ad9e-58692918510c" testId="23213b71-044d-546f-01a2-e87531b9fd5e" testName="InvalidAssignedEventIdRejectsBeforeRaiseMutation" computerName="DESKTOP-7174LTC" duration="00:00:00.0012320" startTime="2026-10-10T01:39:12.8843875+09:00" endTime="2026-10-10T01:39:12.8856198+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f10f1cf2-161f-43db-ad9e-58692918510c" />
+    <UnitTestResult executionId="0a8a184d-53af-4aeb-9e08-e5b888dc24e7" testId="858b045a-42dc-8030-f2b0-3847d3ec868f" testName="AcceptsOriginClassAndOptionalJoker" computerName="DESKTOP-7174LTC" duration="00:00:00.0085880" startTime="2026-10-10T01:39:12.9479274+09:00" endTime="2026-10-10T01:39:12.9565150+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a8a184d-53af-4aeb-9e08-e5b888dc24e7" />
+    <UnitTestResult executionId="c840263f-067a-448a-9efe-e5de12c006e7" testId="2a65e9f7-e870-af2a-5ce6-9866ec21d75d" testName="SameUnitCannotOccupyTwoSlots" computerName="DESKTOP-7174LTC" duration="00:00:00.0004190" startTime="2026-10-10T01:39:12.9079730+09:00" endTime="2026-10-10T01:39:12.9083914+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c840263f-067a-448a-9efe-e5de12c006e7" />
+    <UnitTestResult executionId="59a53211-7bf5-429a-8532-dba95cdd868b" testId="3fb55460-e5da-abc8-1e5f-9998d141ae62" testName="RejectsWrongCharacterCount" computerName="DESKTOP-7174LTC" duration="00:00:00.0046100" startTime="2026-10-10T01:39:12.8535604+09:00" endTime="2026-10-10T01:39:12.8581700+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59a53211-7bf5-429a-8532-dba95cdd868b" />
+    <UnitTestResult executionId="ceca8e4e-5321-4407-a69a-b3dd89ffd3d9" testId="9b8bcbaa-449f-ea2b-c4df-0337a4d97e38" testName="CheckpointPersistsCurrentBattleAndFormationRevisionsExactly" computerName="DESKTOP-7174LTC" duration="00:00:00.0039940" startTime="2026-10-10T01:39:12.8716142+09:00" endTime="2026-10-10T01:39:12.8756076+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ceca8e4e-5321-4407-a69a-b3dd89ffd3d9" />
+    <UnitTestResult executionId="a616c9bf-7d29-4bb2-9a83-22021fb22c8b" testId="0746c0ee-d6ab-33fa-d2d1-ec797fa7d102" testName="RecommendNeverUsesUnownedOrLockedSlot" computerName="DESKTOP-7174LTC" duration="00:00:00.0058040" startTime="2026-10-10T01:39:12.9371360+09:00" endTime="2026-10-10T01:39:12.9429392+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a616c9bf-7d29-4bb2-9a83-22021fb22c8b" />
+    <UnitTestResult executionId="c3b986dd-db48-49ea-a883-e186c02f15a9" testId="5851d5e3-91ff-535d-eeb6-0a6470a91dd2" testName="MultipleLevelUpsAreNotLost" computerName="DESKTOP-7174LTC" duration="00:00:00.0015130" startTime="2026-10-10T01:39:12.6985597+09:00" endTime="2026-10-10T01:39:12.7000727+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3b986dd-db48-49ea-a883-e186c02f15a9" />
+    <UnitTestResult executionId="70c9b044-8123-4bdf-9ba0-a2b45b764d56" testId="f2851147-059c-1ee3-f2ee-531064c93edc" testName="RetryingSameRaiseCommandCannotCreateSecondLocalEffect" computerName="DESKTOP-7174LTC" duration="00:00:00.0007520" startTime="2026-10-10T01:39:12.8877960+09:00" endTime="2026-10-10T01:39:12.8885479+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70c9b044-8123-4bdf-9ba0-a2b45b764d56" />
+    <UnitTestResult executionId="62b1762f-9f36-43f0-a45d-47318455b6e4" testId="0ac8229c-ba38-8c39-5006-be88f19da23e" testName="DefeatedPlayerCannotCreateIntent" computerName="DESKTOP-7174LTC" duration="00:00:00.0010940" startTime="2026-10-10T01:39:12.9200008+09:00" endTime="2026-10-10T01:39:12.9210951+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62b1762f-9f36-43f0-a45d-47318455b6e4" />
+    <UnitTestResult executionId="e67fa017-d8a2-4b43-b615-735e95ca425b" testId="880ed87b-d5b7-0cce-fc4f-6a70aa26de4b" testName="StaleFormationRevisionRejectsBeforeSourceConsumption" computerName="DESKTOP-7174LTC" duration="00:00:00.0004990" startTime="2026-10-10T01:39:12.9341073+09:00" endTime="2026-10-10T01:39:12.9346064+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e67fa017-d8a2-4b43-b615-735e95ca425b" />
+    <UnitTestResult executionId="8552f14d-741f-4473-97a5-16102dabb991" testId="c7035988-2581-e3c8-1e1e-6fa038134fc8" testName="RestartOutsideResolvedIsRejectedWithoutMutation(Victory)" computerName="DESKTOP-7174LTC" duration="00:00:00.0000410" startTime="2026-10-10T01:39:12.7079623+09:00" endTime="2026-10-10T01:39:12.7080030+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8552f14d-741f-4473-97a5-16102dabb991" />
+    <UnitTestResult executionId="f344fc1b-c69f-4794-84f0-5349e78ab3d5" testId="2d2eedc0-919e-7b83-c6a8-3b10f282b120" testName="LocalQueueSerializesBattleCommandsAgainstRevisions" computerName="DESKTOP-7174LTC" duration="00:00:00.0012150" startTime="2026-10-10T01:39:12.8861284+09:00" endTime="2026-10-10T01:39:12.8873429+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f344fc1b-c69f-4794-84f0-5349e78ab3d5" />
+    <UnitTestResult executionId="9129a436-3706-43a7-9598-4ba4ba52e0b1" testId="60fc34d9-da62-992c-a9da-ad8b16bccd48" testName="ConsumeOccursExactlyOnce" computerName="DESKTOP-7174LTC" duration="00:00:00.0004100" startTime="2026-10-10T01:39:12.9358612+09:00" endTime="2026-10-10T01:39:12.9362715+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9129a436-3706-43a7-9598-4ba4ba52e0b1" />
+    <UnitTestResult executionId="b767469c-ee6d-4d8c-b45e-996543814ce2" testId="fd6d465d-fbaf-a004-752e-a3ac22181eb4" testName="OccupiedSlotPreflightRejectsBeforeSourceConsumption" computerName="DESKTOP-7174LTC" duration="00:00:00.0007450" startTime="2026-10-10T01:39:12.9333467+09:00" endTime="2026-10-10T01:39:12.9340921+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b767469c-ee6d-4d8c-b45e-996543814ce2" />
+    <UnitTestResult executionId="a570eca7-3cd9-4ba0-a142-d042a0378c8f" testId="4e6d25d9-c949-0616-d636-2c7016a6283a" testName="ReentrantDrainIsRejectedWithoutConsumingPendingLaterCommand" computerName="DESKTOP-7174LTC" duration="00:00:00.0004000" startTime="2026-10-10T01:39:12.9133950+09:00" endTime="2026-10-10T01:39:12.9137947+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a570eca7-3cd9-4ba0-a142-d042a0378c8f" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="RejectsNegativeMatchupMultiplier" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="981a2209-5364-3a2e-5107-bd8481902215">
+      <Execution id="f4af8bf0-4ecc-4f7e-aa19-3349c84a957e" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsNegativeMatchupMultiplier" />
+    </UnitTest>
+    <UnitTest name="RejectsNegativeBaseStats" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9763351f-4f1f-5f7b-09b5-9edce2520d73">
+      <Execution id="04cf858e-8268-4387-9959-69a9785deb43" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsNegativeBaseStats" />
+    </UnitTest>
+    <UnitTest name="RejectsDuplicateDirectedMatchup" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="d168f1ea-c192-ed2f-7627-6d60d7b568a4">
+      <Execution id="52236426-4de1-4585-a4d7-54d6efda48b4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsDuplicateDirectedMatchup" />
+    </UnitTest>
+    <UnitTest name="DefeatedCombatantCreatesAvailableRaiseSource" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="7006b3e6-5c31-90dd-b2cc-7acc4069a232">
+      <Execution id="178c1ca8-1d23-4958-bce3-6282f3adf080" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseSourceInvariantTests" name="DefeatedCombatantCreatesAvailableRaiseSource" />
+    </UnitTest>
+    <UnitTest name="RestartOutsideResolvedIsRejectedWithoutMutation(Ready)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="e5a5460f-c99e-b37c-1eda-66689b1a98c2">
+      <Execution id="cf7a71b9-e375-4594-ab38-46d8ebcd42b5" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="RestartOutsideResolvedIsRejectedWithoutMutation(Ready)" />
+    </UnitTest>
+    <UnitTest name="MigrationReturningUnexpectedVersionIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="439fedb0-af3c-0fbc-1f47-bf58afe8da90">
+      <Execution id="c2351d5f-c2f2-4d73-bfe5-f20f561b81a7" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.MigrationNegativeTests" name="MigrationReturningUnexpectedVersionIsRejected" />
+    </UnitTest>
+    <UnitTest name="MultipleLevelUpsAreNotLost" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="5851d5e3-91ff-535d-eeb6-0a6470a91dd2">
+      <Execution id="c3b986dd-db48-49ea-a883-e186c02f15a9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.AccountProgressionAwu20Tests" name="MultipleLevelUpsAreNotLost" />
+    </UnitTest>
+    <UnitTest name="RetryingSameRaiseCommandCannotCreateSecondLocalEffect" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="f2851147-059c-1ee3-f2ee-531064c93edc">
+      <Execution id="70c9b044-8123-4bdf-9ba0-a2b45b764d56" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CommandReplayInvariantTests" name="RetryingSameRaiseCommandCannotCreateSecondLocalEffect" />
+    </UnitTest>
+    <UnitTest name="DamageAfterDefeatHasNoSecondEffect" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="6c241849-c719-b10f-ab49-247bceb496f7">
+      <Execution id="012acc65-f15d-4f3b-a41b-5350ed9f52e8" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantInvariantTests" name="DamageAfterDefeatHasNoSecondEffect" />
+    </UnitTest>
+    <UnitTest name="StaleRevisionRejectsWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a01be816-287a-7bdc-444b-8d050a5a0f79">
+      <Execution id="6df7a08f-b25d-4847-9fc3-098fb05c1784" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FormationInvariantTests" name="StaleRevisionRejectsWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="PityCanTriggerMidTenDraw" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0b5e3fea-703f-3547-924a-9b1de6b68c5a">
+      <Execution id="d78585c0-cec2-4986-b3a4-871d3f6e74de" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.GachaBatchV10Tests" name="PityCanTriggerMidTenDraw" />
+    </UnitTest>
+    <UnitTest name="EnemyFactionIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="e91d211c-a4e0-f28d-f87c-23d931e511d8">
+      <Execution id="70544e0a-3513-4fcc-8593-f17cdb6359fa" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="EnemyFactionIsRejected" />
+    </UnitTest>
+    <UnitTest name="RejectsMissingClass" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="edcca059-35ed-d2c9-483b-76bdb8508027">
+      <Execution id="b79abbfa-36b2-44c2-8b99-6906b5b9a03c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsMissingClass" />
+    </UnitTest>
+    <UnitTest name="SynergyCountsDistinctMonstersAndTiers" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9d805d36-c3d5-3919-f687-f30f03a78b43">
+      <Execution id="afffdae2-fbb6-45c6-a002-72f7b8e827d9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SkillSynergyV3Tests" name="SynergyCountsDistinctMonstersAndTiers" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(0,0,0)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a94db2ab-155c-87d5-3147-86f13f1b7fa5">
+      <Execution id="1963947d-4eeb-4ca1-9ee9-dd104058f0e4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(0,0,0)" />
+    </UnitTest>
+    <UnitTest name="SaveCheckpointCapturesAndPersistsCurrentState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="50d56e90-d175-24ee-0008-ce68cb72e39c">
+      <Execution id="b432be32-9ac5-4ebf-a61a-c42b63950c94" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FirstPlayableCheckpointTests" name="SaveCheckpointCapturesAndPersistsCurrentState" />
+    </UnitTest>
+    <UnitTest name="PermanentCollectionIsIndependentOfRaiseAndPreventsDuplicateDeckEntries" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="94e497d0-6c08-7d36-911a-9404530b54d9">
+      <Execution id="f348af16-faeb-4d20-9f79-b2e48968570b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PermanentSystemsV2Tests" name="PermanentCollectionIsIndependentOfRaiseAndPreventsDuplicateDeckEntries" />
+    </UnitTest>
+    <UnitTest name="MissingSaveWithNullFactoryResultIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="aeb9a352-f1fe-f68a-ddd0-bdbadcf3b530">
+      <Execution id="29da4638-e71e-4828-a12d-9f81fc23e6a6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="MissingSaveWithNullFactoryResultIsRejected" />
+    </UnitTest>
+    <UnitTest name="RejectsNonIncreasingSynergyThresholds" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="ec12db26-cf89-9212-81b2-4023c35464e6">
+      <Execution id="97c21639-9891-4cbd-b57e-77be76db4cf4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsNonIncreasingSynergyThresholds" />
+    </UnitTest>
+    <UnitTest name="FailedCommandStopsCurrentDrainButLeavesLaterCommandPendingForExplicitRetry" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4dde6ccf-a9c5-feed-c4a6-6aac81e78ee9">
+      <Execution id="6caeb3f5-5a49-4ec3-9c3e-2fef875c61a9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.LocalCommandQueueRecoveryTests" name="FailedCommandStopsCurrentDrainButLeavesLaterCommandPendingForExplicitRetry" />
+    </UnitTest>
+    <UnitTest name="RecommendNeverUsesUnownedOrLockedSlot" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0746c0ee-d6ab-33fa-d2d1-ec797fa7d102">
+      <Execution id="a616c9bf-7d29-4bb2-9a83-22021fb22c8b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SkillSynergyV3Tests" name="RecommendNeverUsesUnownedOrLockedSlot" />
+    </UnitTest>
+    <UnitTest name="MissingSaveCreatesNewState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="dc66ecf0-2a81-b19a-7d59-7b3675ae9809">
+      <Execution id="5e6c2f30-ad2e-454d-b26f-bd5eae263e49" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FirstPlayableBootstrapTests" name="MissingSaveCreatesNewState" />
+    </UnitTest>
+    <UnitTest name="MigrationProducingInvalidSnapshotIsRejectedBeforeExposure" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="976cff38-76bc-194e-5664-4f6fe2265c46">
+      <Execution id="fd879aa9-c21b-43f5-9fe2-5f34253c1873" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.MigrationNegativeTests" name="MigrationProducingInvalidSnapshotIsRejectedBeforeExposure" />
+    </UnitTest>
+    <UnitTest name="ReplayingStartBattleWithOriginalRevisionCannotStartTwice" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="1fea7cbd-4b49-7d1a-72f1-c2fd70dd802f">
+      <Execution id="3f2f85d1-9650-4e9a-b189-99b1fcace6b6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CommandReplayInvariantTests" name="ReplayingStartBattleWithOriginalRevisionCannotStartTwice" />
+    </UnitTest>
+    <UnitTest name="ReentrantDrainIsRejectedWithoutConsumingPendingLaterCommand" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4e6d25d9-c949-0616-d636-2c7016a6283a">
+      <Execution id="a570eca7-3cd9-4ba0-a142-d042a0378c8f" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.LocalCommandQueueRecoveryTests" name="ReentrantDrainIsRejectedWithoutConsumingPendingLaterCommand" />
+    </UnitTest>
+    <UnitTest name="CaptureThenHydratePreservesBattleAndFormationRevisions" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="04955cf9-cd61-7048-9505-36d4e5dafe66">
+      <Execution id="6c69679a-5dd8-45c0-ab21-d3e206bb6764" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SnapshotContractTests" name="CaptureThenHydratePreservesBattleAndFormationRevisions" />
+    </UnitTest>
+    <UnitTest name="InvalidMaximumDoesNotChangeHp" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a5eb5070-7000-c758-8a04-20c265a869b4">
+      <Execution id="eb13da89-0257-4f7c-b401-22c8c89dd88a" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantHealthRescaleAwu16Tests" name="InvalidMaximumDoesNotChangeHp" />
+    </UnitTest>
+    <UnitTest name="InvalidRaisedEventIdRejectsBeforeRaiseMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="cce3c56f-e12c-d804-8231-f37db6cbd448">
+      <Execution id="1c5bdf98-bc1e-466d-9d05-541d737f4415" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CommandReplayInvariantTests" name="InvalidRaisedEventIdRejectsBeforeRaiseMutation" />
+    </UnitTest>
+    <UnitTest name="GhoulIsAliasOfPlagueAndEffectPlansArePreserved" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="ffdcd681-82e1-0d17-00e7-c9a98fe7fe4d">
+      <Execution id="82874ca2-44bd-4c1a-a5f4-4215ec720c12" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftDraftTests" name="GhoulIsAliasOfPlagueAndEffectPlansArePreserved" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(59,0,0)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2600741c-ba01-6ef1-e878-0e6486654fde">
+      <Execution id="30237fa7-48de-4cca-b750-b017b2534343" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(59,0,0)" />
+    </UnitTest>
+    <UnitTest name="RejectsWrongCharacterCount" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="3fb55460-e5da-abc8-1e5f-9998d141ae62">
+      <Execution id="59a53211-7bf5-429a-8532-dba95cdd868b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsWrongCharacterCount" />
+    </UnitTest>
+    <UnitTest name="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1">
+      <Execution id="3ef86ea7-1d03-4b72-ae10-716a62bf8d82" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" />
+    </UnitTest>
+    <UnitTest name="KillRaiseFormationCheckpointHydrateRoundTripPreservesNextCombatReadiness" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="eab9ec97-95b1-f6b6-2af5-1e924350a4e2">
+      <Execution id="91380c8c-aa90-4bdf-a154-090f9d3d0379" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FirstPlayableCoreE2ETests" name="KillRaiseFormationCheckpointHydrateRoundTripPreservesNextCombatReadiness" />
+    </UnitTest>
+    <UnitTest name="ResolveOutsideRunningIsRejectedWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c1f7e536-fbd1-7fc1-7e76-b2688cd7bb09">
+      <Execution id="92b320ae-1d9a-4d9f-888b-87557d328345" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="ResolveOutsideRunningIsRejectedWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(61,100,10)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="5cc80579-b621-5113-68ad-6bd79e3ca06e">
+      <Execution id="709b472d-91eb-442a-a51d-fc086ed37773" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(61,100,10)" />
+    </UnitTest>
+    <UnitTest name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Ready)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="52af2ba7-f014-f94e-fa47-55a50451436f">
+      <Execution id="3ad7f114-9b9e-448d-88ef-8dfd66da12f4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Ready)" />
+    </UnitTest>
+    <UnitTest name="RejectsUnknownProfileCharacter" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="df2f2fe2-70dd-94f5-c8ed-2a8723f29064">
+      <Execution id="30371bde-39d1-42b0-a34c-b204e0bbd2c0" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsUnknownProfileCharacter" />
+    </UnitTest>
+    <UnitTest name="InsufficientBalanceIsAtomic" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4ae30e09-e3fb-9e8d-3ab2-0bf47f034e06">
+      <Execution id="9fc65eb2-7da4-49f6-8571-78422c60f834" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.GachaBatchV10Tests" name="InsufficientBalanceIsAtomic" />
+    </UnitTest>
+    <UnitTest name="StaleFormationRevisionRejectsBeforeSourceConsumption" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="880ed87b-d5b7-0cce-fc4f-6a70aa26de4b">
+      <Execution id="e67fa017-d8a2-4b43-b615-735e95ca425b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseFormationInvariantTests" name="StaleFormationRevisionRejectsBeforeSourceConsumption" />
+    </UnitTest>
+    <UnitTest name="AcceptsOriginClassAndOptionalJoker" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="858b045a-42dc-8030-f2b0-3847d3ec868f">
+      <Execution id="0a8a184d-53af-4aeb-9e08-e5b888dc24e7" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="AcceptsOriginClassAndOptionalJoker" />
+    </UnitTest>
+    <UnitTest name="InvalidSpecIsRejected(0,300)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="11e49d4d-53d2-48a2-62dd-261515e66ca9">
+      <Execution id="d73f67d0-383d-40d8-83b9-ff39b29dce84" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="InvalidSpecIsRejected(0,300)" />
+    </UnitTest>
+    <UnitTest name="SameUnitCannotOccupyTwoSlots" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2a65e9f7-e870-af2a-5ce6-9866ec21d75d">
+      <Execution id="c840263f-067a-448a-9efe-e5de12c006e7" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FormationInvariantTests" name="SameUnitCannotOccupyTwoSlots" />
+    </UnitTest>
+    <UnitTest name="ValidationRejectsDuplicateUnitAcrossSlots" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="6e012975-b53a-bb3e-27b4-f2ab8e4c7f50">
+      <Execution id="a369e936-ec4d-4c6f-8923-5df3a6c3e887" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SnapshotContractTests" name="ValidationRejectsDuplicateUnitAcrossSlots" />
+    </UnitTest>
+    <UnitTest name="RestartOutsideResolvedIsRejectedWithoutMutation(Defeat)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c3c93587-1f41-b9c4-3c58-3e04a874fe17">
+      <Execution id="a58c051e-f105-4448-9605-78c2f4902435" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="RestartOutsideResolvedIsRejectedWithoutMutation(Defeat)" />
+    </UnitTest>
+    <UnitTest name="RestartOutsideResolvedIsRejectedWithoutMutation(Running)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9ba6f429-be13-5c68-5eb8-62bd2ccb38d0">
+      <Execution id="d3fbcabe-deaa-4ada-847e-31e395179703" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="RestartOutsideResolvedIsRejectedWithoutMutation(Running)" />
+    </UnitTest>
+    <UnitTest name="MigrationRegistryAppliesExplicitPathAndPreservesState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="164efc05-62fa-fca2-b0a5-d0cfb79a68e5">
+      <Execution id="fae3f046-314f-4570-b8a4-13f7b4eac0e6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SnapshotContractTests" name="MigrationRegistryAppliesExplicitPathAndPreservesState" />
+    </UnitTest>
+    <UnitTest name="JokersUseUniqueActivationWithoutInventedTierNumbers" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="016b67e0-80d8-e480-28f7-c6c62f8a2245">
+      <Execution id="9e5787c7-4816-4796-9f66-e8027bcdd8fd" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftDraftTests" name="JokersUseUniqueActivationWithoutInventedTierNumbers" />
+    </UnitTest>
+    <UnitTest name="CheckpointStoreFailurePropagates" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="85c94eba-4aa1-5380-be1b-606d81211a5f">
+      <Execution id="5befde07-632c-4cf0-b4e0-a898f905b93c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="CheckpointStoreFailurePropagates" />
+    </UnitTest>
+    <UnitTest name="RejectsUnknownAffinityReference" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="14eb6c24-427f-2d21-0481-d76ed1239e76">
+      <Execution id="71419fe3-a6be-4e9d-a974-d53cc0c6a476" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsUnknownAffinityReference" />
+    </UnitTest>
+    <UnitTest name="DefeatedPlayerCannotCreateIntent" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0ac8229c-ba38-8c39-5006-be88f19da23e">
+      <Execution id="62b1762f-9f36-43f0-a45d-47318455b6e4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="DefeatedPlayerCannotCreateIntent" />
+    </UnitTest>
+    <UnitTest name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Running)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="f1add916-f916-7cde-9f0e-d62f1284ae7c">
+      <Execution id="6141fc62-078f-4224-9870-60a66637d494" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Running)" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(3600,6000,600)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="3b72fea7-d2ee-9a80-3b31-89d827ee1a4d">
+      <Execution id="f6c09fc4-5fe1-42c8-9c6a-f4823d8ed1a4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(3600,6000,600)" />
+    </UnitTest>
+    <UnitTest name="HydratedFormationCanContinueIntoNextCombatWithoutLosingRaisedUnit" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="56ab4dd0-3383-6a3a-61a1-314ee2cdee4c">
+      <Execution id="2beb1265-9fc2-408a-b385-d7a95f4a7c3f" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.HydratedContinuationTests" name="HydratedFormationCanContinueIntoNextCombatWithoutLosingRaisedUnit" />
+    </UnitTest>
+    <UnitTest name="MissingSaveCreatesOnceThenCheckpointPersistsAndNextBootstrapRestores" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="194ff49c-2f8d-80d2-ea42-2a367d1abfe7">
+      <Execution id="34be0fc0-943e-4b07-8632-4dcf0374b3bf" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.LocalPersistenceOrchestrationTests" name="MissingSaveCreatesOnceThenCheckpointPersistsAndNextBootstrapRestores" />
+    </UnitTest>
+    <UnitTest name="DefeatedUnitIsNotRevivedBySkillUpgrade" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2ed43d61-0d54-a62f-da3c-ac3986b67e9c">
+      <Execution id="e0c9cfbc-6ada-4f2d-9f19-7c073a2e1f27" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantHealthRescaleAwu16Tests" name="DefeatedUnitIsNotRevivedBySkillUpgrade" />
+    </UnitTest>
+    <UnitTest name="PityGuaranteesLegendaryAt200AndDiamondOnly" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="dd968161-b18b-55cb-9691-841b8de82ca7">
+      <Execution id="5e316359-4601-4ec3-b5c5-b1f6d6b848e2" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PermanentSystemsV2Tests" name="PityGuaranteesLegendaryAt200AndDiamondOnly" />
+    </UnitTest>
+    <UnitTest name="PermanentBuffAppliesWithoutChangingRaise" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9699aa0f-da86-7150-be0b-e7953b819534">
+      <Execution id="52b6905b-2b98-4658-998a-80fbbe12d93e" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.StatCalculatorV4Tests" name="PermanentBuffAppliesWithoutChangingRaise" />
+    </UnitTest>
+    <UnitTest name="NonPositiveDamageIsRejected(-1)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c41c02e8-f7ab-c1f8-58ca-605931c9e1e6">
+      <Execution id="0761aa41-50d4-4f85-975d-b5143180f4bf" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantInvariantTests" name="NonPositiveDamageIsRejected(-1)" />
+    </UnitTest>
+    <UnitTest name="InvalidSpecIsRejected(5,-1)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c10eb267-c0b1-b732-5992-495d2e1df19e">
+      <Execution id="dfeebe60-9e2f-4a08-bd49-0f0813f9382d" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="InvalidSpecIsRejected(5,-1)" />
+    </UnitTest>
+    <UnitTest name="OnlyDefeatedCombatantCanBecomeRaiseSource" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="657a92db-5fc3-0753-d820-3fd7964a7868">
+      <Execution id="0a4591d1-06d4-4576-a96f-b8d6a9c107de" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseSourceInvariantTests" name="OnlyDefeatedCombatantCanBecomeRaiseSource" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(60,100,10)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="fc2ecea7-3820-e1c5-3024-940b49aeadc4">
+      <Execution id="2dc04169-f964-4ac9-b849-0f82b8a92ae9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(60,100,10)" />
+    </UnitTest>
+    <UnitTest name="SuccessfulRaisePreservesArchetypeCreatesPlayerUnitAndAssignsFormation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="6f65cd3e-d784-1339-ca99-65c60a3afb06">
+      <Execution id="ea698601-ebcc-4acf-98c2-68da447df568" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseFormationInvariantTests" name="SuccessfulRaisePreservesArchetypeCreatesPlayerUnitAndAssignsFormation" />
+    </UnitTest>
+    <UnitTest name="SpecExposesInjectedCadenceAndDamageWithoutUnityOrTargetSemantics" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="42679e34-dc1f-a01d-ffcf-b0531637b429">
+      <Execution id="01e8b22d-5cc8-41f0-a6b7-dea0707d55f6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="SpecExposesInjectedCadenceAndDamageWithoutUnityOrTargetSemantics" />
+    </UnitTest>
+    <UnitTest name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Resolved)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a564a82a-0f6e-eac2-b1d9-be672f3b1f2c">
+      <Execution id="d4b08703-04fe-4dca-b192-93660b347f04" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="FinalizeOutsideTerminalResultIsRejectedWithoutMutation(Resolved)" />
+    </UnitTest>
+    <UnitTest name="RejectsAliasInsteadOfCanonicalId" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="3df4a1bf-2c43-2bfe-c379-2c3982afe249">
+      <Execution id="c9f5522c-c034-4167-b1f2-8e799d1a3eee" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsAliasInsteadOfCanonicalId" />
+    </UnitTest>
+    <UnitTest name="ExtremeWavesClampWithoutOverflow" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="d6a8b3a3-057d-306c-bf68-382fead5863f">
+      <Execution id="7e856118-4068-44e3-9168-9285c6d2d1c9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.WaveDifficultyAwu19Tests" name="ExtremeWavesClampWithoutOverflow" />
+    </UnitTest>
+    <UnitTest name="InvalidSnapshotIsRejectedBeforeCodecOrStore" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9eb55fdd-b7d0-b2ff-4168-291b44ecd402">
+      <Execution id="6ee1c20e-a762-48d1-a46c-69f4bffdddcb" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="InvalidSnapshotIsRejectedBeforeCodecOrStore" />
+    </UnitTest>
+    <UnitTest name="DuplicateMigrationSourceRegistrationIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="b11e8037-1ecc-c574-4c44-66ed285b487a">
+      <Execution id="29617be6-fa3d-4e2b-9a11-3fa2c915b35a" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.MigrationNegativeTests" name="DuplicateMigrationSourceRegistrationIsRejected" />
+    </UnitTest>
+    <UnitTest name="BossAtMultiplesOfTenIsSingleAndFiveTimesHp" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="df56f98f-20a2-c0a4-ddcc-db468162724e">
+      <Execution id="01771bf7-ff2e-40a4-9a50-63c44afc9db4" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.WaveDifficultyAwu19Tests" name="BossAtMultiplesOfTenIsSingleAndFiveTimesHp" />
+    </UnitTest>
+    <UnitTest name="OccupiedSlotPreflightRejectsBeforeSourceConsumption" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="fd6d465d-fbaf-a004-752e-a3ac22181eb4">
+      <Execution id="b767469c-ee6d-4d8c-b45e-996543814ce2" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseFormationInvariantTests" name="OccupiedSlotPreflightRejectsBeforeSourceConsumption" />
+    </UnitTest>
+    <UnitTest name="KillExperienceScalesWithWave" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="7e55b8f1-98c5-cfae-076e-058632f6913f">
+      <Execution id="af51f97f-9701-4b75-8058-0111c512b175" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.AccountProgressionAwu20Tests" name="KillExperienceScalesWithWave" />
+    </UnitTest>
+    <UnitTest name="ReassigningSameUnitToSameSlotIsIdempotentInStateButAdvancesRevision" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="fe043c46-cba5-5675-932e-d6833693481d">
+      <Execution id="1021ece6-31d9-43d8-aebe-112852d412e9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FormationInvariantTests" name="ReassigningSameUnitToSameSlotIsIdempotentInStateButAdvancesRevision" />
+    </UnitTest>
+    <UnitTest name="ExperienceCarriesAndGrantsOnePointPerLevel" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="180e75f5-4516-7c80-591b-b4046fa6d944">
+      <Execution id="90ac6372-1c35-413d-9a79-67ca6a7e9a20" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.AccountProgressionAwu20Tests" name="ExperienceCarriesAndGrantsOnePointPerLevel" />
+    </UnitTest>
+    <UnitTest name="TwoHundredthDrawMustBeLegendary" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2be3e968-b10b-eda8-d6fb-765795b8190f">
+      <Execution id="08aaf251-c06f-499d-98f3-b7aa9f12411f" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.GachaBatchV10Tests" name="TwoHundredthDrawMustBeLegendary" />
+    </UnitTest>
+    <UnitTest name="InvalidSpecIsRejected(5,0)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9c2c1e5d-cc30-fbfc-a836-d3603e85482e">
+      <Execution id="00d099cf-f630-4271-a41b-f5eacf1a2d6b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="InvalidSpecIsRejected(5,0)" />
+    </UnitTest>
+    <UnitTest name="RejectsNonPositiveAttackSpeed" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4e1e0781-aec0-2e4b-eb83-faa52ad422e8">
+      <Execution id="4a137331-31d1-4f51-8853-7d5e00af9950" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsNonPositiveAttackSpeed" />
+    </UnitTest>
+    <UnitTest name="AcquiredMonsterGainsDamageAfterSavedSkillRestoration" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0f0a7899-35a6-95b7-d484-a5065a6c5637">
+      <Execution id="4daabeb2-d70d-4751-bded-5afd23ddc8fc" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CoreLoopAwu15IntegrationTests" name="AcquiredMonsterGainsDamageAfterSavedSkillRestoration" />
+    </UnitTest>
+    <UnitTest name="StaleExpectedRevisionIsRejectedWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="7fc75601-d073-83c9-3ae5-4f5ef7f75465">
+      <Execution id="70c275a2-de99-45bb-aa28-2b174c9c4c87" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="StaleExpectedRevisionIsRejectedWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="LethalDamageDefeatsAtZeroHealth" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="7c638273-8017-12c4-58b2-5923c50148d8">
+      <Execution id="97fb10b3-67af-4030-9ebc-e8ddbdc053e6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantInvariantTests" name="LethalDamageDefeatsAtZeroHealth" />
+    </UnitTest>
+    <UnitTest name="InvalidAssignedEventIdRejectsBeforeRaiseMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="23213b71-044d-546f-01a2-e87531b9fd5e">
+      <Execution id="f10f1cf2-161f-43db-ad9e-58692918510c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CommandReplayInvariantTests" name="InvalidAssignedEventIdRejectsBeforeRaiseMutation" />
+    </UnitTest>
+    <UnitTest name="StartOutsideReadyIsRejectedWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="8b159ac1-3029-eaff-9761-0c7d73489252">
+      <Execution id="72e1df40-ff81-401e-8aa2-440a17425cae" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="StartOutsideReadyIsRejectedWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="StaleRestartRevisionIsRejectedWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="461cd2b0-140d-b14b-380d-8983c3b7972f">
+      <Execution id="a1df1db9-c580-4b39-8fd3-6c497af965d2" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="StaleRestartRevisionIsRejectedWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="InvalidDecodedSnapshotDoesNotSilentlyCreateNewState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="1618221e-1fa6-c07b-2825-01352719c8f2">
+      <Execution id="093074b9-cb61-4277-98ae-fe73f7bcc6b3" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PersistenceRecoveryTests" name="InvalidDecodedSnapshotDoesNotSilentlyCreateNewState" />
+    </UnitTest>
+    <UnitTest name="InvalidTargetSchemaRejectsBeforeStoreLoad" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2d4ff72d-1d5b-f4ef-0302-65412e831d95">
+      <Execution id="934fb8c6-af4a-481c-b2eb-4c31308fba17" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="InvalidTargetSchemaRejectsBeforeStoreLoad" />
+    </UnitTest>
+    <UnitTest name="MaxHpDecreasePreservesRatioAndClampsLowLivingHp" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="17a73cf1-b53f-997b-d71a-ac4cd8731f33">
+      <Execution id="58421a3d-e304-40b1-850e-39bc3b97b7bc" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantHealthRescaleAwu16Tests" name="MaxHpDecreasePreservesRatioAndClampsLowLivingHp" />
+    </UnitTest>
+    <UnitTest name="ActivePlayerCreatesDeterministicIntentWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a1176e79-face-0e24-d62b-f711471a404e">
+      <Execution id="a262927b-07e9-42bb-aeb3-5213b28f32df" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="ActivePlayerCreatesDeterministicIntentWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="CheckpointPersistsCurrentBattleAndFormationRevisionsExactly" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9b8bcbaa-449f-ea2b-c4df-0337a4d97e38">
+      <Execution id="ceca8e4e-5321-4407-a69a-b3dd89ffd3d9" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointRevisionConsistencyTests" name="CheckpointPersistsCurrentBattleAndFormationRevisionsExactly" />
+    </UnitTest>
+    <UnitTest name="NonPositiveDamageIsRejected(0)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="070e035d-8172-a9a5-01d7-e9a68c7549fd">
+      <Execution id="089b96dd-4e5e-4641-bc7d-277867f1b119" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantInvariantTests" name="NonPositiveDamageIsRejected(0)" />
+    </UnitTest>
+    <UnitTest name="SevenSlotsAndRecipeConsumeFive" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="1d054e1b-c41d-c826-5464-d577bce681e9">
+      <Execution id="46048b57-6c7f-4a87-9cdd-0c887d33c355" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PermanentSystemsV2Tests" name="SevenSlotsAndRecipeConsumeFive" />
+    </UnitTest>
+    <UnitTest name="RejectsUnknownTraitReference" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c27c5f5d-2c33-28f3-b2f8-019934811a79">
+      <Execution id="fa6707b2-d4ea-45de-94d9-0fdc4f007322" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsUnknownTraitReference" />
+    </UnitTest>
+    <UnitTest name="RejectsUnknownSchemaVersion" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c74dd06d-4980-2949-9aba-ba5f116ba2d2">
+      <Execution id="e7e90493-5bd5-4cc9-9989-f37e538e956e" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsUnknownSchemaVersion" />
+    </UnitTest>
+    <UnitTest name="OccupiedTargetSlotRejectsDifferentUnitWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c7ef803a-ae52-94c8-8fb6-8ac34ba22845">
+      <Execution id="a3de64ab-9124-42f5-9373-dbb7f97b10f2" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FormationInvariantTests" name="OccupiedTargetSlotRejectsDifferentUnitWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="AssignAdvancesRevisionAndStoresUnit" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0ef610ce-42dc-fe90-5796-377e804daea5">
+      <Execution id="f90be8d4-118c-4d24-848a-018d89709e5b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FormationInvariantTests" name="AssignAdvancesRevisionAndStoresUnit" />
+    </UnitTest>
+    <UnitTest name="UnknownSchemaDoesNotSilentlyCreateNewState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="5bf86f37-8196-04c3-2863-6d8ef2dbd286">
+      <Execution id="28420c4a-d210-4b1c-abfe-12464d3bd7b7" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PersistenceRecoveryTests" name="UnknownSchemaDoesNotSilentlyCreateNewState" />
+    </UnitTest>
+    <UnitTest name="FailedSavePropagatesAndCannotBeReportedAsSuccess" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="8c1682ac-bf7c-4fc0-9c62-300a53d17c97">
+      <Execution id="9c22ff68-1686-4e31-ab83-801da9c9c979" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.PersistenceRecoveryTests" name="FailedSavePropagatesAndCannotBeReportedAsSuccess" />
+    </UnitTest>
+    <UnitTest name="AllowedPathReadyRunningVictoryResolvedAdvancesRevision" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="bc146db1-bafe-6667-451b-5e7692506652">
+      <Execution id="78560e67-3cc4-4bfc-b149-bb648ef65df6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="AllowedPathReadyRunningVictoryResolvedAdvancesRevision" />
+    </UnitTest>
+    <UnitTest name="RejectsMoreThanThreeTraits" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="23b88f4d-3acb-40fd-66ae-19028821cbbe">
+      <Execution id="e974c8bb-efe1-4da4-b7ee-62057b7f6129" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsMoreThanThreeTraits" />
+    </UnitTest>
+    <UnitTest name="ProvidesExactlyFiveOriginsFourClassesFourJokers" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="6e89cfcc-609c-ef11-0c68-963a2afe4c2d">
+      <Execution id="62505c3e-d134-4098-85e3-b4cb66b216a8" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftDraftTests" name="ProvidesExactlyFiveOriginsFourClassesFourJokers" />
+    </UnitTest>
+    <UnitTest name="RejectsTwoOrigins" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="044de3dd-5206-d510-5e4e-6b818e1372b9">
+      <Execution id="5771e0b2-0250-442c-8867-de9f43e76f35" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsTwoOrigins" />
+    </UnitTest>
+    <UnitTest name="ConsumeOccursExactlyOnce" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="60fc34d9-da62-992c-a9da-ad8b16bccd48">
+      <Execution id="9129a436-3706-43a7-9598-4ba4ba52e0b1" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseSourceInvariantTests" name="ConsumeOccursExactlyOnce" />
+    </UnitTest>
+    <UnitTest name="MissingMigrationPathIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a833a38e-4dca-0a79-3184-5511ce29029b">
+      <Execution id="88a83d43-df6e-4fac-90e1-4a4520a2e32a" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.MigrationNegativeTests" name="MissingMigrationPathIsRejected" />
+    </UnitTest>
+    <UnitTest name="PositiveDamageReducesHealth" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="39e63202-198d-9978-3ba2-cabe8a34d259">
+      <Execution id="05894d35-0a43-4647-b178-d2255e894c47" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantInvariantTests" name="PositiveDamageReducesHealth" />
+    </UnitTest>
+    <UnitTest name="MigrationCycleIsRejected" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="ca068bdf-2bbc-7544-1fc5-c82b74daa101">
+      <Execution id="4455a3f2-6016-4e88-9249-b79b8f83262d" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.MigrationNegativeTests" name="MigrationCycleIsRejected" />
+    </UnitTest>
+    <UnitTest name="FourStatBuffsApplyToPermanentStats" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="b735f29c-6052-7188-ed8d-cbb871e33f83">
+      <Execution id="b30d8016-5937-486c-aae6-af442eb9d9e2" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SynergyV2StatTests" name="FourStatBuffsApplyToPermanentStats" />
+    </UnitTest>
+    <UnitTest name="SkillTreeRequiresMasteredPrerequisiteAndSp" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="3dc62bc3-ca61-3eec-0ae2-87b683d439e7">
+      <Execution id="d0b85e31-0e5b-4c8d-8924-eeaaa063f3fd" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.SkillSynergyV3Tests" name="SkillTreeRequiresMasteredPrerequisiteAndSp" />
+    </UnitTest>
+    <UnitTest name="ResolvedCanRestartToReadyAndAdvanceRevision" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="b91ea3e2-a019-d418-db53-3fa32de1d909">
+      <Execution id="210929c7-7a4f-423e-a3be-e08411532191" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="ResolvedCanRestartToReadyAndAdvanceRevision" />
+    </UnitTest>
+    <UnitTest name="StaleRevisionIsRejectedWithoutMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="f81c8cd1-27c0-cb9a-9d4e-0393339c7d4f">
+      <Execution id="c34d74d9-fa55-47a7-a49b-9a7fd3bc5bde" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseSourceInvariantTests" name="StaleRevisionIsRejectedWithoutMutation" />
+    </UnitTest>
+    <UnitTest name="RejectsDuplicateProfile" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="81cae97e-d96b-71d6-eb62-10e8f64d3bb3">
+      <Execution id="5e79abcc-28b1-4613-a457-469e1696d408" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsDuplicateProfile" />
+    </UnitTest>
+    <UnitTest name="UltimateIsContractOnly" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="a2cbe4d9-e422-1f63-126e-424e92b9912e">
+      <Execution id="ba35189f-64b2-4cc7-8898-42e3809981e7" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.StatCalculatorV4Tests" name="UltimateIsContractOnly" />
+    </UnitTest>
+    <UnitTest name="DraftEffectsDoNotInventGameplayBalance" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c533f52f-d390-e228-d014-d3c52475e684">
+      <Execution id="055f83b0-e1c0-4b29-a39f-151f5dcab1fa" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CoreLoopAwu15IntegrationTests" name="DraftEffectsDoNotInventGameplayBalance" />
+    </UnitTest>
+    <UnitTest name="CorruptSaveDoesNotSilentlyCreateNewState" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4b7ca54d-94b3-1293-430f-fe68431dd562">
+      <Execution id="98ae2cc6-c10d-410f-8805-bb25f6ecf3fa" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FirstPlayableBootstrapTests" name="CorruptSaveDoesNotSilentlyCreateNewState" />
+    </UnitTest>
+    <UnitTest name="LocalQueueSerializesBattleCommandsAgainstRevisions" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="2d2eedc0-919e-7b83-c6a8-3b10f282b120">
+      <Execution id="f344fc1b-c69f-4794-84f0-5349e78ab3d5" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CommandReplayInvariantTests" name="LocalQueueSerializesBattleCommandsAgainstRevisions" />
+    </UnitTest>
+    <UnitTest name="RejectsDuplicateCharacterIds" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="bb43d025-fb1f-591a-e18c-6d3bc69d915b">
+      <Execution id="7477fcae-c988-456f-9dc8-a8afebac6146" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsDuplicateCharacterIds" />
+    </UnitTest>
+    <UnitTest name="NullSerializedStateIsRejectedBeforeStoreMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="42c2d481-5e48-d32a-0a48-d0202e67d52e">
+      <Execution id="1c792788-01e3-443a-9546-1ceed01d0799" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="NullSerializedStateIsRejectedBeforeStoreMutation" />
+    </UnitTest>
+    <UnitTest name="OccupiedFormationSlotRejectsFullRaisePathWithoutConsumingSource" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="9efd48e8-578e-011a-9faf-caa5e7fcb609">
+      <Execution id="c1466a15-a3c0-4b7c-a122-1f711657a0b8" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.FirstPlayableCoreE2ENegativeTests" name="OccupiedFormationSlotRejectsFullRaisePathWithoutConsumingSource" />
+    </UnitTest>
+    <UnitTest name="RestartOutsideResolvedIsRejectedWithoutMutation(Victory)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c7035988-2581-e3c8-1e1e-6fa038134fc8">
+      <Execution id="8552f14d-741f-4473-97a5-16102dabb991" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="RestartOutsideResolvedIsRejectedWithoutMutation(Victory)" />
+    </UnitTest>
+    <UnitTest name="RejectsUnknownCategoryAndDuplicateCanonicalIds" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4a81dfd0-b2dd-e641-d33a-f802ba647789">
+      <Execution id="8494723a-648a-4730-a436-37020c27ceb8" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftDraftTests" name="RejectsUnknownCategoryAndDuplicateCanonicalIds" />
+    </UnitTest>
+    <UnitTest name="AllowedPathReadyRunningDefeatResolvedAdvancesRevision" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4c5a7a19-2550-52ef-4b2b-13caff66ca33">
+      <Execution id="6bd6f5a1-36c5-4202-aacf-54bfdb19440c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.BattleStateInvariantTests" name="AllowedPathReadyRunningDefeatResolvedAdvancesRevision" />
+    </UnitTest>
+    <UnitTest name="MaxHpIncreasePreservesCurrentPercentageAndIdentity" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="71a6ee83-b0eb-3abc-8bf1-7cbbf08779e1">
+      <Execution id="7d549c50-a549-4fd5-a996-d56f763a6d6b" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CombatantHealthRescaleAwu16Tests" name="MaxHpIncreasePreservesCurrentPercentageAndIdentity" />
+    </UnitTest>
+    <UnitTest name="RewardsForElapsedSeconds(28800,48000,4800)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="00d39702-c61c-cc3b-f3fa-9d50dd8cc7cb">
+      <Execution id="c526a298-2e77-4a33-a96d-0a3a72af3c96" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="RewardsForElapsedSeconds(28800,48000,4800)" />
+    </UnitTest>
+    <UnitTest name="InvalidSpecIsRejected(-1,300)" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="0922bd95-d89d-8d70-d51f-90a104f5eb7b">
+      <Execution id="10c9bf15-99a6-4c58-bb34-a02d66636be1" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.NecromancerBasicAutoBehaviorTests" name="InvalidSpecIsRejected(-1,300)" />
+    </UnitTest>
+    <UnitTest name="InvalidSnapshotCannotBeRestored" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="f103a9f8-d26f-3a97-47b0-5a2c6ce9d6f0">
+      <Execution id="aa765954-87b9-45a0-8598-06fdaa53a53c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.AccountProgressionAwu20Tests" name="InvalidSnapshotCannotBeRestored" />
+    </UnitTest>
+    <UnitTest name="CapsAtEightHoursAndRejectsClockRollback" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="26837399-afe7-a2d9-5d34-0e1fd73b7305">
+      <Execution id="c59f5dae-b3d3-452f-a776-9e92a8d9e8f6" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.OfflineRewardAwu18Tests" name="CapsAtEightHoursAndRejectsClockRollback" />
+    </UnitTest>
+    <UnitTest name="StaleSourceRevisionRejectsWithoutFormationMutation" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="6a56dd70-4c85-99dc-985b-6370eb6e5de2">
+      <Execution id="d3854480-bb01-459a-a455-c457be08c93c" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.RaiseFormationInvariantTests" name="StaleSourceRevisionRejectsWithoutFormationMutation" />
+    </UnitTest>
+    <UnitTest name="TenDrawChargesOnceAndTracksDuplicates" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="c739a7c5-dcc4-ef03-6bdf-afbd4d1c3eb4">
+      <Execution id="4dcb5a20-d06c-4587-9a63-b60881ae6770" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.GachaBatchV10Tests" name="TenDrawChargesOnceAndTracksDuplicates" />
+    </UnitTest>
+    <UnitTest name="CheckpointCancellationPropagates" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="4722548b-aa40-a491-2be8-d77c1f0d02bf">
+      <Execution id="90e3f575-049c-4e1b-99ba-d1f44101dc87" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CheckpointBootstrapEdgeTests" name="CheckpointCancellationPropagates" />
+    </UnitTest>
+    <UnitTest name="RejectsReadyAssetWithoutKey" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="b8d4b223-63a1-43b4-1a1a-5634c2a56077">
+      <Execution id="4b6cabb7-e41c-44eb-9f1d-296c311949ed" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="RejectsReadyAssetWithoutKey" />
+    </UnitTest>
+    <UnitTest name="LinearWaveIndexCompoundsByTenPercent" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="f8652db7-0f96-99ee-f743-77da0ff5b314">
+      <Execution id="b761ce47-9ce9-437f-94f7-b37641537100" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.WaveDifficultyAwu19Tests" name="LinearWaveIndexCompoundsByTenPercent" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="94e497d0-6c08-7d36-911a-9404530b54d9" executionId="f348af16-faeb-4d20-9f79-b2e48968570b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f65cd3e-d784-1339-ca99-65c60a3afb06" executionId="ea698601-ebcc-4acf-98c2-68da447df568" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9eb55fdd-b7d0-b2ff-4168-291b44ecd402" executionId="6ee1c20e-a762-48d1-a46c-69f4bffdddcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4c5a7a19-2550-52ef-4b2b-13caff66ca33" executionId="6bd6f5a1-36c5-4202-aacf-54bfdb19440c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3df4a1bf-2c43-2bfe-c379-2c3982afe249" executionId="c9f5522c-c034-4167-b1f2-8e799d1a3eee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f0a7899-35a6-95b7-d484-a5065a6c5637" executionId="4daabeb2-d70d-4751-bded-5afd23ddc8fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffdcd681-82e1-0d17-00e7-c9a98fe7fe4d" executionId="82874ca2-44bd-4c1a-a5f4-4215ec720c12" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1" executionId="3ef86ea7-1d03-4b72-ae10-716a62bf8d82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df2f2fe2-70dd-94f5-c8ed-2a8723f29064" executionId="30371bde-39d1-42b0-a34c-b204e0bbd2c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c739a7c5-dcc4-ef03-6bdf-afbd4d1c3eb4" executionId="4dcb5a20-d06c-4587-9a63-b60881ae6770" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c27c5f5d-2c33-28f3-b2f8-019934811a79" executionId="fa6707b2-d4ea-45de-94d9-0fdc4f007322" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="194ff49c-2f8d-80d2-ea42-2a367d1abfe7" executionId="34be0fc0-943e-4b07-8632-4dcf0374b3bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edcca059-35ed-d2c9-483b-76bdb8508027" executionId="b79abbfa-36b2-44c2-8b99-6906b5b9a03c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7ef803a-ae52-94c8-8fb6-8ac34ba22845" executionId="a3de64ab-9124-42f5-9373-dbb7f97b10f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a94db2ab-155c-87d5-3147-86f13f1b7fa5" executionId="1963947d-4eeb-4ca1-9ee9-dd104058f0e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a564a82a-0f6e-eac2-b1d9-be672f3b1f2c" executionId="d4b08703-04fe-4dca-b192-93660b347f04" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9d805d36-c3d5-3919-f687-f30f03a78b43" executionId="afffdae2-fbb6-45c6-a002-72f7b8e827d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e91d211c-a4e0-f28d-f87c-23d931e511d8" executionId="70544e0a-3513-4fcc-8593-f17cdb6359fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39e63202-198d-9978-3ba2-cabe8a34d259" executionId="05894d35-0a43-4647-b178-d2255e894c47" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c533f52f-d390-e228-d014-d3c52475e684" executionId="055f83b0-e1c0-4b29-a39f-151f5dcab1fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11e49d4d-53d2-48a2-62dd-261515e66ca9" executionId="d73f67d0-383d-40d8-83b9-ff39b29dce84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4722548b-aa40-a491-2be8-d77c1f0d02bf" executionId="90e3f575-049c-4e1b-99ba-d1f44101dc87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d168f1ea-c192-ed2f-7627-6d60d7b568a4" executionId="52236426-4de1-4585-a4d7-54d6efda48b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26837399-afe7-a2d9-5d34-0e1fd73b7305" executionId="c59f5dae-b3d3-452f-a776-9e92a8d9e8f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0922bd95-d89d-8d70-d51f-90a104f5eb7b" executionId="10c9bf15-99a6-4c58-bb34-a02d66636be1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b5e3fea-703f-3547-924a-9b1de6b68c5a" executionId="d78585c0-cec2-4986-b3a4-871d3f6e74de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fea7cbd-4b49-7d1a-72f1-c2fd70dd802f" executionId="3f2f85d1-9650-4e9a-b189-99b1fcace6b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="016b67e0-80d8-e480-28f7-c6c62f8a2245" executionId="9e5787c7-4816-4796-9f66-e8027bcdd8fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f103a9f8-d26f-3a97-47b0-5a2c6ce9d6f0" executionId="aa765954-87b9-45a0-8598-06fdaa53a53c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9699aa0f-da86-7150-be0b-e7953b819534" executionId="52b6905b-2b98-4658-998a-80fbbe12d93e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e89cfcc-609c-ef11-0c68-963a2afe4c2d" executionId="62505c3e-d134-4098-85e3-b4cb66b216a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c1682ac-bf7c-4fc0-9c62-300a53d17c97" executionId="9c22ff68-1686-4e31-ab83-801da9c9c979" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a833a38e-4dca-0a79-3184-5511ce29029b" executionId="88a83d43-df6e-4fac-90e1-4a4520a2e32a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="180e75f5-4516-7c80-591b-b4046fa6d944" executionId="90ac6372-1c35-413d-9a79-67ca6a7e9a20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7006b3e6-5c31-90dd-b2cc-7acc4069a232" executionId="178c1ca8-1d23-4958-bce3-6282f3adf080" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e1e0781-aec0-2e4b-eb83-faa52ad422e8" executionId="4a137331-31d1-4f51-8853-7d5e00af9950" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56ab4dd0-3383-6a3a-61a1-314ee2cdee4c" executionId="2beb1265-9fc2-408a-b385-d7a95f4a7c3f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d4ff72d-1d5b-f4ef-0302-65412e831d95" executionId="934fb8c6-af4a-481c-b2eb-4c31308fba17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2be3e968-b10b-eda8-d6fb-765795b8190f" executionId="08aaf251-c06f-499d-98f3-b7aa9f12411f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3dc62bc3-ca61-3eec-0ae2-87b683d439e7" executionId="d0b85e31-0e5b-4c8d-8924-eeaaa063f3fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="461cd2b0-140d-b14b-380d-8983c3b7972f" executionId="a1df1db9-c580-4b39-8fd3-6c497af965d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="044de3dd-5206-d510-5e4e-6b818e1372b9" executionId="5771e0b2-0250-442c-8867-de9f43e76f35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9c2c1e5d-cc30-fbfc-a836-d3603e85482e" executionId="00d099cf-f630-4271-a41b-f5eacf1a2d6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c10eb267-c0b1-b732-5992-495d2e1df19e" executionId="dfeebe60-9e2f-4a08-bd49-0f0813f9382d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3c93587-1f41-b9c4-3c58-3e04a874fe17" executionId="a58c051e-f105-4448-9605-78c2f4902435" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a01be816-287a-7bdc-444b-8d050a5a0f79" executionId="6df7a08f-b25d-4847-9fc3-098fb05c1784" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5bf86f37-8196-04c3-2863-6d8ef2dbd286" executionId="28420c4a-d210-4b1c-abfe-12464d3bd7b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9efd48e8-578e-011a-9faf-caa5e7fcb609" executionId="c1466a15-a3c0-4b7c-a122-1f711657a0b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc66ecf0-2a81-b19a-7d59-7b3675ae9809" executionId="5e6c2f30-ad2e-454d-b26f-bd5eae263e49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2cbe4d9-e422-1f63-126e-424e92b9912e" executionId="ba35189f-64b2-4cc7-8898-42e3809981e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d054e1b-c41d-c826-5464-d577bce681e9" executionId="46048b57-6c7f-4a87-9cdd-0c887d33c355" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df56f98f-20a2-c0a4-ddcc-db468162724e" executionId="01771bf7-ff2e-40a4-9a50-63c44afc9db4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2ed43d61-0d54-a62f-da3c-ac3986b67e9c" executionId="e0c9cfbc-6ada-4f2d-9f19-7c073a2e1f27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8652db7-0f96-99ee-f743-77da0ff5b314" executionId="b761ce47-9ce9-437f-94f7-b37641537100" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c41c02e8-f7ab-c1f8-58ca-605931c9e1e6" executionId="0761aa41-50d4-4f85-975d-b5143180f4bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b72fea7-d2ee-9a80-3b31-89d827ee1a4d" executionId="f6c09fc4-5fe1-42c8-9c6a-f4823d8ed1a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4dde6ccf-a9c5-feed-c4a6-6aac81e78ee9" executionId="6caeb3f5-5a49-4ec3-9c3e-2fef875c61a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d6a8b3a3-057d-306c-bf68-382fead5863f" executionId="7e856118-4068-44e3-9168-9285c6d2d1c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8d4b223-63a1-43b4-1a1a-5634c2a56077" executionId="4b6cabb7-e41c-44eb-9f1d-296c311949ed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7fc75601-d073-83c9-3ae5-4f5ef7f75465" executionId="70c275a2-de99-45bb-aa28-2b174c9c4c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e55b8f1-98c5-cfae-076e-058632f6913f" executionId="af51f97f-9701-4b75-8058-0111c512b175" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50d56e90-d175-24ee-0008-ce68cb72e39c" executionId="b432be32-9ac5-4ebf-a61a-c42b63950c94" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aeb9a352-f1fe-f68a-ddd0-bdbadcf3b530" executionId="29da4638-e71e-4828-a12d-9f81fc23e6a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a5eb5070-7000-c758-8a04-20c265a869b4" executionId="eb13da89-0257-4f7c-b401-22c8c89dd88a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe043c46-cba5-5675-932e-d6833693481d" executionId="1021ece6-31d9-43d8-aebe-112852d412e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb43d025-fb1f-591a-e18c-6d3bc69d915b" executionId="7477fcae-c988-456f-9dc8-a8afebac6146" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc2ecea7-3820-e1c5-3024-940b49aeadc4" executionId="2dc04169-f964-4ac9-b849-0f82b8a92ae9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="81cae97e-d96b-71d6-eb62-10e8f64d3bb3" executionId="5e79abcc-28b1-4613-a457-469e1696d408" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85c94eba-4aa1-5380-be1b-606d81211a5f" executionId="5befde07-632c-4cf0-b4e0-a898f905b93c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2600741c-ba01-6ef1-e878-0e6486654fde" executionId="30237fa7-48de-4cca-b750-b017b2534343" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b91ea3e2-a019-d418-db53-3fa32de1d909" executionId="210929c7-7a4f-423e-a3be-e08411532191" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23b88f4d-3acb-40fd-66ae-19028821cbbe" executionId="e974c8bb-efe1-4da4-b7ee-62057b7f6129" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c1f7e536-fbd1-7fc1-7e76-b2688cd7bb09" executionId="92b320ae-1d9a-4d9f-888b-87557d328345" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cce3c56f-e12c-d804-8231-f37db6cbd448" executionId="1c5bdf98-bc1e-466d-9d05-541d737f4415" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ba6f429-be13-5c68-5eb8-62bd2ccb38d0" executionId="d3fbcabe-deaa-4ada-847e-31e395179703" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17a73cf1-b53f-997b-d71a-ac4cd8731f33" executionId="58421a3d-e304-40b1-850e-39bc3b97b7bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5cc80579-b621-5113-68ad-6bd79e3ca06e" executionId="709b472d-91eb-442a-a51d-fc086ed37773" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e012975-b53a-bb3e-27b4-f2ab8e4c7f50" executionId="a369e936-ec4d-4c6f-8923-5df3a6c3e887" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="14eb6c24-427f-2d21-0481-d76ed1239e76" executionId="71419fe3-a6be-4e9d-a974-d53cc0c6a476" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ca068bdf-2bbc-7544-1fc5-c82b74daa101" executionId="4455a3f2-6016-4e88-9249-b79b8f83262d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a81dfd0-b2dd-e641-d33a-f802ba647789" executionId="8494723a-648a-4730-a436-37020c27ceb8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71a6ee83-b0eb-3abc-8bf1-7cbbf08779e1" executionId="7d549c50-a549-4fd5-a996-d56f763a6d6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a56dd70-4c85-99dc-985b-6370eb6e5de2" executionId="d3854480-bb01-459a-a455-c457be08c93c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1176e79-face-0e24-d62b-f711471a404e" executionId="a262927b-07e9-42bb-aeb3-5213b28f32df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b11e8037-1ecc-c574-4c44-66ed285b487a" executionId="29617be6-fa3d-4e2b-9a11-3fa2c915b35a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eab9ec97-95b1-f6b6-2af5-1e924350a4e2" executionId="91380c8c-aa90-4bdf-a154-090f9d3d0379" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="981a2209-5364-3a2e-5107-bd8481902215" executionId="f4af8bf0-4ecc-4f7e-aa19-3349c84a957e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="164efc05-62fa-fca2-b0a5-d0cfb79a68e5" executionId="fae3f046-314f-4570-b8a4-13f7b4eac0e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ae30e09-e3fb-9e8d-3ab2-0bf47f034e06" executionId="9fc65eb2-7da4-49f6-8571-78422c60f834" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04955cf9-cd61-7048-9505-36d4e5dafe66" executionId="6c69679a-5dd8-45c0-ab21-d3e206bb6764" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ec12db26-cf89-9212-81b2-4023c35464e6" executionId="97c21639-9891-4cbd-b57e-77be76db4cf4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c74dd06d-4980-2949-9aba-ba5f116ba2d2" executionId="e7e90493-5bd5-4cc9-9989-f37e538e956e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b7ca54d-94b3-1293-430f-fe68431dd562" executionId="98ae2cc6-c10d-410f-8805-bb25f6ecf3fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f1add916-f916-7cde-9f0e-d62f1284ae7c" executionId="6141fc62-078f-4224-9870-60a66637d494" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc146db1-bafe-6667-451b-5e7692506652" executionId="78560e67-3cc4-4bfc-b149-bb648ef65df6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ef610ce-42dc-fe90-5796-377e804daea5" executionId="f90be8d4-118c-4d24-848a-018d89709e5b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="070e035d-8172-a9a5-01d7-e9a68c7549fd" executionId="089b96dd-4e5e-4641-bc7d-277867f1b119" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="439fedb0-af3c-0fbc-1f47-bf58afe8da90" executionId="c2351d5f-c2f2-4d73-bfe5-f20f561b81a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c638273-8017-12c4-58b2-5923c50148d8" executionId="97fb10b3-67af-4030-9ebc-e8ddbdc053e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1618221e-1fa6-c07b-2825-01352719c8f2" executionId="093074b9-cb61-4277-98ae-fe73f7bcc6b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd968161-b18b-55cb-9691-841b8de82ca7" executionId="5e316359-4601-4ec3-b5c5-b1f6d6b848e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c241849-c719-b10f-ab49-247bceb496f7" executionId="012acc65-f15d-4f3b-a41b-5350ed9f52e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b735f29c-6052-7188-ed8d-cbb871e33f83" executionId="b30d8016-5937-486c-aae6-af442eb9d9e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42679e34-dc1f-a01d-ffcf-b0531637b429" executionId="01e8b22d-5cc8-41f0-a6b7-dea0707d55f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f81c8cd1-27c0-cb9a-9d4e-0393339c7d4f" executionId="c34d74d9-fa55-47a7-a49b-9a7fd3bc5bde" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5a5460f-c99e-b37c-1eda-66689b1a98c2" executionId="cf7a71b9-e375-4594-ab38-46d8ebcd42b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="52af2ba7-f014-f94e-fa47-55a50451436f" executionId="3ad7f114-9b9e-448d-88ef-8dfd66da12f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="976cff38-76bc-194e-5664-4f6fe2265c46" executionId="fd879aa9-c21b-43f5-9fe2-5f34253c1873" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00d39702-c61c-cc3b-f3fa-9d50dd8cc7cb" executionId="c526a298-2e77-4a33-a96d-0a3a72af3c96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b159ac1-3029-eaff-9761-0c7d73489252" executionId="72e1df40-ff81-401e-8aa2-440a17425cae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9763351f-4f1f-5f7b-09b5-9edce2520d73" executionId="04cf858e-8268-4387-9959-69a9785deb43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="657a92db-5fc3-0753-d820-3fd7964a7868" executionId="0a4591d1-06d4-4576-a96f-b8d6a9c107de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42c2d481-5e48-d32a-0a48-d0202e67d52e" executionId="1c792788-01e3-443a-9546-1ceed01d0799" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23213b71-044d-546f-01a2-e87531b9fd5e" executionId="f10f1cf2-161f-43db-ad9e-58692918510c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="858b045a-42dc-8030-f2b0-3847d3ec868f" executionId="0a8a184d-53af-4aeb-9e08-e5b888dc24e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a65e9f7-e870-af2a-5ce6-9866ec21d75d" executionId="c840263f-067a-448a-9efe-e5de12c006e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3fb55460-e5da-abc8-1e5f-9998d141ae62" executionId="59a53211-7bf5-429a-8532-dba95cdd868b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b8bcbaa-449f-ea2b-c4df-0337a4d97e38" executionId="ceca8e4e-5321-4407-a69a-b3dd89ffd3d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0746c0ee-d6ab-33fa-d2d1-ec797fa7d102" executionId="a616c9bf-7d29-4bb2-9a83-22021fb22c8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5851d5e3-91ff-535d-eeb6-0a6470a91dd2" executionId="c3b986dd-db48-49ea-a883-e186c02f15a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f2851147-059c-1ee3-f2ee-531064c93edc" executionId="70c9b044-8123-4bdf-9ba0-a2b45b764d56" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ac8229c-ba38-8c39-5006-be88f19da23e" executionId="62b1762f-9f36-43f0-a45d-47318455b6e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="880ed87b-d5b7-0cce-fc4f-6a70aa26de4b" executionId="e67fa017-d8a2-4b43-b615-735e95ca425b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7035988-2581-e3c8-1e1e-6fa038134fc8" executionId="8552f14d-741f-4473-97a5-16102dabb991" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d2eedc0-919e-7b83-c6a8-3b10f282b120" executionId="f344fc1b-c69f-4794-84f0-5349e78ab3d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="60fc34d9-da62-992c-a9da-ad8b16bccd48" executionId="9129a436-3706-43a7-9598-4ba4ba52e0b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fd6d465d-fbaf-a004-752e-a3ac22181eb4" executionId="b767469c-ee6d-4d8c-b45e-996543814ce2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e6d25d9-c949-0616-d636-2c7016a6283a" executionId="a570eca7-3cd9-4ba0-a142-d042a0378c8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="128" executed="128" passed="128" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.6.0.0: Test execution started&#xD;
+Running all tests in C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 128 of 128 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 4.6.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

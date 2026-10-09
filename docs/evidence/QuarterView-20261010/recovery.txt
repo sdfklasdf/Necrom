@@ -1,0 +1,1 @@
+Before=HardOnly/Medium/40/1/1/2/False/False After=HardOnly/Medium/40/1/1/2/False/False Restored disk Ultra=All/High/150/4/4/2/True/True

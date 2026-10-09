@@ -1,0 +1,4 @@
+2026-10-10T01:46:19.9828128+09:00 Unity 6000.3.25f1 Built-in; EDIT apply/restore PASS; actual quality baseline=All/High/150/4/4/2/True/True\nACTUAL_PLAYMODE PASS: camera angles/3 portrait sizes/120 cube proxies/HardOnly shadows/1024 light map/40m/1 cascade/1 pixel light/2xAA/error0
+Runtime quality=HardOnly/Medium/40/1/1/2/False/False
+After PlayMode quality restored PASS: All/High/150/4/4/2/True/True
+Original scene restored clean=True
