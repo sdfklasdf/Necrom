@@ -1,0 +1,3 @@
+﻿1432	10	Assets/Necrom/FirstPlayable/Fonts/Production/NotoSansKR-Bold SDF.asset
+661	10	Assets/Necrom/FirstPlayable/Fonts/Production/NotoSansKR-Medium SDF.asset
+1431	9	Assets/Necrom/FirstPlayable/Fonts/Production/NotoSansKR-Regular SDF.asset

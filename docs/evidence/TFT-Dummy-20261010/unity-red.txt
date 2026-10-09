@@ -1,0 +1,1 @@
+EXPECTED FAIL: CharacterVisualCatalogAsset pipeline missing

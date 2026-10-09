@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f857e6c70ca1b4ebab7eebc5b53645, type: 3}
+  m_Name: Catalog
+  m_EditorClassIdentifier: Necrom.ContentDraft::Necrom.ContentDraft.CharacterCatalogDraftAsset
+  monsterSource: {fileID: 4900000, guid: b49f9ed88c9534f44a1fdb550bbc3717, type: 3}
+  synergySource: {fileID: 4900000, guid: 7e4d7eebb4d3a9547a7efbcb7adbae0b, type: 3}
+  expectedCharacterCount: 3
+  contentRevision: DUMMY-3-NOT-PRODUCTION
+  balanceStatus: DRAFT_DUMMY
+  enforceTftAssignments: 1
+  tftDefinitions:
+  - id: Skeleton
+    label: Skeleton
+    category: Origin
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - attack_speed
+    - resurrection
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Plague
+    label: Ghoul/Plague
+    category: Origin
+    activation: CountTiers
+    aliases:
+    - Ghoul
+    effectIds:
+    - poison
+    - self_destruct
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Phantom
+    label: Phantom
+    category: Origin
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - physical_evasion
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Beast
+    label: Beast
+    category: Origin
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - early_rage
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Dragon
+    label: Dragon
+    category: Origin
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - area_breath
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Guardian
+    label: Guardian
+    category: Class
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - shield
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Slayer
+    label: Slayer
+    category: Class
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - assassinate
+    - execute
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Warlock
+    label: Warlock
+    category: Class
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - debuff
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Ranger
+    label: Ranger
+    category: Class
+    activation: CountTiers
+    aliases: []
+    effectIds:
+    - ranged_penetration
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Reaper
+    label: Reaper
+    category: Joker
+    activation: Unique
+    aliases: []
+    effectIds:
+    - execute
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Mimic
+    label: Mimic
+    category: Joker
+    activation: Unique
+    aliases: []
+    effectIds:
+    - currency_farming
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Colossus
+    label: Colossus
+    category: Joker
+    activation: Unique
+    aliases: []
+    effectIds:
+    - super_tank
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  - id: Vampire
+    label: Vampire
+    category: Joker
+    activation: Unique
+    aliases: []
+    effectIds:
+    - lifesteal
+    thresholds:
+    balanceStatus: DRAFT_NUMBERS_UNDECIDED
+  traitIds:
+  - Skeleton
+  - Plague
+  - Phantom
+  - Beast
+  - Dragon
+  - Guardian
+  - Slayer
+  - Warlock
+  - Ranger
+  - Reaper
+  - Mimic
+  - Colossus
+  - Vampire
+  affinityIds:
+  - "\uBE5B"
+  - "\uBD88"
+  - "\uBC88\uAC1C"
+  profiles:
+  - characterId: MON_001
+    familyId:
+    assetKey: dummy/MON_001
+    assetStatus: MAPPED
+    affinityId: "\uBE5B"
+    defense: 0
+    attacksPerSecond: 1
+  - characterId: MON_002
+    familyId:
+    assetKey: dummy/MON_002
+    assetStatus: MAPPED
+    affinityId: "\uBD88"
+    defense: 0
+    attacksPerSecond: 1
+  - characterId: MON_003
+    familyId:
+    assetKey: dummy/MON_003
+    assetStatus: MAPPED
+    affinityId: "\uBC88\uAC1C"
+    defense: 0
+    attacksPerSecond: 1
+  matchups: []

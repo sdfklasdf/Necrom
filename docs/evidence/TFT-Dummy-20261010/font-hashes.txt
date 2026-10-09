@@ -1,0 +1,13 @@
+
+
+Algorithm : SHA256
+Hash      : A925B10D896EFE5F85CDBF7952C99AABDBD6A60F1AE8D25F054332ED366463AA
+Path      : C:\Dev\Necrom\Assets\Necrom\FirstPlayable\Fonts\Production\NotoSansKR-Bold SDF.asset
+
+Algorithm : SHA256
+Hash      : CC48AEF4AFCFC32F844F79A4B4F6F1D38EB763E553B1DC9F50DAA2C871F7C543
+Path      : C:\Dev\Necrom\Assets\Necrom\FirstPlayable\Fonts\Production\NotoSansKR-Medium SDF.asset
+
+Algorithm : SHA256
+Hash      : 302A37B6C6AA16088A1BEA842D34474558ADAC9C8E22046C14022EC47ACC8EFD
+Path      : C:\Dev\Necrom\Assets\Necrom\FirstPlayable\Fonts\Production\NotoSansKR-Regular SDF.asset

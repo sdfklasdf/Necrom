@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="555dcb41-6785-4280-adc8-a1f7c8c5f148" name="user@DESKTOP-7174LTC 2026-10-10 00:41:29" runUser="DESKTOP-7174LTC\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-10T00:41:29.1919999+09:00" queuing="2026-10-10T00:41:29.1920005+09:00" start="2026-10-10T00:41:28.1473729+09:00" finish="2026-10-10T00:41:29.1989518+09:00" />
+  <TestSettings name="default" id="55201775-379f-4382-9565-f04c141dab42">
+    <Deployment runDeploymentRoot="user_DESKTOP-7174LTC_2026-10-10_00_41_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ea1011aa-1136-4e6a-8737-4a5f22195c81" testId="858b045a-42dc-8030-f2b0-3847d3ec868f" testName="AcceptsOriginClassAndOptionalJoker" computerName="DESKTOP-7174LTC" duration="00:00:00.0565940" startTime="2026-10-10T00:41:28.9425792+09:00" endTime="2026-10-10T00:41:28.9991288+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea1011aa-1136-4e6a-8737-4a5f22195c81" />
+    <UnitTestResult executionId="da33cdd7-da2e-424b-8f15-58397faf6718" testId="3df4a1bf-2c43-2bfe-c379-2c3982afe249" testName="RejectsAliasInsteadOfCanonicalId" computerName="DESKTOP-7174LTC" duration="00:00:00.0369830" startTime="2026-10-10T00:41:29.0000620+09:00" endTime="2026-10-10T00:41:29.0370442+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da33cdd7-da2e-424b-8f15-58397faf6718">
+      <Output>
+        <ErrorInfo>
+          <Message>  Assert.That(Errors(f), Is.Not.Empty)&#xD;
+  Expected: not &lt;empty&gt;&#xD;
+  But was:  &lt;empty&gt;&#xD;
+</Message>
+          <StackTrace>   at Necrom.Core.Tests.TftAssignmentTests.RejectsAliasInsteadOfCanonicalId() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 27&#xD;
+
+1)    at Necrom.Core.Tests.TftAssignmentTests.RejectsAliasInsteadOfCanonicalId() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 27&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ed53ab27-d81c-42aa-852b-2cd1266b7895" testId="044de3dd-5206-d510-5e4e-6b818e1372b9" testName="RejectsTwoOrigins" computerName="DESKTOP-7174LTC" duration="00:00:00.0012539" startTime="2026-10-10T00:41:29.0387111+09:00" endTime="2026-10-10T00:41:29.0399646+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed53ab27-d81c-42aa-852b-2cd1266b7895">
+      <Output>
+        <ErrorInfo>
+          <Message>  Assert.That(Errors(f), Is.Not.Empty)&#xD;
+  Expected: not &lt;empty&gt;&#xD;
+  But was:  &lt;empty&gt;&#xD;
+</Message>
+          <StackTrace>   at Necrom.Core.Tests.TftAssignmentTests.RejectsTwoOrigins() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 25&#xD;
+
+1)    at Necrom.Core.Tests.TftAssignmentTests.RejectsTwoOrigins() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 25&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5caf714c-3000-41cb-8516-762af56793ad" testId="edcca059-35ed-d2c9-483b-76bdb8508027" testName="RejectsMissingClass" computerName="DESKTOP-7174LTC" duration="00:00:00.0015010" startTime="2026-10-10T00:41:29.0371951+09:00" endTime="2026-10-10T00:41:29.0386961+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5caf714c-3000-41cb-8516-762af56793ad">
+      <Output>
+        <ErrorInfo>
+          <Message>  Assert.That(Errors(f), Is.Not.Empty)&#xD;
+  Expected: not &lt;empty&gt;&#xD;
+  But was:  &lt;empty&gt;&#xD;
+</Message>
+          <StackTrace>   at Necrom.Core.Tests.TftAssignmentTests.RejectsMissingClass() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 26&#xD;
+
+1)    at Necrom.Core.Tests.TftAssignmentTests.RejectsMissingClass() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\TftAssignmentTests.cs:line 26&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="AcceptsOriginClassAndOptionalJoker" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="858b045a-42dc-8030-f2b0-3847d3ec868f">
+      <Execution id="ea1011aa-1136-4e6a-8737-4a5f22195c81" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="AcceptsOriginClassAndOptionalJoker" />
+    </UnitTest>
+    <UnitTest name="RejectsTwoOrigins" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="044de3dd-5206-d510-5e4e-6b818e1372b9">
+      <Execution id="ed53ab27-d81c-42aa-852b-2cd1266b7895" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsTwoOrigins" />
+    </UnitTest>
+    <UnitTest name="RejectsMissingClass" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="edcca059-35ed-d2c9-483b-76bdb8508027">
+      <Execution id="5caf714c-3000-41cb-8516-762af56793ad" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsMissingClass" />
+    </UnitTest>
+    <UnitTest name="RejectsAliasInsteadOfCanonicalId" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="3df4a1bf-2c43-2bfe-c379-2c3982afe249">
+      <Execution id="da33cdd7-da2e-424b-8f15-58397faf6718" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.TftAssignmentTests" name="RejectsAliasInsteadOfCanonicalId" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="858b045a-42dc-8030-f2b0-3847d3ec868f" executionId="ea1011aa-1136-4e6a-8737-4a5f22195c81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3df4a1bf-2c43-2bfe-c379-2c3982afe249" executionId="da33cdd7-da2e-424b-8f15-58397faf6718" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="044de3dd-5206-d510-5e4e-6b818e1372b9" executionId="ed53ab27-d81c-42aa-852b-2cd1266b7895" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edcca059-35ed-d2c9-483b-76bdb8508027" executionId="5caf714c-3000-41cb-8516-762af56793ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="1" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.6.0.0: Test execution started&#xD;
+Running selected tests in C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 4 of 4 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 4.6.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

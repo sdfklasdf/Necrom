@@ -1,0 +1,6 @@
+2026-10-10T00:47:05.5345565+09:00
+Fresh Unity domain saved SO/prefab/Sprite links PASS
+MON_001 -> dummy/MON_001 -> Assets/Necrom/ContentDraft/Dummy/MON_001.prefab -> Assets/Necrom/ContentDraft/Dummy/MON_001.png
+MON_002 -> dummy/MON_002 -> Assets/Necrom/ContentDraft/Dummy/MON_002.prefab -> Assets/Necrom/ContentDraft/Dummy/MON_002.png
+MON_003 -> dummy/MON_003 -> Assets/Necrom/ContentDraft/Dummy/MON_003.prefab -> Assets/Necrom/ContentDraft/Dummy/MON_003.png
+Restored scene=Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity dirty=False playing=False

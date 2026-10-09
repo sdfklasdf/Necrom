@@ -1,0 +1,272 @@
+{
+    "schemaVersion": 1,
+    "expectedCharacterCount": 3,
+    "contentRevision": "DUMMY-3-NOT-PRODUCTION",
+    "balanceStatus": "DRAFT_DUMMY",
+    "monsters": {
+        "schemaVersion": 3,
+        "balanceStatus": "DRAFT_DUMMY",
+        "monsters": [
+            {
+                "id": "MON_001",
+                "name": "몽실 슬라임",
+                "element": "빛",
+                "traits": [
+                    "Skeleton",
+                    "Guardian",
+                    "Reaper"
+                ],
+                "hp": 85,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_002",
+                "name": "몽실 토끼",
+                "element": "불",
+                "traits": [
+                    "Plague",
+                    "Warlock",
+                    "Mimic"
+                ],
+                "hp": 89,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_003",
+                "name": "몽실 여우",
+                "element": "번개",
+                "traits": [
+                    "Dragon",
+                    "Ranger",
+                    "Vampire"
+                ],
+                "hp": 93,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            }
+        ]
+    },
+    "synergies": {
+        "schemaVersion": 2,
+        "rules": []
+    },
+    "enforceTftAssignments": true,
+    "tftDefinitions": [
+        {
+            "id": "Skeleton",
+            "label": "Skeleton",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "attack_speed",
+                "resurrection"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Plague",
+            "label": "Ghoul/Plague",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [
+                "Ghoul"
+            ],
+            "effectIds": [
+                "poison",
+                "self_destruct"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Phantom",
+            "label": "Phantom",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "physical_evasion"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Beast",
+            "label": "Beast",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "early_rage"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Dragon",
+            "label": "Dragon",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "area_breath"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Guardian",
+            "label": "Guardian",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "shield"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Slayer",
+            "label": "Slayer",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "assassinate",
+                "execute"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Warlock",
+            "label": "Warlock",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "debuff"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Ranger",
+            "label": "Ranger",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "ranged_penetration"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Reaper",
+            "label": "Reaper",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "execute"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Mimic",
+            "label": "Mimic",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "currency_farming"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Colossus",
+            "label": "Colossus",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "super_tank"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Vampire",
+            "label": "Vampire",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "lifesteal"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        }
+    ],
+    "traitIds": [
+        "Skeleton",
+        "Plague",
+        "Phantom",
+        "Beast",
+        "Dragon",
+        "Guardian",
+        "Slayer",
+        "Warlock",
+        "Ranger",
+        "Reaper",
+        "Mimic",
+        "Colossus",
+        "Vampire"
+    ],
+    "affinityIds": [
+        "빛",
+        "불",
+        "번개"
+    ],
+    "profiles": [
+        {
+            "characterId": "MON_001",
+            "familyId": "",
+            "assetKey": "dummy/MON_001",
+            "assetStatus": "MAPPED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_002",
+            "familyId": "",
+            "assetKey": "dummy/MON_002",
+            "assetStatus": "MAPPED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_003",
+            "familyId": "",
+            "assetKey": "dummy/MON_003",
+            "assetStatus": "MAPPED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        }
+    ],
+    "matchups": []
+}

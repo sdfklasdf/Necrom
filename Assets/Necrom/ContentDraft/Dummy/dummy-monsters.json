@@ -1,0 +1,48 @@
+{
+    "schemaVersion": 3,
+    "balanceStatus": "DRAFT_DUMMY",
+    "monsters": [
+        {
+            "id": "MON_001",
+            "name": "몽실 슬라임",
+            "element": "빛",
+            "traits": [
+                "Skeleton",
+                "Guardian",
+                "Reaper"
+            ],
+            "hp": 85,
+            "attack": 14,
+            "gachaWeight": 80,
+            "rarity": "Common"
+        },
+        {
+            "id": "MON_002",
+            "name": "몽실 토끼",
+            "element": "불",
+            "traits": [
+                "Plague",
+                "Warlock",
+                "Mimic"
+            ],
+            "hp": 89,
+            "attack": 16,
+            "gachaWeight": 80,
+            "rarity": "Common"
+        },
+        {
+            "id": "MON_003",
+            "name": "몽실 여우",
+            "element": "번개",
+            "traits": [
+                "Dragon",
+                "Ranger",
+                "Vampire"
+            ],
+            "hp": 93,
+            "attack": 18,
+            "gachaWeight": 80,
+            "rarity": "Common"
+        }
+    ]
+}

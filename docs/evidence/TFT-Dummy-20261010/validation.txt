@@ -1,0 +1,11 @@
+2026-10-10T00:46:28.4236426+09:00
+Unity 6000.3.25f1
+SO + imported sprites + saved prefabs + serialized links + JSON roundtrip PASS
+MON_001 Skeleton/Guardian/Reaper
+MON_002 Plague/Warlock/Mimic
+MON_003 Dragon/Ranger/Vampire
+Unknown ID / duplicate ID / wrong assetKey / missing prefab / missing TFT definitions rejected PASS
+Three prefab instances and camera rendering PASS
+Real purchased assets=0; combat hookup=0; numeric tiers=0 undecided
+SCOPED_UNITY_ERRORS=0
+ACTUAL_PLAYMODE PASS: 3 bindings, ID resolve, instantiated MON_003, camera render; Unity 6000.3.25f1

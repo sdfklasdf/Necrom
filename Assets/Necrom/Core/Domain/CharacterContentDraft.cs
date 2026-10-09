@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,6 +14,7 @@ namespace Necrom.Core.Domain
         public string balanceStatus = "DRAFT_NOT_APPROVED";
         public MonsterCatalogData monsters;
         public SynergyCatalog synergies;
+        public bool enforceTftAssignments; // Opt-in authoring convention: one Origin, one Class, optional Joker.
         public TftTraitDefinition[] tftDefinitions = Array.Empty<TftTraitDefinition>();
         public string[] traitIds = Array.Empty<string>();
         public string[] affinityIds = Array.Empty<string>();
@@ -31,6 +32,7 @@ namespace Necrom.Core.Domain
             if (tftDefinitions == null) errors.Add("TFT definitions array required.");
             else if (tftDefinitions.Length > 0) errors.AddRange(TftTaxonomy.Validate(tftDefinitions));
             var traits = Registry(traitIds,"trait",errors);
+            if (enforceTftAssignments && (tftDefinitions == null || tftDefinitions.Length == 0)) errors.Add("TFT assignment definitions required.");
             var affinities = Registry(affinityIds,"affinity",errors);
             var units = monsters?.monsters;
             var ids = new HashSet<string>(StringComparer.Ordinal);
@@ -46,6 +48,13 @@ namespace Necrom.Core.Domain
                 if (unit.traits == null || unit.traits.Length < 1 || unit.traits.Length > 3 ||
                     unit.traits.Distinct(StringComparer.Ordinal).Count() != unit.traits.Length)
                     errors.Add("Expected 1-3 distinct traits: "+unit.id);
+                if (enforceTftAssignments) {
+                    var definitions=(tftDefinitions ?? Array.Empty<TftTraitDefinition>()).Where(x=>x!=null).ToArray();
+                    var assigned=(unit.traits ?? Array.Empty<string>()).Select(id=>definitions.FirstOrDefault(d=>d.id==id)).ToArray();
+                    if (assigned.Any(d=>d==null) || assigned.Count(d=>d?.category=="Origin")!=1 ||
+                        assigned.Count(d=>d?.category=="Class")!=1 || assigned.Count(d=>d?.category=="Joker")>1)
+                        errors.Add("TFT assignment requires canonical Origin + Class + optional Joker: "+unit.id);
+                }
                 foreach (var trait in unit.traits ?? Array.Empty<string>())
                     if (trait == null || !traits.Contains(trait)) errors.Add("Unknown trait: "+unit.id+"/"+trait);
             }
@@ -128,4 +137,3 @@ namespace Necrom.Core.Domain
         // Draft data only; absence is unspecified, never silently treated as a confirmed neutral rule.
     }
 }
-
