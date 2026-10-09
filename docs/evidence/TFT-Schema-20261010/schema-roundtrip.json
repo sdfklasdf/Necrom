@@ -1,0 +1,3250 @@
+{
+    "schemaVersion": 1,
+    "expectedCharacterCount": 120,
+    "contentRevision": "TFT-DRAFT-20261010",
+    "balanceStatus": "DRAFT_NOT_APPROVED",
+    "monsters": {
+        "schemaVersion": 3,
+        "balanceStatus": "DRAFT_RARITY_BASE_STATS_PROVISIONAL",
+        "monsters": [
+            {
+                "id": "MON_001",
+                "name": "몽실 슬라임",
+                "element": "빛",
+                "traits": [
+                    "Undead",
+                    "Guardian"
+                ],
+                "hp": 85,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_002",
+                "name": "몽실 토끼",
+                "element": "불",
+                "traits": [
+                    "Spirit",
+                    "Guardian"
+                ],
+                "hp": 89,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_003",
+                "name": "몽실 여우",
+                "element": "번개",
+                "traits": [
+                    "Machine",
+                    "Guardian"
+                ],
+                "hp": 93,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_004",
+                "name": "몽실 드래곤",
+                "element": "그림자",
+                "traits": [
+                    "Beast",
+                    "Guardian"
+                ],
+                "hp": 97,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_005",
+                "name": "몽실 버섯",
+                "element": "물",
+                "traits": [
+                    "Dragon",
+                    "Guardian"
+                ],
+                "hp": 101,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_006",
+                "name": "몽실 골렘",
+                "element": "땅",
+                "traits": [
+                    "Demon",
+                    "Guardian"
+                ],
+                "hp": 105,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_007",
+                "name": "몽실 고양이",
+                "element": "별",
+                "traits": [
+                    "Celestial",
+                    "Guardian"
+                ],
+                "hp": 109,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_008",
+                "name": "몽실 펭귄",
+                "element": "숲",
+                "traits": [
+                    "Shadow",
+                    "Guardian"
+                ],
+                "hp": 113,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_009",
+                "name": "몽실 유니콘",
+                "element": "바람",
+                "traits": [
+                    "Nature",
+                    "Guardian"
+                ],
+                "hp": 117,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_010",
+                "name": "몽실 도깨비",
+                "element": "얼음",
+                "traits": [
+                    "Abyss",
+                    "Guardian"
+                ],
+                "hp": 121,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_011",
+                "name": "반짝 슬라임",
+                "element": "숲",
+                "traits": [
+                    "Undead",
+                    "Warrior"
+                ],
+                "hp": 87,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_012",
+                "name": "반짝 토끼",
+                "element": "바람",
+                "traits": [
+                    "Spirit",
+                    "Warrior"
+                ],
+                "hp": 91,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_013",
+                "name": "반짝 여우",
+                "element": "얼음",
+                "traits": [
+                    "Machine",
+                    "Warrior"
+                ],
+                "hp": 95,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_014",
+                "name": "반짝 드래곤",
+                "element": "빛",
+                "traits": [
+                    "Beast",
+                    "Warrior"
+                ],
+                "hp": 99,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_015",
+                "name": "반짝 버섯",
+                "element": "불",
+                "traits": [
+                    "Dragon",
+                    "Warrior"
+                ],
+                "hp": 103,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_016",
+                "name": "반짝 골렘",
+                "element": "번개",
+                "traits": [
+                    "Demon",
+                    "Warrior"
+                ],
+                "hp": 107,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_017",
+                "name": "반짝 고양이",
+                "element": "그림자",
+                "traits": [
+                    "Celestial",
+                    "Warrior"
+                ],
+                "hp": 111,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_018",
+                "name": "반짝 펭귄",
+                "element": "물",
+                "traits": [
+                    "Shadow",
+                    "Warrior"
+                ],
+                "hp": 115,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_019",
+                "name": "반짝 유니콘",
+                "element": "땅",
+                "traits": [
+                    "Nature",
+                    "Warrior"
+                ],
+                "hp": 119,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_020",
+                "name": "반짝 도깨비",
+                "element": "별",
+                "traits": [
+                    "Abyss",
+                    "Warrior"
+                ],
+                "hp": 123,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_021",
+                "name": "꼬마 슬라임",
+                "element": "물",
+                "traits": [
+                    "Undead",
+                    "Assassin"
+                ],
+                "hp": 89,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_022",
+                "name": "꼬마 토끼",
+                "element": "땅",
+                "traits": [
+                    "Spirit",
+                    "Assassin"
+                ],
+                "hp": 93,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_023",
+                "name": "꼬마 여우",
+                "element": "별",
+                "traits": [
+                    "Machine",
+                    "Assassin"
+                ],
+                "hp": 97,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_024",
+                "name": "꼬마 드래곤",
+                "element": "숲",
+                "traits": [
+                    "Beast",
+                    "Assassin"
+                ],
+                "hp": 101,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_025",
+                "name": "꼬마 버섯",
+                "element": "바람",
+                "traits": [
+                    "Dragon",
+                    "Assassin"
+                ],
+                "hp": 105,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_026",
+                "name": "꼬마 골렘",
+                "element": "얼음",
+                "traits": [
+                    "Demon",
+                    "Assassin"
+                ],
+                "hp": 109,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_027",
+                "name": "꼬마 고양이",
+                "element": "빛",
+                "traits": [
+                    "Celestial",
+                    "Assassin"
+                ],
+                "hp": 113,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_028",
+                "name": "꼬마 펭귄",
+                "element": "불",
+                "traits": [
+                    "Shadow",
+                    "Assassin"
+                ],
+                "hp": 117,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_029",
+                "name": "꼬마 유니콘",
+                "element": "번개",
+                "traits": [
+                    "Nature",
+                    "Assassin"
+                ],
+                "hp": 121,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_030",
+                "name": "꼬마 도깨비",
+                "element": "그림자",
+                "traits": [
+                    "Abyss",
+                    "Assassin"
+                ],
+                "hp": 125,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_031",
+                "name": "솜사탕 슬라임",
+                "element": "불",
+                "traits": [
+                    "Undead",
+                    "Archer"
+                ],
+                "hp": 91,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_032",
+                "name": "솜사탕 토끼",
+                "element": "번개",
+                "traits": [
+                    "Spirit",
+                    "Archer"
+                ],
+                "hp": 95,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_033",
+                "name": "솜사탕 여우",
+                "element": "그림자",
+                "traits": [
+                    "Machine",
+                    "Archer"
+                ],
+                "hp": 99,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_034",
+                "name": "솜사탕 드래곤",
+                "element": "물",
+                "traits": [
+                    "Beast",
+                    "Archer"
+                ],
+                "hp": 103,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_035",
+                "name": "솜사탕 버섯",
+                "element": "땅",
+                "traits": [
+                    "Dragon",
+                    "Archer"
+                ],
+                "hp": 107,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_036",
+                "name": "솜사탕 골렘",
+                "element": "별",
+                "traits": [
+                    "Demon",
+                    "Archer"
+                ],
+                "hp": 111,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_037",
+                "name": "솜사탕 고양이",
+                "element": "숲",
+                "traits": [
+                    "Celestial",
+                    "Archer"
+                ],
+                "hp": 115,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_038",
+                "name": "솜사탕 펭귄",
+                "element": "바람",
+                "traits": [
+                    "Shadow",
+                    "Archer"
+                ],
+                "hp": 119,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_039",
+                "name": "솜사탕 유니콘",
+                "element": "얼음",
+                "traits": [
+                    "Nature",
+                    "Archer"
+                ],
+                "hp": 123,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_040",
+                "name": "솜사탕 도깨비",
+                "element": "빛",
+                "traits": [
+                    "Abyss",
+                    "Archer"
+                ],
+                "hp": 127,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_041",
+                "name": "별빛 슬라임",
+                "element": "바람",
+                "traits": [
+                    "Undead",
+                    "Mage"
+                ],
+                "hp": 93,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_042",
+                "name": "별빛 토끼",
+                "element": "얼음",
+                "traits": [
+                    "Spirit",
+                    "Mage"
+                ],
+                "hp": 97,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_043",
+                "name": "별빛 여우",
+                "element": "빛",
+                "traits": [
+                    "Machine",
+                    "Mage"
+                ],
+                "hp": 101,
+                "attack": 14,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_044",
+                "name": "별빛 드래곤",
+                "element": "불",
+                "traits": [
+                    "Beast",
+                    "Mage"
+                ],
+                "hp": 105,
+                "attack": 16,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_045",
+                "name": "별빛 버섯",
+                "element": "번개",
+                "traits": [
+                    "Dragon",
+                    "Mage"
+                ],
+                "hp": 109,
+                "attack": 18,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_046",
+                "name": "별빛 골렘",
+                "element": "그림자",
+                "traits": [
+                    "Demon",
+                    "Mage"
+                ],
+                "hp": 113,
+                "attack": 20,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_047",
+                "name": "별빛 고양이",
+                "element": "물",
+                "traits": [
+                    "Celestial",
+                    "Mage"
+                ],
+                "hp": 117,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_048",
+                "name": "별빛 펭귄",
+                "element": "땅",
+                "traits": [
+                    "Shadow",
+                    "Mage"
+                ],
+                "hp": 121,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Common"
+            },
+            {
+                "id": "MON_049",
+                "name": "별빛 유니콘",
+                "element": "별",
+                "traits": [
+                    "Nature",
+                    "Mage"
+                ],
+                "hp": 175,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_050",
+                "name": "별빛 도깨비",
+                "element": "숲",
+                "traits": [
+                    "Abyss",
+                    "Mage"
+                ],
+                "hp": 179,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_051",
+                "name": "도토리 슬라임",
+                "element": "땅",
+                "traits": [
+                    "Undead",
+                    "Priest"
+                ],
+                "hp": 145,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_052",
+                "name": "도토리 토끼",
+                "element": "별",
+                "traits": [
+                    "Spirit",
+                    "Priest"
+                ],
+                "hp": 149,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_053",
+                "name": "도토리 여우",
+                "element": "숲",
+                "traits": [
+                    "Machine",
+                    "Priest"
+                ],
+                "hp": 153,
+                "attack": 28,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_054",
+                "name": "도토리 드래곤",
+                "element": "바람",
+                "traits": [
+                    "Beast",
+                    "Priest"
+                ],
+                "hp": 157,
+                "attack": 30,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_055",
+                "name": "도토리 버섯",
+                "element": "얼음",
+                "traits": [
+                    "Dragon",
+                    "Priest"
+                ],
+                "hp": 161,
+                "attack": 32,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_056",
+                "name": "도토리 골렘",
+                "element": "빛",
+                "traits": [
+                    "Demon",
+                    "Priest"
+                ],
+                "hp": 165,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_057",
+                "name": "도토리 고양이",
+                "element": "불",
+                "traits": [
+                    "Celestial",
+                    "Priest"
+                ],
+                "hp": 169,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_058",
+                "name": "도토리 펭귄",
+                "element": "번개",
+                "traits": [
+                    "Shadow",
+                    "Priest"
+                ],
+                "hp": 173,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_059",
+                "name": "도토리 유니콘",
+                "element": "그림자",
+                "traits": [
+                    "Nature",
+                    "Priest"
+                ],
+                "hp": 177,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_060",
+                "name": "도토리 도깨비",
+                "element": "물",
+                "traits": [
+                    "Abyss",
+                    "Priest"
+                ],
+                "hp": 181,
+                "attack": 28,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_061",
+                "name": "말랑 슬라임",
+                "element": "번개",
+                "traits": [
+                    "Undead",
+                    "Hexer"
+                ],
+                "hp": 147,
+                "attack": 30,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_062",
+                "name": "말랑 토끼",
+                "element": "그림자",
+                "traits": [
+                    "Spirit",
+                    "Hexer"
+                ],
+                "hp": 151,
+                "attack": 32,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_063",
+                "name": "말랑 여우",
+                "element": "물",
+                "traits": [
+                    "Machine",
+                    "Hexer"
+                ],
+                "hp": 155,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_064",
+                "name": "말랑 드래곤",
+                "element": "땅",
+                "traits": [
+                    "Beast",
+                    "Hexer"
+                ],
+                "hp": 159,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_065",
+                "name": "말랑 버섯",
+                "element": "별",
+                "traits": [
+                    "Dragon",
+                    "Hexer"
+                ],
+                "hp": 163,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_066",
+                "name": "말랑 골렘",
+                "element": "숲",
+                "traits": [
+                    "Demon",
+                    "Hexer"
+                ],
+                "hp": 167,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_067",
+                "name": "말랑 고양이",
+                "element": "바람",
+                "traits": [
+                    "Celestial",
+                    "Hexer"
+                ],
+                "hp": 171,
+                "attack": 28,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_068",
+                "name": "말랑 펭귄",
+                "element": "얼음",
+                "traits": [
+                    "Shadow",
+                    "Hexer"
+                ],
+                "hp": 175,
+                "attack": 30,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_069",
+                "name": "말랑 유니콘",
+                "element": "빛",
+                "traits": [
+                    "Nature",
+                    "Hexer"
+                ],
+                "hp": 179,
+                "attack": 32,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_070",
+                "name": "말랑 도깨비",
+                "element": "불",
+                "traits": [
+                    "Abyss",
+                    "Hexer"
+                ],
+                "hp": 183,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_071",
+                "name": "초롱 슬라임",
+                "element": "얼음",
+                "traits": [
+                    "Undead",
+                    "Summoner"
+                ],
+                "hp": 149,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_072",
+                "name": "초롱 토끼",
+                "element": "빛",
+                "traits": [
+                    "Spirit",
+                    "Summoner"
+                ],
+                "hp": 153,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_073",
+                "name": "초롱 여우",
+                "element": "불",
+                "traits": [
+                    "Machine",
+                    "Summoner"
+                ],
+                "hp": 157,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_074",
+                "name": "초롱 드래곤",
+                "element": "번개",
+                "traits": [
+                    "Beast",
+                    "Summoner"
+                ],
+                "hp": 161,
+                "attack": 28,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_075",
+                "name": "초롱 버섯",
+                "element": "그림자",
+                "traits": [
+                    "Dragon",
+                    "Summoner"
+                ],
+                "hp": 165,
+                "attack": 30,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_076",
+                "name": "초롱 골렘",
+                "element": "물",
+                "traits": [
+                    "Demon",
+                    "Summoner"
+                ],
+                "hp": 169,
+                "attack": 32,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_077",
+                "name": "초롱 고양이",
+                "element": "땅",
+                "traits": [
+                    "Celestial",
+                    "Summoner"
+                ],
+                "hp": 173,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_078",
+                "name": "초롱 펭귄",
+                "element": "별",
+                "traits": [
+                    "Shadow",
+                    "Summoner"
+                ],
+                "hp": 177,
+                "attack": 22,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_079",
+                "name": "초롱 유니콘",
+                "element": "숲",
+                "traits": [
+                    "Nature",
+                    "Summoner"
+                ],
+                "hp": 181,
+                "attack": 24,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_080",
+                "name": "초롱 도깨비",
+                "element": "바람",
+                "traits": [
+                    "Abyss",
+                    "Summoner"
+                ],
+                "hp": 185,
+                "attack": 26,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_081",
+                "name": "방울 슬라임",
+                "element": "별",
+                "traits": [
+                    "Undead",
+                    "Berserker"
+                ],
+                "hp": 151,
+                "attack": 28,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_082",
+                "name": "방울 토끼",
+                "element": "숲",
+                "traits": [
+                    "Spirit",
+                    "Berserker"
+                ],
+                "hp": 155,
+                "attack": 30,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_083",
+                "name": "방울 여우",
+                "element": "바람",
+                "traits": [
+                    "Machine",
+                    "Berserker"
+                ],
+                "hp": 159,
+                "attack": 32,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_084",
+                "name": "방울 드래곤",
+                "element": "얼음",
+                "traits": [
+                    "Beast",
+                    "Berserker"
+                ],
+                "hp": 163,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Advanced"
+            },
+            {
+                "id": "MON_085",
+                "name": "방울 버섯",
+                "element": "빛",
+                "traits": [
+                    "Dragon",
+                    "Berserker"
+                ],
+                "hp": 237,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_086",
+                "name": "방울 골렘",
+                "element": "불",
+                "traits": [
+                    "Demon",
+                    "Berserker"
+                ],
+                "hp": 241,
+                "attack": 36,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_087",
+                "name": "방울 고양이",
+                "element": "번개",
+                "traits": [
+                    "Celestial",
+                    "Berserker"
+                ],
+                "hp": 245,
+                "attack": 38,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_088",
+                "name": "방울 펭귄",
+                "element": "그림자",
+                "traits": [
+                    "Shadow",
+                    "Berserker"
+                ],
+                "hp": 249,
+                "attack": 40,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_089",
+                "name": "방울 유니콘",
+                "element": "물",
+                "traits": [
+                    "Nature",
+                    "Berserker"
+                ],
+                "hp": 253,
+                "attack": 42,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_090",
+                "name": "방울 도깨비",
+                "element": "땅",
+                "traits": [
+                    "Abyss",
+                    "Berserker"
+                ],
+                "hp": 257,
+                "attack": 44,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_091",
+                "name": "구름 슬라임",
+                "element": "그림자",
+                "traits": [
+                    "Undead",
+                    "Artillerist"
+                ],
+                "hp": 223,
+                "attack": 46,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_092",
+                "name": "구름 토끼",
+                "element": "물",
+                "traits": [
+                    "Spirit",
+                    "Artillerist"
+                ],
+                "hp": 227,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_093",
+                "name": "구름 여우",
+                "element": "땅",
+                "traits": [
+                    "Machine",
+                    "Artillerist"
+                ],
+                "hp": 231,
+                "attack": 36,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_094",
+                "name": "구름 드래곤",
+                "element": "별",
+                "traits": [
+                    "Beast",
+                    "Artillerist"
+                ],
+                "hp": 235,
+                "attack": 38,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_095",
+                "name": "구름 버섯",
+                "element": "숲",
+                "traits": [
+                    "Dragon",
+                    "Artillerist"
+                ],
+                "hp": 239,
+                "attack": 40,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_096",
+                "name": "구름 골렘",
+                "element": "바람",
+                "traits": [
+                    "Demon",
+                    "Artillerist"
+                ],
+                "hp": 243,
+                "attack": 42,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_097",
+                "name": "구름 고양이",
+                "element": "얼음",
+                "traits": [
+                    "Celestial",
+                    "Artillerist"
+                ],
+                "hp": 247,
+                "attack": 44,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_098",
+                "name": "구름 펭귄",
+                "element": "빛",
+                "traits": [
+                    "Shadow",
+                    "Artillerist"
+                ],
+                "hp": 251,
+                "attack": 46,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_099",
+                "name": "구름 유니콘",
+                "element": "불",
+                "traits": [
+                    "Nature",
+                    "Artillerist"
+                ],
+                "hp": 255,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_100",
+                "name": "구름 도깨비",
+                "element": "번개",
+                "traits": [
+                    "Abyss",
+                    "Artillerist"
+                ],
+                "hp": 259,
+                "attack": 36,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_101",
+                "name": "새벽 도토리",
+                "element": "Neutral",
+                "traits": [
+                    "Beast",
+                    "Summoner"
+                ],
+                "hp": 225,
+                "attack": 38,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_102",
+                "name": "새벽 구름",
+                "element": "Neutral",
+                "traits": [
+                    "Dragon",
+                    "Berserker"
+                ],
+                "hp": 229,
+                "attack": 40,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_103",
+                "name": "새벽 여우",
+                "element": "Neutral",
+                "traits": [
+                    "Demon",
+                    "Artillerist"
+                ],
+                "hp": 233,
+                "attack": 42,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_104",
+                "name": "새벽 나비",
+                "element": "Neutral",
+                "traits": [
+                    "Celestial",
+                    "Guardian"
+                ],
+                "hp": 237,
+                "attack": 44,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_105",
+                "name": "새벽 수호병",
+                "element": "Neutral",
+                "traits": [
+                    "Shadow",
+                    "Warrior"
+                ],
+                "hp": 241,
+                "attack": 46,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_106",
+                "name": "새벽 마법사",
+                "element": "Neutral",
+                "traits": [
+                    "Nature",
+                    "Assassin"
+                ],
+                "hp": 245,
+                "attack": 34,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_107",
+                "name": "새벽 검객",
+                "element": "Neutral",
+                "traits": [
+                    "Abyss",
+                    "Archer"
+                ],
+                "hp": 249,
+                "attack": 36,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_108",
+                "name": "새벽 사냥꾼",
+                "element": "Neutral",
+                "traits": [
+                    "Undead",
+                    "Mage"
+                ],
+                "hp": 253,
+                "attack": 38,
+                "gachaWeight": 80,
+                "rarity": "Rare"
+            },
+            {
+                "id": "MON_109",
+                "name": "새벽 새싹",
+                "element": "Neutral",
+                "traits": [
+                    "Spirit",
+                    "Priest",
+                    "Celestial"
+                ],
+                "hp": 372,
+                "attack": 59,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_110",
+                "name": "새벽 용사",
+                "element": "Neutral",
+                "traits": [
+                    "Machine",
+                    "Hexer",
+                    "Shadow"
+                ],
+                "hp": 376,
+                "attack": 61,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_111",
+                "name": "밤톨 도토리",
+                "element": "Neutral",
+                "traits": [
+                    "Beast",
+                    "Summoner",
+                    "Nature"
+                ],
+                "hp": 342,
+                "attack": 63,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_112",
+                "name": "밤톨 구름",
+                "element": "Neutral",
+                "traits": [
+                    "Dragon",
+                    "Berserker",
+                    "Abyss"
+                ],
+                "hp": 346,
+                "attack": 65,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_113",
+                "name": "밤톨 여우",
+                "element": "Neutral",
+                "traits": [
+                    "Demon",
+                    "Artillerist",
+                    "Undead"
+                ],
+                "hp": 350,
+                "attack": 53,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_114",
+                "name": "밤톨 나비",
+                "element": "Neutral",
+                "traits": [
+                    "Celestial",
+                    "Guardian",
+                    "Spirit"
+                ],
+                "hp": 354,
+                "attack": 55,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_115",
+                "name": "밤톨 수호병",
+                "element": "Neutral",
+                "traits": [
+                    "Shadow",
+                    "Warrior",
+                    "Machine"
+                ],
+                "hp": 358,
+                "attack": 57,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_116",
+                "name": "밤톨 마법사",
+                "element": "Neutral",
+                "traits": [
+                    "Nature",
+                    "Assassin",
+                    "Beast"
+                ],
+                "hp": 362,
+                "attack": 59,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_117",
+                "name": "밤톨 검객",
+                "element": "Neutral",
+                "traits": [
+                    "Abyss",
+                    "Archer",
+                    "Dragon"
+                ],
+                "hp": 366,
+                "attack": 61,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_118",
+                "name": "밤톨 사냥꾼",
+                "element": "Neutral",
+                "traits": [
+                    "Undead",
+                    "Mage",
+                    "Demon"
+                ],
+                "hp": 370,
+                "attack": 63,
+                "gachaWeight": 80,
+                "rarity": "Hero"
+            },
+            {
+                "id": "MON_119",
+                "name": "밤톨 새싹",
+                "element": "Neutral",
+                "traits": [
+                    "Spirit",
+                    "Priest",
+                    "Celestial"
+                ],
+                "hp": 539,
+                "attack": 90,
+                "gachaWeight": 80,
+                "rarity": "Legendary"
+            },
+            {
+                "id": "MON_120",
+                "name": "밤톨 용사",
+                "element": "Neutral",
+                "traits": [
+                    "Machine",
+                    "Hexer",
+                    "Shadow"
+                ],
+                "hp": 543,
+                "attack": 78,
+                "gachaWeight": 80,
+                "rarity": "Legendary"
+            }
+        ]
+    },
+    "synergies": {
+        "schemaVersion": 2,
+        "rules": [
+            {
+                "trait": "Undead",
+                "effectKey": "origin.undead",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.hp.percent",
+                    "party.hp.percent",
+                    "party.hp.percent"
+                ]
+            },
+            {
+                "trait": "Spirit",
+                "effectKey": "origin.spirit",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Machine",
+                "effectKey": "origin.machine",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.defense.percent",
+                    "party.defense.percent",
+                    "party.defense.percent"
+                ]
+            },
+            {
+                "trait": "Beast",
+                "effectKey": "origin.beast",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent"
+                ]
+            },
+            {
+                "trait": "Dragon",
+                "effectKey": "origin.dragon",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Demon",
+                "effectKey": "origin.demon",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Celestial",
+                "effectKey": "origin.celestial",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.hp.percent",
+                    "party.hp.percent",
+                    "party.hp.percent"
+                ]
+            },
+            {
+                "trait": "Shadow",
+                "effectKey": "origin.shadow",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent"
+                ]
+            },
+            {
+                "trait": "Nature",
+                "effectKey": "origin.nature",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.hp.percent",
+                    "party.hp.percent",
+                    "party.hp.percent"
+                ]
+            },
+            {
+                "trait": "Abyss",
+                "effectKey": "origin.abyss",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Guardian",
+                "effectKey": "class.guardian",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.defense.percent",
+                    "party.defense.percent",
+                    "party.defense.percent"
+                ]
+            },
+            {
+                "trait": "Warrior",
+                "effectKey": "class.warrior",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Assassin",
+                "effectKey": "class.assassin",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Archer",
+                "effectKey": "class.archer",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent"
+                ]
+            },
+            {
+                "trait": "Mage",
+                "effectKey": "class.mage",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Priest",
+                "effectKey": "class.priest",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.hp.percent",
+                    "party.hp.percent",
+                    "party.hp.percent"
+                ]
+            },
+            {
+                "trait": "Hexer",
+                "effectKey": "class.hexer",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Summoner",
+                "effectKey": "class.summoner",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            },
+            {
+                "trait": "Berserker",
+                "effectKey": "class.berserker",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent",
+                    "party.attack_speed.percent"
+                ]
+            },
+            {
+                "trait": "Artillerist",
+                "effectKey": "class.artillerist",
+                "thresholds": [
+                    2,
+                    4,
+                    6
+                ],
+                "values": [
+                    0.05000000074505806,
+                    0.10000000149011612,
+                    0.18000000715255738
+                ],
+                "statKeys": [
+                    "party.attack.percent",
+                    "party.attack.percent",
+                    "party.attack.percent"
+                ]
+            }
+        ]
+    },
+    "tftDefinitions": [
+        {
+            "id": "Skeleton",
+            "label": "Skeleton",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "attack_speed",
+                "resurrection"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Plague",
+            "label": "Ghoul/Plague",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [
+                "Ghoul"
+            ],
+            "effectIds": [
+                "poison",
+                "self_destruct"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Phantom",
+            "label": "Phantom",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "physical_evasion"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Beast",
+            "label": "Beast",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "early_rage"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Dragon",
+            "label": "Dragon",
+            "category": "Origin",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "area_breath"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Guardian",
+            "label": "Guardian",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "shield"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Slayer",
+            "label": "Slayer",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "assassinate",
+                "execute"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Warlock",
+            "label": "Warlock",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "debuff"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Ranger",
+            "label": "Ranger",
+            "category": "Class",
+            "activation": "CountTiers",
+            "aliases": [],
+            "effectIds": [
+                "ranged_penetration"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Reaper",
+            "label": "Reaper",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "execute"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Mimic",
+            "label": "Mimic",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "currency_farming"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Colossus",
+            "label": "Colossus",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "super_tank"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        },
+        {
+            "id": "Vampire",
+            "label": "Vampire",
+            "category": "Joker",
+            "activation": "Unique",
+            "aliases": [],
+            "effectIds": [
+                "lifesteal"
+            ],
+            "thresholds": [],
+            "balanceStatus": "DRAFT_NUMBERS_UNDECIDED"
+        }
+    ],
+    "traitIds": [
+        "Undead",
+        "Guardian",
+        "Spirit",
+        "Machine",
+        "Beast",
+        "Dragon",
+        "Demon",
+        "Celestial",
+        "Shadow",
+        "Nature",
+        "Abyss",
+        "Warrior",
+        "Assassin",
+        "Archer",
+        "Mage",
+        "Priest",
+        "Hexer",
+        "Summoner",
+        "Berserker",
+        "Artillerist"
+    ],
+    "affinityIds": [
+        "빛",
+        "불",
+        "번개",
+        "그림자",
+        "물",
+        "땅",
+        "별",
+        "숲",
+        "바람",
+        "얼음",
+        "Neutral"
+    ],
+    "profiles": [
+        {
+            "characterId": "MON_001",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_002",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_003",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_004",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_005",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_006",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_007",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_008",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_009",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_010",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_011",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_012",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_013",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_014",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_015",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_016",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_017",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_018",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_019",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_020",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_021",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_022",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_023",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_024",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_025",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_026",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_027",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_028",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_029",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_030",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_031",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_032",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_033",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_034",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_035",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_036",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_037",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_038",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_039",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_040",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_041",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_042",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_043",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_044",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_045",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_046",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_047",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_048",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_049",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_050",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_051",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_052",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_053",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_054",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_055",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_056",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_057",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_058",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_059",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_060",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_061",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_062",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_063",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_064",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_065",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_066",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_067",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_068",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_069",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_070",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_071",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_072",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_073",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_074",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_075",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_076",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_077",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_078",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_079",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_080",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_081",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_082",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_083",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_084",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_085",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_086",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_087",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_088",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_089",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_090",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_091",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "그림자",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_092",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "물",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_093",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "땅",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_094",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "별",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_095",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "숲",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_096",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "바람",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_097",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "얼음",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_098",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "빛",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_099",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "불",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_100",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "번개",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_101",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_102",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_103",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_104",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_105",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_106",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_107",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_108",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_109",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_110",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_111",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_112",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_113",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_114",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_115",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_116",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_117",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_118",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_119",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        },
+        {
+            "characterId": "MON_120",
+            "familyId": "",
+            "assetKey": "",
+            "assetStatus": "UNASSIGNED",
+            "affinityId": "Neutral",
+            "defense": 0,
+            "attacksPerSecond": 1.0
+        }
+    ],
+    "matchups": []
+}

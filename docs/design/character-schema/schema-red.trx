@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="84f14779-e947-4952-8e1a-cdee02a0f46b" name="user@DESKTOP-7174LTC 2026-10-10 00:04:02" runUser="DESKTOP-7174LTC\user" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-10T00:04:02.2720204+09:00" queuing="2026-10-10T00:04:02.2720209+09:00" start="2026-10-10T00:04:01.2209368+09:00" finish="2026-10-10T00:04:02.2785479+09:00" />
+  <TestSettings name="default" id="a091da2f-953b-401a-b70a-a45bbb9de1c5">
+    <Deployment runDeploymentRoot="user_DESKTOP-7174LTC_2026-10-10_00_04_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6326c128-d758-4261-ad23-ae7ca09a83cf" testId="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1" testName="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" computerName="DESKTOP-7174LTC" duration="00:00:00.1092170" startTime="2026-10-10T00:04:02.0145259+09:00" endTime="2026-10-10T00:04:02.1236724+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6326c128-d758-4261-ad23-ae7ca09a83cf">
+      <Output>
+        <ErrorInfo>
+          <Message>  120-character content schema/validator is missing&#xD;
+Assert.That(type, Is.Not.Null)&#xD;
+  Expected: not null&#xD;
+  But was:  null&#xD;
+</Message>
+          <StackTrace>   at Necrom.Core.Tests.CharacterContentDraftTests.Errors(JsonObject fixture) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\CharacterContentDraftTests.cs:line 31&#xD;
+   at Necrom.Core.Tests.CharacterContentDraftTests.Accepts120CharactersWithReferencedTraitsAndUnassignedAssets() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\CharacterContentDraftTests.cs:line 35&#xD;
+
+1)    at Necrom.Core.Tests.CharacterContentDraftTests.Errors(JsonObject fixture) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\CharacterContentDraftTests.cs:line 31&#xD;
+   at Necrom.Core.Tests.CharacterContentDraftTests.Accepts120CharactersWithReferencedTraitsAndUnassignedAssets() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\CharacterContentDraftTests.cs:line 35&#xD;
+
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" storage="c:\dev\necrom\tests\necrom.core.tests\bin\debug\net8.0\necrom.core.tests.dll" id="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1">
+      <Execution id="6326c128-d758-4261-ad23-ae7ca09a83cf" />
+      <TestMethod codeBase="C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Necrom.Core.Tests.CharacterContentDraftTests" name="Accepts120CharactersWithReferencedTraitsAndUnassignedAssets" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="17c1dbf2-55bb-fc42-6ce2-59c97ed5ebd1" executionId="6326c128-d758-4261-ad23-ae7ca09a83cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="목록에 없는 결과" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="로드된 모든 결과" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.6.0.0: Test execution started&#xD;
+Running selected tests in C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 1 of 1 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 4.6.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

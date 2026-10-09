@@ -1,0 +1,7 @@
+ACTUAL_UNITY_EDITOR 2026-10-10T00:08:15.3912511+09:00
+ScriptableObject.ReadDraft PASS
+Existing characters=120 profiles=120 traits=20 affinities=11 synergyRules=20
+Unity JsonUtility roundtrip PASS
+Stable IDs/order preserved PASS
+Unknown profile ID rejected PASS
+Asset mappings=0; import=NOT RUN; matchups=0 UNDECIDED; stats inherited/provisional

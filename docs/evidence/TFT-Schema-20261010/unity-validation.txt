@@ -1,0 +1,6 @@
+2026-10-10T00:39:17.5341515+09:00
+Unity 6000.3.25f1
+SO ReadDraft + JSON roundtrip PASS
+120 stable MON IDs preserved; taxonomy 5 Origin/4 Class/4 Joker
+Ghoul alias / effect IDs / Unique activation preserved
+TFT numeric tiers empty; combat hookup NOT RUN
