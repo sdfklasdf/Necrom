@@ -14,7 +14,11 @@ namespace Necrom.FirstPlayable.Runtime
         private const string DiamondKey="NECROM_DEMO_DIAMONDS_V2";
         private const string PityKey="NECROM_GACHA_PITY_V1";
         [SerializeField] private int singleDrawCost=100;
-        [SerializeField] private float coffinDropSeconds=1.5f;
+        [SerializeField] private float coffinDropSeconds=0.42f;
+        [SerializeField] private float impactShakeSeconds=0.22f;
+        private RectTransform coffin;
+        private RectTransform lid;
+        private Vector2 impactPosition;
         private MonsterGachaManager gacha;
         private long diamonds;
         private Canvas canvas;
@@ -54,15 +58,21 @@ namespace Necrom.FirstPlayable.Runtime
             }
             catch(Exception e){Debug.LogError("Gacha UI initialization refused: "+e);}
         }
+        private void ReloadDiamonds()
+        {
+            if(long.TryParse(PlayerPrefs.GetString(DiamondKey,"0"),out var balance) && balance>=0)
+                diamonds=balance;
+        }
         private bool Spend(DrawCurrency currency,int total)
         {
+            ReloadDiamonds();
             if(currency!=DrawCurrency.Diamond || total<=0 || diamonds<total)return false;
             diamonds-=total;
             PlayerPrefs.SetString(DiamondKey,diamonds.ToString());
             PlayerPrefs.Save();
             return true;
         }
-        public void Show() { if(ready && popup!=null){popup.SetActive(true);Refresh();} }
+        public void Show() { if(ready && popup!=null){ReloadDiamonds();popup.SetActive(true);Refresh();} }
         public void Hide() { if(popup!=null && !revealing)popup.SetActive(false); }
         public void DrawOnce()=>Request(1);
         public void DrawTen()=>Request(10);
@@ -82,13 +92,40 @@ namespace Necrom.FirstPlayable.Runtime
                 SetStatus("관짝 낙하 중...");
                 Debug.Log("[연출: 관짝 낙하 중...]");
                 Refresh();
-                sequence=StartCoroutine(RevealAfterDelay());
+                if(coffin!=null){coffin.gameObject.SetActive(true);coffin.anchoredPosition=impactPosition+Vector2.up*900f;}
+                if(lid!=null)lid.gameObject.SetActive(true);
+                sequence=StartCoroutine(PlayCoffinSequence());
             }
             catch(Exception e){Debug.LogError("Gacha draw interrupted: "+e);revealing=false;Refresh();}
         }
-        private IEnumerator RevealAfterDelay()
+        private IEnumerator PlayCoffinSequence()
         {
-            yield return new WaitForSecondsRealtime(Mathf.Max(.1f,coffinDropSeconds));
+            if(coffin==null){Reveal();yield break;}
+            float elapsed=0f;
+            float duration=Mathf.Max(.08f,coffinDropSeconds);
+            Vector2 start=impactPosition+Vector2.up*900f;
+            while(elapsed<duration)
+            {
+                elapsed+=Time.unscaledDeltaTime;
+                float t=Mathf.Clamp01(elapsed/duration);
+                float eased=t*t*t; // Accelerating heavy fall.
+                coffin.anchoredPosition=Vector2.LerpUnclamped(start,impactPosition,eased);
+                yield return null;
+            }
+            coffin.anchoredPosition=impactPosition;
+            SetStatus("쿵! 관짝이 도착했습니다");
+            elapsed=0f;
+            float shake=Mathf.Max(.05f,impactShakeSeconds);
+            while(elapsed<shake)
+            {
+                elapsed+=Time.unscaledDeltaTime;
+                float fade=1f-Mathf.Clamp01(elapsed/shake);
+                coffin.anchoredPosition=impactPosition+new Vector2(Mathf.Sin(elapsed*110f)*19f*fade,Mathf.Sin(elapsed*65f)*5f*fade);
+                yield return null;
+            }
+            coffin.anchoredPosition=impactPosition;
+            yield return new WaitForSecondsRealtime(.5f);
+            if(lid!=null)lid.gameObject.SetActive(false); // Lid opening placeholder.
             Reveal();
         }
         public void SkipReveal()
@@ -96,6 +133,8 @@ namespace Necrom.FirstPlayable.Runtime
             if(!revealing)return;
             if(sequence!=null)StopCoroutine(sequence);
             sequence=null;
+            if(coffin!=null)coffin.anchoredPosition=impactPosition;
+            if(lid!=null)lid.gameObject.SetActive(false);
             Reveal();
         }
         private void Reveal()
@@ -111,7 +150,9 @@ namespace Necrom.FirstPlayable.Runtime
                     lines.Add(r.Monster.name+" ["+r.Rarity+"] "+(r.FirstAcquisition?"신규 획득":"중복 → 조각 +1"));
                 SetStatus(string.Join("\n",lines));
             }
-            pending=null;Refresh();
+            pending=null;
+            if(coffin!=null)coffin.gameObject.SetActive(false);
+            Refresh();
         }
         private void SetStatus(string s){if(status!=null)status.text=s;}
         private static Text AddText(Transform parent,string value,int size,Vector2 anchor,Vector2 position,Vector2 bounds)
@@ -143,7 +184,21 @@ namespace Necrom.FirstPlayable.Runtime
             var panel=popup.GetComponent<RectTransform>();panel.anchorMin=Vector2.zero;panel.anchorMax=Vector2.one;panel.offsetMin=panel.offsetMax=Vector2.zero;
             popup.GetComponent<Image>().color=new Color(.04f,.04f,.10f,.94f);
             diamondText=AddText(popup.transform,"다이아: 0",19,new Vector2(.5f,.5f),new Vector2(0,190),new Vector2(340,45));
-            status=AddText(popup.transform,"관짝 소환",16,new Vector2(.5f,.5f),new Vector2(0,45),new Vector2(390,255));
+            status=AddText(popup.transform,"관짝 소환",16,new Vector2(.5f,.5f),new Vector2(0,-20),new Vector2(390,95));
+            var coffinGo=new GameObject("CoffinDropPlaceholder",typeof(RectTransform),typeof(Image));
+            coffinGo.transform.SetParent(popup.transform,false);
+            coffin=coffinGo.GetComponent<RectTransform>();
+            coffin.anchorMin=coffin.anchorMax=new Vector2(.5f,.5f);
+            coffin.sizeDelta=new Vector2(126,182);
+            impactPosition=new Vector2(0,75);
+            coffin.anchoredPosition=impactPosition;
+            coffinGo.GetComponent<Image>().color=new Color(.25f,.21f,.35f,1f);
+            lid=new GameObject("CoffinLid",typeof(RectTransform),typeof(Image)).GetComponent<RectTransform>();
+            lid.SetParent(coffin,false);
+            lid.anchorMin=lid.anchorMax=new Vector2(.5f,.5f);
+            lid.anchoredPosition=Vector2.zero;lid.sizeDelta=new Vector2(105,161);
+            lid.GetComponent<Image>().color=new Color(.40f,.31f,.54f,1f);
+            coffinGo.SetActive(false);
             single=AddButton(popup.transform,"SingleDraw","1회 뽑기",new Vector2(.5f,.5f),new Vector2(-90,-120),DrawOnce);
             ten=AddButton(popup.transform,"TenDraw","10회 뽑기",new Vector2(.5f,.5f),new Vector2(90,-120),DrawTen);
             skip=AddButton(popup.transform,"SkipReveal","스킵",new Vector2(.5f,.5f),new Vector2(0,-175),SkipReveal);
@@ -152,6 +207,7 @@ namespace Necrom.FirstPlayable.Runtime
         }
         private void Refresh()
         {
+            ReloadDiamonds();
             if(diamondText!=null)diamondText.text="다이아: "+diamonds.ToString("N0")+"  |  전설 천장 "+(gacha?.DrawsSinceLegendary??0)+"/200";
             if(single!=null)single.interactable=!revealing&&diamonds>=singleDrawCost;
             if(ten!=null)ten.interactable=!revealing&&diamonds>=10L*singleDrawCost;

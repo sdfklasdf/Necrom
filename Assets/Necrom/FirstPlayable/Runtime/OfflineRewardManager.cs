@@ -1,52 +1,88 @@
 using System;
 using UnityEngine;
+
 namespace Necrom.Core.Domain
 {
-    // Local prototype. Server-authoritative time and grant ledger are needed before release.
+    // Prototype-local wall clock; server authority and anti-clock-cheat ledger required before release.
     public sealed class OfflineRewardManager
     {
-        const string LastUtcKey = "NECROM_OFFLINE_LAST_UTC_V2";
-        const string PendingKey = "NECROM_OFFLINE_PENDING_V2";
-        public const int MaxOfflineSeconds = 8 * 3600;
-        public long CoinsPerHour { get; set; } = 120;
+        private const string LastUtcKey = "NECROM_OFFLINE_LAST_UTC_V2";
+        private const string PendingGoldKey = "NECROM_OFFLINE_PENDING_V2";
+        private const string PendingDiamondsKey = "NECROM_OFFLINE_PENDING_DIAMONDS_V1";
+        private const string PendingSecondsKey = "NECROM_OFFLINE_PENDING_SECONDS_V1";
+        public const int MaxOfflineSeconds = 28800;
+        public const int MinimumRewardSeconds = 60;
+        public const long GoldPerMinute = 100;
+        public const long DiamondsPerMinute = 10;
+        public long CoinsPerHour { get; set; } = GoldPerMinute * 60; // legacy compatibility
         public long PendingCoins { get; private set; }
+        public long PendingDiamonds { get; private set; }
         public int EarnedSeconds { get; private set; }
-        public void BeginSession()
+        public long PendingSeconds { get; private set; }
+        private bool initialized;
+
+        public static int CappedElapsed(long lastUtc,long nowUtc)
         {
-            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            return OfflineRewardMath.Elapsed(lastUtc,nowUtc);
+        }
+        public static long EarnedGold(int seconds) => OfflineRewardMath.Gold(seconds);
+        public static long EarnedDiamonds(int seconds) => OfflineRewardMath.Diamonds(seconds);
+
+        private static long ReadNonNegative(string key)
+        {
+            return long.TryParse(PlayerPrefs.GetString(key,"0"),out var number) && number>=0 ? number : 0;
+        }
+        public void BeginSession() => ResumeAt(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+        private void ResumeAt(long now)
+        {
+            if(initialized) return;
+            initialized=true;
+            PendingCoins=ReadNonNegative(PendingGoldKey);
+            PendingDiamonds=ReadNonNegative(PendingDiamondsKey);
+            PendingSeconds=ReadNonNegative(PendingSecondsKey);
             long last;
-            string stored = PlayerPrefs.GetString(LastUtcKey, "");
-            if (!long.TryParse(stored, out last)) last = now;
-            long elapsed = Math.Max(0, Math.Min(MaxOfflineSeconds, now - last));
-            EarnedSeconds = (int)elapsed;
-            long earned = checked(elapsed * Math.Max(0, CoinsPerHour) / 3600);
-            // A previously calculated, unclaimed reward survives a restart.
-            long pending;
-            if (!long.TryParse(PlayerPrefs.GetString(PendingKey, "0"), out pending)) pending = 0;
-            PendingCoins = Math.Max(0, pending);
-            PendingCoins = checked(PendingCoins + earned);
-            PlayerPrefs.SetString(PendingKey, PendingCoins.ToString());
+            if(!long.TryParse(PlayerPrefs.GetString(LastUtcKey,""),out last)) last=now;
+            EarnedSeconds=CappedElapsed(last,now);
+            if(EarnedSeconds>=MinimumRewardSeconds)
+            {
+                PendingSeconds=checked(PendingSeconds+EarnedSeconds);
+                PendingCoins=checked(PendingCoins+EarnedGold(EarnedSeconds));
+                PendingDiamonds=checked(PendingDiamonds+EarnedDiamonds(EarnedSeconds));
+            }
+            SavePending();
             SaveClock(now);
         }
         public void RecordExit()
         {
+            initialized=false;
             SaveClock(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
         }
-        // Invoke only after a verified rewarded-ad completion callback.
-        public bool Claim(bool adRewardVerified, Action<long> grantCoins)
+        // Local-only; client clock manipulation is possible and not suitable for live economy.
+        public bool Claim(Action<long,long> grant)
         {
-            if (grantCoins == null) throw new ArgumentNullException(nameof(grantCoins));
-            if (PendingCoins <= 0) return false;
-            long payout = checked(PendingCoins * (adRewardVerified ? 2L : 1L));
-            grantCoins(payout); // must be idempotent + persisted atomically in production
-            PendingCoins = 0;
-            PlayerPrefs.SetString(PendingKey, "0");
-            PlayerPrefs.Save();
+            if(grant==null)throw new ArgumentNullException(nameof(grant));
+            if(PendingCoins<=0 && PendingDiamonds<=0)return false;
+            grant(PendingCoins,PendingDiamonds);
+            PendingCoins=0;PendingDiamonds=0;PendingSeconds=0;
+            SavePending();
             return true;
         }
-        void SaveClock(long timestamp)
+        // Preserves the legacy demo UI surface, but production uses the two-currency claim.
+        public bool Claim(bool adRewardVerified, Action<long> grantCoins)
         {
-            PlayerPrefs.SetString(LastUtcKey, timestamp.ToString());
+            if(grantCoins==null)throw new ArgumentNullException(nameof(grantCoins));
+            return Claim((gold,diamonds)=>grantCoins(checked(gold*(adRewardVerified?2L:1L))));
+        }
+        private void SavePending()
+        {
+            PlayerPrefs.SetString(PendingGoldKey,PendingCoins.ToString());
+            PlayerPrefs.SetString(PendingDiamondsKey,PendingDiamonds.ToString());
+            PlayerPrefs.SetString(PendingSecondsKey,PendingSeconds.ToString());
+            PlayerPrefs.Save();
+        }
+        private static void SaveClock(long now)
+        {
+            PlayerPrefs.SetString(LastUtcKey,now.ToString());
             PlayerPrefs.Save();
         }
     }

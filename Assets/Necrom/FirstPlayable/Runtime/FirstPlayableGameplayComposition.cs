@@ -161,6 +161,7 @@ namespace Necrom.FirstPlayable.Runtime
             permanentSpawner.ConfigureDefenseWave(DefenseWave);
             // Gacha presenter is independent of the disabled legacy demo UI.
             GetOrAdd<GachaUIController>(gameObject);
+            GetOrAdd<OfflineRewardUIController>(gameObject);
             GetOrAdd<DeckFormationUIController>(gameObject);
             GetOrAdd<SkillTreeUIController>(gameObject);
             GatePressure=GetOrAdd<FirstPlayableGatePressureController>(gameObject);
