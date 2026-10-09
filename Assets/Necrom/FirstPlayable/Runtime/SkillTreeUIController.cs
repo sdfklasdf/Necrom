@@ -11,7 +11,6 @@ namespace Necrom.FirstPlayable.Runtime
     [DisallowMultipleComponent]
     public sealed class SkillTreeUIController : MonoBehaviour
     {
-        [SerializeField] private int debugSpOnFirstOpen = 100;
         private const string SaveKey = "NECROM_SKILL_TREE_V1";
         [Serializable] private sealed class SkillSave { public int version = 1; public int availableSp; public SkillLevel[] levels; }
         [Serializable] private sealed class SkillLevel { public string id; public int level; }
@@ -21,7 +20,6 @@ namespace Necrom.FirstPlayable.Runtime
         private Canvas canvas;
         private GameObject popup;
         private Text spLabel;
-        private bool granted;
         private readonly List<NodeView> views = new List<NodeView>();
 
         private sealed class NodeView
@@ -46,6 +44,8 @@ namespace Necrom.FirstPlayable.Runtime
                 if(deckSpawner==null)throw new InvalidOperationException("Permanent deck spawner missing");
                 deckSpawner.BindSkillManager(manager);
                 Build();
+                var accountLevel = GetComponent<LevelManager>();
+                if (accountLevel != null && accountLevel.enabled) accountLevel.BindSkillTree(this);
             }
             catch (Exception ex)
             {
@@ -161,17 +161,18 @@ namespace Necrom.FirstPlayable.Runtime
             popup.SetActive(false);
         }
 
+        public bool IsReady => enabled && manager != null && popup != null;
+        public void GrantLevelSp(int amount)
+        {
+            if (!IsReady || amount <= 0) throw new InvalidOperationException("Skill tree not ready for EXP reward.");
+            manager.GrantSp(amount);
+            SaveState();
+            Refresh();
+        }
+
         public void Open()
         {
             if (!enabled || popup == null || manager == null) return;
-            // Once per component lifetime: closing/reopening cannot repeatedly mint SP.
-            if (!granted)
-            {
-                manager.GrantSp(Mathf.Max(0,debugSpOnFirstOpen));
-                granted = true;
-                SaveState();
-                Debug.Log("[AWU-14] Granted initial debug SP once: " + debugSpOnFirstOpen);
-            }
             popup.SetActive(true);
             Refresh();
         }
@@ -188,7 +189,7 @@ namespace Necrom.FirstPlayable.Runtime
 
         private void Refresh()
         {
-            spLabel.text = "남은 SP: " + manager.AvailableSp + "  (테스트 전용)";
+            spLabel.text = "남은 SP: " + manager.AvailableSp;
             foreach (var view in views)
             {
                 int level = manager.LevelOf(view.Skill.id);
@@ -224,7 +225,6 @@ namespace Necrom.FirstPlayable.Runtime
                     if (entry == null || string.IsNullOrEmpty(entry.id) || !levels.TryAdd(entry.id,entry.level))
                         throw new InvalidOperationException("Duplicate or missing saved skill id");
                 manager.RestoreState(save.availableSp,levels);
-                granted = true;
                 Debug.Log("[AWU-14] Skill tree save restored. SP=" + manager.AvailableSp);
             }
             catch (Exception ex)
@@ -237,7 +237,7 @@ namespace Necrom.FirstPlayable.Runtime
 
         private void SaveState()
         {
-            if (manager == null || !granted) return;
+            if (manager == null) return;
             var save = new SkillSave { version = 1, availableSp = manager.AvailableSp,
                 levels = manager.SnapshotLevels().Select(p => new SkillLevel { id=p.Key, level=p.Value }).ToArray() };
             PlayerPrefs.SetString(SaveKey,JsonUtility.ToJson(save));

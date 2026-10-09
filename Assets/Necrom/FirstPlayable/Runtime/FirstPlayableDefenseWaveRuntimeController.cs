@@ -43,6 +43,7 @@ namespace Necrom.FirstPlayable.Runtime
         private EnemySpawnController _enemies;
         private IdleDefenseEncounter _defense;
         private Func<string> _resolveCommandIdProvider;
+        public event Action<int> EnemyDefeatedForExperience;
 
         public bool IsInitialized =>
             _application != null &&
@@ -177,6 +178,7 @@ namespace Necrom.FirstPlayable.Runtime
 
             _defense.EnemyDefeated(_defense.Revision);
             _enemies.ResolveDefeatedThreat(target);
+            EnemyDefeatedForExperience?.Invoke(_defense.WaveNumber);
             ResolveBattleIfTerminal();
         }
 

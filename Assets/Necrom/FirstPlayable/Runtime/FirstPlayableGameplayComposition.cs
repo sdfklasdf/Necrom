@@ -163,7 +163,10 @@ namespace Necrom.FirstPlayable.Runtime
             GetOrAdd<GachaUIController>(gameObject);
             GetOrAdd<OfflineRewardUIController>(gameObject);
             GetOrAdd<DeckFormationUIController>(gameObject);
+            var levelManager = GetOrAdd<LevelManager>(gameObject);
             GetOrAdd<SkillTreeUIController>(gameObject);
+            GetOrAdd<AccountExperienceBarUI>(gameObject).Initialize(levelManager);
+            DefenseWave.EnemyDefeatedForExperience += levelManager.RecordEnemyDefeat;
             GatePressure=GetOrAdd<FirstPlayableGatePressureController>(gameObject);
             GatePressure.Initialize(
                 DefenseWave,
