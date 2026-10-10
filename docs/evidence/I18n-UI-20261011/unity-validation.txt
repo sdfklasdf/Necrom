@@ -1,0 +1,7 @@
+2026-10-11T05:31:24.1356460+09:00
+Unity 6000.3.25f1
+PASS ko 390x844; 3 menu labels; EXP=레벨 25 · 경험치 42.9%; 18 trait names; binding disable/reenable
+PASS binding disabled -> language switch -> enabled; inactive attachment; different-key rebind; destroyed subscriber then switch
+PASS en 390x844; 3 menu labels; EXP=Lv. 25 · EXP 42.9%; 18 trait names; binding disable/reenable
+PASS ko 390x844; 3 menu labels; EXP=레벨 25 · 경험치 42.9%; 18 trait names; binding disable/reenable
+PASS native PlayMode ko -> en -> ko; screenshots captured. No settings UI/persisted language/120 full translations.

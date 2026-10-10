@@ -10,6 +10,7 @@ namespace Necrom.FirstPlayable.Runtime
     public sealed class AccountExperienceBarUI : MonoBehaviour
     {
         private LevelManager level;
+        private Necrom.Core.Domain.LocalizationManager localization;
         private Canvas canvas;
         private CanvasScaler scaler;
         private RectTransform safeRoot, panel;
@@ -24,6 +25,9 @@ namespace Necrom.FirstPlayable.Runtime
         {
             if (manager == null) throw new ArgumentNullException(nameof(manager));
             if (level != null) level.Changed -= Refresh;
+            if(localization!=null)localization.LanguageChanged-=Refresh;
+            localization=LocalizationRuntime.Manager;
+            if(isActiveAndEnabled)localization.LanguageChanged+=Refresh;
             level = manager;
             if (canvas == null) Build();
             level.Changed += Refresh;
@@ -152,13 +156,14 @@ namespace Necrom.FirstPlayable.Runtime
         {
             if (level == null || slider == null) return;
             slider.value = level.Progress;
-            label.text = "Lv." + level.Level + "   EXP " + (level.Progress * 100f).ToString("F1") + "%";
+            label.text = localization.Format("ui.account.exp",level.Level,level.Progress*100f);
         }
-        private void OnEnable() { if (canvas != null) canvas.enabled = true; }
-        private void OnDisable() { if (canvas != null) canvas.enabled = false; }
+        private void OnEnable() { if(canvas!=null)canvas.enabled=true; if(localization!=null){localization.LanguageChanged-=Refresh;localization.LanguageChanged+=Refresh;Refresh();} }
+        private void OnDisable() { if(canvas!=null)canvas.enabled=false; if(localization!=null)localization.LanguageChanged-=Refresh; }
         private void OnDestroy()
         {
             if (level != null) level.Changed -= Refresh;
+            if(localization!=null)localization.LanguageChanged-=Refresh;
             if (canvas != null) Destroy(canvas.gameObject);
         }
     }

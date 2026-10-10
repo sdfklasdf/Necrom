@@ -1,0 +1,5 @@
+2026-10-11T05:29:19.2155005+09:00
+Unity 6000.3.25f1
+FAIL System.NullReferenceException: Object reference not set to an instance of an object
+  at NecroLocalizationUiProbe.SetSize (System.Int32 width, System.Int32 height) [0x00035] in C:\Dev\Necrom\Assets\Editor\NecroLocalizationUiProbe.cs:74
+  at NecroLocalizationUiProbe.Tick () [0x0013e] in C:\Dev\Necrom\Assets\Editor\NecroLocalizationUiProbe.cs:34

@@ -55,7 +55,7 @@ namespace Necrom.FirstPlayable.Runtime
             var r=go.GetComponent<RectTransform>();r.anchorMin=r.anchorMax=anchor;r.anchoredPosition=pos;r.sizeDelta=size;
             go.GetComponent<Image>().color=new Color(.17f,.36f,.62f,.96f);
             var b=go.GetComponent<Button>();b.onClick.AddListener(()=>click());
-            Label(go.transform,title,14,new Vector2(.5f,.5f),Vector2.zero,size-new Vector2(6,6));
+            var caption=Label(go.transform,title,14,new Vector2(.5f,.5f),Vector2.zero,size-new Vector2(6,6)); if(name=="OpenDeckFormation")LocalizedTextBinding.Attach(caption,"ui.formation");
             return b;
         }
         private void BuildUI()
@@ -65,7 +65,7 @@ namespace Necrom.FirstPlayable.Runtime
             canvas=root.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;
             canvas.overrideSorting=true;canvas.sortingOrder=30010;
             var rect=root.GetComponent<RectTransform>();rect.anchorMin=Vector2.zero;rect.anchorMax=Vector2.one;rect.offsetMin=rect.offsetMax=Vector2.zero;
-            Button(root.transform,"OpenDeckFormation","덱 편성",new Vector2(1,1),new Vector2(-95,-120),new Vector2(160,42),Open);
+            Button(root.transform,"OpenDeckFormation",string.Empty,new Vector2(1,1),new Vector2(-95,-120),new Vector2(160,42),Open);
             popup=new GameObject("DeckFormationFullscreen",typeof(RectTransform),typeof(Image));
             popup.transform.SetParent(root.transform,false);
             var panel=popup.GetComponent<RectTransform>();panel.anchorMin=Vector2.zero;panel.anchorMax=Vector2.one;panel.offsetMin=panel.offsetMax=Vector2.zero;

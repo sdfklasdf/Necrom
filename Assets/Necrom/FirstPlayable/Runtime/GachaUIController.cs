@@ -168,7 +168,7 @@ namespace Necrom.FirstPlayable.Runtime
             var r=o.GetComponent<RectTransform>();r.anchorMin=r.anchorMax=anchor;r.anchoredPosition=position;r.sizeDelta=new Vector2(160,44);
             o.GetComponent<Image>().color=new Color(.24f,.39f,.62f,.97f);
             var b=o.GetComponent<Button>();b.onClick.AddListener(()=>action());
-            AddText(o.transform,title,16,new Vector2(.5f,.5f),Vector2.zero,new Vector2(152,40));return b;
+            var caption=AddText(o.transform,title,16,new Vector2(.5f,.5f),Vector2.zero,new Vector2(152,40)); if(name=="OpenGacha")LocalizedTextBinding.Attach(caption,"ui.summon");return b;
         }
         private void BuildOverlay()
         {
@@ -178,7 +178,7 @@ namespace Necrom.FirstPlayable.Runtime
             go.transform.SetParent(parent!=null?parent.transform:transform,false);
             canvas=go.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.overrideSorting=true;canvas.sortingOrder=30000;
             var root=go.GetComponent<RectTransform>();root.anchorMin=Vector2.zero;root.anchorMax=Vector2.one;root.offsetMin=root.offsetMax=Vector2.zero;
-            open=AddButton(go.transform,"OpenGacha","가챠",new Vector2(1,1),new Vector2(-95,-65),Show);
+            open=AddButton(go.transform,"OpenGacha",string.Empty,new Vector2(1,1),new Vector2(-95,-65),Show);
             popup=new GameObject("CoffinGachaPopup",typeof(RectTransform),typeof(Image));
             popup.transform.SetParent(go.transform,false);
             var panel=popup.GetComponent<RectTransform>();panel.anchorMin=Vector2.zero;panel.anchorMax=Vector2.one;panel.offsetMin=panel.offsetMax=Vector2.zero;

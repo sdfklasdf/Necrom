@@ -85,8 +85,9 @@ namespace Necrom.FirstPlayable.Runtime
             image.color = new Color(.18f, .35f, .55f, 1f);
             var button = rect.gameObject.AddComponent<Button>();
             button.onClick.AddListener(() => action());
-            TextAt(rect, "Caption", caption, 15, new Vector2(.5f,.5f), Vector2.zero,
+            var captionText=TextAt(rect, "Caption", caption, 15, new Vector2(.5f,.5f), Vector2.zero,
                 dimensions - new Vector2(4,4));
+            if(name=="OpenSkillTree")LocalizedTextBinding.Attach(captionText,"ui.skills");
             return button;
         }
 
@@ -105,7 +106,7 @@ namespace Necrom.FirstPlayable.Runtime
             var rootRect = root.GetComponent<RectTransform>();
             rootRect.anchorMin = Vector2.zero; rootRect.anchorMax = Vector2.one;
             rootRect.offsetMin = Vector2.zero; rootRect.offsetMax = Vector2.zero;
-            MakeButton(root.transform, "OpenSkillTree", "스킬 트리",
+            MakeButton(root.transform, "OpenSkillTree", string.Empty,
                 new Vector2(1,1), new Vector2(-95,-173), new Vector2(165,44), Open);
 
             var panel = Rect(root.transform, "SkillTreeFullscreen", Vector2.zero, Vector2.one,

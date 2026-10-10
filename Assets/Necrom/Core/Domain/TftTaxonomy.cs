@@ -8,6 +8,7 @@ namespace Necrom.Core.Domain {
  public enum TftJoker { Reaper=0, Mimic=1, Colossus=2, Vampire=3 }
  [Serializable] public sealed class TftTraitDefinition {
  public string id, label, category, activation;
+ public string localizationKey;
  public string[] aliases=Array.Empty<string>();
  public string[] effectIds=Array.Empty<string>();
  public int[] thresholds=Array.Empty<int>();
@@ -15,7 +16,7 @@ namespace Necrom.Core.Domain {
  }
  public static class TftTaxonomy {
  static TftTraitDefinition D(string id,string category,params string[] effects) =>
- new TftTraitDefinition {id=id,label=id,category=category,activation=category=="Joker"?"Unique":"CountTiers",effectIds=effects};
+ new TftTraitDefinition {id=id,label=id,category=category,localizationKey="trait."+category+"."+id+".name",activation=category=="Joker"?"Unique":"CountTiers",effectIds=effects};
  public static TftTraitDefinition[] Create() {
  var plague=D("Plague","Origin","poison","self_destruct"); plague.aliases=new[]{"Ghoul"};
  return new[]{
