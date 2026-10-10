@@ -1,0 +1,5 @@
+2026-10-11T05:23:19.7577331+09:00
+Unity 6000.3.25f1
+External Resources JSON -> Core manager + JsonUtility roundtrip PASS
+ko/en-US switch;22 keys/18 trait names; names are TEST translations not final copy
+No UI hookup/gameplay/assets Import/120 full translation yet.

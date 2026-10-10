@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "defaultLanguage": "ko",
+  "languages": [
+    "ko",
+    "en"
+  ],
+  "entries": [
+    {
+      "key": "trait.Origin.Skeleton.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "스켈레톤"
+        },
+        {
+          "language": "en",
+          "text": "Skeleton"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Plague.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "역병"
+        },
+        {
+          "language": "en",
+          "text": "Plague"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Beast.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "야수"
+        },
+        {
+          "language": "en",
+          "text": "Beast"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Phantom.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "망령"
+        },
+        {
+          "language": "en",
+          "text": "Phantom"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Dragon.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "드래곤"
+        },
+        {
+          "language": "en",
+          "text": "Dragon"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Abyss.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "심연"
+        },
+        {
+          "language": "en",
+          "text": "Abyss"
+        }
+      ]
+    },
+    {
+      "key": "trait.Origin.Elemental.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "정령"
+        },
+        {
+          "language": "en",
+          "text": "Elemental"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Guardian.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "수호자"
+        },
+        {
+          "language": "en",
+          "text": "Guardian"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Bruiser.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "투사"
+        },
+        {
+          "language": "en",
+          "text": "Bruiser"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Slayer.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "학살자"
+        },
+        {
+          "language": "en",
+          "text": "Slayer"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Ranger.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "레인저"
+        },
+        {
+          "language": "en",
+          "text": "Ranger"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Mage.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "마법사"
+        },
+        {
+          "language": "en",
+          "text": "Mage"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Warlock.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "흑마법사"
+        },
+        {
+          "language": "en",
+          "text": "Warlock"
+        }
+      ]
+    },
+    {
+      "key": "trait.Class.Supporter.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "지원가"
+        },
+        {
+          "language": "en",
+          "text": "Supporter"
+        }
+      ]
+    },
+    {
+      "key": "trait.Joker.Reaper.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "사신"
+        },
+        {
+          "language": "en",
+          "text": "Reaper"
+        }
+      ]
+    },
+    {
+      "key": "trait.Joker.Mimic.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "미믹"
+        },
+        {
+          "language": "en",
+          "text": "Mimic"
+        }
+      ]
+    },
+    {
+      "key": "trait.Joker.Colossus.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "거신"
+        },
+        {
+          "language": "en",
+          "text": "Colossus"
+        }
+      ]
+    },
+    {
+      "key": "trait.Joker.Vampire.name",
+      "values": [
+        {
+          "language": "ko",
+          "text": "뱀파이어"
+        },
+        {
+          "language": "en",
+          "text": "Vampire"
+        }
+      ]
+    },
+    {
+      "key": "ui.summon",
+      "values": [
+        {
+          "language": "ko",
+          "text": "소환"
+        },
+        {
+          "language": "en",
+          "text": "Summon"
+        }
+      ]
+    },
+    {
+      "key": "ui.formation",
+      "values": [
+        {
+          "language": "ko",
+          "text": "덱 편성"
+        },
+        {
+          "language": "en",
+          "text": "Formation"
+        }
+      ]
+    },
+    {
+      "key": "ui.skills",
+      "values": [
+        {
+          "language": "ko",
+          "text": "스킬 트리"
+        },
+        {
+          "language": "en",
+          "text": "Skills"
+        }
+      ]
+    },
+    {
+      "key": "ui.account.exp",
+      "values": [
+        {
+          "language": "ko",
+          "text": "레벨 {0} · 경험치 {1:F1}%"
+        },
+        {
+          "language": "en",
+          "text": "Lv. {0} · EXP {1:F1}%"
+        }
+      ]
+    }
+  ]
+}
