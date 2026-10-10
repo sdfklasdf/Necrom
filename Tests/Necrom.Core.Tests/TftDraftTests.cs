@@ -11,9 +11,9 @@ public class TftDraftTests {
  Assert.That(registry,Is.Not.Null,"Confirmed TFT taxonomy is missing");
  return registry.GetMethod("Create").Invoke(null,null);
  }
- [Test] public void ProvidesExactlyFiveOriginsFourClassesFourJokers() {
- var a=(Array)Definitions(); Assert.That(a.Length,Is.EqualTo(13));
- foreach(var pair in new[]{("Origin",5),("Class",4),("Joker",4)})
+ [Test] public void ProvidesExactlySevenOriginsSevenClassesFourJokers() {
+ var a=(Array)Definitions(); Assert.That(a.Length,Is.EqualTo(18));
+ foreach(var pair in new[]{("Origin",7),("Class",7),("Joker",4)})
  Assert.That(a.Cast<object>().Count(x=>(string)Type.GetField("category").GetValue(x)==pair.Item1),Is.EqualTo(pair.Item2));
  }
  [Test] public void GhoulIsAliasOfPlagueAndEffectPlansArePreserved() {
