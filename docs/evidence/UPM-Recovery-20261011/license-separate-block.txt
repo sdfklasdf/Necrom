@@ -1,0 +1,2 @@
+﻿No valid Unity Editor license found. Please activate your license.
+Exiting without the bug reporter. Application will terminate with return code 198

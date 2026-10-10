@@ -1,0 +1,52 @@
+Unity Package Manager Diagnostics (v0.4.5)
+============
+Ran 7 checks
+============
+6 succeeded
+1 did not run
+============
+✅ UPM registry reachable (PASS)
+Make an HTTP request to the UPM package registry
+>> HTTP/1.1 200 OK
+>> X-Powered-By: Express
+>> X-Request-Id: 931dba7a-f16b-461c-ac69-8601d5456b6a
+>> Date: Sat, 10 Oct 2026 18:55:02 GMT
+>> Via: 1.1 google
+>> Transfer-Encoding: chunked
+>> Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+✅ Ping UPM registry (PASS)
+Measure the latency of the UPM package registry API
+>> 23 pings made in 5.087 seconds
+>> Average latency: 211.19 ms
+>> Minimum latency: 182.58 ms
+>> Maximum latency: 302.51 ms
+>> Standard deviation: 40.78
+
+✅ Ping UPM download (PASS)
+Measure the latency of the UPM package download endpoint
+>> 19 pings made in 5.121 seconds
+>> Average latency: 36.96 ms
+>> Minimum latency: 32.93 ms
+>> Maximum latency: 47.03 ms
+>> Standard deviation: 4.79
+
+✅ UPM registry download speed (PASS)
+Test the Internet connection using the UPM package registry
+>> Measured speed to the UPM registry: 86.94 Megabits per second
+
+✅ HTTP proxy environment variables (PASS)
+Detect whether proxy-related environment variables are set (HTTP_PROXY, HTTPS_PROXY, ALL_PROXY, NO_PROXY, UNITY_PROXYSERVER, UNITY_NOPROXY)
+>> No proxy support has been configured through environment variables.
+
+❓ System Proxy configuration (UNKNOWN)
+Detect proxy configuration at the system level
+>> The proxy auto configuration feature is not enabled.
+
+✅ UPM IPC connection (PASS)
+Test connection to UPM via IPC connection
+>> Testing IPC connection to UPM succeeded: {
+>>   "status": "OK",
+>>   "nodeVersion": "v24.15.0",
+>>   "upmVersion": "v9.26.1 (x64)"
+>> }

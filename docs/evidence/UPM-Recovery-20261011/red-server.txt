@@ -1,0 +1,26 @@
+[32minfo[39m:    Command-line: 'C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Data\\Resources\\PackageManager\\Server\\UnityPackageManager.exe' server -s 912 --ipc-path Unity-Upm-NecroDiag --cl 4 -l 4
+UnityPackageManager.exe : node:path:513
+위치 줄:1 문자:1
++ & 'C:\Program Files\Unity\Hub\Editor\6000.3.25f1\Editor\Data\Resource ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node:path:513:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+      validateString(arg, 'path');
+      ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at Object.join (node:path:513:7)
+    at getLocalConfigFolder (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:221:2961)
+    at Object.readConfig (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:221:3506)
+    at Object.initialize (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:225:2681)
+    at Object.callback (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:225:5569)
+    at /home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:20:5126
+    at Command2._chainOrCall (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:20:4727)
+    at /home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:20:5090
+    at Array.forEach (<anonymous>)
+    at Command2._chainOrCallHooks (/home/bokken/build/output/unity/upm/dist/temp/bundle/app.js:20:5056) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v24.15.0
