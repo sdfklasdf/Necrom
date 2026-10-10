@@ -1,0 +1,14 @@
+2026-10-11T07:00:28.0026973+09:00 Unity 6000.3.25f1; native AssetDatabase prefab paths=27; vendor clip asset paths=0; Characters.fbx embedded clips=0; render pipeline=Built-in
+SM_Chr_Male_Rouge_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Male_Rouge_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat
+SM_Chr_Female_Witch_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Female_Witch_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat
+SM_Chr_Male_Wizard_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Male_Wizard_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat
+2026-10-11T07:01:33.0823620+09:00 Unity 6000.3.25f1; native AssetDatabase prefab paths=27; vendor clip asset paths=0; Characters.fbx embedded clips=0; render pipeline=Built-in
+SM_Chr_Male_Rouge_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Male_Rouge_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat
+SM_Chr_Female_Witch_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Female_Witch_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat
+SM_Chr_Male_Wizard_01 avatar=CharactersAvatar valid=True human=True controller=NULL
+SM_Chr_Male_Wizard_01 material=PolygonFantasyCharacters_01_A shader=Synty/Generic_Basic supported=True source=Assets/Synty/PolygonFantasyCharacters/Materials/PolygonFantasyCharacters_01_A.mat

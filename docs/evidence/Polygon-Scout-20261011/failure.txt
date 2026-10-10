@@ -1,0 +1,8 @@
+2026-10-11T07:00:28.9562379+09:00 BUILD FAIL System.InvalidOperationException: 3D bounds overlap
+  at NecroPolygonScoutProbe.Build () [0x002b2] in C:\Dev\Necrom\Assets\Editor\NecroPolygonScoutProbe.cs:106
+  at NecroPolygonScoutProbe.Tick () [0x002e2] in C:\Dev\Necrom\Assets\Editor\NecroPolygonScoutProbe.cs:65
+2026-10-11T07:02:49.3172722+09:00 READBACK FAIL System.InvalidOperationException: Readback overlap
+  at NecroPolygonScoutProbe.Readback () [0x00022] in C:\Dev\Necrom\Assets\Editor\NecroPolygonScoutProbe.cs:154
+  at NecroPolygonScoutProbe.Tick () [0x0030a] in C:\Dev\Necrom\Assets\Editor\NecroPolygonScoutProbe.cs:65
+2026-10-11T07:04:14.1987316+09:00 REFIT FAIL System.Exception: Unknown command
+  at NecroPolygonScoutProbe.Tick () [0x00311] in C:\Dev\Necrom\Assets\Editor\NecroPolygonScoutProbe.cs:65

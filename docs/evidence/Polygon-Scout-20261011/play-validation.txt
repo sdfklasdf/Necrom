@@ -1,0 +1,2 @@
+2026-10-11T07:09:28.6655955+09:00 Native PlayMode Unity 6000.3.25f1; 3 real models / 9 instances / IDs / supported materials / X45Y45 / unclipped / overlaps0 / scoped errors0 PASS
+Original clean scene restored=Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity; quality restored=All/High/150/4/4/2

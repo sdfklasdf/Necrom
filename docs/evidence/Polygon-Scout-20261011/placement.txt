@@ -1,0 +1,3 @@
+2026-10-11T07:01:34.0563679+09:00 AWU1 scene saved; three vendor prefab sources each repeated3; MON IDs+isDummyfalse; zero dummy sprites; normalized1.35height; original source prefabs/catalog/combat unchanged PASS
+2026-10-11T07:04:52.6192791+09:00 FINAL AWU1 normalized true geometry height1.35; yaw45; original material variantsA/B/C scene overrides; grid1.75x2.2; no source asset edit; scene saved PASS
+2026-10-11T07:08:29.6506715+09:00 FINAL AWU1 normalized true geometry height1.35; yaw225; original material variantsA/B/C scene overrides; grid1.75x2.2; no source asset edit; scene saved PASS

@@ -1,0 +1,14 @@
+Independent read-only technical review 2026-10-11
+No critical or blocking important issue found for approved nine-instance visual fixture.
+Verified nine linked vendor prefab roots: three each MON_001..003, isDummy=false.
+Unity6000.3 BakeMesh(useScale=true) scale compensation contract verified; no double-scale finding remains.
+Final evidence index:
+- placement.txt FINAL 07:08:29; readback.txt latest 07:12:41 PASS after owned whitespace cleanup.
+- metrics.txt FINAL REFIT / native390x844 lines govern; prior intermediate results invalidated.
+- play-validation.txt native run07:09:28:390x844 no clipping/overlap, scoped errors0.
+- animation.txt actual nine valid humanoid avatars, controllers/clips0; motion BLOCKED.
+- play-390x844.png final native Play capture; play-540x960.png capture only, no quantified overlap PASS at540.
+- preservation.txt vendor3 materials changed, inference identified; protected files unchanged.
+Minor future reuse caveat: probe Play() does not restore original scene if pre-Play validation or reflective SetSize throws. No such failure on final run; restoration actually confirmed. Exception-safe setup cleanup should be addressed before broader reuse.
+Append-only failure and intermediate logs intentionally retained; final lines above are authoritative for this order.
+No Unity rerun or writes were performed by reviewer. Domain/core tests not rerun for visual-only scope.

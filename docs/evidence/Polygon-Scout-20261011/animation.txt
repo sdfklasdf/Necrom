@@ -1,0 +1,2 @@
+2026-10-11T07:09:28.6809916+09:00 actual PlayMode Animators=9 valid humanoid avatars=9 controllers with clips=0
+BLOCKED_NO_ANIMATION_CLIPS: imported vendor provides rigs but no motion controller/clips; T-pose visible. Animation motion PASS cannot be claimed. No fake procedural motion or unapproved animation download.

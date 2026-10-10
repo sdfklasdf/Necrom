@@ -1,0 +1,10 @@
+SAVED EDIT 390x844 projected conservative world bounds overlaps=20 widths=87.55..95.95 heights=112.08..118.02
+SAVED EDIT 390x844 projected baked mesh geometry rect overlaps=0 widths=46.61..60.71 heights=37.64..41.89
+REOPEN READBACK 390x844 projected baked mesh geometry rect overlaps=0 widths=46.61..60.71 heights=37.64..41.89
+REOPEN READBACK 390x844 projected baked mesh geometry rect overlaps=3 widths=70.83..80.83 heights=55.77..58.11
+FINAL REFIT useScaleTrue 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=54.01..57.24
+REOPEN READBACK 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=54.01..57.24
+FINAL REFIT useScaleTrue 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=55.77..58.11
+REOPEN READBACK 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=55.77..58.11
+NATIVE PLAY 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=55.77..58.11
+REOPEN READBACK 390x844 projected baked mesh geometry rect overlaps=0 widths=70.83..80.83 heights=55.77..58.11

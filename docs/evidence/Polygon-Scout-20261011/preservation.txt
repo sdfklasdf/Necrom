@@ -1,0 +1,7 @@
+Vendor input inventory at06:58:44:2739 files. No intentional vendor prefab/material edits by QA code.
+Assets\Synty\PolygonFantasyCharacters\Materials\PolygonFantasyCharacters_01_A.mat baseline=7B2F275E07C6E13DE9A2080C1BE610C0041807191B4DCA70804975FC53236117 current=DF2D1602D8FC206C5CAAEB394C9BAA8D4FA70800965DADEE54D478C992375458
+Assets\Synty\PolygonFantasyCharacters\Materials\PolygonFantasyCharacters_01_B.mat baseline=21AC5385FC1D04B2E6251D531B0DA7F62D18B3F4684CF67FD4F15E8367F242A1 current=038D435FFFC7377BB77C767CA8B09AF8B0907AF08435DCCE1170680D1DC4FFA6
+Assets\Synty\PolygonFantasyCharacters\Materials\PolygonFantasyCharacters_01_C.mat baseline=7B91372A058ABD1B5739C9B4AB3C0ADAF1A8C8D1494F0199CBD36D338D34391B current=1C6C133B278BD30EFBA94FD04AEA77C3650E6E7B06B543AC0E7B5F98F83B71BD
+Observed keyword reclassification: initial _ALPHATEST_ON valid; current _BUILTIN_ALPHATEST_ON/_BUILTIN_AlphaClip valid, previous keyword invalid. ShaderGUID/Albedo texture references remain valid. Engine serialization is the likely source (inference); full pre-run material bytes were not retained, only hashes. Current import snapshot locally archived, not pushed.
+Protected fonts3 SHA unchanged; manifest/packages-lock unchanged from starting imported state.
+C:\Dev\Necrom\Artifacts\Polygon-20261011\Synty-import-local-backup.zip SHA256 E99ED59D928EC32C640B6E5C39E67180BCFC135A0FD3089757FD46F8C0855F55
