@@ -1,0 +1,8 @@
+2026-10-11T04:09:45.3565943+09:00 Unity 6000.3.25f1
+BASELINE overlapping screen rectangles=9
+EDIT saved QA variant / original base scene unchanged / 3prefabs repeated3x / billboard world-space sprites / pitch1.4x2.2 TEST ONLY / apply-restore PASS
+PLAY FAIL System.InvalidOperationException: Stored prefab link
+  at NecroDummyFormationProbe.ValidateLinks () [0x000fc] in C:\Dev\Necrom\Assets\Editor\NecroDummyFormationProbe.cs:100
+  at NecroDummyFormationProbe.Tick () [0x00056] in C:\Dev\Necrom\Assets\Editor\NecroDummyFormationProbe.cs:31
+Quality restored PASS All/High/150/4/4/2/True/True
+Original restored clean=True

@@ -1,0 +1,5 @@
+FAIL System.InvalidOperationException: Invalid visual catalog or unknown ID: MON_001
+  at Necrom.ContentDraft.CharacterVisualCatalogAsset.ResolvePrefab (System.String characterId) [0x00057] in C:\Dev\Necrom\Assets\Necrom\ContentDraft\CharacterVisualCatalogAsset.cs:40
+  at NecroDummyFormationProbe.Build () [0x0014e] in C:\Dev\Necrom\Assets\Editor\NecroDummyFormationProbe.cs:67
+  at NecroDummyFormationProbe.Tick () [0x003ce] in C:\Dev\Necrom\Assets\Editor\NecroDummyFormationProbe.cs:54
+Failed fixture original restored

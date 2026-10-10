@@ -1,0 +1,10 @@
+BASELINE original prefab orientation / pitch1.05x0.76 390x844 overlaps=9 sprite pixels=37.17..37.17 wide; 63.45..63.45 high
+CORRECTED EDIT billboard / pitch1.4x2.2 540x960 overlaps=0 sprite pixels=71.95..71.95 wide; 71.95..71.95 high
+PLAY 540x960 overlaps=0 sprite pixels=71.95..71.95 wide; 71.95..71.95 high
+PLAY 390x844 overlaps=0 sprite pixels=52.56..52.56 wide; 52.56..52.56 high
+PLAY 360x640 overlaps=0 sprite pixels=47.97..47.97 wide; 47.97..47.97 high
+SERIALIZED READBACK 390x844 overlaps=0 sprite pixels=52.56..52.56 wide; 52.56..52.56 high
+PLAY 540x960 overlaps=0 sprite pixels=71.95..71.95 wide; 71.95..71.95 high
+PLAY 390x844 overlaps=0 sprite pixels=52.56..52.56 wide; 52.56..52.56 high
+PLAY 360x640 overlaps=0 sprite pixels=47.97..47.97 wide; 47.97..47.97 high
+SERIALIZED READBACK 390x844 overlaps=0 sprite pixels=52.56..52.56 wide; 52.56..52.56 high
