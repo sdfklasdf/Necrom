@@ -1,0 +1,4 @@
+2026-10-11T04:53:45.6654553+09:00
+Unity 6000.3.25f1
+Native manager PASS: failed spend unchanged; 198+10=208 -> ticket1/progress8; one payment; JsonUtility state roundtrip; exact Abyss Legendary grant; duplicate redemption refused
+Isolated TEST catalog/roster. UI/PlayerPrefs/asset Import/combat unchanged; gameplay/device/build NOT RUN.

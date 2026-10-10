@@ -1,0 +1,198 @@
+  Necrom.Core.Tests -> C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll
+C:\Dev\Necrom\Tests\Necrom.Core.Tests\bin\Debug\net8.0\Necrom.Core.Tests.dll(.NETCoreApp,Version=v8.0)??????뚯뒪???ㅽ뻾
+吏?뺣맂 ?⑦꽩怨??쇱튂??珥??뚯뒪???뚯씪 ?섎뒗 1媛쒖엯?덈떎.
+  ?ㅽ뙣 CatalogMutationDoesNotChangeSelectionEligibility [64 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.CatalogMutationDoesNotChangeSelectionEligibility() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 114
+
+1)    at Necrom.Core.Tests.GachaMileageTests.CatalogMutationDoesNotChangeSelectionEligibility() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 114
+
+
+  ?ㅽ뙣 ClassChoiceReturnsOnlyMatchingLegendaryIds [1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.ClassChoiceReturnsOnlyMatchingLegendaryIds() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 67
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.ClassChoiceReturnsOnlyMatchingLegendaryIds() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 67
+
+
+  ?ㅽ뙣 DuplicateSelectionGrantsRosterFragmentWithoutDrawOrMileageProgress [1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.DuplicateSelectionGrantsRosterFragmentWithoutDrawOrMileageProgress() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 107
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.DuplicateSelectionGrantsRosterFragmentWithoutDrawOrMileageProgress() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 107
+
+
+  ?ㅽ뙣 EmptyOrMismatchedChoicesLeaveTicketAndRosterUntouched [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.EmptyOrMismatchedChoicesLeaveTicketAndRosterUntouched() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 72
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.EmptyOrMismatchedChoicesLeaveTicketAndRosterUntouched() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 72
+
+
+  ?ㅽ뙣 FailedPaymentDoesNotAdvanceDrawsOrTickets [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.FailedPaymentDoesNotAdvanceDrawsOrTickets() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 56
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.FailedPaymentDoesNotAdvanceDrawsOrTickets() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 56
+
+
+  ?ㅽ뙣 InvalidSnapshotIsRejectedWithoutOverwritingValidState [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.InvalidSnapshotIsRejectedWithoutOverwritingValidState() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 95
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.InvalidSnapshotIsRejectedWithoutOverwritingValidState() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 95
+
+
+  ?ㅽ뙣 JokerAliasesAndUnknownCategoryCannotBeSelectionFilters [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.JokerAliasesAndUnknownCategoryCannotBeSelectionFilters() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 79
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.JokerAliasesAndUnknownCategoryCannotBeSelectionFilters() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 79
+
+
+  ?ㅽ뙣 OriginChoiceGrantsExactMatchingLegendaryAndConsumesOnce [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.OriginChoiceGrantsExactMatchingLegendaryAndConsumesOnce() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 60
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.OriginChoiceGrantsExactMatchingLegendaryAndConsumesOnce() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 60
+
+
+  ?ㅽ뙣 OverflowRejectedBeforeSpending [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.OverflowRejectedBeforeSpending() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 102
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.OverflowRejectedBeforeSpending() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 102
+
+
+  ?ㅽ뙣 RandomLegendaryDoesNotEraseMileage [< 1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.RandomLegendaryDoesNotEraseMileage() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 45
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.RandomLegendaryDoesNotEraseMileage() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 45
+
+
+  ?ㅽ뙣 SnapshotRoundtripRetainsUnspentTicketAndIsDefensive [1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.SnapshotRoundtripRetainsUnspentTicketAndIsDefensive() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 86
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.SnapshotRoundtripRetainsUnspentTicketAndIsDefensive() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 86
+
+
+  ?ㅽ뙣 TenDrawCrossesBoundaryAndChargesOnce [4 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.TenDrawCrossesBoundaryAndChargesOnce() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 49
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.TenDrawCrossesBoundaryAndChargesOnce() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 49
+
+
+  ?ㅽ뙣 TwoHundredSuccessfulDrawsYieldTicketWithoutForcedRandomLegendary [1 ms]
+  ?ㅻ쪟 硫붿떆吏:
+     Selection mileage guarantee mode missing
+Assert.That(Mode, Is.Not.Null)
+  Expected: not null
+  But was:  null
+
+  ?ㅽ깮 異붿쟻:
+     at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.TwoHundredSuccessfulDrawsYieldTicketWithoutForcedRandomLegendary() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 39
+
+1)    at Necrom.Core.Tests.GachaMileageTests.G(Int32 roll) in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 21
+   at Necrom.Core.Tests.GachaMileageTests.TwoHundredSuccessfulDrawsYieldTicketWithoutForcedRandomLegendary() in C:\Dev\Necrom\Tests\Necrom.Core.Tests\GachaMileageTests.cs:line 39
+
+
+寃곌낵 ?뚯씪: C:\Dev\Necrom\Artifacts\Gacha-Mileage-20261011\red.trx
+
+?ㅽ뙣!  - ?ㅽ뙣:    13, ?듦낵:     0, 嫄대꼫?:     0, ?꾩껜:    13, 湲곌컙: 80 ms - Necrom.Core.Tests.dll (net8.0)

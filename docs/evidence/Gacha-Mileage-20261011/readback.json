@@ -1,0 +1,21 @@
+{
+    "protectedFonts":  [
+                           {
+                               "Path":  "C:\\Dev\\Necrom\\Assets\\Necrom\\FirstPlayable\\Fonts\\Production\\NotoSansKR-Bold SDF.asset",
+                               "Hash":  "A925B10D896EFE5F85CDBF7952C99AABDBD6A60F1AE8D25F054332ED366463AA"
+                           },
+                           {
+                               "Path":  "C:\\Dev\\Necrom\\Assets\\Necrom\\FirstPlayable\\Fonts\\Production\\NotoSansKR-Medium SDF.asset",
+                               "Hash":  "CC48AEF4AFCFC32F844F79A4B4F6F1D38EB763E553B1DC9F50DAA2C871F7C543"
+                           },
+                           {
+                               "Path":  "C:\\Dev\\Necrom\\Assets\\Necrom\\FirstPlayable\\Fonts\\Production\\NotoSansKR-Regular SDF.asset",
+                               "Hash":  "302A37B6C6AA16088A1BEA842D34474558ADAC9C8E22046C14022EC47ACC8EFD"
+                           }
+                       ],
+    "timestamp":  "2026-10-11T04:54:11.7979898+09:00",
+    "review":  "Read-only reviewer; no important defects; callback edge RED2 -\u003e guard regression PASS",
+    "excludedDiff":  "Resources/Dummy/QuarterView3D/GachaUIController/PermanentRosterSaveManager/Packages diff exit0",
+    "testhost":  "net8.0 on .NET10; process DOTNET_ROLL_FORWARD=Major",
+    "counts":  "\u003cCounters total=\"149\" executed=\"149\" passed=\"149\" failed=\"0\" error=\"0\" timeout=\"0\" aborted=\"0\" inconclusive=\"0\" passedButRunAborted=\"0\" notRunnable=\"0\" notExecuted=\"0\" disconnected=\"0\" warning=\"0\" completed=\"0\" inProgress=\"0\" pending=\"0\" xmlns=\"http://microsoft.com/schemas/VisualStudio/TeamTest/2010\" /\u003e"
+}
