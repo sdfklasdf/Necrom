@@ -1,0 +1,177 @@
+2026-10-11T10:00:33.2140845+09:00
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/1H/HumanF@Attack1H01_L.fbx | HumanF@Attack1H01_L | human=True | length=1.1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/1H/HumanF@Attack1H01_R.fbx | HumanF@Attack1H01_R | human=True | length=1.1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/1H/HumanF@CombatIdle1H01.fbx | HumanF@CombatIdle1H01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/2H/HumanF@Attack2H01.fbx | HumanF@Attack2H01 | human=True | length=1.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/2H/HumanF@CombatIdle2H01.fbx | HumanF@CombatIdle2H01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/HumanF@CombatDamage01.fbx | HumanF@CombatDamage01 | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/HumanF@CombatIdle01.fbx | HumanF@CombatIdle01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/HumanF@Death01.fbx | HumanF@Death01 | human=True | length=0.7333333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/Polearm/HumanF@AttackPolearm01.fbx | HumanF@AttackPolearm01 | human=True | length=1.366667
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/Polearm/HumanF@CombatIdlePolearm01.fbx | HumanF@CombatIdlePolearm01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/Shield/HumanF@AttackShield01.fbx | HumanF@AttackShield01 | human=True | length=0.9
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle01-Idle02.fbx | HumanF@Idle01-Idle02 | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle01.fbx | HumanF@Idle01 | human=True | length=2.7
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle02-Idle01.fbx | HumanF@Idle02-Idle01 | human=True | length=0.7666667
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle02.fbx | HumanF@Idle02 | human=True | length=2.7
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Fall01.fbx | HumanF@Fall01 | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 - Begin.fbx | HumanF@Jump01 - Begin | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 - Land.fbx | HumanF@Jump01 - Land | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM] - Begin.fbx | HumanF@Jump01 [RM] - Begin | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM] - Land.fbx | HumanF@Jump01 [RM] - Land | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01 [RM].fbx | HumanF@Jump01 [RM] | human=True | length=1.533333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Jump/HumanF@Jump01.fbx | HumanF@Jump01 | human=True | length=1.533333
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Backward.fbx | HumanF@Run01_Backward | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_BackwardLeft.fbx | HumanF@Run01_BackwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_BackwardRight.fbx | HumanF@Run01_BackwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Forward.fbx | HumanF@Run01_Forward | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_ForwardLeft.fbx | HumanF@Run01_ForwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_ForwardRight.fbx | HumanF@Run01_ForwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Left.fbx | HumanF@Run01_Left | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/HumanF@Run01_Right.fbx | HumanF@Run01_Right | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Backward [RM].fbx | HumanF@Run01_Backward [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_BackwardLeft [RM].fbx | HumanF@Run01_BackwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_BackwardRight [RM].fbx | HumanF@Run01_BackwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Forward [RM].fbx | HumanF@Run01_Forward [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_ForwardLeft [RM].fbx | HumanF@Run01_ForwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_ForwardRight [RM].fbx | HumanF@Run01_ForwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Left [RM].fbx | HumanF@Run01_Left [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Run/RootMotion/HumanF@Run01_Right [RM].fbx | HumanF@Run01_Right [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Forward.fbx | HumanF@Sprint01_Forward | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_ForwardLeft.fbx | HumanF@Sprint01_ForwardLeft | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_ForwardRight.fbx | HumanF@Sprint01_ForwardRight | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Left.fbx | HumanF@Sprint01_Left | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/HumanF@Sprint01_Right.fbx | HumanF@Sprint01_Right | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Forward [RM].fbx | HumanF@Sprint01_Forward [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_ForwardLeft [RM].fbx | HumanF@Sprint01_ForwardLeft [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_ForwardRight [RM].fbx | HumanF@Sprint01_ForwardRight [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Left [RM].fbx | HumanF@Sprint01_Left [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Sprint/RootMotion/HumanF@Sprint01_Right [RM].fbx | HumanF@Sprint01_Right [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_BackwardLeft.fbx | HumanF@StrafeRun01_BackwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_BackwardRight.fbx | HumanF@StrafeRun01_BackwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_ForwardLeft.fbx | HumanF@StrafeRun01_ForwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_ForwardRight.fbx | HumanF@StrafeRun01_ForwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_Left.fbx | HumanF@StrafeRun01_Left | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/HumanF@StrafeRun01_Right.fbx | HumanF@StrafeRun01_Right | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_BackwardLeft [RM].fbx | HumanF@StrafeRun01_BackwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_BackwardRight [RM].fbx | HumanF@StrafeRun01_BackwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_ForwardLeft [RM].fbx | HumanF@StrafeRun01_ForwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_ForwardRight [RM].fbx | HumanF@StrafeRun01_ForwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_Left [RM].fbx | HumanF@StrafeRun01_Left [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Strafe/StrafeRun/RootMotion/HumanF@StrafeRun01_Right [RM].fbx | HumanF@StrafeRun01_Right [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Left [RM].fbx | HumanF@Turn01_Left [RM] | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Left.fbx | HumanF@Turn01_Left | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Right [RM].fbx | HumanF@Turn01_Right [RM] | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Turn/HumanF@Turn01_Right.fbx | HumanF@Turn01_Right | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Backward.fbx | HumanF@Walk01_Backward | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_BackwardLeft.fbx | HumanF@Walk01_BackwardLeft | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_BackwardRight.fbx | HumanF@Walk01_BackwardRight | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Forward.fbx | HumanF@Walk01_Forward | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_ForwardLeft.fbx | HumanF@Walk01_ForwardLeft | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_ForwardRight.fbx | HumanF@Walk01_ForwardRight | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Left.fbx | HumanF@Walk01_Left | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Right.fbx | HumanF@Walk01_Right | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Backward [RM].fbx | HumanF@Walk01_Backward [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_BackwardLeft [RM].fbx | HumanF@Walk01_BackwardLeft [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_BackwardRight [RM].fbx | HumanF@Walk01_BackwardRight [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Forward [RM].fbx | HumanF@Walk01_Forward [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_ForwardLeft [RM].fbx | HumanF@Walk01_ForwardLeft [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_ForwardRight [RM].fbx | HumanF@Walk01_ForwardRight [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Left [RM].fbx | HumanF@Walk01_Left [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/RootMotion/HumanF@Walk01_Right [RM].fbx | HumanF@Walk01_Right [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Female/Social/Conversation/HumanF@Talk01.fbx | HumanF@Talk01 | human=True | length=2.266667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/1H/HumanM@Attack1H01_L.fbx | HumanM@Attack1H01_L | human=True | length=1.1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/1H/HumanM@Attack1H01_R.fbx | HumanM@Attack1H01_R | human=True | length=1.1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/1H/HumanM@CombatIdle1H01.fbx | HumanM@CombatIdle1H01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/2H/HumanM@Attack2H01.fbx | HumanM@Attack2H01 | human=True | length=1.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/2H/HumanM@CombatIdle2H01.fbx | HumanM@CombatIdle2H01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/HumanM@CombatDamage01.fbx | HumanM@CombatDamage01 | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/HumanM@CombatIdle01.fbx | HumanM@CombatIdle01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/HumanM@Death01.fbx | HumanM@Death01 | human=True | length=0.7333333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/Polearm/HumanM@AttackPolearm01.fbx | HumanM@AttackPolearm01 | human=True | length=1.366667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/Polearm/HumanM@CombatIdlePolearm01.fbx | HumanM@CombatIdlePolearm01 | human=True | length=1.333333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/Shield/HumanM@AttackShield01.fbx | HumanM@AttackShield01 | human=True | length=0.9
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01-Idle02.fbx | HumanM@Idle01-Idle02 | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx | HumanM@Idle01 | human=True | length=2.7
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle02-Idle01.fbx | HumanM@Idle02-Idle01 | human=True | length=0.7666667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle02.fbx | HumanM@Idle02 | human=True | length=2.7
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Fall01.fbx | HumanM@Fall01 | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 - Begin.fbx | HumanM@Jump01 - Begin | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 - Land.fbx | HumanM@Jump01 - Land | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM] - Begin.fbx | HumanM@Jump01 [RM] - Begin | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM] - Land.fbx | HumanM@Jump01 [RM] - Land | human=True | length=0.6666667
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01 [RM].fbx | HumanM@Jump01 [RM] | human=True | length=1.533333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Jump/HumanM@Jump01.fbx | HumanM@Jump01 | human=True | length=1.533333
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Backward.fbx | HumanM@Run01_Backward | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_BackwardLeft.fbx | HumanM@Run01_BackwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_BackwardRight.fbx | HumanM@Run01_BackwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Forward.fbx | HumanM@Run01_Forward | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_ForwardLeft.fbx | HumanM@Run01_ForwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_ForwardRight.fbx | HumanM@Run01_ForwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Left.fbx | HumanM@Run01_Left | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/HumanM@Run01_Right.fbx | HumanM@Run01_Right | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Backward [RM].fbx | HumanM@Run01_Backward [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_BackwardLeft [RM].fbx | HumanM@Run01_BackwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_BackwardRight [RM].fbx | HumanM@Run01_BackwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Forward [RM].fbx | HumanM@Run01_Forward [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_ForwardLeft [RM].fbx | HumanM@Run01_ForwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_ForwardRight [RM].fbx | HumanM@Run01_ForwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Left [RM].fbx | HumanM@Run01_Left [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Run/RootMotion/HumanM@Run01_Right [RM].fbx | HumanM@Run01_Right [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Forward.fbx | HumanM@Sprint01_Forward | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_ForwardLeft.fbx | HumanM@Sprint01_ForwardLeft | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_ForwardRight.fbx | HumanM@Sprint01_ForwardRight | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Left.fbx | HumanM@Sprint01_Left | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/HumanM@Sprint01_Right.fbx | HumanM@Sprint01_Right | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Forward [RM].fbx | HumanM@Sprint01_Forward [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_ForwardLeft [RM].fbx | HumanM@Sprint01_ForwardLeft [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_ForwardRight [RM].fbx | HumanM@Sprint01_ForwardRight [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Left [RM].fbx | HumanM@Sprint01_Left [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Sprint/RootMotion/HumanM@Sprint01_Right [RM].fbx | HumanM@Sprint01_Right [RM] | human=True | length=0.5333334
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_BackwardLeft.fbx | HumanM@StrafeRun01_BackwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_BackwardRight.fbx | HumanM@StrafeRun01_BackwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_ForwardLeft.fbx | HumanM@StrafeRun01_ForwardLeft | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_ForwardRight.fbx | HumanM@StrafeRun01_ForwardRight | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_Left.fbx | HumanM@StrafeRun01_Left | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/HumanM@StrafeRun01_Right.fbx | HumanM@StrafeRun01_Right | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_BackwardLeft [RM].fbx | HumanM@StrafeRun01_BackwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_BackwardRight [RM].fbx | HumanM@StrafeRun01_BackwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_ForwardLeft [RM].fbx | HumanM@StrafeRun01_ForwardLeft [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_ForwardRight [RM].fbx | HumanM@StrafeRun01_ForwardRight [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_Left [RM].fbx | HumanM@StrafeRun01_Left [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Strafe/StrafeRun/RootMotion/HumanM@StrafeRun01_Right [RM].fbx | HumanM@StrafeRun01_Right [RM] | human=True | length=0.6
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Left [RM].fbx | HumanM@Turn01_Left [RM] | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Left.fbx | HumanM@Turn01_Left | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Right [RM].fbx | HumanM@Turn01_Right [RM] | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Turn/HumanM@Turn01_Right.fbx | HumanM@Turn01_Right | human=True | length=1
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Backward.fbx | HumanM@Walk01_Backward | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_BackwardLeft.fbx | HumanM@Walk01_BackwardLeft | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_BackwardRight.fbx | HumanM@Walk01_BackwardRight | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Forward.fbx | HumanM@Walk01_Forward | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_ForwardLeft.fbx | HumanM@Walk01_ForwardLeft | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_ForwardRight.fbx | HumanM@Walk01_ForwardRight | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Left.fbx | HumanM@Walk01_Left | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Right.fbx | HumanM@Walk01_Right | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Backward [RM].fbx | HumanM@Walk01_Backward [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_BackwardLeft [RM].fbx | HumanM@Walk01_BackwardLeft [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_BackwardRight [RM].fbx | HumanM@Walk01_BackwardRight [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Forward [RM].fbx | HumanM@Walk01_Forward [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_ForwardLeft [RM].fbx | HumanM@Walk01_ForwardLeft [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_ForwardRight [RM].fbx | HumanM@Walk01_ForwardRight [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Left [RM].fbx | HumanM@Walk01_Left [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/RootMotion/HumanM@Walk01_Right [RM].fbx | HumanM@Walk01_Right [RM] | human=True | length=0.8000001
+Assets/Kevin Iglesias/Human Animations/Animations/Male/Social/Conversation/HumanM@Talk01.fbx | HumanM@Talk01 | human=True | length=2.266667
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/Human@HandsClosed01.fbx | Human@HandsClosed01 | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/Human@ObjectGripHands01.fbx | Human@ObjectGripHands01 | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@ObjectGripShoulder01_L.fbx | HumanF@ObjectGripShoulder01_L | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@ObjectGripShoulder01_R.fbx | HumanF@ObjectGripShoulder01_R | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@ObjectGripShoulder02_L.fbx | HumanF@ObjectGripShoulder02_L | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@ObjectGripShoulder02_R.fbx | HumanF@ObjectGripShoulder02_R | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@WeaponHold2H01.fbx | HumanF@WeaponHold2H01 | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanF@WeaponHoldPolearm01.fbx | HumanF@WeaponHoldPolearm01 | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@ObjectGripShoulder01_L.fbx | HumanM@ObjectGripShoulder01_L | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@ObjectGripShoulder01_R.fbx | HumanM@ObjectGripShoulder01_R | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@ObjectGripShoulder02_L.fbx | HumanM@ObjectGripShoulder02_L | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@ObjectGripShoulder02_R.fbx | HumanM@ObjectGripShoulder02_R | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@WeaponHold2H01.fbx | HumanM@WeaponHold2H01 | human=True | length=0.3333333
+Assets/Kevin Iglesias/Human Animations/Animations/Masked Poses/HumanM@WeaponHoldPolearm01.fbx | HumanM@WeaponHoldPolearm01 | human=True | length=0.3333333

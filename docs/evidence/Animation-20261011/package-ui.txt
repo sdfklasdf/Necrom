@@ -1,0 +1,719 @@
+2026-10-11 오전 9:46:35 +09:00
+VisualElement | rootVisualContainer4 |  | display=Flex enabled=True
+PackageManagerWindowRoot |  |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+PackageManagerToolbar | topMenuToolbar |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+Toolbar |  |  | display=Flex enabled=True
+ExtendableToolbarMenu | toolbarAddMenu |  | display=Flex enabled=True
+TextElement |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+ToolbarMenu | toolbarOrderingMenu | Sort: Purchased date | display=Flex enabled=True
+TextElement |  | Sort: Purchased date | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+ToolbarWindowMenu | toolbarFiltersMenu | Filters | display=Flex enabled=True
+TextElement |  | Filters | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+ToolbarButton | toolbarClearFiltersButton | Clear Filters | display=Flex enabled=False
+ToolbarSpacer | toolbarSpacer |  | display=Flex enabled=True
+VisualElement | spinnerButtonContainer |  | display=None enabled=True
+LoadingSpinner | inProgressSpinner |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+ExtendableToolbarMenu | toolbarSettingsMenu |  | display=Flex enabled=True
+TextElement |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+TwoPaneSplitView | globalSplitter |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+Sidebar | sidebar |  | display=Flex enabled=True
+VisualElement | unity-content-and-vertical-scroll-container |  | display=Flex enabled=True
+VisualElement | unity-content-viewport |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | In Project | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Updates | display=Flex enabled=True
+SidebarRow |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Restricted Packages | display=Flex enabled=True
+SidebarRow |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Errors and Warnings | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Unity Registry | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | My Assets | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Built-in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SidebarRow |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Services | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SidebarRow |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | My Registries | display=Flex enabled=True
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+VisualElement | mainContainer |  | display=Flex enabled=True
+MainContainerOverlay | mainContainerOverlay |  | display=None enabled=True
+VisualElement | overlayContainer |  | display=Flex enabled=True
+Label | overlayLabel |  | display=Flex enabled=True
+ExtendedHelpBox | overlayHelpBox |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+TwoPaneSplitView | mainContainerSplitter |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+VisualElement | leftColumnContainer |  | display=Flex enabled=True
+VisualElement | leftInnerContainer |  | display=Flex enabled=True
+PackageSearchBar | packageSearchBar |  | display=Flex enabled=True
+ToolbarSearchField |  |  | display=Flex enabled=True
+Button | unity-search |  | display=Flex enabled=True
+TextField |  |  | display=Flex enabled=True
+TextInput | unity-text-input |  | display=Flex enabled=True
+TextElement |  |  | display=Flex enabled=True
+Button | unity-cancel |  | display=Flex enabled=True
+PartiallyNonCompliantRegistryMessage | partiallyNonCompliantRegistryMessage |  | display=None enabled=True
+ExtendedHelpBox |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+SignInBar | signInBar |  | display=None enabled=True
+Button |  | Sign in | display=Flex enabled=True
+Label |  | to manage Asset Store packages | display=Flex enabled=True
+PackageList | packageList |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | listContainer |  | display=Flex enabled=True
+PackageListScrollView | scrollView |  | display=None enabled=True
+VisualElement | unity-content-and-vertical-scroll-container |  | display=Flex enabled=True
+VisualElement | unity-content-viewport |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+PackageListView | listView |  | display=Flex enabled=True
+ScrollView |  |  | display=Flex enabled=True
+VisualElement | unity-content-and-vertical-scroll-container |  | display=Flex enabled=True
+VisualElement | unity-content-viewport |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+PackageItem | POLYGON - Fantasy Characters Pack - Art by Synty |  | display=Flex enabled=True
+VisualElement | mainItem |  | display=Flex enabled=True
+VisualElement | leftContainer |  | display=Flex enabled=True
+Label | packageTypeIcon |  | display=Flex enabled=True
+Label | packageName | POLYGON - Fantasy Characters Pack - Art by Synty | display=Flex enabled=True
+Label | entitlementLabel |  | display=None enabled=True
+Label | versionLabel | 1.6.1 | display=Flex enabled=True
+VisualElement | rightContainer |  | display=Flex enabled=True
+VisualElement | tagContainer |  | display=Flex enabled=True
+PackageDynamicTagLabel |  |  | display=None enabled=True
+VisualElement | statesContainer |  | display=Flex enabled=True
+VisualElement | stateIcon |  | display=Flex enabled=True
+VisualElement | lockedIcon |  | display=None enabled=True
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+VisualElement | messageArea |  | display=None enabled=True
+VisualElement | innerContainer |  | display=Flex enabled=True
+Label | messageAreaLabel |  | display=Flex enabled=True
+Button | messageAreaButton |  | display=Flex enabled=True
+PackageLoadBar | packageLoadBar |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | loadBarContainer |  | display=Flex enabled=True
+Label | loadedLabel | One package shown | display=Flex enabled=True
+VisualElement | loadMoreContainer |  | display=Flex enabled=True
+Label | loadMoreLabel | Load | display=None enabled=True
+VisualElement | loadAssetsDropdownContainer |  | display=Flex enabled=True
+DropdownButton | loadAssetsDropdown |  | display=None enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | All | display=Flex enabled=True
+PackageStatusBar | packageStatusBar |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | statusBarContainer |  | display=Flex enabled=True
+Label | errorIcon |  | display=None enabled=True
+Label | statusLabel | Last refresh Oct 11, 06:42 | display=Flex enabled=True
+VisualElement | refreshButtonContainer |  | display=Flex enabled=True
+DropdownButton | refreshButton |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+VisualElement | imageIcon |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | dropdownArea |  | display=Flex enabled=True
+VisualElement | dropdownIcon |  | display=Flex enabled=True
+LoadingSpinner | loadingSpinner |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | rightColumnContainer |  | display=Flex enabled=True
+PackageDetails | packageDetails |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+InProgressView | inProgressView |  | display=None enabled=True
+Label |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+LoadingSpinner |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+ScrollView | detailScrollView |  | display=Flex enabled=True
+VisualElement | unity-content-and-vertical-scroll-container |  | display=Flex enabled=True
+VisualElement | unity-content-viewport |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+MultiSelectDetails | multiSelectDetails |  | display=None enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | multiSelectDetailsHeader |  | display=Flex enabled=True
+Label | multiSelectTitle |  | display=Flex enabled=True
+VisualElement | multiSelectInfoBoxContainer |  | display=Flex enabled=True
+ExtendedHelpBox | lockedPackagesInfoBox |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You have selected one or more locked packages. You must unlock these packages before performing any actions on them or deselect them. | display=Flex enabled=True
+VisualElement | customLinkContainer |  | display=Flex enabled=True
+Button |  | Deselect all locked packages | display=Flex enabled=True
+VisualElement | multiSelectFoldoutsContainer |  | display=Flex enabled=True
+UnlockFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+UpdateFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+MultiSelectFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+CheckUpdateFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+NoActionsFoldout |  |  | display=Flex enabled=True
+Toggle | multiSelectFoldoutToggle |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-checkmark |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | multiSelectFoldoutContainer |  | display=None enabled=True
+VisualElement | detail |  | display=Flex enabled=True
+Alert | detailError |  | display=None enabled=True
+Label |  |  | display=Flex enabled=True
+PackageDetailsHeader | detailsHeader |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SelectableLabel | detailTitle | POLYGON - Fantasy Characters Pack - Art by Synty | display=Flex enabled=True
+VisualElement | versionContainer |  | display=Flex enabled=True
+VisualElement | lockedIcon |  | display=None enabled=True
+Label | detailEnterpriseLabel |  | display=None enabled=True
+VersionInfoIcon | versionInfoIcon |  | display=None enabled=True
+SelectableLabel | detailVersion | 1.6.1 · August 16, 2026 | display=Flex enabled=True
+PackageSimpleTagLabel | tagGit | Git | display=None enabled=True
+PackageSimpleTagLabel | tagLocal | Local | display=None enabled=True
+PackageSimpleTagLabel | tagTarball | Tarball | display=None enabled=True
+PackageDeprecatedTagLabel | tagDeprecated | Deprecated | display=None enabled=True
+PackageSimpleTagLabel | tagDisabled | Disabled | display=None enabled=True
+PackageSimpleTagLabel | tagCustom | Custom | display=None enabled=True
+PackageSimpleTagLabel | tagPreRelease | Pre-Release | display=None enabled=True
+PackageSimpleTagLabel | tagExperimental | Experimental | display=None enabled=True
+VisualElement | usedInFeatureSetMessageContainer |  | display=Flex enabled=True
+VisualElement | dependencyContainer |  | display=None enabled=True
+VisualElement | dependencyIcon |  | display=Flex enabled=True
+Label | dependencyText | Installed as dependency | display=Flex enabled=True
+VisualElement | registryAndAuthorAndQuickStartContainer |  | display=Flex enabled=True
+VisualElement | registryAndAuthorContainer |  | display=Flex enabled=True
+Label |  | From | display=Flex enabled=True
+Label |  | Asset Store | display=Flex enabled=True
+Label |  | by | display=Flex enabled=True
+PackageLinkButton |  | Synty Studios | display=Flex enabled=True
+VisualElement | quickStartContainer |  | display=Flex enabled=True
+PackageDetailsLinks | detailLinksContainer |  | display=Flex enabled=True
+VisualElement | assetStoreLinksContainer |  | display=Flex enabled=True
+PackageLinkButton |  | View in Asset Store | display=Flex enabled=True
+Label |  | | | display=Flex enabled=True
+PackageLinkButton |  | Publisher Support | display=Flex enabled=True
+Label |  | | | display=Flex enabled=True
+PackageLinkButton |  | Publisher Website | display=Flex enabled=True
+Label |  | | | display=Flex enabled=True
+PackageLinkButton |  | Leave a Review | display=Flex enabled=True
+PackageToolbar | packageToolbar |  | display=Flex enabled=True
+VisualElement | toolbarMainContainer |  | display=Flex enabled=True
+PackageToolBarError | toolbarErrorState |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | extensionItems |  | display=None enabled=True
+DropdownButton |  |  | display=None enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Extensions | display=Flex enabled=True
+VisualElement | dropdownIcon |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+DropdownButton |  |  | display=None enabled=False
+VisualElement | mainButton |  | display=Flex enabled=False
+TextElement | label | Configure | display=Flex enabled=False
+VisualElement | builtInActions |  | display=Flex enabled=True
+PackageToolBarSimpleButton |  |  | display=None enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+PackageToolBarSimpleButton |  |  | display=None enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+PackageToolBarSimpleButton |  |  | display=None enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+PackageToolBarSimpleButton |  |  | display=None enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+LegacyFormatDropdownButton | legacyFormatDropdownButton |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+VisualElement | imageIcon |  | display=Flex enabled=True
+TextElement | label | In Project | display=Flex enabled=True
+VisualElement | dropdownIcon |  | display=Flex enabled=True
+ManageDropdownButton | manageDropdown |  | display=None enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | toolbarProgressContainer |  | display=None enabled=True
+ProgressBar | downloadProgress |  | display=None enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | container |  | display=Flex enabled=True
+Label | currentProgressState |  | display=Flex enabled=True
+VisualElement | progressBarBackground |  | display=Flex enabled=True
+VisualElement | progressBarForeground |  | display=Flex enabled=True
+PackageToolBarIconOnlyButton |  |  | display=Flex enabled=True
+Button |  |  | display=Flex enabled=True
+PackageToolBarIconOnlyButton |  |  | display=Flex enabled=True
+Button |  |  | display=Flex enabled=True
+PackageToolBarIconOnlyButton |  |  | display=Flex enabled=True
+Button |  |  | display=Flex enabled=True
+VisualElement | helpBoxContainer |  | display=Flex enabled=True
+PackageSignatureHelpBox |  |  | display=None enabled=True
+Label |  |  | display=Flex enabled=True
+NonCompliantPackageHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+DeprecatedVersionHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+DeprecatedPackageHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+DisabledPackageHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Unfortunately, this package is no longer available. | display=Flex enabled=True
+ScopedRegistryHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | This package is hosted on a Scoped Registry. | display=Flex enabled=True
+VisualElement | customLinkContainer |  | display=Flex enabled=True
+Button |  | Learn More | display=Flex enabled=True
+VersionTagHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+HiddenProductHelpBox |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | This asset has been set to Hidden. | display=Flex enabled=True
+VisualElement | detailCustomContainer |  | display=Flex enabled=True
+VisualElement |  |  | display=None enabled=True
+VisualElement | detailExtensionContainer |  | display=None enabled=True
+PackageDetailsBody | detailsBody |  | display=Flex enabled=True
+PackageDetailsTabView | packageDetailsTabView |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | packageDetailsTabViewHeaderContainer |  | display=Flex enabled=True
+Button | descriptionButton | Details | display=None enabled=True
+Button | overviewButton | Overview | display=Flex enabled=True
+Button | releasesButton | Releases | display=Flex enabled=True
+Button | importedassetsButton | Imported Assets | display=Flex enabled=True
+Button | versionsButton | Version History | display=None enabled=True
+Button | dependenciesButton | Dependencies | display=None enabled=True
+Button | packagesincludedButton | Packages Included | display=None enabled=True
+Button | samplesButton | Samples | display=None enabled=True
+Button | imagesButton | Images | display=Flex enabled=True
+DropdownButton | packageDetailsTabViewHeaderDropdown |  | display=None enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+VisualElement | imageIcon |  | display=Flex enabled=True
+TextElement | label |  | display=None enabled=True
+VisualElement | packageDetailsTabViewBodyContainer |  | display=Flex enabled=True
+PackageDetailsDescriptionTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | detailsInfoContainer |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Technical Name | display=Flex enabled=True
+Label | detailSignatureTitle | Signature | display=Flex enabled=True
+Label | detailMinimumUnityVersionTitle | Minimum Editor Version | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+SelectableLabel | detailTechnicalName |  | display=Flex enabled=True
+CopyIconButton | copyIcon |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | signatureStateIcon |  | display=Flex enabled=True
+SelectableLabel | detailSignature |  | display=Flex enabled=True
+SelectableLabel | detailMinimumUnityVersion |  | display=Flex enabled=True
+PackagePlatformList | detailPlatformList |  | display=Flex enabled=True
+TagLabelList |  |  | display=Flex enabled=True
+SelectableLabel | listNameLabel |  | display=Flex enabled=True
+VisualElement | tagsList |  | display=Flex enabled=True
+SelectableLabel | detailDescription |  | display=Flex enabled=True
+VisualElement | detailSourcePathContainer |  | display=Flex enabled=True
+Label |  | Installed From | display=Flex enabled=True
+SelectableLabel | detailSourcePath |  | display=Flex enabled=True
+PackageDetailsOverviewTab |  |  | display=Flex enabled=True
+SignInDetails |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+PackageDetailsOverviewTabContent | packageOverviewContent |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+TagLabelList | assignedLabelList |  | display=None enabled=True
+SelectableLabel | listNameLabel |  | display=Flex enabled=True
+VisualElement | tagsList |  | display=Flex enabled=True
+VisualElement | detailUnityVersionsContainer |  | display=Flex enabled=True
+Label |  | Supported Unity Versions | display=Flex enabled=True
+SelectableLabel | detailUnityVersions | 2022.3.56 or higher | display=Flex enabled=True
+VisualElement | detailSizesContainer |  | display=Flex enabled=True
+Label |  | Package Size | display=Flex enabled=True
+SelectableLabel | detailSizes | Size: 109.51 MB (Number of files: 1349) | display=Flex enabled=True
+VisualElement | detailPurchasedDateContainer |  | display=Flex enabled=True
+Label |  | Purchased Date | display=Flex enabled=True
+SelectableLabel | detailPurchasedDate | October 11, 2026 | display=Flex enabled=True
+PackageDetailsReleasesTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | releasesContainer |  | display=Flex enabled=True
+PackageDetailsImportedAssetsTab | importedAssetsDetailsContainer |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+MultiColumnListView | ImportedAssetsList |  | display=Flex enabled=True
+ScrollView |  |  | display=Flex enabled=True
+VisualElement | unity-multi-column-view__header-container |  | display=Flex enabled=True
+MultiColumnCollectionHeader |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+MultiColumnHeaderColumn | label |  | display=Flex enabled=True
+MultiColumnHeaderColumnSortIndicator |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label | columnHeader | Asset name | display=Flex enabled=True
+MultiColumnHeaderColumn | location |  | display=Flex enabled=True
+MultiColumnHeaderColumnSortIndicator |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label | columnHeader | Location in project | display=Flex enabled=True
+MultiColumnHeaderColumn | version |  | display=Flex enabled=True
+MultiColumnHeaderColumnSortIndicator |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label | columnHeader | Version | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+MultiColumnHeaderColumnResizeHandle |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+MultiColumnHeaderColumnResizeHandle |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+MultiColumnHeaderColumnResizeHandle |  |  | display=None enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-content-and-vertical-scroll-container |  | display=Flex enabled=True
+VisualElement | unity-content-viewport |  | display=Flex enabled=True
+VisualElement | unity-content-container |  | display=Flex enabled=True
+Label |  | List is empty | display=Flex enabled=True
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+PackageDetailsVersionsTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | versionsTab |  | display=Flex enabled=True
+VisualElement | versionsList |  | display=Flex enabled=True
+VisualElement | versionsToolbar |  | display=Flex enabled=True
+Button | versionsShowAllButton | See other versions | display=Flex enabled=True
+Label | versionsLoadingLabel | Loading... | display=Flex enabled=True
+Label | nonCompliantPackageLabel | Information is unavailable because the package comes from a restricted registry. | display=Flex enabled=True
+PackageDetailsDependenciesTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | dependenciesOuterContainer |  | display=Flex enabled=True
+VisualElement | dependenciesContainer |  | display=Flex enabled=True
+Label |  | Is using | display=Flex enabled=True
+Label | noDependencies | (None) | display=Flex enabled=True
+VisualElement | dependenciesNames |  | display=Flex enabled=True
+VisualElement | dependenciesVersions |  | display=Flex enabled=True
+VisualElement | dependenciesStatuses |  | display=Flex enabled=True
+VisualElement | reverseDependenciesContainer |  | display=Flex enabled=True
+Label |  | Used by | display=Flex enabled=True
+Label | noReverseDependencies | (None) | display=Flex enabled=True
+VisualElement | reverseDependenciesNames |  | display=Flex enabled=True
+VisualElement | reverseDependenciesVersions |  | display=Flex enabled=True
+FeatureDependenciesTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | featureDependenciesOuterContainer |  | display=Flex enabled=True
+VisualElement | mainContainer |  | display=Flex enabled=True
+VisualElement | featureDependenciesList |  | display=Flex enabled=True
+VisualElement | featureDependenciesRightContainer |  | display=Flex enabled=True
+ExtendedHelpBox | featureDependencyInfoBox |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  |  | display=Flex enabled=True
+VisualElement | featureDependencyTitleContainer |  | display=Flex enabled=True
+SelectableLabel | featureDependencyTitle |  | display=Flex enabled=True
+VisualElement | emptySpace |  | display=Flex enabled=True
+Button | featureDependencyLink | Go to package view | display=Flex enabled=True
+VisualElement | versionContainer |  | display=Flex enabled=True
+SelectableLabel | featureDependencyVersion |  | display=Flex enabled=True
+Label | versionState |  | display=Flex enabled=True
+SelectableLabel | featureDependencyDesc |  | display=Flex enabled=True
+VisualElement | fillerLeftContainer |  | display=Flex enabled=True
+PackageDetailsSamplesTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+TemplateContainer |  |  | display=Flex enabled=True
+VisualElement | samplesOuterContainer |  | display=Flex enabled=True
+HelpBox | samplesErrorInfoBox |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | Some samples are missing mandatory field displayName. | display=Flex enabled=True
+VisualElement | samplesContainer |  | display=Flex enabled=True
+PackageDetailsImagesTab |  |  | display=None enabled=True
+SignInDetails |  |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+Label |  | You must sign in before Unity can display all information about this package. | display=Flex enabled=True
+DropdownButton |  |  | display=Flex enabled=True
+VisualElement | mainButton |  | display=Flex enabled=True
+TextElement | label | Sign in | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | mainImageOuterContainer |  | display=Flex enabled=True
+VisualElement | mainImageInnerContainer |  | display=Flex enabled=True
+Image | mainImage |  | display=Flex enabled=True
+VisualElement | thumbnailsContainer |  | display=Flex enabled=True
+Label |  | Information is unavailable because the package license isn't registered to your user account. | display=None enabled=True
+Scroller |  |  | display=Flex enabled=True
+RepeatButton | unity-low-button |  | display=Flex enabled=True
+RepeatButton | unity-high-button |  | display=Flex enabled=True
+ScrollerSlider | unity-slider |  | display=Flex enabled=True
+VisualElement |  |  | display=Flex enabled=True
+VisualElement | unity-drag-container |  | display=Flex enabled=True
+VisualElement | unity-tracker |  | display=Flex enabled=True
+VisualElement | unity-dragger-border |  | display=Flex enabled=True
+VisualElement | unity-dragger |  | display=Flex enabled=True
+Scroller |  |  | display=None enabled=False
+RepeatButton | unity-low-button |  | display=Flex enabled=False
+RepeatButton | unity-high-button |  | display=Flex enabled=False
+ScrollerSlider | unity-slider |  | display=Flex enabled=False
+VisualElement |  |  | display=Flex enabled=False
+VisualElement | unity-drag-container |  | display=Flex enabled=False
+VisualElement | unity-tracker |  | display=Flex enabled=False
+VisualElement | unity-dragger-border |  | display=Flex enabled=False
+VisualElement | unity-dragger |  | display=Flex enabled=False
+VisualElement | unity-dragline-anchor |  | display=Flex enabled=True
+VisualElement | unity-dragline |  | display=Flex enabled=True
+VisualElement | unity-dragline-anchor |  | display=Flex enabled=True
+VisualElement | unity-dragline |  | display=Flex enabled=True

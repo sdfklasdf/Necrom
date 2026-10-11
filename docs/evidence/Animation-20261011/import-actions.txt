@@ -1,0 +1,2 @@
+2026-10-11T09:58:34.2422605+09:00 Native AssetDatabase.ImportPackage C:\Users\user\AppData\Roaming\Unity/Asset Store-5.x/Kevin Iglesias/Animation/Human Basic Motions FREE.unitypackage
+2026-10-11T10:00:11.8173686+09:00 Native AssetDatabase.ImportPackage C:\Users\user\AppData\Roaming\Unity/Asset Store-5.x/Kevin Iglesias/Animation/Human Melee Animations FREE.unitypackage

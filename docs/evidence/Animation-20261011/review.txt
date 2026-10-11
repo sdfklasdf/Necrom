@@ -1,0 +1,6 @@
+Read-only independent review 2026-10-11, scout_animation_review:
+No critical code/configuration findings. Idle default, explicit Walk/Attack QA playback, valid humanoid rigs, female overrides, root motion disabled.
+Ignoring end-of-line whitespace, scene diff contains only nine Animator controller/culling/root-motion overrides. No transform, source material or combat edits.
+Important stale authentication-only README corrected before commit.
+Limits accepted: 79/51/24 sampled instants, not every frame; manual representative visual inspection, no anatomical deformation algorithm; PNGs native PlayMode camera renders, actual Screen390x844 asserted, not literal GameView screenshots.
+Temporary package UI diagnostic helper moved out of Assets after import; persistent bounded scout QA helper compiles in native Editor.

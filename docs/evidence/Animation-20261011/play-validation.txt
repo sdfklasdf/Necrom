@@ -1,0 +1,2 @@
+2026-10-11T10:04:06.9905999+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T10:04:07.6287027+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity

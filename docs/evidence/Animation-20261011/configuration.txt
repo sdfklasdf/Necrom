@@ -1,0 +1,7 @@
+2026-10-11T10:03:35.2591790+09:00 Created3state base+femaleOverride; assigned9 Idle/Walk/Attack/rootMotionOFF; source vendor prefabs and battle/catalog unchanged
+2026-10-11T10:03:35.2672243+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Male/Idles/HumanM@Idle01.fbx/HumanM@Idle01 length=2.7 loop=True
+2026-10-11T10:03:35.2672243+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Male/Movement/Walk/HumanM@Walk01_Forward.fbx/HumanM@Walk01_Forward length=0.8000001 loop=True
+2026-10-11T10:03:35.2672243+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/1H/HumanM@Attack1H01_R.fbx/HumanM@Attack1H01_R length=1.1 loop=False
+2026-10-11T10:03:35.2672243+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Female/Idles/HumanF@Idle01.fbx/HumanF@Idle01 length=2.7 loop=True
+2026-10-11T10:03:35.2672243+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Female/Movement/Walk/HumanF@Walk01_Forward.fbx/HumanF@Walk01_Forward length=0.8000001 loop=True
+2026-10-11T10:03:35.2711991+09:00 Assets/Kevin Iglesias/Human Animations/Animations/Female/Combat/1H/HumanF@Attack1H01_R.fbx/HumanF@Attack1H01_R length=1.1 loop=False

@@ -1,0 +1,11 @@
+2026-10-11 10:01+09 AWU1 PASS
+After founder login: FREE Human Basic Motions and FREE Human Melee Animations added to account via actual Windows browser UIAutomation.
+Native Unity PackageManager Download actions verified by complete local .unitypackage files:
+Basic16074017bytes SHA256 B643840EC91E711CD2368FE0A2062AD4F78242F8700685EC4DA88132EB690B7A
+Melee13346000bytes SHA256 4DA54EFF565365FA4E041285D4F5AD1BDC54A071C1158ED0C62DEF0D7D45ADAE
+Native AssetDatabase.ImportPackage used on downloaded files (09:58:34 Basic /10:00:11 Melee).
+Assets/Kevin Iglesias contains739files/101515576bytes after both imports. Native AssetDatabase readback176 actual non-preview AnimationClips, humanMotionTrue176, False0.
+Male/Female Idle01 length2.7, Walk01_Forward length0.8, Attack1H01_R length1.1 confirmed.
+Protected font3, Packages2 and saved DummyFormation bytes unchanged against pre-import snapshot.
+No Animator/controller or motion PlayMode acceptance yet. AWU2 starts only after AWU1 board recording/readback.
+Previous auth block and helper search failure retained; resolved acquisition does not erase failure evidence.

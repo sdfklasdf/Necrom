@@ -1,0 +1,1 @@
+2026-10-11T10:02:54.0348178+09:00 EXPECTED_FAIL Controller missing Idle Walk Attack MON_001_QA_R0_C0

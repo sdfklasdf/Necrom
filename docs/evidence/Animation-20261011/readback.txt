@@ -1,0 +1,30 @@
+2026-10-11T10:03:35.7667418+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:03:35.7667418+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:03:35.7667418+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:03:35.7667418+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:03:35.7667418+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS
+2026-10-11T10:08:20.6211888+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6241645+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6241645+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6261951+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:08:20.6261951+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:08:20.6273438+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:08:20.6283950+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6291173+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6296220+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:08:20.6308820+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS
+2026-10-11T10:09:06.1784536+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2051310+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2056341+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2061525+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:09:06.2069295+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:09:06.2080212+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/Animations/ScoutWitchPreview.overrideController
+2026-10-11T10:09:06.2087978+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2098036+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2112454+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/Animations/ScoutHumanoidPreview.controller
+2026-10-11T10:09:06.2120537+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS
