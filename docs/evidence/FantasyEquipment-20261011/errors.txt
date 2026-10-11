@@ -1,0 +1,108 @@
+2026-10-11T11:26:44.6789851+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(15,19): error CS0234: The type or namespace name 'InputSystem' does not exist in the namespace 'UnityEngine' (are you missing an assembly reference?)
+
+2026-10-11T11:26:44.6815278+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(16,19): error CS0234: The type or namespace name 'InputSystem' does not exist in the namespace 'UnityEngine' (are you missing an assembly reference?)
+
+2026-10-11T11:26:44.6815278+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(10,19): error CS0234: The type or namespace name 'InputSystem' does not exist in the namespace 'UnityEngine' (are you missing an assembly reference?)
+
+2026-10-11T11:26:44.6903073+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(75,37): error CS0246: The type or namespace name 'IInputActionCollection2' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.6914774+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(62,28): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.6967853+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(71,28): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7191758+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(81,28): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7208374+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(95,34): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7237731+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(109,30): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7256753+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(125,30): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7256753+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(141,27): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7271845+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_InputReader.cs(158,30): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7271845+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(519,26): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7302500+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(525,24): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7302500+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(774,21): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7322755+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(531,17): error CS0540: 'GBL_Controls.IEnumerable.GetEnumerator()': containing type does not implement interface 'IEnumerable'
+
+2026-10-11T11:26:44.7337865+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(552,12): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7345914+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(781,21): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7345914+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(788,21): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7370991+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(558,28): error CS0246: The type or namespace name 'InputBinding' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7398003+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(558,58): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7403575+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(80,12): error CS0246: The type or namespace name 'InputActionAsset' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7412810+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(795,23): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7424187+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(802,27): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7424187+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(809,20): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7439245+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(816,23): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7454402+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(823,23): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7469555+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(502,12): error CS0246: The type or namespace name 'InputBinding' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7469555+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(509,12): error CS0246: The type or namespace name 'ReadOnlyArray<>' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7484712+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(509,26): error CS0246: The type or namespace name 'InputDevice' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7494977+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(516,12): error CS0246: The type or namespace name 'ReadOnlyArray<>' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7494977+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(516,26): error CS0246: The type or namespace name 'InputControlScheme' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7515654+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(549,24): error CS0246: The type or namespace name 'InputBinding' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7530732+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(564,22): error CS0246: The type or namespace name 'InputActionMap' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7541401+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(566,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7541401+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(567,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7541401+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(568,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7565844+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(569,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7571316+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(570,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7578459+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(571,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7578459+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(572,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7624088+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(573,22): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7644533+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(740,12): error CS0246: The type or namespace name 'InputControlScheme' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7644533+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(753,12): error CS0246: The type or namespace name 'InputControlScheme' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7664596+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(588,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7669659+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(592,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7690078+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(596,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7747340+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(600,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7767397+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(604,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7767397+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(608,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7787605+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(612,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7787605+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(616,16): error CS0246: The type or namespace name 'InputAction' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7807825+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(620,16): error CS0246: The type or namespace name 'InputActionMap' could not be found (are you missing a using directive or an assembly reference?)
+
+2026-10-11T11:26:44.7813019+09:00 Error Assets\Synty\AnimationGoblinLocomotion\Samples\Scripts\InputSystem\GBL_Controls.cs(630,41): error CS0246: The type or namespace name 'InputActionMap' could not be found (are you missing a using directive or an assembly reference?)
+

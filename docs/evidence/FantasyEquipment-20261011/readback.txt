@@ -1,0 +1,30 @@
+2026-10-11T11:43:09.5011586+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:43:09.5016726+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:43:09.5016726+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:43:09.5024143+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:43:09.5034681+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:43:09.5235972+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:43:09.5246075+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:43:09.5251561+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:43:09.5251561+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:43:09.5251561+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS
+2026-10-11T11:50:35.8602686+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:50:35.8614073+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:50:35.8614073+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:50:35.8630370+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:50:35.8636665+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:50:35.8640025+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:50:35.8647486+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:50:35.8647486+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:50:35.8663930+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:50:35.8663930+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS
+2026-10-11T11:52:28.5642494+09:00 MON_001_QA_R0_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:52:28.5689008+09:00 MON_001_QA_R1_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_001_QA_R2_C0/MON_001 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/RogueDaggerPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_002_QA_R0_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_002_QA_R1_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_002_QA_R2_C1/MON_002 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WitchCallPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_003_QA_R0_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:52:28.5695478+09:00 MON_003_QA_R1_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:52:28.5731894+09:00 MON_003_QA_R2_C2/MON_003 controller=Assets/Necrom/QuarterView3D/EquipmentAnimations/WizardCastPreview.controller
+2026-10-11T11:52:28.5738374+09:00 Saved scene reopened, 9 rig/controller/3human clips/rootMotionOFF PASS

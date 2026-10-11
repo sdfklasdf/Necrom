@@ -1,0 +1,21 @@
+2026-10-11T11:19:26.8511195+09:00 START 0 Artifacts/FantasyImport-20261011/filtered/POLYGON_Goblin_War_Camp_Unity_2022_v1_1_1.unitypackage
+2026-10-11T11:21:14.1562530+09:00 PASS native asset readback 0 paths=3018
+2026-10-11T11:22:27.2677101+09:00 START 1 Artifacts/FantasyImport-20261011/filtered/POLYGON_Viking_Realm_Unity_2022_3_v1_1_1.unitypackage
+2026-10-11T11:26:18.9468066+09:00 PASS native asset readback 1 paths=3367
+2026-10-11T11:26:19.7976484+09:00 START 2 Artifacts/FantasyImport-20261011/filtered/ANIMATION_Goblin_Locomotion_Unity_2022_3_v1_0_1.unitypackage
+2026-10-11T11:29:56.5782246+09:00 REVALIDATE after isolated optional sample scripts 2
+2026-10-11T11:29:57.6067179+09:00 PASS native asset readback 2 paths=569
+2026-10-11T11:29:59.9527412+09:00 START 3 Artifacts/FantasyImport-20261011/filtered/SIDEKICK_Goblin_Fighters_Unity_2021_3_v1_0_4.unitypackage
+2026-10-11T11:31:05.7828887+09:00 PASS native asset readback 3 paths=552
+2026-10-11T11:31:07.8098906+09:00 START 4 Artifacts/FantasyImport-20261011/filtered/POLYGON_NatureBiomes_AlpineMountain_Unity_2022_3_v1_5_5.unitypackage
+2026-10-11T11:34:17.4583651+09:00 REVALIDATE after isolated optional sample scripts 4
+2026-10-11T11:34:48.6847487+09:00 REVALIDATE after isolated optional sample scripts 4
+2026-10-11T11:36:08.4013129+09:00 REVALIDATE after isolated optional sample scripts 4
+2026-10-11T11:36:09.4927813+09:00 PASS native asset readback 4 paths=1982
+2026-10-11T11:36:27.3985119+09:00 START 5 Artifacts/FantasyImport-20261011/filtered/POLYGON_Particle_FX_Unity_2022_3_v1_4_1.unitypackage
+2026-10-11T11:36:39.1594887+09:00 PASS native asset readback 5 paths=1639
+2026-10-11T11:40:11.7791927+09:00 START 6 Artifacts/FantasyImport-20261011/filtered/Human Spellcasting Animations FREE.unitypackage
+2026-10-11T11:41:51.0618091+09:00 REVALIDATE after isolated optional sample scripts 6
+2026-10-11T11:41:52.0746391+09:00 PASS native asset readback 6 paths=246
+2026-10-11T11:52:28.9357292+09:00 REVALIDATE after isolated optional sample scripts 6
+2026-10-11T11:52:30.0038410+09:00 PASS native asset readback 6 paths=246

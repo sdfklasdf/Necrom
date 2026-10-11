@@ -1,0 +1,8 @@
+﻿
+
+Algorithm : SHA256
+Hash      : D26671C89C4B6A926A8BF557EACB0F3EF2EA847E00E7A9D3266F02DAE64C2FEB
+Path      : C:\Users\user\Downloads\Human Spellcasting Animations FREE.unitypackage
+
+
+

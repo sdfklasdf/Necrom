@@ -1,0 +1,51 @@
+﻿[
+    {
+        "Package":  "POLYGON_Goblin_War_Camp_Unity_2022_v1_1_1.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\POLYGON_Goblin_War_Camp_Unity_2022_v1_1_1.unitypackage",
+        "Total":  3018,
+        "Preserved":  1303,
+        "New":  1715
+    },
+    {
+        "Package":  "POLYGON_Viking_Realm_Unity_2022_3_v1_1_1.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\POLYGON_Viking_Realm_Unity_2022_3_v1_1_1.unitypackage",
+        "Total":  3367,
+        "Preserved":  1303,
+        "New":  2064
+    },
+    {
+        "Package":  "ANIMATION_Goblin_Locomotion_Unity_2022_3_v1_0_1.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\ANIMATION_Goblin_Locomotion_Unity_2022_3_v1_0_1.unitypackage",
+        "Total":  569,
+        "Preserved":  0,
+        "New":  569
+    },
+    {
+        "Package":  "SIDEKICK_Goblin_Fighters_Unity_2021_3_v1_0_4.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\SIDEKICK_Goblin_Fighters_Unity_2021_3_v1_0_4.unitypackage",
+        "Total":  552,
+        "Preserved":  5,
+        "New":  547
+    },
+    {
+        "Package":  "POLYGON_NatureBiomes_AlpineMountain_Unity_2022_3_v1_5_5.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\POLYGON_NatureBiomes_AlpineMountain_Unity_2022_3_v1_5_5.unitypackage",
+        "Total":  1982,
+        "Preserved":  1303,
+        "New":  679
+    },
+    {
+        "Package":  "POLYGON_Particle_FX_Unity_2022_3_v1_4_1.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\POLYGON_Particle_FX_Unity_2022_3_v1_4_1.unitypackage",
+        "Total":  1639,
+        "Preserved":  1303,
+        "New":  336
+    },
+    {
+        "Package":  "SIMPLE_Props_Items_Icons_Unity_2020_3_v1_3.unitypackage",
+        "FilteredPath":  "Artifacts\\FantasyImport-20261011\\filtered\\SIMPLE_Props_Items_Icons_Unity_2020_3_v1_3.unitypackage",
+        "Total":  1568,
+        "Preserved":  0,
+        "New":  1568
+    }
+]

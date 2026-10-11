@@ -1,0 +1,3 @@
+2026-10-11T11:42:08.0025763+09:00 BUILD System.InvalidOperationException: Missing original scene backup
+  at NecroScoutEquipmentProbe.Build () [0x00429] in C:\Dev\Necrom\Assets\Editor\NecroScoutEquipmentProbe.cs:62 
+  at NecroScoutEquipmentProbe.Tick () [0x00267] in C:\Dev\Necrom\Assets\Editor\NecroScoutEquipmentProbe.cs:37 

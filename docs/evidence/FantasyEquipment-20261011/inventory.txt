@@ -1,0 +1,9 @@
+2026-10-11T11:36:52.8486734+09:00 PolygonGoblinWarCamp paths=1715
+2026-10-11T11:36:52.8681774+09:00 PolygonVikingRealm paths=2064
+2026-10-11T11:36:52.8961858+09:00 AnimationGoblinLocomotion paths=561
+2026-10-11T11:36:52.9218887+09:00 SidekickGoblinFighters paths=0
+2026-10-11T11:36:52.9434285+09:00 PolygonNatureBiomes paths=566
+2026-10-11T11:36:52.9673630+09:00 PolygonParticleFX paths=336
+2026-10-11T11:36:52.9868576+09:00 SimplePropsItemsIcons paths=0
+2026-10-11T11:36:55.2128307+09:00 AssetDatabase inventory completed; render/material/motion quality not inferred
+CORRECTION: Goblin Fighters canonical root Assets/Synty/SidekickCharacters, physical files=1035; previous SidekickGoblinFighters label0 was a mismatched search label, not import failure. Alpine contains PolygonNatureBiomes and PNB_Core roots. Native manifest3 validated552 paths incl5 pre-existing preserved.

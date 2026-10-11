@@ -1,0 +1,9 @@
+2026-10-11T11:21:13.4221657+09:00 Native importPackageCompleted POLYGON_Goblin_War_Camp_Unity_2022_v1_1_1
+2026-10-11T11:26:16.4261882+09:00 Native importPackageCompleted POLYGON_Viking_Realm_Unity_2022_3_v1_1_1
+2026-10-11T11:28:27.4086169+09:00 Native importPackageCompleted ANIMATION_Goblin_Locomotion_Unity_2022_3_v1_0_1
+2026-10-11T11:31:05.4613325+09:00 Native importPackageCompleted SIDEKICK_Goblin_Fighters_Unity_2021_3_v1_0_4
+2026-10-11T11:32:21.4806781+09:00 Native importPackageCompleted POLYGON_NatureBiomes_AlpineMountain_Unity_2022_3_v1_5_5
+2026-10-11T11:34:17.4153673+09:00 Restored package empty folder NotActive and original GUID metadata; no content file missing
+2026-10-11T11:36:39.0811210+09:00 Native importPackageCompleted POLYGON_Particle_FX_Unity_2022_3_v1_4_1
+2026-10-11T11:40:11.7791927+09:00 AWU2 FREE Human Spellcasting Animations acquired via Edge publisher itch download;17507716bytes,246paths60existingpreserved186new;Kevin folder backed up ZIP. Queued native Import6
+2026-10-11T11:40:30.7537940+09:00 Native importPackageCompleted Human Spellcasting Animations FREE

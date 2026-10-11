@@ -1,0 +1,9 @@
+2026-10-11T11:50:34.8153296+09:00 MON_001_QA_R0_C0 boardSurfaceY=.035 previous=(-2.79, 0.04, -0.32) adjusted=(-2.79, 0.02, -0.32) delta=0.026
+2026-10-11T11:50:34.8165603+09:00 MON_001_QA_R1_C0 boardSurfaceY=.035 previous=(-1.24, 0.04, 1.24) adjusted=(-1.24, 0.02, 1.24) delta=0.026
+2026-10-11T11:50:34.8177167+09:00 MON_001_QA_R2_C0 boardSurfaceY=.035 previous=(0.32, 0.04, 2.79) adjusted=(0.32, 0.02, 2.79) delta=0.026
+2026-10-11T11:50:34.8177167+09:00 MON_002_QA_R0_C1 boardSurfaceY=.035 previous=(-1.56, 0.04, -1.56) adjusted=(-1.56, 0.02, -1.56) delta=0.0242
+2026-10-11T11:50:34.8188285+09:00 MON_002_QA_R1_C1 boardSurfaceY=.035 previous=(0.00, 0.04, 0.00) adjusted=(0.00, 0.02, 0.00) delta=0.0242
+2026-10-11T11:50:34.8200805+09:00 MON_002_QA_R2_C1 boardSurfaceY=.035 previous=(1.56, 0.04, 1.56) adjusted=(1.56, 0.02, 1.56) delta=0.0242
+2026-10-11T11:50:34.8200805+09:00 MON_003_QA_R0_C2 boardSurfaceY=.035 previous=(-0.32, 0.04, -2.79) adjusted=(-0.32, 0.02, -2.79) delta=0.0234
+2026-10-11T11:50:34.8217044+09:00 MON_003_QA_R1_C2 boardSurfaceY=.035 previous=(1.24, 0.04, -1.24) adjusted=(1.24, 0.02, -1.24) delta=0.0234
+2026-10-11T11:50:34.8217044+09:00 MON_003_QA_R2_C2 boardSurfaceY=.035 previous=(2.79, 0.04, 0.32) adjusted=(2.79, 0.02, 0.32) delta=0.0234

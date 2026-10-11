@@ -1,0 +1,10 @@
+2026-10-11T11:43:41.4935007+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T11:43:42.4873876+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+2026-10-11T11:45:34.2809652+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T11:45:35.2810547+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+2026-10-11T11:47:47.3885554+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T11:47:48.2965815+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+2026-10-11T11:49:43.7716901+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T11:49:44.6785954+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity
+2026-10-11T11:50:59.3014581+09:00 NativePlay Unity6000.3.25f1 390x844 Idle/Walk/Attack, nine valid animators, bone motion and normalizedTime, no clipping, sampled overlaps0/scopederrors0 PASS
+2026-10-11T11:51:00.5492626+09:00 Original clean scene restored Assets/Necrom/FirstPlayable/Scenes/FirstPlayable.unity

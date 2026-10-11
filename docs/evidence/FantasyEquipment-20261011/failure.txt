@@ -1,0 +1,12 @@
+2026-10-11T11:28:45.7819894+09:00 System.Exception: Native import error; stop, preserve project
+  at NecroFantasyImportProbe.Tick () [0x0005c] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:16 
+2026-10-11T11:28:47.6525085+09:00 System.Exception: Invalid import index
+  at NecroFantasyImportProbe.Tick () [0x00203] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:17 
+2026-10-11T11:32:21.9647134+09:00 System.Exception: Missing Assets/Synty/PNB_Core/Shaders/InterfaceOverrides/NotActive
+  at NecroFantasyImportProbe.Tick () [0x000c6] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:16 
+2026-10-11T11:34:18.5227639+09:00 System.Exception: GUID mismatch Assets/Synty/PNB_Core/Shaders/InterfaceOverrides/NotActive
+  at NecroFantasyImportProbe.Tick () [0x000f7] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:16 
+2026-10-11T11:34:49.7562589+09:00 System.Exception: GUID mismatch Assets/Synty/PNB_Core/Shaders/InterfaceOverrides/NotActive
+  at NecroFantasyImportProbe.Tick () [0x000f7] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:16 
+2026-10-11T11:40:30.9788952+09:00 System.Exception: Missing Assets/Kevin Iglesias/Human Animations/Textures/HumanAnimations_ColorPalette.png
+  at NecroFantasyImportProbe.Tick () [0x000c6] in C:\Dev\Necrom\Assets\Editor\NecroFantasyImportProbe.cs:16 
